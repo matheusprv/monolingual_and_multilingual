@@ -1,0 +1,125 @@
+<XPL_ED_02> [297 tokens]
+
+Como era o funcionamento da Igreja Bizantina e suas relações com o povo, imperador e com a Igreja Católica?
+
+Os conflitos de ordem cultural, política, racial e até mesmo religiosa tornaram-se inevitáveis e o bispo romano passou a ser considerado traidor (persona non grata) da causa bizantina de expansão e reconquista política e territorial do ocidente. É nesta ótica, pois, que também deve ser analisado todo o processo de cisma entre as igrejas latina e grega, integrantes da ortodoxia cristã central protomilenar. Não fossem ainda outras causas de cunho teológico, disciplinar e de costumes, poder-se-ia restabelecer o estado de coisas anteriormente reinante, ou seja, a unidade na diversidade.
+
+O que é feedback?
+
+Feedback é um termo empregado em várias áreas, mas em sua essência ele quer dizer retroalimentação, i.e., como uma coisa interfere na outra. Por exemplo, na biologia, quando um hormônio estimula ou desestimula a liberação de um outro hormônio, chamamos de feedback.
+
+---
+
+<XPL_ED_04> [302 tokens]
+
+Como eu faço pra aprender a me maquiar sozinha sem fazer curso? O que eu preciso comprar pra iniciar?
+Olha, comece com coisa simples, foi o meu caso, tipo tenha o arsenal básico: base, pó, sombra com duas cores (uma clara uma mais escura), rímel, lápis e gloss cor de boca...Eu não uso base, mas talvez você precise então: com a pele limpa, espalhe a base por todo rosto (quando for comrpar peça ajuda da vendedora pra escolher a cor ideal, isso é muito importante!), passe o po compacto (idem sobre a cor), entao espalhe a sombra escura em cima da bola do olho (tipo na palpebra siga a linha do globo ocular, formando uma meia lua) então passe a sobra clara (iluminadora) em baixo da sobrancelha e em todo espaço entre a sobrancelha e a sombra escura, esfumace (com um pincel pra maquiagem, compre também) então passe o lápis (marrom de preferencia, rente aos cilios superiores) passe rimel , use o curvex (compre também) passe rimel novamente e pronto.
+
+---
+
+<XPL_ED_05> [302 tokens]
+
+Como resolver um problema matemático sem usar matemática?
+Postado por Oscar Y. Takeshita
+Muitas vezes, usa-se a técnica de se converter um certo problema para um outro equivalente. Isso é bem útil quando o segundo problema é muito mais fácil de se resolver ou entender. Uma vez que o segundo problema é resolvido, fica-se sabendo a solução para o primeiro problema.
+Vamos exemplificar essa técnica com um problema clássico postado recentemente nesse blog.
+A forma clássica de se resolver esse problema é usando probabilidade condicional. A solução que se segue praticamente não usa probabilidade.
+Suponha que existisse um outro programa de TV em que você também tivesse três portas das quais uma contém o carro zerinho. Porém as regras do jogo são as seguintes:
+1. Não existe nenhum apresentador.
+2. Você pode optar pelo seguinte:
+a) Abrir duas portas à sua escolha.
+b) Abrir uma porta à sua escolha.
+Qual das opções você escolheria? Obviamente a opção a).
+
+---
+
+<XPL_ED_06> [299 tokens]
+
+1) Hoje no meu café da manhã comi o seguinte:
+a. um pãozinho de sal (1) com manteiga (2)
+b. um copo de leite (3)
+c. uma maça (4)
+
+Você sabe a que tipos de moléculas orgânicas esses alimentos pertencem e qual é o seu principal papel no nosso organismo?
+
+MINHA RESPOSTA:
+a) 1: carboidrato (amido) – metabolismo energético
+2: lipídeos – metabolismo energético
+b) 3: carboidrato (metabolismo energético), proteínas (metabolismo de construção e de controle) e lipídeos (metabolismo energético)
+c) 4: carboidrato (metabolismo energético), vitaminas
+
+ALGUMAS RESPOSTAS CORRETAS DE ALUNOS:
+Pãozinho de sal: tipo de carboidrato, fornece energia para o funcionamento das células (Rodrigo Avelar, 1º. Alfa)
+Manteiga: lipídeo -fornece energia (Suzane Reis, 1º. Beta)
+Copo de leite: proteína = papel estrutural e de controle (Valéria Coelho, 1º. Alfa)
+
+---
+
+<XPL_ED_07> [184 tokens]
+
+Pergunte ao comandante.
+“Em uma viagem vindo de Foz do Iguaçu, comecei a prestar atenção num detalhe: o fim da asa do 737-800NG tem uma subida na ponta. Para que ela serve?”
+Essas extensões viradas para cima nas pontas das asas chamam-se winglets e melhoram a aerodinâmica da aeronave. Apesar de representar um grande avanço da engenharia aeronáutica, esse dispositivo já existe na natureza há milhões de anos. Observe que as grandes aves, como o condor, a águia e o urubu, possuem algumas penas viradas para cima nas pontas das asas. Isso faz com que o ar passe mais suavemente pelas asas e permite que elas planem por longos períodos, gastando o mínimo possível de energia enquanto procuram alimento ou defendem seu território.
+
+---
+
+<XPL_ED_08> [302 tokens]
+
+1 – O que é o FIES?
+O Fundo de Financiamento ao Estudante do Ensino Superior (FIES) é um programa do Ministério da Educação destinado a financiar a graduação na educação superior de estudantes matriculados em instituições não gratuitas. O FIES foi criado em 1999 e a partir deste ano passa a funcionar com importantes mudanças que facilitaram ainda mais a contratação do financiamento por parte dos estudantes.
+2 – Quem pode se candidatar ao FIES?
+Podem solicitar o financiamento pelo FIES os estudantes regularmente matriculados em cursos de graduação não gratuitos que tenham obtido avaliação positiva no Sistema Nacional de Avaliação da Educação Superior (SINAES) e que seja oferecido por instituição de ensino superior participante do Programa.
+O estudante somente poderá solicitar o financiamento para um único curso de graduação em que estiver regularmente matriculado. Não serão considerados regularmente matriculados os estudantes cuja matrícula acadêmica esteja em situação de trancamento geral de disciplinas durante o período de inscrição no FIES.
+
+---
+
+<XPL_FD_01> [303 tokens]
+
+FALANTE1 algum erro senhor fiscal
+FALANTE2 nas contas não
+FALANTE1 e contabilmente
+FALANTE2 há um senão de ordem lógica que não invalida a exatidão dos dados
+FALANTE1 senão lógico diga logo qual é meu amigo
+FALANTE2 você lançou no débito o quê
+FALANTE1 os pagamentos
+FALANTE2 e no crédito
+FALANTE1 as receitas no final botei o saldo do banco no débito para igualar
+FALANTE2 há um engano
+FALANTE1 não está certo
+FALANTE2 você inverteu as bolas o que era débito colocou no crédito e vice-versa feriu a lógica contábil
+FALANTE1 vou acertar no mês que vem já que a gente está com a mão na massa eu acho que a escrita incompleta tem o problema do dinheiro em banco como é que se pode fazer seu fiscal
+FALANTE2 há dois caminhos primeiro abrir registros para o banco seria o caixa do condomínio no banco
+FALANTE1 mas pode lançar tudo no caixa não seria mais simples
+FALANTE2 seria o segundo caminho é de fato o mais simples
+FALANTE1 como seria esse segundo caminho
+FALANTE2 todos os cheques e valores em espécie recebidos seriam débitos do caixa o saldo também os depósitos como saída seriam créditos
+
+---
+
+<XPL_FD_03> [303 tokens]
+
+PEDRO no segundo bloco nós tivemos agora a participação do do frei antônio mozart que é da comissão de bioética da da cnbb é colocando a questão do aborto na ótica da igreja católica e qual a posição da sua igreja nessa questão inicialmente do aborto
+JAIR bem boa noite a todos primeiro eu quero dar parabéns à band pela inteligência do espaço democrático pra se debater um assunto como esse porque quando um religioso vai falar se rotula que é só questão de religião então o que ele fala não interessa não em base nenhuma joga fora bem nós evangélicos então parabéns parabéns kyle parabéns à rede bandeirantes por estar mais uma vez na frente na questão do jornalismo de dando oportunidade pros contrários se manifestarem é nós somos contra o aborto isso eu quero trafegar no eixo científico teológico porque não é uma questão religiosa idiota nós somos contra aborto tá acabado porque deus não não não bem primeiro quem define a vida na ciência é a biologia a biologia é que define na ciência onde começa a vida a vida começa na concepção ela é contínua quer intra ou extra-uterina até a morte.
+
+---
+
+<XPL_FD_05> [108 tokens]
+
+JOÃO mas qual é a sua contestação você quer dizer você acha que ele é um frangueiro é isso
+
+JOANA não não não eu assim eu vou primeiro elogiar pra depois pra depois eu acho que o john é um líder eu acho que um grande time precisa de um líder no gol você precisa se sentir confortável
+
+FALANTE1 e o luizinho não é
+
+JOANA o luizinho não é
+
+FALANTE1 quer dizer tá um a zero pro john
+
+JOANA tá uma a zero pro john tá certo
+
+---
+
+<XPL_FD_06> [301 tokens]
+
+FALANTE1 considerando que nós temos um grave problema de informalidade 50% da força de trabalho economicamente ativa está na informalidade o que você pretende fazer para reduzir esse grave problema que ameaça a condição de vida digna inclusive os direitos trabalhistas dos cidadãos brasileiros
+FALANTE2 boa noite aos telespectadores e aos candidatos uma das grandes conquistas do governo do presidente lula foi a melhoria na questão da formalização do trabalho no brasil até 2005 o que a gente via era esse processo do bico do jeito para poder ter uma renda ou até sobreviver com o governo do presidente lula nós aumentamos bastante a formalização do trabalho tanto é assim que batemos todos os recordes na geração de emprego com carteira assinada e criamos 14 5 milhões de empregos até o momento acredito que até o final do ano nós chegaremos perto dos 15 milhões de postos de trabalhos criados contribuiu para isso necessariamente a expansão do mercado interno no brasil o que permitiu que houvesse uma maior produção maior consumo e portanto mais emprego no brasil.
