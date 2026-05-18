@@ -1,0 +1,3628 @@
+{
+    "CAPACITAR": {
+        "ESPANHOL": {
+            "avg_ppl": 70.46243165068006,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 221,
+                    "ppl": 59.81218553110043
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 234,
+                    "ppl": 43.180858650190586
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 208,
+                    "ppl": 53.73402745392493
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 245,
+                    "ppl": 54.74121407614095
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 210,
+                    "ppl": 117.0631940591655
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 245,
+                    "ppl": 104.37301377186084
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 192,
+                    "ppl": 81.93800658072043
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 218,
+                    "ppl": 48.856953082336844
+                }
+            ]
+        },
+        "FRANCÊS": {
+            "avg_ppl": 52.24236416226282,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 241,
+                    "ppl": 86.44215978520747
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 251,
+                    "ppl": 42.119947084823124
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 234,
+                    "ppl": 34.518431088443016
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 259,
+                    "ppl": 37.5479915078043
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 244,
+                    "ppl": 51.643486071415545
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 278,
+                    "ppl": 78.91076081695766
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 224,
+                    "ppl": 58.83189519132601
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 254,
+                    "ppl": 27.924241752125436
+                }
+            ]
+        },
+        "GALEGO": {
+            "avg_ppl": 152.35946683757896,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 238,
+                    "ppl": 112.89175761608759
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 252,
+                    "ppl": 80.09210463991573
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 215,
+                    "ppl": 115.56923914376455
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 261,
+                    "ppl": 91.6112248593389
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 212,
+                    "ppl": 259.6979671426758
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 264,
+                    "ppl": 233.20483125489542
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 194,
+                    "ppl": 207.75113649954224
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 218,
+                    "ppl": 118.05747354441156
+                }
+            ]
+        },
+        "INGLÊS": {
+            "avg_ppl": 75.67651297349886,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 219,
+                    "ppl": 68.18669841365177
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 224,
+                    "ppl": 52.601027455298485
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 189,
+                    "ppl": 43.54754379280216
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 220,
+                    "ppl": 69.96825434258707
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 210,
+                    "ppl": 77.26071500495235
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 231,
+                    "ppl": 109.03692978876016
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 186,
+                    "ppl": 110.48926694845196
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 195,
+                    "ppl": 74.32166804148693
+                }
+            ]
+        },
+        "MANDARIM": {
+            "avg_ppl": 80.8372189177839,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 359,
+                    "ppl": 76.03138687542503
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 370,
+                    "ppl": 76.56032373715497
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 315,
+                    "ppl": 99.80997682575733
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 408,
+                    "ppl": 79.97528759455058
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 333,
+                    "ppl": 146.0065725310442
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 437,
+                    "ppl": 68.116959161649
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 365,
+                    "ppl": 47.03003534625951
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 354,
+                    "ppl": 53.16720927043059
+                }
+            ]
+        },
+        "PB NATIVO": {
+            "avg_ppl": 61.342704500898776,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 230,
+                    "ppl": 45.54139239774262
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 259,
+                    "ppl": 38.03154899057197
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 228,
+                    "ppl": 57.30793099248615
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 239,
+                    "ppl": 35.41414277375455
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 203,
+                    "ppl": 108.97159434654284
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 269,
+                    "ppl": 73.07308006978147
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 197,
+                    "ppl": 66.09776472083215
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 231,
+                    "ppl": 66.30418171547844
+                }
+            ]
+        },
+        "RUSSO": {
+            "avg_ppl": 67.36749916527896,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 359,
+                    "ppl": 73.82269906827128
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 400,
+                    "ppl": 54.060367424609915
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 324,
+                    "ppl": 86.22294791965506
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 382,
+                    "ppl": 73.61428468190229
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 362,
+                    "ppl": 81.36241087437688
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 426,
+                    "ppl": 73.67373640646974
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 352,
+                    "ppl": 54.204516462637734
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 356,
+                    "ppl": 41.97903048430872
+                }
+            ]
+        },
+        "ÁRABE": {
+            "avg_ppl": 115.04602723671583,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 401,
+                    "ppl": 105.70287937145108
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 408,
+                    "ppl": 95.5368596904932
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 366,
+                    "ppl": 178.72490127124894
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 483,
+                    "ppl": 166.95525612984548
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 411,
+                    "ppl": 167.8761730751884
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 625,
+                    "ppl": 82.79222468585492
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 760,
+                    "ppl": 28.257311106795004
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 365,
+                    "ppl": 94.52261256284962
+                }
+            ]
+        }
+    },
+    "COMPARTILHAR": {
+        "ESPANHOL": {
+            "avg_ppl": 71.60872396494972,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 339,
+                    "ppl": 110.90774721070625
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 376,
+                    "ppl": 70.58194854727014
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 276,
+                    "ppl": 69.36326963767155
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 394,
+                    "ppl": 71.03607774838159
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 185,
+                    "ppl": 83.0406394660235
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 177,
+                    "ppl": 24.722661179645257
+                }
+            ]
+        },
+        "FRANCÊS": {
+            "avg_ppl": 109.32368662265475,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 352,
+                    "ppl": 171.26079692432313
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 389,
+                    "ppl": 94.02686431962748
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 275,
+                    "ppl": 116.49465612289181
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 417,
+                    "ppl": 84.5798030295236
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 194,
+                    "ppl": 165.19100229947028
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 193,
+                    "ppl": 24.388997040092196
+                }
+            ]
+        },
+        "GALEGO": {
+            "avg_ppl": 144.77843252430378,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 360,
+                    "ppl": 169.27563751814608
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 394,
+                    "ppl": 96.51190664448927
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 296,
+                    "ppl": 155.22987659371157
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 409,
+                    "ppl": 98.72602362750484
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 197,
+                    "ppl": 212.69829907374432
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 183,
+                    "ppl": 136.2288516882265
+                }
+            ]
+        },
+        "INGLÊS": {
+            "avg_ppl": 99.04909498740948,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 331,
+                    "ppl": 145.96000327007636
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 364,
+                    "ppl": 86.63693178250436
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 271,
+                    "ppl": 107.87565830466326
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 383,
+                    "ppl": 75.42193762864659
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 192,
+                    "ppl": 118.8279421239777
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 138,
+                    "ppl": 59.572096814588505
+                }
+            ]
+        },
+        "MANDARIM": {
+            "avg_ppl": 36.185323714775656,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 733,
+                    "ppl": 35.99617371983693
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 803,
+                    "ppl": 19.40341988355739
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 577,
+                    "ppl": 33.250658569820104
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 685,
+                    "ppl": 29.180859078484236
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 378,
+                    "ppl": 44.62897161571085
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 326,
+                    "ppl": 54.65185942124444
+                }
+            ]
+        },
+        "PB NATIVO": {
+            "avg_ppl": 68.16684357616465,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 339,
+                    "ppl": 120.49989297380131
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 378,
+                    "ppl": 56.04639279293314
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 271,
+                    "ppl": 64.26850674589316
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 394,
+                    "ppl": 65.73072191970957
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 177,
+                    "ppl": 84.12476920331343
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 188,
+                    "ppl": 18.330777821337296
+                }
+            ]
+        },
+        "RUSSO": {
+            "avg_ppl": 114.25276751708923,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 532,
+                    "ppl": 192.30530218911696
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 613,
+                    "ppl": 85.35335482074002
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 436,
+                    "ppl": 121.30561934284802
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 536,
+                    "ppl": 102.85844372225992
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 294,
+                    "ppl": 120.71780125961635
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 272,
+                    "ppl": 62.976083767953995
+                }
+            ]
+        },
+        "ÁRABE": {
+            "avg_ppl": 153.4979750911011,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 510,
+                    "ppl": 275.27882693334914
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 610,
+                    "ppl": 106.92352886147451
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 458,
+                    "ppl": 188.43503748942314
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 560,
+                    "ppl": 101.9085547987338
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 303,
+                    "ppl": 150.83517251191316
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 249,
+                    "ppl": 97.60672995171291
+                }
+            ]
+        }
+    },
+    "EXPLICAR": {
+        "ESPANHOL": {
+            "avg_ppl": 52.343283764616366,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 226,
+                    "ppl": 38.137176791873976
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 235,
+                    "ppl": 58.751241373471544
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 221,
+                    "ppl": 27.421593728354637
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 250,
+                    "ppl": 12.023841953395278
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 189,
+                    "ppl": 18.239794160809765
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 212,
+                    "ppl": 16.018588487095972
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 281,
+                    "ppl": 35.655624289511685
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 248,
+                    "ppl": 151.97441103241454
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 110,
+                    "ppl": 129.361685856143
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 231,
+                    "ppl": 35.84887997309325
+                }
+            ]
+        },
+        "FRANCÊS": {
+            "avg_ppl": 34.99583989008258,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 249,
+                    "ppl": 32.89695399454209
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 261,
+                    "ppl": 40.51882696194153
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 232,
+                    "ppl": 32.44277097183858
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 252,
+                    "ppl": 13.711715432178373
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 208,
+                    "ppl": 22.681564712849962
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 241,
+                    "ppl": 21.35397810585549
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 310,
+                    "ppl": 31.790165789369173
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 295,
+                    "ppl": 68.1539647240714
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 139,
+                    "ppl": 50.77865898911601
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 257,
+                    "ppl": 35.62979921906316
+                }
+            ]
+        },
+        "GALEGO": {
+            "avg_ppl": 102.09225948528179,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 247,
+                    "ppl": 45.40915079180016
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 253,
+                    "ppl": 123.85285169461376
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 231,
+                    "ppl": 47.279687829852506
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 269,
+                    "ppl": 16.054674012100918
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 192,
+                    "ppl": 42.848408157829034
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 224,
+                    "ppl": 28.949706180994426
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 288,
+                    "ppl": 77.3085860022832
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 253,
+                    "ppl": 341.86956111708884
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 118,
+                    "ppl": 220.4286572981126
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 243,
+                    "ppl": 76.92131176814235
+                }
+            ]
+        },
+        "INGLÊS": {
+            "avg_ppl": 54.468317395232205,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 221,
+                    "ppl": 53.61864581617188
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 225,
+                    "ppl": 49.52041438696783
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 210,
+                    "ppl": 58.47134226648301
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 221,
+                    "ppl": 24.687826606810752
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 189,
+                    "ppl": 30.87176447853204
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 219,
+                    "ppl": 28.446695357673942
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 317,
+                    "ppl": 43.288669663412286
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 262,
+                    "ppl": 116.77846773112832
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 116,
+                    "ppl": 100.44512025446888
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 260,
+                    "ppl": 38.55422739067315
+                }
+            ]
+        },
+        "MANDARIM": {
+            "avg_ppl": 22.502296639545612,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 510,
+                    "ppl": 31.110927617528276
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 534,
+                    "ppl": 24.35038254660773
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 500,
+                    "ppl": 19.28404110827689
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 437,
+                    "ppl": 16.748130788598314
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 384,
+                    "ppl": 33.960480350881404
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 466,
+                    "ppl": 19.178899528785465
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 615,
+                    "ppl": 17.708536341843608
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 629,
+                    "ppl": 21.913280672728167
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 247,
+                    "ppl": 20.4489972185751
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 564,
+                    "ppl": 20.31929022163119
+                }
+            ]
+        },
+        "PB NATIVO": {
+            "avg_ppl": 44.56808406042301,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 233,
+                    "ppl": 25.9522731468642
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 239,
+                    "ppl": 59.380238558488664
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 217,
+                    "ppl": 21.671697092118784
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 255,
+                    "ppl": 11.798656039593583
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 182,
+                    "ppl": 18.62417838043357
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 212,
+                    "ppl": 10.125944658844437
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 277,
+                    "ppl": 34.282264581352436
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 236,
+                    "ppl": 146.95257570879818
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 109,
+                    "ppl": 88.60455892851733
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 227,
+                    "ppl": 28.288453509218925
+                }
+            ]
+        },
+        "RUSSO": {
+            "avg_ppl": 66.31683574290199,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 412,
+                    "ppl": 50.841264334042336
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 400,
+                    "ppl": 113.14984877557296
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 405,
+                    "ppl": 41.99601848233562
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 330,
+                    "ppl": 26.386478622358073
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 320,
+                    "ppl": 69.1846305526128
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 382,
+                    "ppl": 27.762981356783737
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 426,
+                    "ppl": 62.67315802120155
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 418,
+                    "ppl": 110.00431164176676
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 174,
+                    "ppl": 99.21361542200913
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 413,
+                    "ppl": 61.95605022033694
+                }
+            ]
+        },
+        "ÁRABE": {
+            "avg_ppl": 122.69770298249928,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 432,
+                    "ppl": 108.6170142247593
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 414,
+                    "ppl": 161.23729455572595
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 402,
+                    "ppl": 151.66492995207003
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 390,
+                    "ppl": 46.914080841644626
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 318,
+                    "ppl": 187.3542541874235
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 410,
+                    "ppl": 76.13928451490762
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 467,
+                    "ppl": 77.16208156880596
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 460,
+                    "ppl": 165.55508035552776
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 184,
+                    "ppl": 147.1167069017462
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 437,
+                    "ppl": 105.21630272238193
+                }
+            ]
+        }
+    },
+    "EXPLORAR": {
+        "ESPANHOL": {
+            "avg_ppl": 2335.4698750488574,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 423,
+                    "ppl": 38.30481182361342
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 301,
+                    "ppl": 123.24557918944569
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 27,
+                    "ppl": 518.515976674915
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 424,
+                    "ppl": 57.28492665497436
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 8,
+                    "ppl": 26761.467736837054
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 127,
+                    "ppl": 65.81763036295577
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 479,
+                    "ppl": 55.01870748827863
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 382,
+                    "ppl": 92.05415214522607
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 351,
+                    "ppl": 56.60220462859653
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 360,
+                    "ppl": 160.8603127174701
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 390,
+                    "ppl": 43.87990500352172
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 400,
+                    "ppl": 52.58655706023828
+                }
+            ]
+        },
+        "FRANCÊS": {
+            "avg_ppl": 927.5119819836694,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 467,
+                    "ppl": 45.566394176277115
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 322,
+                    "ppl": 121.92867947168372
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 29,
+                    "ppl": 321.13069883811005
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 446,
+                    "ppl": 72.84222099758637
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 8,
+                    "ppl": 10101.786490585246
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 135,
+                    "ppl": 69.44176788527218
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 531,
+                    "ppl": 36.88803589801739
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 394,
+                    "ppl": 83.53205940027333
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 388,
+                    "ppl": 52.50316037486349
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 392,
+                    "ppl": 141.1459261522669
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 410,
+                    "ppl": 37.725321101927605
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 432,
+                    "ppl": 45.65302892250896
+                }
+            ]
+        },
+        "GALEGO": {
+            "avg_ppl": 2359.0155872969576,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 443,
+                    "ppl": 51.58808373497921
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 325,
+                    "ppl": 137.60266442270557
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 26,
+                    "ppl": 674.4872226887055
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 449,
+                    "ppl": 71.02852455093027
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 8,
+                    "ppl": 26761.467736837054
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 142,
+                    "ppl": 54.27595215518961
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 499,
+                    "ppl": 60.55741473764723
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 397,
+                    "ppl": 130.18190270588033
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 375,
+                    "ppl": 75.14204708267556
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 414,
+                    "ppl": 159.60498693696445
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 416,
+                    "ppl": 66.68841705650114
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 438,
+                    "ppl": 65.5620946542606
+                }
+            ]
+        },
+        "INGLÊS": {
+            "avg_ppl": 279.55515434949655,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 398,
+                    "ppl": 44.25181945296205
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 281,
+                    "ppl": 158.3152138404962
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 23,
+                    "ppl": 623.6833073523776
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 387,
+                    "ppl": 72.70643405367798
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 9,
+                    "ppl": 1820.1102500634884
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 119,
+                    "ppl": 90.11737054973256
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 413,
+                    "ppl": 68.11858321587077
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 335,
+                    "ppl": 107.37590531578903
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 322,
+                    "ppl": 74.11863043113458
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 347,
+                    "ppl": 171.7157759941093
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 357,
+                    "ppl": 52.27568171879566
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 353,
+                    "ppl": 71.87288020552462
+                }
+            ]
+        },
+        "MANDARIM": {
+            "avg_ppl": 444.86273653635243,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 612,
+                    "ppl": 97.0617085369079
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 445,
+                    "ppl": 148.88295743388727
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 36,
+                    "ppl": 1581.3278787346592
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 555,
+                    "ppl": 101.07442476377668
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 12,
+                    "ppl": 3049.0225172653345
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 202,
+                    "ppl": 85.39402345793818
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 915,
+                    "ppl": 16.897611479351912
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 616,
+                    "ppl": 46.39599029296325
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 570,
+                    "ppl": 60.5446528792582
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 628,
+                    "ppl": 76.48406251698653
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 629,
+                    "ppl": 35.198658691819325
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 678,
+                    "ppl": 40.06835238334634
+                }
+            ]
+        },
+        "PB NATIVO": {
+            "avg_ppl": 1237.9020795838558,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 123,
+                    "ppl": 47.81717624319392
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 135,
+                    "ppl": 48.802340958300206
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 310,
+                    "ppl": 77.69340130842306
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 26,
+                    "ppl": 557.679459145877
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 427,
+                    "ppl": 47.21026731469909
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 9,
+                    "ppl": 14924.091696489615
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 132,
+                    "ppl": 46.05250909532819
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 493,
+                    "ppl": 33.320772511982405
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 322,
+                    "ppl": 64.09980992416601
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 352,
+                    "ppl": 41.763032431104754
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 358,
+                    "ppl": 131.21481942412672
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 407,
+                    "ppl": 33.75040522831107
+                },
+                {
+                    "text_id": 12,
+                    "num_tokens": 403,
+                    "ppl": 39.23134451499683
+                }
+            ]
+        },
+        "RUSSO": {
+            "avg_ppl": 359.22663636226093,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 674,
+                    "ppl": 57.01092586830255
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 474,
+                    "ppl": 128.26975577337066
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 36,
+                    "ppl": 494.4115101650634
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 659,
+                    "ppl": 57.79054384405355
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 10,
+                    "ppl": 3322.07238016149
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 213,
+                    "ppl": 49.95030561932915
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 883,
+                    "ppl": 18.162161495249986
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 686,
+                    "ppl": 37.08831618615508
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 650,
+                    "ppl": 47.831269341582505
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 680,
+                    "ppl": 48.03635006606609
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 746,
+                    "ppl": 23.816257435327238
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 735,
+                    "ppl": 26.27986039114098
+                }
+            ]
+        },
+        "ÁRABE": {
+            "avg_ppl": 2012.9253145967143,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 891,
+                    "ppl": 217.44160924775534
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 595,
+                    "ppl": 274.93972066793174
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 37,
+                    "ppl": 3457.638701622375
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 360,
+                    "ppl": 276.86787351177077
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 216,
+                    "ppl": 498.8417227238689
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 9,
+                    "ppl": 22562.058869163986
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 115,
+                    "ppl": 318.0171985903943
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 266,
+                    "ppl": 151.04663276821597
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 689,
+                    "ppl": 79.20684193089241
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 538,
+                    "ppl": 128.72770947014308
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 359,
+                    "ppl": 103.39035277930013
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 361,
+                    "ppl": 79.6091153765038
+                },
+                {
+                    "text_id": 12,
+                    "num_tokens": 307,
+                    "ppl": 23.85627148739867
+                },
+                {
+                    "text_id": 13,
+                    "num_tokens": 357,
+                    "ppl": 9.311785013463478
+                }
+            ]
+        }
+    },
+    "FAZER": {
+        "ESPANHOL": {
+            "avg_ppl": 80.08035100356147,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 486,
+                    "ppl": 12.209699101730926
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 257,
+                    "ppl": 51.97065863012934
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 350,
+                    "ppl": 21.448649194538795
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 457,
+                    "ppl": 23.73941881383508
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 239,
+                    "ppl": 100.29856982087792
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 462,
+                    "ppl": 24.503858735404624
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 462,
+                    "ppl": 12.887501467080396
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 455,
+                    "ppl": 20.55206408719501
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 474,
+                    "ppl": 15.015132459052506
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 302,
+                    "ppl": 47.11421806842871
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 251,
+                    "ppl": 74.4762732381397
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 134,
+                    "ppl": 280.70406591346074
+                },
+                {
+                    "text_id": 12,
+                    "num_tokens": 426,
+                    "ppl": 64.92176725542588
+                },
+                {
+                    "text_id": 13,
+                    "num_tokens": 452,
+                    "ppl": 64.75234374108013
+                },
+                {
+                    "text_id": 14,
+                    "num_tokens": 409,
+                    "ppl": 119.95795700368357
+                },
+                {
+                    "text_id": 15,
+                    "num_tokens": 115,
+                    "ppl": 448.57558432096556
+                },
+                {
+                    "text_id": 16,
+                    "num_tokens": 473,
+                    "ppl": 34.81073457933008
+                },
+                {
+                    "text_id": 17,
+                    "num_tokens": 500,
+                    "ppl": 31.180870831350862
+                },
+                {
+                    "text_id": 18,
+                    "num_tokens": 399,
+                    "ppl": 72.40730180595817
+                }
+            ]
+        },
+        "FRANCÊS": {
+            "avg_ppl": 55.962166728544105,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 511,
+                    "ppl": 14.348679307810075
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 280,
+                    "ppl": 50.29381986528343
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 374,
+                    "ppl": 25.41109428629317
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 484,
+                    "ppl": 31.35159223243955
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 263,
+                    "ppl": 76.69621300764808
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 487,
+                    "ppl": 23.700702616915212
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 476,
+                    "ppl": 16.405411281117107
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 486,
+                    "ppl": 18.622446724385224
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 506,
+                    "ppl": 16.131599930868358
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 317,
+                    "ppl": 43.15219626078186
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 291,
+                    "ppl": 38.984881376393446
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 151,
+                    "ppl": 139.50904321144782
+                },
+                {
+                    "text_id": 12,
+                    "num_tokens": 458,
+                    "ppl": 45.31093193720286
+                },
+                {
+                    "text_id": 13,
+                    "num_tokens": 519,
+                    "ppl": 42.03595782200884
+                },
+                {
+                    "text_id": 14,
+                    "num_tokens": 459,
+                    "ppl": 68.86172350783487
+                },
+                {
+                    "text_id": 15,
+                    "num_tokens": 128,
+                    "ppl": 312.85115648911875
+                },
+                {
+                    "text_id": 16,
+                    "num_tokens": 496,
+                    "ppl": 28.111065318235788
+                },
+                {
+                    "text_id": 17,
+                    "num_tokens": 533,
+                    "ppl": 25.817089180196035
+                },
+                {
+                    "text_id": 18,
+                    "num_tokens": 461,
+                    "ppl": 45.685563486357374
+                }
+            ]
+        },
+        "GALEGO": {
+            "avg_ppl": 105.94164917814294,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 492,
+                    "ppl": 20.3015428976521
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 261,
+                    "ppl": 70.55674463261158
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 378,
+                    "ppl": 24.81106896079128
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 504,
+                    "ppl": 22.884193544873572
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 268,
+                    "ppl": 129.9967389423092
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 485,
+                    "ppl": 32.8753059209798
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 460,
+                    "ppl": 17.918825427288446
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 447,
+                    "ppl": 48.599424004509345
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 513,
+                    "ppl": 15.749795080595376
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 315,
+                    "ppl": 50.93184406153125
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 258,
+                    "ppl": 79.04539414760072
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 128,
+                    "ppl": 552.0210806031674
+                },
+                {
+                    "text_id": 12,
+                    "num_tokens": 458,
+                    "ppl": 78.58021942953165
+                },
+                {
+                    "text_id": 13,
+                    "num_tokens": 482,
+                    "ppl": 90.99201463509665
+                },
+                {
+                    "text_id": 14,
+                    "num_tokens": 407,
+                    "ppl": 207.25364203396884
+                },
+                {
+                    "text_id": 15,
+                    "num_tokens": 126,
+                    "ppl": 370.4857376174878
+                },
+                {
+                    "text_id": 16,
+                    "num_tokens": 515,
+                    "ppl": 42.747849074969594
+                },
+                {
+                    "text_id": 17,
+                    "num_tokens": 516,
+                    "ppl": 47.20052079391618
+                },
+                {
+                    "text_id": 18,
+                    "num_tokens": 439,
+                    "ppl": 109.93939257583496
+                }
+            ]
+        },
+        "INGLÊS": {
+            "avg_ppl": 67.5195588171599,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 462,
+                    "ppl": 15.216779872418341
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 287,
+                    "ppl": 43.86544919888636
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 355,
+                    "ppl": 24.57238377017748
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 417,
+                    "ppl": 34.37975784835736
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 248,
+                    "ppl": 95.42367575448735
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 458,
+                    "ppl": 28.54626945177284
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 486,
+                    "ppl": 14.77575527509169
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 461,
+                    "ppl": 25.75498956657126
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 459,
+                    "ppl": 19.07989382578543
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 327,
+                    "ppl": 28.876325975138155
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 266,
+                    "ppl": 60.36298760727039
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 148,
+                    "ppl": 143.60668506720486
+                },
+                {
+                    "text_id": 12,
+                    "num_tokens": 416,
+                    "ppl": 54.97818939564652
+                },
+                {
+                    "text_id": 13,
+                    "num_tokens": 461,
+                    "ppl": 50.17384952384783
+                },
+                {
+                    "text_id": 14,
+                    "num_tokens": 403,
+                    "ppl": 110.62369640017256
+                },
+                {
+                    "text_id": 15,
+                    "num_tokens": 118,
+                    "ppl": 418.93046211540957
+                },
+                {
+                    "text_id": 16,
+                    "num_tokens": 484,
+                    "ppl": 30.89739667372212
+                },
+                {
+                    "text_id": 17,
+                    "num_tokens": 490,
+                    "ppl": 28.35858185013934
+                },
+                {
+                    "text_id": 18,
+                    "num_tokens": 420,
+                    "ppl": 54.44848835393859
+                }
+            ]
+        },
+        "MANDARIM": {
+            "avg_ppl": 27.876076518615044,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 846,
+                    "ppl": 26.222648843414103
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 536,
+                    "ppl": 38.15080905238291
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 658,
+                    "ppl": 27.245496692008157
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 877,
+                    "ppl": 26.888974621115565
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 531,
+                    "ppl": 27.48380614816069
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 823,
+                    "ppl": 36.87394053835959
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 699,
+                    "ppl": 27.118410734163657
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 886,
+                    "ppl": 21.4449164771605
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 849,
+                    "ppl": 21.57091341653632
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 589,
+                    "ppl": 31.68238840925031
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 516,
+                    "ppl": 24.996228813990324
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 283,
+                    "ppl": 47.81798568577329
+                },
+                {
+                    "text_id": 12,
+                    "num_tokens": 791,
+                    "ppl": 24.591982448757708
+                },
+                {
+                    "text_id": 13,
+                    "num_tokens": 832,
+                    "ppl": 16.857919029844197
+                },
+                {
+                    "text_id": 14,
+                    "num_tokens": 746,
+                    "ppl": 27.83407650327151
+                },
+                {
+                    "text_id": 15,
+                    "num_tokens": 235,
+                    "ppl": 53.15542185033214
+                },
+                {
+                    "text_id": 16,
+                    "num_tokens": 876,
+                    "ppl": 15.798076184576288
+                },
+                {
+                    "text_id": 17,
+                    "num_tokens": 867,
+                    "ppl": 16.56077777754174
+                },
+                {
+                    "text_id": 18,
+                    "num_tokens": 856,
+                    "ppl": 17.350680627046813
+                }
+            ]
+        },
+        "PB NATIVO": {
+            "avg_ppl": 249.30300898025945,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 474,
+                    "ppl": 9.642590664164064
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 261,
+                    "ppl": 28.48345159101222
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 369,
+                    "ppl": 13.786014054760683
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 13,
+                    "ppl": 93.39404304501173
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 139,
+                    "ppl": 26.54662893222243
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 245,
+                    "ppl": 76.28584765591803
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 461,
+                    "ppl": 19.25098920322888
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 448,
+                    "ppl": 14.16196574161933
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 444,
+                    "ppl": 18.059661611857678
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 53,
+                    "ppl": 22.26633157471613
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 363,
+                    "ppl": 15.829694111334382
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 320,
+                    "ppl": 26.760610205678567
+                },
+                {
+                    "text_id": 12,
+                    "num_tokens": 9,
+                    "ppl": 1161.5890663105538
+                },
+                {
+                    "text_id": 13,
+                    "num_tokens": 7,
+                    "ppl": 3326.8565980419994
+                },
+                {
+                    "text_id": 14,
+                    "num_tokens": 15,
+                    "ppl": 315.0342160603881
+                },
+                {
+                    "text_id": 15,
+                    "num_tokens": 61,
+                    "ppl": 145.21961251403258
+                },
+                {
+                    "text_id": 16,
+                    "num_tokens": 430,
+                    "ppl": 37.032967833150664
+                },
+                {
+                    "text_id": 17,
+                    "num_tokens": 494,
+                    "ppl": 33.28105091775465
+                },
+                {
+                    "text_id": 18,
+                    "num_tokens": 399,
+                    "ppl": 73.53766176139239
+                },
+                {
+                    "text_id": 19,
+                    "num_tokens": 112,
+                    "ppl": 211.94404232067967
+                },
+                {
+                    "text_id": 20,
+                    "num_tokens": 503,
+                    "ppl": 16.448104416023355
+                },
+                {
+                    "text_id": 21,
+                    "num_tokens": 529,
+                    "ppl": 17.298792833476586
+                },
+                {
+                    "text_id": 22,
+                    "num_tokens": 427,
+                    "ppl": 31.259265144992106
+                }
+            ]
+        },
+        "RUSSO": {
+            "avg_ppl": 74.31186401733089,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 736,
+                    "ppl": 24.69949548805667
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 442,
+                    "ppl": 65.22573248764093
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 573,
+                    "ppl": 40.63970445935132
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 712,
+                    "ppl": 32.06990075805923
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 424,
+                    "ppl": 54.69756176522771
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 671,
+                    "ppl": 44.77411841639417
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 622,
+                    "ppl": 31.292223837986068
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 732,
+                    "ppl": 41.962039353642204
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 734,
+                    "ppl": 23.204981596257777
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 443,
+                    "ppl": 70.40309146027059
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 427,
+                    "ppl": 57.70534634300876
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 216,
+                    "ppl": 154.56395041328372
+                },
+                {
+                    "text_id": 12,
+                    "num_tokens": 637,
+                    "ppl": 98.65143598231035
+                },
+                {
+                    "text_id": 13,
+                    "num_tokens": 650,
+                    "ppl": 68.33948983269984
+                },
+                {
+                    "text_id": 14,
+                    "num_tokens": 611,
+                    "ppl": 93.27908317942209
+                },
+                {
+                    "text_id": 15,
+                    "num_tokens": 178,
+                    "ppl": 319.8146726791689
+                },
+                {
+                    "text_id": 16,
+                    "num_tokens": 663,
+                    "ppl": 58.712565704823504
+                },
+                {
+                    "text_id": 17,
+                    "num_tokens": 647,
+                    "ppl": 64.458667733961
+                },
+                {
+                    "text_id": 18,
+                    "num_tokens": 638,
+                    "ppl": 67.43135483772211
+                }
+            ]
+        },
+        "ÁRABE": {
+            "avg_ppl": 80.20851600754082,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 834,
+                    "ppl": 48.77584274822537
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 503,
+                    "ppl": 88.10249415563997
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 659,
+                    "ppl": 68.46718634246137
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 887,
+                    "ppl": 50.10792036358099
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 489,
+                    "ppl": 70.21119414640435
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 779,
+                    "ppl": 59.67973978246475
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 669,
+                    "ppl": 59.09167895101308
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 798,
+                    "ppl": 68.33887068615017
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 821,
+                    "ppl": 47.77632290095074
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 552,
+                    "ppl": 111.8074592798451
+                },
+                {
+                    "text_id": 10,
+                    "num_tokens": 468,
+                    "ppl": 104.03265276166071
+                },
+                {
+                    "text_id": 11,
+                    "num_tokens": 268,
+                    "ppl": 164.58928013039028
+                },
+                {
+                    "text_id": 12,
+                    "num_tokens": 769,
+                    "ppl": 59.3732452383898
+                },
+                {
+                    "text_id": 13,
+                    "num_tokens": 714,
+                    "ppl": 63.2015864518241
+                },
+                {
+                    "text_id": 14,
+                    "num_tokens": 716,
+                    "ppl": 88.56852705284534
+                },
+                {
+                    "text_id": 15,
+                    "num_tokens": 212,
+                    "ppl": 223.77321079203153
+                },
+                {
+                    "text_id": 16,
+                    "num_tokens": 762,
+                    "ppl": 50.601703556116796
+                },
+                {
+                    "text_id": 17,
+                    "num_tokens": 717,
+                    "ppl": 46.13805501010112
+                },
+                {
+                    "text_id": 18,
+                    "num_tokens": 747,
+                    "ppl": 51.32483379317999
+                }
+            ]
+        }
+    },
+    "RECOMENDAR": {
+        "ESPANHOL": {
+            "avg_ppl": 60.26973834616725,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 375,
+                    "ppl": 26.799909328795867
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 372,
+                    "ppl": 29.712836301861437
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 336,
+                    "ppl": 24.250517047199356
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 382,
+                    "ppl": 110.9228204413742
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 383,
+                    "ppl": 38.640480759334814
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 366,
+                    "ppl": 77.30718519792914
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 341,
+                    "ppl": 132.3458923477151
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 325,
+                    "ppl": 60.892259439794664
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 423,
+                    "ppl": 41.55574425150067
+                }
+            ]
+        },
+        "FRANCÊS": {
+            "avg_ppl": 57.37762004539172,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 395,
+                    "ppl": 31.544773241807633
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 422,
+                    "ppl": 26.999628245625527
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 395,
+                    "ppl": 25.823232874259123
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 418,
+                    "ppl": 87.67314572282305
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 410,
+                    "ppl": 47.65527877809476
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 405,
+                    "ppl": 74.61347986038072
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 359,
+                    "ppl": 129.18193896881115
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 350,
+                    "ppl": 54.903289936581075
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 439,
+                    "ppl": 38.003812780142496
+                }
+            ]
+        },
+        "GALEGO": {
+            "avg_ppl": 68.0812498033325,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 400,
+                    "ppl": 30.143272138015412
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 401,
+                    "ppl": 36.32707716921829
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 386,
+                    "ppl": 38.055830242871934
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 420,
+                    "ppl": 101.43542973101864
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 400,
+                    "ppl": 48.87390445213344
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 387,
+                    "ppl": 79.7971661031247
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 386,
+                    "ppl": 135.30671116423343
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 346,
+                    "ppl": 90.762433147388
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 445,
+                    "ppl": 52.029424081988665
+                }
+            ]
+        },
+        "INGLÊS": {
+            "avg_ppl": 72.80597825618504,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 356,
+                    "ppl": 36.38320945274137
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 347,
+                    "ppl": 42.841513009472706
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 330,
+                    "ppl": 37.48214366828772
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 368,
+                    "ppl": 99.69420240460494
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 335,
+                    "ppl": 74.1215639181039
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 329,
+                    "ppl": 91.94798789735762
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 329,
+                    "ppl": 148.37141131906023
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 297,
+                    "ppl": 66.55905506080546
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 359,
+                    "ppl": 57.85271757523154
+                }
+            ]
+        },
+        "MANDARIM": {
+            "avg_ppl": 64.8237051121159,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 492,
+                    "ppl": 59.67305264052415
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 514,
+                    "ppl": 90.97418376082017
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 479,
+                    "ppl": 106.32795415414472
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 571,
+                    "ppl": 69.52347112850919
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 588,
+                    "ppl": 77.8269967407863
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 648,
+                    "ppl": 23.221978121417067
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 516,
+                    "ppl": 83.712330452084
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 551,
+                    "ppl": 36.13398306988222
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 632,
+                    "ppl": 36.01939594087531
+                }
+            ]
+        },
+        "PB NATIVO": {
+            "avg_ppl": 34.03996573572418,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 374,
+                    "ppl": 19.624995179161687
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 408,
+                    "ppl": 23.220588488689486
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 378,
+                    "ppl": 21.61268334962715
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 387,
+                    "ppl": 31.75530467466004
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 331,
+                    "ppl": 84.02194016284379
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 331,
+                    "ppl": 34.8887960188656
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 436,
+                    "ppl": 23.155452276221492
+                }
+            ]
+        },
+        "RUSSO": {
+            "avg_ppl": 47.4034703231203,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 604,
+                    "ppl": 33.205003328894605
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 621,
+                    "ppl": 26.38958028082266
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 641,
+                    "ppl": 35.02622373941827
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 627,
+                    "ppl": 54.6720596824418
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 637,
+                    "ppl": 65.33374594751633
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 608,
+                    "ppl": 48.14484986828601
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 546,
+                    "ppl": 79.20004384486381
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 529,
+                    "ppl": 44.704646213505065
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 630,
+                    "ppl": 39.955080002334185
+                }
+            ]
+        },
+        "ÁRABE": {
+            "avg_ppl": 184.76481360005366,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 658,
+                    "ppl": 114.1960227518653
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 642,
+                    "ppl": 110.89695920867447
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 611,
+                    "ppl": 264.923238207299
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 742,
+                    "ppl": 319.0582560051864
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 970,
+                    "ppl": 207.56963250719355
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 707,
+                    "ppl": 139.19839411926336
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 547,
+                    "ppl": 221.30278711867405
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 599,
+                    "ppl": 146.77294974966887
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 685,
+                    "ppl": 138.96508273265803
+                }
+            ]
+        }
+    },
+    "RECRIAR": {
+        "ESPANHOL": {
+            "avg_ppl": 60.70524849147148,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 468,
+                    "ppl": 55.5261613959977
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 200,
+                    "ppl": 45.9876752921999
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 184,
+                    "ppl": 29.188046812072475
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 493,
+                    "ppl": 49.24629493566661
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 481,
+                    "ppl": 51.74325416195024
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 293,
+                    "ppl": 40.832988616039145
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 399,
+                    "ppl": 95.4404217957181
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 460,
+                    "ppl": 103.35742538189545
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 395,
+                    "ppl": 79.72152002622425
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 463,
+                    "ppl": 56.00869649695089
+                }
+            ]
+        },
+        "FRANCÊS": {
+            "avg_ppl": 27.369592363100946,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 558,
+                    "ppl": 25.683374792201867
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 233,
+                    "ppl": 23.628100992528406
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 204,
+                    "ppl": 18.520541411008526
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 593,
+                    "ppl": 21.18228958892909
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 553,
+                    "ppl": 22.263029803703986
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 344,
+                    "ppl": 22.376338714128472
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 455,
+                    "ppl": 41.771347422930305
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 510,
+                    "ppl": 44.36476883012168
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 490,
+                    "ppl": 29.635515038927437
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 576,
+                    "ppl": 24.270617036529664
+                }
+            ]
+        },
+        "GALEGO": {
+            "avg_ppl": 92.46484914832565,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 492,
+                    "ppl": 80.63083414877842
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 216,
+                    "ppl": 99.77652447964607
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 197,
+                    "ppl": 43.434904150583584
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 507,
+                    "ppl": 79.10183888737174
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 522,
+                    "ppl": 59.22109703795576
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 297,
+                    "ppl": 82.14871390922794
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 427,
+                    "ppl": 146.3971825739273
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 462,
+                    "ppl": 173.69766108248643
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 434,
+                    "ppl": 96.06493565874543
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 486,
+                    "ppl": 64.1747995545339
+                }
+            ]
+        },
+        "INGLÊS": {
+            "avg_ppl": 34.18795957545658,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 460,
+                    "ppl": 36.30247080217416
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 192,
+                    "ppl": 31.50539605384115
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 171,
+                    "ppl": 22.64895807211646
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 489,
+                    "ppl": 25.794792102286152
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 489,
+                    "ppl": 25.597448429137692
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 282,
+                    "ppl": 24.620124239392183
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 383,
+                    "ppl": 54.665464453871586
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 459,
+                    "ppl": 47.962593720440715
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 380,
+                    "ppl": 42.66207882670138
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 475,
+                    "ppl": 30.120269054604304
+                }
+            ]
+        },
+        "MANDARIM": {
+            "avg_ppl": 78.56630232423514,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 626,
+                    "ppl": 82.31673563729686
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 279,
+                    "ppl": 121.80205793232369
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 221,
+                    "ppl": 45.79411406864713
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 704,
+                    "ppl": 54.031645485152815
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 603,
+                    "ppl": 78.17535384293991
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 376,
+                    "ppl": 89.27790697905047
+                }
+            ]
+        },
+        "PB NATIVO": {
+            "avg_ppl": 33.29323662520196,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 488,
+                    "ppl": 30.93022455160836
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 217,
+                    "ppl": 20.571545890830006
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 195,
+                    "ppl": 13.92179384679683
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 485,
+                    "ppl": 30.755586231840145
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 477,
+                    "ppl": 39.06678872021547
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 308,
+                    "ppl": 24.89313294218565
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 413,
+                    "ppl": 41.96425041297817
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 456,
+                    "ppl": 63.98718463182154
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 421,
+                    "ppl": 32.23540479417156
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 462,
+                    "ppl": 34.60645422957188
+                }
+            ]
+        },
+        "RUSSO": {
+            "avg_ppl": 74.71729058573597,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 676,
+                    "ppl": 72.82520338569579
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 312,
+                    "ppl": 81.3355292579071
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 225,
+                    "ppl": 65.02744788208416
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 694,
+                    "ppl": 59.75032768042486
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 657,
+                    "ppl": 67.77550378480082
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 408,
+                    "ppl": 84.65380205580918
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 589,
+                    "ppl": 73.63966782213389
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 638,
+                    "ppl": 84.80903067568421
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 572,
+                    "ppl": 93.06569531342865
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 655,
+                    "ppl": 64.29069799939104
+                }
+            ]
+        },
+        "ÁRABE": {
+            "avg_ppl": 144.48178167749154,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 640,
+                    "ppl": 123.60216981111206
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 319,
+                    "ppl": 168.17510395475608
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 241,
+                    "ppl": 85.9078084825562
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 725,
+                    "ppl": 121.88926683822694
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 635,
+                    "ppl": 187.27592160605056
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 407,
+                    "ppl": 243.7660964930754
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 598,
+                    "ppl": 171.15768696088807
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 698,
+                    "ppl": 114.56548311845441
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 596,
+                    "ppl": 137.30837242957446
+                },
+                {
+                    "text_id": 9,
+                    "num_tokens": 659,
+                    "ppl": 91.1699070802213
+                }
+            ]
+        }
+    },
+    "RELATAR": {
+        "ESPANHOL": {
+            "avg_ppl": 74.98748921521859,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 363,
+                    "ppl": 36.41288811216593
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 357,
+                    "ppl": 24.05075152506108
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 339,
+                    "ppl": 18.921066056483383
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 361,
+                    "ppl": 73.90448200040926
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 302,
+                    "ppl": 159.04750003003014
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 324,
+                    "ppl": 73.25152445080141
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 343,
+                    "ppl": 105.04696136026249
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 276,
+                    "ppl": 109.26474018653506
+                }
+            ]
+        },
+        "FRANCÊS": {
+            "avg_ppl": 38.22738803910661,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 404,
+                    "ppl": 35.00788161091058
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 378,
+                    "ppl": 23.814798172802696
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 374,
+                    "ppl": 15.542555404281114
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 396,
+                    "ppl": 37.65969202356703
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 366,
+                    "ppl": 58.10399380605663
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 339,
+                    "ppl": 38.02906459648472
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 422,
+                    "ppl": 42.999459825017496
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 302,
+                    "ppl": 54.66165887373258
+                }
+            ]
+        },
+        "GALEGO": {
+            "avg_ppl": 87.87427428117512,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 405,
+                    "ppl": 34.05722091219545
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 370,
+                    "ppl": 51.1224213550978
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 355,
+                    "ppl": 24.626640685118
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 393,
+                    "ppl": 89.7225153251715
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 336,
+                    "ppl": 138.8906222727224
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 351,
+                    "ppl": 95.04544489172763
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 373,
+                    "ppl": 135.84036734246047
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 303,
+                    "ppl": 133.68896146490766
+                }
+            ]
+        },
+        "INGLÊS": {
+            "avg_ppl": 44.595351718348766,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 336,
+                    "ppl": 32.2521020652526
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 337,
+                    "ppl": 18.334785914433525
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 288,
+                    "ppl": 13.480734818453687
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 353,
+                    "ppl": 36.27941206449896
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 304,
+                    "ppl": 76.37068708239728
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 287,
+                    "ppl": 45.205520547782015
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 340,
+                    "ppl": 67.26314351693986
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 260,
+                    "ppl": 67.57642773703222
+                }
+            ]
+        },
+        "MANDARIM": {
+            "avg_ppl": 90.80359317505174,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 532,
+                    "ppl": 98.02693339015198
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 529,
+                    "ppl": 126.47823621694288
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 454,
+                    "ppl": 124.62874990299716
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 531,
+                    "ppl": 55.716883850683836
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 463,
+                    "ppl": 91.75588811000733
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 454,
+                    "ppl": 74.12789074905591
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 507,
+                    "ppl": 81.55891990488956
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 400,
+                    "ppl": 74.13524327568533
+                }
+            ]
+        },
+        "PB NATIVO": {
+            "avg_ppl": 46.70148034491781,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 362,
+                    "ppl": 25.581750464156755
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 356,
+                    "ppl": 17.921568377343764
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 235,
+                    "ppl": 16.89542806257928
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 93,
+                    "ppl": 23.194278680226585
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 376,
+                    "ppl": 41.57711066071233
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 299,
+                    "ppl": 90.14311404127155
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 326,
+                    "ppl": 54.5736311103127
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 343,
+                    "ppl": 72.52789958239694
+                },
+                {
+                    "text_id": 8,
+                    "num_tokens": 287,
+                    "ppl": 77.89854212526038
+                }
+            ]
+        },
+        "RUSSO": {
+            "avg_ppl": 56.82138879720384,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 629,
+                    "ppl": 42.81717945393531
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 569,
+                    "ppl": 56.387851829973656
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 577,
+                    "ppl": 31.213181285978138
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 580,
+                    "ppl": 42.86368358562347
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 501,
+                    "ppl": 75.46233599634525
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 512,
+                    "ppl": 65.89079640022696
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 530,
+                    "ppl": 90.02627447311895
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 504,
+                    "ppl": 49.90980735242896
+                }
+            ]
+        },
+        "ÁRABE": {
+            "avg_ppl": 75.77863469769893,
+            "texts": [
+                {
+                    "text_id": 0,
+                    "num_tokens": 705,
+                    "ppl": 62.36654439431027
+                },
+                {
+                    "text_id": 1,
+                    "num_tokens": 682,
+                    "ppl": 70.91048752738554
+                },
+                {
+                    "text_id": 2,
+                    "num_tokens": 679,
+                    "ppl": 48.243897375189654
+                },
+                {
+                    "text_id": 3,
+                    "num_tokens": 669,
+                    "ppl": 52.20484986063012
+                },
+                {
+                    "text_id": 4,
+                    "num_tokens": 575,
+                    "ppl": 75.95358810052159
+                },
+                {
+                    "text_id": 5,
+                    "num_tokens": 573,
+                    "ppl": 75.62389354706974
+                },
+                {
+                    "text_id": 6,
+                    "num_tokens": 568,
+                    "ppl": 134.20522973416448
+                },
+                {
+                    "text_id": 7,
+                    "num_tokens": 552,
+                    "ppl": 86.72058704232008
+                }
+            ]
+        }
+    }
+}
