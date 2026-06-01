@@ -1,5 +1,6 @@
 import openpyxl
 from openpyxl.utils import get_column_letter
+from openpyxl.styles import PatternFill
 import json
 import glob
 
@@ -12,6 +13,7 @@ N_LANGUAGES = len(LANGUAGES)
 TASKS = ["CAPACITAR", "COMPARTILHAR", "EXPLICAR", "EXPLORAR", "FAZER", "RECOMENDAR", "RECRIAR", "RELATAR"]
 N_TASKS = len(TASKS)
 
+DECIMAL_PLACES = 4
 
 typeLM = {
     "causalLM": {
@@ -23,6 +25,14 @@ typeLM = {
         "metrics": ["avg_tokens_per_word", "avg_pseudo_ppl", "avg_bpb"]
     },
 }
+
+def cell_color(value):
+    if value < 0.0:
+        return "FFF4CCCC"
+    elif value > 0.0:
+        return "FFB7E1CD"
+    else:
+        return "FFFFF2CC"
 
 
 for model_type, values in typeLM.items():
@@ -58,17 +68,29 @@ for model_type, values in typeLM.items():
             last_line = first_line + N_LANGUAGES
 
             for j, language in enumerate(LANGUAGES):
-                for k, (model_name, data) in enumerate(models.items()):
-                    line = first_line + j
-                    col = 3 + 2 * k
-                    col = get_column_letter(col)
-                    
-                    ws[f"A{line}"] = task
-                    ws[f"B{line}"] = language
+                line = first_line + j
+                ws[f"A{line}"] = task
+                ws[f"B{line}"] = language
 
-                    cell = f"{col}{line}"
-                    val = models[model][task][language][metric]
-                    ws[cell] = val
+                for k, (model_name, data) in enumerate(models.items()):
+                    col = 3 + 2 * k
+                    col1 = get_column_letter(col)
+
+                    # (pseudo-)Perplexity result
+                    cell = f"{col1}{line}"
+                    val = data[task][language][metric]
+                    ws[cell] = round(val, DECIMAL_PLACES)
+
+                    # Comparison with PTBR
+                    ptbr = ws[f"{col1}{first_line}"].value
+                    val_comparison = (val/ptbr - 1) * 100
+
+                    col2 = get_column_letter(col+1)
+                    cell = f"{col2}{line}"
+                    ws[cell] = round(val_comparison, DECIMAL_PLACES)
+
+                    color = cell_color(val_comparison)
+                    ws[cell].fill = PatternFill(fgColor=color, fill_type = "solid")
 
 wb.save("report.xlsx")
 
