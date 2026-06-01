@@ -1,0 +1,78 @@
+import openpyxl
+from openpyxl.utils import get_column_letter
+import json
+import glob
+
+wb = openpyxl.Workbook()
+
+LANGUAGES = ["PB NATIVO", "ESPANHOL", "FRANCÊS", "GALEGO", "INGLÊS", "MANDARIM", "RUSSO", "ÁRABE"]
+N_LANGUAGES = len(LANGUAGES) 
+
+
+TASKS = ["CAPACITAR", "COMPARTILHAR", "EXPLICAR", "EXPLORAR", "FAZER", "RECOMENDAR", "RECRIAR", "RELATAR"]
+N_TASKS = len(TASKS)
+
+
+typeLM = {
+    "causalLM": {
+        "files": glob.glob(f"./causalLM/*.json"),
+        "metrics": ["avg_tokens_per_word", "avg_ppl", "avg_bpb"]
+    },
+    "maskedLM": {
+        "files": glob.glob(f"./maskedLM/*.json"),
+        "metrics": ["avg_tokens_per_word", "avg_pseudo_ppl", "avg_bpb"]
+    },
+}
+
+
+for model_type, values in typeLM.items():
+    files = values["files"]
+    metrics = values["metrics"]
+
+    models = dict()
+    for file_name in files:
+        model = file_name.replace(".json", "")
+        with open(file_name, 'r') as file:
+            models[model] = json.load(file)
+   
+    for metric in metrics:
+        ws = wb.create_sheet(title=f"{metric}_{model_type}")
+
+        # Writting the header
+        ws["A1"] = "TASK"
+        ws["B1"] = "LANGUAGE"
+
+        for k, model_name in enumerate(sorted(models.keys())):
+            model_name = model_name.split("/")[-1]
+            col = 3 + 2 * k
+            col1 = get_column_letter(col)
+            col2 = get_column_letter(col+1)
+
+            ws[f"{col1}1"] = model_name
+            ws[f"{col2}1"] = f"{model_name}_vs_PB%"
+
+
+        # Writting the data
+        for i, task in enumerate(TASKS):
+            first_line = 2 + i * N_LANGUAGES
+            last_line = first_line + N_LANGUAGES
+
+            for j, language in enumerate(LANGUAGES):
+                for k, (model_name, data) in enumerate(models.items()):
+                    line = first_line + j
+                    col = 3 + 2 * k
+                    col = get_column_letter(col)
+                    
+                    ws[f"A{line}"] = task
+                    ws[f"B{line}"] = language
+
+                    cell = f"{col}{line}"
+                    val = models[model][task][language][metric]
+                    ws[cell] = val
+
+wb.save("report.xlsx")
+
+
+
+
+
