@@ -72,7 +72,7 @@ for model_type, values in typeLM.items():
                 ws[f"A{line}"] = task
                 ws[f"B{line}"] = language
 
-                for k, (model_name, data) in enumerate(models.items()):
+                for k, (model_name, data) in enumerate(models.items()):                    
                     col = 3 + 2 * k
                     col1 = get_column_letter(col)
 
@@ -82,8 +82,8 @@ for model_type, values in typeLM.items():
                     ws[cell] = round(val, DECIMAL_PLACES)
 
                     # Comparison with PTBR
-                    ptbr = ws[f"{col1}{first_line}"].value
-                    val_comparison = (val/ptbr - 1) * 100
+                    ptbr_val = data[task]["PB NATIVO"][metric]
+                    val_comparison = (val/ptbr_val - 1) * 100
 
                     col2 = get_column_letter(col+1)
                     cell = f"{col2}{line}"
