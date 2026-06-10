@@ -1,10 +1,13 @@
 import openpyxl
 from openpyxl.utils import get_column_letter
-from openpyxl.styles import PatternFill
+from openpyxl.styles import PatternFill, Border, Side
 import json
 import glob
 
 wb = openpyxl.Workbook()
+
+black_side = Side(style="thin", color="FF000000")
+bottom_border = Border(bottom=black_side)
 
 LANGUAGES = ["PB NATIVO", "ESPANHOL", "FRANCÊS", "GALEGO", "INGLÊS", "MANDARIM", "RUSSO", "ÁRABE"]
 N_LANGUAGES = len(LANGUAGES) 
@@ -13,7 +16,7 @@ N_LANGUAGES = len(LANGUAGES)
 TASKS = ["CAPACITAR", "COMPARTILHAR", "EXPLICAR", "EXPLORAR", "FAZER", "RECOMENDAR", "RECRIAR", "RELATAR"]
 N_TASKS = len(TASKS)
 
-DECIMAL_PLACES = 4
+DECIMAL_PLACES = 2
 
 typeLM = {
     "causalLM": {
@@ -65,7 +68,7 @@ for model_type, values in typeLM.items():
         # Writting the data
         for i, task in enumerate(TASKS):
             first_line = 2 + i * N_LANGUAGES
-            last_line = first_line + N_LANGUAGES
+            last_line = first_line + N_LANGUAGES - 1  # última linha real da task
 
             for j, language in enumerate(LANGUAGES):
                 line = first_line + j
@@ -83,14 +86,20 @@ for model_type, values in typeLM.items():
 
                     # Comparison with PTBR
                     ptbr_val = data[task]["PB NATIVO"][metric]
-                    val_comparison = (val/ptbr_val - 1) * 100
+                    val_comparison = (val / ptbr_val - 1) * 100
 
-                    col2 = get_column_letter(col+1)
+                    col2 = get_column_letter(col + 1)
                     cell = f"{col2}{line}"
                     ws[cell] = round(val_comparison, DECIMAL_PLACES)
 
                     color = cell_color(val_comparison)
-                    ws[cell].fill = PatternFill(fgColor=color, fill_type = "solid")
+                    ws[cell].fill = PatternFill(fgColor=color, fill_type="solid")
+
+            # horizontal line separating tasks
+            max_col = 2 + 2 * len(models)
+
+            for col in range(1, max_col + 1):
+                ws.cell(row=last_line, column=col).border = bottom_border
 
 wb.save("report.xlsx")
 
