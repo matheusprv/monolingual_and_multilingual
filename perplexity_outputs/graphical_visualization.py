@@ -79,44 +79,44 @@ class ResultsGraphApp:
             },
             "Variação % vs PB NATIVO — Perplexity": {
                 "data_source": "relative",
-                "required_cols": ["Tokens/Word_%", "Perplexity_%"],
-                "x": "Tokens/Word_%",
+                "required_cols": ["Tokens/Word", "Perplexity_%"],
+                "x": "Tokens/Word",
                 "y": "Perplexity_%",
                 "title": "Variação percentual vs PB NATIVO — Perplexity",
-                "xlabel": "Variação percentual de Tokens/Word (%)",
+                "xlabel": "Tokens/Word",
                 "ylabel": "Variação percentual da Perplexity (%)",
                 "filename": "relative_tokens_word_vs_perplexity.pdf",
                 "zero_lines": True,
             },
             "Variação % vs PB NATIVO — Pseudo-Perplexity": {
                 "data_source": "relative",
-                "required_cols": ["Tokens/Word_%", "Pseudo-Perplexity_%"],
-                "x": "Tokens/Word_%",
+                "required_cols": ["Tokens/Word", "Pseudo-Perplexity_%"],
+                "x": "Tokens/Word",
                 "y": "Pseudo-Perplexity_%",
                 "title": "Variação percentual vs PB NATIVO — Pseudo-Perplexity",
-                "xlabel": "Variação percentual de Tokens/Word (%)",
+                "xlabel": "Tokens/Word",
                 "ylabel": "Variação percentual da Pseudo-Perplexity (%)",
                 "filename": "relative_tokens_word_vs_pseudo_perplexity.pdf",
                 "zero_lines": True,
             },
             "Variação % vs PB NATIVO — BPB em modelos com Perplexity": {
                 "data_source": "relative",
-                "required_cols": ["Tokens/Word_%", "BPB_%", "Perplexity"],
-                "x": "Tokens/Word_%",
+                "required_cols": ["Tokens/Word", "BPB_%", "Perplexity"],
+                "x": "Tokens/Word",
                 "y": "BPB_%",
                 "title": "Variação percentual vs PB NATIVO — BPB em modelos com Perplexity",
-                "xlabel": "Variação percentual de Tokens/Word (%)",
+                "xlabel": "Tokens/Word",
                 "ylabel": "Variação percentual do BPB (%)",
                 "filename": "relative_tokens_word_vs_bpb_perplexity_models.pdf",
                 "zero_lines": True,
             },
             "Variação % vs PB NATIVO — BPB em modelos com Pseudo-Perplexity": {
                 "data_source": "relative",
-                "required_cols": ["Tokens/Word_%", "BPB_%", "Pseudo-Perplexity"],
-                "x": "Tokens/Word_%",
+                "required_cols": ["Tokens/Word", "BPB_%", "Pseudo-Perplexity"],
+                "x": "Tokens/Word",
                 "y": "BPB_%",
                 "title": "Variação percentual vs PB NATIVO — BPB em modelos com Pseudo-Perplexity",
-                "xlabel": "Variação percentual de Tokens/Word (%)",
+                "xlabel": "Tokens/Word",
                 "ylabel": "Variação percentual do BPB (%)",
                 "filename": "relative_tokens_word_vs_bpb_pseudo_perplexity_models.pdf",
                 "zero_lines": True,
@@ -233,7 +233,10 @@ class ResultsGraphApp:
         )
         self.graph_combo.current(0)
         self.graph_combo.pack(anchor="w", pady=(0, 15))
-        self.graph_combo.bind("<<ComboboxSelected>>", lambda event: self.plot_selected_graph())
+        self.graph_combo.bind(
+            "<<ComboboxSelected>>",
+            lambda event: self.on_graph_change()
+        )
 
         ttk.Label(
             controls_frame,
@@ -256,13 +259,13 @@ class ResultsGraphApp:
         ttk.Button(
             lang_buttons,
             text="Selecionar todas",
-            command=self.select_all_languages
+            command=self.select_all_languages_and_update_models
         ).pack(side=tk.LEFT, padx=(0, 5))
 
         ttk.Button(
             lang_buttons,
             text="Limpar",
-            command=self.clear_languages
+            command=self.clear_languages_and_update_models
         ).pack(side=tk.LEFT)
 
         ttk.Label(
@@ -322,21 +325,67 @@ class ResultsGraphApp:
             wraplength=320
         ).pack(anchor="w", pady=(20, 0))
 
+    def select_all_languages_and_update_models(self):
+        self.select_all_languages()
+        self.update_model_filter_for_selected_graph()
+
+    def clear_languages_and_update_models(self):
+        self.clear_languages()
+        self.update_model_filter_for_selected_graph()
+
     def populate_filters(self):
         self.language_listbox.delete(0, tk.END)
         self.model_listbox.delete(0, tk.END)
 
         languages = sorted(self.grouped["Language"].dropna().unique())
-        models = sorted(self.grouped["Model"].dropna().unique())
 
         for lang in languages:
             self.language_listbox.insert(tk.END, lang)
 
-        for model in models:
+        self.select_all_languages()
+        self.update_model_filter_for_selected_graph()
+
+    def on_graph_change(self):
+        self.update_model_filter_for_selected_graph()
+        self.plot_selected_graph()
+
+    def update_model_filter_for_selected_graph(self):
+        graph_name = self.graph_var.get()
+        graph_config = self.graph_options[graph_name]
+
+        if graph_config["data_source"] == "grouped":
+            data = self.grouped.copy()
+        else:
+            data = self.relative.copy()
+
+        # Mantém apenas as linhas que possuem os valores necessários
+        data = data.dropna(subset=graph_config["required_cols"])
+
+        # Opcional: respeita as línguas já selecionadas
+        selected_languages = self.get_selected_languages()
+
+        if selected_languages:
+            data = data[data["Language"].isin(selected_languages)]
+
+        valid_models = sorted(data["Model"].dropna().unique())
+
+        # Guarda os modelos selecionados antes de atualizar a lista
+        previously_selected_models = set(self.get_selected_models())
+
+        self.model_listbox.delete(0, tk.END)
+
+        for model in valid_models:
             self.model_listbox.insert(tk.END, model)
 
-        self.select_all_languages()
-        self.select_all_models()
+        # Tenta preservar os modelos que já estavam selecionados
+        # desde que ainda sejam válidos para o novo gráfico
+        for i, model in enumerate(valid_models):
+            if model in previously_selected_models:
+                self.model_listbox.select_set(i)
+
+        # Se nenhum modelo ficou selecionado, seleciona todos os válidos
+        if not self.model_listbox.curselection():
+            self.select_all_models()
 
     def select_all_languages(self):
         self.language_listbox.select_set(0, tk.END)
