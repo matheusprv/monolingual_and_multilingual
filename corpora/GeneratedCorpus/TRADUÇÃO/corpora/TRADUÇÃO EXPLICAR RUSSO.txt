@@ -1,0 +1,154 @@
+TRADUÇÃO EXPLICAR RUSSO — NATURALIZADO
+
+===================
+ARQUIVO 5: RUSSO (romanizado)
+===================
+
+<XPL_ED_02>
+<versão_russkii>
+
+Kak rabotala Vizantiyskaya tserkov i kakovy byli yeyo otnosheniya s narodom, imperatorom i Katolicheskoy tserkovyu?
+
+Konflikty kulturnogo, politicheskogo, rasovogo i dazhe religioznogo kharaktera stali neizbezhnymi, i rimskiy yepiskop nachal schitatsya predatelem (persona non grata) vizantiyskogo dela rasshireniya i politicheskogo i territorialnogo vozvrasheniya Zapada. Imenno s etoy tochki zreniya sleduyet analizirovat ves protsess raskola mezhdu latinskoy i grecheskoy tserkvami — obeimi chastyami tsentralnogo khristianskogo pravoslaviya pervogo tysyacheletiya. Yesli by ne bylo drugikh prichin teologicheskogo, distsiplinarnogo kharaktera i kharaktera nravov, mozhno bylo by vosstanovit prezhneye polozheniye del, to yest yedinstvo v raznoobrazii.
+
+Chto takoye feedback?
+
+Feedback — eto termin, ispolzuyemyy vo mnogikh oblastyakh, no po suti on oznachayet "obratnuyu svyaz" — to, kak odna veshch vliyayet na druguyu. Naprimer, v biologii, kogda odin gormon stimuliruyet ili podavlyayet vosvobozhdeniye drugogo gormona, eto i nazyvayetsya feedback.
+
+---
+
+<XPL_ED_04>
+<versão_russkii>
+
+Kak nauchitsya delat makiyazh samostoyatelno bez kursov? Chto nuzhno kupit dlya nachala?
+
+Slushai, nachni s prostykh veshchey — ya tak i delala. Zapasis bazovym arsenalom: ton, pudra, teni dlya vek dvukh tsvetov (svetlyy i temnyy), tush dlya resnits, podvodka i blesk dlya gub naturalnogo ottena. Ya sam ne polzuyus tonom, no tebe, vozmozhno, nuzhno: na ochishchennuyu kozhu nanesi ton na vsyo litso (kogda budesh pokupat, poprosi prodavshchitsu pomoch vybrat pravilnyy ottenok — eto ochen vazhno!); nanesi kompaktnuyu pudru, podbiray ottenok po tomu zhe printsipu; zatem nanesi temnye teni na veko po linii glaznogo yabloka, formiruyuya polumesyats; potom svetlye teni (khaylayter) pod brov i v prostranstve mezhdu brovyu i temnymi tenyami; rastu shuy (kupi i kist dlya makiyazha); nanes podvodku — luchshe korichnevuyu, vplot k verkhnemu ryadu resnits; nanes tush, ispolzuy shchiptsy dlya zavivki resnits (tuzhe kupi), eshcho raz nanes tush — i gotovo.
+
+---
+
+<XPL_ED_05>
+<versão_russkii>
+
+Kak reshit matematicheskuyu zadachu bez ispolzovaniya matematiki?
+
+Opublikovano Oskarom Y. Takeshitoy
+
+Chasto my ispolzuyem metod preobrazovaniya odnoy zadachi v ekvivalentnuyu. Eto ochen polezno, kogda vtoraya zadacha gorazdo legche reshayetsya ili ponimaetsya. Kak tolko vtoraya zadacha reshena, resheniye pervoy ochevidno.
+
+Davayte proillyustriruyem etot metod na klassicheskoy zadache, nedavno opublikovannoy v etom bloge.
+
+Klassicheskiy sposob resheniya etoy zadachi ispolzuyet uslovnuyu veroyatnost. Resheniye, kotoroye predlagayetsya nizhe, pochti ne pribegayet k veroyatnosti.
+
+Predpolozhim, chto sushchestvuyet drugaya teleperedacha, gde u tebya tri dveri, za odnoy iz kotorykh stoit prizovoy avtomobil. Odnako pravila igry sleduyushchiye:
+1. Net vedushchego.
+2. Ty mozhesh vybrat:
+a) Otkryt dve dveri po svoyemu usmotrenіyu.
+b) Otkryt odnu dver po svoyemu usmotrenіyu.
+
+Kakoy variant ty vyberesh? Ochevidno, variant a).
+
+---
+
+<XPL_ED_06>
+<versão_russkii>
+
+1) Segodnya na zavtrak ya syel:
+a. bulochku s solu (1) s maslom (2)
+b. stakan moloka (3)
+c. yabloko (4)
+
+Znaesh li ty, k kakim tipam organicheskikh molekul otnosyatsya eti produkty i kakova ikh osnovnaya rol v nashem organizme?
+
+MOY OTVET:
+a) 1: uglevody (krakhmal) – energeticheskiy obmen
+2: lipidy – energeticheskiy obmen
+b) 3: uglevody (energeticheskiy obmen), belki (stroitelnyy i regulyatornyy obmen) i lipidy (energeticheskiy obmen)
+c) 4: uglevody (energeticheskiy obmen), vitaminy
+
+PRAVILNYYE OTVETY UCHASHCHIKHSYA:
+Bulochka: vid uglevoda, obespechivayuschiy energiyu dlya raboty kletok (Rodrigo Avelar, 1-y Alfa)
+Maslo: lipidy – dayut energiyu (Suzane Reis, 1-y Beta)
+Stakan moloka: belok – stroitelnaya i regulyatornaya rol (Valéria Coelho, 1-y Alfa)
+
+---
+
+<XPL_ED_07>
+<versão_russkii>
+
+Sprosi u komandira.
+
+"Vo vremya pereletа iz Foz du Igvasu ya zametil odin nyuans: konets kryla 737-800NG zagnut vverkh. Dlya chego eto nuzhno?"
+
+Eti zagnutyye vverkh elementy na kontsakh krylyev nazyvayutsya wingletami i uluchshayut aerodinamiku samoleta. Khotya oni predstavlyayut soboi bolshoy shag vpered v aviatsionnoy inzhenerii, podobnoye ustroystvo sushchestvuyet v prirode uzhe milliony let. Posmotri na krupnykh ptits — kondora, orla ili stervyatnika: u nikh yest perya, zagnutyye vverkh na kontsakh krylyev. Blagodarya etomu vozdukh plavneye obtekayuet krylya, i ptitsy mogut parit dlitelnoye vremya, tratya minimum energii poka ishchut pishchu ili okhranyayut svoyu territoriyu.
+
+---
+
+<XPL_ED_08>
+<versão_russkii>
+
+1 – Chto takoye FIES?
+FIES — eto programma Ministerstva obrazovaniya, prednaznachennaya dlya finansirovaniya vysshego obrazovaniya studentov, obuchayushchikhsya v platnykh uchrezhdeniyakh. Programma sozdana v 1999 godu, i s etogo goda ona rabotayet s vazhnymi izmeneniyami, kotoryye delayut polucheniye finansirovaniya yeshcho boleye dostupnym dlya studentov.
+
+2 – Kto mozhet podat zayavku na FIES?
+Zayavku na finansirovaniye po FIES mogut podat studenty, regulyarno obuchayushchiyesya na platnykh programmakh, poluchivshikh polozhitelnuyu otsenku SINAES i predlagayemykh uchrezhdeniyem vysshego obrazovaniya, uchаstvuyushchim v Programme.
+
+Student mozhet podat zayavku tolko na odnu programmu, na kotoroy on regulyarno obuchayetsya. Studenty, chislyashchiyesya v statuse polnogo akademicheskogo otpuska v period podachi zayavok na FIES, ne schitayutsya regulyarno obuchayushchimisya.
+
+---
+
+<XPL_FD_01>
+<versão_russkii>
+
+GOVORYASHCHIY1 yest kakiye-to oshibki, gospodin fiskal?
+GOVORYASHCHIY2 v schetakh — net
+GOVORYASHCHIY1 a s tochki zreniya bukhgalterii?
+GOVORYASHCHIY2 yest logicheskaya ogovorka, no ona ne vliyayet na tochnost dannykh
+GOVORYASHCHIY1 logicheskaya ogovorka — nu davay, govori, kakaya?
+GOVORYASHCHIY2 chto ty postavil v debet?
+GOVORYASHCHIY1 platezhi
+GOVORYASHCHIY2 a v kredit?
+GOVORYASHCHIY1 dokhody; v kontse ya postavil bankovskiy ostatok v debet, chtoby sbalansirovat
+GOVORYASHCHIY2 vot zdes oshibka
+GOVORYASHCHIY1 ne pravilno?
+GOVORYASHCHIY2 ty perevern ul vsyo — to, chto bylo debitom, ty postavil kak kredit, i naoborot; ty narushil bukhgalterskuyu logiku
+GOVORYASHCHIY1 ispravlyu v sleduyushchem mesyatse; raz my uzhe uvyazli v etom — ya schitayu, chto nepolnaya bukhgalteriya sozdayet problemu s dengami na bankovskom schete; kak byt, gospodin fiskal?
+GOVORYASHCHIY2 dva puti: vo-pervykh, otkryt registr dlya banka — eto budet kassovyy schet tovarishchestva v banke
+GOVORYASHCHIY1 a nelzya vsyo proverti cherez kassu? razve eto ne proshche?
+GOVORYASHCHIY2 eto i byl by vtoroy put — on deystvitelno proshche
+GOVORYASHCHIY1 kak by eto rabotalo?
+GOVORYASHCHIY2 vse poluchennyye cheki i nalichnyye byli by debitami kassy; ostatok tozhe; vnesennyye depozity kak raskhodnyye operatsii byli by kreditami
+
+---
+
+<XPL_FD_03>
+<versão_russkii>
+
+PEDRO vo vtorom bloke my vyslushal brata Antonio Mozarta iz Komissii po bioetike CNBB, kotoryy predstavil vopros aborta s tochki zreniya Katolicheskoy tserkvi. Kakova pozitsiya vashey tserkvi po etomu voprosu — nachnite s aborta?
+
+JAIR dobryy vecher vsem. Snachala ya khochu pozdravit Bandeirantes za mudrost — sozdanie demokraticheskoy ploshchadki dlya obsuzhdeniya takoy temy. Potomu chto kogda religioznyy chelovek govorit, ego tut zhe naveshivayut yarlykom: "eto prosto religioznyy vopros", i togda to, chto on govorit, nikogo ne interesuyet — vsyo v korzinu. Nu chto zh, my, yevangelisty — i vot pozdravlyayu, pozdravlyayu, pozdravlyayu tebya Kyle, pozdravlyayu set Bandeirantes za to, chto vy snova v peredy v zhurnalistike i dayote slovo oponentam. I my — protiv aborta. Ya khochu obsuzhdayt eto s nauchnoy i teologicheskoy tochki zreniya, potomu chto eto ne nikakoy glupyy religioznyy vopros. My — protiv aborta. Tochka. Potomu chto bog ne — ne — ne... Ladno, snachala: kto opredelyayet zhizn v nauke? Biologiya. Biologiya opredelyayet, gde nachinayetsya zhizn. Zhizn nachinayetsya s zachatiya — ona nepreryvna, bud to vnutriutrobno ili vneutrobno, vplot do smerti.
+
+---
+
+<XPL_FD_05>
+<versão_russkii>
+
+JOAO no v chem tvoya pretenziya? ty khoches skazat, chto on slabyy vratar, kotoryy propuskayet vsyo? tak?
+
+JOANA net, net, net; ya snachala pokhvalyu, a potom... ya schitayu, chto John — lider; ya schitayu, chto silnoy komande nuzhen lider v vorotakh; nuzhno chuvstvovat sebya uverenno
+
+GOVORYASHCHIY1 a Luizinho razve ne lider?
+
+JOANA Luizinho — net
+
+GOVORYASHCHIY1 znachit, odin-nol v polzu Johna
+
+JOANA odin-nol v polzu Johna, vsyo verno
+
+---
+
+<XPL_FD_06>
+<versão_russkii>
+
+GOVORYASHCHIY1 uchityvaya, chto u nas sereznaya problema s neformalnoy zanyatostyu — 50% ekonomicheski aktivnogo naseleniya rabotayet v tenevom sektore — chto vy namereny sdelat dlya resheniya etoy sereznoy problemy, kotoraya ugrozhayet dostoynym usloviyam zhizni i trudovym pravam grazhdan Brazilii?
+
+GOVORYASHCHIY2 dobryy vecher zritelyam i kandidatam. Odnim iz krupnykh dostizheniy pravitelstva prezidenta Luly stalo uluchsheniye formalizatsii truda v Brazilii. Do 2005 goda lyudi khovatalis za lyubuyu podrabotku — tam i syam — prosto chtoby svodit kontsy s kontsami. S pravitelstvom prezidenta Luly my znachitelno uvelichili formalnuyu zanyatost — nastolko, chto pobili vse rekordy po sozdaniyu rabochikh mest s ofitsialnymi trudovymi knizhkami. Na segodnyashniy den sozdano 14,5 milliona takih rabochikh mest, i ya uveren, chto k kontsu goda my priblizimsya k 15 millionam. Klyuchevuyu rol v etom sygral rost vnutrennego rynka Brazilii, kotoryy porodil bolshiy obem proizvodstva, bolshiy potrebitelskiy spros i, kak sledstviye, bolshe rabochikh mest v strane.

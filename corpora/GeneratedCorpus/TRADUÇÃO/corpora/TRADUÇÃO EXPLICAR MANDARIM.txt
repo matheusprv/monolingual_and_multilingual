@@ -1,0 +1,154 @@
+TRADUÇÃO EXPLICAR MANDARIM — NATURALIZADO
+
+===================
+ARQUIVO 7: MANDARIM (pinyin)
+===================
+
+<XPL_ED_02>
+<versão_mandarim (pinyin)>
+
+Baizhanting jiaohui shi ruhe yunzuo de? Ta yu renmin, huangdi he tianzhujiaohui de guanxi shi shenme?
+
+Wenhua, zhengzhi, zhongzu nai zhi zongjiao shang de chongtu bian de buke bimian. Luoma zhujiao bei ren wei shi baizhanting shiye de beipan zhe — yi wei bu shou huanying de ren — yin wei ta sun hai le baizhanting zai zhengzhi he lingtu shang xiangxi fang de kuozhang. Zai zhe zhong guang jiao xia, women cai neng zhengque fenxi lapiding jiaohui yu xila jiaohui zhi jian fenlie de quan guo cheng, er zhe liang ge jiaohui dou shi di yi qian nian jidutu zhengzong de zu cheng bu fen. Ru guo bu cun zai qi ta shenxue, jilü he xisu fang mian de yuanyin, wo men ben keyi huifu yuan xian de zhuangtai — ye jiu shi duo yuan tong yi, ge zhong bu tong er heyuan gong chu.
+
+Feedback shi shenme?
+
+Feedback shi yi ge zai hen duo lingyu dou neng yong dao de ci hui. Ta de ben zhi shi "fan kui" — jiu shi yi jian shi ruhe yingxiang ling yi jian shi. Bi ru, zai shengwu xue zhong, dang yi zhong ji su ciji huo yi zhi ling yi zhong ji su de shi fang, wo men jiu jiao zhe ge xian xiang wei feedback.
+
+---
+
+<XPL_ED_04>
+<versão_mandarim (pinyin)>
+
+Wo zenme neng ziji xue hua zhuang, er bu yao shang ke? Wo xuyao mai shenme lai kaishi?
+
+Ting wo shuo, cong jian dan de dong xi kaishi — wo jiu shi zhe yang zuo de. Zhunbei hao ji chu gong ju: fen di ye, san fen, yan ying (liang zhong yan se, yi ge liang se yi ge an se), jie mao gao, yan xian bi, he chun cai. Wo ben ren bu yong fen di ye, dan ni keneng xu yao: jie mian qing jie hou, ba fen di ye yun kai zai zheng zhang lian (mai de shi hou, qing shouhuo yuan bang ni tiao xuan zhengque de yan se — zhe hen zhong yao!); da shang mi fen, tong yang zhu yi se hao de pi pei; ranhou ba an se yan ying tu shua zai yan pi shang, gen zhe yan qiu de xian tiao, hua chu yi ge ban yue xing; jie zhe ba liang se yan ying (ti liang yong) tu shua zai mei mao xia mian, yi ji mei mao yu an se yan ying zhi jian de kong xi; yun ran kai (qing ye mai yi zhi hua zhuang shua); ranhou tushang yan xian bi — zui hao yong zong se — jin tie zhe shang jie mao gen bu; tushang jie mao gao; yong jie mao jia (ye mai yi ge); zai tu yi ceng jie mao gao, wan cheng.
+
+---
+
+<XPL_ED_05>
+<versão_mandarim (pinyin)>
+
+Ruhe bu yong shu xue lai jie shu xue ti?
+
+Fa biao zhe: Oscar Y. Takeshita
+
+Hen duo shi hou, wo men hui yong yi zhong ji shu: ba mou ge wen ti zhuan hua cheng ling yi ge deng jia de wen ti. Dang di er ge wen ti geng rong yi jie huo li jie shi, zhe zhong fang fa jiu te bie you yong. Yi dan jie le di er ge wen ti, di yi ge wen ti de da an ye jiu zi ran er ran le.
+
+Wo men lai ju yi ge li zi: yi ge jing dian ti mu, zui jin fa biao zai zhe ge bo ke shang.
+
+Jing dian de jie fa yi lai yu tiao jian gai lu. Er xia mian zhe ge jie fa ji hu bu yong dao gai lu.
+
+Jia she you ling yi ge dian shi jie mu, ni you san shan men ke xuan ze, qi zhong yi shan men hou mian fang zhe jiang pin che. Dan shi you xi gui ze bu tong:
+1. Mei you jie mu zhu chi ren.
+2. Ni ke yi xuan ze:
+a) Da kai liang shan ni zi ji xuan de men.
+b) Da kai yi shan ni zi ji xuan de men.
+
+Ni hui xuan na ge? Dang ran shi xuan a).
+
+---
+
+<XPL_ED_06>
+<versão_mandarim (pinyin)>
+
+1) Jin tian zao can wo chi le:
+a. yi ge mian bao (1) jia huang you (2)
+b. yi bei niu nai (3)
+c. yi ge ping guo (4)
+
+Ni zhi dao zhe xie shi wu fen bie shu yu na lei you ji fen zi ma? Ta men zai wo men shen ti li zhu yao ban yan sheme jue se?
+
+WO DE DA AN:
+a) 1: tang lei (dian fen) – neng liang dai xie
+2: zhi lei – neng liang dai xie
+b) 3: tang lei (neng liang dai xie), dan bai zhi (gou jian yu diao jie dai xie), zhi lei (neng liang dai xie)
+c) 4: tang lei (neng liang dai xie), wei sheng su
+
+YI XIE ZHENGQUE DE XUESHENG DA AN:
+Mian bao: tang lei de yi zhong, wei xi bao ti gong neng liang (Rodrigo Avelar, 1 Alpha)
+Huang you: zhi lei — ti gong neng liang (Suzane Reis, 1 Beta)
+Yi bei niu nai: dan bai zhi — gou jian yu diao jie (Valéria Coelho, 1 Alpha)
+
+---
+
+<XPL_ED_07>
+<versão_mandarim (pinyin)>
+
+Wen wen ji zhang.
+
+"Wo cong Foz do Iguacu da hang ban hui lai de shi hou, zhu yi dao yi ge xi jie: 737-800NG de chi bang mo duan wang shang qiao. Na you shen me yong ne?"
+
+Chi bang mo duan zhe xie wang shang qiao qi de bu fen jiao zuo winglet, ta men neng gai shan fei ji de qi dong li xue xing neng. Sui ran zhe dai biao le fei hang gong cheng xue de yi da jin bu, dan lei si de jie gou zai da zi ran zhong yi jing cun zai le hao ji bai wan nian. Ni kan na xie da xing niao lei — bi ru an di si shen ying, lao ying he wu jiu — ta men chi bang mo duan dou you xie yu mao shi wang shang qiao qi de. Zhe rang kong qi neng geng shun chang di liu guo chi bang, bang zhu ta men hua xiang geng jiu, tong shi zai xun zhao shi wu huo bao hu ling di shi jin ke neng di jie sheng neng liang.
+
+---
+
+<XPL_ED_08>
+<versão_mandarim (pinyin)>
+
+1 – FIES shi shenme?
+FIES shi jiao yu bu tui chu de yi ge zi zhu ji hua, zhuan wei jiu du yu fei gong li yuan xiao de ben ke zai xiao xue sheng ti gong xue fei zi zhu. Jian li yu 1999 nian. Cong jin nian qi, yi zhong yao gai ge zheng shi shi xing, jin yi bu jian hua le xue sheng shen qing zi zhu de liu cheng.
+
+2 – Shei ke yi shen qing FIES?
+Zheng chang zai ji fei gong li ben ke xiang mu jiu du, qie gai xiang mu yi huo de SINAES zheng mian ping jia bing you can jia gai ji hua de gao deng yuan xiao ti gong de xue sheng, jun ke shen qing FIES zi zhu.
+
+Mei wei xue sheng zhi neng wei qi zai du de wei yi yi ge ben ke xiang mu ti jiao shen qing. Zai FIES shen qing qi jian, ruo qi zai xiao xue ji yi jing chu yu quan mian ting ke zhuang tai, ze bu bei shi wei zheng chang zai du xue sheng.
+
+---
+
+<XPL_FD_01>
+<versão_mandarim (pinyin)>
+
+FAHUO ZHE 1 you shen me cuo wu ma, shen ji yuan xian sheng?
+FAHUO ZHE 2 zhang mu fang mian, mei you
+FAHUO ZHE 1 na kuai ji fang mian ne?
+FAHUO ZHE 2 you yi ge luo ji shang de wen ti, dan bu ying xiang shu ju de zhun que xing
+FAHUO ZHE 1 luo ji wen ti? kuai shuo, peng you
+FAHUO ZHE 2 ni ba shen me fang dao jie fang le?
+FAHUO ZHE 1 fu kuan
+FAHUO ZHE 2 dai fang ne?
+FAHUO ZHE 1 shou ru; zui hou wo ba yin hang yu e fang dao jie fang wei le ping heng zhang mu
+FAHUO ZHE 2 na li you yi ge cuo wu
+FAHUO ZHE 1 bu dui ma?
+FAHUO ZHE 2 ni nong fan le — ben lai ying gai shi jie fang de dong xi, ni que fang dao le dai fang, fan zhi yi ran; ni wei fan le kuai ji luo ji
+FAHUO ZHE 1 wo xia ge yue xiu zheng; ji ran wo men yi jing shen xian qi zhong, wo jue de bu wan zheng de zhang mu zai chu li yin hang zi jin shi hui chan sheng wen ti; zen me jie jue bi jiao hao, shen ji yuan?
+FAHUO ZHE 2 you liang zhong ban fa: di yi, wei yin hang dan du jian li ji lu — ye jiu shi gong yu zai yin hang de xian jin zhang hu
+FAHUO ZHE 1 dan wo neng bu neng suoyou de dou tong guo xian jin zhang hu lai chu li? zhe yang bu shi geng jian dan ma?
+FAHUO ZHE 2 na jiu shi di er zhong ban fa — que shi geng jian dan
+FAHUO ZHE 1 di er zhong ban fa ju ti zen me cao zuo?
+FAHUO ZHE 2 suo you shou dao de zhi piao he xian jin dou ji ru xian jin zhang hu de jie fang; yu e ye yi yang; cun kuan zuo wei liu chu ji lu wei dai fang
+
+---
+
+<XPL_FD_03>
+<versão_mandarim (pinyin)>
+
+PEDRO di er jie dang zhong, wo men qing dao le Antonio Mozart xiu shi, ta lai zi CNBB sheng ming lun li wei yuan hui, cong tian zhu jiao de guan dian jie shao le duo tai wen ti. Nin de jiao hui dui yu zhe ge wen ti de li chang shi shen me, shou xian tan tan duo tai?
+
+JAIR da jia wan shang hao. Shou xian, wo yao zheng zhong biao yang Bandeirantes, gei wo men zhe yang yi ge min zhu de ping tai lai tao lun zhe ge hua ti. Yin wei dang yi ge zong jiao ren shi kai kou shuo hua, ren men zong hui gei ta tie biao qian — "zhe bu guo shi zong jiao wen ti" — na me ta shuo de hua jiu mei yi si le, reng diao ba le. Hao, wo men fu yin pai — na me, zhu he, zhu he! zhu he Kyle! ni men Bandeirantes zuo de dui, zai xin wen bao dao shang pao zai qian mian, gei fan dui fang shuo hua de ji hui. Er wo men shi fan dui duo tai de. Wo xi wang zhan zai ke xue yu shen xue de jiao du shang lai tao lun zhe ge wen ti, yin wei zhe bu shi yi ge gu bian de zong jiao wen ti. Wo men fan dui duo tai. Jiu zhe yang. Yin wei shen bu... bu... bu... hao le, shou xian: zai ke xue li, shui lai jie ding sheng ming? Sheng wu xue. Sheng wu xue jie ding sheng ming cong na li kai shi. Sheng ming cong shou jing de na yi ke kai shi, shi lian xu de, wu lun shi zi gong nei huan shi gong wai, zhi dao si wang.
+
+---
+
+<XPL_FD_05>
+<versão_mandarim (pinyin)>
+
+JOAO dan ni de yi jian shi shen me? ni shi shuo ni jue de ta shi ge ruan jiao men jiang, shen me qiu dou jin ma? shi zhe ge yi si ma?
+
+JOANA bu, bu, bu; wo xian zan yang, ranhou... wo jue de John shi ge ling xiu; wo jue de yi ge qiang da de qiu dui zai men jiang wei zhi shang xu yao yi ge ling xiu; ni de men jiang xu yao rang quan dui gan dao an xin
+
+FAHUO ZHE 1 na Luizinho ne?
+
+JOANA Luizinho bu shi
+
+FAHUO ZHE 1 ye jiu shi shuo John yi bi ling ling xian
+
+JOANA John yi bi ling, mei cuo
+
+---
+
+<XPL_FD_06>
+<versão_mandarim (pinyin)>
+
+FAHUO ZHE 1 kao lü dao wo men mian lin yan zhong de fei zheng shi jiu ye wen ti — jing ji huo yue lao dong li zhong you 50% chu yu fei zheng shi bu men — nin da suan cai qu na xie cuo shi lai jie jue zhe ge wei xie ba xi gong min ti mian gong zheng sheng huo tiao jian ji lao gong quan li de yan zhong wen ti?
+
+FAHUO ZHE 2 guan zhong he ge wei hou xuan ren wan shang hao. Lula zong tong zheng fu de yi xiang zhong da cheng jiu, jiu shi gai shan le ba xi de lao dong zheng gui hua zhuang kuang. 2005 nian zhi qian, ren men bu de bu zou gong jian jie, dong pai xi zou, zhi wei le wei chi sheng ji huo dan chun hu kou. Lula zheng fu zhi hou, wo men da fu ti sheng le zheng shi jiu ye lü, lian xu da po le you lao dong he tong de jiu ye ji lu. Mu qian yi gong chuang zao le 1450 wan ge you he tong de zheng shi gang wei. Wo xiang dao nian di, ying gai neng chao guo 1500 wan. Zhe yi qie de shi xian, yu ba xi guo nei shi chang de kuo zhang mi bu ke fen — zheng shi guo nei shi chang de kuo da cu jin le sheng chan zeng chang, ci ji le xiao fei xu qiu, jin er zai ba xi guo nei chuang zao le geng duo jiu ye ji hui.

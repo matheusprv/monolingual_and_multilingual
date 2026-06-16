@@ -1,0 +1,154 @@
+TRADUÇÃO EXPLICAR ESPANHOL — NATURALIZADO
+
+===================
+ARQUIVO 2: ESPANHOL
+===================
+
+<XPL_ED_02>
+<versão_espanhol>
+
+¿Cómo funcionaba la Iglesia Bizantina y cuáles eran sus relaciones con el pueblo, el emperador y la Iglesia Católica?
+
+Los conflictos de orden cultural, político, racial e incluso religioso se volvieron inevitables, y el obispo romano pasó a ser considerado un traidor (persona non grata) de la causa bizantina de expansión y reconquista política y territorial de occidente. Es bajo esta óptica, pues, que también debe analizarse todo el proceso de cisma entre las iglesias latina y griega, integrantes de la ortodoxia cristiana central del primer milenio. Si no hubiera otras causas de carácter teológico, disciplinario y de costumbres, podría restablecerse el orden de cosas que había prevalecido hasta entonces, es decir, la unidad en la diversidad.
+
+¿Qué es el feedback?
+
+Feedback es un término empleado en varios campos, pero en esencia significa retroalimentación, es decir, cómo una cosa afecta a otra. Por ejemplo, en biología, cuando una hormona estimula o inhibe la liberación de otra hormona, a eso lo llamamos feedback.
+
+---
+
+<XPL_ED_04>
+<versão_espanhol>
+
+¿Cómo aprendo a maquillarme sola sin tomar un curso? ¿Qué necesito comprar para empezar?
+
+Mira, empieza con cosas sencillas — así lo hice yo. Ten el kit básico: base, polvo, sombra con dos colores (una clara y una más oscura), rímel, lápiz y brillo de labios de un tono natural... Yo no uso base, pero tal vez tú sí: con la piel limpia, extiende la base por toda la cara (cuando vayas a comprarla, pide ayuda a la vendedora para elegir el color ideal — eso es muy importante), aplica el polvo compacto eligiendo bien el tono, luego extiende la sombra oscura sobre el párpado siguiendo la línea del globo ocular y formando una media luna; después aplica la sombra clara (iluminadora) debajo de la ceja y en todo el espacio entre la ceja y la sombra oscura; difumina con una brocha de maquillaje (cómprate una también); pasa el lápiz — marrón de preferencia — pegado a las pestañas superiores; aplica rímel, usa el rizador de pestañas (cómpralo también), aplica rímel otra vez y listo.
+
+---
+
+<XPL_ED_05>
+<versão_espanhol>
+
+¿Cómo resolver un problema matemático sin usar matemáticas?
+
+Publicado por Oscar Y. Takeshita
+
+Muchas veces se utiliza la técnica de convertir un determinado problema en otro equivalente. Esto es muy útil cuando el segundo problema es mucho más fácil de resolver o de entender. Una vez resuelto el segundo problema, ya se conoce la solución del primero.
+
+Vamos a ilustrar esta técnica con un problema clásico publicado recientemente en este blog.
+
+La forma clásica de resolver este problema consiste en usar la probabilidad condicional. La solución que se propone a continuación prácticamente no utiliza la probabilidad.
+
+Supongamos que existiera otro programa de TV en el que también hubiera tres puertas, detrás de una de las cuales está el coche de premio. Sin embargo, las reglas del juego son las siguientes:
+1. No hay presentador.
+2. Puedes optar por:
+a) Abrir dos puertas de tu elección.
+b) Abrir una puerta de tu elección.
+
+¿Cuál de las opciones elegirías? Obviamente la opción a).
+
+---
+
+<XPL_ED_06>
+<versão_espanhol>
+
+1) Hoy en mi desayuno comí lo siguiente:
+a. un pancito de sal (1) con mantequilla (2)
+b. un vaso de leche (3)
+c. una manzana (4)
+
+¿Sabes a qué tipos de moléculas orgánicas pertenecen estos alimentos y cuál es su papel principal en nuestro organismo?
+
+MI RESPUESTA:
+a) 1: carbohidrato (almidón) – metabolismo energético
+2: lípidos – metabolismo energético
+b) 3: carbohidrato (metabolismo energético), proteínas (metabolismo de construcción y de control) y lípidos (metabolismo energético)
+c) 4: carbohidrato (metabolismo energético), vitaminas
+
+ALGUNAS RESPUESTAS CORRECTAS DE ALUMNOS:
+Pancito de sal: tipo de carbohidrato, aporta energía para el funcionamiento de las células (Rodrigo Avelar, 1º Alfa)
+Mantequilla: lípido – aporta energía (Suzane Reis, 1º Beta)
+Vaso de leche: proteína = papel estructural y de control (Valéria Coelho, 1º Alfa)
+
+---
+
+<XPL_ED_07>
+<versão_espanhol>
+
+Pregúntale al comandante.
+
+"En un viaje desde Foz do Iguaçu, me fijé en un detalle: el extremo del ala del 737-800NG tiene una curvatura hacia arriba en la punta. ¿Para qué sirve?"
+
+Esas extensiones curvadas hacia arriba en las puntas de las alas se llaman winglets y mejoran la aerodinámica de la aeronave. Aunque representan un gran avance de la ingeniería aeronáutica, este dispositivo existe en la naturaleza desde hace millones de años. Fíjate en que las grandes aves, como el cóndor, el águila y el buitre, tienen algunas plumas curvadas hacia arriba en las puntas de las alas. Esto hace que el aire fluya con más suavidad sobre las alas y les permite planear durante largos períodos gastando el mínimo de energía posible mientras buscan alimento o defienden su territorio.
+
+---
+
+<XPL_ED_08>
+<versão_espanhol>
+
+1 – ¿Qué es el FIES?
+El FIES es un programa del Ministerio de Educación destinado a financiar los estudios universitarios de estudiantes matriculados en instituciones no gratuitas. Fue creado en 1999 y a partir de este año opera con cambios importantes que facilitan aún más la solicitud del financiamiento por parte de los estudiantes.
+
+2 – ¿Quién puede postular al FIES?
+Pueden solicitar el financiamiento del FIES los estudiantes regularmente matriculados en carreras de grado no gratuitas que hayan obtenido evaluación positiva en el SINAES y que sean ofrecidas por una institución de educación superior participante del Programa.
+
+El estudiante solo podrá solicitar el financiamiento para una única carrera en la que esté regularmente matriculado. No se considerarán regularmente matriculados los estudiantes cuya situación académica se encuentre en suspensión general de materias durante el período de inscripción al FIES.
+
+---
+
+<XPL_FD_01>
+<versão_espanhol>
+
+HABLANTE1 ¿algún error, señor fiscal?
+HABLANTE2 en las cuentas, no
+HABLANTE1 ¿y contablemente?
+HABLANTE2 hay un reparo de orden lógico que no invalida la exactitud de los datos
+HABLANTE1 reparo lógico, dígalo ya, ¿cuál es, amigo?
+HABLANTE2 ¿qué puso usted en el débito?
+HABLANTE1 los pagos
+HABLANTE2 ¿y en el crédito?
+HABLANTE1 los ingresos; al final puse el saldo del banco en el débito para cuadrar
+HABLANTE2 ahí hay un error
+HABLANTE1 ¿no está bien?
+HABLANTE2 usted invirtió todo: lo que era débito lo puso en crédito y viceversa; violó la lógica contable
+HABLANTE1 lo corrijo el mes que viene; ya que estamos metidos en esto, creo que la contabilidad incompleta tiene un problema con el dinero depositado en el banco; ¿cómo se puede resolver, señor fiscal?
+HABLANTE2 hay dos caminos: primero, abrir registros para el banco — sería la cuenta de caja de la copropiedad en el banco
+HABLANTE1 ¿pero puedo pasar todo por caja? ¿no sería más simple?
+HABLANTE2 ese sería el segundo camino, que es de hecho el más simple
+HABLANTE1 ¿cómo funcionaría ese segundo camino?
+HABLANTE2 todos los cheques y valores en efectivo recibidos serían débitos de caja; el saldo también; los depósitos como salida serían créditos
+
+---
+
+<XPL_FD_03>
+<versão_espanhol>
+
+PEDRO en el segundo bloque tuvimos la participación del fraile Antonio Mozart, de la comisión de bioética de la CNBB, que abordó la cuestión del aborto desde la óptica de la Iglesia Católica. ¿Cuál es la posición de su iglesia en esta cuestión, empezando por el aborto?
+
+JAIR muy buenas noches a todos. Primero quiero felicitar a Bandeirantes por la inteligencia de crear un espacio democrático para debatir un tema como este, porque cuando un religioso va a hablar, de inmediato se le pone la etiqueta de "es solo una cuestión religiosa", entonces lo que dice no importa, se descarta. Bueno, nosotros los evangélicos — así que felicitaciones, felicitaciones Kyle, felicitaciones a la red Bandeirantes por estar una vez más a la vanguardia en el periodismo y dar oportunidad a quienes piensan distinto para expresarse. Y nosotros estamos contra el aborto. Quiero abordar esto desde el plano científico y teológico, porque no es una cuestión religiosa simplista. Estamos contra el aborto. Punto. Porque dios no... no... no... Bueno, primero: ¿quién define la vida en la ciencia? La biología. La biología es la que define en la ciencia dónde comienza la vida. La vida comienza en la concepción, es continua, ya sea intrauterina o extrauterina, hasta la muerte.
+
+---
+
+<XPL_FD_05>
+<versão_espanhol>
+
+JOÃO ¿pero cuál es su objeción? ¿usted cree que es un portero blando que para poco? ¿es eso?
+
+JOANA no no no; yo voy a elogiar primero y luego... yo creo que John es un líder; creo que un gran equipo necesita un líder en el arco; tienes que sentirte cómodo
+
+HABLANTE1 ¿y Luizinho no lo es?
+
+JOANA Luizinho no lo es
+
+HABLANTE1 o sea, es uno a cero para John
+
+JOANA uno a cero para John, así es
+
+---
+
+<XPL_FD_06>
+<versão_espanhol>
+
+HABLANTE1 considerando que tenemos un grave problema de informalidad — el 50% de la fuerza de trabajo económicamente activa está en la informalidad —, ¿qué piensa hacer para reducir este grave problema que amenaza las condiciones de vida digna, incluidos los derechos laborales de los ciudadanos brasileños?
+
+HABLANTE2 muy buenas noches a los televidentes y a los candidatos. Uno de los grandes logros del gobierno del presidente Lula fue la mejora en la formalización del trabajo en Brasil. Hasta 2005, lo que se veía era la gente haciendo changas y trabajos ocasionales para tener algún ingreso o simplemente sobrevivir. Con el gobierno del presidente Lula aumentamos considerablemente la formalización del trabajo, tanto que batimos todos los récords en generación de empleo formal con contrato, y hemos creado 14,5 millones de puestos de trabajo hasta el momento. Creo que para fin de año estaremos cerca de los 15 millones de empleos creados. A esto contribuyó necesariamente la expansión del mercado interno en Brasil, que permitió una mayor producción, un mayor consumo y, por tanto, más empleo en Brasil.

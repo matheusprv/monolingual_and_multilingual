@@ -1,0 +1,154 @@
+TRADUÇÃO EXPLICAR INGLÊS — NATURALIZADO
+
+===================
+ARQUIVO 4: INGLÊS
+===================
+
+<XPL_ED_02>
+<versão_english>
+
+How did the Byzantine Church work, and what were its relationships with the people, the emperor, and the Catholic Church?
+
+Conflicts of a cultural, political, racial, and even religious nature became inevitable, and the Roman bishop came to be regarded as a traitor (persona non grata) to the Byzantine cause of expansion and political and territorial reconquest of the West. It is from this angle, then, that the entire schism process between the Latin and Greek churches — both part of the central Christian orthodoxy of the first millennium — must be analyzed. Had there been no other theological, disciplinary, and customary causes, it might have been possible to restore the order of things that had previously prevailed, that is, unity in diversity.
+
+What is feedback?
+
+Feedback is a term used across many fields, but at its core it means "return signal" — how one thing affects another. In biology, for instance, when one hormone stimulates or inhibits the release of another hormone, that's called feedback.
+
+---
+
+<XPL_ED_04>
+<versão_english>
+
+How do I learn to do my own makeup without taking a course? What do I need to buy to get started?
+
+Look, start with the basics — that's what I did. Stock up on the essentials: foundation, powder, eyeshadow in two shades (a light one and a darker one), mascara, eyeliner, and a lip gloss close to your natural lip color. I don't use foundation myself, but you might need it: with clean skin, spread the foundation evenly over your whole face (when you buy it, ask the salesperson to help you pick the right shade — that's really important!); apply compact powder using the same logic for the shade; then spread the dark eyeshadow over the eyelid, following the curve of your eye to form a half-moon shape; next, apply the light eyeshadow (highlighter) under your eyebrow and across the space between your eyebrow and the dark shadow; blend with a makeup brush (pick one up too); apply the eyeliner — brown is best — right along the upper lash line; put on mascara; use an eyelash curler (grab one of those as well); apply another coat of mascara, and you're done.
+
+---
+
+<XPL_ED_05>
+<versão_english>
+
+How to solve a math problem without using math?
+
+Posted by Oscar Y. Takeshita
+
+One technique that often comes in handy is converting a given problem into an equivalent one. This is especially useful when the second problem is much easier to solve or understand. Once you solve the second problem, you automatically have the solution to the first.
+
+Let's illustrate this with a classic problem recently posted on this blog.
+
+The standard way to solve this problem relies on conditional probability. The solution below barely touches probability at all.
+
+Suppose there's another TV show where you have three doors, one of which hides a prize car. The rules, however, are different:
+1. There is no host.
+2. You get to choose one of the following:
+a) Open two doors of your choosing.
+b) Open one door of your choosing.
+
+Which would you pick? Obviously option a).
+
+---
+
+<XPL_ED_06>
+<versão_english>
+
+1) Today for breakfast I ate:
+a. a bread roll (1) with butter (2)
+b. a glass of milk (3)
+c. an apple (4)
+
+Do you know what types of organic molecules these foods belong to and what their main role is in our bodies?
+
+MY ANSWER:
+a) 1: carbohydrate (starch) – energy metabolism
+2: lipids – energy metabolism
+b) 3: carbohydrate (energy metabolism), proteins (structural and regulatory metabolism), and lipids (energy metabolism)
+c) 4: carbohydrate (energy metabolism), vitamins
+
+SOME CORRECT STUDENT ANSWERS:
+Bread roll: a type of carbohydrate; provides energy for cell function (Rodrigo Avelar, 1st Alpha)
+Butter: lipid – provides energy (Suzane Reis, 1st Beta)
+Glass of milk: protein – structural and regulatory role (Valéria Coelho, 1st Alpha)
+
+---
+
+<XPL_ED_07>
+<versão_english>
+
+Ask the captain.
+
+"On a flight from Foz do Iguaçu, I noticed something: the tip of the 737-800NG's wing curves upward. What's that for?"
+
+Those upward-curved extensions at the wingtips are called winglets, and they improve the aircraft's aerodynamics. Although they represent a major breakthrough in aeronautical engineering, this design has existed in nature for millions of years. Look at large birds like condors, eagles, and vultures — they have feathers that curve up at the tips of their wings. This allows air to flow more smoothly over the wings and enables the birds to glide for extended periods while burning as little energy as possible, whether they're hunting for food or defending their territory.
+
+---
+
+<XPL_ED_08>
+<versão_english>
+
+1 – What is FIES?
+FIES is a Ministry of Education program designed to help finance college education for students enrolled in private (fee-paying) institutions. It was created in 1999, and as of this year it operates under significant changes that make the application process even more accessible for students.
+
+2 – Who can apply for FIES?
+Students regularly enrolled in non-free undergraduate programs that have received a positive evaluation from SINAES and are offered by a higher education institution participating in the Program are eligible to apply for FIES funding.
+
+A student may only apply for funding for a single program in which they are currently enrolled. Students whose academic enrollment has been placed on a full course suspension during the FIES application period are not considered regularly enrolled.
+
+---
+
+<XPL_FD_01>
+<versão_english>
+
+SPEAKER1 any errors, auditor?
+SPEAKER2 in the accounts, no
+SPEAKER1 and accounting-wise?
+SPEAKER2 there's a logical issue, but it doesn't affect the accuracy of the data
+SPEAKER1 a logical issue — go on then, what is it?
+SPEAKER2 what did you put in debit?
+SPEAKER1 payments
+SPEAKER2 and in credit?
+SPEAKER1 revenue; at the end I put the bank balance in debit to make it balance
+SPEAKER2 that's a mistake
+SPEAKER1 it's wrong?
+SPEAKER2 you flipped it — what was a debit you put as a credit, and vice versa; you violated basic accounting logic
+SPEAKER1 I'll fix it next month; since we're already knee-deep in this, I think the incomplete bookkeeping creates a problem with money held in the bank — how should that be handled?
+SPEAKER2 two ways: first, open separate records for the bank — that would be the condo association's cash account at the bank
+SPEAKER1 but can't I just run everything through the cash account? wouldn't that be simpler?
+SPEAKER2 that would be the second way — and yes, it's the simpler one
+SPEAKER1 how would that second way work?
+SPEAKER2 all checks and cash received would be cash debits; the balance too; bank deposits as outflows would be credits
+
+---
+
+<XPL_FD_03>
+<versão_english>
+
+PEDRO in the second segment, we heard from Friar Antonio Mozart from the CNBB bioethics commission, who presented the abortion issue from the Catholic Church's perspective. What is your church's position on this, starting with abortion?
+
+JAIR good evening to everyone. First, I want to commend Bandeirantes for having the wisdom to provide a democratic platform for debating a topic like this. Because when a religious person speaks, people immediately label it as "just a religious issue," so what he says doesn't matter — throw it out. Well, we evangelicals — so congratulations, congratulations Kyle, congratulations to the Bandeirantes network for once again being ahead of the curve in journalism by giving those who disagree a chance to speak. And we are against abortion. I want to keep this on scientific and theological grounds, because this isn't some simplistic religious matter. We are against abortion. Full stop. Because God doesn't — doesn't — doesn't... Okay. First: who defines life in science? Biology does. Biology is the discipline that determines where life begins. Life begins at conception — it's continuous, whether intrauterine or extrauterine, all the way to death.
+
+---
+
+<XPL_FD_05>
+<versão_english>
+
+JOÃO but what's your objection exactly? are you saying you think he's a soft goalkeeper who lets everything through? is that it?
+
+JOANA no no no; I'm going to pay a compliment first, then... I think John is a leader; I think a great team needs a leader in goal; you need to feel confident back there
+
+SPEAKER1 and Luizinho isn't?
+
+JOANA Luizinho isn't
+
+SPEAKER1 so that's one-nil for John
+
+JOANA one-nil for John, that's right
+
+---
+
+<XPL_FD_06>
+<versão_english>
+
+SPEAKER1 given that we have a serious problem with informal work — 50% of the economically active workforce operates in the informal sector — what do you plan to do to tackle this serious problem that threatens dignified living conditions, including the labor rights of Brazilian citizens?
+
+SPEAKER2 good evening to viewers and to the candidates. One of the major achievements of President Lula's government was the improvement in labor formalization in Brazil. Until 2005, what you saw was people doing odd jobs wherever they could just to bring in some income or even survive. With President Lula's government, we significantly increased formal employment — so much so that we broke all records for job creation with signed contracts. We have created 14.5 million formal jobs to date, and I believe that by year's end we will be close to 15 million. A key driver of this was the expansion of Brazil's internal market, which enabled greater production, greater consumption, and therefore more jobs across the country.

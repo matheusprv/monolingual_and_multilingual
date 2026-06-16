@@ -1,0 +1,154 @@
+TRADUÇÃO EXPLICAR GALEGO — NATURALIZADO
+
+===================
+ARQUIVO 1: GALEGO
+===================
+
+<XPL_ED_02>
+<versão_galego>
+
+Como funcionaba a Igrexa Bizantina e as súas relacións co pobo, co emperador e coa Igrexa Católica?
+
+Os conflitos de orde cultural, política, racial e mesmo relixiosa fixéronse inevitables, e o bispo romano pasou a ser considerado un traidor (persona non grata) da causa bizantina de expansión e reconquista política e territorial de occidente. É nesta óptica, pois, que tamén debe ser analizado todo o proceso de cisma entre as igrexas latina e grega, integrantes da ortodoxia cristiá central do primeiro milenio. Se non fosen outras causas de cariz teolóxico, disciplinar e de costumes, poderíase restablecer o estado de cousas imperante ata entón, é dicir, a unidade na diversidade.
+
+Que é o feedback?
+
+Feedback é un termo empregado en moitos ámbitos, pero na súa esencia significa retroalimentación, isto é, como unha cousa inflúe noutra. Por exemplo, na bioloxía, cando unha hormona estimula ou inhibe a liberación doutra hormona, a iso chamámoslle feedback.
+
+---
+
+<XPL_ED_04>
+<versão_galego>
+
+Como aprendo a maquillarme soa sen facer ningún curso? Que preciso mercar para comezar?
+
+Mira, comeza polas cousas sinxelas — foi o meu caso. Ten o arsenal básico: base, po, sombra con dúas cores (unha clara, outra máis escura), rímel, lapis e brillo de beizos nun ton natural... Eu non uso base, pero quizais ti si: coa pel limpa, espalla a base por toda a cara (cando vaias mercala, pide axuda á vendedora para elixir a cor ideal — iso é moi importante!), pasa o po compacto (tamén polo ton), logo espalla a sombra escura enriba da pálpebra seguindo a liña do globo ocular, formando unha media lúa; despois a sombra clara (iluminadora) debaixo da cella e en todo o espazo entre a cella e a sombra escura, difumina cun pincel de maquillaxe (mércao tamén); logo pasa o lapis — marrón, de preferencia — xunto ás pestanas superiores; pasa rímel, usa o curvex (mércao tamén), pasa rímel outra vez e xa está.
+
+---
+
+<XPL_ED_05>
+<versão_galego>
+
+Como resolver un problema matemático sen usar matemáticas?
+
+Publicado por Oscar Y. Takeshita
+
+Moitas veces úsase a técnica de converter un determinado problema noutro equivalente. Isto é moi útil cando o segundo problema é moito máis doado de resolver ou de entender. Unha vez resolto o segundo problema, xa se sabe a solución para o primeiro.
+
+Imos ilustrar esta técnica cun problema clásico publicado hai pouco neste blog.
+
+A forma clásica de resolver este problema consiste en utilizar a probabilidade condicional. A solución que se propón a continuación case non emprega a probabilidade.
+
+Supoñamos que existise outro programa de TV no que tamén houbese tres portas, detrás dunha das cales está o coche de agasallo. Porén as regras do xogo son as seguintes:
+1. Non hai presentador.
+2. Podes escoller entre:
+a) Abrir dúas portas á túa escolla.
+b) Abrir unha porta á túa escolla.
+
+Cal das opcións escollerías? Obviamente a opción a).
+
+---
+
+<XPL_ED_06>
+<versão_galego>
+
+1) Hoxe no meu almorzo comín o seguinte:
+a. un panciño de sal (1) con manteiga (2)
+b. un vaso de leite (3)
+c. unha mazá (4)
+
+Sabes a que tipos de moléculas orgánicas pertencen estes alimentos e cal é o seu papel principal no noso organismo?
+
+MIÑA RESPOSTA:
+a) 1: carbohidrato (amido) – metabolismo enerxético
+2: lípidos – metabolismo enerxético
+b) 3: carbohidrato (metabolismo enerxético), proteínas (metabolismo de construción e de control) e lípidos (metabolismo enerxético)
+c) 4: carbohidrato (metabolismo enerxético), vitaminas
+
+ALGUNHAS RESPOSTAS CORRECTAS DE ALUMNOS:
+Panciño de sal: tipo de carbohidrato, proporciona enerxía para o funcionamento das células (Rodrigo Avelar, 1º Alfa)
+Manteiga: lípido – proporciona enerxía (Suzane Reis, 1º Beta)
+Vaso de leite: proteína = papel estrutural e de control (Valéria Coelho, 1º Alfa)
+
+---
+
+<XPL_ED_07>
+<versão_galego>
+
+Pregúntalle ao comandante.
+
+"Nunha viaxe vindo de Foz do Iguaçu, reparei nun detalle: a punta da á do 737-800NG está dobrada cara a arriba. Para que serve iso?"
+
+Estas extensións dobradas cara a arriba nas puntas das ás chámanse winglets e melloran a aerodinámica da aeronave. A pesar de representar un gran avance da enxeñaría aeronáutica, este dispositivo xa existe na natureza desde hai millóns de anos. Obsérvese que as grandes aves, como o cóndor, a aguia ou o voitre, teñen algunhas plumas dobradas cara a arriba nas puntas das ás. Iso fai que o aire pase con máis suavidade polas ás e permite que plaeen durante longos períodos gastando o mínimo de enerxía posible mentres buscan alimento ou defenden o seu territorio.
+
+---
+
+<XPL_ED_08>
+<versão_galego>
+
+1 – Que é o FIES?
+O FIES é un programa do Ministerio da Educación destinado a financiar os estudos universitarios de estudantes matriculados en institucións non gratuítas. Foi creado en 1999 e a partir deste ano comeza a funcionar con cambios importantes que facilitan aínda máis a solicitude do financiamento por parte dos estudantes.
+
+2 – Quen pode solicitar o FIES?
+Poden solicitar o financiamento polo FIES os estudantes regularmente matriculados en cursos de graduación non gratuítos que obteñan avaliación positiva no SINAES e que sexan ofrecidos por institución de ensino superior participante do Programa.
+
+O estudante só poderá solicitar o financiamento para un único curso de graduación no que estea regularmente matriculado. Non se considerarán regularmente matriculados os estudantes cuxa matrícula académica estea en situación de suspensión xeral de disciplinas durante o período de inscrición no FIES.
+
+---
+
+<XPL_FD_01>
+<versão_galego>
+
+FALANTE1 algún erro, señor fiscal?
+FALANTE2 nas contas, non
+FALANTE1 e contablemente?
+FALANTE2 hai un reparo de orde lóxica que non invalida a exactitude dos datos
+FALANTE1 reparo lóxico, dígao xa, cal é, meu amigo
+FALANTE2 vostede puxo no débito o que
+FALANTE1 os pagamentos
+FALANTE2 e no crédito
+FALANTE1 as receitas; ao final botei o saldo do banco no débito para igualar
+FALANTE2 hai un engano
+FALANTE1 non está ben?
+FALANTE2 vostede inverteu os termos: o que era débito puxoo no crédito e viceversa; violou a lóxica contable
+FALANTE1 vou corrixilo o mes que vén; xa que estamos coa man na masa, creo que a contabilidade incompleta ten o problema do diñeiro en efectivo no banco; como se pode resolver, señor fiscal?
+FALANTE2 hai dous camiños: primeiro, abrir rexistros para o banco, sería a conta de caixa do condominio no banco
+FALANTE1 pero pódese lanzar todo pola caixa? non sería máis sinxelo?
+FALANTE2 ese sería o segundo camiño, que é de feito o máis sinxelo
+FALANTE1 como funcionaría ese segundo camiño?
+FALANTE2 todos os cheques e valores en efectivo recibidos serían débitos de caixa; o saldo tamén; os depósitos como saída serían créditos
+
+---
+
+<XPL_FD_03>
+<versão_galego>
+
+PEDRO no segundo bloque tivemos a participación do freire Antonio Mozart, da comisión de bioética da CNBB, que presentou a cuestión do aborto desde a óptica da Igrexa Católica. Cal é a posición da súa igrexa nesta cuestión, comezando polo aborto?
+
+JAIR moi boa noite a todos. Primeiro quero felicitar a Bandeirantes pola intelixencia de crear un espazo democrático para debater un asunto coma este, porque cando un relixioso vai falar, enseguida se lle pon a etiqueta de que é só unha cuestión de relixión, entón o que di non interesa, bótase fóra. Pois ben, nós os evanxélicos — entón felicitacións, felicitacións Kyle, felicitacións á rede Bandeirantes por estar unha vez máis á vangarda no xornalismo, dando oportunidade aos contrarios para se manifestar. E nós somos contra o aborto. Isto quero tratalo no eixo científico-teolóxico porque non é unha cuestión relixiosa parva. Nós somos contra o aborto, e punto. Porque deus non... non... non... ben, primeiro: quen define a vida na ciencia é a bioloxía. A bioloxía é a que define na ciencia onde comeza a vida. A vida comeza na concepción, é continua, xa sexa intrauterina ou extrauterina, ata a morte.
+
+---
+
+<XPL_FD_05>
+<versão_galego>
+
+JOÃO pero cal é a súa obxección? quere dicir, vostede cre que el é un porteiro frouxo? é iso?
+
+JOANA non non non; eu vou primeiro eloxiar e despois... eu creo que o John é un líder; creo que un gran equipo necesita un líder na portería; precisas sentirte cómodo
+
+FALANTE1 e o Luizinho non o é?
+
+JOANA o Luizinho non o é
+
+FALANTE1 ou sexa, vai un a cero para o John
+
+JOANA vai un a cero para o John, exacto
+
+---
+
+<XPL_FD_06>
+<versão_galego>
+
+FALANTE1 tendo en conta que temos un grave problema de informalidade — o 50% da forza de traballo economicamente activa está na informalidade — que pretende facer para reducir este problema grave que ameaza as condicións de vida digna, incluídos os dereitos laborais dos cidadáns brasileiros?
+
+FALANTE2 moi boa noite aos telespectadores e aos candidatos. Un dos grandes logros do goberno do presidente Lula foi a mellora na formalización do traballo en Brasil. Ata 2005 o que se vía era ese proceso do traballo precario e informal como única forma de ter uns ingresos ou simplemente sobrevivir. Co goberno do presidente Lula aumentamos bastante a formalización do traballo, tanto é así que batemos todos os récords na xeración de emprego con contrato de traballo, e creamos 14,5 millóns de postos ata o de agora. Creo que ata finais de ano chegaremos preto dos 15 millóns de empregos creados. Contribuíu necesariamente a isto a expansión do mercado interno en Brasil, o que permitiu unha maior produción, un maior consumo e, polo tanto, máis emprego en Brasil.

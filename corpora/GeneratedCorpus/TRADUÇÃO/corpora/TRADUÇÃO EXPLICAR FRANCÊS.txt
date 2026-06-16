@@ -1,0 +1,154 @@
+TRADUÇÃO EXPLICAR FRANCÊS — NATURALIZADO
+
+===================
+ARQUIVO 3: FRANCÊS
+===================
+
+<XPL_ED_02>
+<versão_francês>
+
+Comment fonctionnait l'Église byzantine et quelles étaient ses relations avec le peuple, l'empereur et l'Église catholique ?
+
+Les conflits d'ordre culturel, politique, racial et même religieux sont devenus inévitables, et l'évêque romain a fini par être considéré comme un traître (persona non grata) de la cause byzantine d'expansion et de reconquête politique et territoriale de l'Occident. C'est sous cet angle, donc, qu'il faut aussi analyser tout le processus de schisme entre les Églises latine et grecque, toutes deux parties de l'orthodoxie chrétienne centrale du premier millénaire. Sans d'autres causes de nature théologique, disciplinaire et de mœurs, on aurait pu rétablir l'état des choses qui prévalait auparavant, c'est-à-dire l'unité dans la diversité.
+
+Qu'est-ce que le feedback ?
+
+Feedback est un terme utilisé dans de nombreux domaines, mais dans son essence, il désigne la rétroaction — autrement dit, la façon dont une chose influe sur une autre. Par exemple, en biologie, quand une hormone stimule ou inhibe la libération d'une autre hormone, on appelle ça un feedback.
+
+---
+
+<XPL_ED_04>
+<versão_francês>
+
+Comment apprendre à se maquiller seule sans suivre de cours ? Qu'est-ce qu'il faut acheter pour commencer ?
+
+Écoute, commence par des choses simples — c'est ce que j'ai fait. Il te faut le kit de base : fond de teint, poudre, fard à paupières en deux couleurs (une claire, une plus foncée), mascara, crayon et gloss couleur lèvres naturelle... Moi je n'utilise pas de fond de teint, mais toi peut-être que si : peau propre, étale le fond de teint sur tout le visage (quand tu l'achètes, demande de l'aide à la vendeuse pour choisir la bonne teinte — c'est vraiment important !), applique la poudre compacte dans la même logique pour la teinte, puis étale le fard foncé sur la paupière en suivant la ligne du globe oculaire et en formant un demi-lune ; ensuite applique le fard clair (illuminateur) sous le sourcil et dans tout l'espace entre le sourcil et le fard foncé ; estompe avec un pinceau à maquillage (achètes-en un aussi) ; passe le crayon — marron de préférence — juste au ras des cils supérieurs ; applique le mascara, utilise le recourbe-cils (achète-le aussi), repasse une couche de mascara et c'est bon.
+
+---
+
+<XPL_ED_05>
+<versão_francês>
+
+Comment résoudre un problème de maths sans utiliser les maths ?
+
+Publié par Oscar Y. Takeshita
+
+On utilise souvent la technique qui consiste à convertir un problème donné en un autre équivalent. C'est très utile quand le second problème est bien plus facile à résoudre ou à comprendre. Une fois le second problème résolu, on connaît la solution du premier.
+
+Illustrons cette technique avec un problème classique récemment publié sur ce blog.
+
+La façon classique de résoudre ce problème repose sur la probabilité conditionnelle. La solution qui suit n'y fait pratiquement pas appel.
+
+Supposons qu'il existe une autre émission de télévision où tu as trois portes, derrière l'une desquelles se trouve la voiture à gagner. Mais les règles du jeu sont les suivantes :
+1. Il n'y a pas de présentateur.
+2. Tu as le choix entre :
+a) Ouvrir deux portes de ton choix.
+b) Ouvrir une porte de ton choix.
+
+Laquelle des deux options choisis-tu ? Évidemment l'option a).
+
+---
+
+<XPL_ED_06>
+<versão_francês>
+
+1) Aujourd'hui au petit-déjeuner, j'ai mangé :
+a. un petit pain (1) avec du beurre (2)
+b. un verre de lait (3)
+c. une pomme (4)
+
+Sais-tu à quels types de molécules organiques appartiennent ces aliments et quel est leur rôle principal dans notre organisme ?
+
+MA RÉPONSE :
+a) 1 : glucide (amidon) – métabolisme énergétique
+2 : lipides – métabolisme énergétique
+b) 3 : glucide (métabolisme énergétique), protéines (métabolisme de construction et de régulation) et lipides (métabolisme énergétique)
+c) 4 : glucide (métabolisme énergétique), vitamines
+
+QUELQUES BONNES RÉPONSES D'ÉLÈVES :
+Petit pain : type de glucide, fournit de l'énergie pour le fonctionnement des cellules (Rodrigo Avelar, 1re Alfa)
+Beurre : lipide – fournit de l'énergie (Suzane Reis, 1re Beta)
+Verre de lait : protéine = rôle structurel et de régulation (Valéria Coelho, 1re Alfa)
+
+---
+
+<XPL_ED_07>
+<versão_francês>
+
+Demandez au commandant de bord.
+
+« Lors d'un vol depuis Foz do Iguaçu, j'ai remarqué un détail : le bout de l'aile du 737-800NG est recourbé vers le haut. À quoi ça sert ? »
+
+Ces extensions relevées vers le haut au bout des ailes s'appellent des winglets, et elles améliorent l'aérodynamique de l'avion. Bien que représentant une avancée majeure de l'ingénierie aéronautique, ce dispositif existe dans la nature depuis des millions d'années. Observez que les grands oiseaux, comme le condor, l'aigle et le vautour, ont certaines plumes qui se relèvent vers le haut aux extrémités de leurs ailes. Cela permet à l'air de s'écouler plus fluidement sur les ailes et leur permet de planer pendant de longues périodes en dépensant un minimum d'énergie pendant qu'ils cherchent de la nourriture ou défendent leur territoire.
+
+---
+
+<XPL_ED_08>
+<versão_francês>
+
+1 – Qu'est-ce que le FIES ?
+Le FIES est un programme du ministère de l'Éducation destiné à financer les études supérieures des étudiants inscrits dans des établissements payants. Il a été créé en 1999 et, à partir de cette année, il fonctionne avec des changements importants qui facilitent encore davantage l'accès au financement pour les étudiants.
+
+2 – Qui peut faire une demande au FIES ?
+Les étudiants régulièrement inscrits dans des formations payantes ayant obtenu une évaluation positive du SINAES et proposées par un établissement d'enseignement supérieur participant au Programme peuvent demander un financement FIES.
+
+L'étudiant ne peut déposer une demande que pour une seule formation dans laquelle il est régulièrement inscrit. Ne sont pas considérés comme régulièrement inscrits les étudiants dont le parcours académique est en situation de suspension générale de cours pendant la période d'inscription au FIES.
+
+---
+
+<XPL_FD_01>
+<versão_francês>
+
+INTERVENANT1 une erreur, monsieur le fiscal ?
+INTERVENANT2 dans les comptes, non
+INTERVENANT1 et sur le plan comptable ?
+INTERVENANT2 il y a un bémol d'ordre logique qui n'invalide pas l'exactitude des données
+INTERVENANT1 un bémol logique, dites-le vite, lequel, mon ami ?
+INTERVENANT2 qu'avez-vous inscrit au débit ?
+INTERVENANT1 les paiements
+INTERVENANT2 et au crédit ?
+INTERVENANT1 les recettes ; à la fin j'ai mis le solde bancaire au débit pour équilibrer
+INTERVENANT2 il y a une erreur
+INTERVENANT1 ce n'est pas bon ?
+INTERVENANT2 vous avez tout inversé : ce qui était débit, vous l'avez mis au crédit, et inversement ; vous avez violé la logique comptable
+INTERVENANT1 je corrige ça le mois prochain ; puisqu'on est dans le vif du sujet, je pense que la comptabilité incomplète pose problème avec l'argent en banque ; comment faire, monsieur le fiscal ?
+INTERVENANT2 deux solutions : d'abord, ouvrir des registres pour la banque — ce serait la caisse de la copropriété en banque
+INTERVENANT1 mais on peut tout passer en caisse ? ce ne serait pas plus simple ?
+INTERVENANT2 ce serait la deuxième solution, et c'est effectivement la plus simple
+INTERVENANT1 comment fonctionnerait cette deuxième solution ?
+INTERVENANT2 tous les chèques et espèces reçus seraient des débits de caisse ; le solde aussi ; les versements en sortie seraient des crédits
+
+---
+
+<XPL_FD_03>
+<versão_francês>
+
+PEDRO dans le deuxième bloc, nous avons eu la participation du frère Antonio Mozart, de la commission de bioéthique de la CNBB, qui a présenté la question de l'avortement du point de vue de l'Église catholique. Quelle est la position de votre Église sur cette question, en commençant par l'avortement ?
+
+JAIR bonsoir à tous. Je veux d'abord féliciter Bandeirantes pour avoir eu l'intelligence de créer un espace démocratique pour débattre d'un sujet comme celui-ci. Parce que quand un religieux prend la parole, on lui colle immédiatement l'étiquette : « c'est juste une question de religion », donc ce qu'il dit n'a aucun intérêt, on jette tout. Eh bien, nous les évangéliques — alors félicitations, félicitations Kyle, félicitations au réseau Bandeirantes d'être une fois de plus en avance dans le journalisme en donnant la parole à ceux qui pensent autrement. Et nous, nous sommes contre l'avortement. Je veux aborder le sujet sous l'angle scientifique et théologique, parce que ce n'est pas une question religieuse simpliste. Nous sommes contre l'avortement. Point. Parce que dieu ne... ne... ne... Bon, d'abord : qui définit la vie dans la science ? La biologie. La biologie détermine où commence la vie. La vie commence à la conception, elle est continue, qu'elle soit intra ou extra-utérine, jusqu'à la mort.
+
+---
+
+<XPL_FD_05>
+<versão_francês>
+
+JOÃO mais quelle est votre objection ? vous voulez dire que vous pensez que c'est un gardien qui prend tous les buts faciles ? c'est ça ?
+
+JOANA non non non ; moi je vais d'abord faire des compliments et ensuite... je pense que John est un leader ; je pense qu'une grande équipe a besoin d'un leader dans les buts ; il faut que tu te sentes à l'aise
+
+INTERVENANT1 et Luizinho ne l'est pas ?
+
+JOANA Luizinho ne l'est pas
+
+INTERVENANT1 autrement dit, c'est un à zéro pour John
+
+JOANA un à zéro pour John, voilà
+
+---
+
+<XPL_FD_06>
+<versão_francês>
+
+INTERVENANT1 sachant que nous avons un grave problème d'informalité — 50 % de la population active travaille au noir —, qu'avez-vous l'intention de faire pour réduire ce grave problème qui menace les conditions de vie digne et les droits du travail des citoyens brésiliens ?
+
+INTERVENANT2 bonsoir aux téléspectateurs et aux candidats. L'une des grandes réussites du gouvernement du président Lula a été l'amélioration de la formalisation du travail au Brésil. Jusqu'en 2005, ce que l'on voyait, c'était des gens qui enchaînaient les petits boulots à droite à gauche pour avoir un revenu ou simplement survivre. Avec le gouvernement du président Lula, nous avons considérablement augmenté la formalisation du travail, à tel point que nous avons battu tous les records de création d'emplois avec contrat signé. Nous avons créé 14,5 millions d'emplois jusqu'à présent, et je pense qu'en fin d'année nous approcherons des 15 millions d'emplois créés. Ceci a été rendu possible par l'expansion du marché intérieur brésilien, qui a permis une plus grande production, une plus grande consommation et, par conséquent, davantage d'emplois au Brésil.
