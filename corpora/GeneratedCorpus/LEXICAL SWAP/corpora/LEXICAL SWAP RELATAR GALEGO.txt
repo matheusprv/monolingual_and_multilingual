@@ -59,14 +59,14 @@ As reservas brasileiras son substancialmente maiores que as súas débedas de cu
 <305>
 <Entrevista con Paulo Coelho concedida á Revista Veja>
 Abonda de máxica
-<V>– Os seus libros teñen falado cada vez menos de esoterismo. Vostede aínda se considera un mago?
-<C> – A idea do mago é moito máis unha cuestión de percepción do universo. É unha maneira de ollar o mundo alén da realidade concreta. Pero eu teño varios libros que non tocan en máxia. Os meus libros falan de cuestións filosóficas.
-<V> – Sería ese o punto común entre eles, na súa opinión?
-<C> – O punto en común é unha cousa chamada estilo. Dende o meu primeiro libro ata agora, eu teño mantido un estilo que é absolutamente directo, enxuto. Vou cortando, cortando, ata chegar á esencia da cousa. No comezo, isto foi mal interpretado. Coidaban que era unha cousa superficial. Pero é esta característica a que dá aos meus libros o seu aspecto único.
-<V> – Despois de tanto éxito, as críticas aínda o incomodan?
-<C> – Eu son un autor moi polarizador: as persoas ámanme ou ódianme. Estou acostumado. Pero a única crítica que me magoou non foi dirixida a min. Foi cando dixeron que o meu lector era burro. Eu non quero xeneralizar, pero existe un fascismo cultural no país.
-<V> – Vostede se sente perseguido por el?
-<C> – Creo que son perseguidos por el todos os que non se encadran nun certo patrón, que é o de valorar o que é incomprensible e inaccesible. Só que, afortunadamente, isto só vale para a crítica, que se illou da realidade. As persoas que escriben ese tipo de cousas quedan nunha torre de marfil, sen saber o que se pasa ao redor delas. Cren que están a abafar, que está todo o mundo escoitando o que elas din.
+V – Os seus libros teñen falado cada vez menos de esoterismo. Vostede aínda se considera un mago?
+C – A idea do mago é moito máis unha cuestión de percepción do universo. É unha maneira de ollar o mundo alén da realidade concreta. Pero eu teño varios libros que non tocan en máxia. Os meus libros falan de cuestións filosóficas.
+V – Sería ese o punto común entre eles, na súa opinión?
+C – O punto en común é unha cousa chamada estilo. Dende o meu primeiro libro ata agora, eu teño mantido un estilo que é absolutamente directo, enxuto. Vou cortando, cortando, ata chegar á esencia da cousa. No comezo, isto foi mal interpretado. Coidaban que era unha cousa superficial. Pero é esta característica a que dá aos meus libros o seu aspecto único.
+V – Despois de tanto éxito, as críticas aínda o incomodan?
+C – Eu son un autor moi polarizador: as persoas ámanme ou ódianme. Estou acostumado. Pero a única crítica que me magoou non foi dirixida a min. Foi cando dixeron que o meu lector era burro. Eu non quero xeneralizar, pero existe un fascismo cultural no país.
+V – Vostede se sente perseguido por el?
+C – Creo que son perseguidos por el todos os que non se encadran nun certo patrón, que é o de valorar o que é incomprensible e inaccesible. Só que, afortunadamente, isto só vale para a crítica, que se illou da realidade. As persoas que escriben ese tipo de cousas quedan nunha torre de marfil, sen saber o que se pasa ao redor delas. Cren que están a abafar, que está todo o mundo escoitando o que elas din.
 
 <LEXICAL_SWAP_LANG=GALEGO> <REL_FD_01>
 <RELATAR>

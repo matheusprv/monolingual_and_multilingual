@@ -448,6 +448,10 @@ class ResultsGraphApp:
             )
             return
 
+        print(f"\nDados plotados em '{graph_name}':")
+        print(data.to_string(index=False))
+        print(f"Total de pontos: {len(data)}\n", flush=True)
+
         if self.canvas is not None:
             self.canvas.get_tk_widget().destroy()
 

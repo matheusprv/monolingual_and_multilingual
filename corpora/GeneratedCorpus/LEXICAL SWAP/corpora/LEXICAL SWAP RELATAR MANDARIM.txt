@@ -59,14 +59,14 @@ Baxi chubei dadayu qi duanqi zhaiwu. Baxi de youshi zaiyu, chu le chubei yiwai, 
 <305>
 <Entrevista com Paulo Coelho concedida à Revista Veja>
 Bie zai nong moshu le
-<V>– Ni de shu ti de yuelai yue shao de guanyu shenmi zhuyi. Ni hai renwei ni shi yi ge moshu shi ma?
-<C> – Moshu shi de guannian geng duo de shi yi ge dui yuzhou de ganjue. Zhe shi yi ge chao yue juti xianshi de kan shijie de fangfa. Dan wo yixie shu she ji moshu. Wo de shu tan dao de shi zhexue wenti.
-<V> – Zhe hui zheixie shu de gongtong dian ma, zai ni kanlai?
-<C> – Gongtong dian shi suowei de fengge. Cong wo de di yi ben shu dao xianzai, wo yi zhi baochi zhe yi zhong jue dui zhijie, linli de fengge. Wo yi zhi zai xiu jian, xiu jian, zhidao bawo dao shi qing de benzhi. Yi kai shi, zhe bei wujie le. Renwei zhe shi biaomian de dongxi. Dan zhengshi zhe te zheng gei le wo de shu duyiyi de fangmian.
-<V> – Zai ruci chenggong zhihou, pipin yi ran shi ni kunrao ma?
-<C> – Wo shi yi ge ji duan fenghua de zuozhe: renmen ai wo, yao ma hen wo. Wo xiguan le. Dan weiyi shanghai wo de piping bing meiyou zhi xiang wo. Shi dang tamen shuo wo de duzhe sha de shihou. Wo bu xiang fanhua, dan guonei que shi you wenhua ji qi.
-<V> – Ni jue de ni bei zhe zhong ji qi pai chi ma?
-<C> – Wo renwei suo you bu fu he mou ge biaozhu nanyi lijie he nanyi jiedu de ren dou bei pai chi. Zhi shi, xinghao de shi, zhe zhi zhen dui piping jie, tamen yi zhi manyu le xianshi. Xie zhei zhong shu de ren sheng zai yaxiang ta zhong, bu zhidao tamen shenbian fengyunduobian. Tamen yiwei ziji qi shi xun xiong, yiwei suoyou rendou zai ting tamen shuo.
+V – Ni de shu ti de yuelai yue shao de guanyu shenmi zhuyi. Ni hai renwei ni shi yi ge moshu shi ma?
+C – Moshu shi de guannian geng duo de shi yi ge dui yuzhou de ganjue. Zhe shi yi ge chao yue juti xianshi de kan shijie de fangfa. Dan wo yixie shu she ji moshu. Wo de shu tan dao de shi zhexue wenti.
+V – Zhe hui zheixie shu de gongtong dian ma, zai ni kanlai?
+C – Gongtong dian shi suowei de fengge. Cong wo de di yi ben shu dao xianzai, wo yi zhi baochi zhe yi zhong jue dui zhijie, linli de fengge. Wo yi zhi zai xiu jian, xiu jian, zhidao bawo dao shi qing de benzhi. Yi kai shi, zhe bei wujie le. Renwei zhe shi biaomian de dongxi. Dan zhengshi zhe te zheng gei le wo de shu duyiyi de fangmian.
+V – Zai ruci chenggong zhihou, pipin yi ran shi ni kunrao ma?
+C – Wo shi yi ge ji duan fenghua de zuozhe: renmen ai wo, yao ma hen wo. Wo xiguan le. Dan weiyi shanghai wo de piping bing meiyou zhi xiang wo. Shi dang tamen shuo wo de duzhe sha de shihou. Wo bu xiang fanhua, dan guonei que shi you wenhua ji qi.
+V – Ni jue de ni bei zhe zhong ji qi pai chi ma?
+C – Wo renwei suo you bu fu he mou ge biaozhu nanyi lijie he nanyi jiedu de ren dou bei pai chi. Zhi shi, xinghao de shi, zhe zhi zhen dui piping jie, tamen yi zhi manyu le xianshi. Xie zhei zhong shu de ren sheng zai yaxiang ta zhong, bu zhidao tamen shenbian fengyunduobian. Tamen yiwei ziji qi shi xun xiong, yiwei suoyou rendou zai ting tamen shuo.
 
 <LEXICAL_SWAP_LANG=MANDARIM> <REL_FD_01>
 <RELATAR>

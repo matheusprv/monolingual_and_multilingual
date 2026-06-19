@@ -241,6 +241,3 @@ SHUOHUA ZHE1 en
 SHUOHUA ZHE2 wo you yi ge fei chang chu se de fan yi
 SHUOHUA ZHE1 ai yo wo de tian， (xiao) ni ren wei ta shi na zhong zhuan ye ren yuan？
 SHUOHUA ZHE2 ta de xin shui ji gao
----
-
-**Pronto!** Os 7 arquivos do `SUBCORPUS EXPLORAR.txt` foram gerados seguindo a regra final confirmada.

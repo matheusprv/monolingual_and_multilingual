@@ -59,14 +59,14 @@ Brazil'skiye rezervy sushchestvenno bol'she chem yego kratkosrochnyye dolgi. U B
 <305>
 <Entrevista com Paulo Coelho concedida à Revista Veja>
 Dovol'no magii
-<V>– Vashi knigi govoryat vse men'she ob ezoterizme. Vy vse yeshche schitayete sebya magom?
-<C> – Ideya maga – eto gorazdo bol'she vopros vospriyatiya vselennoy. Eto sposob smotret' na mir za predelami konkretnoy real'nosti. No u menya yest' neskol'ko knig, kotoryye ne kasayutsya magii. Moi knigi govoryat o filosofskikh voprosakh.
-<V> – Byla by eta obshchaya cherta mezhdu nimi, po vashemu mneniyu?
-<C> – Obshchaya cherta – eto nechto nazyvayemoye stilem. S moyey pervoy knigi i do teper', ya podderzhival stil' kotoryy absolyutno pryamoy, chisty. Ya prodolzhayu rezhat', rezhat', poka ne doyda do sushchnosti. V nachale eto bylo neponato. Duma eto byla poverkhnostnaya veshch'. No imenno eta kharakteristika dayet moim knigam ikh unikal'nyy aspekt.
-<V> – Posle stol'kogo uspekha, kritika vam vse yeshche mešayet?
-<C> – Ya ochen' polyarizuyushchiy avtor: lyudi libo lyubyat menya libo nenavidyat. Ya privyk. No yedinstvennaya kritika kotoraya menya ranila ne byla napravlena na menya. Eto bylo kogda skazali chto moy chitatel' – tupoy. Ya ne khochu obobshchat', no v strane sushchestvuyet kul'turnyy fashizm.
-<V> – Vy chuvstvuyete sebya presleduyemym etim?
-<C> – Ya dumayu chto presleduyutsya etim vse te kto ne vpisyvayutsya v opredelennyy standart, kotoryy zaklyuchayetsya v tom chtoby tsenit' to chto nepostizhimo i nedostupno. No, k schast'yu, eto kasayetsya tol'ko kritiki, kotoraya izolirovalas' ot real'nosti. Lyudi kotoryye pishut takiye veshchi ostayutsya v bashne iz slonovoy kosti, ne znaya chto proiskhodit vokrug nikh. Oni dumayut chto oni podavlyayut, chto vse slushayut to chto oni govoryat.
+V – Vashi knigi govoryat vse men'she ob ezoterizme. Vy vse yeshche schitayete sebya magom?
+C – Ideya maga – eto gorazdo bol'she vopros vospriyatiya vselennoy. Eto sposob smotret' na mir za predelami konkretnoy real'nosti. No u menya yest' neskol'ko knig, kotoryye ne kasayutsya magii. Moi knigi govoryat o filosofskikh voprosakh.
+V – Byla by eta obshchaya cherta mezhdu nimi, po vashemu mneniyu?
+C – Obshchaya cherta – eto nechto nazyvayemoye stilem. S moyey pervoy knigi i do teper', ya podderzhival stil' kotoryy absolyutno pryamoy, chisty. Ya prodolzhayu rezhat', rezhat', poka ne doyda do sushchnosti. V nachale eto bylo neponato. Duma eto byla poverkhnostnaya veshch'. No imenno eta kharakteristika dayet moim knigam ikh unikal'nyy aspekt.
+V – Posle stol'kogo uspekha, kritika vam vse yeshche mešayet?
+C – Ya ochen' polyarizuyushchiy avtor: lyudi libo lyubyat menya libo nenavidyat. Ya privyk. No yedinstvennaya kritika kotoraya menya ranila ne byla napravlena na menya. Eto bylo kogda skazali chto moy chitatel' – tupoy. Ya ne khochu obobshchat', no v strane sushchestvuyet kul'turnyy fashizm.
+V – Vy chuvstvuyete sebya presleduyemym etim?
+C – Ya dumayu chto presleduyutsya etim vse te kto ne vpisyvayutsya v opredelennyy standart, kotoryy zaklyuchayetsya v tom chtoby tsenit' to chto nepostizhimo i nedostupno. No, k schast'yu, eto kasayetsya tol'ko kritiki, kotoraya izolirovalas' ot real'nosti. Lyudi kotoryye pishut takiye veshchi ostayutsya v bashne iz slonovoy kosti, ne znaya chto proiskhodit vokrug nikh. Oni dumayut chto oni podavlyayut, chto vse slushayut to chto oni govoryat.
 
 <LEXICAL_SWAP_LANG=RUSSO> <REL_FD_01>
 <RELATAR>

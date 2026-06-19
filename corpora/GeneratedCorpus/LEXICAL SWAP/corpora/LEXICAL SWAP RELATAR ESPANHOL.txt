@@ -57,16 +57,16 @@ Las reservas brasileñas son substancialmente mayores que sus deudas de corto pl
 <2001>
 <http://veja.abril.com.br/220801/entrevista.html >
 <305>
-<Entrevista con Paulo Coelho concedida a la Revista Veja>
+Entrevista con Paulo Coelho concedida a la Revista Veja
 Basta de mágica
-<V>– Sus libros han hablado cada vez menos de esoterismo. ¿Usted todavía se considera un mago?
-<C> – La idea del mago es mucho más una cuestión de percepción del universo. Es una manera de mirar el mundo más allá de la realidad concreta. Pero yo tengo varios libros que no tocan en magia. Mis libros hablan de cuestiones filosóficas.
-<V> – ¿Sería ese el punto común entre ellos, en su opinión?
-<C> – El punto en común es una cosa llamada estilo. Desde mi primer libro hasta ahora, yo he mantenido un estilo que es absolutamente directo, enjuto. Voy cortando, cortando, hasta llegar a la esencia de la cosa. En el comienzo, esto fue mal interpretado. Pensaban que era una cosa superficial. Pero es esta característica la que da a mis libros su aspecto único.
-<V> – Después de tanto éxito, ¿las críticas todavía lo incomodan?
-<C> – Yo soy un autor muy polarizador: las personas me aman o me odian. Estoy acostumbrado. Pero la única crítica que me dolió no fue dirigida a mí. Fue cuando dijeron que mi lector era tonto. Yo no quiero generalizar, pero existe un fascismo cultural en el país.
-<V> – ¿Usted se siente perseguido por él?
-<C> – Creo que son perseguidos por él todos los que no se encuadran en un cierto patrón, que es el de valorar lo que es incomprensible e inaccesible. Solo que, afortunadamente, esto solo vale para la crítica, que se aisló de la realidad. Las personas que escriben ese tipo de cosas se quedan en una torre de marfil, sin saber lo que pasa alrededor de ellas. Creen que están acallando, que está todo el mundo escuchando lo que ellas dicen.
+V – Sus libros han hablado cada vez menos de esoterismo. ¿Usted todavía se considera un mago?
+C – La idea del mago es mucho más una cuestión de percepción del universo. Es una manera de mirar el mundo más allá de la realidad concreta. Pero yo tengo varios libros que no tocan en magia. Mis libros hablan de cuestiones filosóficas.
+V – ¿Sería ese el punto común entre ellos, en su opinión?
+C – El punto en común es una cosa llamada estilo. Desde mi primer libro hasta ahora, yo he mantenido un estilo que es absolutamente directo, enjuto. Voy cortando, cortando, hasta llegar a la esencia de la cosa. En el comienzo, esto fue mal interpretado. Pensaban que era una cosa superficial. Pero es esta característica la que da a mis libros su aspecto único.
+V – Después de tanto éxito, ¿las críticas todavía lo incomodan?
+C – Yo soy un autor muy polarizador: las personas me aman o me odian. Estoy acostumbrado. Pero la única crítica que me dolió no fue dirigida a mí. Fue cuando dijeron que mi lector era tonto. Yo no quiero generalizar, pero existe un fascismo cultural en el país.
+V – ¿Usted se siente perseguido por él?
+C – Creo que son perseguidos por él todos los que no se encuadran en un cierto patrón, que es el de valorar lo que es incomprensible e inaccesible. Solo que, afortunadamente, esto solo vale para la crítica, que se aisló de la realidad. Las personas que escriben ese tipo de cosas se quedan en una torre de marfil, sin saber lo que pasa alrededor de ellas. Creen que están acallando, que está todo el mundo escuchando lo que ellas dicen.
 
 <LEXICAL_SWAP_LANG=ESPANHOL> <REL_FD_01>
 <RELATAR>
