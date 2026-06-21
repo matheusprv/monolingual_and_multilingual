@@ -1,9 +1,3 @@
-TRADUÇÃO COMPARTILHAR MANDARIM — NATURALIZADO
-
-===================
-ARQUIVO 7: MANDARIM (pinyin)
-===================
-
 <COM_ED_2>
 <COMPARTILHAR>
 <ESCRITO DIÁLOGO>

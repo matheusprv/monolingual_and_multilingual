@@ -1,9 +1,3 @@
-TRADUÇÃO COMPARTILHAR GALEGO — NATURALIZADO
-
-===================
-ARQUIVO 1: GALEGO
-===================
-
 <COM_ED_2>
 <COMPARTILHAR>
 <ESCRITO DIÁLOGO>

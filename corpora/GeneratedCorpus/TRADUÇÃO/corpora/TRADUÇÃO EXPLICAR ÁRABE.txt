@@ -1,9 +1,3 @@
-TRADUÇÃO EXPLICAR ÁRABE — NATURALIZADO
-
-===================
-ARQUIVO 6: ÁRABE (romanizado)
-===================
-
 <XPL_ED_02>
 <versão_arabic (romanizado)>
 

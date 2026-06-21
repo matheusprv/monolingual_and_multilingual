@@ -1,9 +1,3 @@
-VERSÃO GALEGO — NATURALIZADO
-
-===================
-ARQUIVO 1: GALEGO
-===================
-
 <CAP_ED_02>
 <versão_galego>
 

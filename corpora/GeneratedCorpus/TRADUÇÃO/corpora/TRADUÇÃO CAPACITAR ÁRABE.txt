@@ -1,9 +1,3 @@
-VERSÃO ÁRABE — NATURALIZADO
-
-===================
-ARQUIVO 6: ÁRABE (romanizado)
-===================
-
 <CAP_ED_02>
 <versão_arabic (romanizado)>
 

@@ -1,9 +1,3 @@
-VERSÃO RUSSO — NATURALIZADO
-
-===================
-ARQUIVO 5: RUSSO (romanizado)
-===================
-
 <CAP_ED_02>
 <versão_russkii>
 

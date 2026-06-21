@@ -1,9 +1,3 @@
-VERSÃO FRANCÊS — NATURALIZADO
-
-===================
-ARQUIVO 3: FRANCÊS
-===================
-
 <CAP_ED_02>
 <versão_francês>
 

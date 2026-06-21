@@ -1,9 +1,3 @@
-TRADUÇÃO EXPLICAR GALEGO — NATURALIZADO
-
-===================
-ARQUIVO 1: GALEGO
-===================
-
 <XPL_ED_02>
 <versão_galego>
 

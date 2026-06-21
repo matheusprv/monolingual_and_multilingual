@@ -1,9 +1,3 @@
-TRADUÇÃO COMPARTILHAR RUSSO — NATURALIZADO
-
-===================
-ARQUIVO 5: RUSSO (romanizado)
-===================
-
 <COM_ED_2>
 <COMPARTILHAR>
 <ESCRITO DIÁLOGO>

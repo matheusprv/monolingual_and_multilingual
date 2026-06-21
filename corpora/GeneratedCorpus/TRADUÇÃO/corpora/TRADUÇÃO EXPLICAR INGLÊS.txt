@@ -1,9 +1,3 @@
-TRADUÇÃO EXPLICAR INGLÊS — NATURALIZADO
-
-===================
-ARQUIVO 4: INGLÊS
-===================
-
 <XPL_ED_02>
 <versão_english>
 

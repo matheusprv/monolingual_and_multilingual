@@ -1,9 +1,3 @@
-TRADUÇÃO EXPLICAR FRANCÊS — NATURALIZADO
-
-===================
-ARQUIVO 3: FRANCÊS
-===================
-
 <XPL_ED_02>
 <versão_francês>
 

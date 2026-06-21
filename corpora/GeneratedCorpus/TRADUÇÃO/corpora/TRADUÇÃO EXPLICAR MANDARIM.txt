@@ -1,9 +1,3 @@
-TRADUÇÃO EXPLICAR MANDARIM — NATURALIZADO
-
-===================
-ARQUIVO 7: MANDARIM (pinyin)
-===================
-
 <XPL_ED_02>
 <versão_mandarim (pinyin)>
 

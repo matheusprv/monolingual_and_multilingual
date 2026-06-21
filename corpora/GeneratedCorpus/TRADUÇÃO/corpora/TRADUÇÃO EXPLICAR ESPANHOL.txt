@@ -1,9 +1,3 @@
-TRADUÇÃO EXPLICAR ESPANHOL — NATURALIZADO
-
-===================
-ARQUIVO 2: ESPANHOL
-===================
-
 <XPL_ED_02>
 <versão_espanhol>
 

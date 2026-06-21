@@ -1,9 +1,3 @@
-TRADUÇÃO EXPLICAR RUSSO — NATURALIZADO
-
-===================
-ARQUIVO 5: RUSSO (romanizado)
-===================
-
 <XPL_ED_02>
 <versão_russkii>
 

@@ -1,9 +1,3 @@
-VERSÃO ESPANHOL — NATURALIZADO
-
-===================
-ARQUIVO 2: ESPANHOL
-===================
-
 <CAP_ED_02>
 <versão_espanhol>
 

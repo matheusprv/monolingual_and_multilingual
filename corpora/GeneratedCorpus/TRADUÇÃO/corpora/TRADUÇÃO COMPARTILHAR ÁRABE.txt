@@ -1,9 +1,3 @@
-TRADUÇÃO COMPARTILHAR ÁRABE — NATURALIZADO
-
-===================
-ARQUIVO 6: ÁRABE (romanizado)
-===================
-
 <COM_ED_2>
 <COMPARTILHAR>
 <ESCRITO DIÁLOGO>
