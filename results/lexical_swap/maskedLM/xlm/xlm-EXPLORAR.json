@@ -1,0 +1,922 @@
+{
+    "ESPANHOL": {
+        "avg_pseudo_ppl": 6.149970589852399,
+        "avg_bpb": 0.582036580833974,
+        "avg_tokens_per_word": 1.3700759799552007,
+        "texts": [
+            {
+                "text_id": 0,
+                "num_tokens": 460,
+                "num_words": 323,
+                "num_bytes": 1976,
+                "tokens_per_word": 1.4241486068111455,
+                "pseudo_ppl": 3.7720054012393405,
+                "bpb": 0.445876822495353
+            },
+            {
+                "text_id": 1,
+                "num_tokens": 320,
+                "num_words": 231,
+                "num_bytes": 1297,
+                "tokens_per_word": 1.3852813852813852,
+                "pseudo_ppl": 8.236978646979518,
+                "bpb": 0.7505604314630757
+            },
+            {
+                "text_id": 2,
+                "num_tokens": 478,
+                "num_words": 334,
+                "num_bytes": 2166,
+                "tokens_per_word": 1.4311377245508983,
+                "pseudo_ppl": 2.6467328230102227,
+                "bpb": 0.3098862453729677
+            },
+            {
+                "text_id": 3,
+                "num_tokens": 472,
+                "num_words": 316,
+                "num_bytes": 1983,
+                "tokens_per_word": 1.4936708860759493,
+                "pseudo_ppl": 5.022063721837525,
+                "bpb": 0.5541847290644809
+            },
+            {
+                "text_id": 4,
+                "num_tokens": 440,
+                "num_words": 306,
+                "num_bytes": 2065,
+                "tokens_per_word": 1.4379084967320261,
+                "pseudo_ppl": 5.420040168731525,
+                "bpb": 0.5195416751599369
+            },
+            {
+                "text_id": 5,
+                "num_tokens": 119,
+                "num_words": 85,
+                "num_bytes": 538,
+                "tokens_per_word": 1.4,
+                "pseudo_ppl": 4.662441243160219,
+                "bpb": 0.49128100331653296
+            },
+            {
+                "text_id": 6,
+                "num_tokens": 500,
+                "num_words": 313,
+                "num_bytes": 1841,
+                "tokens_per_word": 1.597444089456869,
+                "pseudo_ppl": 6.987079097238787,
+                "bpb": 0.7617298947293936
+            },
+            {
+                "text_id": 7,
+                "num_tokens": 395,
+                "num_words": 323,
+                "num_bytes": 1720,
+                "tokens_per_word": 1.2229102167182662,
+                "pseudo_ppl": 8.745042598493505,
+                "bpb": 0.7184557195614077
+            },
+            {
+                "text_id": 8,
+                "num_tokens": 372,
+                "num_words": 312,
+                "num_bytes": 1772,
+                "tokens_per_word": 1.1923076923076923,
+                "pseudo_ppl": 5.431924975484216,
+                "bpb": 0.5125420101118523
+            },
+            {
+                "text_id": 9,
+                "num_tokens": 393,
+                "num_words": 313,
+                "num_bytes": 1774,
+                "tokens_per_word": 1.255591054313099,
+                "pseudo_ppl": 11.918012473918916,
+                "bpb": 0.7919972946303399
+            },
+            {
+                "text_id": 10,
+                "num_tokens": 397,
+                "num_words": 312,
+                "num_bytes": 1807,
+                "tokens_per_word": 1.2724358974358974,
+                "pseudo_ppl": 5.222762480373631,
+                "bpb": 0.5239462083960558
+            },
+            {
+                "text_id": 11,
+                "num_tokens": 421,
+                "num_words": 317,
+                "num_bytes": 1755,
+                "tokens_per_word": 1.3280757097791798,
+                "pseudo_ppl": 5.734563447761381,
+                "bpb": 0.6044369357062915
+            }
+        ]
+    },
+    "FRANCÊS": {
+        "avg_pseudo_ppl": 6.0761057342691585,
+        "avg_bpb": 0.6084585928428664,
+        "avg_tokens_per_word": 1.5360898980153606,
+        "texts": [
+            {
+                "text_id": 0,
+                "num_tokens": 519,
+                "num_words": 319,
+                "num_bytes": 1999,
+                "tokens_per_word": 1.6269592476489028,
+                "pseudo_ppl": 3.9689661183395524,
+                "bpb": 0.5163422336128389
+            },
+            {
+                "text_id": 1,
+                "num_tokens": 350,
+                "num_words": 230,
+                "num_bytes": 1348,
+                "tokens_per_word": 1.5217391304347827,
+                "pseudo_ppl": 9.22811562725976,
+                "bpb": 0.8324277658232536
+            },
+            {
+                "text_id": 2,
+                "num_tokens": 548,
+                "num_words": 318,
+                "num_bytes": 2244,
+                "tokens_per_word": 1.7232704402515724,
+                "pseudo_ppl": 2.662633865209384,
+                "bpb": 0.3450285314289285
+            },
+            {
+                "text_id": 3,
+                "num_tokens": 512,
+                "num_words": 308,
+                "num_bytes": 2021,
+                "tokens_per_word": 1.6623376623376624,
+                "pseudo_ppl": 7.027206767278529,
+                "bpb": 0.7126328998413531
+            },
+            {
+                "text_id": 4,
+                "num_tokens": 495,
+                "num_words": 296,
+                "num_bytes": 2150,
+                "tokens_per_word": 1.6722972972972974,
+                "pseudo_ppl": 4.211254958824231,
+                "bpb": 0.4775599348661591
+            },
+            {
+                "text_id": 5,
+                "num_tokens": 129,
+                "num_words": 84,
+                "num_bytes": 565,
+                "tokens_per_word": 1.5357142857142858,
+                "pseudo_ppl": 4.738131868753619,
+                "bpb": 0.5124195881803081
+            },
+            {
+                "text_id": 6,
+                "num_tokens": 525,
+                "num_words": 312,
+                "num_bytes": 1930,
+                "tokens_per_word": 1.6826923076923077,
+                "pseudo_ppl": 6.724791895884514,
+                "bpb": 0.7479181616960819
+            },
+            {
+                "text_id": 7,
+                "num_tokens": 405,
+                "num_words": 298,
+                "num_bytes": 1728,
+                "tokens_per_word": 1.3590604026845639,
+                "pseudo_ppl": 9.265593594178123,
+                "bpb": 0.752785172935562
+            },
+            {
+                "text_id": 8,
+                "num_tokens": 419,
+                "num_words": 298,
+                "num_bytes": 1812,
+                "tokens_per_word": 1.4060402684563758,
+                "pseudo_ppl": 4.6081453450065535,
+                "bpb": 0.5096876527372025
+            },
+            {
+                "text_id": 9,
+                "num_tokens": 426,
+                "num_words": 300,
+                "num_bytes": 1813,
+                "tokens_per_word": 1.42,
+                "pseudo_ppl": 10.536453214616628,
+                "bpb": 0.7982665271161122
+            },
+            {
+                "text_id": 10,
+                "num_tokens": 419,
+                "num_words": 303,
+                "num_bytes": 1825,
+                "tokens_per_word": 1.3828382838283828,
+                "pseudo_ppl": 4.641884653484315,
+                "bpb": 0.508473299833252
+            },
+            {
+                "text_id": 11,
+                "num_tokens": 445,
+                "num_words": 309,
+                "num_bytes": 1821,
+                "tokens_per_word": 1.4401294498381878,
+                "pseudo_ppl": 5.30009090239468,
+                "bpb": 0.5879613460433445
+            }
+        ]
+    },
+    "GALEGO": {
+        "avg_pseudo_ppl": 7.121805546252368,
+        "avg_bpb": 0.6331059770534123,
+        "avg_tokens_per_word": 1.3985468669710166,
+        "texts": [
+            {
+                "text_id": 0,
+                "num_tokens": 444,
+                "num_words": 303,
+                "num_bytes": 1857,
+                "tokens_per_word": 1.4653465346534653,
+                "pseudo_ppl": 3.597465885687205,
+                "bpb": 0.4416045055059369
+            },
+            {
+                "text_id": 1,
+                "num_tokens": 322,
+                "num_words": 229,
+                "num_bytes": 1261,
+                "tokens_per_word": 1.4061135371179039,
+                "pseudo_ppl": 9.577339894425576,
+                "bpb": 0.8323546796280035
+            },
+            {
+                "text_id": 2,
+                "num_tokens": 461,
+                "num_words": 308,
+                "num_bytes": 2090,
+                "tokens_per_word": 1.4967532467532467,
+                "pseudo_ppl": 2.61576500214726,
+                "bpb": 0.30598774336575907
+            },
+            {
+                "text_id": 3,
+                "num_tokens": 466,
+                "num_words": 301,
+                "num_bytes": 1904,
+                "tokens_per_word": 1.548172757475083,
+                "pseudo_ppl": 5.833874057159552,
+                "bpb": 0.6227498300863997
+            },
+            {
+                "text_id": 4,
+                "num_tokens": 425,
+                "num_words": 290,
+                "num_bytes": 2024,
+                "tokens_per_word": 1.4655172413793103,
+                "pseudo_ppl": 5.744413222831171,
+                "bpb": 0.5296036568329756
+            },
+            {
+                "text_id": 5,
+                "num_tokens": 119,
+                "num_words": 82,
+                "num_bytes": 532,
+                "tokens_per_word": 1.451219512195122,
+                "pseudo_ppl": 4.111747644163619,
+                "bpb": 0.45626025377960366
+            },
+            {
+                "text_id": 6,
+                "num_tokens": 493,
+                "num_words": 304,
+                "num_bytes": 1781,
+                "tokens_per_word": 1.6217105263157894,
+                "pseudo_ppl": 8.191818848050472,
+                "bpb": 0.8398947891356099
+            },
+            {
+                "text_id": 7,
+                "num_tokens": 380,
+                "num_words": 308,
+                "num_bytes": 1658,
+                "tokens_per_word": 1.2337662337662338,
+                "pseudo_ppl": 8.756183722870533,
+                "bpb": 0.7174395933144058
+            },
+            {
+                "text_id": 8,
+                "num_tokens": 356,
+                "num_words": 297,
+                "num_bytes": 1657,
+                "tokens_per_word": 1.1986531986531987,
+                "pseudo_ppl": 7.6659670259789054,
+                "bpb": 0.6313183670308863
+            },
+            {
+                "text_id": 9,
+                "num_tokens": 385,
+                "num_words": 300,
+                "num_bytes": 1701,
+                "tokens_per_word": 1.2833333333333334,
+                "pseudo_ppl": 13.192073675652303,
+                "bpb": 0.8423373254371467
+            },
+            {
+                "text_id": 10,
+                "num_tokens": 382,
+                "num_words": 298,
+                "num_bytes": 1750,
+                "tokens_per_word": 1.2818791946308725,
+                "pseudo_ppl": 8.06418392560428,
+                "bpb": 0.6573736592729322
+            },
+            {
+                "text_id": 11,
+                "num_tokens": 411,
+                "num_words": 309,
+                "num_bytes": 1723,
+                "tokens_per_word": 1.3300970873786409,
+                "pseudo_ppl": 8.110833650457536,
+                "bpb": 0.720347321251288
+            }
+        ]
+    },
+    "INGLÊS": {
+        "avg_pseudo_ppl": 11.686148158148738,
+        "avg_bpb": 0.794765137854776,
+        "avg_tokens_per_word": 1.3181345875507924,
+        "texts": [
+            {
+                "text_id": 0,
+                "num_tokens": 465,
+                "num_words": 332,
+                "num_bytes": 1918,
+                "tokens_per_word": 1.4006024096385543,
+                "pseudo_ppl": 6.4655259034547035,
+                "bpb": 0.652834719099759
+            },
+            {
+                "text_id": 1,
+                "num_tokens": 313,
+                "num_words": 234,
+                "num_bytes": 1251,
+                "tokens_per_word": 1.3376068376068375,
+                "pseudo_ppl": 15.766566903612542,
+                "bpb": 0.9954942855056218
+            },
+            {
+                "text_id": 2,
+                "num_tokens": 472,
+                "num_words": 335,
+                "num_bytes": 2080,
+                "tokens_per_word": 1.408955223880597,
+                "pseudo_ppl": 3.8839128928091076,
+                "bpb": 0.4442043840132336
+            },
+            {
+                "text_id": 3,
+                "num_tokens": 455,
+                "num_words": 335,
+                "num_bytes": 1912,
+                "tokens_per_word": 1.3582089552238805,
+                "pseudo_ppl": 10.52589527712249,
+                "bpb": 0.8081178472014997
+            },
+            {
+                "text_id": 4,
+                "num_tokens": 424,
+                "num_words": 310,
+                "num_bytes": 1992,
+                "tokens_per_word": 1.367741935483871,
+                "pseudo_ppl": 10.792475156271832,
+                "bpb": 0.7304962045543865
+            },
+            {
+                "text_id": 5,
+                "num_tokens": 123,
+                "num_words": 88,
+                "num_bytes": 508,
+                "tokens_per_word": 1.3977272727272727,
+                "pseudo_ppl": 8.771929882480842,
+                "bpb": 0.7585551111079784
+            },
+            {
+                "text_id": 6,
+                "num_tokens": 489,
+                "num_words": 316,
+                "num_bytes": 1815,
+                "tokens_per_word": 1.5474683544303798,
+                "pseudo_ppl": 10.693651773833182,
+                "bpb": 0.9210665780951269
+            },
+            {
+                "text_id": 7,
+                "num_tokens": 364,
+                "num_words": 306,
+                "num_bytes": 1598,
+                "tokens_per_word": 1.1895424836601307,
+                "pseudo_ppl": 15.002304206206984,
+                "bpb": 0.8899805003017572
+            },
+            {
+                "text_id": 8,
+                "num_tokens": 356,
+                "num_words": 309,
+                "num_bytes": 1648,
+                "tokens_per_word": 1.1521035598705502,
+                "pseudo_ppl": 10.320894305627666,
+                "bpb": 0.7274445416849965
+            },
+            {
+                "text_id": 9,
+                "num_tokens": 375,
+                "num_words": 315,
+                "num_bytes": 1703,
+                "tokens_per_word": 1.1904761904761905,
+                "pseudo_ppl": 25.917759037191423,
+                "bpb": 1.0340287162607849
+            },
+            {
+                "text_id": 10,
+                "num_tokens": 365,
+                "num_words": 311,
+                "num_bytes": 1703,
+                "tokens_per_word": 1.1736334405144695,
+                "pseudo_ppl": 10.845197170562676,
+                "bpb": 0.7370694642383849
+            },
+            {
+                "text_id": 11,
+                "num_tokens": 401,
+                "num_words": 310,
+                "num_bytes": 1671,
+                "tokens_per_word": 1.293548387096774,
+                "pseudo_ppl": 11.247665388611408,
+                "bpb": 0.8378893021937824
+            }
+        ]
+    },
+    "MANDARIM": {
+        "avg_pseudo_ppl": 31.179349457495732,
+        "avg_bpb": 1.692473382493992,
+        "avg_tokens_per_word": 1.5414670477994123,
+        "texts": [
+            {
+                "text_id": 0,
+                "num_tokens": 685,
+                "num_words": 454,
+                "num_bytes": 1838,
+                "tokens_per_word": 1.5088105726872247,
+                "pseudo_ppl": 43.585064180152465,
+                "bpb": 2.02956850994015
+            },
+            {
+                "text_id": 1,
+                "num_tokens": 474,
+                "num_words": 323,
+                "num_bytes": 1337,
+                "tokens_per_word": 1.4674922600619196,
+                "pseudo_ppl": 68.3018201060837,
+                "bpb": 2.1604232642691517
+            },
+            {
+                "text_id": 2,
+                "num_tokens": 750,
+                "num_words": 487,
+                "num_bytes": 2120,
+                "tokens_per_word": 1.540041067761807,
+                "pseudo_ppl": 30.763024369324906,
+                "bpb": 1.7487472072478645
+            },
+            {
+                "text_id": 3,
+                "num_tokens": 701,
+                "num_words": 463,
+                "num_bytes": 2043,
+                "tokens_per_word": 1.5140388768898487,
+                "pseudo_ppl": 23.804235872373198,
+                "bpb": 1.5691510698623103
+            },
+            {
+                "text_id": 4,
+                "num_tokens": 710,
+                "num_words": 494,
+                "num_bytes": 2221,
+                "tokens_per_word": 1.437246963562753,
+                "pseudo_ppl": 50.865224558745396,
+                "bpb": 1.8121168401206877
+            },
+            {
+                "text_id": 5,
+                "num_tokens": 209,
+                "num_words": 137,
+                "num_bytes": 579,
+                "tokens_per_word": 1.5255474452554745,
+                "pseudo_ppl": 37.93324940387298,
+                "bpb": 1.8934140421819587
+            },
+            {
+                "text_id": 6,
+                "num_tokens": 911,
+                "num_words": 500,
+                "num_bytes": 2390,
+                "tokens_per_word": 1.822,
+                "pseudo_ppl": 8.637440247617405,
+                "bpb": 1.1856736756343684
+            },
+            {
+                "text_id": 7,
+                "num_tokens": 653,
+                "num_words": 414,
+                "num_bytes": 1844,
+                "tokens_per_word": 1.577294685990338,
+                "pseudo_ppl": 19.41836177553823,
+                "bpb": 1.5154095884565124
+            },
+            {
+                "text_id": 8,
+                "num_tokens": 607,
+                "num_words": 419,
+                "num_bytes": 1767,
+                "tokens_per_word": 1.4486873508353222,
+                "pseudo_ppl": 24.603018657124057,
+                "bpb": 1.5873250726273838
+            },
+            {
+                "text_id": 9,
+                "num_tokens": 680,
+                "num_words": 454,
+                "num_bytes": 1883,
+                "tokens_per_word": 1.497797356828194,
+                "pseudo_ppl": 30.466286749441682,
+                "bpb": 1.7800405751144133
+            },
+            {
+                "text_id": 10,
+                "num_tokens": 642,
+                "num_words": 406,
+                "num_bytes": 1759,
+                "tokens_per_word": 1.5812807881773399,
+                "pseudo_ppl": 18.1129761297566,
+                "bpb": 1.5252342223175739
+            },
+            {
+                "text_id": 11,
+                "num_tokens": 683,
+                "num_words": 433,
+                "num_bytes": 1883,
+                "tokens_per_word": 1.5773672055427252,
+                "pseudo_ppl": 17.661491439918183,
+                "bpb": 1.5025765221555254
+            }
+        ]
+    },
+    "PB NATIVO": {
+        "avg_pseudo_ppl": 5.48208348975571,
+        "avg_bpb": 0.5370350749683416,
+        "avg_tokens_per_word": 1.3921932647644972,
+        "texts": [
+            {
+                "text_id": 0,
+                "num_tokens": 452,
+                "num_words": 307,
+                "num_bytes": 1879,
+                "tokens_per_word": 1.4723127035830619,
+                "pseudo_ppl": 2.703679139590881,
+                "bpb": 0.3451759579907024
+            },
+            {
+                "text_id": 1,
+                "num_tokens": 327,
+                "num_words": 228,
+                "num_bytes": 1257,
+                "tokens_per_word": 1.4342105263157894,
+                "pseudo_ppl": 7.754701754272764,
+                "bpb": 0.7687416976044701
+            },
+            {
+                "text_id": 2,
+                "num_tokens": 465,
+                "num_words": 307,
+                "num_bytes": 2097,
+                "tokens_per_word": 1.514657980456026,
+                "pseudo_ppl": 2.262534808039886,
+                "bpb": 0.2612027154092061
+            },
+            {
+                "text_id": 3,
+                "num_tokens": 462,
+                "num_words": 300,
+                "num_bytes": 1891,
+                "tokens_per_word": 1.54,
+                "pseudo_ppl": 4.906728185659054,
+                "bpb": 0.5606450266635511
+            },
+            {
+                "text_id": 4,
+                "num_tokens": 430,
+                "num_words": 295,
+                "num_bytes": 2024,
+                "tokens_per_word": 1.4576271186440677,
+                "pseudo_ppl": 3.388695161902308,
+                "bpb": 0.37406810301008164
+            },
+            {
+                "text_id": 5,
+                "num_tokens": 117,
+                "num_words": 80,
+                "num_bytes": 537,
+                "tokens_per_word": 1.4625,
+                "pseudo_ppl": 3.2464442129258795,
+                "bpb": 0.37014277268653867
+            },
+            {
+                "text_id": 6,
+                "num_tokens": 483,
+                "num_words": 300,
+                "num_bytes": 1812,
+                "tokens_per_word": 1.61,
+                "pseudo_ppl": 7.072768263809727,
+                "bpb": 0.7522951553653139
+            },
+            {
+                "text_id": 7,
+                "num_tokens": 382,
+                "num_words": 307,
+                "num_bytes": 1666,
+                "tokens_per_word": 1.244299674267101,
+                "pseudo_ppl": 6.991291833566026,
+                "bpb": 0.6432914526389402
+            },
+            {
+                "text_id": 8,
+                "num_tokens": 350,
+                "num_words": 300,
+                "num_bytes": 1685,
+                "tokens_per_word": 1.1666666666666667,
+                "pseudo_ppl": 5.396145944383643,
+                "bpb": 0.5051485334130564
+            },
+            {
+                "text_id": 9,
+                "num_tokens": 375,
+                "num_words": 300,
+                "num_bytes": 1718,
+                "tokens_per_word": 1.25,
+                "pseudo_ppl": 9.91007163873985,
+                "bpb": 0.7222559996773582
+            },
+            {
+                "text_id": 10,
+                "num_tokens": 369,
+                "num_words": 298,
+                "num_bytes": 1758,
+                "tokens_per_word": 1.238255033557047,
+                "pseudo_ppl": 5.9547073930119465,
+                "bpb": 0.5402828770674721
+            },
+            {
+                "text_id": 11,
+                "num_tokens": 400,
+                "num_words": 304,
+                "num_bytes": 1751,
+                "tokens_per_word": 1.3157894736842106,
+                "pseudo_ppl": 6.197233541166557,
+                "bpb": 0.6011706080934073
+            }
+        ]
+    },
+    "RUSSO": {
+        "avg_pseudo_ppl": 66.51973098810268,
+        "avg_bpb": 2.0646804692908876,
+        "avg_tokens_per_word": 2.6428511424698278,
+        "texts": [
+            {
+                "text_id": 0,
+                "num_tokens": 675,
+                "num_words": 255,
+                "num_bytes": 1876,
+                "tokens_per_word": 2.6470588235294117,
+                "pseudo_ppl": 92.49795711593303,
+                "bpb": 2.350032504577813
+            },
+            {
+                "text_id": 1,
+                "num_tokens": 467,
+                "num_words": 202,
+                "num_bytes": 1332,
+                "tokens_per_word": 2.3118811881188117,
+                "pseudo_ppl": 147.33994221186563,
+                "bpb": 2.5253777990776514
+            },
+            {
+                "text_id": 2,
+                "num_tokens": 730,
+                "num_words": 256,
+                "num_bytes": 2131,
+                "tokens_per_word": 2.8515625,
+                "pseudo_ppl": 72.8197825628628,
+                "bpb": 2.1191781911428342
+            },
+            {
+                "text_id": 3,
+                "num_tokens": 709,
+                "num_words": 291,
+                "num_bytes": 2020,
+                "tokens_per_word": 2.4364261168384878,
+                "pseudo_ppl": 47.32361347087772,
+                "bpb": 1.9530803106158652
+            },
+            {
+                "text_id": 4,
+                "num_tokens": 661,
+                "num_words": 255,
+                "num_bytes": 2043,
+                "tokens_per_word": 2.592156862745098,
+                "pseudo_ppl": 85.39075330702701,
+                "bpb": 2.075859644566718
+            },
+            {
+                "text_id": 5,
+                "num_tokens": 206,
+                "num_words": 80,
+                "num_bytes": 565,
+                "tokens_per_word": 2.575,
+                "pseudo_ppl": 112.27223381423629,
+                "bpb": 2.483250650594196
+            },
+            {
+                "text_id": 6,
+                "num_tokens": 881,
+                "num_words": 286,
+                "num_bytes": 2200,
+                "tokens_per_word": 3.0804195804195804,
+                "pseudo_ppl": 13.394252252132631,
+                "bpb": 1.4991184654171368
+            },
+            {
+                "text_id": 7,
+                "num_tokens": 687,
+                "num_words": 263,
+                "num_bytes": 1849,
+                "tokens_per_word": 2.612167300380228,
+                "pseudo_ppl": 26.467716194035923,
+                "bpb": 1.7560157725708712
+            },
+            {
+                "text_id": 8,
+                "num_tokens": 641,
+                "num_words": 253,
+                "num_bytes": 1799,
+                "tokens_per_word": 2.533596837944664,
+                "pseudo_ppl": 64.67763024065655,
+                "bpb": 2.1432684494134575
+            },
+            {
+                "text_id": 9,
+                "num_tokens": 666,
+                "num_words": 256,
+                "num_bytes": 1858,
+                "tokens_per_word": 2.6015625,
+                "pseudo_ppl": 75.60057680608463,
+                "bpb": 2.2368442810549074
+            },
+            {
+                "text_id": 10,
+                "num_tokens": 722,
+                "num_words": 257,
+                "num_bytes": 1984,
+                "tokens_per_word": 2.809338521400778,
+                "pseudo_ppl": 32.500305556045085,
+                "bpb": 1.8277012873182754
+            },
+            {
+                "text_id": 11,
+                "num_tokens": 735,
+                "num_words": 276,
+                "num_bytes": 1955,
+                "tokens_per_word": 2.6630434782608696,
+                "pseudo_ppl": 27.952008325474846,
+                "bpb": 1.8064382751409203
+            }
+        ]
+    },
+    "ÁRABE": {
+        "avg_pseudo_ppl": 61.61212236480707,
+        "avg_bpb": 2.1417527000897163,
+        "avg_tokens_per_word": 3.00071154975874,
+        "texts": [
+            {
+                "text_id": 0,
+                "num_tokens": 893,
+                "num_words": 315,
+                "num_bytes": 2199,
+                "tokens_per_word": 2.834920634920635,
+                "pseudo_ppl": 111.62547413375131,
+                "bpb": 2.76246138530465
+            },
+            {
+                "text_id": 1,
+                "num_tokens": 594,
+                "num_words": 228,
+                "num_bytes": 1484,
+                "tokens_per_word": 2.6052631578947367,
+                "pseudo_ppl": 145.32047475322773,
+                "bpb": 2.875173813520632
+            },
+            {
+                "text_id": 2,
+                "num_tokens": 843,
+                "num_words": 296,
+                "num_bytes": 2064,
+                "tokens_per_word": 2.847972972972973,
+                "pseudo_ppl": 91.05866226520645,
+                "bpb": 2.6583598039684477
+            },
+            {
+                "text_id": 3,
+                "num_tokens": 709,
+                "num_words": 245,
+                "num_bytes": 1814,
+                "tokens_per_word": 2.8938775510204082,
+                "pseudo_ppl": 110.42509687881456,
+                "bpb": 2.652662249227074
+            },
+            {
+                "text_id": 4,
+                "num_tokens": 486,
+                "num_words": 178,
+                "num_bytes": 1277,
+                "tokens_per_word": 2.730337078651685,
+                "pseudo_ppl": 104.2467520790567,
+                "bpb": 2.5513510508614767
+            },
+            {
+                "text_id": 5,
+                "num_tokens": 250,
+                "num_words": 89,
+                "num_bytes": 628,
+                "tokens_per_word": 2.808988764044944,
+                "pseudo_ppl": 60.843939072887856,
+                "bpb": 2.359491103467489
+            },
+            {
+                "text_id": 6,
+                "num_tokens": 644,
+                "num_words": 223,
+                "num_bytes": 1509,
+                "tokens_per_word": 2.8878923766816142,
+                "pseudo_ppl": 28.4228751824629,
+                "bpb": 2.060877073460561
+            },
+            {
+                "text_id": 7,
+                "num_tokens": 529,
+                "num_words": 169,
+                "num_bytes": 1319,
+                "tokens_per_word": 3.1301775147928996,
+                "pseudo_ppl": 39.27591278736986,
+                "bpb": 2.123849934708842
+            },
+            {
+                "text_id": 8,
+                "num_tokens": 394,
+                "num_words": 133,
+                "num_bytes": 889,
+                "tokens_per_word": 2.962406015037594,
+                "pseudo_ppl": 26.673534352987588,
+                "bpb": 2.0995622222883044
+            },
+            {
+                "text_id": 9,
+                "num_tokens": 383,
+                "num_words": 115,
+                "num_bytes": 823,
+                "tokens_per_word": 3.3304347826086955,
+                "pseudo_ppl": 13.543257032840614,
+                "bpb": 1.7495620707359938
+            },
+            {
+                "text_id": 10,
+                "num_tokens": 316,
+                "num_words": 85,
+                "num_bytes": 675,
+                "tokens_per_word": 3.7176470588235295,
+                "pseudo_ppl": 5.0711746953992,
+                "bpb": 1.0965527583089698
+            },
+            {
+                "text_id": 11,
+                "num_tokens": 378,
+                "num_words": 116,
+                "num_bytes": 800,
+                "tokens_per_word": 3.2586206896551726,
+                "pseudo_ppl": 2.8383151436800103,
+                "bpb": 0.7111289352241519
+            }
+        ]
+    }
+}

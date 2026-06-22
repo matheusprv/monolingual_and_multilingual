@@ -122,9 +122,9 @@
         ]
     },
     "GALEGO": {
-        "avg_pseudo_ppl": 10.532857225254103,
-        "avg_bpb": 1.2530791566029447,
-        "avg_tokens_per_word": 2.294936070703689,
+        "avg_pseudo_ppl": 10.739778312928848,
+        "avg_bpb": 1.2741298546856046,
+        "avg_tokens_per_word": 2.286708413698858,
         "texts": [
             {
                 "text_id": 0,
@@ -173,12 +173,12 @@
             },
             {
                 "text_id": 5,
-                "num_tokens": 270,
-                "num_words": 92,
-                "num_bytes": 553,
-                "tokens_per_word": 2.9347826086956523,
-                "pseudo_ppl": 5.132948850852208,
-                "bpb": 1.15215683323049
+                "num_tokens": 277,
+                "num_words": 96,
+                "num_bytes": 579,
+                "tokens_per_word": 2.8854166666666665,
+                "pseudo_ppl": 6.374475376900679,
+                "bpb": 1.27846102172645
             }
         ]
     },
