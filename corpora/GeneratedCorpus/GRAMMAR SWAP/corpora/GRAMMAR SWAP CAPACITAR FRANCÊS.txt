@@ -1,9 +1,3 @@
-GRAMMAR SWAP — CAPACITAR FRANCÊS
-
-===================
-ARQUIVO 3: FRANCÊS
-===================
-
 <CAP_ED_02>
 <versão_francês>
 <grammar swap FRANCÊS>

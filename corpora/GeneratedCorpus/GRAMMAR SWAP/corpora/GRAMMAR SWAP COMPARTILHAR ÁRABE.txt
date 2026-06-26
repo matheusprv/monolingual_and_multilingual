@@ -1,9 +1,3 @@
-GRAMMAR SWAP — COMPARTILHAR ÁRABE
-
-===================
-ARQUIVO 6: ÁRABE
-===================
-
 <COM_ED_2>
 <COMPARTILHAR>
 <ESCRITO DIÁLOGO>

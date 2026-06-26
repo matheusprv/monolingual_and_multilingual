@@ -1,9 +1,3 @@
-GRAMMAR SWAP — EXPLICAR ÁRABE
-
-===================
-ARQUIVO 6: ÁRABE
-===================
-
 <XPL_ED_02>
 <versão_arabic (romanizado)>
 <grammar swap ÁRABE>

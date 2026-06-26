@@ -1,9 +1,3 @@
-GRAMMAR SWAP — CAPACITAR INGLÊS
-
-===================
-ARQUIVO 4: INGLÊS
-===================
-
 <CAP_ED_02>
 <versão_english>
 <grammar swap INGLÊS>

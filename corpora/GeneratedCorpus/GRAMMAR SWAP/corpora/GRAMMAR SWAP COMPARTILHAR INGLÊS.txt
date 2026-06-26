@@ -1,9 +1,3 @@
-GRAMMAR SWAP — COMPARTILHAR INGLÊS
-
-===================
-ARQUIVO 4: INGLÊS
-===================
-
 <COM_ED_2>
 <COMPARTILHAR>
 <ESCRITO DIÁLOGO>

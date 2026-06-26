@@ -1,9 +1,3 @@
-GRAMMAR SWAP — COMPARTILHAR RUSSO
-
-===================
-ARQUIVO 5: RUSSO
-===================
-
 <COM_ED_2>
 <COMPARTILHAR>
 <ESCRITO DIÁLOGO>

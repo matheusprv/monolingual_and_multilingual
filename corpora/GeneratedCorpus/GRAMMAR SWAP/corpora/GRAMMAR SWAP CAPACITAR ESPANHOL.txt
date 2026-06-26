@@ -1,9 +1,3 @@
-GRAMMAR SWAP — CAPACITAR ESPANHOL
-
-===================
-ARQUIVO 2: ESPANHOL
-===================
-
 <CAP_ED_02>
 <versão_espanhol>
 <grammar swap ESPANHOL>

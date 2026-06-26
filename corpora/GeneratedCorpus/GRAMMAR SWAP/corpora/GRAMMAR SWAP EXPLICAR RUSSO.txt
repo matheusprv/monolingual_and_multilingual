@@ -1,9 +1,3 @@
-GRAMMAR SWAP — EXPLICAR RUSSO
-
-===================
-ARQUIVO 5: RUSSO (romanizado)
-===================
-
 <XPL_ED_02>
 <versão_russkii>
 <grammar swap RUSSO>

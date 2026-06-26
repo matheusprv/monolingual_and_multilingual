@@ -1,9 +1,3 @@
-GRAMMAR SWAP — CAPACITAR MANDARIM
-
-===================
-ARQUIVO 7: MANDARIM
-===================
-
 <CAP_ED_02>
 <versão_mandarim (pinyin)>
 <grammar swap MANDARIM>

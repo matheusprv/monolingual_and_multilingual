@@ -1,9 +1,3 @@
-GRAMMAR SWAP — COMPARTILHAR MANDARIM
-
-===================
-ARQUIVO 7: MANDARIM
-===================
-
 <COM_ED_2>
 <COMPARTILHAR>
 <ESCRITO DIÁLOGO>
