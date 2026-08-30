@@ -1,0 +1,23 @@
+0=LOCUTOR1|1=Eu|2=gostaria|3=de pedir|4=a|5=cada|6,7=um|8=de vocês|9=que|10=se|11=apresentem|12=e|13=que|14=digam|15=o|16=que|17=vocês|18=fazem|19=fora|20=da|21,22,23=da escrita|24,25=de humor|.
+27=LOCUTOR2|28=Eu|29=sou|30=responsável|31,32,33,34=pelos banheiros das mulheres|,|36=trabalhando|37=atualmente|38=em|39=uma|40,41,42=fazenda de criação|.
+44=LOCUTOR3|45=Eu|46=coloco|47=meus|48=desenhos|49=em|50=um|51=blog|.
+53=Quando|54=esta|55=história|56,57=da internet|58=começou|,|61=eu|62,63,64=me disse|65=que|66=eu|67=não|68,69,70=me envolveria|71=nunca|72=neste|73=caos|.
+75=LOCUTOR1|76,77=VOZ BAIXA
+78=LOCUTOR4|79=Eu|80=sou|81=economista|,|83=para|84,85,86=que eles possam|87=me|88=odiar|89=com|90=mais|91,92=de humor|.
+94=Em|95=2002|,|97,98,99=eu decidi|100=de|101=criar|102=cocadaboa|.
+104,105=Eu escrevo|106=sobre|107=nossos|108=humores|109=depressivos|110=cotidianos|.
+112=Eu|113=não|114=penso|115=nem|116=que|117=isso|118,119=seja|120,121,122=de humor|,|124=mas|125=eu|126=o|127=faço|128=simplesmente|,|130,131,132=todo mundo|133=o|134=nega|135=mas|136=o|137=acha|138=engraçado|.
+140=LOCUTOR1|141,142=VOZ BAIXA
+143=LOCUTOR5|144=Eu|145=venho|146,147,148=da era|149,150=da cyber-rede|,|152,153,154,155,156=da arte da cyber-rede|,|158=garoto|.
+160=Eu|161=trabalho|162=para|163,164,165=o site web|166=casseta|167=&|168=planeta|,|170=e|171=eu|172=contribuo|173=também|174,175=para os scripts|176=para|177,178=o programa|.
+180,181,182=Eu vi|183=o trabalho|185=deles|186,187,188=e pensei|189:=|190=eu|191=penso|192=que|193=eu|194=posso|195=o|196=fazer|.
+198=Então|199=eu|200,201,202=lhes pedi|203=de|204=me|205=deixar|206=trabalhar|207=lá|,|209=e|210=isso|211=funcionou|.
+214=Em|215=2001|,|217=eu|218=entrei|219=em|220=um|222=micro-status|,|224=onde|225=um|226=antigo|227=diretor|228,229,230=me disse|231=que|232=eu|233=deveria|234=usar|235,236,237,238=o nome adaílton persegonha|,|240=e|241=depois|242,243,244=eu criei|245,246=duck milk|.
+248=Eu|249=não|250=sei|251=se|253=eu|254=sou|255=considerado|256=como|257,258,259=de humor|.
+261,262=Eu escrevo|263=apenas|264=lá|,|266=se|267,268=o leitor|269=não|270=rir|271=não|,|273=quem|274,275,276=se importa|.
+278=LOCUTOR1|279,280=VOZ BAIXA
+281=LOCUTOR6|282=Eu|283=sou|284=jornalista|285=para|286=um|287=grande|288=jornal|.
+290=Há|291,292=dois|293=anos|,|296,297,298=eu criei|299=meu|300=blog|301=amado|,|303=onde|304,305=eu escrevo|306=artigos|308=e|309=observações|311,312,313=de maneira humorística|.
+315,316,317=Eu estive|318=na|319=Global|,|321,322,323=eu tive|324=uma|325=experiência|326=teatral|327=infrutífera|,|329=mas|330,331,332,333=esse gênero de coisa|334=pulsa|335=em|336=mim|,|338=esperando|339=uma|340=oportunidade|341,342=de explodir|.
+344,345,346=Eu publiquei|347=algumas|348=palavras|349=no|350,351,352=site web|,|354=as|355=pessoas|356,357,358=as copiaram|,|360=e|361=começaram|363=a|364,365,366=se enviá-las|367=por|368=e-mail|.
+370=Mais|371=tarde|,|373=este|374=blog|375=também|376=se|377=tornou|378=uma|379=crônica|380=no|381,382=jornal|383=Extra|.

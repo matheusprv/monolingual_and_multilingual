@@ -1,0 +1,43 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: SPEAKER 1 Let me ask you one thing. Let me see if I understood correctly. Suppose there is a dialogue, someone says "I want a kilo of white powder", or someone says "I want a kilo of powder"
+SPEAKER 2 Of coffee
+SPEAKER 1 Of coffee. Fine, Mr. Deputy. Can I swap cocaine and coffee in a radio conversation without being detected?
+SPEAKER 3 If I have multiple recordings made under the same conditions, for example, consecutive conversations where the conditions are very close, I can indeed take a segment from one conversation and place it into another. I can more easily cut out segments that provide contextual content. This is very easy because there is the issue of disparity.
+SPEAKER 4 But there, Sir, I know that editing can be done on the material I have, such as election programs. You can do modulation, shorten intervals, and even edit through more advanced technology. Now let me ask you: from what I understand, taking nextel's case as an example, this kind of editing cannot be detected, right?
+SPEAKER 3 No, no, I...
+SPEAKER 4 There is no element that can detect it?
+SPEAKER 3 If nextel changes its system, it can be detected. But as long as its current system keeps operating...
+
+Tokens: [[0, "SPEAKER"], [1, "1"], [2, "Let"], [3, "me"], [4, "ask"], [5, "you"], [6, "one"], [7, "thing"], [8, "."], [9, "Let"], [10, "me"], [11, "see"], [12, "if"], [13, "I"], [14, "understood"], [15, "correctly"], [16, "."], [17, "Suppose"], [18, "there"], [19, "is"], [20, "a"], [21, "dialogue"], [22, ","], [23, "someone"], [24, "says"], [25, "\""], [26, "I"], [27, "want"], [28, "a"], [29, "kilo"], [30, "of"], [31, "white"], [32, "powder"], [33, "\""], [34, ","], [35, "or"], [36, "someone"], [37, "says"], [38, "\""], [39, "I"], [40, "want"], [41, "a"], [42, "kilo"], [43, "of"], [44, "powder"], [45, "\""], [46, "SPEAKER"], [47, "2"], [48, "Of"], [49, "coffee"], [50, "SPEAKER"], [51, "1"], [52, "Of"], [53, "coffee"], [54, "."], [55, "Fine"], [56, ","], [57, "Mr."], [58, "Deputy"], [59, "."], [60, "Can"], [61, "I"], [62, "swap"], [63, "cocaine"], [64, "and"], [65, "coffee"], [66, "in"], [67, "a"], [68, "radio"], [69, "conversation"], [70, "without"], [71, "being"], [72, "detected"], [73, "?"], [74, "SPEAKER"], [75, "3"], [76, "If"], [77, "I"], [78, "have"], [79, "multiple"], [80, "recordings"], [81, "made"], [82, "under"], [83, "the"], [84, "same"], [85, "conditions"], [86, ","], [87, "for"], [88, "example"], [89, ","], [90, "consecutive"], [91, "conversations"], [92, "where"], [93, "the"], [94, "conditions"], [95, "are"], [96, "very"], [97, "close"], [98, ","], [99, "I"], [100, "can"], [101, "indeed"], [102, "take"], [103, "a"], [104, "segment"], [105, "from"], [106, "one"], [107, "conversation"], [108, "and"], [109, "place"], [110, "it"], [111, "into"], [112, "another"], [113, "."], [114, "I"], [115, "can"], [116, "more"], [117, "easily"], [118, "cut"], [119, "out"], [120, "segments"], [121, "that"], [122, "provide"], [123, "contextual"], [124, "content"], [125, "."], [126, "This"], [127, "is"], [128, "very"], [129, "easy"], [130, "because"], [131, "there"], [132, "is"], [133, "the"], [134, "issue"], [135, "of"], [136, "disparity"], [137, "."], [138, "SPEAKER"], [139, "4"], [140, "But"], [141, "there"], [142, ","], [143, "Sir"], [144, ","], [145, "I"], [146, "know"], [147, "that"], [148, "editing"], [149, "can"], [150, "be"], [151, "done"], [152, "on"], [153, "the"], [154, "material"], [155, "I"], [156, "have"], [157, ","], [158, "such"], [159, "as"], [160, "election"], [161, "programs"], [162, "."], [163, "You"], [164, "can"], [165, "do"], [166, "modulation"], [167, ","], [168, "shorten"], [169, "intervals"], [170, ","], [171, "and"], [172, "even"], [173, "edit"], [174, "through"], [175, "more"], [176, "advanced"], [177, "technology"], [178, "."], [179, "Now"], [180, "let"], [181, "me"], [182, "ask"], [183, "you"], [184, ":"], [185, "from"], [186, "what"], [187, "I"], [188, "understand"], [189, ","], [190, "taking"], [191, "nextel's"], [192, "case"], [193, "as"], [194, "an"], [195, "example"], [196, ","], [197, "this"], [198, "kind"], [199, "of"], [200, "editing"], [201, "cannot"], [202, "be"], [203, "detected"], [204, ","], [205, "right"], [206, "?"], [207, "SPEAKER"], [208, "3"], [209, "No"], [210, ","], [211, "no"], [212, ","], [213, "I"], [214, "..."], [215, "SPEAKER"], [216, "4"], [217, "There"], [218, "is"], [219, "no"], [220, "element"], [221, "that"], [222, "can"], [223, "detect"], [224, "it"], [225, "?"], [226, "SPEAKER"], [227, "3"], [228, "If"], [229, "nextel"], [230, "changes"], [231, "its"], [232, "system"], [233, ","], [234, "it"], [235, "can"], [236, "be"], [237, "detected"], [238, "."], [239, "But"], [240, "as"], [241, "long"], [242, "as"], [243, "its"], [244, "current"], [245, "system"], [246, "keeps"], [247, "operating"], [248, "..."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

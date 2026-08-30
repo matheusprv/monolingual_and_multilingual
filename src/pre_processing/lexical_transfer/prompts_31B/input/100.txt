@@ -1,0 +1,38 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Comment apprendre à se maquiller seule sans suivre de cours ? Qu'est-ce qu'il faut acheter pour commencer ?
+
+Écoute, commence par des choses simples — c'est ce que j'ai fait. Il te faut le kit de base : fond de teint, poudre, fard à paupières en deux couleurs (une claire, une plus foncée), mascara, crayon et gloss couleur lèvres naturelle... Moi je n'utilise pas de fond de teint, mais toi peut-être que si : peau propre, étale le fond de teint sur tout le visage (quand tu l'achètes, demande de l'aide à la vendeuse pour choisir la bonne teinte — c'est vraiment important !), applique la poudre compacte dans la même logique pour la teinte, puis étale le fard foncé sur la paupière en suivant la ligne du globe oculaire et en formant un demi-lune ; ensuite applique le fard clair (illuminateur) sous le sourcil et dans tout l'espace entre le sourcil et le fard foncé ; estompe avec un pinceau à maquillage (achètes-en un aussi) ; passe le crayon — marron de préférence — juste au ras des cils supérieurs ; applique le mascara, utilise le recourbe-cils (achète-le aussi), repasse une couche de mascara et c'est bon.
+
+Tokens: [[0, "Comment"], [1, "apprendre"], [2, "à"], [3, "se"], [4, "maquiller"], [5, "seule"], [6, "sans"], [7, "suivre"], [8, "de"], [9, "cours"], [10, "?"], [11, "Qu'"], [12, "est"], [13, "-ce"], [14, "qu'"], [15, "il"], [16, "faut"], [17, "acheter"], [18, "pour"], [19, "commencer"], [20, "?"], [21, "Écoute"], [22, ","], [23, "commence"], [24, "par"], [25, "des"], [26, "choses"], [27, "simples"], [28, "—"], [29, "c'"], [30, "est"], [31, "ce"], [32, "que"], [33, "j'"], [34, "ai"], [35, "fait"], [36, "."], [37, "Il"], [38, "te"], [39, "faut"], [40, "le"], [41, "kit"], [42, "de"], [43, "base"], [44, ":"], [45, "fond"], [46, "de"], [47, "teint"], [48, ","], [49, "poudre"], [50, ","], [51, "fard"], [52, "à"], [53, "paupières"], [54, "en"], [55, "deux"], [56, "couleurs"], [57, "("], [58, "une"], [59, "claire"], [60, ","], [61, "une"], [62, "plus"], [63, "foncée"], [64, ")"], [65, ","], [66, "mascara"], [67, ","], [68, "crayon"], [69, "et"], [70, "gloss"], [71, "couleur"], [72, "lèvres"], [73, "naturelle"], [74, "..."], [75, "Moi"], [76, "je"], [77, "n'"], [78, "utilise"], [79, "pas"], [80, "de"], [81, "fond"], [82, "de"], [83, "teint"], [84, ","], [85, "mais"], [86, "toi"], [87, "peut-être"], [88, "que"], [89, "si"], [90, ":"], [91, "peau"], [92, "propre"], [93, ","], [94, "étale"], [95, "le"], [96, "fond"], [97, "de"], [98, "teint"], [99, "sur"], [100, "tout"], [101, "le"], [102, "visage"], [103, "("], [104, "quand"], [105, "tu"], [106, "l'"], [107, "achètes"], [108, ","], [109, "demande"], [110, "de"], [111, "l'"], [112, "aide"], [113, "à"], [114, "la"], [115, "vendeuse"], [116, "pour"], [117, "choisir"], [118, "la"], [119, "bonne"], [120, "teinte"], [121, "—"], [122, "c'"], [123, "est"], [124, "vraiment"], [125, "important"], [126, "!"], [127, ")"], [128, ","], [129, "applique"], [130, "la"], [131, "poudre"], [132, "compacte"], [133, "dans"], [134, "la"], [135, "même"], [136, "logique"], [137, "pour"], [138, "la"], [139, "teinte"], [140, ","], [141, "puis"], [142, "étale"], [143, "le"], [144, "fard"], [145, "foncé"], [146, "sur"], [147, "la"], [148, "paupière"], [149, "en"], [150, "suivant"], [151, "la"], [152, "ligne"], [153, "du"], [154, "globe"], [155, "oculaire"], [156, "et"], [157, "en"], [158, "formant"], [159, "un"], [160, "demi-lune"], [161, ";"], [162, "ensuite"], [163, "applique"], [164, "le"], [165, "fard"], [166, "clair"], [167, "("], [168, "illuminateur"], [169, ")"], [170, "sous"], [171, "le"], [172, "sourcil"], [173, "et"], [174, "dans"], [175, "tout"], [176, "l'"], [177, "espace"], [178, "entre"], [179, "le"], [180, "sourcil"], [181, "et"], [182, "le"], [183, "fard"], [184, "foncé"], [185, ";"], [186, "estompe"], [187, "avec"], [188, "un"], [189, "pinceau"], [190, "à"], [191, "maquillage"], [192, "("], [193, "achètes"], [194, "-en"], [195, "un"], [196, "aussi"], [197, ")"], [198, ";"], [199, "passe"], [200, "le"], [201, "crayon"], [202, "—"], [203, "marron"], [204, "de"], [205, "préférence"], [206, "—"], [207, "juste"], [208, "au"], [209, "ras"], [210, "des"], [211, "cils"], [212, "supérieurs"], [213, ";"], [214, "applique"], [215, "le"], [216, "mascara"], [217, ","], [218, "utilise"], [219, "le"], [220, "recourbe-cils"], [221, "("], [222, "achète"], [223, "-le"], [224, "aussi"], [225, ")"], [226, ","], [227, "repasse"], [228, "une"], [229, "couche"], [230, "de"], [231, "mascara"], [232, "et"], [233, "c'"], [234, "est"], [235, "bon"], [236, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

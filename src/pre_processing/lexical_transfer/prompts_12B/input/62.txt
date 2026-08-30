@@ -1,0 +1,36 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: eso es lo que nos mueve —no es ninguna disputa. A veces caemos en el pragmatismo, pero en el fondo todos los que estamos aquí somos movidos por el deseo de construir otro país, ese que llevamos intentando levantar día a día con todas las contradicciones que tenemos, porque vivimos en un sistema capitalista, claro. Pero a veces errando, a veces acertando, apostando por la institucionalidad pero también por los movimientos sociales como base de la transformación. Viviendo todo eso, demostrando que somos un partido que no ha perdido sus raíces ni sus principios, que vivimos con problemas pero que los afrontamos y no los escondemos a nadie, porque tenemos la capacidad interna de reflexionar, de meter el dedo en la llaga, y también de debatir lo que es nuevo. Y la juventud del PT representa una parte de eso nuevo, de eso nuevo que el Partido de los Trabajadores lleva construyendo a lo largo de sus veintiocho años de historia.
+
+Tokens: [[0, "eso"], [1, "es"], [2, "lo"], [3, "que"], [4, "nos"], [5, "mueve"], [6, "—"], [7, "no"], [8, "es"], [9, "ninguna"], [10, "disputa"], [11, "."], [12, "A"], [13, "veces"], [14, "caemos"], [15, "en"], [16, "el"], [17, "pragmatismo"], [18, ","], [19, "pero"], [20, "en"], [21, "el"], [22, "fondo"], [23, "todos"], [24, "los"], [25, "que"], [26, "estamos"], [27, "aquí"], [28, "somos"], [29, "movidos"], [30, "por"], [31, "el"], [32, "deseo"], [33, "de"], [34, "construir"], [35, "otro"], [36, "país"], [37, ","], [38, "ese"], [39, "que"], [40, "llevamos"], [41, "intentando"], [42, "levantar"], [43, "día"], [44, "a"], [45, "día"], [46, "con"], [47, "todas"], [48, "las"], [49, "contradicciones"], [50, "que"], [51, "tenemos"], [52, ","], [53, "porque"], [54, "vivimos"], [55, "en"], [56, "un"], [57, "sistema"], [58, "capitalista"], [59, ","], [60, "claro"], [61, "."], [62, "Pero"], [63, "a"], [64, "veces"], [65, "errando"], [66, ","], [67, "a"], [68, "veces"], [69, "acertando"], [70, ","], [71, "apostando"], [72, "por"], [73, "la"], [74, "institucionalidad"], [75, "pero"], [76, "también"], [77, "por"], [78, "los"], [79, "movimientos"], [80, "sociales"], [81, "como"], [82, "base"], [83, "de"], [84, "la"], [85, "transformación"], [86, "."], [87, "Viviendo"], [88, "todo"], [89, "eso"], [90, ","], [91, "demostrando"], [92, "que"], [93, "somos"], [94, "un"], [95, "partido"], [96, "que"], [97, "no"], [98, "ha"], [99, "perdido"], [100, "sus"], [101, "raíces"], [102, "ni"], [103, "sus"], [104, "principios"], [105, ","], [106, "que"], [107, "vivimos"], [108, "con"], [109, "problemas"], [110, "pero"], [111, "que"], [112, "los"], [113, "afrontamos"], [114, "y"], [115, "no"], [116, "los"], [117, "escondemos"], [118, "a"], [119, "nadie"], [120, ","], [121, "porque"], [122, "tenemos"], [123, "la"], [124, "capacidad"], [125, "interna"], [126, "de"], [127, "reflexionar"], [128, ","], [129, "de"], [130, "meter"], [131, "el"], [132, "dedo"], [133, "en"], [134, "la"], [135, "llaga"], [136, ","], [137, "y"], [138, "también"], [139, "de"], [140, "debatir"], [141, "lo"], [142, "que"], [143, "es"], [144, "nuevo"], [145, "."], [146, "Y"], [147, "la"], [148, "juventud"], [149, "del"], [150, "PT"], [151, "representa"], [152, "una"], [153, "parte"], [154, "de"], [155, "eso"], [156, "nuevo"], [157, ","], [158, "de"], [159, "eso"], [160, "nuevo"], [161, "que"], [162, "el"], [163, "Partido"], [164, "de"], [165, "los"], [166, "Trabajadores"], [167, "lleva"], [168, "construyendo"], [169, "a"], [170, "lo"], [171, "largo"], [172, "de"], [173, "sus"], [174, "veintiocho"], [175, "años"], [176, "de"], [177, "historia"], [178, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

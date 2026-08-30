@@ -1,0 +1,53 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Invitación para la Elección de la Junta Directiva
+¡Hola a todos!
+Ha pasado un año desde que se creó la Asociación Brasil-Escocia y, en este mes de marzo, se celebrarán las elecciones para elegir a los nuevos miembros de la Junta Directiva y de las Coordinaciones.
+
+Antiguamente casi no se veían brasileños por las calles de Edimburgo y, ahora, nos encontramos con uno en cada rincón de la ciudad. Estimamos que actualmente residen unos dos mil brasileños en Edimburgo. Un comentario recurrente es que nos falta un pequeño espacio brasileño, un punto de encuentro para todos nosotros. ¡Y ahí es precisamente donde entra el trabajo de la Asociación!
+La Asociación existe justamente con ese objetivo: servir de nexo de unión para todos los brasileños que se encuentran en Edimburgo, independientemente del motivo por el que estén aquí.
+La entidad ya está totalmente estructurada y funcionando a pleno rendimiento en el Centro Comunitario Tollcross. De hecho, ya se han organizado fiestas y eventos culturales.
+Con las próximas elecciones a la vuelta de la esquina, la Asociación se abre a nuevas ideas y nuevos rumbos.
+Esta es tu oportunidad de participar y hacer crecer este pedacito de Brasil en Edimburgo.
+La votación tendrá lugar el jueves 26 de marzo a las 19:00 h en el Centro Comunitario Tollcross, que es la sede oficial de las reuniones de la Asociación.
+Tras las elecciones, habrá otro encuentro el sábado 28 de marzo a las 10:00 h en el mismo lugar.
+
+¡¡¡Participa!!!
+No te quedes al margen de este proceso electoral democrático. Al fin y al cabo, ¡tu aportación es fundamental!
+Invita a todos los brasileños que conozcas.
+¡Te esperamos!
+Aprovecho para recordar que, de acuerdo con los Estatutos de la Asociación, solo tendrán derecho a voto y/o a postularse para un cargo en la junta directiva aquellos que estén formalmente asociados.
+Espero que esto no suponga un impedimento para tu asistencia el día de la elección; al contrario, consideramos que esto refuerza la seriedad y la neutralidad de la asociación, salvaguardando los derechos de sus miembros.
+
+Tokens: [[0, "Invitación"], [1, "para"], [2, "la"], [3, "Elección"], [4, "de"], [5, "la"], [6, "Junta"], [7, "Directiva"], [8, "¡"], [9, "Hola"], [10, "a"], [11, "todos"], [12, "!"], [13, "Ha"], [14, "pasado"], [15, "un"], [16, "año"], [17, "desde"], [18, "que"], [19, "se"], [20, "creó"], [21, "la"], [22, "Asociación"], [23, "Brasil-Escocia"], [24, "y"], [25, ","], [26, "en"], [27, "este"], [28, "mes"], [29, "de"], [30, "marzo"], [31, ","], [32, "se"], [33, "celebrarán"], [34, "las"], [35, "elecciones"], [36, "para"], [37, "elegir"], [38, "a"], [39, "los"], [40, "nuevos"], [41, "miembros"], [42, "de"], [43, "la"], [44, "Junta"], [45, "Directiva"], [46, "y"], [47, "de"], [48, "las"], [49, "Coordinaciones"], [50, "."], [51, "Antiguamente"], [52, "casi"], [53, "no"], [54, "se"], [55, "veían"], [56, "brasileños"], [57, "por"], [58, "las"], [59, "calles"], [60, "de"], [61, "Edimburgo"], [62, "y"], [63, ","], [64, "ahora"], [65, ","], [66, "nos"], [67, "encontramos"], [68, "con"], [69, "uno"], [70, "en"], [71, "cada"], [72, "rincón"], [73, "de"], [74, "la"], [75, "ciudad"], [76, "."], [77, "Estimamos"], [78, "que"], [79, "actualmente"], [80, "residen"], [81, "unos"], [82, "dos"], [83, "mil"], [84, "brasileños"], [85, "en"], [86, "Edimburgo"], [87, "."], [88, "Un"], [89, "comentario"], [90, "recurrente"], [91, "es"], [92, "que"], [93, "nos"], [94, "falta"], [95, "un"], [96, "pequeño"], [97, "espacio"], [98, "brasileño"], [99, ","], [100, "un"], [101, "punto"], [102, "de"], [103, "encuentro"], [104, "para"], [105, "todos"], [106, "nosotros"], [107, "."], [108, "¡"], [109, "Y"], [110, "ahí"], [111, "es"], [112, "precisamente"], [113, "donde"], [114, "entra"], [115, "el"], [116, "trabajo"], [117, "de"], [118, "la"], [119, "Asociación"], [120, "!"], [121, "La"], [122, "Asociación"], [123, "existe"], [124, "justamente"], [125, "con"], [126, "ese"], [127, "objetivo"], [128, ":"], [129, "servir"], [130, "de"], [131, "nexo"], [132, "de"], [133, "unión"], [134, "para"], [135, "todos"], [136, "los"], [137, "brasileños"], [138, "que"], [139, "se"], [140, "encuentran"], [141, "en"], [142, "Edimburgo"], [143, ","], [144, "independientemente"], [145, "del"], [146, "motivo"], [147, "por"], [148, "el"], [149, "que"], [150, "estén"], [151, "aquí"], [152, "."], [153, "La"], [154, "entidad"], [155, "ya"], [156, "está"], [157, "totalmente"], [158, "estructurada"], [159, "y"], [160, "funcionando"], [161, "a"], [162, "pleno"], [163, "rendimiento"], [164, "en"], [165, "el"], [166, "Centro"], [167, "Comunitario"], [168, "Tollcross"], [169, "."], [170, "De"], [171, "hecho"], [172, ","], [173, "ya"], [174, "se"], [175, "han"], [176, "organizado"], [177, "fiestas"], [178, "y"], [179, "eventos"], [180, "culturales"], [181, "."], [182, "Con"], [183, "las"], [184, "próximas"], [185, "elecciones"], [186, "a"], [187, "la"], [188, "vuelta"], [189, "de"], [190, "la"], [191, "esquina"], [192, ","], [193, "la"], [194, "Asociación"], [195, "se"], [196, "abre"], [197, "a"], [198, "nuevas"], [199, "ideas"], [200, "y"], [201, "nuevos"], [202, "rumbos"], [203, "."], [204, "Esta"], [205, "es"], [206, "tu"], [207, "oportunidad"], [208, "de"], [209, "participar"], [210, "y"], [211, "hacer"], [212, "crecer"], [213, "este"], [214, "pedacito"], [215, "de"], [216, "Brasil"], [217, "en"], [218, "Edimburgo"], [219, "."], [220, "La"], [221, "votación"], [222, "tendrá"], [223, "lugar"], [224, "el"], [225, "jueves"], [226, "26"], [227, "de"], [228, "marzo"], [229, "a"], [230, "las"], [231, "19:00"], [232, "h"], [233, "en"], [234, "el"], [235, "Centro"], [236, "Comunitario"], [237, "Tollcross"], [238, ","], [239, "que"], [240, "es"], [241, "la"], [242, "sede"], [243, "oficial"], [244, "de"], [245, "las"], [246, "reuniones"], [247, "de"], [248, "la"], [249, "Asociación"], [250, "."], [251, "Tras"], [252, "las"], [253, "elecciones"], [254, ","], [255, "habrá"], [256, "otro"], [257, "encuentro"], [258, "el"], [259, "sábado"], [260, "28"], [261, "de"], [262, "marzo"], [263, "a"], [264, "las"], [265, "10:00"], [266, "h"], [267, "en"], [268, "el"], [269, "mismo"], [270, "lugar"], [271, "."], [272, "¡"], [273, "¡"], [274, "¡"], [275, "Participa"], [276, "!"], [277, "!"], [278, "!"], [279, "No"], [280, "te"], [281, "quedes"], [282, "al"], [283, "margen"], [284, "de"], [285, "este"], [286, "proceso"], [287, "electoral"], [288, "democrático"], [289, "."], [290, "Al"], [291, "fin"], [292, "y"], [293, "al"], [294, "cabo"], [295, ","], [296, "¡"], [297, "tu"], [298, "aportación"], [299, "es"], [300, "fundamental"], [301, "!"], [302, "Invita"], [303, "a"], [304, "todos"], [305, "los"], [306, "brasileños"], [307, "que"], [308, "conozcas"], [309, "."], [310, "¡"], [311, "Te"], [312, "esperamos"], [313, "!"], [314, "Aprovecho"], [315, "para"], [316, "recordar"], [317, "que"], [318, ","], [319, "de"], [320, "acuerdo"], [321, "con"], [322, "los"], [323, "Estatutos"], [324, "de"], [325, "la"], [326, "Asociación"], [327, ","], [328, "solo"], [329, "tendrán"], [330, "derecho"], [331, "a"], [332, "voto"], [333, "y/o"], [334, "a"], [335, "postularse"], [336, "para"], [337, "un"], [338, "cargo"], [339, "en"], [340, "la"], [341, "junta"], [342, "directiva"], [343, "aquellos"], [344, "que"], [345, "estén"], [346, "formalmente"], [347, "asociados"], [348, "."], [349, "Espero"], [350, "que"], [351, "esto"], [352, "no"], [353, "suponga"], [354, "un"], [355, "impedimento"], [356, "para"], [357, "tu"], [358, "asistencia"], [359, "el"], [360, "día"], [361, "de"], [362, "la"], [363, "elección"], [364, ";"], [365, "al"], [366, "contrario"], [367, ","], [368, "consideramos"], [369, "que"], [370, "esto"], [371, "refuerza"], [372, "la"], [373, "seriedad"], [374, "y"], [375, "la"], [376, "neutralidad"], [377, "de"], [378, "la"], [379, "asociación"], [380, ","], [381, "salvaguardando"], [382, "los"], [383, "derechos"], [384, "de"], [385, "sus"], [386, "miembros"], [387, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

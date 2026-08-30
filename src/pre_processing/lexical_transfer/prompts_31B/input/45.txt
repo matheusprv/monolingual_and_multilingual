@@ -1,0 +1,56 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: JUAN buenas noches
+PABLO buenas noches
+JUAN me llamo ruth
+PABLO me llamo raquel
+PABLO es broma es broma perdón
+JUAN lógicamente no me llamo ruth ni él raquel
+PABLO es que en realidad yo soy la ruth y él es la raquel o sea en realidad yo soy PABLO
+JUAN y yo soy JUAN hemos venido aquí a presentar la obra dos de bastos
+PABLO que al contrario de lo que mucha gente piensa no es una obra gay eh
+JUAN no tiene nada que ver se llama dos de bastos por la carta de la baraja ¿vale?
+PABLO hubo gente que se quedó imaginando puff dos hombres en una obra con ese nombre tan raro
+JUAN lo gracioso es que hay gente que escucha lo que quiere ¿no? así que cuando yo explicaba que era de la baraja la persona uy es de la baraja
+PABLO puff menuda hora de empezar
+JUAN sí
+PABLO aclarado entonces ¿no? gente es una obra de humor con dos actores gemelos
+JUAN mira lo de ser gemelos tiene muchas cosas pesadas ¿entendéis? tiene alguna ventaja también mentira no tiene ninguna ventaja gente es todo un fastidio la única ventaja que tuvo fue que montamos esta obra
+PABLO pero quitando eso es puro agobio la gente cree que el hecho de ser gemelos les da derecho a hacer las preguntas más idiotas que se les ocurren del tipo ¿eres tú o eres el otro?
+JUAN a ver cómo no voy a ser yo y sí el otro hombre
+PABLO ¿qué día naciste? 15 de junio ah ¿y tu hermano? puff
+JUAN ININTELIGIBLE tiene la manía de querer saber quién es el mayor ¿no? quién nació primero
+PABLO ¿sois hermanos? no somos primos no en realidad nos conocimos aquí ahora mismo puff qué parecidos
+
+Tokens: [[0, "JUAN"], [1, "buenas"], [2, "noches"], [3, "PABLO"], [4, "buenas"], [5, "noches"], [6, "JUAN"], [7, "me"], [8, "llamo"], [9, "ruth"], [10, "PABLO"], [11, "me"], [12, "llamo"], [13, "raquel"], [14, "PABLO"], [15, "es"], [16, "broma"], [17, "es"], [18, "broma"], [19, "perdón"], [20, "JUAN"], [21, "lógicamente"], [22, "no"], [23, "me"], [24, "llamo"], [25, "ruth"], [26, "ni"], [27, "él"], [28, "raquel"], [29, "PABLO"], [30, "es"], [31, "que"], [32, "en"], [33, "realidad"], [34, "yo"], [35, "soy"], [36, "la"], [37, "ruth"], [38, "y"], [39, "él"], [40, "es"], [41, "la"], [42, "raquel"], [43, "o"], [44, "sea"], [45, "en"], [46, "realidad"], [47, "yo"], [48, "soy"], [49, "PABLO"], [50, "JUAN"], [51, "y"], [52, "yo"], [53, "soy"], [54, "JUAN"], [55, "hemos"], [56, "venido"], [57, "aquí"], [58, "a"], [59, "presentar"], [60, "la"], [61, "obra"], [62, "dos"], [63, "de"], [64, "bastos"], [65, "PABLO"], [66, "que"], [67, "al"], [68, "contrario"], [69, "de"], [70, "lo"], [71, "que"], [72, "mucha"], [73, "gente"], [74, "piensa"], [75, "no"], [76, "es"], [77, "una"], [78, "obra"], [79, "gay"], [80, "eh"], [81, "JUAN"], [82, "no"], [83, "tiene"], [84, "nada"], [85, "que"], [86, "ver"], [87, "se"], [88, "llama"], [89, "dos"], [90, "de"], [91, "bastos"], [92, "por"], [93, "la"], [94, "carta"], [95, "de"], [96, "la"], [97, "baraja"], [98, "¿"], [99, "vale"], [100, "?"], [101, "PABLO"], [102, "hubo"], [103, "gente"], [104, "que"], [105, "se"], [106, "quedó"], [107, "imaginando"], [108, "puff"], [109, "dos"], [110, "hombres"], [111, "en"], [112, "una"], [113, "obra"], [114, "con"], [115, "ese"], [116, "nombre"], [117, "tan"], [118, "raro"], [119, "JUAN"], [120, "lo"], [121, "gracioso"], [122, "es"], [123, "que"], [124, "hay"], [125, "gente"], [126, "que"], [127, "escucha"], [128, "lo"], [129, "que"], [130, "quiere"], [131, "¿"], [132, "no"], [133, "?"], [134, "así"], [135, "que"], [136, "cuando"], [137, "yo"], [138, "explicaba"], [139, "que"], [140, "era"], [141, "de"], [142, "la"], [143, "baraja"], [144, "la"], [145, "persona"], [146, "uy"], [147, "es"], [148, "de"], [149, "la"], [150, "baraja"], [151, "PABLO"], [152, "puff"], [153, "menuda"], [154, "hora"], [155, "de"], [156, "empezar"], [157, "JUAN"], [158, "sí"], [159, "PABLO"], [160, "aclarado"], [161, "entonces"], [162, "¿"], [163, "no"], [164, "?"], [165, "gente"], [166, "es"], [167, "una"], [168, "obra"], [169, "de"], [170, "humor"], [171, "con"], [172, "dos"], [173, "actores"], [174, "gemelos"], [175, "JUAN"], [176, "mira"], [177, "lo"], [178, "de"], [179, "ser"], [180, "gemelos"], [181, "tiene"], [182, "muchas"], [183, "cosas"], [184, "pesadas"], [185, "¿"], [186, "entendéis"], [187, "?"], [188, "tiene"], [189, "alguna"], [190, "ventaja"], [191, "también"], [192, "mentira"], [193, "no"], [194, "tiene"], [195, "ninguna"], [196, "ventaja"], [197, "gente"], [198, "es"], [199, "todo"], [200, "un"], [201, "fastidio"], [202, "la"], [203, "única"], [204, "ventaja"], [205, "que"], [206, "tuvo"], [207, "fue"], [208, "que"], [209, "montamos"], [210, "esta"], [211, "obra"], [212, "PABLO"], [213, "pero"], [214, "quitando"], [215, "eso"], [216, "es"], [217, "puro"], [218, "agobio"], [219, "la"], [220, "gente"], [221, "cree"], [222, "que"], [223, "el"], [224, "hecho"], [225, "de"], [226, "ser"], [227, "gemelos"], [228, "les"], [229, "da"], [230, "derecho"], [231, "a"], [232, "hacer"], [233, "las"], [234, "preguntas"], [235, "más"], [236, "idiotas"], [237, "que"], [238, "se"], [239, "les"], [240, "ocurren"], [241, "del"], [242, "tipo"], [243, "¿"], [244, "eres"], [245, "tú"], [246, "o"], [247, "eres"], [248, "el"], [249, "otro"], [250, "?"], [251, "JUAN"], [252, "a"], [253, "ver"], [254, "cómo"], [255, "no"], [256, "voy"], [257, "a"], [258, "ser"], [259, "yo"], [260, "y"], [261, "sí"], [262, "el"], [263, "otro"], [264, "hombre"], [265, "PABLO"], [266, "¿"], [267, "qué"], [268, "día"], [269, "naciste"], [270, "?"], [271, "15"], [272, "de"], [273, "junio"], [274, "ah"], [275, "¿"], [276, "y"], [277, "tu"], [278, "hermano"], [279, "?"], [280, "puff"], [281, "JUAN"], [282, "ININTELIGIBLE"], [283, "tiene"], [284, "la"], [285, "manía"], [286, "de"], [287, "querer"], [288, "saber"], [289, "quién"], [290, "es"], [291, "el"], [292, "mayor"], [293, "¿"], [294, "no"], [295, "?"], [296, "quién"], [297, "nació"], [298, "primero"], [299, "PABLO"], [300, "¿"], [301, "sois"], [302, "hermanos"], [303, "?"], [304, "no"], [305, "somos"], [306, "primos"], [307, "no"], [308, "en"], [309, "realidad"], [310, "nos"], [311, "conocimos"], [312, "aquí"], [313, "ahora"], [314, "mismo"], [315, "puff"], [316, "qué"], [317, "parecidos"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

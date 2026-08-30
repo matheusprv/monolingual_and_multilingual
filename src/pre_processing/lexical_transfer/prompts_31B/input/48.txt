@@ -1,0 +1,61 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Olive oil
+
+Especially for the girls in the UK... (but everyone's welcome to chip in!)
+
+In supermarkets we've got a huge range of oils, many of them imported from Spain or Italy. Because they're imported, people tend to assume they must be "good" — but they might not actually be all that great, and that could be precisely why they're being exported to us in the first place. See what I mean?
+
+So... at the supermarket, what do you look at on the label when deciding whether an oil is good or not? The region? The acidity level?
+
+And also... which brands would you say are the best in the UK? And the worst?
+
+Vanessa
+
+RE: Olive oil
+
+TYPES OF OLIVE OIL
+
+*Refined olive oil: Produced by refining virgin olive oil that has high acidity and defects which are removed during the refining process. It can be blended with virgin olive oil.
+
+*Virgin olive oil: Obtained through mechanical processes. Depending on the acidity of the resulting product, it can be classified as extra virgin, virgin or ordinary. Virgin olive oil has a maximum acidity of 2%.
+
+*Extra virgin olive oil: Must not exceed 0.8% acidity (oleic acid) and must be free of defects. The body that regulates this and defines which defects are classified as such is the International Olive Council (IOC).
+
+*Ordinary olive oil: Obtained by blending lampante oil — unfit for consumption — which has been processed using physico-chemical methods, with virgin and extra virgin olive oil. Ordinary olive oil is not subject to specific regulation.
+
+TIPS FOR CONSUMERS:
+When buying the product, it's worth checking the acidity level and the best-before date.
+
+Tokens: [[0, "Olive"], [1, "oil"], [2, "Especially"], [3, "for"], [4, "the"], [5, "girls"], [6, "in"], [7, "the"], [8, "UK"], [9, "..."], [10, "("], [11, "but"], [12, "everyone's"], [13, "welcome"], [14, "to"], [15, "chip"], [16, "in"], [17, "!"], [18, ")"], [19, "In"], [20, "supermarkets"], [21, "we've"], [22, "got"], [23, "a"], [24, "huge"], [25, "range"], [26, "of"], [27, "oils"], [28, ","], [29, "many"], [30, "of"], [31, "them"], [32, "imported"], [33, "from"], [34, "Spain"], [35, "or"], [36, "Italy"], [37, "."], [38, "Because"], [39, "they're"], [40, "imported"], [41, ","], [42, "people"], [43, "tend"], [44, "to"], [45, "assume"], [46, "they"], [47, "must"], [48, "be"], [49, "\""], [50, "good"], [51, "\""], [52, "—"], [53, "but"], [54, "they"], [55, "might"], [56, "not"], [57, "actually"], [58, "be"], [59, "all"], [60, "that"], [61, "great"], [62, ","], [63, "and"], [64, "that"], [65, "could"], [66, "be"], [67, "precisely"], [68, "why"], [69, "they're"], [70, "being"], [71, "exported"], [72, "to"], [73, "us"], [74, "in"], [75, "the"], [76, "first"], [77, "place"], [78, "."], [79, "See"], [80, "what"], [81, "I"], [82, "mean"], [83, "?"], [84, "So"], [85, "..."], [86, "at"], [87, "the"], [88, "supermarket"], [89, ","], [90, "what"], [91, "do"], [92, "you"], [93, "look"], [94, "at"], [95, "on"], [96, "the"], [97, "label"], [98, "when"], [99, "deciding"], [100, "whether"], [101, "an"], [102, "oil"], [103, "is"], [104, "good"], [105, "or"], [106, "not"], [107, "?"], [108, "The"], [109, "region"], [110, "?"], [111, "The"], [112, "acidity"], [113, "level"], [114, "?"], [115, "And"], [116, "also"], [117, "..."], [118, "which"], [119, "brands"], [120, "would"], [121, "you"], [122, "say"], [123, "are"], [124, "the"], [125, "best"], [126, "in"], [127, "the"], [128, "UK"], [129, "?"], [130, "And"], [131, "the"], [132, "worst"], [133, "?"], [134, "Vanessa"], [135, "RE"], [136, ":"], [137, "Olive"], [138, "oil"], [139, "TYPES"], [140, "OF"], [141, "OLIVE"], [142, "OIL"], [143, "*"], [144, "Refined"], [145, "olive"], [146, "oil"], [147, ":"], [148, "Produced"], [149, "by"], [150, "refining"], [151, "virgin"], [152, "olive"], [153, "oil"], [154, "that"], [155, "has"], [156, "high"], [157, "acidity"], [158, "and"], [159, "defects"], [160, "which"], [161, "are"], [162, "removed"], [163, "during"], [164, "the"], [165, "refining"], [166, "process"], [167, "."], [168, "It"], [169, "can"], [170, "be"], [171, "blended"], [172, "with"], [173, "virgin"], [174, "olive"], [175, "oil"], [176, "."], [177, "*"], [178, "Virgin"], [179, "olive"], [180, "oil"], [181, ":"], [182, "Obtained"], [183, "through"], [184, "mechanical"], [185, "processes"], [186, "."], [187, "Depending"], [188, "on"], [189, "the"], [190, "acidity"], [191, "of"], [192, "the"], [193, "resulting"], [194, "product"], [195, ","], [196, "it"], [197, "can"], [198, "be"], [199, "classified"], [200, "as"], [201, "extra"], [202, "virgin"], [203, ","], [204, "virgin"], [205, "or"], [206, "ordinary"], [207, "."], [208, "Virgin"], [209, "olive"], [210, "oil"], [211, "has"], [212, "a"], [213, "maximum"], [214, "acidity"], [215, "of"], [216, "2"], [217, "%"], [218, "."], [219, "*"], [220, "Extra"], [221, "virgin"], [222, "olive"], [223, "oil"], [224, ":"], [225, "Must"], [226, "not"], [227, "exceed"], [228, "0.8"], [229, "%"], [230, "acidity"], [231, "("], [232, "oleic"], [233, "acid"], [234, ")"], [235, "and"], [236, "must"], [237, "be"], [238, "free"], [239, "of"], [240, "defects"], [241, "."], [242, "The"], [243, "body"], [244, "that"], [245, "regulates"], [246, "this"], [247, "and"], [248, "defines"], [249, "which"], [250, "defects"], [251, "are"], [252, "classified"], [253, "as"], [254, "such"], [255, "is"], [256, "the"], [257, "International"], [258, "Olive"], [259, "Council"], [260, "("], [261, "IOC"], [262, ")"], [263, "."], [264, "*"], [265, "Ordinary"], [266, "olive"], [267, "oil"], [268, ":"], [269, "Obtained"], [270, "by"], [271, "blending"], [272, "lampante"], [273, "oil"], [274, "—"], [275, "unfit"], [276, "for"], [277, "consumption"], [278, "—"], [279, "which"], [280, "has"], [281, "been"], [282, "processed"], [283, "using"], [284, "physico"], [285, "-"], [286, "chemical"], [287, "methods"], [288, ","], [289, "with"], [290, "virgin"], [291, "and"], [292, "extra"], [293, "virgin"], [294, "olive"], [295, "oil"], [296, "."], [297, "Ordinary"], [298, "olive"], [299, "oil"], [300, "is"], [301, "not"], [302, "subject"], [303, "to"], [304, "specific"], [305, "regulation"], [306, "."], [307, "TIPS"], [308, "FOR"], [309, "CONSUMERS"], [310, ":"], [311, "When"], [312, "buying"], [313, "the"], [314, "product"], [315, ","], [316, "it's"], [317, "worth"], [318, "checking"], [319, "the"], [320, "acidity"], [321, "level"], [322, "and"], [323, "the"], [324, "best"], [325, "-"], [326, "before"], [327, "date"], [328, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

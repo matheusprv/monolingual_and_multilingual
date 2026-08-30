@@ -1,0 +1,57 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: LOCUTEUR1 D'accord, en rentrant à la maison, j'ai une question à poser, oh, la salle de bain
+LOCUTEUR2 VOIX BASSE
+LOCUTEUR1 À la maison
+LOCUTEUR2 La salle de bain, quand j'ai besoin de regarder en arrière dans l'histoire
+LOCUTEUR1 Vous habitiez dans un appartement, vous êtes restés là-bas
+LOCUTEUR2 Nous habitions
+LOCUTEUR1 Dans un hôtel
+LOCUTEUR2 Non, nous habitions dans un appartement, un quartier très moderne, il conviendrait à n'importe quel bon quartier de Shanghai, notre appartement avait trois salles de bain. Après la révolution, ils ont fait une sorte de rénovation urbaine et ont pris celles qui étaient à l'origine manuelles
+LOCUTEUR1 Peu clair, maisons de la colonie européenne
+LOCUTEUR2 Ils l'ont transformé en une sorte de cour partagée ou quelque chose comme ça
+LOCUTEUR1 Ahm
+LOCUTEUR2 Il n'y avait aucun moyen de construire une salle de bain pour tout le monde, alors ils ont construit des salles de bain publiques. Donc, quand vous arrivez dans le quartier, vous voyez les gens porter encore des pots de chambre pour vider dans les salles de bain publiques. Il y a toutes sortes de salles de bain publiques. Par exemple, d'énormes panneaux d'affichage, vous voyez ces panneaux géants dans la rue avec des publicités pour des toilettes, une femme très élégante assise sur des toilettes
+LOCUTEUR1 VOIX BASSE
+LOCUTEUR2 Tournage d'une publicité
+LOCUTEUR1 VOIX BASSE Oh, comme c'est merveilleux
+LOCUTEUR2 Pour nous, c'était un choc de voir cela comme une chose naturelle. En allant chez C, il veut vous montrer sa salle de bain, il a une salle de bain maintenant. Alors vous
+LOCUTEUR1 C'est devenu une salle à manger
+LOCUTEUR2 Non, c'est devenu un salon
+LOCUTEUR2 Est-ce que je vais manger pour ces toilettes ?
+LOCUTEUR2 Si vous devez utiliser une salle de bain publique, alors vous devez
+LOCUTEUR1 En avez-vous déjà utilisé une ?
+LOCUTEUR2 Plusieurs fois
+
+Tokens: [[0, "LOCUTEUR1"], [1, "D'"], [2, "accord"], [3, ","], [4, "en"], [5, "rentrant"], [6, "à"], [7, "la"], [8, "maison"], [9, ","], [10, "j'"], [11, "ai"], [12, "une"], [13, "question"], [14, "à"], [15, "poser"], [16, ","], [17, "oh"], [18, ","], [19, "la"], [20, "salle"], [21, "de"], [22, "bain"], [23, "LOCUTEUR2"], [24, "VOIX"], [25, "BASSE"], [26, "LOCUTEUR1"], [27, "À"], [28, "la"], [29, "maison"], [30, "LOCUTEUR2"], [31, "La"], [32, "salle"], [33, "de"], [34, "bain"], [35, ","], [36, "quand"], [37, "j'"], [38, "ai"], [39, "besoin"], [40, "de"], [41, "regarder"], [42, "en"], [43, "arrière"], [44, "dans"], [45, "l'"], [46, "histoire"], [47, "LOCUTEUR1"], [48, "Vous"], [49, "habitiez"], [50, "dans"], [51, "un"], [52, "appartement"], [53, ","], [54, "vous"], [55, "êtes"], [56, "restés"], [57, "là-bas"], [58, "LOCUTEUR2"], [59, "Nous"], [60, "habitions"], [61, "LOCUTEUR1"], [62, "Dans"], [63, "un"], [64, "hôtel"], [65, "LOCUTEUR2"], [66, "Non"], [67, ","], [68, "nous"], [69, "habitions"], [70, "dans"], [71, "un"], [72, "appartement"], [73, ","], [74, "un"], [75, "quartier"], [76, "très"], [77, "moderne"], [78, ","], [79, "il"], [80, "conviendrait"], [81, "à"], [82, "n'"], [83, "importe"], [84, "quel"], [85, "bon"], [86, "quartier"], [87, "de"], [88, "Shanghai"], [89, ","], [90, "notre"], [91, "appartement"], [92, "avait"], [93, "trois"], [94, "salles"], [95, "de"], [96, "bain"], [97, "."], [98, "Après"], [99, "la"], [100, "révolution"], [101, ","], [102, "ils"], [103, "ont"], [104, "fait"], [105, "une"], [106, "sorte"], [107, "de"], [108, "rénovation"], [109, "urbaine"], [110, "et"], [111, "ont"], [112, "pris"], [113, "celles"], [114, "qui"], [115, "étaient"], [116, "à"], [117, "l'"], [118, "origine"], [119, "manuelles"], [120, "LOCUTEUR1"], [121, "Peu"], [122, "clair"], [123, ","], [124, "maisons"], [125, "de"], [126, "la"], [127, "colonie"], [128, "européenne"], [129, "LOCUTEUR2"], [130, "Ils"], [131, "l'"], [132, "ont"], [133, "transformé"], [134, "en"], [135, "une"], [136, "sorte"], [137, "de"], [138, "cour"], [139, "partagée"], [140, "ou"], [141, "quelque"], [142, "chose"], [143, "comme"], [144, "ça"], [145, "LOCUTEUR1"], [146, "Ahm"], [147, "LOCUTEUR2"], [148, "Il"], [149, "n'"], [150, "y"], [151, "avait"], [152, "aucun"], [153, "moyen"], [154, "de"], [155, "construire"], [156, "une"], [157, "salle"], [158, "de"], [159, "bain"], [160, "pour"], [161, "tout"], [162, "le"], [163, "monde"], [164, ","], [165, "alors"], [166, "ils"], [167, "ont"], [168, "construit"], [169, "des"], [170, "salles"], [171, "de"], [172, "bain"], [173, "publiques"], [174, "."], [175, "Donc"], [176, ","], [177, "quand"], [178, "vous"], [179, "arrivez"], [180, "dans"], [181, "le"], [182, "quartier"], [183, ","], [184, "vous"], [185, "voyez"], [186, "les"], [187, "gens"], [188, "porter"], [189, "encore"], [190, "des"], [191, "pots"], [192, "de"], [193, "chambre"], [194, "pour"], [195, "vider"], [196, "dans"], [197, "les"], [198, "salles"], [199, "de"], [200, "bain"], [201, "publiques"], [202, "."], [203, "Il"], [204, "y"], [205, "a"], [206, "toutes"], [207, "sortes"], [208, "de"], [209, "salles"], [210, "de"], [211, "bain"], [212, "publiques"], [213, "."], [214, "Par"], [215, "exemple"], [216, ","], [217, "d'"], [218, "énormes"], [219, "panneaux"], [220, "d'"], [221, "affichage"], [222, ","], [223, "vous"], [224, "voyez"], [225, "ces"], [226, "panneaux"], [227, "géants"], [228, "dans"], [229, "la"], [230, "rue"], [231, "avec"], [232, "des"], [233, "publicités"], [234, "pour"], [235, "des"], [236, "toilettes"], [237, ","], [238, "une"], [239, "femme"], [240, "très"], [241, "élégante"], [242, "assise"], [243, "sur"], [244, "des"], [245, "toilettes"], [246, "LOCUTEUR1"], [247, "VOIX"], [248, "BASSE"], [249, "LOCUTEUR2"], [250, "Tournage"], [251, "d'"], [252, "une"], [253, "publicité"], [254, "LOCUTEUR1"], [255, "VOIX"], [256, "BASSE"], [257, "Oh"], [258, ","], [259, "comme"], [260, "c'"], [261, "est"], [262, "merveilleux"], [263, "LOCUTEUR2"], [264, "Pour"], [265, "nous"], [266, ","], [267, "c'"], [268, "était"], [269, "un"], [270, "choc"], [271, "de"], [272, "voir"], [273, "cela"], [274, "comme"], [275, "une"], [276, "chose"], [277, "naturelle"], [278, "."], [279, "En"], [280, "allant"], [281, "chez"], [282, "C"], [283, ","], [284, "il"], [285, "veut"], [286, "vous"], [287, "montrer"], [288, "sa"], [289, "salle"], [290, "de"], [291, "bain"], [292, ","], [293, "il"], [294, "a"], [295, "une"], [296, "salle"], [297, "de"], [298, "bain"], [299, "maintenant"], [300, "."], [301, "Alors"], [302, "vous"], [303, "LOCUTEUR1"], [304, "C'"], [305, "est"], [306, "devenu"], [307, "une"], [308, "salle"], [309, "à"], [310, "manger"], [311, "LOCUTEUR2"], [312, "Non"], [313, ","], [314, "c'"], [315, "est"], [316, "devenu"], [317, "un"], [318, "salon"], [319, "LOCUTEUR2"], [320, "Est"], [321, "-ce"], [322, "que"], [323, "je"], [324, "vais"], [325, "manger"], [326, "pour"], [327, "ces"], [328, "toilettes"], [329, "?"], [330, "LOCUTEUR2"], [331, "Si"], [332, "vous"], [333, "devez"], [334, "utiliser"], [335, "une"], [336, "salle"], [337, "de"], [338, "bain"], [339, "publique"], [340, ","], [341, "alors"], [342, "vous"], [343, "devez"], [344, "LOCUTEUR1"], [345, "En"], [346, "avez"], [347, "-vous"], [348, "déjà"], [349, "utilisé"], [350, "une"], [351, "?"], [352, "LOCUTEUR2"], [353, "Plusieurs"], [354, "fois"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

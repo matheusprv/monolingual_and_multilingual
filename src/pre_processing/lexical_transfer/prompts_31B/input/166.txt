@@ -1,0 +1,40 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Ask the captain.
+
+"On a flight from Foz do Iguaçu, I noticed something: the tip of the 737-800NG's wing curves upward. What's that for?"
+
+Those upward-curved extensions at the wingtips are called winglets, and they improve the aircraft's aerodynamics. Although they represent a major breakthrough in aeronautical engineering, this design has existed in nature for millions of years. Look at large birds like condors, eagles, and vultures — they have feathers that curve up at the tips of their wings. This allows air to flow more smoothly over the wings and enables the birds to glide for extended periods while burning as little energy as possible, whether they're hunting for food or defending their territory.
+
+Tokens: [[0, "Ask"], [1, "the"], [2, "captain"], [3, "."], [4, "\""], [5, "On"], [6, "a"], [7, "flight"], [8, "from"], [9, "Foz"], [10, "do"], [11, "Iguaçu"], [12, ","], [13, "I"], [14, "noticed"], [15, "something"], [16, ":"], [17, "the"], [18, "tip"], [19, "of"], [20, "the"], [21, "737-"], [22, "800"], [23, "NG's"], [24, "wing"], [25, "curves"], [26, "upward"], [27, "."], [28, "What's"], [29, "that"], [30, "for"], [31, "?"], [32, "\""], [33, "Those"], [34, "upward"], [35, "-"], [36, "curved"], [37, "extensions"], [38, "at"], [39, "the"], [40, "wingtips"], [41, "are"], [42, "called"], [43, "winglets"], [44, ","], [45, "and"], [46, "they"], [47, "improve"], [48, "the"], [49, "aircraft's"], [50, "aerodynamics"], [51, "."], [52, "Although"], [53, "they"], [54, "represent"], [55, "a"], [56, "major"], [57, "breakthrough"], [58, "in"], [59, "aeronautical"], [60, "engineering"], [61, ","], [62, "this"], [63, "design"], [64, "has"], [65, "existed"], [66, "in"], [67, "nature"], [68, "for"], [69, "millions"], [70, "of"], [71, "years"], [72, "."], [73, "Look"], [74, "at"], [75, "large"], [76, "birds"], [77, "like"], [78, "condors"], [79, ","], [80, "eagles"], [81, ","], [82, "and"], [83, "vultures"], [84, "—"], [85, "they"], [86, "have"], [87, "feathers"], [88, "that"], [89, "curve"], [90, "up"], [91, "at"], [92, "the"], [93, "tips"], [94, "of"], [95, "their"], [96, "wings"], [97, "."], [98, "This"], [99, "allows"], [100, "air"], [101, "to"], [102, "flow"], [103, "more"], [104, "smoothly"], [105, "over"], [106, "the"], [107, "wings"], [108, "and"], [109, "enables"], [110, "the"], [111, "birds"], [112, "to"], [113, "glide"], [114, "for"], [115, "extended"], [116, "periods"], [117, "while"], [118, "burning"], [119, "as"], [120, "little"], [121, "energy"], [122, "as"], [123, "possible"], [124, ","], [125, "whether"], [126, "they're"], [127, "hunting"], [128, "for"], [129, "food"], [130, "or"], [131, "defending"], [132, "their"], [133, "territory"], [134, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

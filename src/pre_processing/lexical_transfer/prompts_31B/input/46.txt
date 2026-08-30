@@ -1,0 +1,83 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: HABLANTE1 hoy voy a envolver a este san antonio en este papel bien envuelto y lo voy a esconder
+
+HABLANTE2 hmm
+
+HABLANTE1 como esta vez no me llegue un juan se acabó para siempre
+
+HABLANTE2 ¿cómo que no te llegue un juan?
+
+HABLANTE1 no estoy hablando de su juan estoy hablando de alguien parecido un hombre honesto correcto en quien pueda confiar ¿entiendes? no puede ser que solo haya un juan en el mundo
+
+HABLANTE2 yo creo que es muy difícil encontrar otro juan ¿entiendes? está por nacer igual que mi juanito está por nacer
+
+HABLANTE3 oye hablante2 ¿qué pasa no va a haber aperitivo hoy o qué?
+
+HABLANTE2 oye hablante3 yo solo hago aperitivo cuando es reunión de la asociación de vecinos ay hablante3 dios mío qué fastidio
+HABLANTE3 pues sí porque está llegando todo el mundo
+
+HABLANTE1 pero si tú no dijiste que ibas a aplazar esa reunión por el viaje de juan
+
+HABLANTE2 iba a hacerlo pero se me olvidó
+
+HABLANTE1 oye pues ahora vas allí y los echas a todos diles que sin el presidente no puede haber reunión
+
+HABLANTE2 bueno yo quería disculparme con todos ¿no? en cuanto juan vuelva del viaje él convocará una nueva reunión
+
+HABLANTE4 de ninguna manera discúlpeme pero el presidente no podía faltar precisamente hoy que tenemos un asunto tan grave
+
+HABLANTE2 oye hablante4 ¿qué asunto tan grave es ese hablante4?
+
+HABLANTE4 el hablante5 no ha contado lo que pasó
+
+HABLANTE5 ah
+
+HABLANTE4 habla hablante5
+
+HABLANTE5 pero tampoco fue algo tan grave no hubo ninguna víctima
+
+HABLANTE4 ¿cómo que no? yo fui víctima de la violencia perdí la revisión del alquiler doña hablante2 encontraron una bala perdida en casa del hablante5 y de juana
+
+HABLANTE2 gente una bala perdida
+
+HABLANTE3 espera hablante4 ¿bala perdida de revólver?
+
+HABLANTE4 en la pared de la casa
+
+HABLANTE1 gente entonces hubo un tiroteo
+
+HABLANTE2 ay juana no me has dicho nada hija ¿estás bien? ¿estás bien del todo?
+
+Tokens: [[0, "HABLANTE1"], [1, "hoy"], [2, "voy"], [3, "a"], [4, "envolver"], [5, "a"], [6, "este"], [7, "san"], [8, "antonio"], [9, "en"], [10, "este"], [11, "papel"], [12, "bien"], [13, "envuelto"], [14, "y"], [15, "lo"], [16, "voy"], [17, "a"], [18, "esconder"], [19, "HABLANTE2"], [20, "hmm"], [21, "HABLANTE1"], [22, "como"], [23, "esta"], [24, "vez"], [25, "no"], [26, "me"], [27, "llegue"], [28, "un"], [29, "juan"], [30, "se"], [31, "acabó"], [32, "para"], [33, "siempre"], [34, "HABLANTE2"], [35, "¿"], [36, "cómo"], [37, "que"], [38, "no"], [39, "te"], [40, "llegue"], [41, "un"], [42, "juan"], [43, "?"], [44, "HABLANTE1"], [45, "no"], [46, "estoy"], [47, "hablando"], [48, "de"], [49, "su"], [50, "juan"], [51, "estoy"], [52, "hablando"], [53, "de"], [54, "alguien"], [55, "parecido"], [56, "un"], [57, "hombre"], [58, "honesto"], [59, "correcto"], [60, "en"], [61, "quien"], [62, "pueda"], [63, "confiar"], [64, "¿"], [65, "entiendes"], [66, "?"], [67, "no"], [68, "puede"], [69, "ser"], [70, "que"], [71, "solo"], [72, "haya"], [73, "un"], [74, "juan"], [75, "en"], [76, "el"], [77, "mundo"], [78, "HABLANTE2"], [79, "yo"], [80, "creo"], [81, "que"], [82, "es"], [83, "muy"], [84, "difícil"], [85, "encontrar"], [86, "otro"], [87, "juan"], [88, "¿"], [89, "entiendes"], [90, "?"], [91, "está"], [92, "por"], [93, "nacer"], [94, "igual"], [95, "que"], [96, "mi"], [97, "juanito"], [98, "está"], [99, "por"], [100, "nacer"], [101, "HABLANTE3"], [102, "oye"], [103, "hablante2"], [104, "¿"], [105, "qué"], [106, "pasa"], [107, "no"], [108, "va"], [109, "a"], [110, "haber"], [111, "aperitivo"], [112, "hoy"], [113, "o"], [114, "qué"], [115, "?"], [116, "HABLANTE2"], [117, "oye"], [118, "hablante3"], [119, "yo"], [120, "solo"], [121, "hago"], [122, "aperitivo"], [123, "cuando"], [124, "es"], [125, "reunión"], [126, "de"], [127, "la"], [128, "asociación"], [129, "de"], [130, "vecinos"], [131, "ay"], [132, "hablante3"], [133, "dios"], [134, "mío"], [135, "qué"], [136, "fastidio"], [137, "HABLANTE3"], [138, "pues"], [139, "sí"], [140, "porque"], [141, "está"], [142, "llegando"], [143, "todo"], [144, "el"], [145, "mundo"], [146, "HABLANTE1"], [147, "pero"], [148, "si"], [149, "tú"], [150, "no"], [151, "dijiste"], [152, "que"], [153, "ibas"], [154, "a"], [155, "aplazar"], [156, "esa"], [157, "reunión"], [158, "por"], [159, "el"], [160, "viaje"], [161, "de"], [162, "juan"], [163, "HABLANTE2"], [164, "iba"], [165, "a"], [166, "hacerlo"], [167, "pero"], [168, "se"], [169, "me"], [170, "olvidó"], [171, "HABLANTE1"], [172, "oye"], [173, "pues"], [174, "ahora"], [175, "vas"], [176, "allí"], [177, "y"], [178, "los"], [179, "echas"], [180, "a"], [181, "todos"], [182, "diles"], [183, "que"], [184, "sin"], [185, "el"], [186, "presidente"], [187, "no"], [188, "puede"], [189, "haber"], [190, "reunión"], [191, "HABLANTE2"], [192, "bueno"], [193, "yo"], [194, "quería"], [195, "disculparme"], [196, "con"], [197, "todos"], [198, "¿"], [199, "no"], [200, "?"], [201, "en"], [202, "cuanto"], [203, "juan"], [204, "vuelva"], [205, "del"], [206, "viaje"], [207, "él"], [208, "convocará"], [209, "una"], [210, "nueva"], [211, "reunión"], [212, "HABLANTE4"], [213, "de"], [214, "ninguna"], [215, "manera"], [216, "discúlpeme"], [217, "pero"], [218, "el"], [219, "presidente"], [220, "no"], [221, "podía"], [222, "faltar"], [223, "precisamente"], [224, "hoy"], [225, "que"], [226, "tenemos"], [227, "un"], [228, "asunto"], [229, "tan"], [230, "grave"], [231, "HABLANTE2"], [232, "oye"], [233, "hablante4"], [234, "¿"], [235, "qué"], [236, "asunto"], [237, "tan"], [238, "grave"], [239, "es"], [240, "ese"], [241, "hablante4"], [242, "?"], [243, "HABLANTE4"], [244, "el"], [245, "hablante5"], [246, "no"], [247, "ha"], [248, "contado"], [249, "lo"], [250, "que"], [251, "pasó"], [252, "HABLANTE5"], [253, "ah"], [254, "HABLANTE4"], [255, "habla"], [256, "hablante"], [257, "5"], [258, "HABLANTE5"], [259, "pero"], [260, "tampoco"], [261, "fue"], [262, "algo"], [263, "tan"], [264, "grave"], [265, "no"], [266, "hubo"], [267, "ninguna"], [268, "víctima"], [269, "HABLANTE4"], [270, "¿"], [271, "cómo"], [272, "que"], [273, "no"], [274, "?"], [275, "yo"], [276, "fui"], [277, "víctima"], [278, "de"], [279, "la"], [280, "violencia"], [281, "perdí"], [282, "la"], [283, "revisión"], [284, "del"], [285, "alquiler"], [286, "doña"], [287, "hablante2"], [288, "encontraron"], [289, "una"], [290, "bala"], [291, "perdida"], [292, "en"], [293, "casa"], [294, "del"], [295, "hablante5"], [296, "y"], [297, "de"], [298, "juana"], [299, "HABLANTE2"], [300, "gente"], [301, "una"], [302, "bala"], [303, "perdida"], [304, "HABLANTE3"], [305, "espera"], [306, "hablante4"], [307, "¿"], [308, "bala"], [309, "perdida"], [310, "de"], [311, "revólver"], [312, "?"], [313, "HABLANTE4"], [314, "en"], [315, "la"], [316, "pared"], [317, "de"], [318, "la"], [319, "casa"], [320, "HABLANTE1"], [321, "gente"], [322, "entonces"], [323, "hubo"], [324, "un"], [325, "tirote"], [326, "o"], [327, "HABLANTE2"], [328, "ay"], [329, "juana"], [330, "no"], [331, "me"], [332, "has"], [333, "dicho"], [334, "nada"], [335, "hija"], [336, "¿"], [337, "estás"], [338, "bien"], [339, "?"], [340, "¿"], [341, "estás"], [342, "bien"], [343, "del"], [344, "todo"], [345, "?"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

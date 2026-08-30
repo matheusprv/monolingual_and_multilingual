@@ -1,0 +1,46 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Dear Poslin student,
+We warmly invite you to join the FALE Choir for our Christmas concert preparations. We will begin rehearsing Handel's Messiah Hallelujah under the direction of choirmaster Renato Pedroso from the UFMG School of Music. This joint initiative brings together CENEX-FALE, the FALE Undergraduate Board, Poslin, and Poslit.
+You will receive an audio file corresponding to your vocal range via email, along with the sheet music.
+Even if you think you don't sing perfectly in tune, give it a chance and give yourself an opportunity.
+You do not need to be a permanent member of the choir to participate. No prior musical experience is required.
+This activity is inspired by choral singing practices in England, designed for people who train their vocal parts individually or in small, independent groups.
+This allows you to practice at your own pace, alone or with a few others, without the commitment of attending frequent collective rehearsals.
+Phase 1 is simply to express your interest in participating. To do so, send an e-mail to: serenatafale@yahoo.com.br
+State your full name and your status within the university (professor, retired professor, administrative staff, undergraduate student, postgraduate student, or specialisation student).
+If possible, provide a contact telephone number.
+Following this, you will receive two mp3 files via email to help you practice your part of Handel's Hallelujah.
+
+Tokens: [[0, "Dear"], [1, "Poslin"], [2, "student"], [3, ","], [4, "We"], [5, "warmly"], [6, "invite"], [7, "you"], [8, "to"], [9, "join"], [10, "the"], [11, "FALE"], [12, "Choir"], [13, "for"], [14, "our"], [15, "Christmas"], [16, "concert"], [17, "preparations"], [18, "."], [19, "We"], [20, "will"], [21, "begin"], [22, "rehearsing"], [23, "Handel's"], [24, "Messiah"], [25, "Hallelujah"], [26, "under"], [27, "the"], [28, "direction"], [29, "of"], [30, "choirmaster"], [31, "Renato"], [32, "Pedroso"], [33, "from"], [34, "the"], [35, "UFMG"], [36, "School"], [37, "of"], [38, "Music"], [39, "."], [40, "This"], [41, "joint"], [42, "initiative"], [43, "brings"], [44, "together"], [45, "CENEX"], [46, "-"], [47, "FALE"], [48, ","], [49, "the"], [50, "FALE"], [51, "Undergraduate"], [52, "Board"], [53, ","], [54, "Poslin"], [55, ","], [56, "and"], [57, "Poslit"], [58, "."], [59, "You"], [60, "will"], [61, "receive"], [62, "an"], [63, "audio"], [64, "file"], [65, "corresponding"], [66, "to"], [67, "your"], [68, "vocal"], [69, "range"], [70, "via"], [71, "email"], [72, ","], [73, "along"], [74, "with"], [75, "the"], [76, "sheet"], [77, "music"], [78, "."], [79, "Even"], [80, "if"], [81, "you"], [82, "think"], [83, "you"], [84, "don't"], [85, "sing"], [86, "perfectly"], [87, "in"], [88, "tune"], [89, ","], [90, "give"], [91, "it"], [92, "a"], [93, "chance"], [94, "and"], [95, "give"], [96, "yourself"], [97, "an"], [98, "opportunity"], [99, "."], [100, "You"], [101, "do"], [102, "not"], [103, "need"], [104, "to"], [105, "be"], [106, "a"], [107, "permanent"], [108, "member"], [109, "of"], [110, "the"], [111, "choir"], [112, "to"], [113, "participate"], [114, "."], [115, "No"], [116, "prior"], [117, "musical"], [118, "experience"], [119, "is"], [120, "required"], [121, "."], [122, "This"], [123, "activity"], [124, "is"], [125, "inspired"], [126, "by"], [127, "choral"], [128, "singing"], [129, "practices"], [130, "in"], [131, "England"], [132, ","], [133, "designed"], [134, "for"], [135, "people"], [136, "who"], [137, "train"], [138, "their"], [139, "vocal"], [140, "parts"], [141, "individually"], [142, "or"], [143, "in"], [144, "small"], [145, ","], [146, "independent"], [147, "groups"], [148, "."], [149, "This"], [150, "allows"], [151, "you"], [152, "to"], [153, "practice"], [154, "at"], [155, "your"], [156, "own"], [157, "pace"], [158, ","], [159, "alone"], [160, "or"], [161, "with"], [162, "a"], [163, "few"], [164, "others"], [165, ","], [166, "without"], [167, "the"], [168, "commitment"], [169, "of"], [170, "attending"], [171, "frequent"], [172, "collective"], [173, "rehearsals"], [174, "."], [175, "Phase"], [176, "1"], [177, "is"], [178, "simply"], [179, "to"], [180, "express"], [181, "your"], [182, "interest"], [183, "in"], [184, "participating"], [185, "."], [186, "To"], [187, "do"], [188, "so"], [189, ","], [190, "send"], [191, "an"], [192, "e-mail"], [193, "to"], [194, ":"], [195, "serenatafale@yahoo.com.br"], [196, "State"], [197, "your"], [198, "full"], [199, "name"], [200, "and"], [201, "your"], [202, "status"], [203, "within"], [204, "the"], [205, "university"], [206, "("], [207, "professor"], [208, ","], [209, "retired"], [210, "professor"], [211, ","], [212, "administrative"], [213, "staff"], [214, ","], [215, "undergraduate"], [216, "student"], [217, ","], [218, "postgraduate"], [219, "student"], [220, ","], [221, "or"], [222, "specialisation"], [223, "student"], [224, ")"], [225, "."], [226, "If"], [227, "possible"], [228, ","], [229, "provide"], [230, "a"], [231, "contact"], [232, "telephone"], [233, "number"], [234, "."], [235, "Following"], [236, "this"], [237, ","], [238, "you"], [239, "will"], [240, "receive"], [241, "two"], [242, "mp3"], [243, "files"], [244, "via"], [245, "email"], [246, "to"], [247, "help"], [248, "you"], [249, "practice"], [250, "your"], [251, "part"], [252, "of"], [253, "Handel's"], [254, "Hallelujah"], [255, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

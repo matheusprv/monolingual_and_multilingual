@@ -1,0 +1,40 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: MUSIC
+
+HOST: this is just the beginning, just the beginning. We're going to march down this avenue and pick up a lot more people along the way until about eight-thirty, nine at night — because this avenue is ours, people!
+
+MARIA: I'm Maria, from the collective of lesbian and gay women of the Federal District, and we are here. We work year-round here in the Federal District to fight for our rights, because human rights must be respected and upheld above everything else. So I wanted to say a few things. Last year, the Justice Secretariat, the GPS, promised us the creation of an LGBT council — the council that would guarantee (inaudible) our rights. And here we are, people: it was promised last year, and to this day it has not been created, nothing has been done. On Friday, we got word that the Justice Secretary, Dr. Paulo, ordered a draft to be written. A lot of people were excited about that, but I have to ask: is that just a way to shut us up? To keep us quiet so we stop pushing? (Shout) We are not okay with just waiting. It has been a year since that promise, and all they have to show for it is a draft bill.
+
+Tokens: [[0, "MUSIC"], [1, "HOST"], [2, ":"], [3, "this"], [4, "is"], [5, "just"], [6, "the"], [7, "beginning"], [8, ","], [9, "just"], [10, "the"], [11, "beginning"], [12, "."], [13, "We're"], [14, "going"], [15, "to"], [16, "march"], [17, "down"], [18, "this"], [19, "avenue"], [20, "and"], [21, "pick"], [22, "up"], [23, "a"], [24, "lot"], [25, "more"], [26, "people"], [27, "along"], [28, "the"], [29, "way"], [30, "until"], [31, "about"], [32, "eight"], [33, "-"], [34, "thirty"], [35, ","], [36, "nine"], [37, "at"], [38, "night"], [39, "—"], [40, "because"], [41, "this"], [42, "avenue"], [43, "is"], [44, "ours"], [45, ","], [46, "people"], [47, "!"], [48, "MARIA"], [49, ":"], [50, "I'm"], [51, "Maria"], [52, ","], [53, "from"], [54, "the"], [55, "collective"], [56, "of"], [57, "lesbian"], [58, "and"], [59, "gay"], [60, "women"], [61, "of"], [62, "the"], [63, "Federal"], [64, "District"], [65, ","], [66, "and"], [67, "we"], [68, "are"], [69, "here"], [70, "."], [71, "We"], [72, "work"], [73, "year"], [74, "-"], [75, "round"], [76, "here"], [77, "in"], [78, "the"], [79, "Federal"], [80, "District"], [81, "to"], [82, "fight"], [83, "for"], [84, "our"], [85, "rights"], [86, ","], [87, "because"], [88, "human"], [89, "rights"], [90, "must"], [91, "be"], [92, "respected"], [93, "and"], [94, "upheld"], [95, "above"], [96, "everything"], [97, "else"], [98, "."], [99, "So"], [100, "I"], [101, "wanted"], [102, "to"], [103, "say"], [104, "a"], [105, "few"], [106, "things"], [107, "."], [108, "Last"], [109, "year"], [110, ","], [111, "the"], [112, "Justice"], [113, "Secretariat"], [114, ","], [115, "the"], [116, "GPS"], [117, ","], [118, "promised"], [119, "us"], [120, "the"], [121, "creation"], [122, "of"], [123, "an"], [124, "LGBT"], [125, "council"], [126, "—"], [127, "the"], [128, "council"], [129, "that"], [130, "would"], [131, "guarantee"], [132, "("], [133, "inaudible"], [134, ")"], [135, "our"], [136, "rights"], [137, "."], [138, "And"], [139, "here"], [140, "we"], [141, "are"], [142, ","], [143, "people"], [144, ":"], [145, "it"], [146, "was"], [147, "promised"], [148, "last"], [149, "year"], [150, ","], [151, "and"], [152, "to"], [153, "this"], [154, "day"], [155, "it"], [156, "has"], [157, "not"], [158, "been"], [159, "created"], [160, ","], [161, "nothing"], [162, "has"], [163, "been"], [164, "done"], [165, "."], [166, "On"], [167, "Friday"], [168, ","], [169, "we"], [170, "got"], [171, "word"], [172, "that"], [173, "the"], [174, "Justice"], [175, "Secretary"], [176, ","], [177, "Dr."], [178, "Paulo"], [179, ","], [180, "ordered"], [181, "a"], [182, "draft"], [183, "to"], [184, "be"], [185, "written"], [186, "."], [187, "A"], [188, "lot"], [189, "of"], [190, "people"], [191, "were"], [192, "excited"], [193, "about"], [194, "that"], [195, ","], [196, "but"], [197, "I"], [198, "have"], [199, "to"], [200, "ask"], [201, ":"], [202, "is"], [203, "that"], [204, "just"], [205, "a"], [206, "way"], [207, "to"], [208, "shut"], [209, "us"], [210, "up"], [211, "?"], [212, "To"], [213, "keep"], [214, "us"], [215, "quiet"], [216, "so"], [217, "we"], [218, "stop"], [219, "pushing"], [220, "?"], [221, "("], [222, "Shout"], [223, ")"], [224, "We"], [225, "are"], [226, "not"], [227, "okay"], [228, "with"], [229, "just"], [230, "waiting"], [231, "."], [232, "It"], [233, "has"], [234, "been"], [235, "a"], [236, "year"], [237, "since"], [238, "that"], [239, "promise"], [240, ","], [241, "and"], [242, "all"], [243, "they"], [244, "have"], [245, "to"], [246, "show"], [247, "for"], [248, "it"], [249, "is"], [250, "a"], [251, "draft"], [252, "bill"], [253, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

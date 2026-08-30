@@ -1,0 +1,47 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Estimado alumno del Poslin:
+Te proponemos sumarte al Coro de la FALE para los preparativos de Navidad. Ensayaremos, para empezar, el Aleluya del Mesías de Händel, bajo la batuta del director Renato Pedroso, de la Escuela de Música de la UFMG. Es una iniciativa conjunta del CENEX-FALE, el Colegiado de Grado de la FALE, el Poslin y el Poslit.
+Recibirás por correo electrónico la partitura y un archivo de audio con la sección de voz que te corresponde cantar.
+Aunque creas que no cantas bien, dale una oportunidad.
+No hace falta formar parte del coro oficial para participar.
+Tampoco se requiere experiencia musical previa de ningún tipo.
+Se trata de una actividad inspirada en los métodos de canto coral de Inglaterra, pensada para que cada persona ensaye su parte de manera individual o en pequeños grupos.
+Así podrás practicar a tu ritmo, individualmente o con unos pocos compañeros, sin la obligación de asistir a ensayos comunitarios continuos.
+La fase 1 consiste simplemente en manifestar tu interés en participar. Para ello, envía un correo electrónico a serenatafale@yahoo.com.br
+Indica tu nombre completo y tu vinculación con la universidad (profesor, docente jubilado, personal administrativo, alumno de grado, de posgrado o de especialización).
+Agradeceríamos que incluyas también un teléfono de contacto.
+Posteriormente, recibirás por email dos archivos en formato mp3 para ensayar tu línea vocal del Aleluya de Händel.
+
+Tokens: [[0, "Estimado"], [1, "alumno"], [2, "del"], [3, "Poslin"], [4, ":"], [5, "Te"], [6, "proponemos"], [7, "sumarte"], [8, "al"], [9, "Coro"], [10, "de"], [11, "la"], [12, "FALE"], [13, "para"], [14, "los"], [15, "preparativos"], [16, "de"], [17, "Navidad"], [18, "."], [19, "Ensayaremos"], [20, ","], [21, "para"], [22, "empezar"], [23, ","], [24, "el"], [25, "Aleluya"], [26, "del"], [27, "Mesías"], [28, "de"], [29, "Händel"], [30, ","], [31, "bajo"], [32, "la"], [33, "batuta"], [34, "del"], [35, "director"], [36, "Renato"], [37, "Pedroso"], [38, ","], [39, "de"], [40, "la"], [41, "Escuela"], [42, "de"], [43, "Música"], [44, "de"], [45, "la"], [46, "UFMG"], [47, "."], [48, "Es"], [49, "una"], [50, "iniciativa"], [51, "conjunta"], [52, "del"], [53, "CENEX-FALE"], [54, ","], [55, "el"], [56, "Colegiado"], [57, "de"], [58, "Grado"], [59, "de"], [60, "la"], [61, "FALE"], [62, ","], [63, "el"], [64, "Poslin"], [65, "y"], [66, "el"], [67, "Poslit"], [68, "."], [69, "Recibirás"], [70, "por"], [71, "correo"], [72, "electrónico"], [73, "la"], [74, "partitura"], [75, "y"], [76, "un"], [77, "archivo"], [78, "de"], [79, "audio"], [80, "con"], [81, "la"], [82, "sección"], [83, "de"], [84, "voz"], [85, "que"], [86, "te"], [87, "corresponde"], [88, "cantar"], [89, "."], [90, "Aunque"], [91, "creas"], [92, "que"], [93, "no"], [94, "cantas"], [95, "bien"], [96, ","], [97, "dale"], [98, "una"], [99, "oportunidad"], [100, "."], [101, "No"], [102, "hace"], [103, "falta"], [104, "formar"], [105, "parte"], [106, "del"], [107, "coro"], [108, "oficial"], [109, "para"], [110, "participar"], [111, "."], [112, "Tampoco"], [113, "se"], [114, "requiere"], [115, "experiencia"], [116, "musical"], [117, "previa"], [118, "de"], [119, "ningún"], [120, "tipo"], [121, "."], [122, "Se"], [123, "trata"], [124, "de"], [125, "una"], [126, "actividad"], [127, "inspirada"], [128, "en"], [129, "los"], [130, "métodos"], [131, "de"], [132, "canto"], [133, "coral"], [134, "de"], [135, "Inglaterra"], [136, ","], [137, "pensada"], [138, "para"], [139, "que"], [140, "cada"], [141, "persona"], [142, "ensaye"], [143, "su"], [144, "parte"], [145, "de"], [146, "manera"], [147, "individual"], [148, "o"], [149, "en"], [150, "pequeños"], [151, "grupos"], [152, "."], [153, "Así"], [154, "podrás"], [155, "practicar"], [156, "a"], [157, "tu"], [158, "ritmo"], [159, ","], [160, "individualmente"], [161, "o"], [162, "con"], [163, "unos"], [164, "pocos"], [165, "compañeros"], [166, ","], [167, "sin"], [168, "la"], [169, "obligación"], [170, "de"], [171, "asistir"], [172, "a"], [173, "ensayos"], [174, "comunitarios"], [175, "continuos"], [176, "."], [177, "La"], [178, "fase"], [179, "1"], [180, "consiste"], [181, "simplemente"], [182, "en"], [183, "manifestar"], [184, "tu"], [185, "interés"], [186, "en"], [187, "participar"], [188, "."], [189, "Para"], [190, "ello"], [191, ","], [192, "envía"], [193, "un"], [194, "correo"], [195, "electrónico"], [196, "a"], [197, "serenatafale@yahoo.com.br"], [198, "Indica"], [199, "tu"], [200, "nombre"], [201, "completo"], [202, "y"], [203, "tu"], [204, "vinculación"], [205, "con"], [206, "la"], [207, "universidad"], [208, "("], [209, "profesor"], [210, ","], [211, "docente"], [212, "jubilado"], [213, ","], [214, "personal"], [215, "administrativo"], [216, ","], [217, "alumno"], [218, "de"], [219, "grado"], [220, ","], [221, "de"], [222, "posgrado"], [223, "o"], [224, "de"], [225, "especialización"], [226, ")"], [227, "."], [228, "Agradeceríamos"], [229, "que"], [230, "incluyas"], [231, "también"], [232, "un"], [233, "teléfono"], [234, "de"], [235, "contacto"], [236, "."], [237, "Posteriormente"], [238, ","], [239, "recibirás"], [240, "por"], [241, "email"], [242, "dos"], [243, "archivos"], [244, "en"], [245, "formato"], [246, "mp3"], [247, "para"], [248, "ensayar"], [249, "tu"], [250, "línea"], [251, "vocal"], [252, "del"], [253, "Aleluya"], [254, "de"], [255, "Händel"], [256, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

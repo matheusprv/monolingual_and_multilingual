@@ -1,0 +1,50 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Jeremiah– What a beautiful sunny morning, dear Ash! There's something different in your eyes, but I can't quite put my finger on what it is.
+Ash - A "sun spot", darling, nothing more than a "sun spot".
+Jeremiah– Ah, right, a "sun spot"... I thought it was something more romantic!
+Ash– (ironic) Hm, but it is romantic. I got this "sun spot" from staring at you so much, you fool.
+Jeremiah– I was thinking...
+Ash– (laughs) That's why I love you, silly.
+Jeremiah– Because I think?
+Ash– No, because you love making jokes. "I was thinking" (laughs). You're such a joker.
+Jeremiah– But as I was saying, I was thinking about our love, how we love each other, how the faithfulness of our love is something sublime, so much so that "Envy suffers, dies, exhausts itself with my song, one by one its sad captains agonize. I say LOVE, and the world fills with doves. Every syllable of mine brings spring." (Pablo Neruda).
+Ash - (incredulous) You thought all that yourself? Hm... Right, Jeremiah, what have you been up to? Gambling again? If so, tell me now, because last time you had to hand over our Chinese porcelain dinner set that we got as a wedding gift from that Captain on our honeymoon cruise.
+Jeremiah– I don't gamble anymore, and you know that very well. By the way, I still don't understand why that Captain did it — what was his name again?
+Ash– Toledo.
+Jeremiah– Yes, Toledo! I never understood why he gave us such an expensive gift.
+Ash– (slightly put out) Me neither! Yes, but go on: envy of sad captains agonizing in the doves of spring, that's it, isn't it?
+Jeremiah– Almost! But never mind, I didn't write it. What I want to tell you is that I think it's time we had a child.
+
+Tokens: [[0, "Jeremiah"], [1, "–"], [2, "What"], [3, "a"], [4, "beautiful"], [5, "sunny"], [6, "morning"], [7, ","], [8, "dear"], [9, "Ash"], [10, "!"], [11, "There's"], [12, "something"], [13, "different"], [14, "in"], [15, "your"], [16, "eyes"], [17, ","], [18, "but"], [19, "I"], [20, "can't"], [21, "quite"], [22, "put"], [23, "my"], [24, "finger"], [25, "on"], [26, "what"], [27, "it"], [28, "is"], [29, "."], [30, "Ash"], [31, "-"], [32, "A"], [33, "\""], [34, "sun"], [35, "spot"], [36, "\""], [37, ","], [38, "darling"], [39, ","], [40, "nothing"], [41, "more"], [42, "than"], [43, "a"], [44, "\""], [45, "sun"], [46, "spot"], [47, "\""], [48, "."], [49, "Jeremiah"], [50, "–"], [51, "Ah"], [52, ","], [53, "right"], [54, ","], [55, "a"], [56, "\""], [57, "sun"], [58, "spot"], [59, "\""], [60, "..."], [61, "I"], [62, "thought"], [63, "it"], [64, "was"], [65, "something"], [66, "more"], [67, "romantic"], [68, "!"], [69, "Ash–"], [70, "("], [71, "ironic"], [72, ")"], [73, "Hm"], [74, ","], [75, "but"], [76, "it"], [77, "is"], [78, "romantic"], [79, "."], [80, "I"], [81, "got"], [82, "this"], [83, "\""], [84, "sun"], [85, "spot"], [86, "\""], [87, "from"], [88, "staring"], [89, "at"], [90, "you"], [91, "so"], [92, "much"], [93, ","], [94, "you"], [95, "fool"], [96, "."], [97, "Jeremiah"], [98, "–"], [99, "I"], [100, "was"], [101, "thinking"], [102, "..."], [103, "Ash–"], [104, "("], [105, "laughs"], [106, ")"], [107, "That's"], [108, "why"], [109, "I"], [110, "love"], [111, "you"], [112, ","], [113, "silly"], [114, "."], [115, "Jeremiah"], [116, "–"], [117, "Because"], [118, "I"], [119, "think"], [120, "?"], [121, "Ash"], [122, "–"], [123, "No"], [124, ","], [125, "because"], [126, "you"], [127, "love"], [128, "making"], [129, "jokes"], [130, "."], [131, "\""], [132, "I"], [133, "was"], [134, "thinking"], [135, "\""], [136, "("], [137, "laughs"], [138, ")"], [139, "."], [140, "You're"], [141, "such"], [142, "a"], [143, "joker"], [144, "."], [145, "Jeremiah"], [146, "–"], [147, "But"], [148, "as"], [149, "I"], [150, "was"], [151, "saying"], [152, ","], [153, "I"], [154, "was"], [155, "thinking"], [156, "about"], [157, "our"], [158, "love"], [159, ","], [160, "how"], [161, "we"], [162, "love"], [163, "each"], [164, "other"], [165, ","], [166, "how"], [167, "the"], [168, "faithfulness"], [169, "of"], [170, "our"], [171, "love"], [172, "is"], [173, "something"], [174, "sublime"], [175, ","], [176, "so"], [177, "much"], [178, "so"], [179, "that"], [180, "\""], [181, "Envy"], [182, "suffers"], [183, ","], [184, "dies"], [185, ","], [186, "exhausts"], [187, "itself"], [188, "with"], [189, "my"], [190, "song"], [191, ","], [192, "one"], [193, "by"], [194, "one"], [195, "its"], [196, "sad"], [197, "captains"], [198, "agonize"], [199, "."], [200, "I"], [201, "say"], [202, "LOVE"], [203, ","], [204, "and"], [205, "the"], [206, "world"], [207, "fills"], [208, "with"], [209, "doves"], [210, "."], [211, "Every"], [212, "syllable"], [213, "of"], [214, "mine"], [215, "brings"], [216, "spring"], [217, "."], [218, "\""], [219, "("], [220, "Pablo"], [221, "Neruda"], [222, ")"], [223, "."], [224, "Ash"], [225, "-"], [226, "("], [227, "incredulous"], [228, ")"], [229, "You"], [230, "thought"], [231, "all"], [232, "that"], [233, "yourself"], [234, "?"], [235, "Hm"], [236, "..."], [237, "Right"], [238, ","], [239, "Jeremiah"], [240, ","], [241, "what"], [242, "have"], [243, "you"], [244, "been"], [245, "up"], [246, "to"], [247, "?"], [248, "Gambling"], [249, "again"], [250, "?"], [251, "If"], [252, "so"], [253, ","], [254, "tell"], [255, "me"], [256, "now"], [257, ","], [258, "because"], [259, "last"], [260, "time"], [261, "you"], [262, "had"], [263, "to"], [264, "hand"], [265, "over"], [266, "our"], [267, "Chinese"], [268, "porcelain"], [269, "dinner"], [270, "set"], [271, "that"], [272, "we"], [273, "got"], [274, "as"], [275, "a"], [276, "wedding"], [277, "gift"], [278, "from"], [279, "that"], [280, "Captain"], [281, "on"], [282, "our"], [283, "honeymoon"], [284, "cruise"], [285, "."], [286, "Jeremiah"], [287, "–"], [288, "I"], [289, "don't"], [290, "gamble"], [291, "anymore"], [292, ","], [293, "and"], [294, "you"], [295, "know"], [296, "that"], [297, "very"], [298, "well"], [299, "."], [300, "By"], [301, "the"], [302, "way"], [303, ","], [304, "I"], [305, "still"], [306, "don't"], [307, "understand"], [308, "why"], [309, "that"], [310, "Captain"], [311, "did"], [312, "it"], [313, "—"], [314, "what"], [315, "was"], [316, "his"], [317, "name"], [318, "again"], [319, "?"], [320, "Ash–"], [321, "Toledo"], [322, "."], [323, "Jeremiah"], [324, "–"], [325, "Yes"], [326, ","], [327, "Toledo"], [328, "!"], [329, "I"], [330, "never"], [331, "understood"], [332, "why"], [333, "he"], [334, "gave"], [335, "us"], [336, "such"], [337, "an"], [338, "expensive"], [339, "gift"], [340, "."], [341, "Ash"], [342, "–"], [343, "("], [344, "slightly"], [345, "put"], [346, "out"], [347, ")"], [348, "Me"], [349, "neither"], [350, "!"], [351, "Yes"], [352, ","], [353, "but"], [354, "go"], [355, "on"], [356, ":"], [357, "envy"], [358, "of"], [359, "sad"], [360, "captains"], [361, "agonizing"], [362, "in"], [363, "the"], [364, "doves"], [365, "of"], [366, "spring"], [367, ","], [368, "that's"], [369, "it"], [370, ","], [371, "isn't"], [372, "it"], [373, "?"], [374, "Jeremiah"], [375, "–"], [376, "Almost"], [377, "!"], [378, "But"], [379, "never"], [380, "mind"], [381, ","], [382, "I"], [383, "didn't"], [384, "write"], [385, "it"], [386, "."], [387, "What"], [388, "I"], [389, "want"], [390, "to"], [391, "tell"], [392, "you"], [393, "is"], [394, "that"], [395, "I"], [396, "think"], [397, "it's"], [398, "time"], [399, "we"], [400, "had"], [401, "a"], [402, "child"], [403, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

@@ -1,0 +1,55 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: SPEAKER1 so I met this guy a month ago really lovely bloke great conversation and then things just happened once then twice then a third time and it was really good it was brilliant right and honestly I'd only ever been with one man my whole life can you believe it
+SPEAKER2 hm and was it better
+SPEAKER1 it was brilliant honestly if I'd known I'd have done it ages ago
+SPEAKER2 no way
+SPEAKER1 I know I left it late but anyway everything happens when it's meant to only now there's a problem
+SPEAKER2 what is it
+SPEAKER1 he's got a girlfriend
+SPEAKER2 oh bloody hell
+SPEAKER1 and they've been together eight years yeah and he's 37 eight years together
+SPEAKER2 what a bastard
+SPEAKER1 what a bastard but he didn't lie the day I met him and we got together he told me straight away he had a girlfriend and everything but I was up for it and I ended up going for it I really did
+SPEAKER2 but now that has to be it doesn't it
+SPEAKER3 so that's it now isn't it
+SPEAKER2 yeah
+SPEAKER1 because it's not going anywhere is it
+SPEAKER2 no it's already run its course and it was good but there's so much more out there and it doesn't have to be with him does it
+SPEAKER1 yeah
+SPEAKER2 at the end of the day I think you know more or less that if you carry on you're going to end up getting feelings you've just come out of a long relationship with everything you've been through you're not the type to want to start sleeping around from now on and you're already showing that aren't you you went with the second guy you liked him there was good chat you already wanted to keep seeing him if he hadn't been
+SPEAKER1 yeah
+SPEAKER2 with someone
+
+Tokens: [[0, "SPEAKER1"], [1, "so"], [2, "I"], [3, "met"], [4, "this"], [5, "guy"], [6, "a"], [7, "month"], [8, "ago"], [9, "really"], [10, "lovely"], [11, "bloke"], [12, "great"], [13, "conversation"], [14, "and"], [15, "then"], [16, "things"], [17, "just"], [18, "happened"], [19, "once"], [20, "then"], [21, "twice"], [22, "then"], [23, "a"], [24, "third"], [25, "time"], [26, "and"], [27, "it"], [28, "was"], [29, "really"], [30, "good"], [31, "it"], [32, "was"], [33, "brilliant"], [34, "right"], [35, "and"], [36, "honestly"], [37, "I'd"], [38, "only"], [39, "ever"], [40, "been"], [41, "with"], [42, "one"], [43, "man"], [44, "my"], [45, "whole"], [46, "life"], [47, "can"], [48, "you"], [49, "believe"], [50, "it"], [51, "SPEAKER2"], [52, "hm"], [53, "and"], [54, "was"], [55, "it"], [56, "better"], [57, "SPEAKER1"], [58, "it"], [59, "was"], [60, "brilliant"], [61, "honestly"], [62, "if"], [63, "I'd"], [64, "known"], [65, "I'd"], [66, "have"], [67, "done"], [68, "it"], [69, "ages"], [70, "ago"], [71, "SPEAKER2"], [72, "no"], [73, "way"], [74, "SPEAKER1"], [75, "I"], [76, "know"], [77, "I"], [78, "left"], [79, "it"], [80, "late"], [81, "but"], [82, "anyway"], [83, "everything"], [84, "happens"], [85, "when"], [86, "it's"], [87, "meant"], [88, "to"], [89, "only"], [90, "now"], [91, "there's"], [92, "a"], [93, "problem"], [94, "SPEAKER2"], [95, "what"], [96, "is"], [97, "it"], [98, "SPEAKER1"], [99, "he's"], [100, "got"], [101, "a"], [102, "girlfriend"], [103, "SPEAKER2"], [104, "oh"], [105, "bloody"], [106, "hell"], [107, "SPEAKER1"], [108, "and"], [109, "they've"], [110, "been"], [111, "together"], [112, "eight"], [113, "years"], [114, "yeah"], [115, "and"], [116, "he's"], [117, "37"], [118, "eight"], [119, "years"], [120, "together"], [121, "SPEAKER2"], [122, "what"], [123, "a"], [124, "bastard"], [125, "SPEAKER1"], [126, "what"], [127, "a"], [128, "bastard"], [129, "but"], [130, "he"], [131, "didn't"], [132, "lie"], [133, "the"], [134, "day"], [135, "I"], [136, "met"], [137, "him"], [138, "and"], [139, "we"], [140, "got"], [141, "together"], [142, "he"], [143, "told"], [144, "me"], [145, "straight"], [146, "away"], [147, "he"], [148, "had"], [149, "a"], [150, "girlfriend"], [151, "and"], [152, "everything"], [153, "but"], [154, "I"], [155, "was"], [156, "up"], [157, "for"], [158, "it"], [159, "and"], [160, "I"], [161, "ended"], [162, "up"], [163, "going"], [164, "for"], [165, "it"], [166, "I"], [167, "really"], [168, "did"], [169, "SPEAKER2"], [170, "but"], [171, "now"], [172, "that"], [173, "has"], [174, "to"], [175, "be"], [176, "it"], [177, "doesn't"], [178, "it"], [179, "SPEAKER3"], [180, "so"], [181, "that's"], [182, "it"], [183, "now"], [184, "isn't"], [185, "it"], [186, "SPEAKER2"], [187, "yeah"], [188, "SPEAKER1"], [189, "because"], [190, "it's"], [191, "not"], [192, "going"], [193, "anywhere"], [194, "is"], [195, "it"], [196, "SPEAKER2"], [197, "no"], [198, "it's"], [199, "already"], [200, "run"], [201, "its"], [202, "course"], [203, "and"], [204, "it"], [205, "was"], [206, "good"], [207, "but"], [208, "there's"], [209, "so"], [210, "much"], [211, "more"], [212, "out"], [213, "there"], [214, "and"], [215, "it"], [216, "doesn't"], [217, "have"], [218, "to"], [219, "be"], [220, "with"], [221, "him"], [222, "does"], [223, "it"], [224, "SPEAKER1"], [225, "yeah"], [226, "SPEAKER2"], [227, "at"], [228, "the"], [229, "end"], [230, "of"], [231, "the"], [232, "day"], [233, "I"], [234, "think"], [235, "you"], [236, "know"], [237, "more"], [238, "or"], [239, "less"], [240, "that"], [241, "if"], [242, "you"], [243, "carry"], [244, "on"], [245, "you're"], [246, "going"], [247, "to"], [248, "end"], [249, "up"], [250, "getting"], [251, "feelings"], [252, "you've"], [253, "just"], [254, "come"], [255, "out"], [256, "of"], [257, "a"], [258, "long"], [259, "relationship"], [260, "with"], [261, "everything"], [262, "you've"], [263, "been"], [264, "through"], [265, "you're"], [266, "not"], [267, "the"], [268, "type"], [269, "to"], [270, "want"], [271, "to"], [272, "start"], [273, "sleeping"], [274, "around"], [275, "from"], [276, "now"], [277, "on"], [278, "and"], [279, "you're"], [280, "already"], [281, "showing"], [282, "that"], [283, "aren't"], [284, "you"], [285, "you"], [286, "went"], [287, "with"], [288, "the"], [289, "second"], [290, "guy"], [291, "you"], [292, "liked"], [293, "him"], [294, "there"], [295, "was"], [296, "good"], [297, "chat"], [298, "you"], [299, "already"], [300, "wanted"], [301, "to"], [302, "keep"], [303, "seeing"], [304, "him"], [305, "if"], [306, "he"], [307, "hadn't"], [308, "been"], [309, "SPEAKER1"], [310, "yeah"], [311, "SPEAKER2"], [312, "with"], [313, "someone"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

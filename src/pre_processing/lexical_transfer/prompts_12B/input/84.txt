@@ -1,0 +1,40 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: MUSIQUE
+
+PRÉSENTATEUR : on est à peine au début, au tout début. On va remonter ce boulevard et ramasser encore beaucoup de monde d'ici vingt heures trente, vingt et une heures, parce que ce boulevard est à nous, les amis !
+
+MARIA : moi c'est Maria, du collectif de femmes lesbiennes et homosexuelles du District Fédéral, et on est là. On bosse toute l'année ici dans le District Fédéral pour défendre nos droits, parce que les droits humains doivent être respectés et garantis avant tout. Alors je voulais dire quelques trucs. L'année dernière, le secrétariat à la justice, le GPS, nous a promis la création du conseil LGBT, c'est-à-dire le conseil chargé de garantir (inaudible) nos droits. Et voilà, les amis : on nous l'a promis l'année dernière et à ce jour il n'a toujours pas été créé, rien n'a été fait. On a appris vendredi que le secrétaire à la justice, le docteur Paulo, a ordonné la rédaction d'un avant-projet. Beaucoup de gens s'en sont réjouis, mais je pose la question : c'est un bâillon, ça ? C'est pour qu'on la ferme et qu'on arrête de réclamer ? (Cri) On ne veut pas rester là à attendre. Ça fait un an qu'on nous a fait cette promesse et on n'a encore qu'un avant-projet de loi pour la créer.
+
+Tokens: [[0, "MUSIQUE"], [1, "PRÉSENTATEUR"], [2, ":"], [3, "on"], [4, "est"], [5, "à"], [6, "peine"], [7, "au"], [8, "début"], [9, ","], [10, "au"], [11, "tout"], [12, "début"], [13, "."], [14, "On"], [15, "va"], [16, "remonter"], [17, "ce"], [18, "boulevard"], [19, "et"], [20, "ramasser"], [21, "encore"], [22, "beaucoup"], [23, "de"], [24, "monde"], [25, "d'"], [26, "ici"], [27, "vingt"], [28, "heures"], [29, "trente"], [30, ","], [31, "vingt"], [32, "et"], [33, "une"], [34, "heures"], [35, ","], [36, "parce"], [37, "que"], [38, "ce"], [39, "boulevard"], [40, "est"], [41, "à"], [42, "nous"], [43, ","], [44, "les"], [45, "amis"], [46, "!"], [47, "MARIA"], [48, ":"], [49, "moi"], [50, "c'"], [51, "est"], [52, "Maria"], [53, ","], [54, "du"], [55, "collectif"], [56, "de"], [57, "femmes"], [58, "lesbiennes"], [59, "et"], [60, "homosexuelles"], [61, "du"], [62, "District"], [63, "Fédéral"], [64, ","], [65, "et"], [66, "on"], [67, "est"], [68, "là"], [69, "."], [70, "On"], [71, "bosse"], [72, "toute"], [73, "l'"], [74, "année"], [75, "ici"], [76, "dans"], [77, "le"], [78, "District"], [79, "Fédéral"], [80, "pour"], [81, "défendre"], [82, "nos"], [83, "droits"], [84, ","], [85, "parce"], [86, "que"], [87, "les"], [88, "droits"], [89, "humains"], [90, "doivent"], [91, "être"], [92, "respectés"], [93, "et"], [94, "garantis"], [95, "avant"], [96, "tout"], [97, "."], [98, "Alors"], [99, "je"], [100, "voulais"], [101, "dire"], [102, "quelques"], [103, "trucs"], [104, "."], [105, "L'"], [106, "année"], [107, "dernière"], [108, ","], [109, "le"], [110, "secrétariat"], [111, "à"], [112, "la"], [113, "justice"], [114, ","], [115, "le"], [116, "GPS"], [117, ","], [118, "nous"], [119, "a"], [120, "promis"], [121, "la"], [122, "création"], [123, "du"], [124, "conseil"], [125, "LGBT"], [126, ","], [127, "c'est-à-dire"], [128, "le"], [129, "conseil"], [130, "chargé"], [131, "de"], [132, "garantir"], [133, "("], [134, "inaudible"], [135, ")"], [136, "nos"], [137, "droits"], [138, "."], [139, "Et"], [140, "voilà"], [141, ","], [142, "les"], [143, "amis"], [144, ":"], [145, "on"], [146, "nous"], [147, "l'"], [148, "a"], [149, "promis"], [150, "l'"], [151, "année"], [152, "dernière"], [153, "et"], [154, "à"], [155, "ce"], [156, "jour"], [157, "il"], [158, "n'"], [159, "a"], [160, "toujours"], [161, "pas"], [162, "été"], [163, "créé"], [164, ","], [165, "rien"], [166, "n'"], [167, "a"], [168, "été"], [169, "fait"], [170, "."], [171, "On"], [172, "a"], [173, "appris"], [174, "vendredi"], [175, "que"], [176, "le"], [177, "secrétaire"], [178, "à"], [179, "la"], [180, "justice"], [181, ","], [182, "le"], [183, "docteur"], [184, "Paulo"], [185, ","], [186, "a"], [187, "ordonné"], [188, "la"], [189, "rédaction"], [190, "d'"], [191, "un"], [192, "avant-projet"], [193, "."], [194, "Beaucoup"], [195, "de"], [196, "gens"], [197, "s'"], [198, "en"], [199, "sont"], [200, "réjouis"], [201, ","], [202, "mais"], [203, "je"], [204, "pose"], [205, "la"], [206, "question"], [207, ":"], [208, "c'"], [209, "est"], [210, "un"], [211, "bâillon"], [212, ","], [213, "ça"], [214, "?"], [215, "C'"], [216, "est"], [217, "pour"], [218, "qu'"], [219, "on"], [220, "la"], [221, "ferme"], [222, "et"], [223, "qu'"], [224, "on"], [225, "arrête"], [226, "de"], [227, "réclamer"], [228, "?"], [229, "("], [230, "Cri"], [231, ")"], [232, "On"], [233, "ne"], [234, "veut"], [235, "pas"], [236, "rester"], [237, "là"], [238, "à"], [239, "attendre"], [240, "."], [241, "Ça"], [242, "fait"], [243, "un"], [244, "an"], [245, "qu'"], [246, "on"], [247, "nous"], [248, "a"], [249, "fait"], [250, "cette"], [251, "promesse"], [252, "et"], [253, "on"], [254, "n'"], [255, "a"], [256, "encore"], [257, "qu'"], [258, "un"], [259, "avant-projet"], [260, "de"], [261, "loi"], [262, "pour"], [263, "la"], [264, "créer"], [265, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

@@ -1,0 +1,36 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: GUYS, JUST STOPPING BY TO SAY THANK YOU FOR ANOTHER YEAR... ANOTHER YEAR OF LOVE AND UNDERSTANDING... ANOTHER YEAR TOGETHER... THANK YOU TO EVERYONE WHO IS PART OF MY LIFE. SOME CLOSER, SOME FARTHER AWAY... BUT YOU ARE ALL PART OF MY LIFE. YOU SHOW ME SO MUCH LOVE THAT LIFTS ME UP AND COMFORTS ME... YOU HAVE NO IDEA HOW MUCH IT MEANT TO RECEIVE YOUR MESSAGES THROUGHOUT THE YEAR. THANK YOU FOR EVERYTHING. MERRY CHRISTMAS WITH SO MUCH LOVE IN YOUR HEARTS AND A 2009 FULL OF HAPPINESS, TOGETHERNESS, HEALTH, LUCK, LOVE... WITH SO SO SO SO MUCH ENERGY! SÁ.
+
+Tokens: [[0, "GUYS"], [1, ","], [2, "JUST"], [3, "STOPPING"], [4, "BY"], [5, "TO"], [6, "SAY"], [7, "THANK"], [8, "YOU"], [9, "FOR"], [10, "ANOTHER"], [11, "YEAR"], [12, "..."], [13, "ANOTHER"], [14, "YEAR"], [15, "OF"], [16, "LOVE"], [17, "AND"], [18, "UNDERSTANDING"], [19, "..."], [20, "ANOTHER"], [21, "YEAR"], [22, "TOGETHER"], [23, "..."], [24, "THANK"], [25, "YOU"], [26, "TO"], [27, "EVERYONE"], [28, "WHO"], [29, "IS"], [30, "PART"], [31, "OF"], [32, "MY"], [33, "LIFE"], [34, "."], [35, "SOME"], [36, "CLOSER"], [37, ","], [38, "SOME"], [39, "FARTHER"], [40, "AWAY"], [41, "..."], [42, "BUT"], [43, "YOU"], [44, "ARE"], [45, "ALL"], [46, "PART"], [47, "OF"], [48, "MY"], [49, "LIFE"], [50, "."], [51, "YOU"], [52, "SHOW"], [53, "ME"], [54, "SO"], [55, "MUCH"], [56, "LOVE"], [57, "THAT"], [58, "LIFTS"], [59, "ME"], [60, "UP"], [61, "AND"], [62, "COMFORTS"], [63, "ME"], [64, "..."], [65, "YOU"], [66, "HAVE"], [67, "NO"], [68, "IDEA"], [69, "HOW"], [70, "MUCH"], [71, "IT"], [72, "MEANT"], [73, "TO"], [74, "RECEIVE"], [75, "YOUR"], [76, "MESSAGES"], [77, "THROUGHOUT"], [78, "THE"], [79, "YEAR"], [80, "."], [81, "THANK"], [82, "YOU"], [83, "FOR"], [84, "EVERYTHING"], [85, "."], [86, "MERRY"], [87, "CHRISTMAS"], [88, "WITH"], [89, "SO"], [90, "MUCH"], [91, "LOVE"], [92, "IN"], [93, "YOUR"], [94, "HEARTS"], [95, "AND"], [96, "A"], [97, "2009"], [98, "FULL"], [99, "OF"], [100, "HAPPINESS"], [101, ","], [102, "TOGETHERNESS"], [103, ","], [104, "HEALTH"], [105, ","], [106, "LUCK"], [107, ","], [108, "LOVE"], [109, "..."], [110, "WITH"], [111, "SO"], [112, "SO"], [113, "SO"], [114, "SO"], [115, "MUCH"], [116, "ENERGY"], [117, "!"], [118, "SÁ"], [119, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

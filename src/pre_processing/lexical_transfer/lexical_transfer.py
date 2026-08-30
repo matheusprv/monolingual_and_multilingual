@@ -5,6 +5,7 @@ from pathlib import Path
 
 import pandas as pd
 import stanza
+import torch
 from tqdm import tqdm
 
 from model import Model
@@ -229,7 +230,7 @@ def process_dataset(
         df["language"].isin(
             [
                 "INGLÊS",
-                "ESPANHOL",
+                # "ESPANHOL",
             ]
         )
     ].copy()
@@ -237,6 +238,8 @@ def process_dataset(
     # O índice interno usado pelo checkpoint pode ser sequencial.
     # text_id continua sendo o ID do dataframe original.
     df = df.reset_index(drop=True)
+
+    # df = df[:3]
 
     required_columns = {
         TEXT_COLUMN,
@@ -345,6 +348,8 @@ def process_dataset(
         # Inferência
         # ----------------------------------------------------
 
+        source_tokens = None
+
         try:
 
             source_tokens = stanza_tokenize(
@@ -373,19 +378,46 @@ def process_dataset(
 
         except Exception as exc:
 
+            error_message = repr(exc)
+
+
+            is_oom = (
+                isinstance(exc, torch.cuda.OutOfMemoryError)
+                or "out of memory" in str(exc).lower()
+                or "cuda oom" in str(exc).lower()
+            )
+
+            if is_oom:
+
+                print(
+                    "\n"
+                    + "=" * 80
+                )
+                print("CUDA OUT OF MEMORY")
+                print(f"row_index: {row_index}")
+                print(f"text_id: {int(row['text_id'])}")
+                print(f"language: {language}")
+                print(f"text_length: {len(text):,} chars")
+                print(f"error: {error_message}")
+                print("=" * 80,flush=True,)
+
+                # Tenta liberar memória não utilizada
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
+
             result = {
                 "__row_index__": row_index,
                 "text_id": int(row["text_id"]),
 
-                "stanza_tokens": (
-                    source_tokens
-                    if "source_tokens" in locals()
-                    else None
-                ),
+                "stanza_tokens": source_tokens,
 
                 "model_output": None,
 
-                "processing_error": repr(exc),
+                "processing_error": (
+                    f"OOM: {error_message}"
+                    if is_oom
+                    else error_message
+                ),
             }
 
         # ----------------------------------------------------

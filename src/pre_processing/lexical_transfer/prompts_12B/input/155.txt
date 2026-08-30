@@ -1,0 +1,59 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: HABLANTE 1 Luego pones el quimbombó a secar y después...
+HABLANTE 2 ...y después echamos en una sartén bien calentita un chorrito de aceite.
+HABLANTE 1 Le vas a dar una pequeña fritura.
+HABLANTE 2 Eso, eso, aquí ya he empezado.
+HABLANTE 1 Y así ya no suelta más baba, ¿verdad?
+HABLANTE 2 No suelta nada más de baba. Luego lo puedes añadir al pollo, hacer pollo con quimbombó o ponerlo en el arroz.
+HABLANTE 1 Y lo de cortar la baba con vinagre o limón, ¿te conoces ese truco?
+HABLANTE 2 Sí, ese truco sirve para cortar la baba del quimbombó, pero el ácido hace que pierda el color verde vivo. Mira, vamos a cocinar judías verdes también, y a las judías verdes les ponemos sal y nada de vinagre, porque el ácido las deja amarillentas.
+HABLANTE 2 Madre mía, da un poco de miedo cuando se pone así, ¿eh?
+HABLANTE 1 Cayó grasa y se derramó leche.
+HABLANTE 2 Cayó grasa y con el calor se quemó.
+HABLANTE 1 ¿Y cómo se quita esa costra pegada sin...?
+HABLANTE 2 Mira: algo ácido, zumo de limón.
+HABLANTE 1 ¿Zumo de limón?
+HABLANTE 2 Zumo de limón y sal.
+HABLANTE 1 Sal.
+HABLANTE 2 Sal, para hacer un efecto abrasivo.
+HABLANTE 1 ¿Quieres que le eche un poco de aceite?
+HABLANTE 2 (Risas) No, no, que si no acabamos haciendo una vinagreta. Con eso y un estropajo de aluminio, ¿sabes?, que también ayuda un montón... Luego solo hay que frotar.
+HABLANTE 1 ¡Anda! Y sin necesidad de dejarlo en remojo ni nada. Mira tú, zumo de limón y sal, has fabricado un limpiador abrasivo casero.
+HABLANTE 2 Esa es la idea, combinar el ácido con el abrasivo.
+HABLANTE 1 ¡Qué buena idea! ¿Y eso sirve para limpiar sartenes también?
+HABLANTE 2 Sí, va de maravilla, sobre todo para las sartenes de acero inoxidable, que son dificilísimas de limpiar cuando se quedan así de chamuscadas.
+HABLANTE 1 La remolacha, al ser una verdura de color rojo intenso, pierde muchas propiedades si la pelamos, la picamos y la ponemos a cocer. Lo ideal es cocinarla entera, con piel y todo, para que conserve los nutrientes buenos y para que luego sea más fácil. Mira qué limpio se pela después de cocida. También se puede hacer en la olla exprés, lo único es que da un poco más de trabajo.
+
+Tokens: [[0, "HABLANTE"], [1, "1"], [2, "Luego"], [3, "pones"], [4, "el"], [5, "quimbombó"], [6, "a"], [7, "secar"], [8, "y"], [9, "después"], [10, "..."], [11, "HABLANTE"], [12, "2"], [13, "...y"], [14, "después"], [15, "echamos"], [16, "en"], [17, "una"], [18, "sartén"], [19, "bien"], [20, "calentita"], [21, "un"], [22, "chorrito"], [23, "de"], [24, "aceite"], [25, "."], [26, "HABLANTE"], [27, "1"], [28, "Le"], [29, "vas"], [30, "a"], [31, "dar"], [32, "una"], [33, "pequeña"], [34, "fritura"], [35, "."], [36, "HABLANTE"], [37, "2"], [38, "Eso"], [39, ","], [40, "eso"], [41, ","], [42, "aquí"], [43, "ya"], [44, "he"], [45, "empezado"], [46, "."], [47, "HABLANTE"], [48, "1"], [49, "Y"], [50, "así"], [51, "ya"], [52, "no"], [53, "suelta"], [54, "más"], [55, "baba"], [56, ","], [57, "¿"], [58, "verdad"], [59, "?"], [60, "HABLANTE"], [61, "2"], [62, "No"], [63, "suelta"], [64, "nada"], [65, "más"], [66, "de"], [67, "baba"], [68, "."], [69, "Luego"], [70, "lo"], [71, "puedes"], [72, "añadir"], [73, "al"], [74, "pollo"], [75, ","], [76, "hacer"], [77, "pollo"], [78, "con"], [79, "quimbombó"], [80, "o"], [81, "ponerlo"], [82, "en"], [83, "el"], [84, "arroz"], [85, "."], [86, "HABLANTE"], [87, "1"], [88, "Y"], [89, "lo"], [90, "de"], [91, "cortar"], [92, "la"], [93, "baba"], [94, "con"], [95, "vinagre"], [96, "o"], [97, "limón"], [98, ","], [99, "¿"], [100, "te"], [101, "conoces"], [102, "ese"], [103, "truco"], [104, "?"], [105, "HABLANTE"], [106, "2"], [107, "Sí"], [108, ","], [109, "ese"], [110, "truco"], [111, "sirve"], [112, "para"], [113, "cortar"], [114, "la"], [115, "baba"], [116, "del"], [117, "quimbombó"], [118, ","], [119, "pero"], [120, "el"], [121, "ácido"], [122, "hace"], [123, "que"], [124, "pierda"], [125, "el"], [126, "color"], [127, "verde"], [128, "vivo"], [129, "."], [130, "Mira"], [131, ","], [132, "vamos"], [133, "a"], [134, "cocinar"], [135, "judías"], [136, "verdes"], [137, "también"], [138, ","], [139, "y"], [140, "a"], [141, "las"], [142, "judías"], [143, "verdes"], [144, "les"], [145, "ponemos"], [146, "sal"], [147, "y"], [148, "nada"], [149, "de"], [150, "vinagre"], [151, ","], [152, "porque"], [153, "el"], [154, "ácido"], [155, "las"], [156, "deja"], [157, "amarillentas"], [158, "."], [159, "HABLANTE"], [160, "2"], [161, "Madre"], [162, "mía"], [163, ","], [164, "da"], [165, "un"], [166, "poco"], [167, "de"], [168, "miedo"], [169, "cuando"], [170, "se"], [171, "pone"], [172, "así"], [173, ","], [174, "¿"], [175, "eh"], [176, "?"], [177, "HABLANTE"], [178, "1"], [179, "Cayó"], [180, "grasa"], [181, "y"], [182, "se"], [183, "derramó"], [184, "leche"], [185, "."], [186, "HABLANTE"], [187, "2"], [188, "Cayó"], [189, "grasa"], [190, "y"], [191, "con"], [192, "el"], [193, "calor"], [194, "se"], [195, "quemó"], [196, "."], [197, "HABLANTE"], [198, "1"], [199, "¿"], [200, "Y"], [201, "cómo"], [202, "se"], [203, "quita"], [204, "esa"], [205, "costra"], [206, "pegada"], [207, "sin"], [208, "..."], [209, "?"], [210, "HABLANTE"], [211, "2"], [212, "Mira"], [213, ":"], [214, "algo"], [215, "ácido"], [216, ","], [217, "zumo"], [218, "de"], [219, "limón"], [220, "."], [221, "HABLANTE"], [222, "1"], [223, "¿"], [224, "Zumo"], [225, "de"], [226, "limón"], [227, "?"], [228, "HABLANTE"], [229, "2"], [230, "Zumo"], [231, "de"], [232, "limón"], [233, "y"], [234, "sal"], [235, "."], [236, "HABLANTE"], [237, "1"], [238, "Sal"], [239, "."], [240, "HABLANTE"], [241, "2"], [242, "Sal"], [243, ","], [244, "para"], [245, "hacer"], [246, "un"], [247, "efecto"], [248, "abrasivo"], [249, "."], [250, "HABLANTE"], [251, "1"], [252, "¿"], [253, "Quieres"], [254, "que"], [255, "le"], [256, "eche"], [257, "un"], [258, "poco"], [259, "de"], [260, "aceite"], [261, "?"], [262, "HABLANTE"], [263, "2"], [264, "("], [265, "Risas"], [266, ")"], [267, "No"], [268, ","], [269, "no"], [270, ","], [271, "que"], [272, "si"], [273, "no"], [274, "acabamos"], [275, "haciendo"], [276, "una"], [277, "vinagreta"], [278, "."], [279, "Con"], [280, "eso"], [281, "y"], [282, "un"], [283, "estropajo"], [284, "de"], [285, "aluminio"], [286, ","], [287, "¿"], [288, "sabes"], [289, "?"], [290, ","], [291, "que"], [292, "también"], [293, "ayuda"], [294, "un"], [295, "montón"], [296, "..."], [297, "Luego"], [298, "solo"], [299, "hay"], [300, "que"], [301, "frotar"], [302, "."], [303, "HABLANTE"], [304, "1"], [305, "¡"], [306, "Anda"], [307, "!"], [308, "Y"], [309, "sin"], [310, "necesidad"], [311, "de"], [312, "dejarlo"], [313, "en"], [314, "remojo"], [315, "ni"], [316, "nada"], [317, "."], [318, "Mira"], [319, "tú"], [320, ","], [321, "zumo"], [322, "de"], [323, "limón"], [324, "y"], [325, "sal"], [326, ","], [327, "has"], [328, "fabricado"], [329, "un"], [330, "limpiador"], [331, "abrasivo"], [332, "casero"], [333, "."], [334, "HABLANTE"], [335, "2"], [336, "Esa"], [337, "es"], [338, "la"], [339, "idea"], [340, ","], [341, "combinar"], [342, "el"], [343, "ácido"], [344, "con"], [345, "el"], [346, "abrasivo"], [347, "."], [348, "HABLANTE"], [349, "1"], [350, "¡"], [351, "Qué"], [352, "buena"], [353, "idea"], [354, "!"], [355, "¿"], [356, "Y"], [357, "eso"], [358, "sirve"], [359, "para"], [360, "limpiar"], [361, "sartenes"], [362, "también"], [363, "?"], [364, "HABLANTE"], [365, "2"], [366, "Sí"], [367, ","], [368, "va"], [369, "de"], [370, "maravilla"], [371, ","], [372, "sobre"], [373, "todo"], [374, "para"], [375, "las"], [376, "sartenes"], [377, "de"], [378, "acero"], [379, "inoxidable"], [380, ","], [381, "que"], [382, "son"], [383, "dificilísimas"], [384, "de"], [385, "limpiar"], [386, "cuando"], [387, "se"], [388, "quedan"], [389, "así"], [390, "de"], [391, "chamuscadas"], [392, "."], [393, "HABLANTE"], [394, "1"], [395, "La"], [396, "remolacha"], [397, ","], [398, "al"], [399, "ser"], [400, "una"], [401, "verdura"], [402, "de"], [403, "color"], [404, "rojo"], [405, "intenso"], [406, ","], [407, "pierde"], [408, "muchas"], [409, "propiedades"], [410, "si"], [411, "la"], [412, "pelamos"], [413, ","], [414, "la"], [415, "picamos"], [416, "y"], [417, "la"], [418, "ponemos"], [419, "a"], [420, "cocer"], [421, "."], [422, "Lo"], [423, "ideal"], [424, "es"], [425, "cocinarla"], [426, "entera"], [427, ","], [428, "con"], [429, "piel"], [430, "y"], [431, "todo"], [432, ","], [433, "para"], [434, "que"], [435, "conserve"], [436, "los"], [437, "nutrientes"], [438, "buenos"], [439, "y"], [440, "para"], [441, "que"], [442, "luego"], [443, "sea"], [444, "más"], [445, "fácil"], [446, "."], [447, "Mira"], [448, "qué"], [449, "limpio"], [450, "se"], [451, "pela"], [452, "después"], [453, "de"], [454, "cocida"], [455, "."], [456, "También"], [457, "se"], [458, "puede"], [459, "hacer"], [460, "en"], [461, "la"], [462, "olla"], [463, "exprés"], [464, ","], [465, "lo"], [466, "único"], [467, "es"], [468, "que"], [469, "da"], [470, "un"], [471, "poco"], [472, "más"], [473, "de"], [474, "trabajo"], [475, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

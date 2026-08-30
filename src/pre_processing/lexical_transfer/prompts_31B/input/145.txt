@@ -1,0 +1,45 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: XXI SEMANA DEL TRADUCTOR - 26 al 30 de septiembre de 2011
+
+La Semana del Traductor es un evento organizado anualmente desde 1981 en la UNESP de São José do Rio Preto (SP), que busca propiciar un gran encuentro entre especialistas, profesionales y estudiantes de traducción de diversas regiones del país.
+Iniciando su trigésima primera edición, la Semana del Traductor del IBILCE – UNESP de 2011 presentará el tema "Tecnología, traducción y cultura", con el objetivo de demostrar lo indispensables que son para la profesión los diversos avances tecnológicos alcanzados desde finales del siglo XX (como los programas informáticos basados en memorias de traducción), además de profundizar el conocimiento de los participantes en las herramientas esenciales que un profesional de la traducción necesita dominar, a través de talleres intensivos que se impartirán durante toda la semana del evento.
+La XXXI Semana del Traductor también abordará ampliamente el universo cultural, por lo que contará con multitud de minicursos sobre literatura, pintura, música, cine, entre otras artes, involucrando tanto las lenguas extranjeras como la lengua materna.
+Asimismo, se centrará en los procesos culturales y sus relaciones con la traducción, bajo enfoques históricos, lingüísticos, políticos y sociales.
+Queremos destacar la importancia de estos dos pilares en el trabajo de un traductor: el conocimiento técnico y el bagaje cultural, indispensables en cada palabra que utiliza.
+Consulta próximamente la programación completa en la página web:
+
+http://www.eventos.ibilce.unesp.br/semanadotradutor/
+
+Tokens: [[0, "XXI"], [1, "SEMANA"], [2, "DEL"], [3, "TRADUCTOR"], [4, "-"], [5, "26"], [6, "al"], [7, "30"], [8, "de"], [9, "septiembre"], [10, "de"], [11, "2011"], [12, "La"], [13, "Semana"], [14, "del"], [15, "Traductor"], [16, "es"], [17, "un"], [18, "evento"], [19, "organizado"], [20, "anualmente"], [21, "desde"], [22, "1981"], [23, "en"], [24, "la"], [25, "UNESP"], [26, "de"], [27, "São"], [28, "José"], [29, "do"], [30, "Rio"], [31, "Preto"], [32, "("], [33, "SP"], [34, ")"], [35, ","], [36, "que"], [37, "busca"], [38, "propiciar"], [39, "un"], [40, "gran"], [41, "encuentro"], [42, "entre"], [43, "especialistas"], [44, ","], [45, "profesionales"], [46, "y"], [47, "estudiantes"], [48, "de"], [49, "traducción"], [50, "de"], [51, "diversas"], [52, "regiones"], [53, "del"], [54, "país"], [55, "."], [56, "Iniciando"], [57, "su"], [58, "trigésima"], [59, "primera"], [60, "edición"], [61, ","], [62, "la"], [63, "Semana"], [64, "del"], [65, "Traductor"], [66, "del"], [67, "IBILCE"], [68, "–"], [69, "UNESP"], [70, "de"], [71, "2011"], [72, "presentará"], [73, "el"], [74, "tema"], [75, "\""], [76, "Tecnología"], [77, ","], [78, "traducción"], [79, "y"], [80, "cultura"], [81, "\""], [82, ","], [83, "con"], [84, "el"], [85, "objetivo"], [86, "de"], [87, "demostrar"], [88, "lo"], [89, "indispensables"], [90, "que"], [91, "son"], [92, "para"], [93, "la"], [94, "profesión"], [95, "los"], [96, "diversos"], [97, "avances"], [98, "tecnológicos"], [99, "alcanzados"], [100, "desde"], [101, "finales"], [102, "del"], [103, "siglo"], [104, "XX"], [105, "("], [106, "como"], [107, "los"], [108, "programas"], [109, "informáticos"], [110, "basados"], [111, "en"], [112, "memorias"], [113, "de"], [114, "traducción"], [115, ")"], [116, ","], [117, "además"], [118, "de"], [119, "profundizar"], [120, "el"], [121, "conocimiento"], [122, "de"], [123, "los"], [124, "participantes"], [125, "en"], [126, "las"], [127, "herramientas"], [128, "esenciales"], [129, "que"], [130, "un"], [131, "profesional"], [132, "de"], [133, "la"], [134, "traducción"], [135, "necesita"], [136, "dominar"], [137, ","], [138, "a"], [139, "través"], [140, "de"], [141, "talleres"], [142, "intensivos"], [143, "que"], [144, "se"], [145, "impartirán"], [146, "durante"], [147, "toda"], [148, "la"], [149, "semana"], [150, "del"], [151, "evento"], [152, "."], [153, "La"], [154, "XXXI"], [155, "Semana"], [156, "del"], [157, "Traductor"], [158, "también"], [159, "abordará"], [160, "ampliamente"], [161, "el"], [162, "universo"], [163, "cultural"], [164, ","], [165, "por"], [166, "lo"], [167, "que"], [168, "contará"], [169, "con"], [170, "multitud"], [171, "de"], [172, "minicursos"], [173, "sobre"], [174, "literatura"], [175, ","], [176, "pintura"], [177, ","], [178, "música"], [179, ","], [180, "cine"], [181, ","], [182, "entre"], [183, "otras"], [184, "artes"], [185, ","], [186, "involucrando"], [187, "tanto"], [188, "las"], [189, "lenguas"], [190, "extranjeras"], [191, "como"], [192, "la"], [193, "lengua"], [194, "materna"], [195, "."], [196, "Asimismo"], [197, ","], [198, "se"], [199, "centrará"], [200, "en"], [201, "los"], [202, "procesos"], [203, "culturales"], [204, "y"], [205, "sus"], [206, "relaciones"], [207, "con"], [208, "la"], [209, "traducción"], [210, ","], [211, "bajo"], [212, "enfoques"], [213, "históricos"], [214, ","], [215, "lingüísticos"], [216, ","], [217, "políticos"], [218, "y"], [219, "sociales"], [220, "."], [221, "Queremos"], [222, "destacar"], [223, "la"], [224, "importancia"], [225, "de"], [226, "estos"], [227, "dos"], [228, "pilares"], [229, "en"], [230, "el"], [231, "trabajo"], [232, "de"], [233, "un"], [234, "traductor"], [235, ":"], [236, "el"], [237, "conocimiento"], [238, "técnico"], [239, "y"], [240, "el"], [241, "bagaje"], [242, "cultural"], [243, ","], [244, "indispensables"], [245, "en"], [246, "cada"], [247, "palabra"], [248, "que"], [249, "utiliza"], [250, "."], [251, "Consulta"], [252, "próximamente"], [253, "la"], [254, "programación"], [255, "completa"], [256, "en"], [257, "la"], [258, "página"], [259, "web"], [260, ":"], [261, "http://www.eventos.ibilce.unesp.br/semanadotradutor/"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

@@ -1,0 +1,40 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: INTERVENANT1 : bonjour, l'émission de la Fondation Pro-Rein commence. Nous savons tous qu'il est important d'avoir une alimentation équilibrée, en particulier pour les personnes souffrant de maladies systémiques comme l'hypertension artérielle, le diabète ou l'insuffisance rénale chronique — pour elles, la vigilance doit être encore plus grande.
+INTERVENANT2 : en tant que nutritionniste de la Fondation Pro-Rein, pourquoi est-ce si important ? Par exemple, nous allons préparer aujourd'hui deux plats à base de soja. Pourquoi miser sur le soja ?
+INTERVENANT2 : le soja est un aliment fonctionnel qui regorge de nutriments, notamment l'isoflavone, qui aide à contrôler (INTERVENANT2) les symptômes de la ménopause chez les femmes, n'est-ce pas ? Il contribue à atténuer ces bouffées de chaleur dont souffrent tant de femmes. Il aide aussi à réguler la pression artérielle et à améliorer la circulation sanguine.
+INTERVENANT1 : quels types de nutriments essentiels le soja peut-il remplacer dans l'organisme ?
+INTERVENANT2 : en réalité, le soja est riche en protéines, il peut donc se substituer aux aliments protéinés, comme la viande, par exemple.
+
+Tokens: [[0, "INTERVENANT1"], [1, ":"], [2, "bonjour"], [3, ","], [4, "l'"], [5, "émission"], [6, "de"], [7, "la"], [8, "Fondation"], [9, "Pro-Rein"], [10, "commence"], [11, "."], [12, "Nous"], [13, "savons"], [14, "tous"], [15, "qu'"], [16, "il"], [17, "est"], [18, "important"], [19, "d'"], [20, "avoir"], [21, "une"], [22, "alimentation"], [23, "équilibrée"], [24, ","], [25, "en"], [26, "particulier"], [27, "pour"], [28, "les"], [29, "personnes"], [30, "souffrant"], [31, "de"], [32, "maladies"], [33, "systémiques"], [34, "comme"], [35, "l'"], [36, "hypertension"], [37, "artérielle"], [38, ","], [39, "le"], [40, "diabète"], [41, "ou"], [42, "l'"], [43, "insuffisance"], [44, "rénale"], [45, "chronique"], [46, "—"], [47, "pour"], [48, "elles"], [49, ","], [50, "la"], [51, "vigilance"], [52, "doit"], [53, "être"], [54, "encore"], [55, "plus"], [56, "grande"], [57, "."], [58, "INTERVENANT2"], [59, ":"], [60, "en"], [61, "tant"], [62, "que"], [63, "nutritionniste"], [64, "de"], [65, "la"], [66, "Fondation"], [67, "Pro-Rein"], [68, ","], [69, "pourquoi"], [70, "est"], [71, "-ce"], [72, "si"], [73, "important"], [74, "?"], [75, "Par"], [76, "exemple"], [77, ","], [78, "nous"], [79, "allons"], [80, "préparer"], [81, "aujourd'hui"], [82, "deux"], [83, "plats"], [84, "à"], [85, "base"], [86, "de"], [87, "soja"], [88, "."], [89, "Pourquoi"], [90, "miser"], [91, "sur"], [92, "le"], [93, "soja"], [94, "?"], [95, "INTERVENANT2"], [96, ":"], [97, "le"], [98, "soja"], [99, "est"], [100, "un"], [101, "aliment"], [102, "fonctionnel"], [103, "qui"], [104, "regorge"], [105, "de"], [106, "nutriments"], [107, ","], [108, "notamment"], [109, "l'"], [110, "isoflavone"], [111, ","], [112, "qui"], [113, "aide"], [114, "à"], [115, "contrôler"], [116, "("], [117, "INTERVENANT2"], [118, ")"], [119, "les"], [120, "symptômes"], [121, "de"], [122, "la"], [123, "ménopause"], [124, "chez"], [125, "les"], [126, "femmes"], [127, ","], [128, "n'"], [129, "est"], [130, "-ce"], [131, "pas"], [132, "?"], [133, "Il"], [134, "contribue"], [135, "à"], [136, "atténuer"], [137, "ces"], [138, "bouffées"], [139, "de"], [140, "chaleur"], [141, "dont"], [142, "souffrent"], [143, "tant"], [144, "de"], [145, "femmes"], [146, "."], [147, "Il"], [148, "aide"], [149, "aussi"], [150, "à"], [151, "réguler"], [152, "la"], [153, "pression"], [154, "artérielle"], [155, "et"], [156, "à"], [157, "améliorer"], [158, "la"], [159, "circulation"], [160, "sanguine"], [161, "."], [162, "INTERVENANT1"], [163, ":"], [164, "quels"], [165, "types"], [166, "de"], [167, "nutriments"], [168, "essentiels"], [169, "le"], [170, "soja"], [171, "peut"], [172, "-il"], [173, "remplacer"], [174, "dans"], [175, "l'"], [176, "organisme"], [177, "?"], [178, "INTERVENANT2"], [179, ":"], [180, "en"], [181, "réalité"], [182, ","], [183, "le"], [184, "soja"], [185, "est"], [186, "riche"], [187, "en"], [188, "protéines"], [189, ","], [190, "il"], [191, "peut"], [192, "donc"], [193, "se"], [194, "substituer"], [195, "aux"], [196, "aliments"], [197, "protéinés"], [198, ","], [199, "comme"], [200, "la"], [201, "viande"], [202, ","], [203, "par"], [204, "exemple"], [205, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

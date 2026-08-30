@@ -1,0 +1,72 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: HABLANTE 2 Hablante 1, las bolitas de feijoada... Qué gran muestra de la creatividad brasileña, ¿eh?
+HABLANTE 1 Totalmente de acuerdo.
+HABLANTE 2 Y lo mejor es que se hacen facilísimo, porque es una receta de aprovechamiento pura y dura.
+HABLANTE 1 Es lo que te ha quedado de la feijoada; si te sobra, te preparas unas bolitas de feijoada.
+HABLANTE 2 Y de hecho, ¡quedan todavía más ricas!
+HABLANTE 1 ¡Ay, sí, desde luego!
+HABLANTE 2 Pues vamos a prepararlas. Bueno, todo arranca con las sobras de la feijoada, ¿no, Hablante 1?
+HABLANTE 1 Con las sobras de la feijoada.
+HABLANTE 2 Después, a la batidora.
+HABLANTE 1 A la batidora.
+HABLANTE 2 Ahora bien, es fundamental que en casa hagáis esto con el vaso de la batidora bien cerrado y con la feijoada completamente fría, ¿verdad, Hablante 1?
+HABLANTE 1 Fría. El truco está en poner un trozo de film plástico transparente y luego encajar la tapa.
+HABLANTE 2 Para que no salpique nada de nada.
+HABLANTE 1 Ni una gota.
+HABLANTE 2 Mientras Hablante 1 termina de triturar la feijoada, yo voy a ir sofriendo una cebolla por aquí.
+HABLANTE 2 Este es el punto ideal, ¿no, Hablante 1? Queda casi con la textura de una crema de alubias espesa, ¿a que sí?
+HABLANTE 1 Sí, justo.
+HABLANTE 2 Ahora toca mezclarlo todo. Vamos allá, échalo por aquí, Hablante 1.
+HABLANTE 1 Que hierva solo un poquito y ya estará listo.
+HABLANTE 2 Esto ya está hirviendo. Ahora incorporamos la harina de mandioca, ¿es así?
+HABLANTE 1 Eso es.
+HABLANTE 2 Viene a ser como preparar un "tutu" espeso.
+HABLANTE 1 Un puré bien espesito.
+HABLANTE 2 Dale caña.
+HABLANTE 2 Ya va espesando.
+HABLANTE 1 El gran secreto de las bolitas de feijoada es la mantequilla. Ahora hay que sazonar con sal y pimienta, ¿verdad, gente?
+HABLANTE 2 Sal y un toque de pimienta negra.
+HABLANTE 1 Ha quedado perfecto. Ahora lo voy a pasar a una bandeja y lo extiendo bien, que así se enfría mucho más rápido.
+HABLANTE 2 La masa ya ha enfriado, Hablante 1. ¿Cómo seguimos? Vamos a darles forma a las bolitas.
+HABLANTE 1 Coges una pequeña porción...
+HABLANTE 2 Una porción.
+HABLANTE 1 ...y el proceso es exactamente igual que moldear un brigadeiro.
+HABLANTE 2 Igualito que hacer un brigadeiro.
+HABLANTE 1 Amasamos, boleamos bien con las manos y le damos una palmadita.
+HABLANTE 2 Una palmadita.
+HABLANTE 1 Y vas perfilando los bordes.
+HABLANTE 2 Como si estuvieras haciendo una minihamburguesa redonda, ¿no?
+
+Tokens: [[0, "HABLANTE"], [1, "2"], [2, "Hablante"], [3, "1"], [4, ","], [5, "las"], [6, "bolitas"], [7, "de"], [8, "feijoada"], [9, "..."], [10, "Qué"], [11, "gran"], [12, "muestra"], [13, "de"], [14, "la"], [15, "creatividad"], [16, "brasileña"], [17, ","], [18, "¿"], [19, "eh"], [20, "?"], [21, "HABLANTE"], [22, "1"], [23, "Totalmente"], [24, "de"], [25, "acuerdo"], [26, "."], [27, "HABLANTE"], [28, "2"], [29, "Y"], [30, "lo"], [31, "mejor"], [32, "es"], [33, "que"], [34, "se"], [35, "hacen"], [36, "facilísimo"], [37, ","], [38, "porque"], [39, "es"], [40, "una"], [41, "receta"], [42, "de"], [43, "aprovechamiento"], [44, "pura"], [45, "y"], [46, "dura"], [47, "."], [48, "HABLANTE"], [49, "1"], [50, "Es"], [51, "lo"], [52, "que"], [53, "te"], [54, "ha"], [55, "quedado"], [56, "de"], [57, "la"], [58, "feijoada"], [59, ";"], [60, "si"], [61, "te"], [62, "sobra"], [63, ","], [64, "te"], [65, "preparas"], [66, "unas"], [67, "bolitas"], [68, "de"], [69, "feijoada"], [70, "."], [71, "HABLANTE"], [72, "2"], [73, "Y"], [74, "de"], [75, "hecho"], [76, ","], [77, "¡"], [78, "quedan"], [79, "todavía"], [80, "más"], [81, "ricas"], [82, "!"], [83, "HABLANTE"], [84, "1"], [85, "¡"], [86, "Ay"], [87, ","], [88, "sí"], [89, ","], [90, "desde"], [91, "luego"], [92, "!"], [93, "HABLANTE"], [94, "2"], [95, "Pues"], [96, "vamos"], [97, "a"], [98, "prepararlas"], [99, "."], [100, "Bueno"], [101, ","], [102, "todo"], [103, "arranca"], [104, "con"], [105, "las"], [106, "sobras"], [107, "de"], [108, "la"], [109, "feijoada"], [110, ","], [111, "¿"], [112, "no"], [113, ","], [114, "Hablante"], [115, "1"], [116, "?"], [117, "HABLANTE"], [118, "1"], [119, "Con"], [120, "las"], [121, "sobras"], [122, "de"], [123, "la"], [124, "feijoada"], [125, "."], [126, "HABLANTE"], [127, "2"], [128, "Después"], [129, ","], [130, "a"], [131, "la"], [132, "batidora"], [133, "."], [134, "HABLANTE"], [135, "1"], [136, "A"], [137, "la"], [138, "batidora"], [139, "."], [140, "HABLANTE"], [141, "2"], [142, "Ahora"], [143, "bien"], [144, ","], [145, "es"], [146, "fundamental"], [147, "que"], [148, "en"], [149, "casa"], [150, "hagáis"], [151, "esto"], [152, "con"], [153, "el"], [154, "vaso"], [155, "de"], [156, "la"], [157, "batidora"], [158, "bien"], [159, "cerrado"], [160, "y"], [161, "con"], [162, "la"], [163, "feijoada"], [164, "completamente"], [165, "fría"], [166, ","], [167, "¿"], [168, "verdad"], [169, ","], [170, "Hablante"], [171, "1"], [172, "?"], [173, "HABLANTE"], [174, "1"], [175, "Fría"], [176, "."], [177, "El"], [178, "truco"], [179, "está"], [180, "en"], [181, "poner"], [182, "un"], [183, "trozo"], [184, "de"], [185, "film"], [186, "plástico"], [187, "transparente"], [188, "y"], [189, "luego"], [190, "encajar"], [191, "la"], [192, "tapa"], [193, "."], [194, "HABLANTE"], [195, "2"], [196, "Para"], [197, "que"], [198, "no"], [199, "salpique"], [200, "nada"], [201, "de"], [202, "nada"], [203, "."], [204, "HABLANTE"], [205, "1"], [206, "Ni"], [207, "una"], [208, "gota"], [209, "."], [210, "HABLANTE"], [211, "2"], [212, "Mientras"], [213, "Hablante"], [214, "1"], [215, "termina"], [216, "de"], [217, "triturar"], [218, "la"], [219, "feijoada"], [220, ","], [221, "yo"], [222, "voy"], [223, "a"], [224, "ir"], [225, "sofriendo"], [226, "una"], [227, "cebolla"], [228, "por"], [229, "aquí"], [230, "."], [231, "HABLANTE"], [232, "2"], [233, "Este"], [234, "es"], [235, "el"], [236, "punto"], [237, "ideal"], [238, ","], [239, "¿"], [240, "no"], [241, ","], [242, "Hablante"], [243, "1"], [244, "?"], [245, "Queda"], [246, "casi"], [247, "con"], [248, "la"], [249, "textura"], [250, "de"], [251, "una"], [252, "crema"], [253, "de"], [254, "alubias"], [255, "espesa"], [256, ","], [257, "¿"], [258, "a"], [259, "que"], [260, "sí"], [261, "?"], [262, "HABLANTE"], [263, "1"], [264, "Sí"], [265, ","], [266, "justo"], [267, "."], [268, "HABLANTE"], [269, "2"], [270, "Ahora"], [271, "toca"], [272, "mezclarlo"], [273, "todo"], [274, "."], [275, "Vamos"], [276, "allá"], [277, ","], [278, "échalo"], [279, "por"], [280, "aquí"], [281, ","], [282, "Hablante"], [283, "1"], [284, "."], [285, "HABLANTE"], [286, "1"], [287, "Que"], [288, "hierva"], [289, "solo"], [290, "un"], [291, "poquito"], [292, "y"], [293, "ya"], [294, "estará"], [295, "listo"], [296, "."], [297, "HABLANTE"], [298, "2"], [299, "Esto"], [300, "ya"], [301, "está"], [302, "hirviendo"], [303, "."], [304, "Ahora"], [305, "incorporamos"], [306, "la"], [307, "harina"], [308, "de"], [309, "mandioca"], [310, ","], [311, "¿"], [312, "es"], [313, "así"], [314, "?"], [315, "HABLANTE"], [316, "1"], [317, "Eso"], [318, "es"], [319, "."], [320, "HABLANTE"], [321, "2"], [322, "Viene"], [323, "a"], [324, "ser"], [325, "como"], [326, "preparar"], [327, "un"], [328, "\""], [329, "tutu"], [330, "\""], [331, "espeso"], [332, "."], [333, "HABLANTE"], [334, "1"], [335, "Un"], [336, "puré"], [337, "bien"], [338, "espesito"], [339, "."], [340, "HABLANTE"], [341, "2"], [342, "Dale"], [343, "caña"], [344, "."], [345, "HABLANTE"], [346, "2"], [347, "Ya"], [348, "va"], [349, "espesando"], [350, "."], [351, "HABLANTE"], [352, "1"], [353, "El"], [354, "gran"], [355, "secreto"], [356, "de"], [357, "las"], [358, "bolitas"], [359, "de"], [360, "feijoada"], [361, "es"], [362, "la"], [363, "mantequilla"], [364, "."], [365, "Ahora"], [366, "hay"], [367, "que"], [368, "sazonar"], [369, "con"], [370, "sal"], [371, "y"], [372, "pimienta"], [373, ","], [374, "¿"], [375, "verdad"], [376, ","], [377, "gente"], [378, "?"], [379, "HABLANTE"], [380, "2"], [381, "Sal"], [382, "y"], [383, "un"], [384, "toque"], [385, "de"], [386, "pimienta"], [387, "negra"], [388, "."], [389, "HABLANTE"], [390, "1"], [391, "Ha"], [392, "quedado"], [393, "perfecto"], [394, "."], [395, "Ahora"], [396, "lo"], [397, "voy"], [398, "a"], [399, "pasar"], [400, "a"], [401, "una"], [402, "bandeja"], [403, "y"], [404, "lo"], [405, "extiendo"], [406, "bien"], [407, ","], [408, "que"], [409, "así"], [410, "se"], [411, "enfría"], [412, "mucho"], [413, "más"], [414, "rápido"], [415, "."], [416, "HABLANTE"], [417, "2"], [418, "La"], [419, "masa"], [420, "ya"], [421, "ha"], [422, "enfriado"], [423, ","], [424, "Hablante"], [425, "1"], [426, "."], [427, "¿"], [428, "Cómo"], [429, "seguimos"], [430, "?"], [431, "Vamos"], [432, "a"], [433, "darles"], [434, "forma"], [435, "a"], [436, "las"], [437, "bolitas"], [438, "."], [439, "HABLANTE"], [440, "1"], [441, "Coges"], [442, "una"], [443, "pequeña"], [444, "porción"], [445, "..."], [446, "HABLANTE"], [447, "2"], [448, "Una"], [449, "porción"], [450, "."], [451, "HABLANTE"], [452, "1"], [453, "...y"], [454, "el"], [455, "proceso"], [456, "es"], [457, "exactamente"], [458, "igual"], [459, "que"], [460, "moldear"], [461, "un"], [462, "brigadeiro"], [463, "."], [464, "HABLANTE"], [465, "2"], [466, "Igualito"], [467, "que"], [468, "hacer"], [469, "un"], [470, "brigadeiro"], [471, "."], [472, "HABLANTE"], [473, "1"], [474, "Amasamos"], [475, ","], [476, "boleamos"], [477, "bien"], [478, "con"], [479, "las"], [480, "manos"], [481, "y"], [482, "le"], [483, "damos"], [484, "una"], [485, "palmadita"], [486, "."], [487, "HABLANTE"], [488, "2"], [489, "Una"], [490, "palmadita"], [491, "."], [492, "HABLANTE"], [493, "1"], [494, "Y"], [495, "vas"], [496, "perfilando"], [497, "los"], [498, "bordes"], [499, "."], [500, "HABLANTE"], [501, "2"], [502, "Como"], [503, "si"], [504, "estuvieras"], [505, "haciendo"], [506, "una"], [507, "minihamburguesa"], [508, "redonda"], [509, ","], [510, "¿"], [511, "no"], [512, "?"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

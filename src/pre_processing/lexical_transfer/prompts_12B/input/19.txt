@@ -1,0 +1,51 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: INTERLOCUTEUR1 : Comment se fait une traduction ?
+INTERLOCUTEUR2 : Moi... je pense que, d'après ce que j'ai compris de ce qu'est vraiment traduire, c'est un processus très... Une traduction bien faite, de qualité, ressemble beaucoup à un travail de recherche, je le vois comme ça.
+INTERLOCUTEUR1 : Oui.
+INTERLOCUTEUR2 : Il est très difficile, aussi simple que soit le texte, de faire une traduction automatique, et je veux dire par là sans utiliser de logiciels ou quoi que ce soit de ce genre. Je considère cela comme une tâche qui demande énormément de soin et beaucoup de raffinement, non ? Pour que ce soit bien fait.
+INTERLOCUTEUR1 : Quels éléments du texte considères-tu comme clés au moment de traduire ?
+INTERLOCUTEUR2 : Ah, je pense que le plus tordu, ce sont les verbes, n'est-ce pas ? Les conjugaisons verbales, les prépositions... ah, ces prépositions ! (RIRES). Mais malheureusement, ce sont elles qui donnent le ton, n'est-ce pas ? Les noms, on s'en sort, et les adjectifs aussi, non ?
+INTERLOCUTEUR1 : Oui.
+INTERLOCUTEUR2 : Mais les autres structures grammaticales, en dehors des verbes, sont complexes. Je pense que le plus difficile c'est ça, parce que nous avons tendance à beaucoup les franciser, n'est-ce pas ? Quand on parle en français, parfois ça n'a rien à voir, et le sens en anglais est totalement différent.
+INTERLOCUTEUR1 : Oui. As-tu fait un cours spécifique de traduction ?
+INTERLOCUTEUR2 : Non.
+INTERLOCUTEUR1 : Vous traduisez seuls ou un collègue ou une autre personne vous aide ?
+INTERLOCUTEUR2 : Ça dépend. Pour vous dire la vérité... je ne considère pas que je fais des traductions. Je ne traduis rien, je lis. Non, il est très rare que je prenne quelque chose à traduire, je n'ai pas cette habitude.
+INTERLOCUTEUR1 : Oui.
+INTERLOCUTEUR2 : Pour cela, j'ai une excellente traductrice.
+INTERLOCUTEUR1 : Ah, mon Dieu, tu es bien loti... (RIRES). À ton avis, quel type de professionnel...?
+INTERLOCUTEUR2 : Son salaire est exorbitant !
+
+Tokens: [[0, "INTERLOCUTEUR1"], [1, ":"], [2, "Comment"], [3, "se"], [4, "fait"], [5, "une"], [6, "traduction"], [7, "?"], [8, "INTERLOCUTEUR2"], [9, ":"], [10, "Moi"], [11, "..."], [12, "je"], [13, "pense"], [14, "que"], [15, ","], [16, "d'"], [17, "après"], [18, "ce"], [19, "que"], [20, "j'"], [21, "ai"], [22, "compris"], [23, "de"], [24, "ce"], [25, "qu'"], [26, "est"], [27, "vraiment"], [28, "traduire"], [29, ","], [30, "c'"], [31, "est"], [32, "un"], [33, "processus"], [34, "très"], [35, "..."], [36, "Une"], [37, "traduction"], [38, "bien"], [39, "faite"], [40, ","], [41, "de"], [42, "qualité"], [43, ","], [44, "ressemble"], [45, "beaucoup"], [46, "à"], [47, "un"], [48, "travail"], [49, "de"], [50, "recherche"], [51, ","], [52, "je"], [53, "le"], [54, "vois"], [55, "comme"], [56, "ça"], [57, "."], [58, "INTERLOCUTEUR1"], [59, ":"], [60, "Oui"], [61, "."], [62, "INTERLOCUTEUR2"], [63, ":"], [64, "Il"], [65, "est"], [66, "très"], [67, "difficile"], [68, ","], [69, "aussi"], [70, "simple"], [71, "que"], [72, "soit"], [73, "le"], [74, "texte"], [75, ","], [76, "de"], [77, "faire"], [78, "une"], [79, "traduction"], [80, "automatique"], [81, ","], [82, "et"], [83, "je"], [84, "veux"], [85, "dire"], [86, "par"], [87, "là"], [88, "sans"], [89, "utiliser"], [90, "de"], [91, "logiciels"], [92, "ou"], [93, "quoi"], [94, "que"], [95, "ce"], [96, "soit"], [97, "de"], [98, "ce"], [99, "genre"], [100, "."], [101, "Je"], [102, "considère"], [103, "cela"], [104, "comme"], [105, "une"], [106, "tâche"], [107, "qui"], [108, "demande"], [109, "énormément"], [110, "de"], [111, "soin"], [112, "et"], [113, "beaucoup"], [114, "de"], [115, "raffinement"], [116, ","], [117, "non"], [118, "?"], [119, "Pour"], [120, "que"], [121, "ce"], [122, "soit"], [123, "bien"], [124, "fait"], [125, "."], [126, "INTERLOCUTEUR1"], [127, ":"], [128, "Quels"], [129, "éléments"], [130, "du"], [131, "texte"], [132, "considères"], [133, "-tu"], [134, "comme"], [135, "clés"], [136, "au"], [137, "moment"], [138, "de"], [139, "traduire"], [140, "?"], [141, "INTERLOCUTEUR2"], [142, ":"], [143, "Ah"], [144, ","], [145, "je"], [146, "pense"], [147, "que"], [148, "le"], [149, "plus"], [150, "tordu"], [151, ","], [152, "ce"], [153, "sont"], [154, "les"], [155, "verbes"], [156, ","], [157, "n'"], [158, "est"], [159, "-ce"], [160, "pas"], [161, "?"], [162, "Les"], [163, "conjugaisons"], [164, "verbales"], [165, ","], [166, "les"], [167, "prépositions"], [168, "..."], [169, "ah"], [170, ","], [171, "ces"], [172, "prépositions"], [173, "!"], [174, "("], [175, "RIRES"], [176, ")"], [177, "."], [178, "Mais"], [179, "malheureusement"], [180, ","], [181, "ce"], [182, "sont"], [183, "elles"], [184, "qui"], [185, "donnent"], [186, "le"], [187, "ton"], [188, ","], [189, "n'"], [190, "est"], [191, "-ce"], [192, "pas"], [193, "?"], [194, "Les"], [195, "noms"], [196, ","], [197, "on"], [198, "s'"], [199, "en"], [200, "sort"], [201, ","], [202, "et"], [203, "les"], [204, "adjectifs"], [205, "aussi"], [206, ","], [207, "non"], [208, "?"], [209, "INTERLOCUTEUR1"], [210, ":"], [211, "Oui"], [212, "."], [213, "INTERLOCUTEUR2"], [214, ":"], [215, "Mais"], [216, "les"], [217, "autres"], [218, "structures"], [219, "grammaticales"], [220, ","], [221, "en"], [222, "dehors"], [223, "des"], [224, "verbes"], [225, ","], [226, "sont"], [227, "complexes"], [228, "."], [229, "Je"], [230, "pense"], [231, "que"], [232, "le"], [233, "plus"], [234, "difficile"], [235, "c'"], [236, "est"], [237, "ça"], [238, ","], [239, "parce"], [240, "que"], [241, "nous"], [242, "avons"], [243, "tendance"], [244, "à"], [245, "beaucoup"], [246, "les"], [247, "franciser"], [248, ","], [249, "n'"], [250, "est"], [251, "-ce"], [252, "pas"], [253, "?"], [254, "Quand"], [255, "on"], [256, "parle"], [257, "en"], [258, "français"], [259, ","], [260, "parfois"], [261, "ça"], [262, "n'"], [263, "a"], [264, "rien"], [265, "à"], [266, "voir"], [267, ","], [268, "et"], [269, "le"], [270, "sens"], [271, "en"], [272, "anglais"], [273, "est"], [274, "totalement"], [275, "différent"], [276, "."], [277, "INTERLOCUTEUR1"], [278, ":"], [279, "Oui"], [280, "."], [281, "As"], [282, "-tu"], [283, "fait"], [284, "un"], [285, "cours"], [286, "spécifique"], [287, "de"], [288, "traduction"], [289, "?"], [290, "INTERLOCUTEUR2"], [291, ":"], [292, "Non"], [293, "."], [294, "INTERLOCUTEUR1"], [295, ":"], [296, "Vous"], [297, "traduisez"], [298, "seuls"], [299, "ou"], [300, "un"], [301, "collègue"], [302, "ou"], [303, "une"], [304, "autre"], [305, "personne"], [306, "vous"], [307, "aide"], [308, "?"], [309, "INTERLOCUTEUR2"], [310, ":"], [311, "Ça"], [312, "dépend"], [313, "."], [314, "Pour"], [315, "vous"], [316, "dire"], [317, "la"], [318, "vérité"], [319, "..."], [320, "je"], [321, "ne"], [322, "considère"], [323, "pas"], [324, "que"], [325, "je"], [326, "fais"], [327, "des"], [328, "traductions"], [329, "."], [330, "Je"], [331, "ne"], [332, "traduis"], [333, "rien"], [334, ","], [335, "je"], [336, "lis"], [337, "."], [338, "Non"], [339, ","], [340, "il"], [341, "est"], [342, "très"], [343, "rare"], [344, "que"], [345, "je"], [346, "prenne"], [347, "quelque"], [348, "chose"], [349, "à"], [350, "traduire"], [351, ","], [352, "je"], [353, "n'"], [354, "ai"], [355, "pas"], [356, "cette"], [357, "habitude"], [358, "."], [359, "INTERLOCUTEUR1"], [360, ":"], [361, "Oui"], [362, "."], [363, "INTERLOCUTEUR2"], [364, ":"], [365, "Pour"], [366, "cela"], [367, ","], [368, "j'"], [369, "ai"], [370, "une"], [371, "excellente"], [372, "traductrice"], [373, "."], [374, "INTERLOCUTEUR1"], [375, ":"], [376, "Ah"], [377, ","], [378, "mon"], [379, "Dieu"], [380, ","], [381, "tu"], [382, "es"], [383, "bien"], [384, "loti"], [385, "..."], [386, "("], [387, "RIRES"], [388, ")"], [389, "."], [390, "À"], [391, "ton"], [392, "avis"], [393, ","], [394, "quel"], [395, "type"], [396, "de"], [397, "professionnel"], [398, "...?"], [399, "INTERLOCUTEUR2"], [400, ":"], [401, "Son"], [402, "salaire"], [403, "est"], [404, "exorbitant"], [405, "!"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

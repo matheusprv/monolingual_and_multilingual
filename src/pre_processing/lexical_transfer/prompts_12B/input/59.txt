@@ -1,0 +1,40 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Carta abierta a la ciudadanía
+
+En la página 2 del periódico Folha de S.Paulo (FSP), el periodista Fernando de Barros e Silva publicó en su columna SOS tucana (así, en minúscula) un texto que sabía que sería leído en todo el país y en el extranjero, al tratarse de un periódico de prestigio en el que yo mismo, con grato recuerdo, colaboré durante algún tiempo como columnista.
+Tras años de trabajo en radio, prensa escrita y televisión como economista, fui conociendo los entresijos de una redacción. Por eso acepto y valoro la opinión en los medios de comunicación: la mía siempre fue respetada, y yo respeto la de los demás. La opinión en los medios es la línea editorial sobre la que se sustenta la libertad de prensa y, con ella, el fortalecimiento de la democracia.
+Sea porque era lunes de Carnaval, o por algún otro motivo que desconozco, el señor Fernando traspasó los límites deseables de la civilidad de manera infundada, innecesaria y cargada de prejuicios.
+
+Tokens: [[0, "Carta"], [1, "abierta"], [2, "a"], [3, "la"], [4, "ciudadanía"], [5, "En"], [6, "la"], [7, "página"], [8, "2"], [9, "del"], [10, "periódico"], [11, "Folha"], [12, "de"], [13, "S.Paulo"], [14, "("], [15, "FSP"], [16, ")"], [17, ","], [18, "el"], [19, "periodista"], [20, "Fernando"], [21, "de"], [22, "Barros"], [23, "e"], [24, "Silva"], [25, "publicó"], [26, "en"], [27, "su"], [28, "columna"], [29, "SOS"], [30, "tucana"], [31, "("], [32, "así"], [33, ","], [34, "en"], [35, "minúscula"], [36, ")"], [37, "un"], [38, "texto"], [39, "que"], [40, "sabía"], [41, "que"], [42, "sería"], [43, "leído"], [44, "en"], [45, "todo"], [46, "el"], [47, "país"], [48, "y"], [49, "en"], [50, "el"], [51, "extranjero"], [52, ","], [53, "al"], [54, "tratarse"], [55, "de"], [56, "un"], [57, "periódico"], [58, "de"], [59, "prestigio"], [60, "en"], [61, "el"], [62, "que"], [63, "yo"], [64, "mismo"], [65, ","], [66, "con"], [67, "grato"], [68, "recuerdo"], [69, ","], [70, "colaboré"], [71, "durante"], [72, "algún"], [73, "tiempo"], [74, "como"], [75, "columnista"], [76, "."], [77, "Tras"], [78, "años"], [79, "de"], [80, "trabajo"], [81, "en"], [82, "radio"], [83, ","], [84, "prensa"], [85, "escrita"], [86, "y"], [87, "televisión"], [88, "como"], [89, "economista"], [90, ","], [91, "fui"], [92, "conociendo"], [93, "los"], [94, "entresijos"], [95, "de"], [96, "una"], [97, "redacción"], [98, "."], [99, "Por"], [100, "eso"], [101, "acepto"], [102, "y"], [103, "valoro"], [104, "la"], [105, "opinión"], [106, "en"], [107, "los"], [108, "medios"], [109, "de"], [110, "comunicación"], [111, ":"], [112, "la"], [113, "mía"], [114, "siempre"], [115, "fue"], [116, "respetada"], [117, ","], [118, "y"], [119, "yo"], [120, "respeto"], [121, "la"], [122, "de"], [123, "los"], [124, "demás"], [125, "."], [126, "La"], [127, "opinión"], [128, "en"], [129, "los"], [130, "medios"], [131, "es"], [132, "la"], [133, "línea"], [134, "editorial"], [135, "sobre"], [136, "la"], [137, "que"], [138, "se"], [139, "sustenta"], [140, "la"], [141, "libertad"], [142, "de"], [143, "prensa"], [144, "y"], [145, ","], [146, "con"], [147, "ella"], [148, ","], [149, "el"], [150, "fortalecimiento"], [151, "de"], [152, "la"], [153, "democracia"], [154, "."], [155, "Sea"], [156, "porque"], [157, "era"], [158, "lunes"], [159, "de"], [160, "Carnaval"], [161, ","], [162, "o"], [163, "por"], [164, "algún"], [165, "otro"], [166, "motivo"], [167, "que"], [168, "desconozco"], [169, ","], [170, "el"], [171, "señor"], [172, "Fernando"], [173, "traspasó"], [174, "los"], [175, "límites"], [176, "deseables"], [177, "de"], [178, "la"], [179, "civilidad"], [180, "de"], [181, "manera"], [182, "infundada"], [183, ","], [184, "innecesaria"], [185, "y"], [186, "cargada"], [187, "de"], [188, "prejuicios"], [189, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

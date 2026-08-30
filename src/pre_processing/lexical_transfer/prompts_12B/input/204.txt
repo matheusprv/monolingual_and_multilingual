@@ -1,0 +1,36 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: GENTE, PASO POR ACÁ PARA AGRADECERLES UN AÑO MÁS... UN AÑO MÁS DE CARIÑO Y COMPRENSIÓN... UN AÑO MÁS JUNTOS... GRACIAS A TODOS LOS QUE SON PARTE DE MI VIDA. ALGUNOS MÁS CERCA, OTROS MÁS LEJOS... PERO TODOS SON PARTE DE MI VIDA. ME DAN TANTAS MUESTRAS DE CARIÑO QUE ME ALEGRAN Y ME RECONFORTAN... NO SE IMAGINAN LO IMPORTANTE QUE FUE RECIBIR ESOS MENSAJES A LO LARGO DEL AÑO. GRACIAS POR TODO. ¡FELIZ NAVIDAD CON MUCHO AMOR EN EL CORAZÓN Y UN 2009 LLENO DE FELICIDAD, UNIÓN, SALUD, SUERTE, AMOR... CON MUCHÍSIMA MUCHÍSIMA ENERGÍA! SÁ.
+
+Tokens: [[0, "GENTE"], [1, ","], [2, "PASO"], [3, "POR"], [4, "ACÁ"], [5, "PARA"], [6, "AGRADECERLES"], [7, "UN"], [8, "AÑO"], [9, "MÁS"], [10, "..."], [11, "UN"], [12, "AÑO"], [13, "MÁS"], [14, "DE"], [15, "CARIÑO"], [16, "Y"], [17, "COMPRENSIÓN"], [18, "..."], [19, "UN"], [20, "AÑO"], [21, "MÁS"], [22, "JUNTOS"], [23, "..."], [24, "GRACIAS"], [25, "A"], [26, "TODOS"], [27, "LOS"], [28, "QUE"], [29, "SON"], [30, "PARTE"], [31, "DE"], [32, "MI"], [33, "VIDA"], [34, "."], [35, "ALGUNOS"], [36, "MÁS"], [37, "CERCA"], [38, ","], [39, "OTROS"], [40, "MÁS"], [41, "LEJOS"], [42, "..."], [43, "PERO"], [44, "TODOS"], [45, "SON"], [46, "PARTE"], [47, "DE"], [48, "MI"], [49, "VIDA"], [50, "."], [51, "ME"], [52, "DAN"], [53, "TANTAS"], [54, "MUESTRAS"], [55, "DE"], [56, "CARIÑO"], [57, "QUE"], [58, "ME"], [59, "ALEGRAN"], [60, "Y"], [61, "ME"], [62, "RECONFORTAN"], [63, "..."], [64, "NO"], [65, "SE"], [66, "IMAGINAN"], [67, "LO"], [68, "IMPORTANTE"], [69, "QUE"], [70, "FUE"], [71, "RECIBIR"], [72, "ESOS"], [73, "MENSAJES"], [74, "A"], [75, "LO"], [76, "LARGO"], [77, "DEL"], [78, "AÑO"], [79, "."], [80, "GRACIAS"], [81, "POR"], [82, "TODO"], [83, "."], [84, "¡"], [85, "FELIZ"], [86, "NAVIDAD"], [87, "CON"], [88, "MUCHO"], [89, "AMOR"], [90, "EN"], [91, "EL"], [92, "CORAZÓN"], [93, "Y"], [94, "UN"], [95, "2009"], [96, "LLENO"], [97, "DE"], [98, "FELICIDAD"], [99, ","], [100, "UNIÓN"], [101, ","], [102, "SALUD"], [103, ","], [104, "SUERTE"], [105, ","], [106, "AMOR"], [107, "..."], [108, "CON"], [109, "MUCHÍSIMA"], [110, "MUCHÍSIMA"], [111, "ENERGÍA"], [112, "!"], [113, "SÁ"], [114, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

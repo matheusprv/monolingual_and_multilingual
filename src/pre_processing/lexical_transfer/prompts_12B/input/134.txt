@@ -1,0 +1,44 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Poursuivant notre conversation avec Yoel, il est le plus grand joueur de l'histoire du tennis brésilien. Dire cela pourrait ne pas signifier grand-chose, mais je dirais qu'il est l'un des plus grands joueurs de l'histoire du développement du tennis mondial. Ce n'est pas simple du tout.
+
+LOCUTEUR1 Yoel, j'ai vu la lettre que vous avez écrite à Kijinidei dans le Liberation Daily aujourd'hui. Vous lui avez dit : le problème n'est pas seulement la douleur. Je suis déjà habitué à la douleur. Le problème est le mouvement limité, vous savez ? C'est ce mouvement limité, sans parler d'autres problèmes, quand vous voulez le surmonter, cela vous fait encore plus mal. Est-ce que c'est comme ça ?
+
+Yoel Oh, eh bien, eh bien, cette demi-plaisanterie, en parlant des deux, une chose est une autre chose.
+LOCUTEUR1 D'accord
+Yoel La douleur conduit à la restriction, et la restriction apporte la douleur.
+LOCUTEUR1 D'accord
+Yoel Sous cet aspect, le cerveau inconsciemment, c'est comme faire une salade de fruits, rendant les choses de pire en pire. Mais mon statut d'invalidité actuel est davantage dû à la limitation du mouvement de la hanche. Cette limitation a apporté de la douleur dans ma vie quotidienne, parfois quand je marche trop, ou que je reste assis trop longtemps, ou que je dors dans une mauvaise position. Cet inconfort, je dois aussi y faire face tous les jours. Quand je vais jouer au tennis, la douleur s'intensifie, et la hanche devient de plus en plus limitée à cause de l'autoprotection. Donc les deux choses interfèrent l'une avec l'autre.
+
+Tokens: [[0, "Poursuivant"], [1, "notre"], [2, "conversation"], [3, "avec"], [4, "Yoel"], [5, ","], [6, "il"], [7, "est"], [8, "le"], [9, "plus"], [10, "grand"], [11, "joueur"], [12, "de"], [13, "l'"], [14, "histoire"], [15, "du"], [16, "tennis"], [17, "brésilien"], [18, "."], [19, "Dire"], [20, "cela"], [21, "pourrait"], [22, "ne"], [23, "pas"], [24, "signifier"], [25, "grand-chose"], [26, ","], [27, "mais"], [28, "je"], [29, "dirais"], [30, "qu'"], [31, "il"], [32, "est"], [33, "l'"], [34, "un"], [35, "des"], [36, "plus"], [37, "grands"], [38, "joueurs"], [39, "de"], [40, "l'"], [41, "histoire"], [42, "du"], [43, "développement"], [44, "du"], [45, "tennis"], [46, "mondial"], [47, "."], [48, "Ce"], [49, "n'"], [50, "est"], [51, "pas"], [52, "simple"], [53, "du"], [54, "tout"], [55, "."], [56, "LOCUTEUR1"], [57, "Yoel"], [58, ","], [59, "j'"], [60, "ai"], [61, "vu"], [62, "la"], [63, "lettre"], [64, "que"], [65, "vous"], [66, "avez"], [67, "écrite"], [68, "à"], [69, "Kijinidei"], [70, "dans"], [71, "le"], [72, "Liberation"], [73, "Daily"], [74, "aujourd'hui"], [75, "."], [76, "Vous"], [77, "lui"], [78, "avez"], [79, "dit"], [80, ":"], [81, "le"], [82, "problème"], [83, "n'"], [84, "est"], [85, "pas"], [86, "seulement"], [87, "la"], [88, "douleur"], [89, "."], [90, "Je"], [91, "suis"], [92, "déjà"], [93, "habitué"], [94, "à"], [95, "la"], [96, "douleur"], [97, "."], [98, "Le"], [99, "problème"], [100, "est"], [101, "le"], [102, "mouvement"], [103, "limité"], [104, ","], [105, "vous"], [106, "savez"], [107, "?"], [108, "C'"], [109, "est"], [110, "ce"], [111, "mouvement"], [112, "limité"], [113, ","], [114, "sans"], [115, "parler"], [116, "d'"], [117, "autres"], [118, "problèmes"], [119, ","], [120, "quand"], [121, "vous"], [122, "voulez"], [123, "le"], [124, "surmonter"], [125, ","], [126, "cela"], [127, "vous"], [128, "fait"], [129, "encore"], [130, "plus"], [131, "mal"], [132, "."], [133, "Est"], [134, "-ce"], [135, "que"], [136, "c'"], [137, "est"], [138, "comme"], [139, "ça"], [140, "?"], [141, "Yoel"], [142, "Oh"], [143, ","], [144, "eh"], [145, "bien"], [146, ","], [147, "eh"], [148, "bien"], [149, ","], [150, "cette"], [151, "demi-plaisanterie"], [152, ","], [153, "en"], [154, "parlant"], [155, "des"], [156, "deux"], [157, ","], [158, "une"], [159, "chose"], [160, "est"], [161, "une"], [162, "autre"], [163, "chose"], [164, "."], [165, "LOCUTEUR1"], [166, "D'"], [167, "accord"], [168, "Yoel"], [169, "La"], [170, "douleur"], [171, "conduit"], [172, "à"], [173, "la"], [174, "restriction"], [175, ","], [176, "et"], [177, "la"], [178, "restriction"], [179, "apporte"], [180, "la"], [181, "douleur"], [182, "."], [183, "LOCUTEUR1"], [184, "D'"], [185, "accord"], [186, "Yoel"], [187, "Sous"], [188, "cet"], [189, "aspect"], [190, ","], [191, "le"], [192, "cerveau"], [193, "inconsciemment"], [194, ","], [195, "c'"], [196, "est"], [197, "comme"], [198, "faire"], [199, "une"], [200, "salade"], [201, "de"], [202, "fruits"], [203, ","], [204, "rendant"], [205, "les"], [206, "choses"], [207, "de"], [208, "pire"], [209, "en"], [210, "pire"], [211, "."], [212, "Mais"], [213, "mon"], [214, "statut"], [215, "d'"], [216, "invalidité"], [217, "actuel"], [218, "est"], [219, "davantage"], [220, "dû"], [221, "à"], [222, "la"], [223, "limitation"], [224, "du"], [225, "mouvement"], [226, "de"], [227, "la"], [228, "hanche"], [229, "."], [230, "Cette"], [231, "limitation"], [232, "a"], [233, "apporté"], [234, "de"], [235, "la"], [236, "douleur"], [237, "dans"], [238, "ma"], [239, "vie"], [240, "quotidienne"], [241, ","], [242, "parfois"], [243, "quand"], [244, "je"], [245, "marche"], [246, "trop"], [247, ","], [248, "ou"], [249, "que"], [250, "je"], [251, "reste"], [252, "assis"], [253, "trop"], [254, "longtemps"], [255, ","], [256, "ou"], [257, "que"], [258, "je"], [259, "dors"], [260, "dans"], [261, "une"], [262, "mauvaise"], [263, "position"], [264, "."], [265, "Cet"], [266, "inconfort"], [267, ","], [268, "je"], [269, "dois"], [270, "aussi"], [271, "y"], [272, "faire"], [273, "face"], [274, "tous"], [275, "les"], [276, "jours"], [277, "."], [278, "Quand"], [279, "je"], [280, "vais"], [281, "jouer"], [282, "au"], [283, "tennis"], [284, ","], [285, "la"], [286, "douleur"], [287, "s'"], [288, "intensifie"], [289, ","], [290, "et"], [291, "la"], [292, "hanche"], [293, "devient"], [294, "de"], [295, "plus"], [296, "en"], [297, "plus"], [298, "limitée"], [299, "à"], [300, "cause"], [301, "de"], [302, "l'"], [303, "autoprotection"], [304, "."], [305, "Donc"], [306, "les"], [307, "deux"], [308, "choses"], [309, "interfèrent"], [310, "l'"], [311, "une"], [312, "avec"], [313, "l'"], [314, "autre"], [315, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

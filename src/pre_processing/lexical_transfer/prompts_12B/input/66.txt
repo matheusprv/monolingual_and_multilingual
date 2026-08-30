@@ -1,0 +1,36 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Ladies! Every now and then I open my crammed closet and I don't like anything in it! Or I always end up wearing the same top with the same pants... like I only have one top that goes with those pants! Has that ever happened to you? Well, here's a great site: http://www.personalstylist.com.br/todoslooksdodia.php I haven't gone through the whole thing, but in this section (daily looks) people post outfit ideas... we just have to adapt them to what we already have! And in the tips section you can ask your questions. Are red shoes still in? Does a knit top work with jeans? That kind of thing. There's your tip! I absolutely looooooved it too!!!! Vanessa, what you wrote is exactly how I feel when I'm getting dressed — it's always a battle, I try on literally thousands of outfits until I find something that works or at least looks decent. Thanks for the tip!! I also found a really cool site, but for home decor, crafts, upcycling materials, and tons of interesting ideas. Like how to give an old piece of furniture a makeover without spending almost anything — they covered it in fabric, and you can do it yourself at home. Isn't that awesome??
+
+Tokens: [[0, "Ladies"], [1, "!"], [2, "Every"], [3, "now"], [4, "and"], [5, "then"], [6, "I"], [7, "open"], [8, "my"], [9, "crammed"], [10, "closet"], [11, "and"], [12, "I"], [13, "don't"], [14, "like"], [15, "anything"], [16, "in"], [17, "it"], [18, "!"], [19, "Or"], [20, "I"], [21, "always"], [22, "end"], [23, "up"], [24, "wearing"], [25, "the"], [26, "same"], [27, "top"], [28, "with"], [29, "the"], [30, "same"], [31, "pants"], [32, "..."], [33, "like"], [34, "I"], [35, "only"], [36, "have"], [37, "one"], [38, "top"], [39, "that"], [40, "goes"], [41, "with"], [42, "those"], [43, "pants"], [44, "!"], [45, "Has"], [46, "that"], [47, "ever"], [48, "happened"], [49, "to"], [50, "you"], [51, "?"], [52, "Well"], [53, ","], [54, "here's"], [55, "a"], [56, "great"], [57, "site"], [58, ":"], [59, "http://www.personalstylist.com.br/todoslooksdodia.php"], [60, "I"], [61, "haven't"], [62, "gone"], [63, "through"], [64, "the"], [65, "whole"], [66, "thing"], [67, ","], [68, "but"], [69, "in"], [70, "this"], [71, "section"], [72, "("], [73, "daily"], [74, "looks"], [75, ")"], [76, "people"], [77, "post"], [78, "outfit"], [79, "ideas"], [80, "..."], [81, "we"], [82, "just"], [83, "have"], [84, "to"], [85, "adapt"], [86, "them"], [87, "to"], [88, "what"], [89, "we"], [90, "already"], [91, "have"], [92, "!"], [93, "And"], [94, "in"], [95, "the"], [96, "tips"], [97, "section"], [98, "you"], [99, "can"], [100, "ask"], [101, "your"], [102, "questions"], [103, "."], [104, "Are"], [105, "red"], [106, "shoes"], [107, "still"], [108, "in"], [109, "?"], [110, "Does"], [111, "a"], [112, "knit"], [113, "top"], [114, "work"], [115, "with"], [116, "jeans"], [117, "?"], [118, "That"], [119, "kind"], [120, "of"], [121, "thing"], [122, "."], [123, "There's"], [124, "your"], [125, "tip"], [126, "!"], [127, "I"], [128, "absolutely"], [129, "looooooved"], [130, "it"], [131, "too"], [132, "!!!!"], [133, "Vanessa"], [134, ","], [135, "what"], [136, "you"], [137, "wrote"], [138, "is"], [139, "exactly"], [140, "how"], [141, "I"], [142, "feel"], [143, "when"], [144, "I'm"], [145, "getting"], [146, "dressed"], [147, "—"], [148, "it's"], [149, "always"], [150, "a"], [151, "battle"], [152, ","], [153, "I"], [154, "try"], [155, "on"], [156, "literally"], [157, "thousands"], [158, "of"], [159, "outfits"], [160, "until"], [161, "I"], [162, "find"], [163, "something"], [164, "that"], [165, "works"], [166, "or"], [167, "at"], [168, "least"], [169, "looks"], [170, "decent"], [171, "."], [172, "Thanks"], [173, "for"], [174, "the"], [175, "tip"], [176, "!!"], [177, "I"], [178, "also"], [179, "found"], [180, "a"], [181, "really"], [182, "cool"], [183, "site"], [184, ","], [185, "but"], [186, "for"], [187, "home"], [188, "decor"], [189, ","], [190, "crafts"], [191, ","], [192, "upcycling"], [193, "materials"], [194, ","], [195, "and"], [196, "tons"], [197, "of"], [198, "interesting"], [199, "ideas"], [200, "."], [201, "Like"], [202, "how"], [203, "to"], [204, "give"], [205, "an"], [206, "old"], [207, "piece"], [208, "of"], [209, "furniture"], [210, "a"], [211, "makeover"], [212, "without"], [213, "spending"], [214, "almost"], [215, "anything"], [216, "—"], [217, "they"], [218, "covered"], [219, "it"], [220, "in"], [221, "fabric"], [222, ","], [223, "and"], [224, "you"], [225, "can"], [226, "do"], [227, "it"], [228, "yourself"], [229, "at"], [230, "home"], [231, "."], [232, "Isn't"], [233, "that"], [234, "awesome"], [235, "??"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

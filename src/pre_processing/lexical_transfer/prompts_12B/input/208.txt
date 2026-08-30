@@ -1,0 +1,52 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: 1) Hoy en mi desayuno comí lo siguiente:
+a. un pancito de sal (1) con mantequilla (2)
+b. un vaso de leche (3)
+c. una manzana (4)
+
+¿Sabes a qué tipos de moléculas orgánicas pertenecen estos alimentos y cuál es su papel principal en nuestro organismo?
+
+MI RESPUESTA:
+a) 1: carbohidrato (almidón) – metabolismo energético
+2: lípidos – metabolismo energético
+b) 3: carbohidrato (metabolismo energético), proteínas (metabolismo de construcción y de control) y lípidos (metabolismo energético)
+c) 4: carbohidrato (metabolismo energético), vitaminas
+
+ALGUNAS RESPUESTAS CORRECTAS DE ALUMNOS:
+Pancito de sal: tipo de carbohidrato, aporta energía para el funcionamiento de las células (Rodrigo Avelar, 1º Alfa)
+Mantequilla: lípido – aporta energía (Suzane Reis, 1º Beta)
+Vaso de leche: proteína = papel estructural y de control (Valéria Coelho, 1º Alfa)
+
+Tokens: [[0, "1"], [1, ")"], [2, "Hoy"], [3, "en"], [4, "mi"], [5, "desayuno"], [6, "comí"], [7, "lo"], [8, "siguiente"], [9, ":"], [10, "a."], [11, "un"], [12, "pancito"], [13, "de"], [14, "sal"], [15, "("], [16, "1"], [17, ")"], [18, "con"], [19, "mantequilla"], [20, "("], [21, "2"], [22, ")"], [23, "b."], [24, "un"], [25, "vaso"], [26, "de"], [27, "leche"], [28, "("], [29, "3"], [30, ")"], [31, "c."], [32, "una"], [33, "manzana"], [34, "("], [35, "4"], [36, ")"], [37, "¿"], [38, "Sabes"], [39, "a"], [40, "qué"], [41, "tipos"], [42, "de"], [43, "moléculas"], [44, "orgánicas"], [45, "pertenecen"], [46, "estos"], [47, "alimentos"], [48, "y"], [49, "cuál"], [50, "es"], [51, "su"], [52, "papel"], [53, "principal"], [54, "en"], [55, "nuestro"], [56, "organismo"], [57, "?"], [58, "MI"], [59, "RESPUESTA"], [60, ":"], [61, "a"], [62, ")"], [63, "1"], [64, ":"], [65, "carbohidrato"], [66, "("], [67, "almidón"], [68, ")"], [69, "–"], [70, "metabolismo"], [71, "energético"], [72, "2"], [73, ":"], [74, "lípidos"], [75, "–"], [76, "metabolismo"], [77, "energético"], [78, "b"], [79, ")"], [80, "3"], [81, ":"], [82, "carbohidrato"], [83, "("], [84, "metabolismo"], [85, "energético"], [86, ")"], [87, ","], [88, "proteínas"], [89, "("], [90, "metabolismo"], [91, "de"], [92, "construcción"], [93, "y"], [94, "de"], [95, "control"], [96, ")"], [97, "y"], [98, "lípidos"], [99, "("], [100, "metabolismo"], [101, "energético"], [102, ")"], [103, "c"], [104, ")"], [105, "4"], [106, ":"], [107, "carbohidrato"], [108, "("], [109, "metabolismo"], [110, "energético"], [111, ")"], [112, ","], [113, "vitaminas"], [114, "ALGUNAS"], [115, "RESPUESTAS"], [116, "CORRECTAS"], [117, "DE"], [118, "ALUMNOS"], [119, ":"], [120, "Pancito"], [121, "de"], [122, "sal"], [123, ":"], [124, "tipo"], [125, "de"], [126, "carbohidrato"], [127, ","], [128, "aporta"], [129, "energía"], [130, "para"], [131, "el"], [132, "funcionamiento"], [133, "de"], [134, "las"], [135, "células"], [136, "("], [137, "Rodrigo"], [138, "Avelar"], [139, ","], [140, "1º"], [141, "Alfa"], [142, ")"], [143, "Mantequilla"], [144, ":"], [145, "lípido"], [146, "–"], [147, "aporta"], [148, "energía"], [149, "("], [150, "Suzane"], [151, "Reis"], [152, ","], [153, "1º"], [154, "Beta"], [155, ")"], [156, "Vaso"], [157, "de"], [158, "leche"], [159, ":"], [160, "proteína"], [161, "="], [162, "papel"], [163, "estructural"], [164, "y"], [165, "de"], [166, "control"], [167, "("], [168, "Valéria"], [169, "Coelho"], [170, ","], [171, "1º"], [172, "Alfa"], [173, ")"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

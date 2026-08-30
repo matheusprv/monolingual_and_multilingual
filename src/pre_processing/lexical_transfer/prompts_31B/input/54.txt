@@ -1,0 +1,47 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: SPEAKER1 so on this very difficult time for many young people when it comes to choosing a career path I'm joined here in the studio by psychologist and careers adviser marie good morning marie
+SPEAKER2 good morning
+SPEAKER1 the UCAS application period is a time for making big decisions but also a lot of stress isn't it
+SPEAKER2 tell me about it students are stressed their families are too and not just the immediate family mum and dad but there's also pressure from cousins who've sometimes already been through it and are waiting to see whether their cousin gets in those still to come grandparents I mean everyone is rooting so hard for people to get in right for this young person specifically to get in the problem is that young people often leave this decision to the very last minute
+SPEAKER1 right now isn't it when the deadline opens
+SPEAKER2 exactly the deadline is opening right now and I'm getting so many people calling the practice I want to do a proper career guidance process but there's just no time left now
+SPEAKER1 there's not enough time for a full process
+SPEAKER2 within the
+SPEAKER1 done properly done really properly
+SPEAKER2 taken at a sensible pace
+SPEAKER1 there just isn't time
+SPEAKER2 because the student first needs to understand themselves they need to know what their strengths are right we need to build a profile for that student and then work through the different courses with them answer all their questions look at what the job market actually looks like for each of those careers
+
+Tokens: [[0, "SPEAKER1"], [1, "so"], [2, "on"], [3, "this"], [4, "very"], [5, "difficult"], [6, "time"], [7, "for"], [8, "many"], [9, "young"], [10, "people"], [11, "when"], [12, "it"], [13, "comes"], [14, "to"], [15, "choosing"], [16, "a"], [17, "career"], [18, "path"], [19, "I'm"], [20, "joined"], [21, "here"], [22, "in"], [23, "the"], [24, "studio"], [25, "by"], [26, "psychologist"], [27, "and"], [28, "careers"], [29, "adviser"], [30, "marie"], [31, "good"], [32, "morning"], [33, "marie"], [34, "SPEAKER2"], [35, "good"], [36, "morning"], [37, "SPEAKER1"], [38, "the"], [39, "UCAS"], [40, "application"], [41, "period"], [42, "is"], [43, "a"], [44, "time"], [45, "for"], [46, "making"], [47, "big"], [48, "decisions"], [49, "but"], [50, "also"], [51, "a"], [52, "lot"], [53, "of"], [54, "stress"], [55, "isn't"], [56, "it"], [57, "SPEAKER2"], [58, "tell"], [59, "me"], [60, "about"], [61, "it"], [62, "students"], [63, "are"], [64, "stressed"], [65, "their"], [66, "families"], [67, "are"], [68, "too"], [69, "and"], [70, "not"], [71, "just"], [72, "the"], [73, "immediate"], [74, "family"], [75, "mum"], [76, "and"], [77, "dad"], [78, "but"], [79, "there's"], [80, "also"], [81, "pressure"], [82, "from"], [83, "cousins"], [84, "who've"], [85, "sometimes"], [86, "already"], [87, "been"], [88, "through"], [89, "it"], [90, "and"], [91, "are"], [92, "waiting"], [93, "to"], [94, "see"], [95, "whether"], [96, "their"], [97, "cousin"], [98, "gets"], [99, "in"], [100, "those"], [101, "still"], [102, "to"], [103, "come"], [104, "grandparents"], [105, "I"], [106, "mean"], [107, "everyone"], [108, "is"], [109, "rooting"], [110, "so"], [111, "hard"], [112, "for"], [113, "people"], [114, "to"], [115, "get"], [116, "in"], [117, "right"], [118, "for"], [119, "this"], [120, "young"], [121, "person"], [122, "specifically"], [123, "to"], [124, "get"], [125, "in"], [126, "the"], [127, "problem"], [128, "is"], [129, "that"], [130, "young"], [131, "people"], [132, "often"], [133, "leave"], [134, "this"], [135, "decision"], [136, "to"], [137, "the"], [138, "very"], [139, "last"], [140, "minute"], [141, "SPEAKER1"], [142, "right"], [143, "now"], [144, "isn't"], [145, "it"], [146, "when"], [147, "the"], [148, "deadline"], [149, "opens"], [150, "SPEAKER2"], [151, "exactly"], [152, "the"], [153, "deadline"], [154, "is"], [155, "opening"], [156, "right"], [157, "now"], [158, "and"], [159, "I'm"], [160, "getting"], [161, "so"], [162, "many"], [163, "people"], [164, "calling"], [165, "the"], [166, "practice"], [167, "I"], [168, "want"], [169, "to"], [170, "do"], [171, "a"], [172, "proper"], [173, "career"], [174, "guidance"], [175, "process"], [176, "but"], [177, "there's"], [178, "just"], [179, "no"], [180, "time"], [181, "left"], [182, "now"], [183, "SPEAKER1"], [184, "there's"], [185, "not"], [186, "enough"], [187, "time"], [188, "for"], [189, "a"], [190, "full"], [191, "process"], [192, "SPEAKER2"], [193, "within"], [194, "the"], [195, "SPEAKER1"], [196, "done"], [197, "properly"], [198, "done"], [199, "really"], [200, "properly"], [201, "SPEAKER2"], [202, "taken"], [203, "at"], [204, "a"], [205, "sensible"], [206, "pace"], [207, "SPEAKER1"], [208, "there"], [209, "just"], [210, "isn't"], [211, "time"], [212, "SPEAKER2"], [213, "because"], [214, "the"], [215, "student"], [216, "first"], [217, "needs"], [218, "to"], [219, "understand"], [220, "themselves"], [221, "they"], [222, "need"], [223, "to"], [224, "know"], [225, "what"], [226, "their"], [227, "strengths"], [228, "are"], [229, "right"], [230, "we"], [231, "need"], [232, "to"], [233, "build"], [234, "a"], [235, "profile"], [236, "for"], [237, "that"], [238, "student"], [239, "and"], [240, "then"], [241, "work"], [242, "through"], [243, "the"], [244, "different"], [245, "courses"], [246, "with"], [247, "them"], [248, "answer"], [249, "all"], [250, "their"], [251, "questions"], [252, "look"], [253, "at"], [254, "what"], [255, "the"], [256, "job"], [257, "market"], [258, "actually"], [259, "looks"], [260, "like"], [261, "for"], [262, "each"], [263, "of"], [264, "those"], [265, "careers"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

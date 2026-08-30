@@ -1,0 +1,53 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: INTERVENANT1 une erreur, monsieur le fiscal ?
+INTERVENANT2 dans les comptes, non
+INTERVENANT1 et sur le plan comptable ?
+INTERVENANT2 il y a un bémol d'ordre logique qui n'invalide pas l'exactitude des données
+INTERVENANT1 un bémol logique, dites-le vite, lequel, mon ami ?
+INTERVENANT2 qu'avez-vous inscrit au débit ?
+INTERVENANT1 les paiements
+INTERVENANT2 et au crédit ?
+INTERVENANT1 les recettes ; à la fin j'ai mis le solde bancaire au débit pour équilibrer
+INTERVENANT2 il y a une erreur
+INTERVENANT1 ce n'est pas bon ?
+INTERVENANT2 vous avez tout inversé : ce qui était débit, vous l'avez mis au crédit, et inversement ; vous avez violé la logique comptable
+INTERVENANT1 je corrige ça le mois prochain ; puisqu'on est dans le vif du sujet, je pense que la comptabilité incomplète pose problème avec l'argent en banque ; comment faire, monsieur le fiscal ?
+INTERVENANT2 deux solutions : d'abord, ouvrir des registres pour la banque — ce serait la caisse de la copropriété en banque
+INTERVENANT1 mais on peut tout passer en caisse ? ce ne serait pas plus simple ?
+INTERVENANT2 ce serait la deuxième solution, et c'est effectivement la plus simple
+INTERVENANT1 comment fonctionnerait cette deuxième solution ?
+INTERVENANT2 tous les chèques et espèces reçus seraient des débits de caisse ; le solde aussi ; les versements en sortie seraient des crédits
+
+Tokens: [[0, "INTERVENANT1"], [1, "une"], [2, "erreur"], [3, ","], [4, "monsieur"], [5, "le"], [6, "fiscal"], [7, "?"], [8, "INTERVENANT2"], [9, "dans"], [10, "les"], [11, "comptes"], [12, ","], [13, "non"], [14, "INTERVENANT1"], [15, "et"], [16, "sur"], [17, "le"], [18, "plan"], [19, "comptable"], [20, "?"], [21, "INTERVENANT2"], [22, "il"], [23, "y"], [24, "a"], [25, "un"], [26, "bémol"], [27, "d'"], [28, "ordre"], [29, "logique"], [30, "qui"], [31, "n'"], [32, "invalide"], [33, "pas"], [34, "l'"], [35, "exactitude"], [36, "des"], [37, "données"], [38, "INTERVENANT1"], [39, "un"], [40, "bémol"], [41, "logique"], [42, ","], [43, "dites"], [44, "-le"], [45, "vite"], [46, ","], [47, "lequel"], [48, ","], [49, "mon"], [50, "ami"], [51, "?"], [52, "INTERVENANT2"], [53, "qu'"], [54, "avez"], [55, "-vous"], [56, "inscrit"], [57, "au"], [58, "débit"], [59, "?"], [60, "INTERVENANT1"], [61, "les"], [62, "paiements"], [63, "INTERVENANT2"], [64, "et"], [65, "au"], [66, "crédit"], [67, "?"], [68, "INTERVENANT1"], [69, "les"], [70, "recettes"], [71, ";"], [72, "à"], [73, "la"], [74, "fin"], [75, "j'"], [76, "ai"], [77, "mis"], [78, "le"], [79, "solde"], [80, "bancaire"], [81, "au"], [82, "débit"], [83, "pour"], [84, "équilibrer"], [85, "INTERVENANT2"], [86, "il"], [87, "y"], [88, "a"], [89, "une"], [90, "erreur"], [91, "INTERVENANT1"], [92, "ce"], [93, "n'"], [94, "est"], [95, "pas"], [96, "bon"], [97, "?"], [98, "INTERVENANT2"], [99, "vous"], [100, "avez"], [101, "tout"], [102, "inversé"], [103, ":"], [104, "ce"], [105, "qui"], [106, "était"], [107, "débit"], [108, ","], [109, "vous"], [110, "l'"], [111, "avez"], [112, "mis"], [113, "au"], [114, "crédit"], [115, ","], [116, "et"], [117, "inversement"], [118, ";"], [119, "vous"], [120, "avez"], [121, "violé"], [122, "la"], [123, "logique"], [124, "comptable"], [125, "INTERVENANT1"], [126, "je"], [127, "corrige"], [128, "ça"], [129, "le"], [130, "mois"], [131, "prochain"], [132, ";"], [133, "puisqu'"], [134, "on"], [135, "est"], [136, "dans"], [137, "le"], [138, "vif"], [139, "du"], [140, "sujet"], [141, ","], [142, "je"], [143, "pense"], [144, "que"], [145, "la"], [146, "comptabilité"], [147, "incomplète"], [148, "pose"], [149, "problème"], [150, "avec"], [151, "l'"], [152, "argent"], [153, "en"], [154, "banque"], [155, ";"], [156, "comment"], [157, "faire"], [158, ","], [159, "monsieur"], [160, "le"], [161, "fiscal"], [162, "?"], [163, "INTERVENANT2"], [164, "deux"], [165, "solutions"], [166, ":"], [167, "d'"], [168, "abord"], [169, ","], [170, "ouvrir"], [171, "des"], [172, "registres"], [173, "pour"], [174, "la"], [175, "banque"], [176, "—"], [177, "ce"], [178, "serait"], [179, "la"], [180, "caisse"], [181, "de"], [182, "la"], [183, "copropriété"], [184, "en"], [185, "banque"], [186, "INTERVENANT1"], [187, "mais"], [188, "on"], [189, "peut"], [190, "tout"], [191, "passer"], [192, "en"], [193, "caisse"], [194, "?"], [195, "ce"], [196, "ne"], [197, "serait"], [198, "pas"], [199, "plus"], [200, "simple"], [201, "?"], [202, "INTERVENANT2"], [203, "ce"], [204, "serait"], [205, "la"], [206, "deuxième"], [207, "solution"], [208, ","], [209, "et"], [210, "c'"], [211, "est"], [212, "effectivement"], [213, "la"], [214, "plus"], [215, "simple"], [216, "INTERVENANT1"], [217, "comment"], [218, "fonctionnerait"], [219, "cette"], [220, "deuxième"], [221, "solution"], [222, "?"], [223, "INTERVENANT2"], [224, "tous"], [225, "les"], [226, "chèques"], [227, "et"], [228, "espèces"], [229, "reçus"], [230, "seraient"], [231, "des"], [232, "débits"], [233, "de"], [234, "caisse"], [235, ";"], [236, "le"], [237, "solde"], [238, "aussi"], [239, ";"], [240, "les"], [241, "versements"], [242, "en"], [243, "sortie"], [244, "seraient"], [245, "des"], [246, "crédits"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

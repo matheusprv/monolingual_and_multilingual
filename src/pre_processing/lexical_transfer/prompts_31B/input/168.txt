@@ -1,0 +1,53 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: SPEAKER1 any errors, auditor?
+SPEAKER2 in the accounts, no
+SPEAKER1 and accounting-wise?
+SPEAKER2 there's a logical issue, but it doesn't affect the accuracy of the data
+SPEAKER1 a logical issue — go on then, what is it?
+SPEAKER2 what did you put in debit?
+SPEAKER1 payments
+SPEAKER2 and in credit?
+SPEAKER1 revenue; at the end I put the bank balance in debit to make it balance
+SPEAKER2 that's a mistake
+SPEAKER1 it's wrong?
+SPEAKER2 you flipped it — what was a debit you put as a credit, and vice versa; you violated basic accounting logic
+SPEAKER1 I'll fix it next month; since we're already knee-deep in this, I think the incomplete bookkeeping creates a problem with money held in the bank — how should that be handled?
+SPEAKER2 two ways: first, open separate records for the bank — that would be the condo association's cash account at the bank
+SPEAKER1 but can't I just run everything through the cash account? wouldn't that be simpler?
+SPEAKER2 that would be the second way — and yes, it's the simpler one
+SPEAKER1 how would that second way work?
+SPEAKER2 all checks and cash received would be cash debits; the balance too; bank deposits as outflows would be credits
+
+Tokens: [[0, "SPEAKER1"], [1, "any"], [2, "errors"], [3, ","], [4, "auditor"], [5, "?"], [6, "SPEAKER2"], [7, "in"], [8, "the"], [9, "accounts"], [10, ","], [11, "no"], [12, "SPEAKER1"], [13, "and"], [14, "accounting"], [15, "-"], [16, "wise"], [17, "?"], [18, "SPEAKER2"], [19, "there's"], [20, "a"], [21, "logical"], [22, "issue"], [23, ","], [24, "but"], [25, "it"], [26, "doesn't"], [27, "affect"], [28, "the"], [29, "accuracy"], [30, "of"], [31, "the"], [32, "data"], [33, "SPEAKER1"], [34, "a"], [35, "logical"], [36, "issue"], [37, "—"], [38, "go"], [39, "on"], [40, "then"], [41, ","], [42, "what"], [43, "is"], [44, "it"], [45, "?"], [46, "SPEAKER2"], [47, "what"], [48, "did"], [49, "you"], [50, "put"], [51, "in"], [52, "debit"], [53, "?"], [54, "SPEAKER1"], [55, "payments"], [56, "SPEAKER2"], [57, "and"], [58, "in"], [59, "credit"], [60, "?"], [61, "SPEAKER1"], [62, "revenue"], [63, ";"], [64, "at"], [65, "the"], [66, "end"], [67, "I"], [68, "put"], [69, "the"], [70, "bank"], [71, "balance"], [72, "in"], [73, "debit"], [74, "to"], [75, "make"], [76, "it"], [77, "balance"], [78, "SPEAKER2"], [79, "that's"], [80, "a"], [81, "mistake"], [82, "SPEAKER1"], [83, "it's"], [84, "wrong"], [85, "?"], [86, "SPEAKER2"], [87, "you"], [88, "flipped"], [89, "it"], [90, "—"], [91, "what"], [92, "was"], [93, "a"], [94, "debit"], [95, "you"], [96, "put"], [97, "as"], [98, "a"], [99, "credit"], [100, ","], [101, "and"], [102, "vice"], [103, "versa"], [104, ";"], [105, "you"], [106, "violated"], [107, "basic"], [108, "accounting"], [109, "logic"], [110, "SPEAKER1"], [111, "I'll"], [112, "fix"], [113, "it"], [114, "next"], [115, "month"], [116, ";"], [117, "since"], [118, "we're"], [119, "already"], [120, "knee"], [121, "-"], [122, "deep"], [123, "in"], [124, "this"], [125, ","], [126, "I"], [127, "think"], [128, "the"], [129, "incomplete"], [130, "bookkeeping"], [131, "creates"], [132, "a"], [133, "problem"], [134, "with"], [135, "money"], [136, "held"], [137, "in"], [138, "the"], [139, "bank"], [140, "—"], [141, "how"], [142, "should"], [143, "that"], [144, "be"], [145, "handled"], [146, "?"], [147, "SPEAKER2"], [148, "two"], [149, "ways"], [150, ":"], [151, "first"], [152, ","], [153, "open"], [154, "separate"], [155, "records"], [156, "for"], [157, "the"], [158, "bank"], [159, "—"], [160, "that"], [161, "would"], [162, "be"], [163, "the"], [164, "condo"], [165, "association's"], [166, "cash"], [167, "account"], [168, "at"], [169, "the"], [170, "bank"], [171, "SPEAKER1"], [172, "but"], [173, "can't"], [174, "I"], [175, "just"], [176, "run"], [177, "everything"], [178, "through"], [179, "the"], [180, "cash"], [181, "account"], [182, "?"], [183, "wouldn't"], [184, "that"], [185, "be"], [186, "simpler"], [187, "?"], [188, "SPEAKER2"], [189, "that"], [190, "would"], [191, "be"], [192, "the"], [193, "second"], [194, "way"], [195, "—"], [196, "and"], [197, "yes"], [198, ","], [199, "it's"], [200, "the"], [201, "simpler"], [202, "one"], [203, "SPEAKER1"], [204, "how"], [205, "would"], [206, "that"], [207, "second"], [208, "way"], [209, "work"], [210, "?"], [211, "SPEAKER2"], [212, "all"], [213, "checks"], [214, "and"], [215, "cash"], [216, "received"], [217, "would"], [218, "be"], [219, "cash"], [220, "debits"], [221, ";"], [222, "the"], [223, "balance"], [224, "too"], [225, ";"], [226, "bank"], [227, "deposits"], [228, "as"], [229, "outflows"], [230, "would"], [231, "be"], [232, "credits"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

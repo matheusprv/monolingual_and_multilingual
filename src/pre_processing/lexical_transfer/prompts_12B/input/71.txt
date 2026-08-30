@@ -1,0 +1,61 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Huile d'olive
+
+Spécialement pour les filles de France... (mais toutes peuvent participer !)
+
+Dans les supermarchés, on trouve une grande variété d'huiles, dont beaucoup sont importées d'Espagne ou du Portugal. Parce qu'elles sont importées, les gens ont tendance à les considérer comme "bonnes" ; pourtant, elles ne sont peut-être pas si bonnes que ça, et c'est précisément pour ça qu'on les exporte chez nous, vous voyez ?
+
+Alors... Au supermarché, qu'est-ce que vous regardez sur l'étiquette pour juger si une huile est bonne ou mauvaise ? La région d'origine ? L'acidité ?
+
+Et aussi... quelles sont les marques que vous considérez comme les meilleures en France ? Et les pires ?
+
+Vanessa
+
+RE : Huile d'olive
+
+TYPES D'HUILE
+
+*Huile d'olive raffinée : Produite par raffinage de l'huile d'olive vierge qui présente une acidité élevée et des défauts à éliminer lors du raffinage. Elle peut être mélangée avec de l'huile vierge.
+
+*Huile d'olive vierge : Obtenue par des procédés mécaniques. Selon l'acidité du produit obtenu, elle peut être classée comme extra vierge, vierge ou courante. L'huile d'olive vierge présente une acidité maximale de 2 %.
+
+*Huile d'olive vierge extra : Elle ne peut pas dépasser 0,8 % d'acidité (acide oléique) ni présenter de défauts. L'organisme qui la réglemente et définit quels défauts sont catalogués est le Conseil Oléicole International (COI).
+
+*Huile d'olive courante : Elle est obtenue à partir du mélange de l'huile lampante — impropre à la consommation — traitée par des procédés physico-chimiques et mélangée avec de l'huile vierge et vierge extra. L'huile d'olive courante ne fait l'objet d'aucune réglementation spécifique.
+
+CONSEILS DE CONSOMMATION :
+Avant d'acheter le produit, il est conseillé de vérifier son taux d'acidité et sa date de péremption.
+
+Tokens: [[0, "Huile"], [1, "d'"], [2, "olive"], [3, "Spécialement"], [4, "pour"], [5, "les"], [6, "filles"], [7, "de"], [8, "France"], [9, "..."], [10, "("], [11, "mais"], [12, "toutes"], [13, "peuvent"], [14, "participer"], [15, "!"], [16, ")"], [17, "Dans"], [18, "les"], [19, "supermarchés"], [20, ","], [21, "on"], [22, "trouve"], [23, "une"], [24, "grande"], [25, "variété"], [26, "d'"], [27, "huiles"], [28, ","], [29, "dont"], [30, "beaucoup"], [31, "sont"], [32, "importées"], [33, "d'"], [34, "Espagne"], [35, "ou"], [36, "du"], [37, "Portugal"], [38, "."], [39, "Parce"], [40, "qu'"], [41, "elles"], [42, "sont"], [43, "importées"], [44, ","], [45, "les"], [46, "gens"], [47, "ont"], [48, "tendance"], [49, "à"], [50, "les"], [51, "considérer"], [52, "comme"], [53, "\""], [54, "bonnes"], [55, "\""], [56, ";"], [57, "pourtant"], [58, ","], [59, "elles"], [60, "ne"], [61, "sont"], [62, "peut-être"], [63, "pas"], [64, "si"], [65, "bonnes"], [66, "que"], [67, "ça"], [68, ","], [69, "et"], [70, "c'"], [71, "est"], [72, "précisément"], [73, "pour"], [74, "ça"], [75, "qu'"], [76, "on"], [77, "les"], [78, "exporte"], [79, "chez"], [80, "nous"], [81, ","], [82, "vous"], [83, "voyez"], [84, "?"], [85, "Alors"], [86, "..."], [87, "Au"], [88, "supermarché"], [89, ","], [90, "qu'"], [91, "est"], [92, "-ce"], [93, "que"], [94, "vous"], [95, "regardez"], [96, "sur"], [97, "l'"], [98, "étiquette"], [99, "pour"], [100, "juger"], [101, "si"], [102, "une"], [103, "huile"], [104, "est"], [105, "bonne"], [106, "ou"], [107, "mauvaise"], [108, "?"], [109, "La"], [110, "région"], [111, "d'"], [112, "origine"], [113, "?"], [114, "L'"], [115, "acidité"], [116, "?"], [117, "Et"], [118, "aussi"], [119, "..."], [120, "quelles"], [121, "sont"], [122, "les"], [123, "marques"], [124, "que"], [125, "vous"], [126, "considérez"], [127, "comme"], [128, "les"], [129, "meilleures"], [130, "en"], [131, "France"], [132, "?"], [133, "Et"], [134, "les"], [135, "pires"], [136, "?"], [137, "Vanessa"], [138, "RE"], [139, ":"], [140, "Huile"], [141, "d'"], [142, "olive"], [143, "TYPES"], [144, "D'"], [145, "HUILE"], [146, "*Huile"], [147, "d'"], [148, "olive"], [149, "raffinée"], [150, ":"], [151, "Produite"], [152, "par"], [153, "raffinage"], [154, "de"], [155, "l'"], [156, "huile"], [157, "d'"], [158, "olive"], [159, "vierge"], [160, "qui"], [161, "présente"], [162, "une"], [163, "acidité"], [164, "élevée"], [165, "et"], [166, "des"], [167, "défauts"], [168, "à"], [169, "éliminer"], [170, "lors"], [171, "du"], [172, "raffinage"], [173, "."], [174, "Elle"], [175, "peut"], [176, "être"], [177, "mélangée"], [178, "avec"], [179, "de"], [180, "l'"], [181, "huile"], [182, "vierge"], [183, "."], [184, "*Huile"], [185, "d'"], [186, "olive"], [187, "vierge"], [188, ":"], [189, "Obtenue"], [190, "par"], [191, "des"], [192, "procédés"], [193, "mécaniques"], [194, "."], [195, "Selon"], [196, "l'"], [197, "acidité"], [198, "du"], [199, "produit"], [200, "obtenu"], [201, ","], [202, "elle"], [203, "peut"], [204, "être"], [205, "classée"], [206, "comme"], [207, "extra"], [208, "vierge"], [209, ","], [210, "vierge"], [211, "ou"], [212, "courante"], [213, "."], [214, "L'"], [215, "huile"], [216, "d'"], [217, "olive"], [218, "vierge"], [219, "présente"], [220, "une"], [221, "acidité"], [222, "maximale"], [223, "de"], [224, "2"], [225, "%"], [226, "."], [227, "*Huile"], [228, "d'"], [229, "olive"], [230, "vierge"], [231, "extra"], [232, ":"], [233, "Elle"], [234, "ne"], [235, "peut"], [236, "pas"], [237, "dépasser"], [238, "0,8"], [239, "%"], [240, "d'"], [241, "acidité"], [242, "("], [243, "acide"], [244, "oléique"], [245, ")"], [246, "ni"], [247, "présenter"], [248, "de"], [249, "défauts"], [250, "."], [251, "L'"], [252, "organisme"], [253, "qui"], [254, "la"], [255, "réglemente"], [256, "et"], [257, "définit"], [258, "quels"], [259, "défauts"], [260, "sont"], [261, "catalogués"], [262, "est"], [263, "le"], [264, "Conseil"], [265, "Oléicole"], [266, "International"], [267, "("], [268, "COI"], [269, ")"], [270, "."], [271, "*Huile"], [272, "d'"], [273, "olive"], [274, "courante"], [275, ":"], [276, "Elle"], [277, "est"], [278, "obtenue"], [279, "à"], [280, "partir"], [281, "du"], [282, "mélange"], [283, "de"], [284, "l'"], [285, "huile"], [286, "lampante"], [287, "—"], [288, "impropre"], [289, "à"], [290, "la"], [291, "consommation"], [292, "—"], [293, "traitée"], [294, "par"], [295, "des"], [296, "procédés"], [297, "physico-chimiques"], [298, "et"], [299, "mélangée"], [300, "avec"], [301, "de"], [302, "l'"], [303, "huile"], [304, "vierge"], [305, "et"], [306, "vierge"], [307, "extra"], [308, "."], [309, "L'"], [310, "huile"], [311, "d'"], [312, "olive"], [313, "courante"], [314, "ne"], [315, "fait"], [316, "l'"], [317, "objet"], [318, "d'"], [319, "aucune"], [320, "réglementation"], [321, "spécifique"], [322, "."], [323, "CONSEILS"], [324, "DE"], [325, "CONSOMMATION"], [326, ":"], [327, "Avant"], [328, "d'"], [329, "acheter"], [330, "le"], [331, "produit"], [332, ","], [333, "il"], [334, "est"], [335, "conseillé"], [336, "de"], [337, "vérifier"], [338, "son"], [339, "taux"], [340, "d'"], [341, "acidité"], [342, "et"], [343, "sa"], [344, "date"], [345, "de"], [346, "péremption"], [347, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

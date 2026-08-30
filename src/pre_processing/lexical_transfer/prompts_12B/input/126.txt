@@ -1,0 +1,72 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: INTERLOCUTEUR 2 Interlocuteur 1, les croquettes de feijoada... C'est une magnifique preuve de la créativité brésilienne, non ?
+INTERLOCUTEUR 1 C'est totalement vrai.
+INTERLOCUTEUR 2 Et en plus, c'est un jeu d'enfant à faire puisque c'est une recette anti-gaspillage par excellence.
+INTERLOCUTEUR 1 C'est l'utilisation magique des restes de la feijoada ; s'il vous en reste, hop, vous en faites de délicieuses croquettes. 
+INTERLOCUTEUR 2 Et pour tout dire, c'est presque encore meilleur !
+INTERLOCUTEUR 1 Ah oui, c'est clair, carrément ! 
+INTERLOCUTEUR 2 Alors on s'y met. Bon, tout commence bien sûr avec les restes de la feijoada, n'est-ce pas, Interlocuteur 1 ? [cite: 125, 126]
+INTERLOCUTEUR 1 Avec les restes de la feijoada. [cite: 126]
+INTERLOCUTEUR 2 Ensuite, direction le mixeur.
+INTERLOCUTEUR 1 Au mixeur.
+INTERLOCUTEUR 2 Par contre, il est capital de faire ça à la maison avec un bol de mixeur parfaitement fermé et avec une feijoada complètement refroidie, pas vrai, Interlocuteur 1 ?
+INTERLOCUTEUR 1 Froide, oui. La petite astuce consiste également à placer un film plastique étirable sous le couvercle pour bien sceller le tout. 
+INTERLOCUTEUR 2 Pour être sûr qu'il n'y ait pas la moindre éclaboussure.
+INTERLOCUTEUR 1 Rien du tout.
+INTERLOCUTEUR 2 Pendant qu'Interlocuteur 1 finit de mouliner la feijoada là-bas, je vais en profiter pour faire revenir un oignon ici.
+INTERLOCUTEUR 2 C'est la consistance idéale, non, Interlocuteur 1 ? On obtient presque la texture d'un velouté de haricots bien épais, c'est ça ? [cite: 128]
+INTERLOCUTEUR 1 Oui, tout à fait. [cite: 129]
+INTERLOCUTEUR 2 Maintenant, on va tout mélanger. Vas-y, verse, Interlocuteur 1.
+INTERLOCUTEUR 1 On laisse juste frémir un tout petit peu et ce sera bon.
+INTERLOCUTEUR 2 Ça bout déjà par ici. À présent, on incorpore la farine de manioc, c'est bien ça ?
+INTERLOCUTEUR 1 C'est exact. [cite: 130]
+INTERLOCUTEUR 2 C'est un peu comme préparer une sorte de "tutu" bien épais.
+INTERLOCUTEUR 1 Une purée bien consistante.
+INTERLOCUTEUR 2 Vas-y, donne tout.
+INTERLOCUTEUR 2 Ça s'épaissit bien.
+INTERLOCUTEUR 1 Le grand secret des bonnes croquettes de feijoada, c'est le beurre. Maintenant, il faut assaisonner avec le sel et le poivre, n'est-ce pas tout le monde ? [cite: 131]
+INTERLOCUTEUR 2 Du sel et une pointe de poivre noir. [cite: 132]
+INTERLOCUTEUR 1 C'est parfait. À présent, je vais transvaser la pâte sur une plaque et bien l'étaler pour qu'elle refroidisse beaucoup plus vite.
+INTERLOCUTEUR 2 La pâte a bien refroidi, Interlocuteur 1. Comment procède-t-on ? On va façonner les croquettes. [cite: 133]
+INTERLOCUTEUR 1 Tu prélèves une petite portion de pâte...
+INTERLOCUTEUR 2 Une petite portion.
+INTERLOCUTEUR 1 ...et le coup de main est exactement le même que pour rouler un brigadeiro.
+INTERLOCUTEUR 2 Tout à fait comme pour former un brigadeiro.
+INTERLOCUTEUR 1 On malaxe, on roule bien en boule entre les paumes et on donne un petit coup pour aplatir.
+INTERLOCUTEUR 2 On aplatit légèrement.
+INTERLOCUTEUR 1 Et on ajuste bien les contours.
+INTERLOCUTEUR 2 Un peu comme si on façonnait un mini-steak de hamburger bien rond, non ? [cite: 134]
+
+Tokens: [[0, "INTERLOCUTEUR"], [1, "2"], [2, "Interlocuteur"], [3, "1"], [4, ","], [5, "les"], [6, "croquettes"], [7, "de"], [8, "feijoada"], [9, "..."], [10, "C'"], [11, "est"], [12, "une"], [13, "magnifique"], [14, "preuve"], [15, "de"], [16, "la"], [17, "créativité"], [18, "brésilienne"], [19, ","], [20, "non"], [21, "?"], [22, "INTERLOCUTEUR"], [23, "1"], [24, "C'"], [25, "est"], [26, "totalement"], [27, "vrai"], [28, "."], [29, "INTERLOCUTEUR"], [30, "2"], [31, "Et"], [32, "en"], [33, "plus"], [34, ","], [35, "c'"], [36, "est"], [37, "un"], [38, "jeu"], [39, "d'"], [40, "enfant"], [41, "à"], [42, "faire"], [43, "puisque"], [44, "c'"], [45, "est"], [46, "une"], [47, "recette"], [48, "anti-gaspillage"], [49, "par"], [50, "excellence"], [51, "."], [52, "INTERLOCUTEUR"], [53, "1"], [54, "C'"], [55, "est"], [56, "l'"], [57, "utilisation"], [58, "magique"], [59, "des"], [60, "restes"], [61, "de"], [62, "la"], [63, "feijoada"], [64, ";"], [65, "s'"], [66, "il"], [67, "vous"], [68, "en"], [69, "reste"], [70, ","], [71, "hop"], [72, ","], [73, "vous"], [74, "en"], [75, "faites"], [76, "de"], [77, "délicieuses"], [78, "croquettes"], [79, "."], [80, "INTERLOCUTEUR"], [81, "2"], [82, "Et"], [83, "pour"], [84, "tout"], [85, "dire"], [86, ","], [87, "c'"], [88, "est"], [89, "presque"], [90, "encore"], [91, "meilleur"], [92, "!"], [93, "INTERLOCUTEUR"], [94, "1"], [95, "Ah"], [96, "oui"], [97, ","], [98, "c'"], [99, "est"], [100, "clair"], [101, ","], [102, "carrément"], [103, "!"], [104, "INTERLOCUTEUR"], [105, "2"], [106, "Alors"], [107, "on"], [108, "s'"], [109, "y"], [110, "met"], [111, "."], [112, "Bon"], [113, ","], [114, "tout"], [115, "commence"], [116, "bien"], [117, "sûr"], [118, "avec"], [119, "les"], [120, "restes"], [121, "de"], [122, "la"], [123, "feijoada"], [124, ","], [125, "n'"], [126, "est"], [127, "-ce"], [128, "pas"], [129, ","], [130, "Interlocuteur"], [131, "1"], [132, "?"], [133, "["], [134, "cite"], [135, ":"], [136, "125"], [137, ","], [138, "126"], [139, "]"], [140, "INTERLOCUTEUR"], [141, "1"], [142, "Avec"], [143, "les"], [144, "restes"], [145, "de"], [146, "la"], [147, "feijoada"], [148, "."], [149, "["], [150, "cite"], [151, ":"], [152, "126"], [153, "]"], [154, "INTERLOCUTEUR"], [155, "2"], [156, "Ensuite"], [157, ","], [158, "direction"], [159, "le"], [160, "mixeur"], [161, "."], [162, "INTERLOCUTEUR"], [163, "1"], [164, "Au"], [165, "mixeur"], [166, "."], [167, "INTERLOCUTEUR"], [168, "2"], [169, "Par"], [170, "contre"], [171, ","], [172, "il"], [173, "est"], [174, "capital"], [175, "de"], [176, "faire"], [177, "ça"], [178, "à"], [179, "la"], [180, "maison"], [181, "avec"], [182, "un"], [183, "bol"], [184, "de"], [185, "mixeur"], [186, "parfaitement"], [187, "fermé"], [188, "et"], [189, "avec"], [190, "une"], [191, "feijoada"], [192, "complètement"], [193, "refroidie"], [194, ","], [195, "pas"], [196, "vrai"], [197, ","], [198, "Interlocuteur"], [199, "1"], [200, "?"], [201, "INTERLOCUTEUR"], [202, "1"], [203, "Froide"], [204, ","], [205, "oui"], [206, "."], [207, "La"], [208, "petite"], [209, "astuce"], [210, "consiste"], [211, "également"], [212, "à"], [213, "placer"], [214, "un"], [215, "film"], [216, "plastique"], [217, "étirable"], [218, "sous"], [219, "le"], [220, "couvercle"], [221, "pour"], [222, "bien"], [223, "sceller"], [224, "le"], [225, "tout"], [226, "."], [227, "INTERLOCUTEUR"], [228, "2"], [229, "Pour"], [230, "être"], [231, "sûr"], [232, "qu'"], [233, "il"], [234, "n'"], [235, "y"], [236, "ait"], [237, "pas"], [238, "la"], [239, "moindre"], [240, "éclaboussure"], [241, "."], [242, "INTERLOCUTEUR"], [243, "1"], [244, "Rien"], [245, "du"], [246, "tout"], [247, "."], [248, "INTERLOCUTEUR"], [249, "2"], [250, "Pendant"], [251, "qu'"], [252, "Interlocuteur"], [253, "1"], [254, "finit"], [255, "de"], [256, "mouliner"], [257, "la"], [258, "feijoada"], [259, "là-bas"], [260, ","], [261, "je"], [262, "vais"], [263, "en"], [264, "profiter"], [265, "pour"], [266, "faire"], [267, "revenir"], [268, "un"], [269, "oignon"], [270, "ici"], [271, "."], [272, "INTERLOCUTEUR"], [273, "2"], [274, "C'"], [275, "est"], [276, "la"], [277, "consistance"], [278, "idéale"], [279, ","], [280, "non"], [281, ","], [282, "Interlocuteur"], [283, "1"], [284, "?"], [285, "On"], [286, "obtient"], [287, "presque"], [288, "la"], [289, "texture"], [290, "d'"], [291, "un"], [292, "velouté"], [293, "de"], [294, "haricots"], [295, "bien"], [296, "épais"], [297, ","], [298, "c'"], [299, "est"], [300, "ça"], [301, "?"], [302, "["], [303, "cite"], [304, ":"], [305, "128"], [306, "]"], [307, "INTERLOCUTEUR"], [308, "1"], [309, "Oui"], [310, ","], [311, "tout"], [312, "à"], [313, "fait"], [314, "."], [315, "["], [316, "cite"], [317, ":"], [318, "129"], [319, "]"], [320, "INTERLOCUTEUR"], [321, "2"], [322, "Maintenant"], [323, ","], [324, "on"], [325, "va"], [326, "tout"], [327, "mélanger"], [328, "."], [329, "Vas"], [330, "-y"], [331, ","], [332, "verse"], [333, ","], [334, "Interlocuteur"], [335, "1"], [336, "."], [337, "INTERLOCUTEUR"], [338, "1"], [339, "On"], [340, "laisse"], [341, "juste"], [342, "frémir"], [343, "un"], [344, "tout"], [345, "petit"], [346, "peu"], [347, "et"], [348, "ce"], [349, "sera"], [350, "bon"], [351, "."], [352, "INTERLOCUTEUR"], [353, "2"], [354, "Ça"], [355, "bout"], [356, "déjà"], [357, "par"], [358, "ici"], [359, "."], [360, "À"], [361, "présent"], [362, ","], [363, "on"], [364, "incorpore"], [365, "la"], [366, "farine"], [367, "de"], [368, "manioc"], [369, ","], [370, "c'"], [371, "est"], [372, "bien"], [373, "ça"], [374, "?"], [375, "INTERLOCUTEUR"], [376, "1"], [377, "C'"], [378, "est"], [379, "exact"], [380, "."], [381, "["], [382, "cite"], [383, ":"], [384, "130"], [385, "]"], [386, "INTERLOCUTEUR"], [387, "2"], [388, "C'"], [389, "est"], [390, "un"], [391, "peu"], [392, "comme"], [393, "préparer"], [394, "une"], [395, "sorte"], [396, "de"], [397, "\""], [398, "tutu"], [399, "\""], [400, "bien"], [401, "épais"], [402, "."], [403, "INTERLOCUTEUR"], [404, "1"], [405, "Une"], [406, "purée"], [407, "bien"], [408, "consistante"], [409, "."], [410, "INTERLOCUTEUR"], [411, "2"], [412, "Vas"], [413, "-y"], [414, ","], [415, "donne"], [416, "tout"], [417, "."], [418, "INTERLOCUTEUR"], [419, "2"], [420, "Ça"], [421, "s'"], [422, "épaissit"], [423, "bien"], [424, "."], [425, "INTERLOCUTEUR"], [426, "1"], [427, "Le"], [428, "grand"], [429, "secret"], [430, "des"], [431, "bonnes"], [432, "croquettes"], [433, "de"], [434, "feijoada"], [435, ","], [436, "c'"], [437, "est"], [438, "le"], [439, "beurre"], [440, "."], [441, "Maintenant"], [442, ","], [443, "il"], [444, "faut"], [445, "assaisonner"], [446, "avec"], [447, "le"], [448, "sel"], [449, "et"], [450, "le"], [451, "poivre"], [452, ","], [453, "n'"], [454, "est"], [455, "-ce"], [456, "pas"], [457, "tout"], [458, "le"], [459, "monde"], [460, "?"], [461, "["], [462, "cite"], [463, ":"], [464, "131"], [465, "]"], [466, "INTERLOCUTEUR"], [467, "2"], [468, "Du"], [469, "sel"], [470, "et"], [471, "une"], [472, "pointe"], [473, "de"], [474, "poivre"], [475, "noir"], [476, "."], [477, "["], [478, "cite"], [479, ":"], [480, "132"], [481, "]"], [482, "INTERLOCUTEUR"], [483, "1"], [484, "C'"], [485, "est"], [486, "parfait"], [487, "."], [488, "À"], [489, "présent"], [490, ","], [491, "je"], [492, "vais"], [493, "transvaser"], [494, "la"], [495, "pâte"], [496, "sur"], [497, "une"], [498, "plaque"], [499, "et"], [500, "bien"], [501, "l'"], [502, "étaler"], [503, "pour"], [504, "qu'"], [505, "elle"], [506, "refroidisse"], [507, "beaucoup"], [508, "plus"], [509, "vite"], [510, "."], [511, "INTERLOCUTEUR"], [512, "2"], [513, "La"], [514, "pâte"], [515, "a"], [516, "bien"], [517, "refroidi"], [518, ","], [519, "Interlocuteur"], [520, "1"], [521, "."], [522, "Comment"], [523, "procède"], [524, "-t-on"], [525, "?"], [526, "On"], [527, "va"], [528, "façonner"], [529, "les"], [530, "croquettes"], [531, "."], [532, "["], [533, "cite"], [534, ":"], [535, "133"], [536, "]"], [537, "INTERLOCUTEUR"], [538, "1"], [539, "Tu"], [540, "prélèves"], [541, "une"], [542, "petite"], [543, "portion"], [544, "de"], [545, "pâte"], [546, "..."], [547, "INTERLOCUTEUR"], [548, "2"], [549, "Une"], [550, "petite"], [551, "portion"], [552, "."], [553, "INTERLOCUTEUR"], [554, "1"], [555, "...et"], [556, "le"], [557, "coup"], [558, "de"], [559, "main"], [560, "est"], [561, "exactement"], [562, "le"], [563, "même"], [564, "que"], [565, "pour"], [566, "rouler"], [567, "un"], [568, "brigadeiro"], [569, "."], [570, "INTERLOCUTEUR"], [571, "2"], [572, "Tout"], [573, "à"], [574, "fait"], [575, "comme"], [576, "pour"], [577, "former"], [578, "un"], [579, "brigadeiro"], [580, "."], [581, "INTERLOCUTEUR"], [582, "1"], [583, "On"], [584, "malaxe"], [585, ","], [586, "on"], [587, "roule"], [588, "bien"], [589, "en"], [590, "boule"], [591, "entre"], [592, "les"], [593, "paumes"], [594, "et"], [595, "on"], [596, "donne"], [597, "un"], [598, "petit"], [599, "coup"], [600, "pour"], [601, "aplatir"], [602, "."], [603, "INTERLOCUTEUR"], [604, "2"], [605, "On"], [606, "aplatit"], [607, "légèrement"], [608, "."], [609, "INTERLOCUTEUR"], [610, "1"], [611, "Et"], [612, "on"], [613, "ajuste"], [614, "bien"], [615, "les"], [616, "contours"], [617, "."], [618, "INTERLOCUTEUR"], [619, "2"], [620, "Un"], [621, "peu"], [622, "comme"], [623, "si"], [624, "on"], [625, "façonnait"], [626, "un"], [627, "mini-steak"], [628, "de"], [629, "hamburger"], [630, "bien"], [631, "rond"], [632, ","], [633, "non"], [634, "?"], [635, "["], [636, "cite:"], [637, "134"], [638, "]"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

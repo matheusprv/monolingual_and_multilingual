@@ -1,0 +1,40 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Dear Mr. Minister,
+As I write this, I still don't know who has been chosen for the Education portfolio. That, however, is beside the point. I'm not writing to approve or criticize whoever ends up holding that position in the new government.
+This letter is addressed to you, whoever you are, to make one thing clear: no matter which party you come from, whether you've served as a university president or dean, there is one thing you simply cannot do without — a deep, unwavering love for education.
+I won't be serving as your advisor, Mr. Minister, but I hold a role within your ministry that is far more important than any other. I am, perhaps like you, a teacher.
+And all the problems with education at the municipal, state, and federal levels — in both public and private institutions — are problems that, while they do relate to socioeconomic and family circumstances, are ultimately rooted in the school environment itself and, in particular, in the person of each individual teacher.
+
+Tokens: [[0, "Dear"], [1, "Mr."], [2, "Minister"], [3, ","], [4, "As"], [5, "I"], [6, "write"], [7, "this"], [8, ","], [9, "I"], [10, "still"], [11, "don't"], [12, "know"], [13, "who"], [14, "has"], [15, "been"], [16, "chosen"], [17, "for"], [18, "the"], [19, "Education"], [20, "portfolio"], [21, "."], [22, "That"], [23, ","], [24, "however"], [25, ","], [26, "is"], [27, "beside"], [28, "the"], [29, "point"], [30, "."], [31, "I'm"], [32, "not"], [33, "writing"], [34, "to"], [35, "approve"], [36, "or"], [37, "criticize"], [38, "whoever"], [39, "ends"], [40, "up"], [41, "holding"], [42, "that"], [43, "position"], [44, "in"], [45, "the"], [46, "new"], [47, "government"], [48, "."], [49, "This"], [50, "letter"], [51, "is"], [52, "addressed"], [53, "to"], [54, "you"], [55, ","], [56, "whoever"], [57, "you"], [58, "are"], [59, ","], [60, "to"], [61, "make"], [62, "one"], [63, "thing"], [64, "clear"], [65, ":"], [66, "no"], [67, "matter"], [68, "which"], [69, "party"], [70, "you"], [71, "come"], [72, "from"], [73, ","], [74, "whether"], [75, "you've"], [76, "served"], [77, "as"], [78, "a"], [79, "university"], [80, "president"], [81, "or"], [82, "dean"], [83, ","], [84, "there"], [85, "is"], [86, "one"], [87, "thing"], [88, "you"], [89, "simply"], [90, "cannot"], [91, "do"], [92, "without"], [93, "—"], [94, "a"], [95, "deep"], [96, ","], [97, "unwavering"], [98, "love"], [99, "for"], [100, "education"], [101, "."], [102, "I"], [103, "won't"], [104, "be"], [105, "serving"], [106, "as"], [107, "your"], [108, "advisor"], [109, ","], [110, "Mr."], [111, "Minister"], [112, ","], [113, "but"], [114, "I"], [115, "hold"], [116, "a"], [117, "role"], [118, "within"], [119, "your"], [120, "ministry"], [121, "that"], [122, "is"], [123, "far"], [124, "more"], [125, "important"], [126, "than"], [127, "any"], [128, "other"], [129, "."], [130, "I"], [131, "am"], [132, ","], [133, "perhaps"], [134, "like"], [135, "you"], [136, ","], [137, "a"], [138, "teacher"], [139, "."], [140, "And"], [141, "all"], [142, "the"], [143, "problems"], [144, "with"], [145, "education"], [146, "at"], [147, "the"], [148, "municipal"], [149, ","], [150, "state"], [151, ","], [152, "and"], [153, "federal"], [154, "levels"], [155, "—"], [156, "in"], [157, "both"], [158, "public"], [159, "and"], [160, "private"], [161, "institutions"], [162, "—"], [163, "are"], [164, "problems"], [165, "that"], [166, ","], [167, "while"], [168, "they"], [169, "do"], [170, "relate"], [171, "to"], [172, "socioeconomic"], [173, "and"], [174, "family"], [175, "circumstances"], [176, ","], [177, "are"], [178, "ultimately"], [179, "rooted"], [180, "in"], [181, "the"], [182, "school"], [183, "environment"], [184, "itself"], [185, "and"], [186, ","], [187, "in"], [188, "particular"], [189, ","], [190, "in"], [191, "the"], [192, "person"], [193, "of"], [194, "each"], [195, "individual"], [196, "teacher"], [197, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

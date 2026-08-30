@@ -1,0 +1,46 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Pâte à sucre (pasta americana)
+
+Bonsoir à tous !
+Je m'appelle Tatiana, je suis nouvelle sur le forum et j'ai une question :
+j'adore les décorations en pâte à sucre et j'ai toujours voulu apprendre, mais j'ai déménagé aux États-Unis. Je cherche des cours ici, mais je ne sais pas comment on appelle la pâte à sucre. J'ai cherché sur plusieurs sites et j'ai trouvé au moins cinq types de pâtes différentes. Est-ce que quelqu'un sait comment ça s'appelle par ici ? Je sais que tout ce qui sert à décorer les gâteaux s'appelle « icing » ou quelque chose dans le genre, mais la pâte à sucre, je n'arrive pas à la trouver.
+Si quelqu'un peut m'aider, je lui en serais reconnaissante. Merci d'avance à tout le monde.
+
+RE : Pâte à sucre
+
+Salut Tati, bienvenue sur le forum !
+La pâte à sucre a plusieurs noms... je crois que le plus répandu chez les Américains, c'est le « rolled fondant ». Il y a aussi le « gum paste ». Les Britanniques utilisent plutôt « sugarcraft ». Cherche ces termes sur Google et tu vas tomber sur des tas de sites avec des infos, des cours, du matériel, etc.
+
+Tokens: [[0, "Pâte"], [1, "à"], [2, "sucre"], [3, "("], [4, "pasta"], [5, "americana"], [6, ")"], [7, "Bonsoir"], [8, "à"], [9, "tous"], [10, "!"], [11, "Je"], [12, "m'"], [13, "appelle"], [14, "Tatiana"], [15, ","], [16, "je"], [17, "suis"], [18, "nouvelle"], [19, "sur"], [20, "le"], [21, "forum"], [22, "et"], [23, "j'"], [24, "ai"], [25, "une"], [26, "question"], [27, ":"], [28, "j'"], [29, "adore"], [30, "les"], [31, "décorations"], [32, "en"], [33, "pâte"], [34, "à"], [35, "sucre"], [36, "et"], [37, "j'"], [38, "ai"], [39, "toujours"], [40, "voulu"], [41, "apprendre"], [42, ","], [43, "mais"], [44, "j'"], [45, "ai"], [46, "déménagé"], [47, "aux"], [48, "États-Unis"], [49, "."], [50, "Je"], [51, "cherche"], [52, "des"], [53, "cours"], [54, "ici"], [55, ","], [56, "mais"], [57, "je"], [58, "ne"], [59, "sais"], [60, "pas"], [61, "comment"], [62, "on"], [63, "appelle"], [64, "la"], [65, "pâte"], [66, "à"], [67, "sucre"], [68, "."], [69, "J'"], [70, "ai"], [71, "cherché"], [72, "sur"], [73, "plusieurs"], [74, "sites"], [75, "et"], [76, "j'"], [77, "ai"], [78, "trouvé"], [79, "au"], [80, "moins"], [81, "cinq"], [82, "types"], [83, "de"], [84, "pâtes"], [85, "différentes"], [86, "."], [87, "Est"], [88, "-ce"], [89, "que"], [90, "quelqu'un"], [91, "sait"], [92, "comment"], [93, "ça"], [94, "s'"], [95, "appelle"], [96, "par"], [97, "ici"], [98, "?"], [99, "Je"], [100, "sais"], [101, "que"], [102, "tout"], [103, "ce"], [104, "qui"], [105, "sert"], [106, "à"], [107, "décorer"], [108, "les"], [109, "gâteaux"], [110, "s'"], [111, "appelle"], [112, "«"], [113, "icing"], [114, "»"], [115, "ou"], [116, "quelque"], [117, "chose"], [118, "dans"], [119, "le"], [120, "genre"], [121, ","], [122, "mais"], [123, "la"], [124, "pâte"], [125, "à"], [126, "sucre"], [127, ","], [128, "je"], [129, "n'"], [130, "arrive"], [131, "pas"], [132, "à"], [133, "la"], [134, "trouver"], [135, "."], [136, "Si"], [137, "quelqu'un"], [138, "peut"], [139, "m'"], [140, "aider"], [141, ","], [142, "je"], [143, "lui"], [144, "en"], [145, "serais"], [146, "reconnaissante"], [147, "."], [148, "Merci"], [149, "d'"], [150, "avance"], [151, "à"], [152, "tout"], [153, "le"], [154, "monde"], [155, "."], [156, "RE"], [157, ":"], [158, "Pâte"], [159, "à"], [160, "sucre"], [161, "Salut"], [162, "Tati"], [163, ","], [164, "bienvenue"], [165, "sur"], [166, "le"], [167, "forum"], [168, "!"], [169, "La"], [170, "pâte"], [171, "à"], [172, "sucre"], [173, "a"], [174, "plusieurs"], [175, "noms"], [176, "..."], [177, "je"], [178, "crois"], [179, "que"], [180, "le"], [181, "plus"], [182, "répandu"], [183, "chez"], [184, "les"], [185, "Américains"], [186, ","], [187, "c'"], [188, "est"], [189, "le"], [190, "«"], [191, "rolled"], [192, "fondant"], [193, "»"], [194, "."], [195, "Il"], [196, "y"], [197, "a"], [198, "aussi"], [199, "le"], [200, "«"], [201, "gum"], [202, "paste"], [203, "»"], [204, "."], [205, "Les"], [206, "Britanniques"], [207, "utilisent"], [208, "plutôt"], [209, "«"], [210, "sugarcraft"], [211, "»"], [212, "."], [213, "Cherche"], [214, "ces"], [215, "termes"], [216, "sur"], [217, "Google"], [218, "et"], [219, "tu"], [220, "vas"], [221, "tomber"], [222, "sur"], [223, "des"], [224, "tas"], [225, "de"], [226, "sites"], [227, "avec"], [228, "des"], [229, "infos"], [230, ","], [231, "des"], [232, "cours"], [233, ","], [234, "du"], [235, "matériel"], [236, ","], [237, "etc"], [238, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

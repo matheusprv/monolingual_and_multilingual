@@ -1,0 +1,44 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Basta de magia
+V – Sus libros hablan cada vez menos de ocultismo. ¿Se sigue considerando un mago?
+C – El concepto de mago se refiere más a una percepción del universo. Es una forma de mirar al mundo que trasciende la realidad concreta. Pero varios de mis libros no abordan en absoluto la magia. Mis libros tratan de cuestiones filosóficas.
+V – A su juicio, ¿sería ese su punto de intersección común?
+C – El punto común es algo llamado estilo. Desde mi primer libro hasta hoy, siempre he mantenido un estilo extremadamente directo y conciso. Sigo despojando, despojando, hasta que me acerco a la esencia de las cosas. Al principio, esto fue malentendido. La gente pensaba que era superficial. Pero es precisamente esta característica la que ha dado a mis libros su ventaja única.
+V – Después de haber obtenido tal éxito, ¿le sigue molestando la crítica?
+C – Soy un escritor profundamente polarizador: la gente me ama o me detiene. Estoy acostumbrado. Pero la única crítica que me hiere no está dirigida contra mí personalmente. Es cuando alguien dice que mis lectores son estúpidos. No quiero generalizar, pero el totalitarismo cultural existe ciertamente en este país.
+V – ¿Se siente rechazado?
+C – Creo que los que no entran en un cierto estándar son rechazados, un estándar que no valora sino las cosas difíciles de entender y difíciles de acceder. Afortunadamente, esto es solo con la teoría crítica; ya están desapegados de la realidad. Las personas que escriben estos artículos se reúnen en torres de marfil y no saben lo que pasa a su alrededor. Piensan dominar la sala, creyendo que todo el mundo les escucha.
+
+Tokens: [[0, "Basta"], [1, "de"], [2, "magia"], [3, "V"], [4, "–"], [5, "Sus"], [6, "libros"], [7, "hablan"], [8, "cada"], [9, "vez"], [10, "menos"], [11, "de"], [12, "ocultismo"], [13, "."], [14, "¿"], [15, "Se"], [16, "sigue"], [17, "considerando"], [18, "un"], [19, "mago"], [20, "?"], [21, "C"], [22, "–"], [23, "El"], [24, "concepto"], [25, "de"], [26, "mago"], [27, "se"], [28, "refiere"], [29, "más"], [30, "a"], [31, "una"], [32, "percepción"], [33, "del"], [34, "universo"], [35, "."], [36, "Es"], [37, "una"], [38, "forma"], [39, "de"], [40, "mirar"], [41, "al"], [42, "mundo"], [43, "que"], [44, "trasciende"], [45, "la"], [46, "realidad"], [47, "concreta"], [48, "."], [49, "Pero"], [50, "varios"], [51, "de"], [52, "mis"], [53, "libros"], [54, "no"], [55, "abordan"], [56, "en"], [57, "absoluto"], [58, "la"], [59, "magia"], [60, "."], [61, "Mis"], [62, "libros"], [63, "tratan"], [64, "de"], [65, "cuestiones"], [66, "filosóficas"], [67, "."], [68, "V"], [69, "–"], [70, "A"], [71, "su"], [72, "juicio"], [73, ","], [74, "¿"], [75, "sería"], [76, "ese"], [77, "su"], [78, "punto"], [79, "de"], [80, "intersección"], [81, "común"], [82, "?"], [83, "C"], [84, "–"], [85, "El"], [86, "punto"], [87, "común"], [88, "es"], [89, "algo"], [90, "llamado"], [91, "estilo"], [92, "."], [93, "Desde"], [94, "mi"], [95, "primer"], [96, "libro"], [97, "hasta"], [98, "hoy"], [99, ","], [100, "siempre"], [101, "he"], [102, "mantenido"], [103, "un"], [104, "estilo"], [105, "extremadamente"], [106, "directo"], [107, "y"], [108, "conciso"], [109, "."], [110, "Sigo"], [111, "despojando"], [112, ","], [113, "despojando"], [114, ","], [115, "hasta"], [116, "que"], [117, "me"], [118, "acerco"], [119, "a"], [120, "la"], [121, "esencia"], [122, "de"], [123, "las"], [124, "cosas"], [125, "."], [126, "Al"], [127, "principio"], [128, ","], [129, "esto"], [130, "fue"], [131, "malentendido"], [132, "."], [133, "La"], [134, "gente"], [135, "pensaba"], [136, "que"], [137, "era"], [138, "superficial"], [139, "."], [140, "Pero"], [141, "es"], [142, "precisamente"], [143, "esta"], [144, "característica"], [145, "la"], [146, "que"], [147, "ha"], [148, "dado"], [149, "a"], [150, "mis"], [151, "libros"], [152, "su"], [153, "ventaja"], [154, "única"], [155, "."], [156, "V"], [157, "–"], [158, "Después"], [159, "de"], [160, "haber"], [161, "obtenido"], [162, "tal"], [163, "éxito"], [164, ","], [165, "¿"], [166, "le"], [167, "sigue"], [168, "molestando"], [169, "la"], [170, "crítica"], [171, "?"], [172, "C"], [173, "–"], [174, "Soy"], [175, "un"], [176, "escritor"], [177, "profundamente"], [178, "polarizador"], [179, ":"], [180, "la"], [181, "gente"], [182, "me"], [183, "ama"], [184, "o"], [185, "me"], [186, "detiene"], [187, "."], [188, "Estoy"], [189, "acostumbrado"], [190, "."], [191, "Pero"], [192, "la"], [193, "única"], [194, "crítica"], [195, "que"], [196, "me"], [197, "hiere"], [198, "no"], [199, "está"], [200, "dirigida"], [201, "contra"], [202, "mí"], [203, "personalmente"], [204, "."], [205, "Es"], [206, "cuando"], [207, "alguien"], [208, "dice"], [209, "que"], [210, "mis"], [211, "lectores"], [212, "son"], [213, "estúpidos"], [214, "."], [215, "No"], [216, "quiero"], [217, "generalizar"], [218, ","], [219, "pero"], [220, "el"], [221, "totalitarismo"], [222, "cultural"], [223, "existe"], [224, "ciertamente"], [225, "en"], [226, "este"], [227, "país"], [228, "."], [229, "V"], [230, "–"], [231, "¿"], [232, "Se"], [233, "siente"], [234, "rechazado"], [235, "?"], [236, "C"], [237, "–"], [238, "Creo"], [239, "que"], [240, "los"], [241, "que"], [242, "no"], [243, "entran"], [244, "en"], [245, "un"], [246, "cierto"], [247, "estándar"], [248, "son"], [249, "rechazados"], [250, ","], [251, "un"], [252, "estándar"], [253, "que"], [254, "no"], [255, "valora"], [256, "sino"], [257, "las"], [258, "cosas"], [259, "difíciles"], [260, "de"], [261, "entender"], [262, "y"], [263, "difíciles"], [264, "de"], [265, "acceder"], [266, "."], [267, "Afortunadamente"], [268, ","], [269, "esto"], [270, "es"], [271, "solo"], [272, "con"], [273, "la"], [274, "teoría"], [275, "crítica"], [276, ";"], [277, "ya"], [278, "están"], [279, "desapegados"], [280, "de"], [281, "la"], [282, "realidad"], [283, "."], [284, "Las"], [285, "personas"], [286, "que"], [287, "escriben"], [288, "estos"], [289, "artículos"], [290, "se"], [291, "reúnen"], [292, "en"], [293, "torres"], [294, "de"], [295, "marfil"], [296, "y"], [297, "no"], [298, "saben"], [299, "lo"], [300, "que"], [301, "pasa"], [302, "a"], [303, "su"], [304, "alrededor"], [305, "."], [306, "Piensan"], [307, "dominar"], [308, "la"], [309, "sala"], [310, ","], [311, "creyendo"], [312, "que"], [313, "todo"], [314, "el"], [315, "mundo"], [316, "les"], [317, "escucha"], [318, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

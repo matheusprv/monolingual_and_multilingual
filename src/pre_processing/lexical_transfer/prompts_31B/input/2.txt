@@ -1,0 +1,38 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Have you noticed how different your parents have been since the crime on Zacarias de Góis Street? If you haven't — or if they've been working hard to make sure you didn't — let me tell you something: they are completely at a loss, and on top of that, they're suffering tremendously.
+No, it's not your fault. It's because of that terrible event that happened recently in the Campo Belo neighborhood of São Paulo — an event that managed to shake every belief, value, and idea your parents had spent years and years building up about the right way to raise children. All because one couple did everything they were supposed to do... and it went horribly wrong — fatally wrong.
+You've probably already picked up on the fact that the media is full of experts trying to explain what happened, each one essentially trying to tell parents the same thing: "don't worry, this is an isolated case, it won't happen to you."
+
+Tokens: [[0, "Have"], [1, "you"], [2, "noticed"], [3, "how"], [4, "different"], [5, "your"], [6, "parents"], [7, "have"], [8, "been"], [9, "since"], [10, "the"], [11, "crime"], [12, "on"], [13, "Zacarias"], [14, "de"], [15, "Góis"], [16, "Street"], [17, "?"], [18, "If"], [19, "you"], [20, "haven't"], [21, "—"], [22, "or"], [23, "if"], [24, "they've"], [25, "been"], [26, "working"], [27, "hard"], [28, "to"], [29, "make"], [30, "sure"], [31, "you"], [32, "didn't"], [33, "—"], [34, "let"], [35, "me"], [36, "tell"], [37, "you"], [38, "something"], [39, ":"], [40, "they"], [41, "are"], [42, "completely"], [43, "at"], [44, "a"], [45, "loss"], [46, ","], [47, "and"], [48, "on"], [49, "top"], [50, "of"], [51, "that"], [52, ","], [53, "they're"], [54, "suffering"], [55, "tremendously"], [56, "."], [57, "No"], [58, ","], [59, "it's"], [60, "not"], [61, "your"], [62, "fault"], [63, "."], [64, "It's"], [65, "because"], [66, "of"], [67, "that"], [68, "terrible"], [69, "event"], [70, "that"], [71, "happened"], [72, "recently"], [73, "in"], [74, "the"], [75, "Campo"], [76, "Belo"], [77, "neighborhood"], [78, "of"], [79, "São"], [80, "Paulo"], [81, "—"], [82, "an"], [83, "event"], [84, "that"], [85, "managed"], [86, "to"], [87, "shake"], [88, "every"], [89, "belief"], [90, ","], [91, "value"], [92, ","], [93, "and"], [94, "idea"], [95, "your"], [96, "parents"], [97, "had"], [98, "spent"], [99, "years"], [100, "and"], [101, "years"], [102, "building"], [103, "up"], [104, "about"], [105, "the"], [106, "right"], [107, "way"], [108, "to"], [109, "raise"], [110, "children"], [111, "."], [112, "All"], [113, "because"], [114, "one"], [115, "couple"], [116, "did"], [117, "everything"], [118, "they"], [119, "were"], [120, "supposed"], [121, "to"], [122, "do"], [123, "..."], [124, "and"], [125, "it"], [126, "went"], [127, "horribly"], [128, "wrong"], [129, "—"], [130, "fatally"], [131, "wrong"], [132, "."], [133, "You've"], [134, "probably"], [135, "already"], [136, "picked"], [137, "up"], [138, "on"], [139, "the"], [140, "fact"], [141, "that"], [142, "the"], [143, "media"], [144, "is"], [145, "full"], [146, "of"], [147, "experts"], [148, "trying"], [149, "to"], [150, "explain"], [151, "what"], [152, "happened"], [153, ","], [154, "each"], [155, "one"], [156, "essentially"], [157, "trying"], [158, "to"], [159, "tell"], [160, "parents"], [161, "the"], [162, "same"], [163, "thing"], [164, ":"], [165, "\""], [166, "don't"], [167, "worry"], [168, ","], [169, "this"], [170, "is"], [171, "an"], [172, "isolated"], [173, "case"], [174, ","], [175, "it"], [176, "won't"], [177, "happen"], [178, "to"], [179, "you"], [180, "."], [181, "\""]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

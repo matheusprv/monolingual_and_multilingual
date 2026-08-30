@@ -1,0 +1,80 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: M: Oi, Ney! Open this door, Ney!
+
+P: Open it yourself! I'm not your servant!
+
+M: Ugh... you're closer, you idiot!
+
+P: And you're standing up, you great lump, pretending to be paralysed.
+
+M: Honestly, completely useless...
+
+(...)
+
+R: You hear the way she talks? I don't get what she's got against Vani.
+
+P: Hold on — you're not about to start a row with your mum now, are you?
+
+M: You stay out of it! Don't start...
+
+R: No, I am going to start. I'd like to know where this hatred of Vani comes from. Where does it come from?
+
+M: Oh, you want to know? Fine, let's go alphabetically: a) she straightens her hair, opens her mouth too wide when she laughs, loves grime, (...) what else? And... poor background. Right, on to 'b'.
+
+R: Come on, can we change the subject? Something more pleasant. Can we talk about something else? Is that possible? Hey, Dad, what about this brain bubble of yours — tell us about it.
+
+P: Well...
+
+(...)
+
+R: There's no bubble?
+
+M: Son, the doctor said the situation is extremely delicate.
+
+R: Yes, but hang on — is there a bubble or isn't there?
+
+P: The way you ask... let Dad explain: Dad went for a blood test and had high cholesterol. And the doctor had the misfortune — really his own misfortune — to say there was a possibility of blocked arteries and a bubble forming in my brain.
+
+R: But what does that mean? A possibility? You mean there's a chance? Yeah?
+
+M: A very high one! He eats so much fried food.
+
+R: Hang on, so you're saying nobody's actually dying here? I came all this way for nothing?
+
+M: Oh no, that's relative. We're all dying, it just depends on when, doesn't it?
+
+P: Let's get to the point. Your mother's afraid Vani is going to ask for half my inheritance. That's what this is about.
+
+Tokens: [[0, "M"], [1, ":"], [2, "Oi"], [3, ","], [4, "Ney"], [5, "!"], [6, "Open"], [7, "this"], [8, "door"], [9, ","], [10, "Ney"], [11, "!"], [12, "P"], [13, ":"], [14, "Open"], [15, "it"], [16, "yourself"], [17, "!"], [18, "I'm"], [19, "not"], [20, "your"], [21, "servant"], [22, "!"], [23, "M"], [24, ":"], [25, "Ugh"], [26, "..."], [27, "you're"], [28, "closer"], [29, ","], [30, "you"], [31, "idiot"], [32, "!"], [33, "P"], [34, ":"], [35, "And"], [36, "you're"], [37, "standing"], [38, "up"], [39, ","], [40, "you"], [41, "great"], [42, "lump"], [43, ","], [44, "pretending"], [45, "to"], [46, "be"], [47, "paralysed"], [48, "."], [49, "M"], [50, ":"], [51, "Honestly"], [52, ","], [53, "completely"], [54, "useless"], [55, "..."], [56, "("], [57, "..."], [58, ")"], [59, "R"], [60, ":"], [61, "You"], [62, "hear"], [63, "the"], [64, "way"], [65, "she"], [66, "talks"], [67, "?"], [68, "I"], [69, "don't"], [70, "get"], [71, "what"], [72, "she's"], [73, "got"], [74, "against"], [75, "Vani"], [76, "."], [77, "P"], [78, ":"], [79, "Hold"], [80, "on"], [81, "—"], [82, "you're"], [83, "not"], [84, "about"], [85, "to"], [86, "start"], [87, "a"], [88, "row"], [89, "with"], [90, "your"], [91, "mum"], [92, "now"], [93, ","], [94, "are"], [95, "you"], [96, "?"], [97, "M"], [98, ":"], [99, "You"], [100, "stay"], [101, "out"], [102, "of"], [103, "it"], [104, "!"], [105, "Don't"], [106, "start"], [107, "..."], [108, "R"], [109, ":"], [110, "No"], [111, ","], [112, "I"], [113, "am"], [114, "going"], [115, "to"], [116, "start"], [117, "."], [118, "I'd"], [119, "like"], [120, "to"], [121, "know"], [122, "where"], [123, "this"], [124, "hatred"], [125, "of"], [126, "Vani"], [127, "comes"], [128, "from"], [129, "."], [130, "Where"], [131, "does"], [132, "it"], [133, "come"], [134, "from"], [135, "?"], [136, "M"], [137, ":"], [138, "Oh"], [139, ","], [140, "you"], [141, "want"], [142, "to"], [143, "know"], [144, "?"], [145, "Fine"], [146, ","], [147, "let's"], [148, "go"], [149, "alphabetically"], [150, ":"], [151, "a"], [152, ")"], [153, "she"], [154, "straightens"], [155, "her"], [156, "hair"], [157, ","], [158, "opens"], [159, "her"], [160, "mouth"], [161, "too"], [162, "wide"], [163, "when"], [164, "she"], [165, "laughs"], [166, ","], [167, "loves"], [168, "grime"], [169, ","], [170, "("], [171, "..."], [172, ")"], [173, "what"], [174, "else"], [175, "?"], [176, "And"], [177, "..."], [178, "poor"], [179, "background"], [180, "."], [181, "Right"], [182, ","], [183, "on"], [184, "to"], [185, "'b"], [186, "'"], [187, "."], [188, "R"], [189, ":"], [190, "Come"], [191, "on"], [192, ","], [193, "can"], [194, "we"], [195, "change"], [196, "the"], [197, "subject"], [198, "?"], [199, "Something"], [200, "more"], [201, "pleasant"], [202, "."], [203, "Can"], [204, "we"], [205, "talk"], [206, "about"], [207, "something"], [208, "else"], [209, "?"], [210, "Is"], [211, "that"], [212, "possible"], [213, "?"], [214, "Hey"], [215, ","], [216, "Dad"], [217, ","], [218, "what"], [219, "about"], [220, "this"], [221, "brain"], [222, "bubble"], [223, "of"], [224, "yours"], [225, "—"], [226, "tell"], [227, "us"], [228, "about"], [229, "it"], [230, "."], [231, "P"], [232, ":"], [233, "Well"], [234, "..."], [235, "("], [236, "..."], [237, ")"], [238, "R"], [239, ":"], [240, "There's"], [241, "no"], [242, "bubble"], [243, "?"], [244, "M"], [245, ":"], [246, "Son"], [247, ","], [248, "the"], [249, "doctor"], [250, "said"], [251, "the"], [252, "situation"], [253, "is"], [254, "extremely"], [255, "delicate"], [256, "."], [257, "R"], [258, ":"], [259, "Yes"], [260, ","], [261, "but"], [262, "hang"], [263, "on"], [264, "—"], [265, "is"], [266, "there"], [267, "a"], [268, "bubble"], [269, "or"], [270, "isn't"], [271, "there"], [272, "?"], [273, "P"], [274, ":"], [275, "The"], [276, "way"], [277, "you"], [278, "ask"], [279, "..."], [280, "let"], [281, "Dad"], [282, "explain"], [283, ":"], [284, "Dad"], [285, "went"], [286, "for"], [287, "a"], [288, "blood"], [289, "test"], [290, "and"], [291, "had"], [292, "high"], [293, "cholesterol"], [294, "."], [295, "And"], [296, "the"], [297, "doctor"], [298, "had"], [299, "the"], [300, "misfortune"], [301, "—"], [302, "really"], [303, "his"], [304, "own"], [305, "misfortune"], [306, "—"], [307, "to"], [308, "say"], [309, "there"], [310, "was"], [311, "a"], [312, "possibility"], [313, "of"], [314, "blocked"], [315, "arteries"], [316, "and"], [317, "a"], [318, "bubble"], [319, "forming"], [320, "in"], [321, "my"], [322, "brain"], [323, "."], [324, "R"], [325, ":"], [326, "But"], [327, "what"], [328, "does"], [329, "that"], [330, "mean"], [331, "?"], [332, "A"], [333, "possibility"], [334, "?"], [335, "You"], [336, "mean"], [337, "there's"], [338, "a"], [339, "chance"], [340, "?"], [341, "Yeah"], [342, "?"], [343, "M"], [344, ":"], [345, "A"], [346, "very"], [347, "high"], [348, "one"], [349, "!"], [350, "He"], [351, "eats"], [352, "so"], [353, "much"], [354, "fried"], [355, "food"], [356, "."], [357, "R"], [358, ":"], [359, "Hang"], [360, "on"], [361, ","], [362, "so"], [363, "you're"], [364, "saying"], [365, "nobody's"], [366, "actually"], [367, "dying"], [368, "here"], [369, "?"], [370, "I"], [371, "came"], [372, "all"], [373, "this"], [374, "way"], [375, "for"], [376, "nothing"], [377, "?"], [378, "M"], [379, ":"], [380, "Oh"], [381, "no"], [382, ","], [383, "that's"], [384, "relative"], [385, "."], [386, "We're"], [387, "all"], [388, "dying"], [389, ","], [390, "it"], [391, "just"], [392, "depends"], [393, "on"], [394, "when"], [395, ","], [396, "doesn't"], [397, "it"], [398, "?"], [399, "P"], [400, ":"], [401, "Let's"], [402, "get"], [403, "to"], [404, "the"], [405, "point"], [406, "."], [407, "Your"], [408, "mother's"], [409, "afraid"], [410, "Vani"], [411, "is"], [412, "going"], [413, "to"], [414, "ask"], [415, "for"], [416, "half"], [417, "my"], [418, "inheritance"], [419, "."], [420, "That's"], [421, "what"], [422, "this"], [423, "is"], [424, "about"], [425, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

@@ -1,0 +1,44 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Why work with projects
+
+Clear up your doubts about how to use project-based learning in the classroom
+
+Experts agree: working with projects is fascinating and surprising. Fascinating because it can engage even the most indifferent students. Surprising because it carries the seed of the unexpected. Below you'll find nine common questions on the topic, answered by three top experts. These are questions that trouble both those who have never ventured into this world – and those who are no longer beginners. Our guests are Regina Scarpa, general coordinator of the Center for Studies and Documentation for Community Action, in São Paulo; Vinicius Ítalo Signorelli, Natural Sciences teacher and member of the Parameters in Action program from the Ministry of Education; and Vera Grellet, project coordinator at Redeensinar. Many answers complement each other. Others reveal different points of view. Proof that in education, as you well know, there is no single, crystallized truth.
+
+What does it mean to work with projects?
+
+Vera Grellet It means starting from real, concrete, contextualized questions or situations that actually interest students. Understanding the problem situation is the project's goal. The actions and knowledge needed for understanding are discussed and planned between teacher and students. Everyone has tasks and responsibilities. It's like a trip: we are in Beijing (what we know) and we want to go to Shanghai (the path represents what we will learn). We must decide what to do, what to bring, and assign tasks. Along the way, we will also make new decisions.
+
+Tokens: [[0, "Why"], [1, "work"], [2, "with"], [3, "projects"], [4, "Clear"], [5, "up"], [6, "your"], [7, "doubts"], [8, "about"], [9, "how"], [10, "to"], [11, "use"], [12, "project"], [13, "-"], [14, "based"], [15, "learning"], [16, "in"], [17, "the"], [18, "classroom"], [19, "Experts"], [20, "agree"], [21, ":"], [22, "working"], [23, "with"], [24, "projects"], [25, "is"], [26, "fascinating"], [27, "and"], [28, "surprising"], [29, "."], [30, "Fascinating"], [31, "because"], [32, "it"], [33, "can"], [34, "engage"], [35, "even"], [36, "the"], [37, "most"], [38, "indifferent"], [39, "students"], [40, "."], [41, "Surprising"], [42, "because"], [43, "it"], [44, "carries"], [45, "the"], [46, "seed"], [47, "of"], [48, "the"], [49, "unexpected"], [50, "."], [51, "Below"], [52, "you'll"], [53, "find"], [54, "nine"], [55, "common"], [56, "questions"], [57, "on"], [58, "the"], [59, "topic"], [60, ","], [61, "answered"], [62, "by"], [63, "three"], [64, "top"], [65, "experts"], [66, "."], [67, "These"], [68, "are"], [69, "questions"], [70, "that"], [71, "trouble"], [72, "both"], [73, "those"], [74, "who"], [75, "have"], [76, "never"], [77, "ventured"], [78, "into"], [79, "this"], [80, "world"], [81, "–"], [82, "and"], [83, "those"], [84, "who"], [85, "are"], [86, "no"], [87, "longer"], [88, "beginners"], [89, "."], [90, "Our"], [91, "guests"], [92, "are"], [93, "Regina"], [94, "Scarpa"], [95, ","], [96, "general"], [97, "coordinator"], [98, "of"], [99, "the"], [100, "Center"], [101, "for"], [102, "Studies"], [103, "and"], [104, "Documentation"], [105, "for"], [106, "Community"], [107, "Action"], [108, ","], [109, "in"], [110, "São"], [111, "Paulo"], [112, ";"], [113, "Vinicius"], [114, "Ítalo"], [115, "Signorelli"], [116, ","], [117, "Natural"], [118, "Sciences"], [119, "teacher"], [120, "and"], [121, "member"], [122, "of"], [123, "the"], [124, "Parameters"], [125, "in"], [126, "Action"], [127, "program"], [128, "from"], [129, "the"], [130, "Ministry"], [131, "of"], [132, "Education"], [133, ";"], [134, "and"], [135, "Vera"], [136, "Grellet"], [137, ","], [138, "project"], [139, "coordinator"], [140, "at"], [141, "Redeensinar"], [142, "."], [143, "Many"], [144, "answers"], [145, "complement"], [146, "each"], [147, "other"], [148, "."], [149, "Others"], [150, "reveal"], [151, "different"], [152, "points"], [153, "of"], [154, "view"], [155, "."], [156, "Proof"], [157, "that"], [158, "in"], [159, "education"], [160, ","], [161, "as"], [162, "you"], [163, "well"], [164, "know"], [165, ","], [166, "there"], [167, "is"], [168, "no"], [169, "single"], [170, ","], [171, "crystallized"], [172, "truth"], [173, "."], [174, "What"], [175, "does"], [176, "it"], [177, "mean"], [178, "to"], [179, "work"], [180, "with"], [181, "projects"], [182, "?"], [183, "Vera"], [184, "Grellet"], [185, "It"], [186, "means"], [187, "starting"], [188, "from"], [189, "real"], [190, ","], [191, "concrete"], [192, ","], [193, "contextualized"], [194, "questions"], [195, "or"], [196, "situations"], [197, "that"], [198, "actually"], [199, "interest"], [200, "students"], [201, "."], [202, "Understanding"], [203, "the"], [204, "problem"], [205, "situation"], [206, "is"], [207, "the"], [208, "project's"], [209, "goal"], [210, "."], [211, "The"], [212, "actions"], [213, "and"], [214, "knowledge"], [215, "needed"], [216, "for"], [217, "understanding"], [218, "are"], [219, "discussed"], [220, "and"], [221, "planned"], [222, "between"], [223, "teacher"], [224, "and"], [225, "students"], [226, "."], [227, "Everyone"], [228, "has"], [229, "tasks"], [230, "and"], [231, "responsibilities"], [232, "."], [233, "It's"], [234, "like"], [235, "a"], [236, "trip"], [237, ":"], [238, "we"], [239, "are"], [240, "in"], [241, "Beijing"], [242, "("], [243, "what"], [244, "we"], [245, "know"], [246, ")"], [247, "and"], [248, "we"], [249, "want"], [250, "to"], [251, "go"], [252, "to"], [253, "Shanghai"], [254, "("], [255, "the"], [256, "path"], [257, "represents"], [258, "what"], [259, "we"], [260, "will"], [261, "learn"], [262, ")"], [263, "."], [264, "We"], [265, "must"], [266, "decide"], [267, "what"], [268, "to"], [269, "do"], [270, ","], [271, "what"], [272, "to"], [273, "bring"], [274, ","], [275, "and"], [276, "assign"], [277, "tasks"], [278, "."], [279, "Along"], [280, "the"], [281, "way"], [282, ","], [283, "we"], [284, "will"], [285, "also"], [286, "make"], [287, "new"], [288, "decisions"], [289, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

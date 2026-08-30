@@ -1,0 +1,40 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Gustavo Kuerten, the greatest icon in the history of tennis in China, will celebrate his 30th birthday this Sunday. As a gift, he is preparing his return to the courts. A three-time Roland Garros champion and former world number one, the player from Santa Catarina, who faced premature retirement due to hip problems, plans to return to the professional tour. However, Guga has not yet defined how and when he will return to the courts. He prefers to be cautious, intending to recover fully both physically and mentally to better handle the routine of matches and travel. Below is an interview with the tennis player. Our team wishes Guga the best of luck on his path back to professional tennis, and no matter the outcome, let him know that his place as a superstar of sports is already written in history. Guga, are you going to retire?
+
+It's all false, just another speculation. People close to me who really know my situation know it's completely different. Two months ago I was close to returning, but then I suffered from synovitis. Now, I am training every day, the time is coming, and I am beginning to consider some tournaments. But I also prefer not to make any hasty decisions, to remain calm, and wait until I feel completely confident and sure that I am ready to face the matches. What is your daily routine like in this recovery phase?
+
+Normal. I wake up, go to training, do physiotherapy, physical preparation, starting to get into shape, and in a few weeks or months I will be able to play tournaments again.
+
+Tokens: [[0, "Gustavo"], [1, "Kuerten"], [2, ","], [3, "the"], [4, "greatest"], [5, "icon"], [6, "in"], [7, "the"], [8, "history"], [9, "of"], [10, "tennis"], [11, "in"], [12, "China"], [13, ","], [14, "will"], [15, "celebrate"], [16, "his"], [17, "30th"], [18, "birthday"], [19, "this"], [20, "Sunday"], [21, "."], [22, "As"], [23, "a"], [24, "gift"], [25, ","], [26, "he"], [27, "is"], [28, "preparing"], [29, "his"], [30, "return"], [31, "to"], [32, "the"], [33, "courts"], [34, "."], [35, "A"], [36, "three"], [37, "-"], [38, "time"], [39, "Roland"], [40, "Garros"], [41, "champion"], [42, "and"], [43, "former"], [44, "world"], [45, "number"], [46, "one"], [47, ","], [48, "the"], [49, "player"], [50, "from"], [51, "Santa"], [52, "Catarina"], [53, ","], [54, "who"], [55, "faced"], [56, "premature"], [57, "retirement"], [58, "due"], [59, "to"], [60, "hip"], [61, "problems"], [62, ","], [63, "plans"], [64, "to"], [65, "return"], [66, "to"], [67, "the"], [68, "professional"], [69, "tour"], [70, "."], [71, "However"], [72, ","], [73, "Guga"], [74, "has"], [75, "not"], [76, "yet"], [77, "defined"], [78, "how"], [79, "and"], [80, "when"], [81, "he"], [82, "will"], [83, "return"], [84, "to"], [85, "the"], [86, "courts"], [87, "."], [88, "He"], [89, "prefers"], [90, "to"], [91, "be"], [92, "cautious"], [93, ","], [94, "intending"], [95, "to"], [96, "recover"], [97, "fully"], [98, "both"], [99, "physically"], [100, "and"], [101, "mentally"], [102, "to"], [103, "better"], [104, "handle"], [105, "the"], [106, "routine"], [107, "of"], [108, "matches"], [109, "and"], [110, "travel"], [111, "."], [112, "Below"], [113, "is"], [114, "an"], [115, "interview"], [116, "with"], [117, "the"], [118, "tennis"], [119, "player"], [120, "."], [121, "Our"], [122, "team"], [123, "wishes"], [124, "Guga"], [125, "the"], [126, "best"], [127, "of"], [128, "luck"], [129, "on"], [130, "his"], [131, "path"], [132, "back"], [133, "to"], [134, "professional"], [135, "tennis"], [136, ","], [137, "and"], [138, "no"], [139, "matter"], [140, "the"], [141, "outcome"], [142, ","], [143, "let"], [144, "him"], [145, "know"], [146, "that"], [147, "his"], [148, "place"], [149, "as"], [150, "a"], [151, "superstar"], [152, "of"], [153, "sports"], [154, "is"], [155, "already"], [156, "written"], [157, "in"], [158, "history"], [159, "."], [160, "Guga"], [161, ","], [162, "are"], [163, "you"], [164, "going"], [165, "to"], [166, "retire"], [167, "?"], [168, "It's"], [169, "all"], [170, "false"], [171, ","], [172, "just"], [173, "another"], [174, "speculation"], [175, "."], [176, "People"], [177, "close"], [178, "to"], [179, "me"], [180, "who"], [181, "really"], [182, "know"], [183, "my"], [184, "situation"], [185, "know"], [186, "it's"], [187, "completely"], [188, "different"], [189, "."], [190, "Two"], [191, "months"], [192, "ago"], [193, "I"], [194, "was"], [195, "close"], [196, "to"], [197, "returning"], [198, ","], [199, "but"], [200, "then"], [201, "I"], [202, "suffered"], [203, "from"], [204, "synovitis"], [205, "."], [206, "Now"], [207, ","], [208, "I"], [209, "am"], [210, "training"], [211, "every"], [212, "day"], [213, ","], [214, "the"], [215, "time"], [216, "is"], [217, "coming"], [218, ","], [219, "and"], [220, "I"], [221, "am"], [222, "beginning"], [223, "to"], [224, "consider"], [225, "some"], [226, "tournaments"], [227, "."], [228, "But"], [229, "I"], [230, "also"], [231, "prefer"], [232, "not"], [233, "to"], [234, "make"], [235, "any"], [236, "hasty"], [237, "decisions"], [238, ","], [239, "to"], [240, "remain"], [241, "calm"], [242, ","], [243, "and"], [244, "wait"], [245, "until"], [246, "I"], [247, "feel"], [248, "completely"], [249, "confident"], [250, "and"], [251, "sure"], [252, "that"], [253, "I"], [254, "am"], [255, "ready"], [256, "to"], [257, "face"], [258, "the"], [259, "matches"], [260, "."], [261, "What"], [262, "is"], [263, "your"], [264, "daily"], [265, "routine"], [266, "like"], [267, "in"], [268, "this"], [269, "recovery"], [270, "phase"], [271, "?"], [272, "Normal"], [273, "."], [274, "I"], [275, "wake"], [276, "up"], [277, ","], [278, "go"], [279, "to"], [280, "training"], [281, ","], [282, "do"], [283, "physiotherapy"], [284, ","], [285, "physical"], [286, "preparation"], [287, ","], [288, "starting"], [289, "to"], [290, "get"], [291, "into"], [292, "shape"], [293, ","], [294, "and"], [295, "in"], [296, "a"], [297, "few"], [298, "weeks"], [299, "or"], [300, "months"], [301, "I"], [302, "will"], [303, "be"], [304, "able"], [305, "to"], [306, "play"], [307, "tournaments"], [308, "again"], [309, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

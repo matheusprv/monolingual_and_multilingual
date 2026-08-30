@@ -1,0 +1,44 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: FORO DE DISCUSIÓN
+
+¿Cómo es posible que un crítico juzgue algo que ni siquiera ha visto? Sinceramente, la columna tiene mucha gracia, así que ese tipo debería dedicarse al humor y no a la crítica. Nadie está obligado a que le guste Death Note, pero decir que el anime es una basura... eso solo se puede decir por aburrimiento o por llamar la atención, y lo peor es que el tío ni lo vio.
+
+Death Note, como cualquier anime, tiene detalles que son totalmente absurdos y eso no lo voy a negar; puedo citar algunos, como por ejemplo Yusuke Urameshi (de Yu Yu Hakusho), que con 14 años se infla a dar de tortas a monstruos del más allá supermusculosos, y no olvidemos el hecho de que el tío tiene que cuidar de un huevo para resucitar; o si no Bleach, donde los shinigamis usan móviles para hablar, y ya para rematar, los Caballeros del Zodíaco, ¡donde el tal Seiya (el PERSONAJE PRINCIPAL) vence a todos los enemigos con su famoso METEORO DE PEGASO!
+
+Se tuviera en cuenta todo lo que se dijo en esa crítica, no perdería más el tiempo con animes ni mangas. ¿Qué autoridad tiene un tipo al que le gusta el anime doblado, que quiere que pongan tokusatsu en la televisión y que habla de Death Note como si fuera el peor cáncer del mundo? Ninguna, ¿no? En fin... =
+Espero poder decir algo bueno de ti en la próxima crítica, señor crítico. xD
+¡Hasta la próxima!
+
+Tokens: [[0, "FORO"], [1, "DE"], [2, "DISCUSIÓN"], [3, "¿"], [4, "Cómo"], [5, "es"], [6, "posible"], [7, "que"], [8, "un"], [9, "crítico"], [10, "juzgue"], [11, "algo"], [12, "que"], [13, "ni"], [14, "siquiera"], [15, "ha"], [16, "visto"], [17, "?"], [18, "Sinceramente"], [19, ","], [20, "la"], [21, "columna"], [22, "tiene"], [23, "mucha"], [24, "gracia"], [25, ","], [26, "así"], [27, "que"], [28, "ese"], [29, "tipo"], [30, "debería"], [31, "dedicarse"], [32, "al"], [33, "humor"], [34, "y"], [35, "no"], [36, "a"], [37, "la"], [38, "crítica"], [39, "."], [40, "Nadie"], [41, "está"], [42, "obligado"], [43, "a"], [44, "que"], [45, "le"], [46, "guste"], [47, "Death"], [48, "Note"], [49, ","], [50, "pero"], [51, "decir"], [52, "que"], [53, "el"], [54, "anime"], [55, "es"], [56, "una"], [57, "basura"], [58, "..."], [59, "eso"], [60, "solo"], [61, "se"], [62, "puede"], [63, "decir"], [64, "por"], [65, "aburrimiento"], [66, "o"], [67, "por"], [68, "llamar"], [69, "la"], [70, "atención"], [71, ","], [72, "y"], [73, "lo"], [74, "peor"], [75, "es"], [76, "que"], [77, "el"], [78, "tío"], [79, "ni"], [80, "lo"], [81, "vio"], [82, "."], [83, "Death"], [84, "Note"], [85, ","], [86, "como"], [87, "cualquier"], [88, "anime"], [89, ","], [90, "tiene"], [91, "detalles"], [92, "que"], [93, "son"], [94, "totalmente"], [95, "absurdos"], [96, "y"], [97, "eso"], [98, "no"], [99, "lo"], [100, "voy"], [101, "a"], [102, "negar"], [103, ";"], [104, "puedo"], [105, "citar"], [106, "algunos"], [107, ","], [108, "como"], [109, "por"], [110, "ejemplo"], [111, "Yusuke"], [112, "Urameshi"], [113, "("], [114, "de"], [115, "Yu"], [116, "Yu"], [117, "Hakusho"], [118, ")"], [119, ","], [120, "que"], [121, "con"], [122, "14"], [123, "años"], [124, "se"], [125, "infla"], [126, "a"], [127, "dar"], [128, "de"], [129, "tortas"], [130, "a"], [131, "monstruos"], [132, "del"], [133, "más"], [134, "allá"], [135, "supermusculosos"], [136, ","], [137, "y"], [138, "no"], [139, "olvidemos"], [140, "el"], [141, "hecho"], [142, "de"], [143, "que"], [144, "el"], [145, "tío"], [146, "tiene"], [147, "que"], [148, "cuidar"], [149, "de"], [150, "un"], [151, "huevo"], [152, "para"], [153, "resucitar"], [154, ";"], [155, "o"], [156, "si"], [157, "no"], [158, "Bleach"], [159, ","], [160, "donde"], [161, "los"], [162, "shinigamis"], [163, "usan"], [164, "móviles"], [165, "para"], [166, "hablar"], [167, ","], [168, "y"], [169, "ya"], [170, "para"], [171, "rematar"], [172, ","], [173, "los"], [174, "Caballeros"], [175, "del"], [176, "Zodíaco"], [177, ","], [178, "¡"], [179, "donde"], [180, "el"], [181, "tal"], [182, "Seiya"], [183, "("], [184, "el"], [185, "PERSONAJE"], [186, "PRINCIPAL"], [187, ")"], [188, "vence"], [189, "a"], [190, "todos"], [191, "los"], [192, "enemigos"], [193, "con"], [194, "su"], [195, "famoso"], [196, "METEORO"], [197, "DE"], [198, "PEGASO"], [199, "!"], [200, "Se"], [201, "tuviera"], [202, "en"], [203, "cuenta"], [204, "todo"], [205, "lo"], [206, "que"], [207, "se"], [208, "dijo"], [209, "en"], [210, "esa"], [211, "crítica"], [212, ","], [213, "no"], [214, "perdería"], [215, "más"], [216, "el"], [217, "tiempo"], [218, "con"], [219, "animes"], [220, "ni"], [221, "mangas"], [222, "."], [223, "¿"], [224, "Qué"], [225, "autoridad"], [226, "tiene"], [227, "un"], [228, "tipo"], [229, "al"], [230, "que"], [231, "le"], [232, "gusta"], [233, "el"], [234, "anime"], [235, "doblado"], [236, ","], [237, "que"], [238, "quiere"], [239, "que"], [240, "pongan"], [241, "tokusatsu"], [242, "en"], [243, "la"], [244, "televisión"], [245, "y"], [246, "que"], [247, "habla"], [248, "de"], [249, "Death"], [250, "Note"], [251, "como"], [252, "si"], [253, "fuera"], [254, "el"], [255, "peor"], [256, "cáncer"], [257, "del"], [258, "mundo"], [259, "?"], [260, "Ninguna"], [261, ","], [262, "¿"], [263, "no"], [264, "?"], [265, "En"], [266, "fin"], [267, "..."], [268, "="], [269, "Espero"], [270, "poder"], [271, "decir"], [272, "algo"], [273, "bueno"], [274, "de"], [275, "ti"], [276, "en"], [277, "la"], [278, "próxima"], [279, "crítica"], [280, ","], [281, "señor"], [282, "crítico"], [283, "."], [284, "xD"], [285, "¡"], [286, "Hasta"], [287, "la"], [288, "próxima"], [289, "!"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

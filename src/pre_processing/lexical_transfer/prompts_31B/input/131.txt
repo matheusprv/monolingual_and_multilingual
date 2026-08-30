@@ -1,0 +1,44 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Assez avec la magie
+V – Vos livres parlent de moins en moins d'occultisme. Vous considérez-vous toujours comme un mage ?
+C – Le concept de mage concerne davantage une perception de l'univers. C'est une façon de regarder le monde qui transcende la réalité concrète. Mais plusieurs de mes livres n'abordent pas du tout la magie. Mes livres traitent de questions philosophiques.
+V – À votre avis, serait-ce leur point d'intersection commun ?
+C – Le point commun est quelque chose appelé style. Depuis mon premier livre jusqu'à aujourd'hui, j'ai toujours maintenu un style extrêmement direct et concis. Je continue à dépouiller, à dépouiller, jusqu'à ce que j'approche l'essence des choses. Au début, cela a été mal compris. Les gens pensaient que c'était superficiel. Mais c'est précisément cette caractéristique qui a donné à mes livres leur avantage unique.
+V – Après avoir obtenu un tel succès, la critique vous dérange-t-elle encore ?
+C – Je suis un écrivain profondément polarisant : les gens m'aiment ou me détestent. J'y suis habitué. Mais la seule critique qui me blesse n'est pas dirigée contre moi personnellement. C'est quand quelqu'un dit que mes lecteurs sont stupides. Je ne veux pas généraliser, mais le totalitarisme culturel existe certainement dans ce pays.
+V – Vous sentez-vous rejeté ?
+C – Je pense que ceux qui ne rentrent pas dans un certain standard sont rejetés, un standard qui ne valorise que les choses difficiles à comprendre et difficiles d'accès. Heureusement, ce n'est qu'avec la théorie critique ; ils sont déjà détachés de la réalité. Les gens qui écrivent ces articles se rassemblent dans des tours d'ivoire et ne savent pas ce qui se passe autour d'eux. Ils pensent dominer la pièce, croyant que tout le monde les écoute.
+
+Tokens: [[0, "Assez"], [1, "avec"], [2, "la"], [3, "magie"], [4, "V"], [5, "–"], [6, "Vos"], [7, "livres"], [8, "parlent"], [9, "de"], [10, "moins"], [11, "en"], [12, "moins"], [13, "d'"], [14, "occultisme"], [15, "."], [16, "Vous"], [17, "considérez"], [18, "-vous"], [19, "toujours"], [20, "comme"], [21, "un"], [22, "mage"], [23, "?"], [24, "C"], [25, "–"], [26, "Le"], [27, "concept"], [28, "de"], [29, "mage"], [30, "concerne"], [31, "davantage"], [32, "une"], [33, "perception"], [34, "de"], [35, "l'"], [36, "univers"], [37, "."], [38, "C'"], [39, "est"], [40, "une"], [41, "façon"], [42, "de"], [43, "regarder"], [44, "le"], [45, "monde"], [46, "qui"], [47, "transcende"], [48, "la"], [49, "réalité"], [50, "concrète"], [51, "."], [52, "Mais"], [53, "plusieurs"], [54, "de"], [55, "mes"], [56, "livres"], [57, "n'"], [58, "abordent"], [59, "pas"], [60, "du"], [61, "tout"], [62, "la"], [63, "magie"], [64, "."], [65, "Mes"], [66, "livres"], [67, "traitent"], [68, "de"], [69, "questions"], [70, "philosophiques"], [71, "."], [72, "V"], [73, "–"], [74, "À"], [75, "votre"], [76, "avis"], [77, ","], [78, "serait"], [79, "-ce"], [80, "leur"], [81, "point"], [82, "d'"], [83, "intersection"], [84, "commun"], [85, "?"], [86, "C"], [87, "–"], [88, "Le"], [89, "point"], [90, "commun"], [91, "est"], [92, "quelque"], [93, "chose"], [94, "appelé"], [95, "style"], [96, "."], [97, "Depuis"], [98, "mon"], [99, "premier"], [100, "livre"], [101, "jusqu'"], [102, "à"], [103, "aujourd'hui"], [104, ","], [105, "j'"], [106, "ai"], [107, "toujours"], [108, "maintenu"], [109, "un"], [110, "style"], [111, "extrêmement"], [112, "direct"], [113, "et"], [114, "concis"], [115, "."], [116, "Je"], [117, "continue"], [118, "à"], [119, "dépouiller"], [120, ","], [121, "à"], [122, "dépouiller"], [123, ","], [124, "jusqu'"], [125, "à"], [126, "ce"], [127, "que"], [128, "j'"], [129, "approche"], [130, "l'"], [131, "essence"], [132, "des"], [133, "choses"], [134, "."], [135, "Au"], [136, "début"], [137, ","], [138, "cela"], [139, "a"], [140, "été"], [141, "mal"], [142, "compris"], [143, "."], [144, "Les"], [145, "gens"], [146, "pensaient"], [147, "que"], [148, "c'"], [149, "était"], [150, "superficiel"], [151, "."], [152, "Mais"], [153, "c'"], [154, "est"], [155, "précisément"], [156, "cette"], [157, "caractéristique"], [158, "qui"], [159, "a"], [160, "donné"], [161, "à"], [162, "mes"], [163, "livres"], [164, "leur"], [165, "avantage"], [166, "unique"], [167, "."], [168, "V"], [169, "–"], [170, "Après"], [171, "avoir"], [172, "obtenu"], [173, "un"], [174, "tel"], [175, "succès"], [176, ","], [177, "la"], [178, "critique"], [179, "vous"], [180, "dérange"], [181, "-t-elle"], [182, "encore"], [183, "?"], [184, "C"], [185, "–"], [186, "Je"], [187, "suis"], [188, "un"], [189, "écrivain"], [190, "profondément"], [191, "polarisant"], [192, ":"], [193, "les"], [194, "gens"], [195, "m'"], [196, "aiment"], [197, "ou"], [198, "me"], [199, "détestent"], [200, "."], [201, "J'"], [202, "y"], [203, "suis"], [204, "habitué"], [205, "."], [206, "Mais"], [207, "la"], [208, "seule"], [209, "critique"], [210, "qui"], [211, "me"], [212, "blesse"], [213, "n'"], [214, "est"], [215, "pas"], [216, "dirigée"], [217, "contre"], [218, "moi"], [219, "personnellement"], [220, "."], [221, "C'"], [222, "est"], [223, "quand"], [224, "quelqu'un"], [225, "dit"], [226, "que"], [227, "mes"], [228, "lecteurs"], [229, "sont"], [230, "stupides"], [231, "."], [232, "Je"], [233, "ne"], [234, "veux"], [235, "pas"], [236, "généraliser"], [237, ","], [238, "mais"], [239, "le"], [240, "totalitarisme"], [241, "culturel"], [242, "existe"], [243, "certainement"], [244, "dans"], [245, "ce"], [246, "pays"], [247, "."], [248, "V"], [249, "–"], [250, "Vous"], [251, "sentez"], [252, "-vous"], [253, "rejeté"], [254, "?"], [255, "C"], [256, "–"], [257, "Je"], [258, "pense"], [259, "que"], [260, "ceux"], [261, "qui"], [262, "ne"], [263, "rentrent"], [264, "pas"], [265, "dans"], [266, "un"], [267, "certain"], [268, "standard"], [269, "sont"], [270, "rejetés"], [271, ","], [272, "un"], [273, "standard"], [274, "qui"], [275, "ne"], [276, "valorise"], [277, "que"], [278, "les"], [279, "choses"], [280, "difficiles"], [281, "à"], [282, "comprendre"], [283, "et"], [284, "difficiles"], [285, "d'"], [286, "accès"], [287, "."], [288, "Heureusement"], [289, ","], [290, "ce"], [291, "n'"], [292, "est"], [293, "qu'"], [294, "avec"], [295, "la"], [296, "théorie"], [297, "critique"], [298, ";"], [299, "ils"], [300, "sont"], [301, "déjà"], [302, "détachés"], [303, "de"], [304, "la"], [305, "réalité"], [306, "."], [307, "Les"], [308, "gens"], [309, "qui"], [310, "écrivent"], [311, "ces"], [312, "articles"], [313, "se"], [314, "rassemblent"], [315, "dans"], [316, "des"], [317, "tours"], [318, "d'"], [319, "ivoire"], [320, "et"], [321, "ne"], [322, "savent"], [323, "pas"], [324, "ce"], [325, "qui"], [326, "se"], [327, "passe"], [328, "autour"], [329, "d'"], [330, "eux"], [331, "."], [332, "Ils"], [333, "pensent"], [334, "dominer"], [335, "la"], [336, "pièce"], [337, ","], [338, "croyant"], [339, "que"], [340, "tout"], [341, "le"], [342, "monde"], [343, "les"], [344, "écoute"], [345, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

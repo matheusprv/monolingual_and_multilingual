@@ -1,0 +1,43 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Good morning, everyone.
+Below is an explanation addressing the questions raised in the previous email:
+
+ The export of funds data to CSV format failed (regarding the other branches of the Court of Justice).
+The system showed signs of processing, but the window closed abruptly and immediately.
+- We conducted a series of performance tests on several machines here at Prodemge, and the report generated completely normally.
+It should be noted that our teams work with version 8 of Internet Explorer. Therefore, we request that a check be made regarding the browser version deployed at IPSEMG, as well as a review of its security configurations, as this is very likely the cause of the error.
+Please get in touch with the DETI department (copied in this email) to officially request this verification.
+
+Tokens: [[0, "Good"], [1, "morning"], [2, ","], [3, "everyone"], [4, "."], [5, "Below"], [6, "is"], [7, "an"], [8, "explanation"], [9, "addressing"], [10, "the"], [11, "questions"], [12, "raised"], [13, "in"], [14, "the"], [15, "previous"], [16, "email"], [17, ":"], [18, "The"], [19, "export"], [20, "of"], [21, "funds"], [22, "data"], [23, "to"], [24, "CSV"], [25, "format"], [26, "failed"], [27, "("], [28, "regarding"], [29, "the"], [30, "other"], [31, "branches"], [32, "of"], [33, "the"], [34, "Court"], [35, "of"], [36, "Justice"], [37, ")"], [38, "."], [39, "The"], [40, "system"], [41, "showed"], [42, "signs"], [43, "of"], [44, "processing"], [45, ","], [46, "but"], [47, "the"], [48, "window"], [49, "closed"], [50, "abruptly"], [51, "and"], [52, "immediately"], [53, "."], [54, "-"], [55, "We"], [56, "conducted"], [57, "a"], [58, "series"], [59, "of"], [60, "performance"], [61, "tests"], [62, "on"], [63, "several"], [64, "machines"], [65, "here"], [66, "at"], [67, "Prodemge"], [68, ","], [69, "and"], [70, "the"], [71, "report"], [72, "generated"], [73, "completely"], [74, "normally"], [75, "."], [76, "It"], [77, "should"], [78, "be"], [79, "noted"], [80, "that"], [81, "our"], [82, "teams"], [83, "work"], [84, "with"], [85, "version"], [86, "8"], [87, "of"], [88, "Internet"], [89, "Explorer"], [90, "."], [91, "Therefore"], [92, ","], [93, "we"], [94, "request"], [95, "that"], [96, "a"], [97, "check"], [98, "be"], [99, "made"], [100, "regarding"], [101, "the"], [102, "browser"], [103, "version"], [104, "deployed"], [105, "at"], [106, "IPSEMG"], [107, ","], [108, "as"], [109, "well"], [110, "as"], [111, "a"], [112, "review"], [113, "of"], [114, "its"], [115, "security"], [116, "configurations"], [117, ","], [118, "as"], [119, "this"], [120, "is"], [121, "very"], [122, "likely"], [123, "the"], [124, "cause"], [125, "of"], [126, "the"], [127, "error"], [128, "."], [129, "Please"], [130, "get"], [131, "in"], [132, "touch"], [133, "with"], [134, "the"], [135, "DETI"], [136, "department"], [137, "("], [138, "copied"], [139, "in"], [140, "this"], [141, "email"], [142, ")"], [143, "to"], [144, "officially"], [145, "request"], [146, "this"], [147, "verification"], [148, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

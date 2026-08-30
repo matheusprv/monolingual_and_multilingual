@@ -1,0 +1,42 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Accepting ageing with grace is the answer, says psychologist Olga Tessari
+
+Old age is a new chapter in a human being's life. New activities, challenges, drastic changes to daily routines and certain limitations are imposed on older people who are not used to the adjustments this stage brings and end up struggling with social and health difficulties. To discuss the subject, we spoke with psychologist and psychotherapist Olga Tessari, who addresses the importance of treating all elderly people with respect, care and warmth.
+
+Father Marcelo Rossi Website – Is the lack of purpose the biggest problem for someone entering old age, and can it even lead to depression?
+
+Olga Tessari – The lack of purpose, combined with the feeling of having no way out of one's current situation, can lead to depression at any age. The particular problem for older people is that they often feel there is no time left to do anything meaningful, because death is drawing closer. On top of that, it's common for them, having more free time, to stop and reflect and conclude that they left many things undone, that they would have liked to do others, and that there is simply no time left. It's important for people to always have goals and pursue their dreams and desires, regardless of age — since we never know when we will die, even though death is the one certainty in life, we must carry on with our plans. It reminds me of a patient of mine who believed her life was over at 50, that there was simply nothing more to do.
+
+Tokens: [[0, "Accepting"], [1, "ageing"], [2, "with"], [3, "grace"], [4, "is"], [5, "the"], [6, "answer"], [7, ","], [8, "says"], [9, "psychologist"], [10, "Olga"], [11, "Tessari"], [12, "Old"], [13, "age"], [14, "is"], [15, "a"], [16, "new"], [17, "chapter"], [18, "in"], [19, "a"], [20, "human"], [21, "being's"], [22, "life"], [23, "."], [24, "New"], [25, "activities"], [26, ","], [27, "challenges"], [28, ","], [29, "drastic"], [30, "changes"], [31, "to"], [32, "daily"], [33, "routines"], [34, "and"], [35, "certain"], [36, "limitations"], [37, "are"], [38, "imposed"], [39, "on"], [40, "older"], [41, "people"], [42, "who"], [43, "are"], [44, "not"], [45, "used"], [46, "to"], [47, "the"], [48, "adjustments"], [49, "this"], [50, "stage"], [51, "brings"], [52, "and"], [53, "end"], [54, "up"], [55, "struggling"], [56, "with"], [57, "social"], [58, "and"], [59, "health"], [60, "difficulties"], [61, "."], [62, "To"], [63, "discuss"], [64, "the"], [65, "subject"], [66, ","], [67, "we"], [68, "spoke"], [69, "with"], [70, "psychologist"], [71, "and"], [72, "psychotherapist"], [73, "Olga"], [74, "Tessari"], [75, ","], [76, "who"], [77, "addresses"], [78, "the"], [79, "importance"], [80, "of"], [81, "treating"], [82, "all"], [83, "elderly"], [84, "people"], [85, "with"], [86, "respect"], [87, ","], [88, "care"], [89, "and"], [90, "warmth"], [91, "."], [92, "Father"], [93, "Marcelo"], [94, "Rossi"], [95, "Website"], [96, "–"], [97, "Is"], [98, "the"], [99, "lack"], [100, "of"], [101, "purpose"], [102, "the"], [103, "biggest"], [104, "problem"], [105, "for"], [106, "someone"], [107, "entering"], [108, "old"], [109, "age"], [110, ","], [111, "and"], [112, "can"], [113, "it"], [114, "even"], [115, "lead"], [116, "to"], [117, "depression"], [118, "?"], [119, "Olga"], [120, "Tessari"], [121, "–"], [122, "The"], [123, "lack"], [124, "of"], [125, "purpose"], [126, ","], [127, "combined"], [128, "with"], [129, "the"], [130, "feeling"], [131, "of"], [132, "having"], [133, "no"], [134, "way"], [135, "out"], [136, "of"], [137, "one's"], [138, "current"], [139, "situation"], [140, ","], [141, "can"], [142, "lead"], [143, "to"], [144, "depression"], [145, "at"], [146, "any"], [147, "age"], [148, "."], [149, "The"], [150, "particular"], [151, "problem"], [152, "for"], [153, "older"], [154, "people"], [155, "is"], [156, "that"], [157, "they"], [158, "often"], [159, "feel"], [160, "there"], [161, "is"], [162, "no"], [163, "time"], [164, "left"], [165, "to"], [166, "do"], [167, "anything"], [168, "meaningful"], [169, ","], [170, "because"], [171, "death"], [172, "is"], [173, "drawing"], [174, "closer"], [175, "."], [176, "On"], [177, "top"], [178, "of"], [179, "that"], [180, ","], [181, "it's"], [182, "common"], [183, "for"], [184, "them"], [185, ","], [186, "having"], [187, "more"], [188, "free"], [189, "time"], [190, ","], [191, "to"], [192, "stop"], [193, "and"], [194, "reflect"], [195, "and"], [196, "conclude"], [197, "that"], [198, "they"], [199, "left"], [200, "many"], [201, "things"], [202, "undone"], [203, ","], [204, "that"], [205, "they"], [206, "would"], [207, "have"], [208, "liked"], [209, "to"], [210, "do"], [211, "others"], [212, ","], [213, "and"], [214, "that"], [215, "there"], [216, "is"], [217, "simply"], [218, "no"], [219, "time"], [220, "left"], [221, "."], [222, "It's"], [223, "important"], [224, "for"], [225, "people"], [226, "to"], [227, "always"], [228, "have"], [229, "goals"], [230, "and"], [231, "pursue"], [232, "their"], [233, "dreams"], [234, "and"], [235, "desires"], [236, ","], [237, "regardless"], [238, "of"], [239, "age"], [240, "—"], [241, "since"], [242, "we"], [243, "never"], [244, "know"], [245, "when"], [246, "we"], [247, "will"], [248, "die"], [249, ","], [250, "even"], [251, "though"], [252, "death"], [253, "is"], [254, "the"], [255, "one"], [256, "certainty"], [257, "in"], [258, "life"], [259, ","], [260, "we"], [261, "must"], [262, "carry"], [263, "on"], [264, "with"], [265, "our"], [266, "plans"], [267, "."], [268, "It"], [269, "reminds"], [270, "me"], [271, "of"], [272, "a"], [273, "patient"], [274, "of"], [275, "mine"], [276, "who"], [277, "believed"], [278, "her"], [279, "life"], [280, "was"], [281, "over"], [282, "at"], [283, "50"], [284, ","], [285, "that"], [286, "there"], [287, "was"], [288, "simply"], [289, "nothing"], [290, "more"], [291, "to"], [292, "do"], [293, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

@@ -28,15 +28,15 @@ class Model:
 
         self.processor = AutoProcessor.from_pretrained(model_name)
 
-        quantization_config = BitsAndBytesConfig(
-            load_in_8bit=True,
-        )
+        # quantization_config = BitsAndBytesConfig(
+        #     load_in_8bit=True,
+        # )
 
         self.model = AutoModelForMultimodalLM.from_pretrained(
             model_name,
             dtype="auto",
             device_map=device_map,
-            quantization_config=quantization_config,
+            # quantization_config=quantization_config,
         )
 
         print(self.model.get_memory_footprint() / 1024**3, "GB")
@@ -60,7 +60,7 @@ class Model:
         with torch.inference_mode():
             outputs = self.model.generate(
                 **inputs,
-                max_new_tokens=256
+                max_new_tokens=8192
             )
 
         response = self.processor.decode(

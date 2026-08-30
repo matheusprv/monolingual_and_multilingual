@@ -1,0 +1,44 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: DISCUSSION FORUM
+
+How is it possible for a critic to judge something he hasn't even seen? Honestly, the column is very funny, so this guy should go into comedy and not criticism. Nobody is forced to like Death Note, but saying that the anime is garbage... you can only say that out of boredom or to show off, and the worst thing is that the guy hasn't even watched it.
+
+Death Note, like any anime, has details that are totally absurd and I'm not going to deny it; I can name a few, like for example Yusuke Urameshi (from Yu Yu Hakusho), who at 14 years old swells up to slap super muscular monsters from the afterlife, and let's not forget the fact that the guy has to take care of an egg to resurrect; or else Bleach, where the shinigami use cell phones to talk, and to top it all off, Knights of the Zodiac, where dear Seiya (the MAIN CHARACTER) beats all enemies with his famous PEGASUS METEOR!
+
+If I took into account everything that was said in this review, I wouldn't waste my time with anime or manga anymore. What authority does a guy have who likes dubbed anime, who wants tokusatsu broadcast on television, and who talks about Death Note as if it were the worst cancer in the world? None, right? Anyway... =
+I hope to be able to say good things about you in the next review, Mr. Critic. xD
+See you next time!
+
+Tokens: [[0, "DISCUSSION"], [1, "FORUM"], [2, "How"], [3, "is"], [4, "it"], [5, "possible"], [6, "for"], [7, "a"], [8, "critic"], [9, "to"], [10, "judge"], [11, "something"], [12, "he"], [13, "hasn't"], [14, "even"], [15, "seen"], [16, "?"], [17, "Honestly"], [18, ","], [19, "the"], [20, "column"], [21, "is"], [22, "very"], [23, "funny"], [24, ","], [25, "so"], [26, "this"], [27, "guy"], [28, "should"], [29, "go"], [30, "into"], [31, "comedy"], [32, "and"], [33, "not"], [34, "criticism"], [35, "."], [36, "Nobody"], [37, "is"], [38, "forced"], [39, "to"], [40, "like"], [41, "Death"], [42, "Note"], [43, ","], [44, "but"], [45, "saying"], [46, "that"], [47, "the"], [48, "anime"], [49, "is"], [50, "garbage"], [51, "..."], [52, "you"], [53, "can"], [54, "only"], [55, "say"], [56, "that"], [57, "out"], [58, "of"], [59, "boredom"], [60, "or"], [61, "to"], [62, "show"], [63, "off"], [64, ","], [65, "and"], [66, "the"], [67, "worst"], [68, "thing"], [69, "is"], [70, "that"], [71, "the"], [72, "guy"], [73, "hasn't"], [74, "even"], [75, "watched"], [76, "it"], [77, "."], [78, "Death"], [79, "Note"], [80, ","], [81, "like"], [82, "any"], [83, "anime"], [84, ","], [85, "has"], [86, "details"], [87, "that"], [88, "are"], [89, "totally"], [90, "absurd"], [91, "and"], [92, "I'm"], [93, "not"], [94, "going"], [95, "to"], [96, "deny"], [97, "it"], [98, ";"], [99, "I"], [100, "can"], [101, "name"], [102, "a"], [103, "few"], [104, ","], [105, "like"], [106, "for"], [107, "example"], [108, "Yusuke"], [109, "Urameshi"], [110, "("], [111, "from"], [112, "Yu"], [113, "Yu"], [114, "Hakusho"], [115, ")"], [116, ","], [117, "who"], [118, "at"], [119, "14"], [120, "years"], [121, "old"], [122, "swells"], [123, "up"], [124, "to"], [125, "slap"], [126, "super"], [127, "muscular"], [128, "monsters"], [129, "from"], [130, "the"], [131, "afterlife"], [132, ","], [133, "and"], [134, "let's"], [135, "not"], [136, "forget"], [137, "the"], [138, "fact"], [139, "that"], [140, "the"], [141, "guy"], [142, "has"], [143, "to"], [144, "take"], [145, "care"], [146, "of"], [147, "an"], [148, "egg"], [149, "to"], [150, "resurrect"], [151, ";"], [152, "or"], [153, "else"], [154, "Bleach"], [155, ","], [156, "where"], [157, "the"], [158, "shinigami"], [159, "use"], [160, "cell"], [161, "phones"], [162, "to"], [163, "talk"], [164, ","], [165, "and"], [166, "to"], [167, "top"], [168, "it"], [169, "all"], [170, "off"], [171, ","], [172, "Knights"], [173, "of"], [174, "the"], [175, "Zodiac"], [176, ","], [177, "where"], [178, "dear"], [179, "Seiya"], [180, "("], [181, "the"], [182, "MAIN"], [183, "CHARACTER"], [184, ")"], [185, "beats"], [186, "all"], [187, "enemies"], [188, "with"], [189, "his"], [190, "famous"], [191, "PEGASUS"], [192, "METEOR"], [193, "!"], [194, "If"], [195, "I"], [196, "took"], [197, "into"], [198, "account"], [199, "everything"], [200, "that"], [201, "was"], [202, "said"], [203, "in"], [204, "this"], [205, "review"], [206, ","], [207, "I"], [208, "wouldn't"], [209, "waste"], [210, "my"], [211, "time"], [212, "with"], [213, "anime"], [214, "or"], [215, "manga"], [216, "anymore"], [217, "."], [218, "What"], [219, "authority"], [220, "does"], [221, "a"], [222, "guy"], [223, "have"], [224, "who"], [225, "likes"], [226, "dubbed"], [227, "anime"], [228, ","], [229, "who"], [230, "wants"], [231, "tokusatsu"], [232, "broadcast"], [233, "on"], [234, "television"], [235, ","], [236, "and"], [237, "who"], [238, "talks"], [239, "about"], [240, "Death"], [241, "Note"], [242, "as"], [243, "if"], [244, "it"], [245, "were"], [246, "the"], [247, "worst"], [248, "cancer"], [249, "in"], [250, "the"], [251, "world"], [252, "?"], [253, "None"], [254, ","], [255, "right"], [256, "?"], [257, "Anyway"], [258, "..."], [259, "="], [260, "I"], [261, "hope"], [262, "to"], [263, "be"], [264, "able"], [265, "to"], [266, "say"], [267, "good"], [268, "things"], [269, "about"], [270, "you"], [271, "in"], [272, "the"], [273, "next"], [274, "review"], [275, ","], [276, "Mr."], [277, "Critic"], [278, "."], [279, "xD"], [280, "See"], [281, "you"], [282, "next"], [283, "time"], [284, "!"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

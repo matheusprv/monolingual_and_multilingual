@@ -1,0 +1,70 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: The blonde
+
+
+- Dad, tell that story again.
+
+- Which story do you want, Severino?
+
+- The one that left your mouth all twisted.
+
+- You know I don't like talking about these things.
+
+- Oh, Dad! Go on, tell it — I love it.
+
+- Alright, son, since you insist.
+
+"One day I was leaving the fields and decided to pop by Raimundo's little shop.
+It was a fair way off but worth it, because only there did they have a yellowish
+moonshine that came from Kentucky — absolutely delicious.
+The shine was so good I lost track of time.
+It was thirty minutes to midnight when I decided to head home.
+
+- Reginaldo, you're leaving at this hour?
+Stay the night, it's a long way to yours.
+They say things have been appearing out there, always at midnight —
+some kind of ghosts.
+
+- Mister Raimundo, look at me. You think a man like me is
+afraid of ghosts?
+
+- Well, you know best.
+
+- Goodnight, Mister Raimundo. I'll be off then.
+And off I went down the dirt road.
+I'd been walking for nearly half an hour. Suddenly I started hearing
+footsteps that seemed to be following me.
+
+Tokens: [[0, "The"], [1, "blonde"], [2, "-"], [3, "Dad"], [4, ","], [5, "tell"], [6, "that"], [7, "story"], [8, "again"], [9, "."], [10, "-"], [11, "Which"], [12, "story"], [13, "do"], [14, "you"], [15, "want"], [16, ","], [17, "Severino"], [18, "?"], [19, "-"], [20, "The"], [21, "one"], [22, "that"], [23, "left"], [24, "your"], [25, "mouth"], [26, "all"], [27, "twisted"], [28, "."], [29, "-"], [30, "You"], [31, "know"], [32, "I"], [33, "don't"], [34, "like"], [35, "talking"], [36, "about"], [37, "these"], [38, "things"], [39, "."], [40, "-"], [41, "Oh"], [42, ","], [43, "Dad"], [44, "!"], [45, "Go"], [46, "on"], [47, ","], [48, "tell"], [49, "it"], [50, "—"], [51, "I"], [52, "love"], [53, "it"], [54, "."], [55, "-"], [56, "Alright"], [57, ","], [58, "son"], [59, ","], [60, "since"], [61, "you"], [62, "insist"], [63, "."], [64, "\""], [65, "One"], [66, "day"], [67, "I"], [68, "was"], [69, "leaving"], [70, "the"], [71, "fields"], [72, "and"], [73, "decided"], [74, "to"], [75, "pop"], [76, "by"], [77, "Raimundo's"], [78, "little"], [79, "shop"], [80, "."], [81, "It"], [82, "was"], [83, "a"], [84, "fair"], [85, "way"], [86, "off"], [87, "but"], [88, "worth"], [89, "it"], [90, ","], [91, "because"], [92, "only"], [93, "there"], [94, "did"], [95, "they"], [96, "have"], [97, "a"], [98, "yellowish"], [99, "moonshine"], [100, "that"], [101, "came"], [102, "from"], [103, "Kentucky"], [104, "—"], [105, "absolutely"], [106, "delicious"], [107, "."], [108, "The"], [109, "shine"], [110, "was"], [111, "so"], [112, "good"], [113, "I"], [114, "lost"], [115, "track"], [116, "of"], [117, "time"], [118, "."], [119, "It"], [120, "was"], [121, "thirty"], [122, "minutes"], [123, "to"], [124, "midnight"], [125, "when"], [126, "I"], [127, "decided"], [128, "to"], [129, "head"], [130, "home"], [131, "."], [132, "-"], [133, "Reginaldo"], [134, ","], [135, "you're"], [136, "leaving"], [137, "at"], [138, "this"], [139, "hour"], [140, "?"], [141, "Stay"], [142, "the"], [143, "night"], [144, ","], [145, "it's"], [146, "a"], [147, "long"], [148, "way"], [149, "to"], [150, "yours"], [151, "."], [152, "They"], [153, "say"], [154, "things"], [155, "have"], [156, "been"], [157, "appearing"], [158, "out"], [159, "there"], [160, ","], [161, "always"], [162, "at"], [163, "midnight"], [164, "—"], [165, "some"], [166, "kind"], [167, "of"], [168, "ghosts"], [169, "."], [170, "-"], [171, "Mister"], [172, "Raimundo"], [173, ","], [174, "look"], [175, "at"], [176, "me"], [177, "."], [178, "You"], [179, "think"], [180, "a"], [181, "man"], [182, "like"], [183, "me"], [184, "is"], [185, "afraid"], [186, "of"], [187, "ghosts"], [188, "?"], [189, "-"], [190, "Well"], [191, ","], [192, "you"], [193, "know"], [194, "best"], [195, "."], [196, "-"], [197, "Goodnight"], [198, ","], [199, "Mister"], [200, "Raimundo"], [201, "."], [202, "I'll"], [203, "be"], [204, "off"], [205, "then"], [206, "."], [207, "And"], [208, "off"], [209, "I"], [210, "went"], [211, "down"], [212, "the"], [213, "dirt"], [214, "road"], [215, "."], [216, "I'd"], [217, "been"], [218, "walking"], [219, "for"], [220, "nearly"], [221, "half"], [222, "an"], [223, "hour"], [224, "."], [225, "Suddenly"], [226, "I"], [227, "started"], [228, "hearing"], [229, "footsteps"], [230, "that"], [231, "seemed"], [232, "to"], [233, "be"], [234, "following"], [235, "me"], [236, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

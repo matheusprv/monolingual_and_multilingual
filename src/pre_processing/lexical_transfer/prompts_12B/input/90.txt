@@ -1,0 +1,53 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Entonces, Juan, puedes hacer el ingreso en la cuenta de la inmobiliaria.
+Beneficiario: Inmobiliaria Junkes S.L.
+Nota: El recibo vence el día 2/12/08; yo me encargo de pagarlo y de dar de baja la cuenta por ti, ¿vale?
+
+Asunto: RE: ¡¡¡Recibo de la luz del piso alquilado por la Sra. Damiana, que está a tu nombre!!!
+
+A la vista de lo que comentas, no tengo inconveniente en pagar, lo haré como te vaya mejor, por transferencia... más que nada por no andar con historias. Con todo, si estuviste esperando hasta hoy es porque te olvidaste de que habíamos acordado que esperarías hasta un miércoles, cuando hablamos y te dije que, por ser las habitaciones pequeñas, por desgracia, mis padres se quedaron dudosos y probablemente busquemos otro sitio. Tú entonces pareciste entenderlo, incluso comentaste que tenías gente interesada en espera y que ibas a hablar con ellos.
+
+Yo no recibí ningún recibo ni imaginaba que estuviera pasando este problema, me avisas justo ahora, Y DE ESTA MANERA. Tu vivienda estuvo cerrada todo este tiempo y ahora que la va a alquilar otra persona tengo que pagar yo por el tiempo que estuvo vacía. Estupendo.
+
+Atentamente,
+Juan
+
+Asunto: RE: ¡¡¡Recibo de la luz del piso alquilado por la Sra. Damiana, que está a tu nombre!!!
+Fecha: Martes, 25 de noviembre de 2008, 9:48
+
+Juan:
+A Damiana le indicó mi inmobiliaria que "diera de baja la cuenta". Como tú habías acordado con ella hacer el cambio de titularidad, ¡la responsabilidad pasó de ella a ti! Según las indicaciones de Iberdrola, este recibo pendiente no tiene consumo de energía, pero como la cuenta sigue abierta, la compañía cobra por los gastos de gestión, impuestos, etc. Vamos a ver, pensaste mal: si con la llegada del nuevo inquilino la cuenta estuviera de baja, habría que dar de alta una nueva o reactivar la misma (sin las deudas de gestión con Iberdrola). Para que lo sepas, ninguna inmobiliaria de la ciudad hace los trámites de alta o baja de cuentas de luz, teléfono, etc., en nombre del inquilino.
+
+Tokens: [[0, "Entonces"], [1, ","], [2, "Juan"], [3, ","], [4, "puedes"], [5, "hacer"], [6, "el"], [7, "ingreso"], [8, "en"], [9, "la"], [10, "cuenta"], [11, "de"], [12, "la"], [13, "inmobiliaria"], [14, "."], [15, "Beneficiario"], [16, ":"], [17, "Inmobiliaria"], [18, "Junkes"], [19, "S.L."], [20, "Nota"], [21, ":"], [22, "El"], [23, "recibo"], [24, "vence"], [25, "el"], [26, "día"], [27, "2/12/08"], [28, ";"], [29, "yo"], [30, "me"], [31, "encargo"], [32, "de"], [33, "pagarlo"], [34, "y"], [35, "de"], [36, "dar"], [37, "de"], [38, "baja"], [39, "la"], [40, "cuenta"], [41, "por"], [42, "ti"], [43, ","], [44, "¿"], [45, "vale"], [46, "?"], [47, "Asunto"], [48, ":"], [49, "RE"], [50, ":"], [51, "¡"], [52, "¡"], [53, "¡"], [54, "Recibo"], [55, "de"], [56, "la"], [57, "luz"], [58, "del"], [59, "piso"], [60, "alquilado"], [61, "por"], [62, "la"], [63, "Sra"], [64, "."], [65, "Damiana"], [66, ","], [67, "que"], [68, "está"], [69, "a"], [70, "tu"], [71, "nombre"], [72, "!"], [73, "!"], [74, "!"], [75, "A"], [76, "la"], [77, "vista"], [78, "de"], [79, "lo"], [80, "que"], [81, "comentas"], [82, ","], [83, "no"], [84, "tengo"], [85, "inconveniente"], [86, "en"], [87, "pagar"], [88, ","], [89, "lo"], [90, "haré"], [91, "como"], [92, "te"], [93, "vaya"], [94, "mejor"], [95, ","], [96, "por"], [97, "transferencia"], [98, "..."], [99, "más"], [100, "que"], [101, "nada"], [102, "por"], [103, "no"], [104, "andar"], [105, "con"], [106, "historias"], [107, "."], [108, "Con"], [109, "todo"], [110, ","], [111, "si"], [112, "estuviste"], [113, "esperando"], [114, "hasta"], [115, "hoy"], [116, "es"], [117, "porque"], [118, "te"], [119, "olvidaste"], [120, "de"], [121, "que"], [122, "habíamos"], [123, "acordado"], [124, "que"], [125, "esperarías"], [126, "hasta"], [127, "un"], [128, "miércoles"], [129, ","], [130, "cuando"], [131, "hablamos"], [132, "y"], [133, "te"], [134, "dije"], [135, "que"], [136, ","], [137, "por"], [138, "ser"], [139, "las"], [140, "habitaciones"], [141, "pequeñas"], [142, ","], [143, "por"], [144, "desgracia"], [145, ","], [146, "mis"], [147, "padres"], [148, "se"], [149, "quedaron"], [150, "dudosos"], [151, "y"], [152, "probablemente"], [153, "busquemos"], [154, "otro"], [155, "sitio"], [156, "."], [157, "Tú"], [158, "entonces"], [159, "pareciste"], [160, "entenderlo"], [161, ","], [162, "incluso"], [163, "comentaste"], [164, "que"], [165, "tenías"], [166, "gente"], [167, "interesada"], [168, "en"], [169, "espera"], [170, "y"], [171, "que"], [172, "ibas"], [173, "a"], [174, "hablar"], [175, "con"], [176, "ellos"], [177, "."], [178, "Yo"], [179, "no"], [180, "recibí"], [181, "ningún"], [182, "recibo"], [183, "ni"], [184, "imaginaba"], [185, "que"], [186, "estuviera"], [187, "pasando"], [188, "este"], [189, "problema"], [190, ","], [191, "me"], [192, "avisas"], [193, "justo"], [194, "ahora"], [195, ","], [196, "Y"], [197, "DE"], [198, "ESTA"], [199, "MANERA"], [200, "."], [201, "Tu"], [202, "vivienda"], [203, "estuvo"], [204, "cerrada"], [205, "todo"], [206, "este"], [207, "tiempo"], [208, "y"], [209, "ahora"], [210, "que"], [211, "la"], [212, "va"], [213, "a"], [214, "alquilar"], [215, "otra"], [216, "persona"], [217, "tengo"], [218, "que"], [219, "pagar"], [220, "yo"], [221, "por"], [222, "el"], [223, "tiempo"], [224, "que"], [225, "estuvo"], [226, "vacía"], [227, "."], [228, "Estupendo"], [229, "."], [230, "Atentamente"], [231, ","], [232, "Juan"], [233, "Asunto"], [234, ":"], [235, "RE"], [236, ":"], [237, "¡"], [238, "¡"], [239, "¡"], [240, "Recibo"], [241, "de"], [242, "la"], [243, "luz"], [244, "del"], [245, "piso"], [246, "alquilado"], [247, "por"], [248, "la"], [249, "Sra"], [250, "."], [251, "Damiana"], [252, ","], [253, "que"], [254, "está"], [255, "a"], [256, "tu"], [257, "nombre"], [258, "!"], [259, "!"], [260, "!"], [261, "Fecha"], [262, ":"], [263, "Martes"], [264, ","], [265, "25"], [266, "de"], [267, "noviembre"], [268, "de"], [269, "2008"], [270, ","], [271, "9:48"], [272, "Juan"], [273, ":"], [274, "A"], [275, "Damiana"], [276, "le"], [277, "indicó"], [278, "mi"], [279, "inmobiliaria"], [280, "que"], [281, "\""], [282, "diera"], [283, "de"], [284, "baja"], [285, "la"], [286, "cuenta"], [287, "\""], [288, "."], [289, "Como"], [290, "tú"], [291, "habías"], [292, "acordado"], [293, "con"], [294, "ella"], [295, "hacer"], [296, "el"], [297, "cambio"], [298, "de"], [299, "titularidad"], [300, ","], [301, "¡"], [302, "la"], [303, "responsabilidad"], [304, "pasó"], [305, "de"], [306, "ella"], [307, "a"], [308, "ti"], [309, "!"], [310, "Según"], [311, "las"], [312, "indicaciones"], [313, "de"], [314, "Iberdrola"], [315, ","], [316, "este"], [317, "recibo"], [318, "pendiente"], [319, "no"], [320, "tiene"], [321, "consumo"], [322, "de"], [323, "energía"], [324, ","], [325, "pero"], [326, "como"], [327, "la"], [328, "cuenta"], [329, "sigue"], [330, "abierta"], [331, ","], [332, "la"], [333, "compañía"], [334, "cobra"], [335, "por"], [336, "los"], [337, "gastos"], [338, "de"], [339, "gestión"], [340, ","], [341, "impuestos"], [342, ","], [343, "etc"], [344, "."], [345, "Vamos"], [346, "a"], [347, "ver"], [348, ","], [349, "pensaste"], [350, "mal"], [351, ":"], [352, "si"], [353, "con"], [354, "la"], [355, "llegada"], [356, "del"], [357, "nuevo"], [358, "inquilino"], [359, "la"], [360, "cuenta"], [361, "estuviera"], [362, "de"], [363, "baja"], [364, ","], [365, "habría"], [366, "que"], [367, "dar"], [368, "de"], [369, "alta"], [370, "una"], [371, "nueva"], [372, "o"], [373, "reactivar"], [374, "la"], [375, "misma"], [376, "("], [377, "sin"], [378, "las"], [379, "deudas"], [380, "de"], [381, "gestión"], [382, "con"], [383, "Iberdrola"], [384, ")"], [385, "."], [386, "Para"], [387, "que"], [388, "lo"], [389, "sepas"], [390, ","], [391, "ninguna"], [392, "inmobiliaria"], [393, "de"], [394, "la"], [395, "ciudad"], [396, "hace"], [397, "los"], [398, "trámites"], [399, "de"], [400, "alta"], [401, "o"], [402, "baja"], [403, "de"], [404, "cuentas"], [405, "de"], [406, "luz"], [407, ","], [408, "teléfono"], [409, ","], [410, "etc."], [411, ","], [412, "en"], [413, "nombre"], [414, "del"], [415, "inquilino"], [416, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

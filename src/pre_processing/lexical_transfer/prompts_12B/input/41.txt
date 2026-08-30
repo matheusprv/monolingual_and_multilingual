@@ -1,0 +1,80 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: M: ¡Oye, Ney! ¡Abre esa puerta, Ney!
+
+P: ¡Ábrela tú! ¡No soy tu criado!
+
+M: Uf... tú estás más cerca, ¡so imbécil!
+
+P: ¡Y tú que estás de pie, so bestia, paralítica!
+
+M: Pero si es que es un inútil de verdad...
+
+(...)
+
+R: ¿Ves cómo habla? No entiendo qué tiene contra Vani.
+
+P: Espera, espera... no vas a empezar a pelearte con tu madre ahora, ¿no?
+
+M: ¡Cállate tú! ¡No empieces...!
+
+R: No, voy a empezar sí. Quiero saber de dónde viene ese odio a Vani. ¿De dónde sale ese odio?
+
+M: Ah, ¿quieres saberlo? Pues vamos por orden alfabético: a) se alisa el pelo, abre demasiado la boca cuando ríe, adora el reguetón, (...) ¿qué más? Y... antepasados pobres. Listo, pasemos a la 'b'.
+
+R: Venga, ¿podemos cambiar? Algo más agradable. Hablemos de otra cosa, ¿se puede cambiar de tema? ¿Es posible? Oye, papá, y lo de tu burbuja en el cerebro, cuéntanos.
+
+P: Bueno...
+
+(...)
+
+R: ¿No tiene burbuja?
+
+M: Oye, hijo, el médico dijo que la situación es delicadísima.
+
+R: Sí, pero espera, ¿tiene burbuja o no tiene burbuja?
+
+P: Es que preguntas de una manera... Papá te explica: papá fue a hacerse una analítica de sangre y le salió el colesterol alto. Y el médico tuvo el detalle —vaya detalle— de decir que había una posibilidad de que se taponaran las arterias y apareciera una burbuja en el cerebro.
+
+R: ¿Pero qué es eso? ¿Una posibilidad? ¿O sea que existe una posibilidad? ¿Eh?
+
+M: ¡Altísima! Come muchas frituras.
+
+R: Espera, ¿o sea que no se está muriendo nadie aquí, y he venido para nada?
+
+M: Ah, eso es relativo. Muriéndonos estamos todos, depende de cuándo, ¿no?
+
+P: Vamos a poner los puntos sobre las íes. Tu madre tiene miedo de que Vani vaya a pedir la mitad de mi herencia. Eso es todo.
+
+Tokens: [[0, "M"], [1, ":"], [2, "¡"], [3, "Oye"], [4, ","], [5, "Ney"], [6, "!"], [7, "¡"], [8, "Abre"], [9, "esa"], [10, "puerta"], [11, ","], [12, "Ney"], [13, "!"], [14, "P"], [15, ":"], [16, "¡"], [17, "Ábrela"], [18, "tú"], [19, "!"], [20, "¡"], [21, "No"], [22, "soy"], [23, "tu"], [24, "criado"], [25, "!"], [26, "M"], [27, ":"], [28, "Uf"], [29, "..."], [30, "tú"], [31, "estás"], [32, "más"], [33, "cerca"], [34, ","], [35, "¡"], [36, "so"], [37, "imbécil"], [38, "!"], [39, "P"], [40, ":"], [41, "¡"], [42, "Y"], [43, "tú"], [44, "que"], [45, "estás"], [46, "de"], [47, "pie"], [48, ","], [49, "so"], [50, "bestia"], [51, ","], [52, "paralítica"], [53, "!"], [54, "M:"], [55, "Pero"], [56, "si"], [57, "es"], [58, "que"], [59, "es"], [60, "un"], [61, "inútil"], [62, "de"], [63, "verdad"], [64, "..."], [65, "("], [66, "..."], [67, ")"], [68, "R"], [69, ":"], [70, "¿"], [71, "Ves"], [72, "cómo"], [73, "habla"], [74, "?"], [75, "No"], [76, "entiendo"], [77, "qué"], [78, "tiene"], [79, "contra"], [80, "Vani"], [81, "."], [82, "P"], [83, ":"], [84, "Espera"], [85, ","], [86, "espera"], [87, "..."], [88, "no"], [89, "vas"], [90, "a"], [91, "empezar"], [92, "a"], [93, "pelearte"], [94, "con"], [95, "tu"], [96, "madre"], [97, "ahora"], [98, ","], [99, "¿"], [100, "no"], [101, "?"], [102, "M"], [103, ":"], [104, "¡"], [105, "Cállate"], [106, "tú"], [107, "!"], [108, "¡"], [109, "No"], [110, "empieces"], [111, "..."], [112, "!"], [113, "R"], [114, ":"], [115, "No"], [116, ","], [117, "voy"], [118, "a"], [119, "empezar"], [120, "sí"], [121, "."], [122, "Quiero"], [123, "saber"], [124, "de"], [125, "dónde"], [126, "viene"], [127, "ese"], [128, "odio"], [129, "a"], [130, "Vani"], [131, "."], [132, "¿"], [133, "De"], [134, "dónde"], [135, "sale"], [136, "ese"], [137, "odio"], [138, "?"], [139, "M"], [140, ":"], [141, "Ah"], [142, ","], [143, "¿"], [144, "quieres"], [145, "saberlo"], [146, "?"], [147, "Pues"], [148, "vamos"], [149, "por"], [150, "orden"], [151, "alfabético"], [152, ":"], [153, "a"], [154, ")"], [155, "se"], [156, "alisa"], [157, "el"], [158, "pelo"], [159, ","], [160, "abre"], [161, "demasiado"], [162, "la"], [163, "boca"], [164, "cuando"], [165, "ríe"], [166, ","], [167, "adora"], [168, "el"], [169, "reguetón"], [170, ","], [171, "("], [172, "..."], [173, ")"], [174, "¿"], [175, "qué"], [176, "más"], [177, "?"], [178, "Y"], [179, "..."], [180, "antepasados"], [181, "pobres"], [182, "."], [183, "Listo"], [184, ","], [185, "pasemos"], [186, "a"], [187, "la"], [188, "'b"], [189, "'"], [190, "."], [191, "R"], [192, ":"], [193, "Venga"], [194, ","], [195, "¿"], [196, "podemos"], [197, "cambiar"], [198, "?"], [199, "Algo"], [200, "más"], [201, "agradable"], [202, "."], [203, "Hablemos"], [204, "de"], [205, "otra"], [206, "cosa"], [207, ","], [208, "¿"], [209, "se"], [210, "puede"], [211, "cambiar"], [212, "de"], [213, "tema"], [214, "?"], [215, "¿"], [216, "Es"], [217, "posible"], [218, "?"], [219, "Oye"], [220, ","], [221, "papá"], [222, ","], [223, "y"], [224, "lo"], [225, "de"], [226, "tu"], [227, "burbuja"], [228, "en"], [229, "el"], [230, "cerebro"], [231, ","], [232, "cuéntanos"], [233, "."], [234, "P"], [235, ":"], [236, "Bueno"], [237, "..."], [238, "("], [239, "..."], [240, ")"], [241, "R"], [242, ":"], [243, "¿"], [244, "No"], [245, "tiene"], [246, "burbuja"], [247, "?"], [248, "M"], [249, ":"], [250, "Oye"], [251, ","], [252, "hijo"], [253, ","], [254, "el"], [255, "médico"], [256, "dijo"], [257, "que"], [258, "la"], [259, "situación"], [260, "es"], [261, "delicadísima"], [262, "."], [263, "R"], [264, ":"], [265, "Sí"], [266, ","], [267, "pero"], [268, "espera"], [269, ","], [270, "¿"], [271, "tiene"], [272, "burbuja"], [273, "o"], [274, "no"], [275, "tiene"], [276, "burbuja"], [277, "?"], [278, "P"], [279, ":"], [280, "Es"], [281, "que"], [282, "preguntas"], [283, "de"], [284, "una"], [285, "manera"], [286, "..."], [287, "Papá"], [288, "te"], [289, "explica"], [290, ":"], [291, "papá"], [292, "fue"], [293, "a"], [294, "hacerse"], [295, "una"], [296, "analítica"], [297, "de"], [298, "sangre"], [299, "y"], [300, "le"], [301, "salió"], [302, "el"], [303, "colesterol"], [304, "alto"], [305, "."], [306, "Y"], [307, "el"], [308, "médico"], [309, "tuvo"], [310, "el"], [311, "detalle"], [312, "—"], [313, "vaya"], [314, "detalle"], [315, "—"], [316, "de"], [317, "decir"], [318, "que"], [319, "había"], [320, "una"], [321, "posibilidad"], [322, "de"], [323, "que"], [324, "se"], [325, "taponaran"], [326, "las"], [327, "arterias"], [328, "y"], [329, "apareciera"], [330, "una"], [331, "burbuja"], [332, "en"], [333, "el"], [334, "cerebro"], [335, "."], [336, "R"], [337, ":"], [338, "¿"], [339, "Pero"], [340, "qué"], [341, "es"], [342, "eso"], [343, "?"], [344, "¿"], [345, "Una"], [346, "posibilidad"], [347, "?"], [348, "¿"], [349, "O"], [350, "sea"], [351, "que"], [352, "existe"], [353, "una"], [354, "posibilidad"], [355, "?"], [356, "¿"], [357, "Eh"], [358, "?"], [359, "M"], [360, ":"], [361, "¡"], [362, "Altísima"], [363, "!"], [364, "Come"], [365, "muchas"], [366, "frituras"], [367, "."], [368, "R"], [369, ":"], [370, "Espera"], [371, ","], [372, "¿"], [373, "o"], [374, "sea"], [375, "que"], [376, "no"], [377, "se"], [378, "está"], [379, "muriendo"], [380, "nadie"], [381, "aquí"], [382, ","], [383, "y"], [384, "he"], [385, "venido"], [386, "para"], [387, "nada"], [388, "?"], [389, "M"], [390, ":"], [391, "Ah"], [392, ","], [393, "eso"], [394, "es"], [395, "relativo"], [396, "."], [397, "Muriéndonos"], [398, "estamos"], [399, "todos"], [400, ","], [401, "depende"], [402, "de"], [403, "cuándo"], [404, ","], [405, "¿"], [406, "no"], [407, "?"], [408, "P"], [409, ":"], [410, "Vamos"], [411, "a"], [412, "poner"], [413, "los"], [414, "puntos"], [415, "sobre"], [416, "las"], [417, "íes"], [418, "."], [419, "Tu"], [420, "madre"], [421, "tiene"], [422, "miedo"], [423, "de"], [424, "que"], [425, "Vani"], [426, "vaya"], [427, "a"], [428, "pedir"], [429, "la"], [430, "mitad"], [431, "de"], [432, "mi"], [433, "herencia"], [434, "."], [435, "Eso"], [436, "es"], [437, "todo"], [438, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

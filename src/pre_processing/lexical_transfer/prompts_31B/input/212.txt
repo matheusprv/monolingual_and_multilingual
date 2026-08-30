@@ -1,0 +1,38 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: PEDRO en el segundo bloque tuvimos la participación del fraile Antonio Mozart, de la comisión de bioética de la CNBB, que abordó la cuestión del aborto desde la óptica de la Iglesia Católica. ¿Cuál es la posición de su iglesia en esta cuestión, empezando por el aborto?
+
+JAIR muy buenas noches a todos. Primero quiero felicitar a Bandeirantes por la inteligencia de crear un espacio democrático para debatir un tema como este, porque cuando un religioso va a hablar, de inmediato se le pone la etiqueta de "es solo una cuestión religiosa", entonces lo que dice no importa, se descarta. Bueno, nosotros los evangélicos — así que felicitaciones, felicitaciones Kyle, felicitaciones a la red Bandeirantes por estar una vez más a la vanguardia en el periodismo y dar oportunidad a quienes piensan distinto para expresarse. Y nosotros estamos contra el aborto. Quiero abordar esto desde el plano científico y teológico, porque no es una cuestión religiosa simplista. Estamos contra el aborto. Punto. Porque dios no... no... no... Bueno, primero: ¿quién define la vida en la ciencia? La biología. La biología es la que define en la ciencia dónde comienza la vida. La vida comienza en la concepción, es continua, ya sea intrauterina o extrauterina, hasta la muerte.
+
+Tokens: [[0, "PEDRO"], [1, "en"], [2, "el"], [3, "segundo"], [4, "bloque"], [5, "tuvimos"], [6, "la"], [7, "participación"], [8, "del"], [9, "fraile"], [10, "Antonio"], [11, "Mozart"], [12, ","], [13, "de"], [14, "la"], [15, "comisión"], [16, "de"], [17, "bioética"], [18, "de"], [19, "la"], [20, "CNBB"], [21, ","], [22, "que"], [23, "abordó"], [24, "la"], [25, "cuestión"], [26, "del"], [27, "aborto"], [28, "desde"], [29, "la"], [30, "óptica"], [31, "de"], [32, "la"], [33, "Iglesia"], [34, "Católica"], [35, "."], [36, "¿"], [37, "Cuál"], [38, "es"], [39, "la"], [40, "posición"], [41, "de"], [42, "su"], [43, "iglesia"], [44, "en"], [45, "esta"], [46, "cuestión"], [47, ","], [48, "empezando"], [49, "por"], [50, "el"], [51, "aborto"], [52, "?"], [53, "JAIR"], [54, "muy"], [55, "buenas"], [56, "noches"], [57, "a"], [58, "todos"], [59, "."], [60, "Primero"], [61, "quiero"], [62, "felicitar"], [63, "a"], [64, "Bandeirantes"], [65, "por"], [66, "la"], [67, "inteligencia"], [68, "de"], [69, "crear"], [70, "un"], [71, "espacio"], [72, "democrático"], [73, "para"], [74, "debatir"], [75, "un"], [76, "tema"], [77, "como"], [78, "este"], [79, ","], [80, "porque"], [81, "cuando"], [82, "un"], [83, "religioso"], [84, "va"], [85, "a"], [86, "hablar"], [87, ","], [88, "de"], [89, "inmediato"], [90, "se"], [91, "le"], [92, "pone"], [93, "la"], [94, "etiqueta"], [95, "de"], [96, "\""], [97, "es"], [98, "solo"], [99, "una"], [100, "cuestión"], [101, "religiosa"], [102, "\""], [103, ","], [104, "entonces"], [105, "lo"], [106, "que"], [107, "dice"], [108, "no"], [109, "importa"], [110, ","], [111, "se"], [112, "descarta"], [113, "."], [114, "Bueno"], [115, ","], [116, "nosotros"], [117, "los"], [118, "evangélicos"], [119, "—"], [120, "así"], [121, "que"], [122, "felicitaciones"], [123, ","], [124, "felicitaciones"], [125, "Kyle"], [126, ","], [127, "felicitaciones"], [128, "a"], [129, "la"], [130, "red"], [131, "Bandeirantes"], [132, "por"], [133, "estar"], [134, "una"], [135, "vez"], [136, "más"], [137, "a"], [138, "la"], [139, "vanguardia"], [140, "en"], [141, "el"], [142, "periodismo"], [143, "y"], [144, "dar"], [145, "oportunidad"], [146, "a"], [147, "quienes"], [148, "piensan"], [149, "distinto"], [150, "para"], [151, "expresarse"], [152, "."], [153, "Y"], [154, "nosotros"], [155, "estamos"], [156, "contra"], [157, "el"], [158, "aborto"], [159, "."], [160, "Quiero"], [161, "abordar"], [162, "esto"], [163, "desde"], [164, "el"], [165, "plano"], [166, "científico"], [167, "y"], [168, "teológico"], [169, ","], [170, "porque"], [171, "no"], [172, "es"], [173, "una"], [174, "cuestión"], [175, "religiosa"], [176, "simplista"], [177, "."], [178, "Estamos"], [179, "contra"], [180, "el"], [181, "aborto"], [182, "."], [183, "Punto"], [184, "."], [185, "Porque"], [186, "dios"], [187, "no"], [188, "..."], [189, "no"], [190, "..."], [191, "no"], [192, "..."], [193, "Bueno"], [194, ","], [195, "primero"], [196, ":"], [197, "¿"], [198, "quién"], [199, "define"], [200, "la"], [201, "vida"], [202, "en"], [203, "la"], [204, "ciencia"], [205, "?"], [206, "La"], [207, "biología"], [208, "."], [209, "La"], [210, "biología"], [211, "es"], [212, "la"], [213, "que"], [214, "define"], [215, "en"], [216, "la"], [217, "ciencia"], [218, "dónde"], [219, "comienza"], [220, "la"], [221, "vida"], [222, "."], [223, "La"], [224, "vida"], [225, "comienza"], [226, "en"], [227, "la"], [228, "concepción"], [229, ","], [230, "es"], [231, "continua"], [232, ","], [233, "ya"], [234, "sea"], [235, "intrauterina"], [236, "o"], [237, "extrauterina"], [238, ","], [239, "hasta"], [240, "la"], [241, "muerte"], [242, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

@@ -1,0 +1,66 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: - We're all here, aren't we? – Naruto asked.
+- No, Sakura's missing. – Ino replied.
+- That stupid girl is late! She does it just to wind me up! – Naruto said, annoyed.
+- Calm down, Naruto-kun, she must be on her way. – said Sai with that smile of his.
+- I hope so.
+
+A few minutes later, eight minutes to be exact, Sakura arrived. Naruto went to answer the door, furious.
+
+- Well, look who it is. – she said, walking in with an air of superiority.
+
+Naruto, seething, simply watched her cross the room and sit down next to Hinata, then slammed the door shut.
+
+- Now that we're all here we can start. – said Shikamaru, stretching.
+
+And Naruto, as always, was the first to tell a story. He wanted to get back at Sakura and wind her up on purpose, so he began.
+
+- Right, I'm going to tell you about the time I was four years old and I threw Sakura's doll out and she n– – Naruto couldn't finish, as Sakura interrupted him.
+- Are you out of your mind? I didn't even know you when I was four years old, you baka! – she said, glaring at him.
+- Of course you knew me!
+- Did not!
+- Did too!
+- Did not!
+- Did too!
+- Oh, you two, give it a rest. – said Shikamaru.
+- SHUT IT! – yelled Naruto and Sakura at the same time, rounding on Shikamaru, who jumped.
+- Right, anyway, I'm going to tell my story that actually happened. – Naruto continued.
+- It didn't happen... – Sakura muttered under her breath.
+- Alright, here I go.
+- Moron... – Sakura said quietly, but it was audible.
+- WHAT? – yelled Naruto furiously, leaping to his feet.
+- MO-RON! – Sakura stood up too.
+
+Tokens: [[0, "-"], [1, "We're"], [2, "all"], [3, "here"], [4, ","], [5, "aren't"], [6, "we"], [7, "?"], [8, "–"], [9, "Naruto"], [10, "asked"], [11, "."], [12, "-"], [13, "No"], [14, ","], [15, "Sakura's"], [16, "missing"], [17, "."], [18, "–"], [19, "Ino"], [20, "replied"], [21, "."], [22, "-"], [23, "That"], [24, "stupid"], [25, "girl"], [26, "is"], [27, "late"], [28, "!"], [29, "She"], [30, "does"], [31, "it"], [32, "just"], [33, "to"], [34, "wind"], [35, "me"], [36, "up"], [37, "!"], [38, "–"], [39, "Naruto"], [40, "said"], [41, ","], [42, "annoyed"], [43, "."], [44, "-"], [45, "Calm"], [46, "down"], [47, ","], [48, "Naruto"], [49, "-"], [50, "kun"], [51, ","], [52, "she"], [53, "must"], [54, "be"], [55, "on"], [56, "her"], [57, "way"], [58, "."], [59, "–"], [60, "said"], [61, "Sai"], [62, "with"], [63, "that"], [64, "smile"], [65, "of"], [66, "his"], [67, "."], [68, "-"], [69, "I"], [70, "hope"], [71, "so"], [72, "."], [73, "A"], [74, "few"], [75, "minutes"], [76, "later"], [77, ","], [78, "eight"], [79, "minutes"], [80, "to"], [81, "be"], [82, "exact"], [83, ","], [84, "Sakura"], [85, "arrived"], [86, "."], [87, "Naruto"], [88, "went"], [89, "to"], [90, "answer"], [91, "the"], [92, "door"], [93, ","], [94, "furious"], [95, "."], [96, "-"], [97, "Well"], [98, ","], [99, "look"], [100, "who"], [101, "it"], [102, "is"], [103, "."], [104, "–"], [105, "she"], [106, "said"], [107, ","], [108, "walking"], [109, "in"], [110, "with"], [111, "an"], [112, "air"], [113, "of"], [114, "superiority"], [115, "."], [116, "Naruto"], [117, ","], [118, "seething"], [119, ","], [120, "simply"], [121, "watched"], [122, "her"], [123, "cross"], [124, "the"], [125, "room"], [126, "and"], [127, "sit"], [128, "down"], [129, "next"], [130, "to"], [131, "Hinata"], [132, ","], [133, "then"], [134, "slammed"], [135, "the"], [136, "door"], [137, "shut"], [138, "."], [139, "-"], [140, "Now"], [141, "that"], [142, "we're"], [143, "all"], [144, "here"], [145, "we"], [146, "can"], [147, "start"], [148, "."], [149, "–"], [150, "said"], [151, "Shikamaru"], [152, ","], [153, "stretching"], [154, "."], [155, "And"], [156, "Naruto"], [157, ","], [158, "as"], [159, "always"], [160, ","], [161, "was"], [162, "the"], [163, "first"], [164, "to"], [165, "tell"], [166, "a"], [167, "story"], [168, "."], [169, "He"], [170, "wanted"], [171, "to"], [172, "get"], [173, "back"], [174, "at"], [175, "Sakura"], [176, "and"], [177, "wind"], [178, "her"], [179, "up"], [180, "on"], [181, "purpose"], [182, ","], [183, "so"], [184, "he"], [185, "began"], [186, "."], [187, "-"], [188, "Right"], [189, ","], [190, "I'm"], [191, "going"], [192, "to"], [193, "tell"], [194, "you"], [195, "about"], [196, "the"], [197, "time"], [198, "I"], [199, "was"], [200, "four"], [201, "years"], [202, "old"], [203, "and"], [204, "I"], [205, "threw"], [206, "Sakura's"], [207, "doll"], [208, "out"], [209, "and"], [210, "she"], [211, "n–"], [212, "–"], [213, "Naruto"], [214, "couldn't"], [215, "finish"], [216, ","], [217, "as"], [218, "Sakura"], [219, "interrupted"], [220, "him"], [221, "."], [222, "-"], [223, "Are"], [224, "you"], [225, "out"], [226, "of"], [227, "your"], [228, "mind"], [229, "?"], [230, "I"], [231, "didn't"], [232, "even"], [233, "know"], [234, "you"], [235, "when"], [236, "I"], [237, "was"], [238, "four"], [239, "years"], [240, "old"], [241, ","], [242, "you"], [243, "baka"], [244, "!"], [245, "–"], [246, "she"], [247, "said"], [248, ","], [249, "glaring"], [250, "at"], [251, "him"], [252, "."], [253, "-"], [254, "Of"], [255, "course"], [256, "you"], [257, "knew"], [258, "me"], [259, "!"], [260, "-"], [261, "Did"], [262, "not"], [263, "!"], [264, "-"], [265, "Did"], [266, "too"], [267, "!"], [268, "-"], [269, "Did"], [270, "not"], [271, "!"], [272, "-"], [273, "Did"], [274, "too"], [275, "!"], [276, "-"], [277, "Oh"], [278, ","], [279, "you"], [280, "two"], [281, ","], [282, "give"], [283, "it"], [284, "a"], [285, "rest"], [286, "."], [287, "–"], [288, "said"], [289, "Shikamaru"], [290, "."], [291, "-"], [292, "SHUT"], [293, "IT"], [294, "!"], [295, "–"], [296, "yelled"], [297, "Naruto"], [298, "and"], [299, "Sakura"], [300, "at"], [301, "the"], [302, "same"], [303, "time"], [304, ","], [305, "rounding"], [306, "on"], [307, "Shikamaru"], [308, ","], [309, "who"], [310, "jumped"], [311, "."], [312, "-"], [313, "Right"], [314, ","], [315, "anyway"], [316, ","], [317, "I'm"], [318, "going"], [319, "to"], [320, "tell"], [321, "my"], [322, "story"], [323, "that"], [324, "actually"], [325, "happened"], [326, "."], [327, "–"], [328, "Naruto"], [329, "continued"], [330, "."], [331, "-"], [332, "It"], [333, "didn't"], [334, "happen"], [335, "..."], [336, "–"], [337, "Sakura"], [338, "muttered"], [339, "under"], [340, "her"], [341, "breath"], [342, "."], [343, "-"], [344, "Alright"], [345, ","], [346, "here"], [347, "I"], [348, "go"], [349, "."], [350, "-"], [351, "Moron"], [352, "..."], [353, "–"], [354, "Sakura"], [355, "said"], [356, "quietly"], [357, ","], [358, "but"], [359, "it"], [360, "was"], [361, "audible"], [362, "."], [363, "-"], [364, "WHAT"], [365, "?"], [366, "–"], [367, "yelled"], [368, "Naruto"], [369, "furiously"], [370, ","], [371, "leaping"], [372, "to"], [373, "his"], [374, "feet"], [375, "."], [376, "-"], [377, "MO"], [378, "-"], [379, "RON"], [380, "!"], [381, "–"], [382, "Sakura"], [383, "stood"], [384, "up"], [385, "too"], [386, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

@@ -1,0 +1,57 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: SPEAKER 1 Okay, going back home, I have a question to ask, oh, the bathroom
+SPEAKER 2 LOW VOICE
+SPEAKER 1 At home
+SPEAKER 2 The bathroom, when I need to look back at history
+SPEAKER 1 You used to live in an apartment, you stayed there
+SPEAKER 2 We lived
+SPEAKER 1 In a hotel
+SPEAKER 2 No, we lived in an apartment, a very modern neighborhood, it would fit into any good neighborhood in Shanghai, our apartment had three bathrooms. After the revolution, they did some kind of urban renewal and took those that were originally manual
+SPEAKER 1 Unclear, houses from the European colony
+SPEAKER 2 They turned it into a kind of shared courtyard or something
+SPEAKER 1 Ahm
+SPEAKER 2 There was no way to build a bathroom for everyone, so they built public bathrooms. So when you get to the neighborhood, you see people still carrying chamber pots to empty into the public bathrooms. There are all kinds of public bathrooms. For example, huge billboards, you see those giant billboards on the street with advertisements for toilets, a very elegant woman sitting on a toilet
+SPEAKER 1 LOW VOICE
+SPEAKER 2 Shooting a commercial
+SPEAKER 1 LOW VOICE Oh, how wonderful
+SPEAKER 2 For us, it was a shock to see this as a natural thing. Going to C's house, he wants to show you his bathroom, he has a bathroom now. Then you
+SPEAKER 1 It turned into a dining room
+SPEAKER 2 No, it turned into a living room
+SPEAKER 2 Am I going to eat for this toilet?
+SPEAKER 2 If you need to use a public bathroom, then you have to
+SPEAKER 1 Have you ever used one?
+SPEAKER 2 Many times
+
+Tokens: [[0, "SPEAKER"], [1, "1"], [2, "Okay"], [3, ","], [4, "going"], [5, "back"], [6, "home"], [7, ","], [8, "I"], [9, "have"], [10, "a"], [11, "question"], [12, "to"], [13, "ask"], [14, ","], [15, "oh"], [16, ","], [17, "the"], [18, "bathroom"], [19, "SPEAKER"], [20, "2"], [21, "LOW"], [22, "VOICE"], [23, "SPEAKER"], [24, "1"], [25, "At"], [26, "home"], [27, "SPEAKER"], [28, "2"], [29, "The"], [30, "bathroom"], [31, ","], [32, "when"], [33, "I"], [34, "need"], [35, "to"], [36, "look"], [37, "back"], [38, "at"], [39, "history"], [40, "SPEAKER"], [41, "1"], [42, "You"], [43, "used"], [44, "to"], [45, "live"], [46, "in"], [47, "an"], [48, "apartment"], [49, ","], [50, "you"], [51, "stayed"], [52, "there"], [53, "SPEAKER"], [54, "2"], [55, "We"], [56, "lived"], [57, "SPEAKER"], [58, "1"], [59, "In"], [60, "a"], [61, "hotel"], [62, "SPEAKER"], [63, "2"], [64, "No"], [65, ","], [66, "we"], [67, "lived"], [68, "in"], [69, "an"], [70, "apartment"], [71, ","], [72, "a"], [73, "very"], [74, "modern"], [75, "neighborhood"], [76, ","], [77, "it"], [78, "would"], [79, "fit"], [80, "into"], [81, "any"], [82, "good"], [83, "neighborhood"], [84, "in"], [85, "Shanghai"], [86, ","], [87, "our"], [88, "apartment"], [89, "had"], [90, "three"], [91, "bathrooms"], [92, "."], [93, "After"], [94, "the"], [95, "revolution"], [96, ","], [97, "they"], [98, "did"], [99, "some"], [100, "kind"], [101, "of"], [102, "urban"], [103, "renewal"], [104, "and"], [105, "took"], [106, "those"], [107, "that"], [108, "were"], [109, "originally"], [110, "manual"], [111, "SPEAKER"], [112, "1"], [113, "Unclear"], [114, ","], [115, "houses"], [116, "from"], [117, "the"], [118, "European"], [119, "colony"], [120, "SPEAKER"], [121, "2"], [122, "They"], [123, "turned"], [124, "it"], [125, "into"], [126, "a"], [127, "kind"], [128, "of"], [129, "shared"], [130, "courtyard"], [131, "or"], [132, "something"], [133, "SPEAKER"], [134, "1"], [135, "Ahm"], [136, "SPEAKER"], [137, "2"], [138, "There"], [139, "was"], [140, "no"], [141, "way"], [142, "to"], [143, "build"], [144, "a"], [145, "bathroom"], [146, "for"], [147, "everyone"], [148, ","], [149, "so"], [150, "they"], [151, "built"], [152, "public"], [153, "bathrooms"], [154, "."], [155, "So"], [156, "when"], [157, "you"], [158, "get"], [159, "to"], [160, "the"], [161, "neighborhood"], [162, ","], [163, "you"], [164, "see"], [165, "people"], [166, "still"], [167, "carrying"], [168, "chamber"], [169, "pots"], [170, "to"], [171, "empty"], [172, "into"], [173, "the"], [174, "public"], [175, "bathrooms"], [176, "."], [177, "There"], [178, "are"], [179, "all"], [180, "kinds"], [181, "of"], [182, "public"], [183, "bathrooms"], [184, "."], [185, "For"], [186, "example"], [187, ","], [188, "huge"], [189, "billboards"], [190, ","], [191, "you"], [192, "see"], [193, "those"], [194, "giant"], [195, "billboards"], [196, "on"], [197, "the"], [198, "street"], [199, "with"], [200, "advertisements"], [201, "for"], [202, "toilets"], [203, ","], [204, "a"], [205, "very"], [206, "elegant"], [207, "woman"], [208, "sitting"], [209, "on"], [210, "a"], [211, "toilet"], [212, "SPEAKER"], [213, "1"], [214, "LOW"], [215, "VOICE"], [216, "SPEAKER"], [217, "2"], [218, "Shooting"], [219, "a"], [220, "commercial"], [221, "SPEAKER"], [222, "1"], [223, "LOW"], [224, "VOICE"], [225, "Oh"], [226, ","], [227, "how"], [228, "wonderful"], [229, "SPEAKER"], [230, "2"], [231, "For"], [232, "us"], [233, ","], [234, "it"], [235, "was"], [236, "a"], [237, "shock"], [238, "to"], [239, "see"], [240, "this"], [241, "as"], [242, "a"], [243, "natural"], [244, "thing"], [245, "."], [246, "Going"], [247, "to"], [248, "C's"], [249, "house"], [250, ","], [251, "he"], [252, "wants"], [253, "to"], [254, "show"], [255, "you"], [256, "his"], [257, "bathroom"], [258, ","], [259, "he"], [260, "has"], [261, "a"], [262, "bathroom"], [263, "now"], [264, "."], [265, "Then"], [266, "you"], [267, "SPEAKER"], [268, "1"], [269, "It"], [270, "turned"], [271, "into"], [272, "a"], [273, "dining"], [274, "room"], [275, "SPEAKER"], [276, "2"], [277, "No"], [278, ","], [279, "it"], [280, "turned"], [281, "into"], [282, "a"], [283, "living"], [284, "room"], [285, "SPEAKER"], [286, "2"], [287, "Am"], [288, "I"], [289, "going"], [290, "to"], [291, "eat"], [292, "for"], [293, "this"], [294, "toilet"], [295, "?"], [296, "SPEAKER"], [297, "2"], [298, "If"], [299, "you"], [300, "need"], [301, "to"], [302, "use"], [303, "a"], [304, "public"], [305, "bathroom"], [306, ","], [307, "then"], [308, "you"], [309, "have"], [310, "to"], [311, "SPEAKER"], [312, "1"], [313, "Have"], [314, "you"], [315, "ever"], [316, "used"], [317, "one"], [318, "?"], [319, "SPEAKER"], [320, "2"], [321, "Many"], [322, "times"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

@@ -1,0 +1,42 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: ¿Cómo funcionaba la Iglesia Bizantina y cuáles eran sus relaciones con el pueblo, el emperador y la Iglesia Católica?
+
+Los conflictos de orden cultural, político, racial e incluso religioso se volvieron inevitables, y el obispo romano pasó a ser considerado un traidor (persona non grata) de la causa bizantina de expansión y reconquista política y territorial de occidente. Es bajo esta óptica, pues, que también debe analizarse todo el proceso de cisma entre las iglesias latina y griega, integrantes de la ortodoxia cristiana central del primer milenio. Si no hubiera otras causas de carácter teológico, disciplinario y de costumbres, podría restablecerse el orden de cosas que había prevalecido hasta entonces, es decir, la unidad en la diversidad.
+
+¿Qué es el feedback?
+
+Feedback es un término empleado en varios campos, pero en esencia significa retroalimentación, es decir, cómo una cosa afecta a otra. Por ejemplo, en biología, cuando una hormona estimula o inhibe la liberación de otra hormona, a eso lo llamamos feedback.
+
+Tokens: [[0, "¿"], [1, "Cómo"], [2, "funcionaba"], [3, "la"], [4, "Iglesia"], [5, "Bizantina"], [6, "y"], [7, "cuáles"], [8, "eran"], [9, "sus"], [10, "relaciones"], [11, "con"], [12, "el"], [13, "pueblo"], [14, ","], [15, "el"], [16, "emperador"], [17, "y"], [18, "la"], [19, "Iglesia"], [20, "Católica"], [21, "?"], [22, "Los"], [23, "conflictos"], [24, "de"], [25, "orden"], [26, "cultural"], [27, ","], [28, "político"], [29, ","], [30, "racial"], [31, "e"], [32, "incluso"], [33, "religioso"], [34, "se"], [35, "volvieron"], [36, "inevitables"], [37, ","], [38, "y"], [39, "el"], [40, "obispo"], [41, "romano"], [42, "pasó"], [43, "a"], [44, "ser"], [45, "considerado"], [46, "un"], [47, "traidor"], [48, "("], [49, "persona"], [50, "non"], [51, "grata"], [52, ")"], [53, "de"], [54, "la"], [55, "causa"], [56, "bizantina"], [57, "de"], [58, "expansión"], [59, "y"], [60, "reconquista"], [61, "política"], [62, "y"], [63, "territorial"], [64, "de"], [65, "occidente"], [66, "."], [67, "Es"], [68, "bajo"], [69, "esta"], [70, "óptica"], [71, ","], [72, "pues"], [73, ","], [74, "que"], [75, "también"], [76, "debe"], [77, "analizarse"], [78, "todo"], [79, "el"], [80, "proceso"], [81, "de"], [82, "cisma"], [83, "entre"], [84, "las"], [85, "iglesias"], [86, "latina"], [87, "y"], [88, "griega"], [89, ","], [90, "integrantes"], [91, "de"], [92, "la"], [93, "ortodoxia"], [94, "cristiana"], [95, "central"], [96, "del"], [97, "primer"], [98, "milenio"], [99, "."], [100, "Si"], [101, "no"], [102, "hubiera"], [103, "otras"], [104, "causas"], [105, "de"], [106, "carácter"], [107, "teológico"], [108, ","], [109, "disciplinario"], [110, "y"], [111, "de"], [112, "costumbres"], [113, ","], [114, "podría"], [115, "restablecerse"], [116, "el"], [117, "orden"], [118, "de"], [119, "cosas"], [120, "que"], [121, "había"], [122, "prevalecido"], [123, "hasta"], [124, "entonces"], [125, ","], [126, "es"], [127, "decir"], [128, ","], [129, "la"], [130, "unidad"], [131, "en"], [132, "la"], [133, "diversidad"], [134, "."], [135, "¿"], [136, "Qué"], [137, "es"], [138, "el"], [139, "feedback"], [140, "?"], [141, "Feedback"], [142, "es"], [143, "un"], [144, "término"], [145, "empleado"], [146, "en"], [147, "varios"], [148, "campos"], [149, ","], [150, "pero"], [151, "en"], [152, "esencia"], [153, "significa"], [154, "retroalimentación"], [155, ","], [156, "es"], [157, "decir"], [158, ","], [159, "cómo"], [160, "una"], [161, "cosa"], [162, "afecta"], [163, "a"], [164, "otra"], [165, "."], [166, "Por"], [167, "ejemplo"], [168, ","], [169, "en"], [170, "biología"], [171, ","], [172, "cuando"], [173, "una"], [174, "hormona"], [175, "estimula"], [176, "o"], [177, "inhibe"], [178, "la"], [179, "liberación"], [180, "de"], [181, "otra"], [182, "hormona"], [183, ","], [184, "a"], [185, "eso"], [186, "lo"], [187, "llamamos"], [188, "feedback"], [189, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

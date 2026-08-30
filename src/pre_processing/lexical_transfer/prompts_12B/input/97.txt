@@ -1,0 +1,41 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: HABLANTE1: Doctor Hablante2, muy buenas noches.
+HABLANTE2: Buenas noches, [ININTELIGIBLE], querido amigo, y buenas noches a todos los internautas. Es un placer para mí participar esta noche en este programa y aportar alguna información sobre la ley seca. Así que es una satisfacción enorme poder estar hoy aquí con vosotros.
+HABLANTE1: Muchas gracias, doctor Hablante2. Y para que les quede claro a nuestros internautas: ¿qué pasó exactamente con la reforma del código de circulación que modificó o implantó la ley seca? ¿Qué diferencias hay entre la normativa anterior y esta modificación que se introdujo en el código de circulación?
+HABLANTE2: Querido amigo, internautas: en primer lugar, la conocida como ley seca es la ley 11.705 de 2008, que entró en vigor el pasado 20 de junio. Recibe ese nombre porque la reforma establece la tolerancia cero con los niveles de alcohol y otras sustancias en el organismo del conductor, de cualquier ciudadano. Hasta el año 1998, la ley recogía en su articulado una escala según la intensidad de la tasa de alcohol, o sea...
+HABLANTE1: Disculpe, disculpe que lo interrumpa, doctor. ¿Quiere decir entonces que el hecho de tipificar como delito que una persona conduzca un vehículo bajo los efectos del alcohol o de sustancias que generan dependencia química ya estaba castigado antes de esta ley de 2008, doctor?
+HABLANTE2: Sí, sí, por supuesto. El código de circulación aplicable entonces estaba vigente, si no recuerdo mal, desde 1966 y estuvo en vigor hasta 1998, por lo que funcionó durante mucho tiempo. Y en ese código, la justicia era muy estricta con el tema de las tasas de alcohol.
+
+Tokens: [[0, "HABLANTE1"], [1, ":"], [2, "Doctor"], [3, "Hablante2"], [4, ","], [5, "muy"], [6, "buenas"], [7, "noches"], [8, "."], [9, "HABLANTE2"], [10, ":"], [11, "Buenas"], [12, "noches"], [13, ","], [14, "["], [15, "ININTELIGIBLE"], [16, "]"], [17, ","], [18, "querido"], [19, "amigo"], [20, ","], [21, "y"], [22, "buenas"], [23, "noches"], [24, "a"], [25, "todos"], [26, "los"], [27, "internautas"], [28, "."], [29, "Es"], [30, "un"], [31, "placer"], [32, "para"], [33, "mí"], [34, "participar"], [35, "esta"], [36, "noche"], [37, "en"], [38, "este"], [39, "programa"], [40, "y"], [41, "aportar"], [42, "alguna"], [43, "información"], [44, "sobre"], [45, "la"], [46, "ley"], [47, "seca"], [48, "."], [49, "Así"], [50, "que"], [51, "es"], [52, "una"], [53, "satisfacción"], [54, "enorme"], [55, "poder"], [56, "estar"], [57, "hoy"], [58, "aquí"], [59, "con"], [60, "vosotros"], [61, "."], [62, "HABLANTE1"], [63, ":"], [64, "Muchas"], [65, "gracias"], [66, ","], [67, "doctor"], [68, "Hablante2"], [69, "."], [70, "Y"], [71, "para"], [72, "que"], [73, "les"], [74, "quede"], [75, "claro"], [76, "a"], [77, "nuestros"], [78, "internautas"], [79, ":"], [80, "¿"], [81, "qué"], [82, "pasó"], [83, "exactamente"], [84, "con"], [85, "la"], [86, "reforma"], [87, "del"], [88, "código"], [89, "de"], [90, "circulación"], [91, "que"], [92, "modificó"], [93, "o"], [94, "implantó"], [95, "la"], [96, "ley"], [97, "seca"], [98, "?"], [99, "¿"], [100, "Qué"], [101, "diferencias"], [102, "hay"], [103, "entre"], [104, "la"], [105, "normativa"], [106, "anterior"], [107, "y"], [108, "esta"], [109, "modificación"], [110, "que"], [111, "se"], [112, "introdujo"], [113, "en"], [114, "el"], [115, "código"], [116, "de"], [117, "circulación"], [118, "?"], [119, "HABLANTE2"], [120, ":"], [121, "Querido"], [122, "amigo"], [123, ","], [124, "internautas"], [125, ":"], [126, "en"], [127, "primer"], [128, "lugar"], [129, ","], [130, "la"], [131, "conocida"], [132, "como"], [133, "ley"], [134, "seca"], [135, "es"], [136, "la"], [137, "ley"], [138, "11.705"], [139, "de"], [140, "2008"], [141, ","], [142, "que"], [143, "entró"], [144, "en"], [145, "vigor"], [146, "el"], [147, "pasado"], [148, "20"], [149, "de"], [150, "junio"], [151, "."], [152, "Recibe"], [153, "ese"], [154, "nombre"], [155, "porque"], [156, "la"], [157, "reforma"], [158, "establece"], [159, "la"], [160, "tolerancia"], [161, "cero"], [162, "con"], [163, "los"], [164, "niveles"], [165, "de"], [166, "alcohol"], [167, "y"], [168, "otras"], [169, "sustancias"], [170, "en"], [171, "el"], [172, "organismo"], [173, "del"], [174, "conductor"], [175, ","], [176, "de"], [177, "cualquier"], [178, "ciudadano"], [179, "."], [180, "Hasta"], [181, "el"], [182, "año"], [183, "1998"], [184, ","], [185, "la"], [186, "ley"], [187, "recogía"], [188, "en"], [189, "su"], [190, "articulado"], [191, "una"], [192, "escala"], [193, "según"], [194, "la"], [195, "intensidad"], [196, "de"], [197, "la"], [198, "tasa"], [199, "de"], [200, "alcohol"], [201, ","], [202, "o"], [203, "sea"], [204, "..."], [205, "HABLANTE1"], [206, ":"], [207, "Disculpe"], [208, ","], [209, "disculpe"], [210, "que"], [211, "lo"], [212, "interrumpa"], [213, ","], [214, "doctor"], [215, "."], [216, "¿"], [217, "Quiere"], [218, "decir"], [219, "entonces"], [220, "que"], [221, "el"], [222, "hecho"], [223, "de"], [224, "tipificar"], [225, "como"], [226, "delito"], [227, "que"], [228, "una"], [229, "persona"], [230, "conduzca"], [231, "un"], [232, "vehículo"], [233, "bajo"], [234, "los"], [235, "efectos"], [236, "del"], [237, "alcohol"], [238, "o"], [239, "de"], [240, "sustancias"], [241, "que"], [242, "generan"], [243, "dependencia"], [244, "química"], [245, "ya"], [246, "estaba"], [247, "castigado"], [248, "antes"], [249, "de"], [250, "esta"], [251, "ley"], [252, "de"], [253, "2008"], [254, ","], [255, "doctor"], [256, "?"], [257, "HABLANTE2"], [258, ":"], [259, "Sí"], [260, ","], [261, "sí"], [262, ","], [263, "por"], [264, "supuesto"], [265, "."], [266, "El"], [267, "código"], [268, "de"], [269, "circulación"], [270, "aplicable"], [271, "entonces"], [272, "estaba"], [273, "vigente"], [274, ","], [275, "si"], [276, "no"], [277, "recuerdo"], [278, "mal"], [279, ","], [280, "desde"], [281, "1966"], [282, "y"], [283, "estuvo"], [284, "en"], [285, "vigor"], [286, "hasta"], [287, "1998"], [288, ","], [289, "por"], [290, "lo"], [291, "que"], [292, "funcionó"], [293, "durante"], [294, "mucho"], [295, "tiempo"], [296, "."], [297, "Y"], [298, "en"], [299, "ese"], [300, "código"], [301, ","], [302, "la"], [303, "justicia"], [304, "era"], [305, "muy"], [306, "estricta"], [307, "con"], [308, "el"], [309, "tema"], [310, "de"], [311, "las"], [312, "tasas"], [313, "de"], [314, "alcohol"], [315, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

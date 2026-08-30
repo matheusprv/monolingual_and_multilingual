@@ -1,0 +1,21 @@
+0=JOHN|1=boa|2=noite
+3=PAUL|4=boa|5=noite
+6=JOHN|7=meu|8=nome|9=é|10=ruth
+11=PAUL|12=meu|13=nome|14=é|15=rachel
+16=PAUL|17,18=brincadeira|19,20=brincadeira|21=desculpe|22,23=por isso
+24=JOHN|25=obviamente|26=meu|27=nome|28=não|29=ruth|30=e|31=o|32=não|33=rachel
+34=PAUL|35=bem|36=na verdade|37=eu|38=sou|39=ruth|40=e|41=ele|42=rachel|43=eu|44=quero|45=dizer|46=eu|47=sou|PAUL
+48=JOHN|49=e|50=eu|51=sou|JOHN|52=nós|53=viemos|54=aqui|55=para|56=apresentar|57=o|58=show|59=dois|60=de|61=paus
+62=PAUL|63=que|64=ao|65=contrário|66=ao|67=que|68=muitas|69=pessoas|70=pensam|71=é|72=não|73=um|74=gay|75=show|76=certo
+78=JOHN|79=não|80=não|81=tem|82=nada|83=a|84=ver|85=com|86=isso|87=é|88=chamado|89=dois|90=de|91=paus|92=por|93=causa|94=da|95=carta|96=de|jogo|97=certo
+98=PAUL|99=havia|100=até|101=pessoas|102=que|103=imaginaram|104=oh|105=dois|106=homens|107=em|108=um|109=show|110=com|111=esse|112=estranho|113=nome
+115=JOHN|116=engraçado|117=não|118=é|119=algumas|120=pessoas|121=ouvem|122=o|123=que|124=querem|125=ouvir|126=então|127=quando|128=eu|129=expliquei|130=que|131=era|132=de|133=um|134=baralho|135=de|136=cartas|137=a|138=pessoa|139=oh|140=é|141=de|142=um|143=baralho|144=de|145=cartas
+147=PAUL|148=oh|149=aqui|150=nós|151=vamos|152=começando|153=cedo|154=já
+155=JOHN|156=sim
+157=PAUL|158=então|159=está|160=resolvido|161=então|162=pessoal|163=é|164=um|165=comédia|166=show|167=com|168=dois|169=gêmeos|170=atores
+171=JOHN|172=olha|173=esta|174=toda|175=coisa|176=de|gêmeos|177=tem|178=muitas|179=chata|180=coisas|181=você|182=sabe|183=tem|184=algumas|185=vantagens|186=também|187=na verdade|188=não|189=não|190=tem|191=nenhuma|192=vantagem|193=de|194=modo|195=algum|196=pessoal|197=é|198=apenas|199=uma|200=grande|201=dor|202=a|203=única|204=vantagem|205=foi|206=que|207=nós|208=tivemos|209=para|210=montar|211=este|212=show|213=junto
+215=PAUL|216=mas|217=além|218=disso|219=é|220=apenas|221=irritação|222=pessoas|223=pensam|224=que|225=o|226=fato|227=de|228=somos|229=gêmeos|230=dá|231=a|232=eles|233=o|234=direito|235=de|236=fazer|237=as|238=mais|239=burras|240=perguntas|241=que|242=podem|243=pensar|244=como|245=você|246=você|247=ou|248=você|249=o|250=outro|251=um
+253=JOHN|254=agora|255=como|256=eu|257=poderia|258=possivelmente|259=não|260=ser|261=eu|262=e|263=em|264=vez|265=ser|266=o|267=outro|268=pelo|269=amor|270=de|Deus
+271=PAUL|272=que|273=dia|274=você|275=nasceu|276=junho|277=15|278=oh|279=e|280=seu|281=irmão|282=oh
+284=JOHN|285=ININTELIGÍVEL|286=eles|287=têm|288=uma|289=fixação|290=com|291=querer|292=saber|293=quem|294=é|295=mais|296=velho|297=certo|298=quem|299=nasceu|300=primeiro
+301=PAUL|302=vocês|303=são|304=irmãos|305=não|306=são|307=primos|308=não|309=na verdade|310=nós|311=apenas|312=acabamos|313=de|314=nos|315=conhecer|316=agora|317=oh|318=tão|319=parecidos

@@ -1,0 +1,67 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: _Boyfriend? What do you mean, boyfriend?
+_Not exactly a boyfriend — he's a guy who brought me here and lets me live in one of his flats.
+_Lets you live there, for free?
+_You should know by now that nothing in this world is free.
+_So he lives with you?
+_No, look, this guy has business going on all over, he's probably even married; he stays at the flat until eleven and then he's gone.
+_Yeah, that's classic married-man behaviour.
+_Seems like it, doesn't it?
+_Well, anyway, let's get walking.
+_Are you still going to walk me home?
+_Around here we don't leave a lady on her own.
+_I didn't know you people from the countryside were so chivalrous.
+_Countryside!? But aren't you from Saint Gotthard?
+_No, no, I just spent a bit of time there; ever since I left my hometown I've been drifting from town to town. I'm from the City.
+_Hm, which way is the flat?
+_Up the street, just ahead.
+_Right, and what've you been getting up to in the city?
+_Depends — is nicking a car considered getting up to something?
+_Depends — have you given it back?
+_No chance, it ended up in a river near the road.
+_Yeah, around here we call that getting up to something. Did they report it stolen?
+_They did, yeah.
+_You're gorgeous, and here I was wanting to walk you home because this neighbourhood's dangerous — turns out you're the dangerous one.
+_Not that dangerous, she said with a little smile and a sideways glance while Rafael practically devoured her with his eyes.
+_The flat's that one, she said, looking to the side.
+_Right, right.
+They both stood there for a while, looking around, until Rafael spoke:
+_Well then, here you are, safe and sound. I'll be off.
+_Wait...
+_But...
+_Don't you want to come up? He won't be back till tomorrow anyway, there's beer in the fridge.
+_Look, love! It's not right for a man to go to another man's place, especially with his gorgeous girlfriend.
+
+Tokens: [[0, "_Boyfriend"], [1, "?"], [2, "What"], [3, "do"], [4, "you"], [5, "mean"], [6, ","], [7, "boyfriend"], [8, "?"], [9, "_"], [10, "Not"], [11, "exactly"], [12, "a"], [13, "boyfriend"], [14, "—"], [15, "he's"], [16, "a"], [17, "guy"], [18, "who"], [19, "brought"], [20, "me"], [21, "here"], [22, "and"], [23, "lets"], [24, "me"], [25, "live"], [26, "in"], [27, "one"], [28, "of"], [29, "his"], [30, "flats"], [31, "."], [32, "_"], [33, "Lets"], [34, "you"], [35, "live"], [36, "there"], [37, ","], [38, "for"], [39, "free"], [40, "?"], [41, "_"], [42, "You"], [43, "should"], [44, "know"], [45, "by"], [46, "now"], [47, "that"], [48, "nothing"], [49, "in"], [50, "this"], [51, "world"], [52, "is"], [53, "free"], [54, "."], [55, "_"], [56, "So"], [57, "he"], [58, "lives"], [59, "with"], [60, "you"], [61, "?"], [62, "_"], [63, "No"], [64, ","], [65, "look"], [66, ","], [67, "this"], [68, "guy"], [69, "has"], [70, "business"], [71, "going"], [72, "on"], [73, "all"], [74, "over"], [75, ","], [76, "he's"], [77, "probably"], [78, "even"], [79, "married"], [80, ";"], [81, "he"], [82, "stays"], [83, "at"], [84, "the"], [85, "flat"], [86, "until"], [87, "eleven"], [88, "and"], [89, "then"], [90, "he's"], [91, "gone"], [92, "."], [93, "_"], [94, "Yeah"], [95, ","], [96, "that's"], [97, "classic"], [98, "married"], [99, "-"], [100, "man"], [101, "behaviour"], [102, "."], [103, "_"], [104, "Seems"], [105, "like"], [106, "it"], [107, ","], [108, "doesn't"], [109, "it"], [110, "?"], [111, "_"], [112, "Well"], [113, ","], [114, "anyway"], [115, ","], [116, "let's"], [117, "get"], [118, "walking"], [119, "."], [120, "_"], [121, "Are"], [122, "you"], [123, "still"], [124, "going"], [125, "to"], [126, "walk"], [127, "me"], [128, "home"], [129, "?"], [130, "_"], [131, "Around"], [132, "here"], [133, "we"], [134, "don't"], [135, "leave"], [136, "a"], [137, "lady"], [138, "on"], [139, "her"], [140, "own"], [141, "."], [142, "_"], [143, "I"], [144, "didn't"], [145, "know"], [146, "you"], [147, "people"], [148, "from"], [149, "the"], [150, "countryside"], [151, "were"], [152, "so"], [153, "chivalrous"], [154, "."], [155, "_"], [156, "Countryside"], [157, "!?"], [158, "But"], [159, "aren't"], [160, "you"], [161, "from"], [162, "Saint"], [163, "Gotthard"], [164, "?"], [165, "_"], [166, "No"], [167, ","], [168, "no"], [169, ","], [170, "I"], [171, "just"], [172, "spent"], [173, "a"], [174, "bit"], [175, "of"], [176, "time"], [177, "there"], [178, ";"], [179, "ever"], [180, "since"], [181, "I"], [182, "left"], [183, "my"], [184, "hometown"], [185, "I've"], [186, "been"], [187, "drifting"], [188, "from"], [189, "town"], [190, "to"], [191, "town"], [192, "."], [193, "I'm"], [194, "from"], [195, "the"], [196, "City"], [197, "."], [198, "_"], [199, "Hm"], [200, ","], [201, "which"], [202, "way"], [203, "is"], [204, "the"], [205, "flat"], [206, "?"], [207, "_"], [208, "Up"], [209, "the"], [210, "street"], [211, ","], [212, "just"], [213, "ahead"], [214, "."], [215, "_"], [216, "Right"], [217, ","], [218, "and"], [219, "what've"], [220, "you"], [221, "been"], [222, "getting"], [223, "up"], [224, "to"], [225, "in"], [226, "the"], [227, "city"], [228, "?"], [229, "_"], [230, "Depends"], [231, "—"], [232, "is"], [233, "nicking"], [234, "a"], [235, "car"], [236, "considered"], [237, "getting"], [238, "up"], [239, "to"], [240, "something"], [241, "?"], [242, "_"], [243, "Depends"], [244, "—"], [245, "have"], [246, "you"], [247, "given"], [248, "it"], [249, "back"], [250, "?"], [251, "_"], [252, "No"], [253, "chance"], [254, ","], [255, "it"], [256, "ended"], [257, "up"], [258, "in"], [259, "a"], [260, "river"], [261, "near"], [262, "the"], [263, "road"], [264, "."], [265, "_"], [266, "Yeah"], [267, ","], [268, "around"], [269, "here"], [270, "we"], [271, "call"], [272, "that"], [273, "getting"], [274, "up"], [275, "to"], [276, "something"], [277, "."], [278, "Did"], [279, "they"], [280, "report"], [281, "it"], [282, "stolen"], [283, "?"], [284, "_"], [285, "They"], [286, "did"], [287, ","], [288, "yeah"], [289, "."], [290, "_"], [291, "You're"], [292, "gorgeous"], [293, ","], [294, "and"], [295, "here"], [296, "I"], [297, "was"], [298, "wanting"], [299, "to"], [300, "walk"], [301, "you"], [302, "home"], [303, "because"], [304, "this"], [305, "neighbourhood's"], [306, "dangerous"], [307, "—"], [308, "turns"], [309, "out"], [310, "you're"], [311, "the"], [312, "dangerous"], [313, "one"], [314, "."], [315, "_"], [316, "Not"], [317, "that"], [318, "dangerous"], [319, ","], [320, "she"], [321, "said"], [322, "with"], [323, "a"], [324, "little"], [325, "smile"], [326, "and"], [327, "a"], [328, "sideways"], [329, "glance"], [330, "while"], [331, "Rafael"], [332, "practically"], [333, "devoured"], [334, "her"], [335, "with"], [336, "his"], [337, "eyes"], [338, "."], [339, "_"], [340, "The"], [341, "flat's"], [342, "that"], [343, "one"], [344, ","], [345, "she"], [346, "said"], [347, ","], [348, "looking"], [349, "to"], [350, "the"], [351, "side"], [352, "."], [353, "_"], [354, "Right"], [355, ","], [356, "right"], [357, "."], [358, "They"], [359, "both"], [360, "stood"], [361, "there"], [362, "for"], [363, "a"], [364, "while"], [365, ","], [366, "looking"], [367, "around"], [368, ","], [369, "until"], [370, "Rafael"], [371, "spoke"], [372, ":"], [373, "_"], [374, "Well"], [375, "then"], [376, ","], [377, "here"], [378, "you"], [379, "are"], [380, ","], [381, "safe"], [382, "and"], [383, "sound"], [384, "."], [385, "I'll"], [386, "be"], [387, "off"], [388, "."], [389, "_Wait"], [390, "..."], [391, "_"], [392, "But"], [393, "..."], [394, "_"], [395, "Don't"], [396, "you"], [397, "want"], [398, "to"], [399, "come"], [400, "up"], [401, "?"], [402, "He"], [403, "won't"], [404, "be"], [405, "back"], [406, "till"], [407, "tomorrow"], [408, "anyway"], [409, ","], [410, "there's"], [411, "beer"], [412, "in"], [413, "the"], [414, "fridge"], [415, "."], [416, "_"], [417, "Look"], [418, ","], [419, "love"], [420, "!"], [421, "It's"], [422, "not"], [423, "right"], [424, "for"], [425, "a"], [426, "man"], [427, "to"], [428, "go"], [429, "to"], [430, "another"], [431, "man's"], [432, "place"], [433, ","], [434, "especially"], [435, "with"], [436, "his"], [437, "gorgeous"], [438, "girlfriend"], [439, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

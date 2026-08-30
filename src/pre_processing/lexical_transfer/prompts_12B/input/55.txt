@@ -1,0 +1,48 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: SPEAKER1 doctor what should I do when I get cramps
+SPEAKER2 when she gets cramps mrs vera wants to know
+SPEAKER3 right so what to do about a cramp basically you're going to have a muscle spasm people usually associate it with the calf or the sole of the foot
+SPEAKER2 but you can get it in your hand too cramps can happen anywhere
+SPEAKER3 they can yes they can happen anywhere the most common places are the calf and the sole of the foot it's essentially a sustained muscle spasm meaning the muscle seizes up and gives you that knotted feeling what you need to do is quite simple just massage the affected area
+SPEAKER2 it really does feel like a knot
+SPEAKER3 it does feel like a knot so wherever you've got that knot you're going to massage it that massage will help increase blood flow to the area and ease the cramp
+SPEAKER2 and what about that thing people say about flexing your foot for example if it's in your calf pulling your foot back towards you what does that actually do
+SPEAKER3 what you're doing is changing the position you're in whatever position you're in try to shift it in the moment because you're moving the muscle fibres and that helps release the spasm in terms of cramps everyone always says have a banana or an orange doesn't it
+SPEAKER2 that's true they say eat a banana because it's got potassium it's good that's right
+SPEAKER3 it's true but cramps aren't only related to potassium they're related to
+SPEAKER2 so it's not just a potassium deficiency then
+SPEAKER3 it can be a potassium deficiency but also sodium magnesium calcium it's very closely linked to dehydration as well when you do very intense physical activity you lose what are called electrolytes which are the ones we've just mentioned sodium potassium
+
+Tokens: [[0, "SPEAKER1"], [1, "doctor"], [2, "what"], [3, "should"], [4, "I"], [5, "do"], [6, "when"], [7, "I"], [8, "get"], [9, "cramps"], [10, "SPEAKER2"], [11, "when"], [12, "she"], [13, "gets"], [14, "cramps"], [15, "mrs"], [16, "vera"], [17, "wants"], [18, "to"], [19, "know"], [20, "SPEAKER3"], [21, "right"], [22, "so"], [23, "what"], [24, "to"], [25, "do"], [26, "about"], [27, "a"], [28, "cramp"], [29, "basically"], [30, "you're"], [31, "going"], [32, "to"], [33, "have"], [34, "a"], [35, "muscle"], [36, "spasm"], [37, "people"], [38, "usually"], [39, "associate"], [40, "it"], [41, "with"], [42, "the"], [43, "calf"], [44, "or"], [45, "the"], [46, "sole"], [47, "of"], [48, "the"], [49, "foot"], [50, "SPEAKER2"], [51, "but"], [52, "you"], [53, "can"], [54, "get"], [55, "it"], [56, "in"], [57, "your"], [58, "hand"], [59, "too"], [60, "cramps"], [61, "can"], [62, "happen"], [63, "anywhere"], [64, "SPEAKER3"], [65, "they"], [66, "can"], [67, "yes"], [68, "they"], [69, "can"], [70, "happen"], [71, "anywhere"], [72, "the"], [73, "most"], [74, "common"], [75, "places"], [76, "are"], [77, "the"], [78, "calf"], [79, "and"], [80, "the"], [81, "sole"], [82, "of"], [83, "the"], [84, "foot"], [85, "it's"], [86, "essentially"], [87, "a"], [88, "sustained"], [89, "muscle"], [90, "spasm"], [91, "meaning"], [92, "the"], [93, "muscle"], [94, "seizes"], [95, "up"], [96, "and"], [97, "gives"], [98, "you"], [99, "that"], [100, "knotted"], [101, "feeling"], [102, "what"], [103, "you"], [104, "need"], [105, "to"], [106, "do"], [107, "is"], [108, "quite"], [109, "simple"], [110, "just"], [111, "massage"], [112, "the"], [113, "affected"], [114, "area"], [115, "SPEAKER2"], [116, "it"], [117, "really"], [118, "does"], [119, "feel"], [120, "like"], [121, "a"], [122, "knot"], [123, "SPEAKER3"], [124, "it"], [125, "does"], [126, "feel"], [127, "like"], [128, "a"], [129, "knot"], [130, "so"], [131, "wherever"], [132, "you've"], [133, "got"], [134, "that"], [135, "knot"], [136, "you're"], [137, "going"], [138, "to"], [139, "massage"], [140, "it"], [141, "that"], [142, "massage"], [143, "will"], [144, "help"], [145, "increase"], [146, "blood"], [147, "flow"], [148, "to"], [149, "the"], [150, "area"], [151, "and"], [152, "ease"], [153, "the"], [154, "cramp"], [155, "SPEAKER2"], [156, "and"], [157, "what"], [158, "about"], [159, "that"], [160, "thing"], [161, "people"], [162, "say"], [163, "about"], [164, "flexing"], [165, "your"], [166, "foot"], [167, "for"], [168, "example"], [169, "if"], [170, "it's"], [171, "in"], [172, "your"], [173, "calf"], [174, "pulling"], [175, "your"], [176, "foot"], [177, "back"], [178, "towards"], [179, "you"], [180, "what"], [181, "does"], [182, "that"], [183, "actually"], [184, "do"], [185, "SPEAKER3"], [186, "what"], [187, "you're"], [188, "doing"], [189, "is"], [190, "changing"], [191, "the"], [192, "position"], [193, "you're"], [194, "in"], [195, "whatever"], [196, "position"], [197, "you're"], [198, "in"], [199, "try"], [200, "to"], [201, "shift"], [202, "it"], [203, "in"], [204, "the"], [205, "moment"], [206, "because"], [207, "you're"], [208, "moving"], [209, "the"], [210, "muscle"], [211, "fibres"], [212, "and"], [213, "that"], [214, "helps"], [215, "release"], [216, "the"], [217, "spasm"], [218, "in"], [219, "terms"], [220, "of"], [221, "cramps"], [222, "everyone"], [223, "always"], [224, "says"], [225, "have"], [226, "a"], [227, "banana"], [228, "or"], [229, "an"], [230, "orange"], [231, "doesn't"], [232, "it"], [233, "SPEAKER2"], [234, "that's"], [235, "true"], [236, "they"], [237, "say"], [238, "eat"], [239, "a"], [240, "banana"], [241, "because"], [242, "it's"], [243, "got"], [244, "potassium"], [245, "it's"], [246, "good"], [247, "that's"], [248, "right"], [249, "SPEAKER3"], [250, "it's"], [251, "true"], [252, "but"], [253, "cramps"], [254, "aren't"], [255, "only"], [256, "related"], [257, "to"], [258, "potassium"], [259, "they're"], [260, "related"], [261, "to"], [262, "SPEAKER2"], [263, "so"], [264, "it's"], [265, "not"], [266, "just"], [267, "a"], [268, "potassium"], [269, "deficiency"], [270, "then"], [271, "SPEAKER3"], [272, "it"], [273, "can"], [274, "be"], [275, "a"], [276, "potassium"], [277, "deficiency"], [278, "but"], [279, "also"], [280, "sodium"], [281, "magnesium"], [282, "calcium"], [283, "it's"], [284, "very"], [285, "closely"], [286, "linked"], [287, "to"], [288, "dehydration"], [289, "as"], [290, "well"], [291, "when"], [292, "you"], [293, "do"], [294, "very"], [295, "intense"], [296, "physical"], [297, "activity"], [298, "you"], [299, "lose"], [300, "what"], [301, "are"], [302, "called"], [303, "electrolytes"], [304, "which"], [305, "are"], [306, "the"], [307, "ones"], [308, "we've"], [309, "just"], [310, "mentioned"], [311, "sodium"], [312, "potassium"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

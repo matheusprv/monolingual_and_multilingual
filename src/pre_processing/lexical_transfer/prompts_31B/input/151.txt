@@ -1,0 +1,44 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: El MHNJB ofrece el curso de extensión "Aprende a fabricar, montar e instalar tu Calentador Solar de Bajo Coste"
+
+En este mes de marzo, el Museo de Historia Natural y Jardín Botánico de la UFMG (MHNJB) abre el plazo de inscripción para el curso de extensión "Aprende a fabricar, montar e instalar tu Calentador Solar de Bajo Coste", que cosechó un gran éxito el año pasado.
+El curso aborda todo el proceso de construcción e instalación de calentadores solares residenciales, pero cuenta con una gran ventaja: los inscritos salen del Museo perfectamente capacitados para construir sus propios equipos. Aprenderán los fundamentos teóricos y, a continuación, pasarán a la fase práctica construyendo un calentador en equipo. Además, cada participante recibirá un manual detallado con el dimensionamiento, los materiales y las herramientas necesarias, así como información sobre técnicas de instalación, lo que les permitirá aplicar los conocimientos adquiridos en su ámbito doméstico.
+El Calentador Solar de Bajo Coste (CSBC) es un proyecto de la Sociedade do Sol, entidad con sede en el Centro Incubador de Empresas Tecnológicas (CIETEC) de São Paulo.
+Su meta es difundir la tecnología de autoconstrucción de calentadores solares de agua (con capacidades de 200 a 1.000 litros), diseñados para sustituir parcialmente el consumo de energía eléctrica de los 36 millones de familias brasileñas que utilizan duchas eléctricas en sus casas y pisos.
+El taller se impartirá el día 13 de marzo de 9:00 h a 16:00 h, y las inscripciones permanecerán abiertas del 8 al 12 de marzo de 2010. La plaza solo quedará confirmada tras enviar el comprobante de pago (la tasa de recaudación correspondiente), por un importe de R$ 50,00, al número de fax 3409 7613, o bien presentándolo en persona en el Cenex del MHNJB.
+Para más información:
+Cenex MHNJB – 31 3409 7612
+
+Tokens: [[0, "El"], [1, "MHNJB"], [2, "ofrece"], [3, "el"], [4, "curso"], [5, "de"], [6, "extensión"], [7, "\""], [8, "Aprende"], [9, "a"], [10, "fabricar"], [11, ","], [12, "montar"], [13, "e"], [14, "instalar"], [15, "tu"], [16, "Calentador"], [17, "Solar"], [18, "de"], [19, "Bajo"], [20, "Coste"], [21, "\""], [22, "En"], [23, "este"], [24, "mes"], [25, "de"], [26, "marzo"], [27, ","], [28, "el"], [29, "Museo"], [30, "de"], [31, "Historia"], [32, "Natural"], [33, "y"], [34, "Jardín"], [35, "Botánico"], [36, "de"], [37, "la"], [38, "UFMG"], [39, "("], [40, "MHNJB"], [41, ")"], [42, "abre"], [43, "el"], [44, "plazo"], [45, "de"], [46, "inscripción"], [47, "para"], [48, "el"], [49, "curso"], [50, "de"], [51, "extensión"], [52, "\""], [53, "Aprende"], [54, "a"], [55, "fabricar"], [56, ","], [57, "montar"], [58, "e"], [59, "instalar"], [60, "tu"], [61, "Calentador"], [62, "Solar"], [63, "de"], [64, "Bajo"], [65, "Coste"], [66, "\""], [67, ","], [68, "que"], [69, "cosechó"], [70, "un"], [71, "gran"], [72, "éxito"], [73, "el"], [74, "año"], [75, "pasado"], [76, "."], [77, "El"], [78, "curso"], [79, "aborda"], [80, "todo"], [81, "el"], [82, "proceso"], [83, "de"], [84, "construcción"], [85, "e"], [86, "instalación"], [87, "de"], [88, "calentadores"], [89, "solares"], [90, "residenciales"], [91, ","], [92, "pero"], [93, "cuenta"], [94, "con"], [95, "una"], [96, "gran"], [97, "ventaja"], [98, ":"], [99, "los"], [100, "inscritos"], [101, "salen"], [102, "del"], [103, "Museo"], [104, "perfectamente"], [105, "capacitados"], [106, "para"], [107, "construir"], [108, "sus"], [109, "propios"], [110, "equipos"], [111, "."], [112, "Aprenderán"], [113, "los"], [114, "fundamentos"], [115, "teóricos"], [116, "y"], [117, ","], [118, "a"], [119, "continuación"], [120, ","], [121, "pasarán"], [122, "a"], [123, "la"], [124, "fase"], [125, "práctica"], [126, "construyendo"], [127, "un"], [128, "calentador"], [129, "en"], [130, "equipo"], [131, "."], [132, "Además"], [133, ","], [134, "cada"], [135, "participante"], [136, "recibirá"], [137, "un"], [138, "manual"], [139, "detallado"], [140, "con"], [141, "el"], [142, "dimensionamiento"], [143, ","], [144, "los"], [145, "materiales"], [146, "y"], [147, "las"], [148, "herramientas"], [149, "necesarias"], [150, ","], [151, "así"], [152, "como"], [153, "información"], [154, "sobre"], [155, "técnicas"], [156, "de"], [157, "instalación"], [158, ","], [159, "lo"], [160, "que"], [161, "les"], [162, "permitirá"], [163, "aplicar"], [164, "los"], [165, "conocimientos"], [166, "adquiridos"], [167, "en"], [168, "su"], [169, "ámbito"], [170, "doméstico"], [171, "."], [172, "El"], [173, "Calentador"], [174, "Solar"], [175, "de"], [176, "Bajo"], [177, "Coste"], [178, "("], [179, "CSBC"], [180, ")"], [181, "es"], [182, "un"], [183, "proyecto"], [184, "de"], [185, "la"], [186, "Sociedade"], [187, "do"], [188, "Sol"], [189, ","], [190, "entidad"], [191, "con"], [192, "sede"], [193, "en"], [194, "el"], [195, "Centro"], [196, "Incubador"], [197, "de"], [198, "Empresas"], [199, "Tecnológicas"], [200, "("], [201, "CIETEC"], [202, ")"], [203, "de"], [204, "São"], [205, "Paulo"], [206, "."], [207, "Su"], [208, "meta"], [209, "es"], [210, "difundir"], [211, "la"], [212, "tecnología"], [213, "de"], [214, "autoconstrucción"], [215, "de"], [216, "calentadores"], [217, "solares"], [218, "de"], [219, "agua"], [220, "("], [221, "con"], [222, "capacidades"], [223, "de"], [224, "200"], [225, "a"], [226, "1.000"], [227, "litros"], [228, ")"], [229, ","], [230, "diseñados"], [231, "para"], [232, "sustituir"], [233, "parcialmente"], [234, "el"], [235, "consumo"], [236, "de"], [237, "energía"], [238, "eléctrica"], [239, "de"], [240, "los"], [241, "36"], [242, "millones"], [243, "de"], [244, "familias"], [245, "brasileñas"], [246, "que"], [247, "utilizan"], [248, "duchas"], [249, "eléctricas"], [250, "en"], [251, "sus"], [252, "casas"], [253, "y"], [254, "pisos"], [255, "."], [256, "El"], [257, "taller"], [258, "se"], [259, "impartirá"], [260, "el"], [261, "día"], [262, "13"], [263, "de"], [264, "marzo"], [265, "de"], [266, "9:00"], [267, "h"], [268, "a"], [269, "16:00"], [270, "h"], [271, ","], [272, "y"], [273, "las"], [274, "inscripciones"], [275, "permanecerán"], [276, "abiertas"], [277, "del"], [278, "8"], [279, "al"], [280, "12"], [281, "de"], [282, "marzo"], [283, "de"], [284, "2010"], [285, "."], [286, "La"], [287, "plaza"], [288, "solo"], [289, "quedará"], [290, "confirmada"], [291, "tras"], [292, "enviar"], [293, "el"], [294, "comprobante"], [295, "de"], [296, "pago"], [297, "("], [298, "la"], [299, "tasa"], [300, "de"], [301, "recaudación"], [302, "correspondiente"], [303, ")"], [304, ","], [305, "por"], [306, "un"], [307, "importe"], [308, "de"], [309, "R$"], [310, "50,00"], [311, ","], [312, "al"], [313, "número"], [314, "de"], [315, "fax"], [316, "3409"], [317, "7613"], [318, ","], [319, "o"], [320, "bien"], [321, "presentándolo"], [322, "en"], [323, "persona"], [324, "en"], [325, "el"], [326, "Cenex"], [327, "del"], [328, "MHNJB"], [329, "."], [330, "Para"], [331, "más"], [332, "información"], [333, ":"], [334, "Cenex"], [335, "MHNJB"], [336, "–"], [337, "31"], [338, "3409"], [339, "7612"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

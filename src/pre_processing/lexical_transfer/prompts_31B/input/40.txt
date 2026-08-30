@@ -1,0 +1,67 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: _¿Novio? ¿Cómo que novio?
+_No es exactamente un novio, es un tío que me trajo hasta aquí y me deja vivir en uno de sus pisos.
+_¿Te deja vivir, gratis?
+_Ya deberías saber que en este mundo nada es gratis.
+_¿Entonces vive contigo?
+_Qué va, ese tío tiene sus negocios por ahí, debe ser hasta casado; se queda en el piso hasta las once y luego se larga.
+_Sí, eso huele a tío casado.
+_¿A que sí?
+_Bueno, de todas formas, vamos andando.
+_¿Aún me vas a acompañar a casa?
+_Aquí en la ciudad no solemos dejar a una chica sola.
+_No sabía que los del interior fuerais tan caballeros.
+_¿¡Del interior!? ¿Pero tú no eres de San Gotardo?
+_No, no, solo pasé un tiempo allí; desde que salí de mi ciudad he ido parando de ciudad en ciudad, soy de la Capital.
+_Hm, ¿el piso está hacia qué lado?
+_Subiendo la calle, ahí al fondo.
+_Vale, ¿y qué has estado haciendo por la capital?
+_Depende, ¿llevarse un coche prestado es hacer una gamberrada?
+_Depende, ¿lo has devuelto?
+_No dio tiempo, cayó a un río cerca de la carretera.
+_Sí, aquí a eso lo llamamos gamberrada. ¿Denunciaron robo?
+_Pues sí.
+_Estás muy buena, y yo queriéndote acompañar a casa porque el barrio es peligroso... por lo visto la peligrosa para el barrio eres tú.
+_Tampoco tanto, dijo ella con una sonrisilla y la mirada a medias mientras Rafael prácticamente se la comía con los ojos.
+_El piso es ese, dijo ella mirando hacia un lado.
+_Vaya, vaya.
+Los dos se quedaron parados un buen rato mirando a los lados hasta que Rafael dijo:
+_Bueno, pues aquí te dejo, me voy.
+_Espera...
+_Pero...
+_¿No quieres subir? Él no aparece hasta mañana, hay cerveza en la nevera.
+_¡Oye, guapa! No está bien que un hombre vaya a casa de otro, y menos con su novia tan buena.
+
+Tokens: [[0, "_¿"], [1, "Novio"], [2, "?"], [3, "¿"], [4, "Cómo"], [5, "que"], [6, "novio"], [7, "?"], [8, "_"], [9, "No"], [10, "es"], [11, "exactamente"], [12, "un"], [13, "novio"], [14, ","], [15, "es"], [16, "un"], [17, "tío"], [18, "que"], [19, "me"], [20, "trajo"], [21, "hasta"], [22, "aquí"], [23, "y"], [24, "me"], [25, "deja"], [26, "vivir"], [27, "en"], [28, "uno"], [29, "de"], [30, "sus"], [31, "pisos"], [32, "."], [33, "_"], [34, "¿"], [35, "Te"], [36, "deja"], [37, "vivir"], [38, ","], [39, "gratis"], [40, "?"], [41, "_"], [42, "Ya"], [43, "deberías"], [44, "saber"], [45, "que"], [46, "en"], [47, "este"], [48, "mundo"], [49, "nada"], [50, "es"], [51, "gratis"], [52, "."], [53, "_"], [54, "¿"], [55, "Entonces"], [56, "vive"], [57, "contigo"], [58, "?"], [59, "_"], [60, "Qué"], [61, "va"], [62, ","], [63, "ese"], [64, "tío"], [65, "tiene"], [66, "sus"], [67, "negocios"], [68, "por"], [69, "ahí"], [70, ","], [71, "debe"], [72, "ser"], [73, "hasta"], [74, "casado"], [75, ";"], [76, "se"], [77, "queda"], [78, "en"], [79, "el"], [80, "piso"], [81, "hasta"], [82, "las"], [83, "once"], [84, "y"], [85, "luego"], [86, "se"], [87, "larga"], [88, "."], [89, "_"], [90, "Sí"], [91, ","], [92, "eso"], [93, "huele"], [94, "a"], [95, "tío"], [96, "casado"], [97, "."], [98, "_"], [99, "¿"], [100, "A"], [101, "que"], [102, "sí"], [103, "?"], [104, "_"], [105, "Bueno"], [106, ","], [107, "de"], [108, "todas"], [109, "formas"], [110, ","], [111, "vamos"], [112, "andando"], [113, "."], [114, "_"], [115, "¿"], [116, "Aún"], [117, "me"], [118, "vas"], [119, "a"], [120, "acompañar"], [121, "a"], [122, "casa"], [123, "?"], [124, "_"], [125, "Aquí"], [126, "en"], [127, "la"], [128, "ciudad"], [129, "no"], [130, "solemos"], [131, "dejar"], [132, "a"], [133, "una"], [134, "chica"], [135, "sola"], [136, "."], [137, "_"], [138, "No"], [139, "sabía"], [140, "que"], [141, "los"], [142, "del"], [143, "interior"], [144, "fuerais"], [145, "tan"], [146, "caballeros"], [147, "."], [148, "_"], [149, "¿"], [150, "¡"], [151, "Del"], [152, "interior"], [153, "!"], [154, "?"], [155, "¿"], [156, "Pero"], [157, "tú"], [158, "no"], [159, "eres"], [160, "de"], [161, "San"], [162, "Gotardo"], [163, "?"], [164, "_"], [165, "No"], [166, ","], [167, "no"], [168, ","], [169, "solo"], [170, "pasé"], [171, "un"], [172, "tiempo"], [173, "allí"], [174, ";"], [175, "desde"], [176, "que"], [177, "salí"], [178, "de"], [179, "mi"], [180, "ciudad"], [181, "he"], [182, "ido"], [183, "parando"], [184, "de"], [185, "ciudad"], [186, "en"], [187, "ciudad"], [188, ","], [189, "soy"], [190, "de"], [191, "la"], [192, "Capital"], [193, "."], [194, "_"], [195, "Hm"], [196, ","], [197, "¿"], [198, "el"], [199, "piso"], [200, "está"], [201, "hacia"], [202, "qué"], [203, "lado"], [204, "?"], [205, "_"], [206, "Subiendo"], [207, "la"], [208, "calle"], [209, ","], [210, "ahí"], [211, "al"], [212, "fondo"], [213, "."], [214, "_"], [215, "Vale"], [216, ","], [217, "¿"], [218, "y"], [219, "qué"], [220, "has"], [221, "estado"], [222, "haciendo"], [223, "por"], [224, "la"], [225, "capital"], [226, "?"], [227, "_"], [228, "Depende"], [229, ","], [230, "¿"], [231, "llevarse"], [232, "un"], [233, "coche"], [234, "prestado"], [235, "es"], [236, "hacer"], [237, "una"], [238, "gamberrada"], [239, "?"], [240, "_"], [241, "Depende"], [242, ","], [243, "¿"], [244, "lo"], [245, "has"], [246, "devuelto"], [247, "?"], [248, "_"], [249, "No"], [250, "dio"], [251, "tiempo"], [252, ","], [253, "cayó"], [254, "a"], [255, "un"], [256, "río"], [257, "cerca"], [258, "de"], [259, "la"], [260, "carretera"], [261, "."], [262, "_"], [263, "Sí"], [264, ","], [265, "aquí"], [266, "a"], [267, "eso"], [268, "lo"], [269, "llamamos"], [270, "gamberrada"], [271, "."], [272, "¿"], [273, "Denunciaron"], [274, "robo"], [275, "?"], [276, "_"], [277, "Pues"], [278, "sí"], [279, "."], [280, "_"], [281, "Estás"], [282, "muy"], [283, "buena"], [284, ","], [285, "y"], [286, "yo"], [287, "queriéndote"], [288, "acompañar"], [289, "a"], [290, "casa"], [291, "porque"], [292, "el"], [293, "barrio"], [294, "es"], [295, "peligroso"], [296, "..."], [297, "por"], [298, "lo"], [299, "visto"], [300, "la"], [301, "peligrosa"], [302, "para"], [303, "el"], [304, "barrio"], [305, "eres"], [306, "tú"], [307, "."], [308, "_"], [309, "Tampoco"], [310, "tanto"], [311, ","], [312, "dijo"], [313, "ella"], [314, "con"], [315, "una"], [316, "sonrisilla"], [317, "y"], [318, "la"], [319, "mirada"], [320, "a"], [321, "medias"], [322, "mientras"], [323, "Rafael"], [324, "prácticamente"], [325, "se"], [326, "la"], [327, "comía"], [328, "con"], [329, "los"], [330, "ojos"], [331, "."], [332, "_"], [333, "El"], [334, "piso"], [335, "es"], [336, "ese"], [337, ","], [338, "dijo"], [339, "ella"], [340, "mirando"], [341, "hacia"], [342, "un"], [343, "lado"], [344, "."], [345, "_"], [346, "Vaya"], [347, ","], [348, "vaya"], [349, "."], [350, "Los"], [351, "dos"], [352, "se"], [353, "quedaron"], [354, "parados"], [355, "un"], [356, "buen"], [357, "rato"], [358, "mirando"], [359, "a"], [360, "los"], [361, "lados"], [362, "hasta"], [363, "que"], [364, "Rafael"], [365, "dijo"], [366, ":"], [367, "_"], [368, "Bueno"], [369, ","], [370, "pues"], [371, "aquí"], [372, "te"], [373, "dejo"], [374, ","], [375, "me"], [376, "voy"], [377, "."], [378, "_"], [379, "Espera"], [380, "..."], [381, "_"], [382, "Pero"], [383, "..."], [384, "_"], [385, "¿"], [386, "No"], [387, "quieres"], [388, "subir"], [389, "?"], [390, "Él"], [391, "no"], [392, "aparece"], [393, "hasta"], [394, "mañana"], [395, ","], [396, "hay"], [397, "cerveza"], [398, "en"], [399, "la"], [400, "nevera"], [401, "."], [402, "_"], [403, "¡"], [404, "Oye"], [405, ","], [406, "guapa"], [407, "!"], [408, "No"], [409, "está"], [410, "bien"], [411, "que"], [412, "un"], [413, "hombre"], [414, "vaya"], [415, "a"], [416, "casa"], [417, "de"], [418, "otro"], [419, ","], [420, "y"], [421, "menos"], [422, "con"], [423, "su"], [424, "novia"], [425, "tan"], [426, "buena"], [427, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

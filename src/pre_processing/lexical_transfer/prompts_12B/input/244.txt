@@ -1,0 +1,41 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: INTERLOCUTEUR1: Doctor Interlocuteur2, good evening.
+INTERLOCUTEUR2: Good evening, [UNINTELLIGIBLE], dear friend, and good evening to all internet users. It is a pleasure for me to participate tonight in this program and to bring some information about the zero tolerance drunk driving law. It is therefore an immense satisfaction to be here with you today.
+INTERLOCUTEUR1: Thank you very much, doctor Interlocuteur2. And so that it is clear to our internet users: what exactly happened with the reform of the traffic code that modified or established the zero tolerance law? What are the differences between the old regulations and this modification that was introduced in the traffic code?
+INTERLOCUTEUR2: Dear friend, internet users: first of all, what is called the zero tolerance law is law 11,705 of 2008, which entered into force on June 20. It bears this name because the reform establishes zero tolerance for blood alcohol levels and other substances in the body of the driver, of any citizen. Until 1998, the law provided in its articles for a scale according to the intensity of the alcohol level, meaning...
+INTERLOCUTEUR1: Excuse me, excuse me for interrupting you, doctor. Does this mean then that qualifying driving a vehicle under the influence of alcohol or substances causing chemical dependency as an offense was already punished before this 2008 law, doctor?
+INTERLOCUTEUR2: Yes, yes, of course. The applicable traffic code then was in force, if I remember correctly, since 1966 and remained so until 1998, so it functioned for a long time. And in this code, justice was very strict regarding the issue of alcohol levels.
+
+Tokens: [[0, "INTERLOCUTEUR1"], [1, ":"], [2, "Doctor"], [3, "Interlocuteur2"], [4, ","], [5, "good"], [6, "evening"], [7, "."], [8, "INTERLOCUTEUR2"], [9, ":"], [10, "Good"], [11, "evening"], [12, ","], [13, "["], [14, "UNINTELLIGIBLE"], [15, "]"], [16, ","], [17, "dear"], [18, "friend"], [19, ","], [20, "and"], [21, "good"], [22, "evening"], [23, "to"], [24, "all"], [25, "internet"], [26, "users"], [27, "."], [28, "It"], [29, "is"], [30, "a"], [31, "pleasure"], [32, "for"], [33, "me"], [34, "to"], [35, "participate"], [36, "tonight"], [37, "in"], [38, "this"], [39, "program"], [40, "and"], [41, "to"], [42, "bring"], [43, "some"], [44, "information"], [45, "about"], [46, "the"], [47, "zero"], [48, "tolerance"], [49, "drunk"], [50, "driving"], [51, "law"], [52, "."], [53, "It"], [54, "is"], [55, "therefore"], [56, "an"], [57, "immense"], [58, "satisfaction"], [59, "to"], [60, "be"], [61, "here"], [62, "with"], [63, "you"], [64, "today"], [65, "."], [66, "INTERLOCUTEUR1"], [67, ":"], [68, "Thank"], [69, "you"], [70, "very"], [71, "much"], [72, ","], [73, "doctor"], [74, "Interlocuteur2"], [75, "."], [76, "And"], [77, "so"], [78, "that"], [79, "it"], [80, "is"], [81, "clear"], [82, "to"], [83, "our"], [84, "internet"], [85, "users"], [86, ":"], [87, "what"], [88, "exactly"], [89, "happened"], [90, "with"], [91, "the"], [92, "reform"], [93, "of"], [94, "the"], [95, "traffic"], [96, "code"], [97, "that"], [98, "modified"], [99, "or"], [100, "established"], [101, "the"], [102, "zero"], [103, "tolerance"], [104, "law"], [105, "?"], [106, "What"], [107, "are"], [108, "the"], [109, "differences"], [110, "between"], [111, "the"], [112, "old"], [113, "regulations"], [114, "and"], [115, "this"], [116, "modification"], [117, "that"], [118, "was"], [119, "introduced"], [120, "in"], [121, "the"], [122, "traffic"], [123, "code"], [124, "?"], [125, "INTERLOCUTEUR2"], [126, ":"], [127, "Dear"], [128, "friend"], [129, ","], [130, "internet"], [131, "users"], [132, ":"], [133, "first"], [134, "of"], [135, "all"], [136, ","], [137, "what"], [138, "is"], [139, "called"], [140, "the"], [141, "zero"], [142, "tolerance"], [143, "law"], [144, "is"], [145, "law"], [146, "11,705"], [147, "of"], [148, "2008"], [149, ","], [150, "which"], [151, "entered"], [152, "into"], [153, "force"], [154, "on"], [155, "June"], [156, "20"], [157, "."], [158, "It"], [159, "bears"], [160, "this"], [161, "name"], [162, "because"], [163, "the"], [164, "reform"], [165, "establishes"], [166, "zero"], [167, "tolerance"], [168, "for"], [169, "blood"], [170, "alcohol"], [171, "levels"], [172, "and"], [173, "other"], [174, "substances"], [175, "in"], [176, "the"], [177, "body"], [178, "of"], [179, "the"], [180, "driver"], [181, ","], [182, "of"], [183, "any"], [184, "citizen"], [185, "."], [186, "Until"], [187, "1998"], [188, ","], [189, "the"], [190, "law"], [191, "provided"], [192, "in"], [193, "its"], [194, "articles"], [195, "for"], [196, "a"], [197, "scale"], [198, "according"], [199, "to"], [200, "the"], [201, "intensity"], [202, "of"], [203, "the"], [204, "alcohol"], [205, "level"], [206, ","], [207, "meaning"], [208, "..."], [209, "INTERLOCUTEUR1"], [210, ":"], [211, "Excuse"], [212, "me"], [213, ","], [214, "excuse"], [215, "me"], [216, "for"], [217, "interrupting"], [218, "you"], [219, ","], [220, "doctor"], [221, "."], [222, "Does"], [223, "this"], [224, "mean"], [225, "then"], [226, "that"], [227, "qualifying"], [228, "driving"], [229, "a"], [230, "vehicle"], [231, "under"], [232, "the"], [233, "influence"], [234, "of"], [235, "alcohol"], [236, "or"], [237, "substances"], [238, "causing"], [239, "chemical"], [240, "dependency"], [241, "as"], [242, "an"], [243, "offense"], [244, "was"], [245, "already"], [246, "punished"], [247, "before"], [248, "this"], [249, "2008"], [250, "law"], [251, ","], [252, "doctor"], [253, "?"], [254, "INTERLOCUTEUR2"], [255, ":"], [256, "Yes"], [257, ","], [258, "yes"], [259, ","], [260, "of"], [261, "course"], [262, "."], [263, "The"], [264, "applicable"], [265, "traffic"], [266, "code"], [267, "then"], [268, "was"], [269, "in"], [270, "force"], [271, ","], [272, "if"], [273, "I"], [274, "remember"], [275, "correctly"], [276, ","], [277, "since"], [278, "1966"], [279, "and"], [280, "remained"], [281, "so"], [282, "until"], [283, "1998"], [284, ","], [285, "so"], [286, "it"], [287, "functioned"], [288, "for"], [289, "a"], [290, "long"], [291, "time"], [292, "."], [293, "And"], [294, "in"], [295, "this"], [296, "code"], [297, ","], [298, "justice"], [299, "was"], [300, "very"], [301, "strict"], [302, "regarding"], [303, "the"], [304, "issue"], [305, "of"], [306, "alcohol"], [307, "levels"], [308, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

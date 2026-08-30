@@ -1,0 +1,42 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Chers collègues,
+
+Dans le but d'améliorer continuellement notre travail dans la préparation des équipes de montage, j'aimerais que vous m'envoyiez une évaluation de ce qui a bien fonctionné et de ce qui a échoué dans le travail de tous les superviseores (y compris moi-même) qui ont coordonné vos montages.
+
+Cette réponse doit être envoyée directement à mon adresse électronique (m@c.com.br) et ne sera partagée avec personne d'autre. Comme nous n'avons pas fait cette consultation l'année dernière, vous pouvez également inclure vos évaluations sur les montages de 2007 si vous le jugez opportun.
+
+Merci beaucoup !
+
+Tokens: [[0, "Chers"], [1, "collègues"], [2, ","], [3, "Dans"], [4, "le"], [5, "but"], [6, "d'"], [7, "améliorer"], [8, "continuellement"], [9, "notre"], [10, "travail"], [11, "dans"], [12, "la"], [13, "préparation"], [14, "des"], [15, "équipes"], [16, "de"], [17, "montage"], [18, ","], [19, "j'"], [20, "aimerais"], [21, "que"], [22, "vous"], [23, "m'"], [24, "envoyiez"], [25, "une"], [26, "évaluation"], [27, "de"], [28, "ce"], [29, "qui"], [30, "a"], [31, "bien"], [32, "fonctionné"], [33, "et"], [34, "de"], [35, "ce"], [36, "qui"], [37, "a"], [38, "échoué"], [39, "dans"], [40, "le"], [41, "travail"], [42, "de"], [43, "tous"], [44, "les"], [45, "superviseores"], [46, "("], [47, "y"], [48, "compris"], [49, "moi-même"], [50, ")"], [51, "qui"], [52, "ont"], [53, "coordonné"], [54, "vos"], [55, "montages"], [56, "."], [57, "Cette"], [58, "réponse"], [59, "doit"], [60, "être"], [61, "envoyée"], [62, "directement"], [63, "à"], [64, "mon"], [65, "adresse"], [66, "électronique"], [67, "("], [68, "m@c.com.br"], [69, ")"], [70, "et"], [71, "ne"], [72, "sera"], [73, "partagée"], [74, "avec"], [75, "personne"], [76, "d'"], [77, "autre"], [78, "."], [79, "Comme"], [80, "nous"], [81, "n'"], [82, "avons"], [83, "pas"], [84, "fait"], [85, "cette"], [86, "consultation"], [87, "l'"], [88, "année"], [89, "dernière"], [90, ","], [91, "vous"], [92, "pouvez"], [93, "également"], [94, "inclure"], [95, "vos"], [96, "évaluations"], [97, "sur"], [98, "les"], [99, "montages"], [100, "de"], [101, "2007"], [102, "si"], [103, "vous"], [104, "le"], [105, "jugez"], [106, "opportun"], [107, "."], [108, "Merci"], [109, "beaucoup"], [110, "!"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

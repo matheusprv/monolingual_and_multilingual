@@ -1,0 +1,55 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: LOCUTEUR1 et donc j'ai rencontré il y a un mois un gars super sympa une conversation vraiment agréable et alors on s'est vus une fois deux fois la troisième fois ça s'est passé et c'était très bien tout s'est bien passé quoi après tout je n'avais connu qu'un seul homme dans ma vie tu vois le retard
+LOCUTEUR2 hein c'était mieux comme ça
+LOCUTEUR1 c'était super bien si j'avais su j'aurais fait ça bien avant
+LOCUTEUR2 non
+LOCUTEUR1 c'est vrai j'ai mis du temps mais bon tout vient à point sauf qu'il y a un problème maintenant
+LOCUTEUR2 lequel
+LOCUTEUR1 il a une copine
+LOCUTEUR2 mais merde
+LOCUTEUR1 et ça fait huit ans qu'ils sont ensemble voilà et il a 37 ans huit ans ensemble
+LOCUTEUR2 l'enfoiré
+LOCUTEUR1 l'enfoiré mais il n'a pas menti le jour où je l'ai rencontré et où j'ai couché avec lui il m'a dit direct qu'il avait une copine et tout mais j'avais envie de rester et j'ai fini par rester j'ai vraiment couché
+LOCUTEUR2 mais maintenant ça suffit quand même non
+LOCUTEUR3 alors ça suffit non
+LOCUTEUR2 non
+LOCUTEUR1 c'est parce que ça ne mènera nulle part non
+LOCUTEUR2 ouais ça a donné ce que ça avait à donner et c'était bien mais ça peut encore apporter tellement de choses et pas forcément avec lui non
+LOCUTEUR1 mouais
+LOCUTEUR2 c'est pas ça au fond je crois que tu sais plus ou moins que si tu continues plus longtemps tu vas finir par t'attacher toi tu sors d'une longue relation avec tout ton vécu tu n'es pas du genre à vouloir enchaîner les mecs à partir de maintenant et tu es déjà en train de le montrer non tu as déjà été avec le deuxième ça t'a plu il est agréable à parler tu voulais déjà continuer s'il n'avait pas été non
+LOCUTEUR1 ouais
+LOCUTEUR2 quelqu'un
+
+Tokens: [[0, "LOCUTEUR1"], [1, "et"], [2, "donc"], [3, "j'"], [4, "ai"], [5, "rencontré"], [6, "il"], [7, "y"], [8, "a"], [9, "un"], [10, "mois"], [11, "un"], [12, "gars"], [13, "super"], [14, "sympa"], [15, "une"], [16, "conversation"], [17, "vraiment"], [18, "agréable"], [19, "et"], [20, "alors"], [21, "on"], [22, "s'"], [23, "est"], [24, "vus"], [25, "une"], [26, "fois"], [27, "deux"], [28, "fois"], [29, "la"], [30, "troisième"], [31, "fois"], [32, "ça"], [33, "s'"], [34, "est"], [35, "passé"], [36, "et"], [37, "c'"], [38, "était"], [39, "très"], [40, "bien"], [41, "tout"], [42, "s'"], [43, "est"], [44, "bien"], [45, "passé"], [46, "quoi"], [47, "après"], [48, "tout"], [49, "je"], [50, "n'"], [51, "avais"], [52, "connu"], [53, "qu'"], [54, "un"], [55, "seul"], [56, "homme"], [57, "dans"], [58, "ma"], [59, "vie"], [60, "tu"], [61, "vois"], [62, "le"], [63, "retard"], [64, "LOCUTEUR2"], [65, "hein"], [66, "c'"], [67, "était"], [68, "mieux"], [69, "comme"], [70, "ça"], [71, "LOCUTEUR1"], [72, "c'"], [73, "était"], [74, "super"], [75, "bien"], [76, "si"], [77, "j'"], [78, "avais"], [79, "su"], [80, "j'"], [81, "aurais"], [82, "fait"], [83, "ça"], [84, "bien"], [85, "avant"], [86, "LOCUTEUR2"], [87, "non"], [88, "LOCUTEUR1"], [89, "c'"], [90, "est"], [91, "vrai"], [92, "j'"], [93, "ai"], [94, "mis"], [95, "du"], [96, "temps"], [97, "mais"], [98, "bon"], [99, "tout"], [100, "vient"], [101, "à"], [102, "point"], [103, "sauf"], [104, "qu'"], [105, "il"], [106, "y"], [107, "a"], [108, "un"], [109, "problème"], [110, "maintenant"], [111, "LOCUTEUR2"], [112, "lequel"], [113, "LOCUTEUR1"], [114, "il"], [115, "a"], [116, "une"], [117, "copine"], [118, "LOCUTEUR2"], [119, "mais"], [120, "merde"], [121, "LOCUTEUR1"], [122, "et"], [123, "ça"], [124, "fait"], [125, "huit"], [126, "ans"], [127, "qu'"], [128, "ils"], [129, "sont"], [130, "ensemble"], [131, "voilà"], [132, "et"], [133, "il"], [134, "a"], [135, "37"], [136, "ans"], [137, "huit"], [138, "ans"], [139, "ensemble"], [140, "LOCUTEUR2"], [141, "l'"], [142, "enfoiré"], [143, "LOCUTEUR1"], [144, "l'"], [145, "enfoiré"], [146, "mais"], [147, "il"], [148, "n'"], [149, "a"], [150, "pas"], [151, "menti"], [152, "le"], [153, "jour"], [154, "où"], [155, "je"], [156, "l'"], [157, "ai"], [158, "rencontré"], [159, "et"], [160, "où"], [161, "j'"], [162, "ai"], [163, "couché"], [164, "avec"], [165, "lui"], [166, "il"], [167, "m'"], [168, "a"], [169, "dit"], [170, "direct"], [171, "qu'"], [172, "il"], [173, "avait"], [174, "une"], [175, "copine"], [176, "et"], [177, "tout"], [178, "mais"], [179, "j'"], [180, "avais"], [181, "envie"], [182, "de"], [183, "rester"], [184, "et"], [185, "j'"], [186, "ai"], [187, "fini"], [188, "par"], [189, "rester"], [190, "j'"], [191, "ai"], [192, "vraiment"], [193, "couché"], [194, "LOCUTEUR2"], [195, "mais"], [196, "maintenant"], [197, "ça"], [198, "suffit"], [199, "quand"], [200, "même"], [201, "non"], [202, "LOCUTEUR3"], [203, "alors"], [204, "ça"], [205, "suffit"], [206, "non"], [207, "LOCUTEUR2"], [208, "non"], [209, "LOCUTEUR1"], [210, "c'"], [211, "est"], [212, "parce"], [213, "que"], [214, "ça"], [215, "ne"], [216, "mènera"], [217, "nulle"], [218, "part"], [219, "non"], [220, "LOCUTEUR2"], [221, "ouais"], [222, "ça"], [223, "a"], [224, "donné"], [225, "ce"], [226, "que"], [227, "ça"], [228, "avait"], [229, "à"], [230, "donner"], [231, "et"], [232, "c'"], [233, "était"], [234, "bien"], [235, "mais"], [236, "ça"], [237, "peut"], [238, "encore"], [239, "apporter"], [240, "tellement"], [241, "de"], [242, "choses"], [243, "et"], [244, "pas"], [245, "forcément"], [246, "avec"], [247, "lui"], [248, "non"], [249, "LOCUTEUR1"], [250, "mouais"], [251, "LOCUTEUR2"], [252, "c'"], [253, "est"], [254, "pas"], [255, "ça"], [256, "au"], [257, "fond"], [258, "je"], [259, "crois"], [260, "que"], [261, "tu"], [262, "sais"], [263, "plus"], [264, "ou"], [265, "moins"], [266, "que"], [267, "si"], [268, "tu"], [269, "continues"], [270, "plus"], [271, "longtemps"], [272, "tu"], [273, "vas"], [274, "finir"], [275, "par"], [276, "t'"], [277, "attacher"], [278, "toi"], [279, "tu"], [280, "sors"], [281, "d'"], [282, "une"], [283, "longue"], [284, "relation"], [285, "avec"], [286, "tout"], [287, "ton"], [288, "vécu"], [289, "tu"], [290, "n'"], [291, "es"], [292, "pas"], [293, "du"], [294, "genre"], [295, "à"], [296, "vouloir"], [297, "enchaîner"], [298, "les"], [299, "mecs"], [300, "à"], [301, "partir"], [302, "de"], [303, "maintenant"], [304, "et"], [305, "tu"], [306, "es"], [307, "déjà"], [308, "en"], [309, "train"], [310, "de"], [311, "le"], [312, "montrer"], [313, "non"], [314, "tu"], [315, "as"], [316, "déjà"], [317, "été"], [318, "avec"], [319, "le"], [320, "deuxième"], [321, "ça"], [322, "t'"], [323, "a"], [324, "plu"], [325, "il"], [326, "est"], [327, "agréable"], [328, "à"], [329, "parler"], [330, "tu"], [331, "voulais"], [332, "déjà"], [333, "continuer"], [334, "s'"], [335, "il"], [336, "n'"], [337, "avait"], [338, "pas"], [339, "été"], [340, "non"], [341, "LOCUTEUR1"], [342, "ouais"], [343, "LOCUTEUR2"], [344, "quelqu'un"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

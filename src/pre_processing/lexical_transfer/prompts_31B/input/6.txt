@@ -1,0 +1,36 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: that's what drives us — it's not about winning. Sometimes we slip into pragmatism, but everyone here, deep down, is driven by the desire to build a different country, one we've been working toward day by day, with all the contradictions that come with living under a capitalist system — right? Sometimes getting it wrong, sometimes getting it right, trusting in institutions but also counting on social movements as the engine of change. Living through all of that, proving that we are a party that hasn't lost its roots, hasn't lost its principles — a party that deals with problems head-on and doesn't hide them from anyone, because we have the inner capacity to be self-critical, to call out our own failures, and still push for what's new. And PT's youth represents a part of that renewal, part of what the Workers' Party has been building throughout its twenty-eight years of history.
+
+Tokens: [[0, "that's"], [1, "what"], [2, "drives"], [3, "us"], [4, "—"], [5, "it's"], [6, "not"], [7, "about"], [8, "winning"], [9, "."], [10, "Sometimes"], [11, "we"], [12, "slip"], [13, "into"], [14, "pragmatism"], [15, ","], [16, "but"], [17, "everyone"], [18, "here"], [19, ","], [20, "deep"], [21, "down"], [22, ","], [23, "is"], [24, "driven"], [25, "by"], [26, "the"], [27, "desire"], [28, "to"], [29, "build"], [30, "a"], [31, "different"], [32, "country"], [33, ","], [34, "one"], [35, "we've"], [36, "been"], [37, "working"], [38, "toward"], [39, "day"], [40, "by"], [41, "day"], [42, ","], [43, "with"], [44, "all"], [45, "the"], [46, "contradictions"], [47, "that"], [48, "come"], [49, "with"], [50, "living"], [51, "under"], [52, "a"], [53, "capitalist"], [54, "system"], [55, "—"], [56, "right"], [57, "?"], [58, "Sometimes"], [59, "getting"], [60, "it"], [61, "wrong"], [62, ","], [63, "sometimes"], [64, "getting"], [65, "it"], [66, "right"], [67, ","], [68, "trusting"], [69, "in"], [70, "institutions"], [71, "but"], [72, "also"], [73, "counting"], [74, "on"], [75, "social"], [76, "movements"], [77, "as"], [78, "the"], [79, "engine"], [80, "of"], [81, "change"], [82, "."], [83, "Living"], [84, "through"], [85, "all"], [86, "of"], [87, "that"], [88, ","], [89, "proving"], [90, "that"], [91, "we"], [92, "are"], [93, "a"], [94, "party"], [95, "that"], [96, "hasn't"], [97, "lost"], [98, "its"], [99, "roots"], [100, ","], [101, "hasn't"], [102, "lost"], [103, "its"], [104, "principles"], [105, "—"], [106, "a"], [107, "party"], [108, "that"], [109, "deals"], [110, "with"], [111, "problems"], [112, "head"], [113, "-"], [114, "on"], [115, "and"], [116, "doesn't"], [117, "hide"], [118, "them"], [119, "from"], [120, "anyone"], [121, ","], [122, "because"], [123, "we"], [124, "have"], [125, "the"], [126, "inner"], [127, "capacity"], [128, "to"], [129, "be"], [130, "self"], [131, "-"], [132, "critical"], [133, ","], [134, "to"], [135, "call"], [136, "out"], [137, "our"], [138, "own"], [139, "failures"], [140, ","], [141, "and"], [142, "still"], [143, "push"], [144, "for"], [145, "what's"], [146, "new"], [147, "."], [148, "And"], [149, "PT's"], [150, "youth"], [151, "represents"], [152, "a"], [153, "part"], [154, "of"], [155, "that"], [156, "renewal"], [157, ","], [158, "part"], [159, "of"], [160, "what"], [161, "the"], [162, "Workers'"], [163, "Party"], [164, "has"], [165, "been"], [166, "building"], [167, "throughout"], [168, "its"], [169, "twenty"], [170, "-"], [171, "eight"], [172, "years"], [173, "of"], [174, "history"], [175, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

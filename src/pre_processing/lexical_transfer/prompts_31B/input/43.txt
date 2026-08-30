@@ -1,0 +1,55 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: ININTELIGIBLE
+HABLANTE1 hi hello hello qué tal querido vino a conocer el zoo
+HABLANTE2 vine a conocer el zoo esta vez porque me encantan los bichos y los animales
+HABLANTE1 sí mira hay un pollito aquí nadie agarra a este bicho bueno quién ha abierto la jaula eh des destornilló el fievel el fusible se han escapado los bichos del zoo qué es esto gente
+HABLANTE2 dios mío qué qué pasa aquí
+HABLANTE1 la fuga de las gallinas se ha escapado todo hija no me lo puedo creer
+HABLANTE2 yo creía que era buddy un perro muy loco
+HABLANTE1 no no es ese fue dado dolabela ese hombre es peligroso ese hombre batman ese hombre pega y ahora hay que llamar a seguridad seguridad
+HABLANTE3 socorro socorro gente socorro por lo que más quieran no saben lo que ha pasado estoy buscando a los cuatro se escapó falta el quinto elemento para encontrar de la jaula que huyó
+HABLANTE1 calma gente podemos rezar y pedir un cura conozco un cura muy bueno él hace la misión imposible pero la hace
+HABLANTE2 yo sé quién es el cura es el hombre de negro ¿no?
+HABLANTE1 sí
+HABLANTE2 ah menos mal que lo hemos encontrado
+HABLANTE1 solo que se droga
+HABLANTE3 mire la gente necesita hacer un plan pero tiene que ser un plan perfecto porque si no los demás animales se van a escapar ¿entiende?
+HABLANTE1 ya sé mira esto me huele mal estoy oliendo el alcantarillado eh tío
+HABLANTE2 yo
+HABLANTE1 has comido bien eh
+HABLANTE2 yo entiendo de planes una vez planeé un atraco al banco de España y fue un éxito mucho mayor que la peli
+HABLANTE1 pero la gente está
+
+Tokens: [[0, "ININTELIGIBLE"], [1, "HABLANTE1"], [2, "hi"], [3, "hello"], [4, "hello"], [5, "qué"], [6, "tal"], [7, "querido"], [8, "vino"], [9, "a"], [10, "conocer"], [11, "el"], [12, "zoo"], [13, "HABLANTE2"], [14, "vine"], [15, "a"], [16, "conocer"], [17, "el"], [18, "zoo"], [19, "esta"], [20, "vez"], [21, "porque"], [22, "me"], [23, "encantan"], [24, "los"], [25, "bichos"], [26, "y"], [27, "los"], [28, "animales"], [29, "HABLANTE1"], [30, "sí"], [31, "mira"], [32, "hay"], [33, "un"], [34, "pollito"], [35, "aquí"], [36, "nadie"], [37, "agarra"], [38, "a"], [39, "este"], [40, "bicho"], [41, "bueno"], [42, "quién"], [43, "ha"], [44, "abierto"], [45, "la"], [46, "jaula"], [47, "eh"], [48, "des"], [49, "destornilló"], [50, "el"], [51, "fievel"], [52, "el"], [53, "fusible"], [54, "se"], [55, "han"], [56, "escapado"], [57, "los"], [58, "bichos"], [59, "del"], [60, "zoo"], [61, "qué"], [62, "es"], [63, "esto"], [64, "gente"], [65, "HABLANTE2"], [66, "dios"], [67, "mío"], [68, "qué"], [69, "qué"], [70, "pasa"], [71, "aquí"], [72, "HABLANTE1"], [73, "la"], [74, "fuga"], [75, "de"], [76, "las"], [77, "gallinas"], [78, "se"], [79, "ha"], [80, "escapado"], [81, "todo"], [82, "hija"], [83, "no"], [84, "me"], [85, "lo"], [86, "puedo"], [87, "creer"], [88, "HABLANTE2"], [89, "yo"], [90, "creía"], [91, "que"], [92, "era"], [93, "buddy"], [94, "un"], [95, "perro"], [96, "muy"], [97, "loco"], [98, "HABLANTE1"], [99, "no"], [100, "no"], [101, "es"], [102, "ese"], [103, "fue"], [104, "dado"], [105, "dolabela"], [106, "ese"], [107, "hombre"], [108, "es"], [109, "peligroso"], [110, "ese"], [111, "hombre"], [112, "batman"], [113, "ese"], [114, "hombre"], [115, "pega"], [116, "y"], [117, "ahora"], [118, "hay"], [119, "que"], [120, "llamar"], [121, "a"], [122, "seguridad"], [123, "seguridad"], [124, "HABLANTE3"], [125, "socorro"], [126, "socorro"], [127, "gente"], [128, "socorro"], [129, "por"], [130, "lo"], [131, "que"], [132, "más"], [133, "quieran"], [134, "no"], [135, "saben"], [136, "lo"], [137, "que"], [138, "ha"], [139, "pasado"], [140, "estoy"], [141, "buscando"], [142, "a"], [143, "los"], [144, "cuatro"], [145, "se"], [146, "escapó"], [147, "falta"], [148, "el"], [149, "quinto"], [150, "elemento"], [151, "para"], [152, "encontrar"], [153, "de"], [154, "la"], [155, "jaula"], [156, "que"], [157, "huyó"], [158, "HABLANTE1"], [159, "calma"], [160, "gente"], [161, "podemos"], [162, "rezar"], [163, "y"], [164, "pedir"], [165, "un"], [166, "cura"], [167, "conozco"], [168, "un"], [169, "cura"], [170, "muy"], [171, "bueno"], [172, "él"], [173, "hace"], [174, "la"], [175, "misión"], [176, "imposible"], [177, "pero"], [178, "la"], [179, "hace"], [180, "HABLANTE2"], [181, "yo"], [182, "sé"], [183, "quién"], [184, "es"], [185, "el"], [186, "cura"], [187, "es"], [188, "el"], [189, "hombre"], [190, "de"], [191, "negro"], [192, "¿"], [193, "no"], [194, "?"], [195, "HABLANTE1"], [196, "sí"], [197, "HABLANTE2"], [198, "ah"], [199, "menos"], [200, "mal"], [201, "que"], [202, "lo"], [203, "hemos"], [204, "encontrado"], [205, "HABLANTE1"], [206, "solo"], [207, "que"], [208, "se"], [209, "droga"], [210, "HABLANTE3"], [211, "mire"], [212, "la"], [213, "gente"], [214, "necesita"], [215, "hacer"], [216, "un"], [217, "plan"], [218, "pero"], [219, "tiene"], [220, "que"], [221, "ser"], [222, "un"], [223, "plan"], [224, "perfecto"], [225, "porque"], [226, "si"], [227, "no"], [228, "los"], [229, "demás"], [230, "animales"], [231, "se"], [232, "van"], [233, "a"], [234, "escapar"], [235, "¿"], [236, "entiende"], [237, "?"], [238, "HABLANTE1"], [239, "ya"], [240, "sé"], [241, "mira"], [242, "esto"], [243, "me"], [244, "huele"], [245, "mal"], [246, "estoy"], [247, "oliendo"], [248, "el"], [249, "alcantarillado"], [250, "eh"], [251, "tío"], [252, "HABLANTE2"], [253, "yo"], [254, "HABLANTE1"], [255, "has"], [256, "comido"], [257, "bien"], [258, "eh"], [259, "HABLANTE2"], [260, "yo"], [261, "entiendo"], [262, "de"], [263, "planes"], [264, "una"], [265, "vez"], [266, "planeé"], [267, "un"], [268, "atraco"], [269, "al"], [270, "banco"], [271, "de"], [272, "España"], [273, "y"], [274, "fue"], [275, "un"], [276, "éxito"], [277, "mucho"], [278, "mayor"], [279, "que"], [280, "la"], [281, "peli"], [282, "HABLANTE1"], [283, "pero"], [284, "la"], [285, "gente"], [286, "está"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

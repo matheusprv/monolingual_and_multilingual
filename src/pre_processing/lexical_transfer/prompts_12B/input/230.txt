@@ -1,0 +1,40 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Don't do that, my dear! Punch the ball firmly.
+That ball that came back... Look, the team knows perfectly well that her game consists of smashing hard. But what on earth are you doing?
+You stayed glued to the net, you didn't go for the block... Open up the play to anticipate the tip, damn it! We're going to end up losing the match over a stupid mistake.
+Give her some height so she can set up her shot; if you send her a pass that's too fast, she has no room to work with. Right, cover the court with her, with Juliana and Janaina backing up at the rear, leaving no open zones, exactly how we played yesterday.
+The reception needs to come out clean and the defence well-positioned, play now!
+
+Tokens: [[0, "Don't"], [1, "do"], [2, "that"], [3, ","], [4, "my"], [5, "dear"], [6, "!"], [7, "Punch"], [8, "the"], [9, "ball"], [10, "firmly"], [11, "."], [12, "That"], [13, "ball"], [14, "that"], [15, "came"], [16, "back"], [17, "..."], [18, "Look"], [19, ","], [20, "the"], [21, "team"], [22, "knows"], [23, "perfectly"], [24, "well"], [25, "that"], [26, "her"], [27, "game"], [28, "consists"], [29, "of"], [30, "smashing"], [31, "hard"], [32, "."], [33, "But"], [34, "what"], [35, "on"], [36, "earth"], [37, "are"], [38, "you"], [39, "doing"], [40, "?"], [41, "You"], [42, "stayed"], [43, "glued"], [44, "to"], [45, "the"], [46, "net"], [47, ","], [48, "you"], [49, "didn't"], [50, "go"], [51, "for"], [52, "the"], [53, "block"], [54, "..."], [55, "Open"], [56, "up"], [57, "the"], [58, "play"], [59, "to"], [60, "anticipate"], [61, "the"], [62, "tip"], [63, ","], [64, "damn"], [65, "it"], [66, "!"], [67, "We're"], [68, "going"], [69, "to"], [70, "end"], [71, "up"], [72, "losing"], [73, "the"], [74, "match"], [75, "over"], [76, "a"], [77, "stupid"], [78, "mistake"], [79, "."], [80, "Give"], [81, "her"], [82, "some"], [83, "height"], [84, "so"], [85, "she"], [86, "can"], [87, "set"], [88, "up"], [89, "her"], [90, "shot"], [91, ";"], [92, "if"], [93, "you"], [94, "send"], [95, "her"], [96, "a"], [97, "pass"], [98, "that's"], [99, "too"], [100, "fast"], [101, ","], [102, "she"], [103, "has"], [104, "no"], [105, "room"], [106, "to"], [107, "work"], [108, "with"], [109, "."], [110, "Right"], [111, ","], [112, "cover"], [113, "the"], [114, "court"], [115, "with"], [116, "her"], [117, ","], [118, "with"], [119, "Juliana"], [120, "and"], [121, "Janaina"], [122, "backing"], [123, "up"], [124, "at"], [125, "the"], [126, "rear"], [127, ","], [128, "leaving"], [129, "no"], [130, "open"], [131, "zones"], [132, ","], [133, "exactly"], [134, "how"], [135, "we"], [136, "played"], [137, "yesterday"], [138, "."], [139, "The"], [140, "reception"], [141, "needs"], [142, "to"], [143, "come"], [144, "out"], [145, "clean"], [146, "and"], [147, "the"], [148, "defence"], [149, "well"], [150, "-"], [151, "positioned"], [152, ","], [153, "play"], [154, "now"], [155, "!"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

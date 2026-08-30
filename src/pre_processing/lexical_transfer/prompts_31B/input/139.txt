@@ -1,0 +1,36 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Les filles ! De temps en temps j'ouvre mon armoire qui déborde et je n'aime rien ! Ou alors je porte toujours le même haut avec le même pantalon... on dirait que j'ai qu'un seul haut qui va avec ce pantalon ! Ça vous est déjà arrivé ? Alors voilà un site sympa : http://www.personalstylist.com.br/todoslooksdodia.php Je connais pas tout le site, mais dans cette rubrique (les looks du jour) les gens postent des idées de tenues... à nous de les adapter avec ce qu'on a ! Et dans la rubrique conseils, tu peux poser tes questions. Est-ce que les chaussures rouges sont tendance ? Un pull en maille ça va avec un jean ? Et ainsi de suite. Voilà le bon plan ! J'ai trop adoréééé moi aussi !!!! Vanessa, ce que t'as écrit correspond exactement à ce que je ressens quand je m'habille, c'est toujours la galère, j'enfile et j'enlève des fringues des milliers de fois jusqu'à trouver quelque chose qui va ensemble ou qui fait au moins sobre. Merci pour le bon plan !! J'ai aussi trouvé un site vraiment cool, mais sur la déco, le DIY, la récup' et plein de conseils intéressants. Comment relooker un vieux meuble sans presque rien dépenser — ils l'ont recouvert de tissu, et tu peux le faire toi-même chez toi. Sympa, non ??
+
+Tokens: [[0, "Les"], [1, "filles"], [2, "!"], [3, "De"], [4, "temps"], [5, "en"], [6, "temps"], [7, "j'"], [8, "ouvre"], [9, "mon"], [10, "armoire"], [11, "qui"], [12, "déborde"], [13, "et"], [14, "je"], [15, "n'"], [16, "aime"], [17, "rien"], [18, "!"], [19, "Ou"], [20, "alors"], [21, "je"], [22, "porte"], [23, "toujours"], [24, "le"], [25, "même"], [26, "haut"], [27, "avec"], [28, "le"], [29, "même"], [30, "pantalon"], [31, "..."], [32, "on"], [33, "dirait"], [34, "que"], [35, "j'"], [36, "ai"], [37, "qu'"], [38, "un"], [39, "seul"], [40, "haut"], [41, "qui"], [42, "va"], [43, "avec"], [44, "ce"], [45, "pantalon"], [46, "!"], [47, "Ça"], [48, "vous"], [49, "est"], [50, "déjà"], [51, "arrivé"], [52, "?"], [53, "Alors"], [54, "voilà"], [55, "un"], [56, "site"], [57, "sympa"], [58, ":"], [59, "http://www.personalstylist.com.br/todoslooksdodia.php"], [60, "Je"], [61, "connais"], [62, "pas"], [63, "tout"], [64, "le"], [65, "site"], [66, ","], [67, "mais"], [68, "dans"], [69, "cette"], [70, "rubrique"], [71, "("], [72, "les"], [73, "looks"], [74, "du"], [75, "jour"], [76, ")"], [77, "les"], [78, "gens"], [79, "postent"], [80, "des"], [81, "idées"], [82, "de"], [83, "tenues"], [84, "..."], [85, "à"], [86, "nous"], [87, "de"], [88, "les"], [89, "adapter"], [90, "avec"], [91, "ce"], [92, "qu'"], [93, "on"], [94, "a"], [95, "!"], [96, "Et"], [97, "dans"], [98, "la"], [99, "rubrique"], [100, "conseils"], [101, ","], [102, "tu"], [103, "peux"], [104, "poser"], [105, "tes"], [106, "questions"], [107, "."], [108, "Est"], [109, "-ce"], [110, "que"], [111, "les"], [112, "chaussures"], [113, "rouges"], [114, "sont"], [115, "tendance"], [116, "?"], [117, "Un"], [118, "pull"], [119, "en"], [120, "maille"], [121, "ça"], [122, "va"], [123, "avec"], [124, "un"], [125, "jean"], [126, "?"], [127, "Et"], [128, "ainsi"], [129, "de"], [130, "suite"], [131, "."], [132, "Voilà"], [133, "le"], [134, "bon"], [135, "plan"], [136, "!"], [137, "J'"], [138, "ai"], [139, "trop"], [140, "adoréééé"], [141, "moi"], [142, "aussi"], [143, "!!!!"], [144, "Vanessa"], [145, ","], [146, "ce"], [147, "que"], [148, "t'"], [149, "as"], [150, "écrit"], [151, "correspond"], [152, "exactement"], [153, "à"], [154, "ce"], [155, "que"], [156, "je"], [157, "ressens"], [158, "quand"], [159, "je"], [160, "m'"], [161, "habille"], [162, ","], [163, "c'"], [164, "est"], [165, "toujours"], [166, "la"], [167, "galère"], [168, ","], [169, "j'"], [170, "enfile"], [171, "et"], [172, "j'"], [173, "enlève"], [174, "des"], [175, "fringues"], [176, "des"], [177, "milliers"], [178, "de"], [179, "fois"], [180, "jusqu'"], [181, "à"], [182, "trouver"], [183, "quelque"], [184, "chose"], [185, "qui"], [186, "va"], [187, "ensemble"], [188, "ou"], [189, "qui"], [190, "fait"], [191, "au"], [192, "moins"], [193, "sobre"], [194, "."], [195, "Merci"], [196, "pour"], [197, "le"], [198, "bon"], [199, "plan"], [200, "!"], [201, "!"], [202, "J'"], [203, "ai"], [204, "aussi"], [205, "trouvé"], [206, "un"], [207, "site"], [208, "vraiment"], [209, "cool"], [210, ","], [211, "mais"], [212, "sur"], [213, "la"], [214, "déco"], [215, ","], [216, "le"], [217, "DIY"], [218, ","], [219, "la"], [220, "récup'"], [221, "et"], [222, "plein"], [223, "de"], [224, "conseils"], [225, "intéressants"], [226, "."], [227, "Comment"], [228, "relooker"], [229, "un"], [230, "vieux"], [231, "meuble"], [232, "sans"], [233, "presque"], [234, "rien"], [235, "dépenser"], [236, "—"], [237, "ils"], [238, "l'"], [239, "ont"], [240, "recouvert"], [241, "de"], [242, "tissu"], [243, ","], [244, "et"], [245, "tu"], [246, "peux"], [247, "le"], [248, "faire"], [249, "toi-même"], [250, "chez"], [251, "toi"], [252, "."], [253, "Sympa"], [254, ","], [255, "non"], [256, "?"], [257, "?"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

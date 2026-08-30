@@ -1,0 +1,53 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: HABLANTE1 ¿algún error, señor fiscal?
+HABLANTE2 en las cuentas, no
+HABLANTE1 ¿y contablemente?
+HABLANTE2 hay un reparo de orden lógico que no invalida la exactitud de los datos
+HABLANTE1 reparo lógico, dígalo ya, ¿cuál es, amigo?
+HABLANTE2 ¿qué puso usted en el débito?
+HABLANTE1 los pagos
+HABLANTE2 ¿y en el crédito?
+HABLANTE1 los ingresos; al final puse el saldo del banco en el débito para cuadrar
+HABLANTE2 ahí hay un error
+HABLANTE1 ¿no está bien?
+HABLANTE2 usted invirtió todo: lo que era débito lo puso en crédito y viceversa; violó la lógica contable
+HABLANTE1 lo corrijo el mes que viene; ya que estamos metidos en esto, creo que la contabilidad incompleta tiene un problema con el dinero depositado en el banco; ¿cómo se puede resolver, señor fiscal?
+HABLANTE2 hay dos caminos: primero, abrir registros para el banco — sería la cuenta de caja de la copropiedad en el banco
+HABLANTE1 ¿pero puedo pasar todo por caja? ¿no sería más simple?
+HABLANTE2 ese sería el segundo camino, que es de hecho el más simple
+HABLANTE1 ¿cómo funcionaría ese segundo camino?
+HABLANTE2 todos los cheques y valores en efectivo recibidos serían débitos de caja; el saldo también; los depósitos como salida serían créditos
+
+Tokens: [[0, "HABLANTE1"], [1, "¿"], [2, "algún"], [3, "error"], [4, ","], [5, "señor"], [6, "fiscal"], [7, "?"], [8, "HABLANTE2"], [9, "en"], [10, "las"], [11, "cuentas"], [12, ","], [13, "no"], [14, "HABLANTE1"], [15, "¿"], [16, "y"], [17, "contablemente"], [18, "?"], [19, "HABLANTE2"], [20, "hay"], [21, "un"], [22, "reparo"], [23, "de"], [24, "orden"], [25, "lógico"], [26, "que"], [27, "no"], [28, "invalida"], [29, "la"], [30, "exactitud"], [31, "de"], [32, "los"], [33, "datos"], [34, "HABLANTE1"], [35, "reparo"], [36, "lógico"], [37, ","], [38, "dígalo"], [39, "ya"], [40, ","], [41, "¿"], [42, "cuál"], [43, "es"], [44, ","], [45, "amigo"], [46, "?"], [47, "HABLANTE2"], [48, "¿"], [49, "qué"], [50, "puso"], [51, "usted"], [52, "en"], [53, "el"], [54, "débito"], [55, "?"], [56, "HABLANTE1"], [57, "los"], [58, "pagos"], [59, "HABLANTE2"], [60, "¿"], [61, "y"], [62, "en"], [63, "el"], [64, "crédito"], [65, "?"], [66, "HABLANTE1"], [67, "los"], [68, "ingresos"], [69, ";"], [70, "al"], [71, "final"], [72, "puse"], [73, "el"], [74, "saldo"], [75, "del"], [76, "banco"], [77, "en"], [78, "el"], [79, "débito"], [80, "para"], [81, "cuadrar"], [82, "HABLANTE2"], [83, "ahí"], [84, "hay"], [85, "un"], [86, "error"], [87, "HABLANTE1"], [88, "¿"], [89, "no"], [90, "está"], [91, "bien"], [92, "?"], [93, "HABLANTE2"], [94, "usted"], [95, "invirtió"], [96, "todo"], [97, ":"], [98, "lo"], [99, "que"], [100, "era"], [101, "débito"], [102, "lo"], [103, "puso"], [104, "en"], [105, "crédito"], [106, "y"], [107, "viceversa"], [108, ";"], [109, "violó"], [110, "la"], [111, "lógica"], [112, "contable"], [113, "HABLANTE1"], [114, "lo"], [115, "corrijo"], [116, "el"], [117, "mes"], [118, "que"], [119, "viene"], [120, ";"], [121, "ya"], [122, "que"], [123, "estamos"], [124, "metidos"], [125, "en"], [126, "esto"], [127, ","], [128, "creo"], [129, "que"], [130, "la"], [131, "contabilidad"], [132, "incompleta"], [133, "tiene"], [134, "un"], [135, "problema"], [136, "con"], [137, "el"], [138, "dinero"], [139, "depositado"], [140, "en"], [141, "el"], [142, "banco"], [143, ";"], [144, "¿"], [145, "cómo"], [146, "se"], [147, "puede"], [148, "resolver"], [149, ","], [150, "señor"], [151, "fiscal"], [152, "?"], [153, "HABLANTE2"], [154, "hay"], [155, "dos"], [156, "caminos"], [157, ":"], [158, "primero"], [159, ","], [160, "abrir"], [161, "registros"], [162, "para"], [163, "el"], [164, "banco"], [165, "—"], [166, "sería"], [167, "la"], [168, "cuenta"], [169, "de"], [170, "caja"], [171, "de"], [172, "la"], [173, "copropiedad"], [174, "en"], [175, "el"], [176, "banco"], [177, "HABLANTE1"], [178, "¿"], [179, "pero"], [180, "puedo"], [181, "pasar"], [182, "todo"], [183, "por"], [184, "caja"], [185, "?"], [186, "¿"], [187, "no"], [188, "sería"], [189, "más"], [190, "simple"], [191, "?"], [192, "HABLANTE2"], [193, "ese"], [194, "sería"], [195, "el"], [196, "segundo"], [197, "camino"], [198, ","], [199, "que"], [200, "es"], [201, "de"], [202, "hecho"], [203, "el"], [204, "más"], [205, "simple"], [206, "HABLANTE1"], [207, "¿"], [208, "cómo"], [209, "funcionaría"], [210, "ese"], [211, "segundo"], [212, "camino"], [213, "?"], [214, "HABLANTE2"], [215, "todos"], [216, "los"], [217, "cheques"], [218, "y"], [219, "valores"], [220, "en"], [221, "efectivo"], [222, "recibidos"], [223, "serían"], [224, "débitos"], [225, "de"], [226, "caja"], [227, ";"], [228, "el"], [229, "saldo"], [230, "también"], [231, ";"], [232, "los"], [233, "depósitos"], [234, "como"], [235, "salida"], [236, "serían"], [237, "créditos"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

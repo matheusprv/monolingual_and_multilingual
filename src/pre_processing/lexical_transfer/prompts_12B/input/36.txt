@@ -1,0 +1,56 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: JEAN bonsoir
+PAUL bonsoir
+JEAN je m'appelle ruth
+PAUL je m'appelle rachel
+PAUL c'est une blague c'est une blague désolé
+JEAN évidemment je ne m'appelle pas ruth ni lui rachel
+PAUL en fait je suis ruth et lui c'est rachel enfin je veux dire en fait je suis PAUL
+JEAN et moi je suis JEAN on est venus ici présenter la pièce deux de trèfle
+PAUL qui contrairement à ce que beaucoup de gens pensent n'est pas une pièce gay hein
+JEAN non ça n'a rien à voir ça s'appelle deux de trèfle à cause de la carte du jeu d'accord
+PAUL y a même eu des gens qui ont imaginé pff deux hommes dans une pièce avec un nom aussi bizarre
+JEAN c'est drôle certaines personnes entendent ce qu'elles veulent non alors quand j'expliquais que c'était du jeu de cartes la personne oh c'est du jeu de cartes
+PAUL pff on commence tôt dis donc
+JEAN oui
+PAUL c'est clarifié alors hein les gens c'est une pièce humoristique avec deux acteurs jumeaux
+JEAN écoute cette histoire de jumeaux y a plein de trucs chiants tu vois ça a quelques avantages aussi non c'est faux y a aucun avantage les gens c'est que des trucs chiants le seul avantage ça a été de monter cette pièce
+PAUL mais à part ça c'est que des contrariétés les gens pensent que le fait qu'on soit jumeaux leur donne le droit de poser les questions les plus idiotes qui soient du style c'est toi ou c'est l'autre
+JEAN maintenant comment ça se fait que je ne sois pas moi et que je sois l'autre bon sang
+PAUL quel jour t'es né le 15 juin ah et ton frère pff
+JEAN ININTELLIGIBLE ils ont une fixation à vouloir savoir qui est le plus vieux non qui est né le premier
+PAUL vous êtes frères on n'est pas cousins non en fait on s'est connus ici à l'instant pff tellement ressemblants
+
+Tokens: [[0, "JEAN"], [1, "bonsoir"], [2, "PAUL"], [3, "bonsoir"], [4, "JEAN"], [5, "je"], [6, "m'"], [7, "appelle"], [8, "ruth"], [9, "PAUL"], [10, "je"], [11, "m'"], [12, "appelle"], [13, "rachel"], [14, "PAUL"], [15, "c'"], [16, "est"], [17, "une"], [18, "blague"], [19, "c'"], [20, "est"], [21, "une"], [22, "blague"], [23, "désolé"], [24, "JEAN"], [25, "évidemment"], [26, "je"], [27, "ne"], [28, "m'"], [29, "appelle"], [30, "pas"], [31, "ruth"], [32, "ni"], [33, "lui"], [34, "rachel"], [35, "PAUL"], [36, "en"], [37, "fait"], [38, "je"], [39, "suis"], [40, "ruth"], [41, "et"], [42, "lui"], [43, "c'"], [44, "est"], [45, "rachel"], [46, "enfin"], [47, "je"], [48, "veux"], [49, "dire"], [50, "en"], [51, "fait"], [52, "je"], [53, "suis"], [54, "PAUL"], [55, "JEAN"], [56, "et"], [57, "moi"], [58, "je"], [59, "suis"], [60, "JEAN"], [61, "on"], [62, "est"], [63, "venus"], [64, "ici"], [65, "présenter"], [66, "la"], [67, "pièce"], [68, "deux"], [69, "de"], [70, "trèfle"], [71, "PAUL"], [72, "qui"], [73, "contrairement"], [74, "à"], [75, "ce"], [76, "que"], [77, "beaucoup"], [78, "de"], [79, "gens"], [80, "pensent"], [81, "n'"], [82, "est"], [83, "pas"], [84, "une"], [85, "pièce"], [86, "gay"], [87, "hein"], [88, "JEAN"], [89, "non"], [90, "ça"], [91, "n'"], [92, "a"], [93, "rien"], [94, "à"], [95, "voir"], [96, "ça"], [97, "s'"], [98, "appelle"], [99, "deux"], [100, "de"], [101, "trèfle"], [102, "à"], [103, "cause"], [104, "de"], [105, "la"], [106, "carte"], [107, "du"], [108, "jeu"], [109, "d'"], [110, "accord"], [111, "PAUL"], [112, "y"], [113, "a"], [114, "même"], [115, "eu"], [116, "des"], [117, "gens"], [118, "qui"], [119, "ont"], [120, "imaginé"], [121, "pff"], [122, "deux"], [123, "hommes"], [124, "dans"], [125, "une"], [126, "pièce"], [127, "avec"], [128, "un"], [129, "nom"], [130, "aussi"], [131, "bizarre"], [132, "JEAN"], [133, "c'"], [134, "est"], [135, "drôle"], [136, "certaines"], [137, "personnes"], [138, "entendent"], [139, "ce"], [140, "qu'"], [141, "elles"], [142, "veulent"], [143, "non"], [144, "alors"], [145, "quand"], [146, "j'"], [147, "expliquais"], [148, "que"], [149, "c'"], [150, "était"], [151, "du"], [152, "jeu"], [153, "de"], [154, "cartes"], [155, "la"], [156, "personne"], [157, "oh"], [158, "c'"], [159, "est"], [160, "du"], [161, "jeu"], [162, "de"], [163, "cartes"], [164, "PAUL"], [165, "pff"], [166, "on"], [167, "commence"], [168, "tôt"], [169, "dis"], [170, "donc"], [171, "JEAN"], [172, "oui"], [173, "PAUL"], [174, "c'"], [175, "est"], [176, "clarifié"], [177, "alors"], [178, "hein"], [179, "les"], [180, "gens"], [181, "c'"], [182, "est"], [183, "une"], [184, "pièce"], [185, "humoristique"], [186, "avec"], [187, "deux"], [188, "acteurs"], [189, "jumeaux"], [190, "JEAN"], [191, "écoute"], [192, "cette"], [193, "histoire"], [194, "de"], [195, "jumeaux"], [196, "y"], [197, "a"], [198, "plein"], [199, "de"], [200, "trucs"], [201, "chiants"], [202, "tu"], [203, "vois"], [204, "ça"], [205, "a"], [206, "quelques"], [207, "avantages"], [208, "aussi"], [209, "non"], [210, "c'"], [211, "est"], [212, "faux"], [213, "y"], [214, "a"], [215, "aucun"], [216, "avantage"], [217, "les"], [218, "gens"], [219, "c'"], [220, "est"], [221, "que"], [222, "des"], [223, "trucs"], [224, "chiants"], [225, "le"], [226, "seul"], [227, "avantage"], [228, "ça"], [229, "a"], [230, "été"], [231, "de"], [232, "monter"], [233, "cette"], [234, "pièce"], [235, "PAUL"], [236, "mais"], [237, "à"], [238, "part"], [239, "ça"], [240, "c'"], [241, "est"], [242, "que"], [243, "des"], [244, "contrariétés"], [245, "les"], [246, "gens"], [247, "pensent"], [248, "que"], [249, "le"], [250, "fait"], [251, "qu'"], [252, "on"], [253, "soit"], [254, "jumeaux"], [255, "leur"], [256, "donne"], [257, "le"], [258, "droit"], [259, "de"], [260, "poser"], [261, "les"], [262, "questions"], [263, "les"], [264, "plus"], [265, "idiotes"], [266, "qui"], [267, "soient"], [268, "du"], [269, "style"], [270, "c'"], [271, "est"], [272, "toi"], [273, "ou"], [274, "c'"], [275, "est"], [276, "l'"], [277, "autre"], [278, "JEAN"], [279, "maintenant"], [280, "comment"], [281, "ça"], [282, "se"], [283, "fait"], [284, "que"], [285, "je"], [286, "ne"], [287, "sois"], [288, "pas"], [289, "moi"], [290, "et"], [291, "que"], [292, "je"], [293, "sois"], [294, "l'"], [295, "autre"], [296, "bon"], [297, "sang"], [298, "PAUL"], [299, "quel"], [300, "jour"], [301, "t'"], [302, "es"], [303, "né"], [304, "le"], [305, "15"], [306, "juin"], [307, "ah"], [308, "et"], [309, "ton"], [310, "frère"], [311, "pff"], [312, "JEAN"], [313, "ININTELLIGIBLE"], [314, "ils"], [315, "ont"], [316, "une"], [317, "fixation"], [318, "à"], [319, "vouloir"], [320, "savoir"], [321, "qui"], [322, "est"], [323, "le"], [324, "plus"], [325, "vieux"], [326, "non"], [327, "qui"], [328, "est"], [329, "né"], [330, "le"], [331, "premier"], [332, "PAUL"], [333, "vous"], [334, "êtes"], [335, "frères"], [336, "on"], [337, "n'"], [338, "est"], [339, "pas"], [340, "cousins"], [341, "non"], [342, "en"], [343, "fait"], [344, "on"], [345, "s'"], [346, "est"], [347, "connus"], [348, "ici"], [349, "à"], [350, "l'"], [351, "instant"], [352, "pff"], [353, "tellement"], [354, "ressemblants"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

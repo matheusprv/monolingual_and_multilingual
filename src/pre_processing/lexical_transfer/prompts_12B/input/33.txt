@@ -1,0 +1,70 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: La blonde
+
+
+- Papa, raconte encore une fois cette histoire.
+
+- Quelle histoire tu veux que je raconte, Séverin ?
+
+- Celle qui t'a laissé la bouche de travers.
+
+- Tu sais que j'aime pas parler de ces choses-là.
+
+- Ah papa ! Allez, raconte, je l'adore.
+
+- Bon, d'accord mon fils, puisque tu insistes.
+
+"Un jour je sortais des champs et j'ai décidé d'aller à la petite épicerie de chez Raymond.
+C'était loin mais ça valait le coup, parce que seulement là-bas ils avaient une gnôle
+jaunâtre qui venait de Normandie, un délice.
+La gnôle était tellement bonne que j'en ai oublié l'heure.
+Il manquait trente minutes avant minuit quand j'ai décidé de rentrer à la maison.
+
+- Réginald, tu t'en vas à cette heure-ci ?
+Dors donc ici, y a du chemin jusqu'à chez toi.
+On dit qu'il y a des apparitions qui traînent par là, toujours à minuit,
+des fantômes.
+
+- Monsieur Raymond, regardez-moi. Est-ce qu'un homme comme moi a
+peur des fantômes ?
+
+- Bon, comme vous voulez.
+
+- Bonsoir monsieur Raymond, je m'en vais.
+Et me voilà parti sur la route de terre battue.
+Ça faisait presque une demi-heure que je marchais. Soudain j'ai commencé à
+entendre des pas qui semblaient me suivre.
+
+Tokens: [[0, "La"], [1, "blonde"], [2, "-"], [3, "Papa"], [4, ","], [5, "raconte"], [6, "encore"], [7, "une"], [8, "fois"], [9, "cette"], [10, "histoire"], [11, "."], [12, "-"], [13, "Quelle"], [14, "histoire"], [15, "tu"], [16, "veux"], [17, "que"], [18, "je"], [19, "raconte"], [20, ","], [21, "Séverin"], [22, "?"], [23, "-"], [24, "Celle"], [25, "qui"], [26, "t'"], [27, "a"], [28, "laissé"], [29, "la"], [30, "bouche"], [31, "de"], [32, "travers"], [33, "."], [34, "-"], [35, "Tu"], [36, "sais"], [37, "que"], [38, "j'"], [39, "aime"], [40, "pas"], [41, "parler"], [42, "de"], [43, "ces"], [44, "choses"], [45, "-là"], [46, "."], [47, "-"], [48, "Ah"], [49, "papa"], [50, "!"], [51, "Allez"], [52, ","], [53, "raconte"], [54, ","], [55, "je"], [56, "l'"], [57, "adore"], [58, "."], [59, "-"], [60, "Bon"], [61, ","], [62, "d'"], [63, "accord"], [64, "mon"], [65, "fils"], [66, ","], [67, "puisque"], [68, "tu"], [69, "insistes"], [70, "."], [71, "\""], [72, "Un"], [73, "jour"], [74, "je"], [75, "sortais"], [76, "des"], [77, "champs"], [78, "et"], [79, "j'"], [80, "ai"], [81, "décidé"], [82, "d'"], [83, "aller"], [84, "à"], [85, "la"], [86, "petite"], [87, "épicerie"], [88, "de"], [89, "chez"], [90, "Raymond"], [91, "."], [92, "C'"], [93, "était"], [94, "loin"], [95, "mais"], [96, "ça"], [97, "valait"], [98, "le"], [99, "coup"], [100, ","], [101, "parce"], [102, "que"], [103, "seulement"], [104, "là-bas"], [105, "ils"], [106, "avaient"], [107, "une"], [108, "gnôle"], [109, "jaunâtre"], [110, "qui"], [111, "venait"], [112, "de"], [113, "Normandie"], [114, ","], [115, "un"], [116, "délice"], [117, "."], [118, "La"], [119, "gnôle"], [120, "était"], [121, "tellement"], [122, "bonne"], [123, "que"], [124, "j'"], [125, "en"], [126, "ai"], [127, "oublié"], [128, "l'"], [129, "heure"], [130, "."], [131, "Il"], [132, "manquait"], [133, "trente"], [134, "minutes"], [135, "avant"], [136, "minuit"], [137, "quand"], [138, "j'"], [139, "ai"], [140, "décidé"], [141, "de"], [142, "rentrer"], [143, "à"], [144, "la"], [145, "maison"], [146, "."], [147, "-"], [148, "Réginald"], [149, ","], [150, "tu"], [151, "t'"], [152, "en"], [153, "vas"], [154, "à"], [155, "cette"], [156, "heure-ci"], [157, "?"], [158, "Dors"], [159, "donc"], [160, "ici"], [161, ","], [162, "y"], [163, "a"], [164, "du"], [165, "chemin"], [166, "jusqu'"], [167, "à"], [168, "chez"], [169, "toi"], [170, "."], [171, "On"], [172, "dit"], [173, "qu'"], [174, "il"], [175, "y"], [176, "a"], [177, "des"], [178, "apparitions"], [179, "qui"], [180, "traînent"], [181, "par"], [182, "là"], [183, ","], [184, "toujours"], [185, "à"], [186, "minuit"], [187, ","], [188, "des"], [189, "fantômes"], [190, "."], [191, "-"], [192, "Monsieur"], [193, "Raymond"], [194, ","], [195, "regardez"], [196, "-moi"], [197, "."], [198, "Est"], [199, "-ce"], [200, "qu'"], [201, "un"], [202, "homme"], [203, "comme"], [204, "moi"], [205, "a"], [206, "peur"], [207, "des"], [208, "fantômes"], [209, "?"], [210, "-"], [211, "Bon"], [212, ","], [213, "comme"], [214, "vous"], [215, "voulez"], [216, "."], [217, "-"], [218, "Bonsoir"], [219, "monsieur"], [220, "Raymond"], [221, ","], [222, "je"], [223, "m'"], [224, "en"], [225, "vais"], [226, "."], [227, "Et"], [228, "me"], [229, "voilà"], [230, "parti"], [231, "sur"], [232, "la"], [233, "route"], [234, "de"], [235, "terre"], [236, "battue"], [237, "."], [238, "Ça"], [239, "faisait"], [240, "presque"], [241, "une"], [242, "demi-heure"], [243, "que"], [244, "je"], [245, "marchais"], [246, "."], [247, "Soudain"], [248, "j'"], [249, "ai"], [250, "commencé"], [251, "à"], [252, "entendre"], [253, "des"], [254, "pas"], [255, "qui"], [256, "semblaient"], [257, "me"], [258, "suivre"], [259, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

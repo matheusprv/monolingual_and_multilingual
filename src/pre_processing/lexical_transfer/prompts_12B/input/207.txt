@@ -1,0 +1,52 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: ¿Cómo resolver un problema matemático sin usar matemáticas?
+
+Publicado por Oscar Y. Takeshita
+
+Muchas veces se utiliza la técnica de convertir un determinado problema en otro equivalente. Esto es muy útil cuando el segundo problema es mucho más fácil de resolver o de entender. Una vez resuelto el segundo problema, ya se conoce la solución del primero.
+
+Vamos a ilustrar esta técnica con un problema clásico publicado recientemente en este blog.
+
+La forma clásica de resolver este problema consiste en usar la probabilidad condicional. La solución que se propone a continuación prácticamente no utiliza la probabilidad.
+
+Supongamos que existiera otro programa de TV en el que también hubiera tres puertas, detrás de una de las cuales está el coche de premio. Sin embargo, las reglas del juego son las siguientes:
+1. No hay presentador.
+2. Puedes optar por:
+a) Abrir dos puertas de tu elección.
+b) Abrir una puerta de tu elección.
+
+¿Cuál de las opciones elegirías? Obviamente la opción a).
+
+Tokens: [[0, "¿"], [1, "Cómo"], [2, "resolver"], [3, "un"], [4, "problema"], [5, "matemático"], [6, "sin"], [7, "usar"], [8, "matemáticas"], [9, "?"], [10, "Publicado"], [11, "por"], [12, "Oscar"], [13, "Y."], [14, "Takeshita"], [15, "Muchas"], [16, "veces"], [17, "se"], [18, "utiliza"], [19, "la"], [20, "técnica"], [21, "de"], [22, "convertir"], [23, "un"], [24, "determinado"], [25, "problema"], [26, "en"], [27, "otro"], [28, "equivalente"], [29, "."], [30, "Esto"], [31, "es"], [32, "muy"], [33, "útil"], [34, "cuando"], [35, "el"], [36, "segundo"], [37, "problema"], [38, "es"], [39, "mucho"], [40, "más"], [41, "fácil"], [42, "de"], [43, "resolver"], [44, "o"], [45, "de"], [46, "entender"], [47, "."], [48, "Una"], [49, "vez"], [50, "resuelto"], [51, "el"], [52, "segundo"], [53, "problema"], [54, ","], [55, "ya"], [56, "se"], [57, "conoce"], [58, "la"], [59, "solución"], [60, "del"], [61, "primero"], [62, "."], [63, "Vamos"], [64, "a"], [65, "ilustrar"], [66, "esta"], [67, "técnica"], [68, "con"], [69, "un"], [70, "problema"], [71, "clásico"], [72, "publicado"], [73, "recientemente"], [74, "en"], [75, "este"], [76, "blog"], [77, "."], [78, "La"], [79, "forma"], [80, "clásica"], [81, "de"], [82, "resolver"], [83, "este"], [84, "problema"], [85, "consiste"], [86, "en"], [87, "usar"], [88, "la"], [89, "probabilidad"], [90, "condicional"], [91, "."], [92, "La"], [93, "solución"], [94, "que"], [95, "se"], [96, "propone"], [97, "a"], [98, "continuación"], [99, "prácticamente"], [100, "no"], [101, "utiliza"], [102, "la"], [103, "probabilidad"], [104, "."], [105, "Supongamos"], [106, "que"], [107, "existiera"], [108, "otro"], [109, "programa"], [110, "de"], [111, "TV"], [112, "en"], [113, "el"], [114, "que"], [115, "también"], [116, "hubiera"], [117, "tres"], [118, "puertas"], [119, ","], [120, "detrás"], [121, "de"], [122, "una"], [123, "de"], [124, "las"], [125, "cuales"], [126, "está"], [127, "el"], [128, "coche"], [129, "de"], [130, "premio"], [131, "."], [132, "Sin"], [133, "embargo"], [134, ","], [135, "las"], [136, "reglas"], [137, "del"], [138, "juego"], [139, "son"], [140, "las"], [141, "siguientes"], [142, ":"], [143, "1"], [144, "."], [145, "No"], [146, "hay"], [147, "presentador"], [148, "."], [149, "2"], [150, "."], [151, "Puedes"], [152, "optar"], [153, "por"], [154, ":"], [155, "a"], [156, ")"], [157, "Abrir"], [158, "dos"], [159, "puertas"], [160, "de"], [161, "tu"], [162, "elección"], [163, "."], [164, "b"], [165, ")"], [166, "Abrir"], [167, "una"], [168, "puerta"], [169, "de"], [170, "tu"], [171, "elección"], [172, "."], [173, "¿"], [174, "Cuál"], [175, "de"], [176, "las"], [177, "opciones"], [178, "elegirías"], [179, "?"], [180, "Obviamente"], [181, "la"], [182, "opción"], [183, "a"], [184, ")"], [185, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

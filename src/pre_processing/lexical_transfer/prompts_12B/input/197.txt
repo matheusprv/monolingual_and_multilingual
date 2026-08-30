@@ -1,0 +1,47 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: HABLANTE1 pues sí y sobre este momento tan difícil para muchos jóvenes a la hora de elegir carrera hablo aquí en el estudio con la psicóloga y orientadora profesional maría buenos días maría
+HABLANTE2 buenos días
+HABLANTE1 el período de inscripción para la selectividad es un momento de decisión pero también de mucho estrés ¿no?
+HABLANTE2 ni me cuentes los estudiantes están estresados las familias también y no solo la familia más cercana el padre y la madre sino que también está la presión de los primos que a veces ya han hecho la selectividad y están pendientes de que el otro primo apruebe los que están por venir los abuelos en fin todo el mundo está muy pendiente de que la gente apruebe no de que este chico en concreto apruebe el problema es que muchas veces el joven deja esta decisión para el último momento
+HABLANTE1 justo ahora cuando abre el plazo de inscripción ¿no?
+HABLANTE2 exactamente está abriendo el plazo y yo misma recibo muchísima gente llamando al despacho quiero hacer un proceso de orientación profesional y ya no hay tiempo
+HABLANTE1 no hay tiempo para hacer un proceso
+HABLANTE2 dentro del
+HABLANTE1 bien hecho bien hecho con calma
+HABLANTE2 con calma ¿no?
+HABLANTE1 no da tiempo
+HABLANTE2 porque el alumno primero tiene que conocerse tiene que saber cuáles son sus habilidades ¿no? hay que trazar un perfil para ese alumno y después hay que estudiar esas carreras con él sacarle todas las dudas ver cómo está el mercado laboral para cada una de esas profesiones
+
+Tokens: [[0, "HABLANTE1"], [1, "pues"], [2, "sí"], [3, "y"], [4, "sobre"], [5, "este"], [6, "momento"], [7, "tan"], [8, "difícil"], [9, "para"], [10, "muchos"], [11, "jóvenes"], [12, "a"], [13, "la"], [14, "hora"], [15, "de"], [16, "elegir"], [17, "carrera"], [18, "hablo"], [19, "aquí"], [20, "en"], [21, "el"], [22, "estudio"], [23, "con"], [24, "la"], [25, "psicóloga"], [26, "y"], [27, "orientadora"], [28, "profesional"], [29, "maría"], [30, "buenos"], [31, "días"], [32, "maría"], [33, "HABLANTE2"], [34, "buenos"], [35, "días"], [36, "HABLANTE1"], [37, "el"], [38, "período"], [39, "de"], [40, "inscripción"], [41, "para"], [42, "la"], [43, "selectividad"], [44, "es"], [45, "un"], [46, "momento"], [47, "de"], [48, "decisión"], [49, "pero"], [50, "también"], [51, "de"], [52, "mucho"], [53, "estrés"], [54, "¿"], [55, "no"], [56, "?"], [57, "HABLANTE2"], [58, "ni"], [59, "me"], [60, "cuentes"], [61, "los"], [62, "estudiantes"], [63, "están"], [64, "estresados"], [65, "las"], [66, "familias"], [67, "también"], [68, "y"], [69, "no"], [70, "solo"], [71, "la"], [72, "familia"], [73, "más"], [74, "cercana"], [75, "el"], [76, "padre"], [77, "y"], [78, "la"], [79, "madre"], [80, "sino"], [81, "que"], [82, "también"], [83, "está"], [84, "la"], [85, "presión"], [86, "de"], [87, "los"], [88, "primos"], [89, "que"], [90, "a"], [91, "veces"], [92, "ya"], [93, "han"], [94, "hecho"], [95, "la"], [96, "selectividad"], [97, "y"], [98, "están"], [99, "pendientes"], [100, "de"], [101, "que"], [102, "el"], [103, "otro"], [104, "primo"], [105, "apruebe"], [106, "los"], [107, "que"], [108, "están"], [109, "por"], [110, "venir"], [111, "los"], [112, "abuelos"], [113, "en"], [114, "fin"], [115, "todo"], [116, "el"], [117, "mundo"], [118, "está"], [119, "muy"], [120, "pendiente"], [121, "de"], [122, "que"], [123, "la"], [124, "gente"], [125, "apruebe"], [126, "no"], [127, "de"], [128, "que"], [129, "este"], [130, "chico"], [131, "en"], [132, "concreto"], [133, "apruebe"], [134, "el"], [135, "problema"], [136, "es"], [137, "que"], [138, "muchas"], [139, "veces"], [140, "el"], [141, "joven"], [142, "deja"], [143, "esta"], [144, "decisión"], [145, "para"], [146, "el"], [147, "último"], [148, "momento"], [149, "HABLANTE1"], [150, "justo"], [151, "ahora"], [152, "cuando"], [153, "abre"], [154, "el"], [155, "plazo"], [156, "de"], [157, "inscripción"], [158, "¿"], [159, "no"], [160, "?"], [161, "HABLANTE2"], [162, "exactamente"], [163, "está"], [164, "abriendo"], [165, "el"], [166, "plazo"], [167, "y"], [168, "yo"], [169, "misma"], [170, "recibo"], [171, "muchísima"], [172, "gente"], [173, "llamando"], [174, "al"], [175, "despacho"], [176, "quiero"], [177, "hacer"], [178, "un"], [179, "proceso"], [180, "de"], [181, "orientación"], [182, "profesional"], [183, "y"], [184, "ya"], [185, "no"], [186, "hay"], [187, "tiempo"], [188, "HABLANTE1"], [189, "no"], [190, "hay"], [191, "tiempo"], [192, "para"], [193, "hacer"], [194, "un"], [195, "proceso"], [196, "HABLANTE2"], [197, "dentro"], [198, "del"], [199, "HABLANTE1"], [200, "bien"], [201, "hecho"], [202, "bien"], [203, "hecho"], [204, "con"], [205, "calma"], [206, "HABLANTE2"], [207, "con"], [208, "calma"], [209, "¿"], [210, "no"], [211, "?"], [212, "HABLANTE1"], [213, "no"], [214, "da"], [215, "tiempo"], [216, "HABLANTE2"], [217, "porque"], [218, "el"], [219, "alumno"], [220, "primero"], [221, "tiene"], [222, "que"], [223, "conocerse"], [224, "tiene"], [225, "que"], [226, "saber"], [227, "cuáles"], [228, "son"], [229, "sus"], [230, "habilidades"], [231, "¿"], [232, "no"], [233, "?"], [234, "hay"], [235, "que"], [236, "trazar"], [237, "un"], [238, "perfil"], [239, "para"], [240, "ese"], [241, "alumno"], [242, "y"], [243, "después"], [244, "hay"], [245, "que"], [246, "estudiar"], [247, "esas"], [248, "carreras"], [249, "con"], [250, "él"], [251, "sacarle"], [252, "todas"], [253, "las"], [254, "dudas"], [255, "ver"], [256, "cómo"], [257, "está"], [258, "el"], [259, "mercado"], [260, "laboral"], [261, "para"], [262, "cada"], [263, "una"], [264, "de"], [265, "esas"], [266, "profesiones"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

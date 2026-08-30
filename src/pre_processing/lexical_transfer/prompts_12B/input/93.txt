@@ -1,0 +1,78 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: HABLANTE1: Ay, qué tontos, van a caer con cualquier tontería...
+HABLANTE1: Pasa, anda.
+HABLANTE1: Aiii...
+HABLANTE1: Id allí, id a hacerlo.
+HABLANTE1: Id allí, a la pregunta cinco.
+HABLANTE1: A la cinco.
+HABLANTE1: A la cinco.
+HABLANTE1: Cuando llegue a la siete ya me cansé en la seis, ¿no?
+HABLANTE1: Pero ¿cuántas son?
+HABLANTE1: "Observa la imagen en la que se representa el cultivo hidropónico..."
+HABLANTE1: Hidropónico... sé todo sobre el cultivo hidropónico. "...considerando la información..."
+HABLANTE1: Primero hay que mirar el dibujo.
+HABLANTE1: Nadie mira el dibujo antes de leer, mira para el otro, que es un friki... "...considerando la información aportada por esta imagen..." o sea, ninguna, "...y otros conocimientos sobre la materia, ¿es correcto afirmar que la solución nutritiva presente en 1 debe contener ácidos grasos?"
+HABLANTE1: No... ¿glucosa? ¿Nitratos? ¿Proteínas?
+HABLANTE1: Ah...
+HABLANTE1: Ya... para que la planta crezca.
+HABLANTE1: Ácidos grasos no puede ser, porque eso es grasa.
+HABLANTE1: Ya.
+HABLANTE1: Para que crezca sin la luz del sol.
+HABLANTE1: No, eso tiene que ser de vidrio, ¿a que sí?
+HABLANTE1: Un vidrio así...
+HABLANTE1: Puede ser incluso de...
+HABLANTE1: Ahumado.
+HABLANTE1: Puede ser de malla, una malla de esas verdes.
+HABLANTE1: Ya.
+HABLANTE1: Glucosa para la solución...
+HABLANTE1: El aparato va metido dentro del agua, ¿ves?
+HABLANTE1: Sí, sí, es el aparato que se queda en el agua. ¿Qué planta es?
+HABLANTE1: Nitratos.
+HABLANTE1: Los necesita para crecer.
+HABLANTE1: Nitratos.
+HABLANTE1: Tiene que ser esa.
+HABLANTE1: ¿Sabes por qué?
+HABLANTE1: En la vida real la raíz coge el nitrato de la tierra, ¿no?
+HABLANTE1: Sí, claro, y además todo lleva nitrato, ya viste el nitrato de no sé qué para las plantas, los fertilizantes son nitratos, la letra C.
+HABLANTE1: ¿Y los ácidos grasos para qué sirven?
+HABLANTE1: Eso es grasa, ¿no?
+HABLANTE1: La cinco es la C, sí.
+HABLANTE1: La C.
+HABLANTE1: Ya está listo, o es muy fácil...
+HABLANTE1: Id apuntando en un papel, y luego nosotros...
+HABLANTE1: Ay, no puedo aguantar la espera.
+HABLANTE1: Voy por la seis y todavía no me he cansado.
+
+Tokens: [[0, "HABLANTE1"], [1, ":"], [2, "Ay"], [3, ","], [4, "qué"], [5, "tontos"], [6, ","], [7, "van"], [8, "a"], [9, "caer"], [10, "con"], [11, "cualquier"], [12, "tontería"], [13, "..."], [14, "HABLANTE1"], [15, ":"], [16, "Pasa"], [17, ","], [18, "anda"], [19, "."], [20, "HABLANTE1"], [21, ":"], [22, "Aiii"], [23, "..."], [24, "HABLANTE1"], [25, ":"], [26, "Id"], [27, "allí"], [28, ","], [29, "id"], [30, "a"], [31, "hacerlo"], [32, "."], [33, "HABLANTE1"], [34, ":"], [35, "Id"], [36, "allí"], [37, ","], [38, "a"], [39, "la"], [40, "pregunta"], [41, "cinco"], [42, "."], [43, "HABLANTE1"], [44, ":"], [45, "A"], [46, "la"], [47, "cinco"], [48, "."], [49, "HABLANTE1"], [50, ":"], [51, "A"], [52, "la"], [53, "cinco"], [54, "."], [55, "HABLANTE1"], [56, ":"], [57, "Cuando"], [58, "llegue"], [59, "a"], [60, "la"], [61, "siete"], [62, "ya"], [63, "me"], [64, "cansé"], [65, "en"], [66, "la"], [67, "seis"], [68, ","], [69, "¿"], [70, "no"], [71, "?"], [72, "HABLANTE1"], [73, ":"], [74, "Pero"], [75, "¿"], [76, "cuántas"], [77, "son"], [78, "?"], [79, "HABLANTE1"], [80, ":"], [81, "\""], [82, "Observa"], [83, "la"], [84, "imagen"], [85, "en"], [86, "la"], [87, "que"], [88, "se"], [89, "representa"], [90, "el"], [91, "cultivo"], [92, "hidropónico"], [93, "..."], [94, "\""], [95, "HABLANTE1"], [96, ":"], [97, "Hidropónico"], [98, "..."], [99, "sé"], [100, "todo"], [101, "sobre"], [102, "el"], [103, "cultivo"], [104, "hidropónico"], [105, "."], [106, "\""], [107, "...considerando"], [108, "la"], [109, "información"], [110, "..."], [111, "\""], [112, "HABLANTE1"], [113, ":"], [114, "Primero"], [115, "hay"], [116, "que"], [117, "mirar"], [118, "el"], [119, "dibujo"], [120, "."], [121, "HABLANTE1"], [122, ":"], [123, "Nadie"], [124, "mira"], [125, "el"], [126, "dibujo"], [127, "antes"], [128, "de"], [129, "leer"], [130, ","], [131, "mira"], [132, "para"], [133, "el"], [134, "otro"], [135, ","], [136, "que"], [137, "es"], [138, "un"], [139, "friki"], [140, "..."], [141, "\""], [142, "...considerando"], [143, "la"], [144, "información"], [145, "aportada"], [146, "por"], [147, "esta"], [148, "imagen"], [149, "..."], [150, "\""], [151, "o"], [152, "sea"], [153, ","], [154, "ninguna"], [155, ","], [156, "\""], [157, "...y"], [158, "otros"], [159, "conocimientos"], [160, "sobre"], [161, "la"], [162, "materia"], [163, ","], [164, "¿"], [165, "es"], [166, "correcto"], [167, "afirmar"], [168, "que"], [169, "la"], [170, "solución"], [171, "nutritiva"], [172, "presente"], [173, "en"], [174, "1"], [175, "debe"], [176, "contener"], [177, "ácidos"], [178, "grasos"], [179, "?"], [180, "\""], [181, "HABLANTE1"], [182, ":"], [183, "No"], [184, "..."], [185, "¿"], [186, "glucosa"], [187, "?"], [188, "¿"], [189, "Nitratos"], [190, "?"], [191, "¿"], [192, "Proteínas"], [193, "?"], [194, "HABLANTE1"], [195, ":"], [196, "Ah"], [197, "..."], [198, "HABLANTE1"], [199, ":"], [200, "Ya"], [201, "..."], [202, "para"], [203, "que"], [204, "la"], [205, "planta"], [206, "crezca"], [207, "."], [208, "HABLANTE1"], [209, ":"], [210, "Ácidos"], [211, "grasos"], [212, "no"], [213, "puede"], [214, "ser"], [215, ","], [216, "porque"], [217, "eso"], [218, "es"], [219, "grasa"], [220, "."], [221, "HABLANTE1"], [222, ":"], [223, "Ya."], [224, "HABLANTE1"], [225, ":"], [226, "Para"], [227, "que"], [228, "crezca"], [229, "sin"], [230, "la"], [231, "luz"], [232, "del"], [233, "sol"], [234, "."], [235, "HABLANTE1"], [236, ":"], [237, "No"], [238, ","], [239, "eso"], [240, "tiene"], [241, "que"], [242, "ser"], [243, "de"], [244, "vidrio"], [245, ","], [246, "¿"], [247, "a"], [248, "que"], [249, "sí"], [250, "?"], [251, "HABLANTE1"], [252, ":"], [253, "Un"], [254, "vidrio"], [255, "así"], [256, "..."], [257, "HABLANTE1"], [258, ":"], [259, "Puede"], [260, "ser"], [261, "incluso"], [262, "de"], [263, "..."], [264, "HABLANTE1"], [265, ":"], [266, "Ahumado"], [267, "."], [268, "HABLANTE1"], [269, ":"], [270, "Puede"], [271, "ser"], [272, "de"], [273, "malla"], [274, ","], [275, "una"], [276, "malla"], [277, "de"], [278, "esas"], [279, "verdes"], [280, "."], [281, "HABLANTE1"], [282, ":"], [283, "Ya."], [284, "HABLANTE1"], [285, ":"], [286, "Glucosa"], [287, "para"], [288, "la"], [289, "solución"], [290, "..."], [291, "HABLANTE1"], [292, ":"], [293, "El"], [294, "aparato"], [295, "va"], [296, "metido"], [297, "dentro"], [298, "del"], [299, "agua"], [300, ","], [301, "¿"], [302, "ves"], [303, "?"], [304, "HABLANTE1"], [305, ":"], [306, "Sí"], [307, ","], [308, "sí"], [309, ","], [310, "es"], [311, "el"], [312, "aparato"], [313, "que"], [314, "se"], [315, "queda"], [316, "en"], [317, "el"], [318, "agua"], [319, "."], [320, "¿"], [321, "Qué"], [322, "planta"], [323, "es"], [324, "?"], [325, "HABLANTE1"], [326, ":"], [327, "Nitratos"], [328, "."], [329, "HABLANTE1"], [330, ":"], [331, "Los"], [332, "necesita"], [333, "para"], [334, "crecer"], [335, "."], [336, "HABLANTE1"], [337, ":"], [338, "Nitratos"], [339, "."], [340, "HABLANTE1"], [341, ":"], [342, "Tiene"], [343, "que"], [344, "ser"], [345, "esa"], [346, "."], [347, "HABLANTE1"], [348, ":"], [349, "¿"], [350, "Sabes"], [351, "por"], [352, "qué"], [353, "?"], [354, "HABLANTE1"], [355, ":"], [356, "En"], [357, "la"], [358, "vida"], [359, "real"], [360, "la"], [361, "raíz"], [362, "coge"], [363, "el"], [364, "nitrato"], [365, "de"], [366, "la"], [367, "tierra"], [368, ","], [369, "¿"], [370, "no"], [371, "?"], [372, "HABLANTE1"], [373, ":"], [374, "Sí"], [375, ","], [376, "claro"], [377, ","], [378, "y"], [379, "además"], [380, "todo"], [381, "lleva"], [382, "nitrato"], [383, ","], [384, "ya"], [385, "viste"], [386, "el"], [387, "nitrato"], [388, "de"], [389, "no"], [390, "sé"], [391, "qué"], [392, "para"], [393, "las"], [394, "plantas"], [395, ","], [396, "los"], [397, "fertilizantes"], [398, "son"], [399, "nitratos"], [400, ","], [401, "la"], [402, "letra"], [403, "C."], [404, "HABLANTE1"], [405, ":"], [406, "¿"], [407, "Y"], [408, "los"], [409, "ácidos"], [410, "grasos"], [411, "para"], [412, "qué"], [413, "sirven"], [414, "?"], [415, "HABLANTE1"], [416, ":"], [417, "Eso"], [418, "es"], [419, "grasa"], [420, ","], [421, "¿"], [422, "no"], [423, "?"], [424, "HABLANTE1"], [425, ":"], [426, "La"], [427, "cinco"], [428, "es"], [429, "la"], [430, "C"], [431, ","], [432, "sí"], [433, "."], [434, "HABLANTE1"], [435, ":"], [436, "La"], [437, "C."], [438, "HABLANTE1"], [439, ":"], [440, "Ya"], [441, "está"], [442, "listo"], [443, ","], [444, "o"], [445, "es"], [446, "muy"], [447, "fácil"], [448, "..."], [449, "HABLANTE1"], [450, ":"], [451, "Id"], [452, "apuntando"], [453, "en"], [454, "un"], [455, "papel"], [456, ","], [457, "y"], [458, "luego"], [459, "nosotros"], [460, "..."], [461, "HABLANTE1"], [462, ":"], [463, "Ay"], [464, ","], [465, "no"], [466, "puedo"], [467, "aguantar"], [468, "la"], [469, "espera"], [470, "."], [471, "HABLANTE1"], [472, ":"], [473, "Voy"], [474, "por"], [475, "la"], [476, "seis"], [477, "y"], [478, "todavía"], [479, "no"], [480, "me"], [481, "he"], [482, "cansado"], [483, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

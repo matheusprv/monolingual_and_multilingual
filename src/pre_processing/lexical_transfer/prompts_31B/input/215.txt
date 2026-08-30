@@ -1,0 +1,53 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: The 1st Special Education Symposium will take place on August 19th and 20th.
+Early bird registration is now open with a discount.
+
+The Anália Franco campus will host the 1st Special Education Symposium - PROESP on August 19th and 20th, focusing on the theme: "Discussing Limits and Possibilities in Teaching Practices".
+Aimed at professionals working in the school inclusion of students with disabilities and in special education research, the event will offer participants an opportunity to reflect on and debate contemporary issues. It will highlight the expertise of interdisciplinary teams, who build their knowledge based on teachers' practices and educational and/or specialist support to ensure quality education.
+The Symposium is an initiative of the Special Education Program - PROESP, maintained by the Pro-Rectory of Extension and Community Affairs at Cruzeiro do Sul University. It aims to promote the integration of research, teaching, and extension in inclusive education, offering educational support to young people and adults with disabilities (intellectual, hearing, physical, and visual) and their families. This support facilitates their access to productive work, social, and cultural goods, while boosting their self-esteem and independence, and emphasizing the importance of their social integration.
+About the event:
+
+CLICK HERE TO REGISTER
+
+CLICK HERE TO CHECK THE SCHEDULE
+
+Registration fees: until June 30th - R$ 30.00;
+until July 31st - R$ 40.00; and after these dates: R$ 50.00.
+Time: 9:00 am to 1:00 pm and 2:30 pm to 6:00 pm
+Location: Fernando Henrique Cardoso Auditorium - Cruzeiro do Sul University - Anália Franco campus
+Address: Av. Regente Feijó, 1295 - Tatuapé - São Paulo (near the Anália Franco Shopping Mall)
+Information: (11) 2037-5758
+
+Tokens: [[0, "The"], [1, "1st"], [2, "Special"], [3, "Education"], [4, "Symposium"], [5, "will"], [6, "take"], [7, "place"], [8, "on"], [9, "August"], [10, "19th"], [11, "and"], [12, "20th"], [13, "."], [14, "Early"], [15, "bird"], [16, "registration"], [17, "is"], [18, "now"], [19, "open"], [20, "with"], [21, "a"], [22, "discount"], [23, "."], [24, "The"], [25, "Anália"], [26, "Franco"], [27, "campus"], [28, "will"], [29, "host"], [30, "the"], [31, "1st"], [32, "Special"], [33, "Education"], [34, "Symposium"], [35, "-"], [36, "PROESP"], [37, "on"], [38, "August"], [39, "19th"], [40, "and"], [41, "20th"], [42, ","], [43, "focusing"], [44, "on"], [45, "the"], [46, "theme"], [47, ":"], [48, "\""], [49, "Discussing"], [50, "Limits"], [51, "and"], [52, "Possibilities"], [53, "in"], [54, "Teaching"], [55, "Practices"], [56, "\""], [57, "."], [58, "Aimed"], [59, "at"], [60, "professionals"], [61, "working"], [62, "in"], [63, "the"], [64, "school"], [65, "inclusion"], [66, "of"], [67, "students"], [68, "with"], [69, "disabilities"], [70, "and"], [71, "in"], [72, "special"], [73, "education"], [74, "research"], [75, ","], [76, "the"], [77, "event"], [78, "will"], [79, "offer"], [80, "participants"], [81, "an"], [82, "opportunity"], [83, "to"], [84, "reflect"], [85, "on"], [86, "and"], [87, "debate"], [88, "contemporary"], [89, "issues"], [90, "."], [91, "It"], [92, "will"], [93, "highlight"], [94, "the"], [95, "expertise"], [96, "of"], [97, "interdisciplinary"], [98, "teams"], [99, ","], [100, "who"], [101, "build"], [102, "their"], [103, "knowledge"], [104, "based"], [105, "on"], [106, "teachers'"], [107, "practices"], [108, "and"], [109, "educational"], [110, "and"], [111, "/"], [112, "or"], [113, "specialist"], [114, "support"], [115, "to"], [116, "ensure"], [117, "quality"], [118, "education"], [119, "."], [120, "The"], [121, "Symposium"], [122, "is"], [123, "an"], [124, "initiative"], [125, "of"], [126, "the"], [127, "Special"], [128, "Education"], [129, "Program"], [130, "-"], [131, "PROESP"], [132, ","], [133, "maintained"], [134, "by"], [135, "the"], [136, "Pro-Rectory"], [137, "of"], [138, "Extension"], [139, "and"], [140, "Community"], [141, "Affairs"], [142, "at"], [143, "Cruzeiro"], [144, "do"], [145, "Sul"], [146, "University"], [147, "."], [148, "It"], [149, "aims"], [150, "to"], [151, "promote"], [152, "the"], [153, "integration"], [154, "of"], [155, "research"], [156, ","], [157, "teaching"], [158, ","], [159, "and"], [160, "extension"], [161, "in"], [162, "inclusive"], [163, "education"], [164, ","], [165, "offering"], [166, "educational"], [167, "support"], [168, "to"], [169, "young"], [170, "people"], [171, "and"], [172, "adults"], [173, "with"], [174, "disabilities"], [175, "("], [176, "intellectual"], [177, ","], [178, "hearing"], [179, ","], [180, "physical"], [181, ","], [182, "and"], [183, "visual"], [184, ")"], [185, "and"], [186, "their"], [187, "families"], [188, "."], [189, "This"], [190, "support"], [191, "facilitates"], [192, "their"], [193, "access"], [194, "to"], [195, "productive"], [196, "work"], [197, ","], [198, "social"], [199, ","], [200, "and"], [201, "cultural"], [202, "goods"], [203, ","], [204, "while"], [205, "boosting"], [206, "their"], [207, "self"], [208, "-"], [209, "esteem"], [210, "and"], [211, "independence"], [212, ","], [213, "and"], [214, "emphasizing"], [215, "the"], [216, "importance"], [217, "of"], [218, "their"], [219, "social"], [220, "integration"], [221, "."], [222, "About"], [223, "the"], [224, "event"], [225, ":"], [226, "CLICK"], [227, "HERE"], [228, "TO"], [229, "REGISTER"], [230, "CLICK"], [231, "HERE"], [232, "TO"], [233, "CHECK"], [234, "THE"], [235, "SCHEDULE"], [236, "Registration"], [237, "fees"], [238, ":"], [239, "until"], [240, "June"], [241, "30th"], [242, "-"], [243, "R$"], [244, "30.00"], [245, ";"], [246, "until"], [247, "July"], [248, "31st"], [249, "-"], [250, "R$"], [251, "40.00"], [252, ";"], [253, "and"], [254, "after"], [255, "these"], [256, "dates"], [257, ":"], [258, "R$"], [259, "50.00"], [260, "."], [261, "Time"], [262, ":"], [263, "9:00"], [264, "am"], [265, "to"], [266, "1:00"], [267, "pm"], [268, "and"], [269, "2:30"], [270, "pm"], [271, "to"], [272, "6:00"], [273, "pm"], [274, "Location"], [275, ":"], [276, "Fernando"], [277, "Henrique"], [278, "Cardoso"], [279, "Auditorium"], [280, "-"], [281, "Cruzeiro"], [282, "do"], [283, "Sul"], [284, "University"], [285, "-"], [286, "Anália"], [287, "Franco"], [288, "campus"], [289, "Address"], [290, ":"], [291, "Av."], [292, "Regente"], [293, "Feijó"], [294, ","], [295, "1295"], [296, "-"], [297, "Tatuapé"], [298, "-"], [299, "São"], [300, "Paulo"], [301, "("], [302, "near"], [303, "the"], [304, "Anália"], [305, "Franco"], [306, "Shopping"], [307, "Mall"], [308, ")"], [309, "Information"], [310, ":"], [311, "("], [312, "11"], [313, ")"], [314, "2037-5758"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

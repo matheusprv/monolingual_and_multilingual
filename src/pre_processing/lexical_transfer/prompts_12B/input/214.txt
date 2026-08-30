@@ -1,0 +1,38 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: HABLANTE1 considerando que tenemos un grave problema de informalidad — el 50% de la fuerza de trabajo económicamente activa está en la informalidad —, ¿qué piensa hacer para reducir este grave problema que amenaza las condiciones de vida digna, incluidos los derechos laborales de los ciudadanos brasileños?
+
+HABLANTE2 muy buenas noches a los televidentes y a los candidatos. Uno de los grandes logros del gobierno del presidente Lula fue la mejora en la formalización del trabajo en Brasil. Hasta 2005, lo que se veía era la gente haciendo changas y trabajos ocasionales para tener algún ingreso o simplemente sobrevivir. Con el gobierno del presidente Lula aumentamos considerablemente la formalización del trabajo, tanto que batimos todos los récords en generación de empleo formal con contrato, y hemos creado 14,5 millones de puestos de trabajo hasta el momento. Creo que para fin de año estaremos cerca de los 15 millones de empleos creados. A esto contribuyó necesariamente la expansión del mercado interno en Brasil, que permitió una mayor producción, un mayor consumo y, por tanto, más empleo en Brasil.
+
+Tokens: [[0, "HABLANTE1"], [1, "considerando"], [2, "que"], [3, "tenemos"], [4, "un"], [5, "grave"], [6, "problema"], [7, "de"], [8, "informalidad"], [9, "—"], [10, "el"], [11, "50"], [12, "%"], [13, "de"], [14, "la"], [15, "fuerza"], [16, "de"], [17, "trabajo"], [18, "económicamente"], [19, "activa"], [20, "está"], [21, "en"], [22, "la"], [23, "informalidad"], [24, "—"], [25, ","], [26, "¿"], [27, "qué"], [28, "piensa"], [29, "hacer"], [30, "para"], [31, "reducir"], [32, "este"], [33, "grave"], [34, "problema"], [35, "que"], [36, "amenaza"], [37, "las"], [38, "condiciones"], [39, "de"], [40, "vida"], [41, "digna"], [42, ","], [43, "incluidos"], [44, "los"], [45, "derechos"], [46, "laborales"], [47, "de"], [48, "los"], [49, "ciudadanos"], [50, "brasileños"], [51, "?"], [52, "HABLANTE2"], [53, "muy"], [54, "buenas"], [55, "noches"], [56, "a"], [57, "los"], [58, "televidentes"], [59, "y"], [60, "a"], [61, "los"], [62, "candidatos"], [63, "."], [64, "Uno"], [65, "de"], [66, "los"], [67, "grandes"], [68, "logros"], [69, "del"], [70, "gobierno"], [71, "del"], [72, "presidente"], [73, "Lula"], [74, "fue"], [75, "la"], [76, "mejora"], [77, "en"], [78, "la"], [79, "formalización"], [80, "del"], [81, "trabajo"], [82, "en"], [83, "Brasil"], [84, "."], [85, "Hasta"], [86, "2005"], [87, ","], [88, "lo"], [89, "que"], [90, "se"], [91, "veía"], [92, "era"], [93, "la"], [94, "gente"], [95, "haciendo"], [96, "changas"], [97, "y"], [98, "trabajos"], [99, "ocasionales"], [100, "para"], [101, "tener"], [102, "algún"], [103, "ingreso"], [104, "o"], [105, "simplemente"], [106, "sobrevivir"], [107, "."], [108, "Con"], [109, "el"], [110, "gobierno"], [111, "del"], [112, "presidente"], [113, "Lula"], [114, "aumentamos"], [115, "considerablemente"], [116, "la"], [117, "formalización"], [118, "del"], [119, "trabajo"], [120, ","], [121, "tanto"], [122, "que"], [123, "batimos"], [124, "todos"], [125, "los"], [126, "récords"], [127, "en"], [128, "generación"], [129, "de"], [130, "empleo"], [131, "formal"], [132, "con"], [133, "contrato"], [134, ","], [135, "y"], [136, "hemos"], [137, "creado"], [138, "14,5"], [139, "millones"], [140, "de"], [141, "puestos"], [142, "de"], [143, "trabajo"], [144, "hasta"], [145, "el"], [146, "momento"], [147, "."], [148, "Creo"], [149, "que"], [150, "para"], [151, "fin"], [152, "de"], [153, "año"], [154, "estaremos"], [155, "cerca"], [156, "de"], [157, "los"], [158, "15"], [159, "millones"], [160, "de"], [161, "empleos"], [162, "creados"], [163, "."], [164, "A"], [165, "esto"], [166, "contribuyó"], [167, "necesariamente"], [168, "la"], [169, "expansión"], [170, "del"], [171, "mercado"], [172, "interno"], [173, "en"], [174, "Brasil"], [175, ","], [176, "que"], [177, "permitió"], [178, "una"], [179, "mayor"], [180, "producción"], [181, ","], [182, "un"], [183, "mayor"], [184, "consumo"], [185, "y"], [186, ","], [187, "por"], [188, "tanto"], [189, ","], [190, "más"], [191, "empleo"], [192, "en"], [193, "Brasil"], [194, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

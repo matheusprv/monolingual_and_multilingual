@@ -1,0 +1,66 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: HABLANTE 1 Estaba pensando en preparar un plato de bacalao, precisamente.
+HABLANTE 2 Pues manos a la obra.
+HABLANTE 1 Vamos allá.
+HABLANTE 2 Vamos a preparar una brandada de bacalao, que lleva patata y nata, y luego hacemos unas torrijas bien preparadas.
+HABLANTE 1 ¡Qué bueno!
+HABLANTE 2 Una delicia especial.
+HABLANTE 1 Ya tenemos a nuestro equipo de cocina listo por aquí, ¿eh, Hablante 2? ¿Qué vamos a necesitar?
+HABLANTE 2 500 gramos de bacalao bien desmigado y desalado, 300 gramos de patatas ya machacadas en puré, 100 gramos de queso rallado, 1 cebolla mediana, 1 taza de leche, 300 gramos de nata fresca, perejil al gusto, sal, pimienta y un buen chorro de aceite.
+HABLANTE 1 ¿Para cuántos comensales da esta receta?
+HABLANTE 2 Para unas 8 personas.
+HABLANTE 1 ¡Ay, excelente!
+HABLANTE 2 (Risas)
+HABLANTE 1 (Risas)
+HABLANTE 2 Vamos a empezar entonces. Primero, vamos a sofreír la cebolla en el aceite.
+HABLANTE 1 Muy bien, adelante.
+HABLANTE 2 A mí me gusta echarle siempre bastante aceite.
+HABLANTE 1 A mí también.
+HABLANTE 2 En cuanto la cebolla empiece a dorarse, incorporamos el bacalao. Tráeme el bacalao, Hablante 1.
+HABLANTE 1 Voy, aquí está.
+HABLANTE 2 Lo mejor de estas cosas es tener un buen pinche de cocina ayudando.
+HABLANTE 1 Ya estamos aquí, ya llegamos. ¿Lo echo?
+HABLANTE 2 Sí, échalo.
+HABLANTE 1 Todo para dentro.
+HABLANTE 2 Todo (Risas).
+HABLANTE 1 ¿Cuál es el punto ideal de este sofrito, Hablante 2?
+HABLANTE 2 Mira, se va dorando un poquito hasta que toma un color uniforme. Luego, poco a poco, vamos agregando la leche, la sal y la pimienta al gusto. Y recuerda ir probando siempre una pizca de bacalao...
+HABLANTE 1 Claro, es que si no...
+HABLANTE 2 ...para comprobar si se ha desalado por completo. Así luego vamos ajustando de sal. Pimienta blanca... aunque quien prefiera usar pimienta negra, también puede. Ahora añadimos la nata; esta nata fresca es de la que puede hervir sin peligro de que se corte.
+HABLANTE 1 Exacto.
+HABLANTE 2 Así que dejamos que dé un ligero hervor.
+HABLANTE 1 Sin miedo.
+
+Tokens: [[0, "HABLANTE"], [1, "1"], [2, "Estaba"], [3, "pensando"], [4, "en"], [5, "preparar"], [6, "un"], [7, "plato"], [8, "de"], [9, "bacalao"], [10, ","], [11, "precisamente"], [12, "."], [13, "HABLANTE"], [14, "2"], [15, "Pues"], [16, "manos"], [17, "a"], [18, "la"], [19, "obra"], [20, "."], [21, "HABLANTE"], [22, "1"], [23, "Vamos"], [24, "allá"], [25, "."], [26, "HABLANTE"], [27, "2"], [28, "Vamos"], [29, "a"], [30, "preparar"], [31, "una"], [32, "brandada"], [33, "de"], [34, "bacalao"], [35, ","], [36, "que"], [37, "lleva"], [38, "patata"], [39, "y"], [40, "nata"], [41, ","], [42, "y"], [43, "luego"], [44, "hacemos"], [45, "unas"], [46, "torrijas"], [47, "bien"], [48, "preparadas"], [49, "."], [50, "HABLANTE"], [51, "1"], [52, "¡"], [53, "Qué"], [54, "bueno"], [55, "!"], [56, "HABLANTE"], [57, "2"], [58, "Una"], [59, "delicia"], [60, "especial"], [61, "."], [62, "HABLANTE"], [63, "1"], [64, "Ya"], [65, "tenemos"], [66, "a"], [67, "nuestro"], [68, "equipo"], [69, "de"], [70, "cocina"], [71, "listo"], [72, "por"], [73, "aquí"], [74, ","], [75, "¿"], [76, "eh"], [77, ","], [78, "Hablante"], [79, "2"], [80, "?"], [81, "¿"], [82, "Qué"], [83, "vamos"], [84, "a"], [85, "necesitar"], [86, "?"], [87, "HABLANTE"], [88, "2"], [89, "500"], [90, "gramos"], [91, "de"], [92, "bacalao"], [93, "bien"], [94, "desmigado"], [95, "y"], [96, "desalado"], [97, ","], [98, "300"], [99, "gramos"], [100, "de"], [101, "patatas"], [102, "ya"], [103, "machacadas"], [104, "en"], [105, "puré"], [106, ","], [107, "100"], [108, "gramos"], [109, "de"], [110, "queso"], [111, "rallado"], [112, ","], [113, "1"], [114, "cebolla"], [115, "mediana"], [116, ","], [117, "1"], [118, "taza"], [119, "de"], [120, "leche"], [121, ","], [122, "300"], [123, "gramos"], [124, "de"], [125, "nata"], [126, "fresca"], [127, ","], [128, "perejil"], [129, "al"], [130, "gusto"], [131, ","], [132, "sal"], [133, ","], [134, "pimienta"], [135, "y"], [136, "un"], [137, "buen"], [138, "chorro"], [139, "de"], [140, "aceite"], [141, "."], [142, "HABLANTE"], [143, "1"], [144, "¿"], [145, "Para"], [146, "cuántos"], [147, "comensales"], [148, "da"], [149, "esta"], [150, "receta"], [151, "?"], [152, "HABLANTE"], [153, "2"], [154, "Para"], [155, "unas"], [156, "8"], [157, "personas"], [158, "."], [159, "HABLANTE"], [160, "1"], [161, "¡"], [162, "Ay"], [163, ","], [164, "excelente"], [165, "!"], [166, "HABLANTE"], [167, "2"], [168, "("], [169, "Risas"], [170, ")"], [171, "HABLANTE"], [172, "1"], [173, "("], [174, "Risas"], [175, ")"], [176, "HABLANTE"], [177, "2"], [178, "Vamos"], [179, "a"], [180, "empezar"], [181, "entonces"], [182, "."], [183, "Primero"], [184, ","], [185, "vamos"], [186, "a"], [187, "sofreír"], [188, "la"], [189, "cebolla"], [190, "en"], [191, "el"], [192, "aceite"], [193, "."], [194, "HABLANTE"], [195, "1"], [196, "Muy"], [197, "bien"], [198, ","], [199, "adelante"], [200, "."], [201, "HABLANTE"], [202, "2"], [203, "A"], [204, "mí"], [205, "me"], [206, "gusta"], [207, "echarle"], [208, "siempre"], [209, "bastante"], [210, "aceite"], [211, "."], [212, "HABLANTE"], [213, "1"], [214, "A"], [215, "mí"], [216, "también"], [217, "."], [218, "HABLANTE"], [219, "2"], [220, "En"], [221, "cuanto"], [222, "la"], [223, "cebolla"], [224, "empiece"], [225, "a"], [226, "dorarse"], [227, ","], [228, "incorporamos"], [229, "el"], [230, "bacalao"], [231, "."], [232, "Tráeme"], [233, "el"], [234, "bacalao"], [235, ","], [236, "Hablante"], [237, "1"], [238, "."], [239, "HABLANTE"], [240, "1"], [241, "Voy"], [242, ","], [243, "aquí"], [244, "está"], [245, "."], [246, "HABLANTE"], [247, "2"], [248, "Lo"], [249, "mejor"], [250, "de"], [251, "estas"], [252, "cosas"], [253, "es"], [254, "tener"], [255, "un"], [256, "buen"], [257, "pinche"], [258, "de"], [259, "cocina"], [260, "ayudando"], [261, "."], [262, "HABLANTE"], [263, "1"], [264, "Ya"], [265, "estamos"], [266, "aquí"], [267, ","], [268, "ya"], [269, "llegamos"], [270, "."], [271, "¿"], [272, "Lo"], [273, "echo"], [274, "?"], [275, "HABLANTE"], [276, "2"], [277, "Sí"], [278, ","], [279, "échalo"], [280, "."], [281, "HABLANTE"], [282, "1"], [283, "Todo"], [284, "para"], [285, "dentro"], [286, "."], [287, "HABLANTE"], [288, "2"], [289, "Todo"], [290, "("], [291, "Risas"], [292, ")"], [293, "."], [294, "HABLANTE"], [295, "1"], [296, "¿"], [297, "Cuál"], [298, "es"], [299, "el"], [300, "punto"], [301, "ideal"], [302, "de"], [303, "este"], [304, "sofrito"], [305, ","], [306, "Hablante"], [307, "2"], [308, "?"], [309, "HABLANTE"], [310, "2"], [311, "Mira"], [312, ","], [313, "se"], [314, "va"], [315, "dorando"], [316, "un"], [317, "poquito"], [318, "hasta"], [319, "que"], [320, "toma"], [321, "un"], [322, "color"], [323, "uniforme"], [324, "."], [325, "Luego"], [326, ","], [327, "poco"], [328, "a"], [329, "poco"], [330, ","], [331, "vamos"], [332, "agregando"], [333, "la"], [334, "leche"], [335, ","], [336, "la"], [337, "sal"], [338, "y"], [339, "la"], [340, "pimienta"], [341, "al"], [342, "gusto"], [343, "."], [344, "Y"], [345, "recuerda"], [346, "ir"], [347, "probando"], [348, "siempre"], [349, "una"], [350, "pizca"], [351, "de"], [352, "bacalao"], [353, "..."], [354, "HABLANTE"], [355, "1"], [356, "Claro"], [357, ","], [358, "es"], [359, "que"], [360, "si"], [361, "no"], [362, "..."], [363, "HABLANTE"], [364, "2"], [365, "...para"], [366, "comprobar"], [367, "si"], [368, "se"], [369, "ha"], [370, "desalado"], [371, "por"], [372, "completo"], [373, "."], [374, "Así"], [375, "luego"], [376, "vamos"], [377, "ajustando"], [378, "de"], [379, "sal"], [380, "."], [381, "Pimienta"], [382, "blanca"], [383, "..."], [384, "aunque"], [385, "quien"], [386, "prefiera"], [387, "usar"], [388, "pimienta"], [389, "negra"], [390, ","], [391, "también"], [392, "puede"], [393, "."], [394, "Ahora"], [395, "añadimos"], [396, "la"], [397, "nata"], [398, ";"], [399, "esta"], [400, "nata"], [401, "fresca"], [402, "es"], [403, "de"], [404, "la"], [405, "que"], [406, "puede"], [407, "hervir"], [408, "sin"], [409, "peligro"], [410, "de"], [411, "que"], [412, "se"], [413, "corte"], [414, "."], [415, "HABLANTE"], [416, "1"], [417, "Exacto"], [418, "."], [419, "HABLANTE"], [420, "2"], [421, "Así"], [422, "que"], [423, "dejamos"], [424, "que"], [425, "dé"], [426, "un"], [427, "ligero"], [428, "hervor"], [429, "."], [430, "HABLANTE"], [431, "1"], [432, "Sin"], [433, "miedo"], [434, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

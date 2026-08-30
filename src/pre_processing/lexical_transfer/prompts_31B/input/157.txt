@@ -1,0 +1,53 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: HABLANTE 1 Vas a anticipar la trayectoria de su carrera y te posicionas un poco en la paralela; ella no va a llegar. Tu zancada está siendo muy corta, no vas a llegar, Rosa, mantente atenta.
+Tú, en lugar de irte directa a esa cobertura, como sabes que ella viene con un tiempo de retraso, cierra más hacia acá y vigila la carrera de la atacante; déjala que arriesgue más balones paralelos, porque si no nos vamos a quedar vendidos en mitad del bloqueo.
+Dejar el centro del bloqueo abierto es una desventaja total para nosotros.
+JUGADORA 1 Pedro me ha dicho que he abierto demasiado la línea paralela aquí atrás.
+HABLANTE 1 Eso, justo eso. Así que aguantas un poco más porque ella va a tener que... Mientras ella no llegue, nosotros vamos a contener la posición y a abrir un poco la paralela.
+Estate atenta a la jugada allí, no te vuelques tanto hacia ese lado; lee su carrera, vigila cómo entra por el centro del bloqueo en cuanto lleguemos.
+JUGADORA 2 ¡Vamos, vamos!
+HABLANTE 1 No te despistes.
+HABLANTE 1 La tendencia clara es que ella pegue sobre esta línea; no puede pasar, hay que defender ahí.
+La salida va a ser vuestra, ¿entendido? Juliana, dale un toque suave al balón ahí y mandas a la chica a atacar desde la línea de fondo.
+No nos va a dar el marcador; de los tres puntos que nos han sacado, dos han sido por pura irresponsabilidad nuestra.
+Hacía falta un balón mejor levantado para ella, que estaba aquí pegada a la colocadora, para haber tenido una oportunidad clara de contraataque.
+HABLANTE 1 ¡Venga, equipo, vamos, vamos!
+JUGADORA 2 ¡Arriba, gente, vamos!
+HABLANTE 1 Acuérdate de lo que hablamos sobre la situación del medio: nuestra posición seis está rotando, ella va a buscar siempre el ataque largo al fondo, se va a quedar ahí en la seis, no tiene que desplazarse hacia acá, ¿entendido?
+JUGADORA 3 Es que fui a por el balón y nos confundimos a la hora de recuperar la posición, ¿sabes?
+Fui a por la bola y luego no me dio tiempo a regresar a mi zona.
+HABLANTE 1 Ya, pero quien quede libre en la seis tiene que cubrir este hueco, ¿vale?
+
+Tokens: [[0, "HABLANTE"], [1, "1"], [2, "Vas"], [3, "a"], [4, "anticipar"], [5, "la"], [6, "trayectoria"], [7, "de"], [8, "su"], [9, "carrera"], [10, "y"], [11, "te"], [12, "posicionas"], [13, "un"], [14, "poco"], [15, "en"], [16, "la"], [17, "paralela"], [18, ";"], [19, "ella"], [20, "no"], [21, "va"], [22, "a"], [23, "llegar"], [24, "."], [25, "Tu"], [26, "zancada"], [27, "está"], [28, "siendo"], [29, "muy"], [30, "corta"], [31, ","], [32, "no"], [33, "vas"], [34, "a"], [35, "llegar"], [36, ","], [37, "Rosa"], [38, ","], [39, "mantente"], [40, "atenta"], [41, "."], [42, "Tú"], [43, ","], [44, "en"], [45, "lugar"], [46, "de"], [47, "irte"], [48, "directa"], [49, "a"], [50, "esa"], [51, "cobertura"], [52, ","], [53, "como"], [54, "sabes"], [55, "que"], [56, "ella"], [57, "viene"], [58, "con"], [59, "un"], [60, "tiempo"], [61, "de"], [62, "retraso"], [63, ","], [64, "cierra"], [65, "más"], [66, "hacia"], [67, "acá"], [68, "y"], [69, "vigila"], [70, "la"], [71, "carrera"], [72, "de"], [73, "la"], [74, "atacante"], [75, ";"], [76, "déjala"], [77, "que"], [78, "arriesgue"], [79, "más"], [80, "balones"], [81, "paralelos"], [82, ","], [83, "porque"], [84, "si"], [85, "no"], [86, "nos"], [87, "vamos"], [88, "a"], [89, "quedar"], [90, "vendidos"], [91, "en"], [92, "mitad"], [93, "del"], [94, "bloqueo"], [95, "."], [96, "Dejar"], [97, "el"], [98, "centro"], [99, "del"], [100, "bloqueo"], [101, "abierto"], [102, "es"], [103, "una"], [104, "desventaja"], [105, "total"], [106, "para"], [107, "nosotros"], [108, "."], [109, "JUGADORA"], [110, "1"], [111, "Pedro"], [112, "me"], [113, "ha"], [114, "dicho"], [115, "que"], [116, "he"], [117, "abierto"], [118, "demasiado"], [119, "la"], [120, "línea"], [121, "paralela"], [122, "aquí"], [123, "atrás"], [124, "."], [125, "HABLANTE"], [126, "1"], [127, "Eso"], [128, ","], [129, "justo"], [130, "eso"], [131, "."], [132, "Así"], [133, "que"], [134, "aguantas"], [135, "un"], [136, "poco"], [137, "más"], [138, "porque"], [139, "ella"], [140, "va"], [141, "a"], [142, "tener"], [143, "que"], [144, "..."], [145, "Mientras"], [146, "ella"], [147, "no"], [148, "llegue"], [149, ","], [150, "nosotros"], [151, "vamos"], [152, "a"], [153, "contener"], [154, "la"], [155, "posición"], [156, "y"], [157, "a"], [158, "abrir"], [159, "un"], [160, "poco"], [161, "la"], [162, "paralela"], [163, "."], [164, "Estate"], [165, "atenta"], [166, "a"], [167, "la"], [168, "jugada"], [169, "allí"], [170, ","], [171, "no"], [172, "te"], [173, "vuelques"], [174, "tanto"], [175, "hacia"], [176, "ese"], [177, "lado"], [178, ";"], [179, "lee"], [180, "su"], [181, "carrera"], [182, ","], [183, "vigila"], [184, "cómo"], [185, "entra"], [186, "por"], [187, "el"], [188, "centro"], [189, "del"], [190, "bloqueo"], [191, "en"], [192, "cuanto"], [193, "lleguemos"], [194, "."], [195, "JUGADORA"], [196, "2"], [197, "¡"], [198, "Vamos"], [199, ","], [200, "vamos"], [201, "!"], [202, "HABLANTE"], [203, "1"], [204, "No"], [205, "te"], [206, "despistes"], [207, "."], [208, "HABLANTE"], [209, "1"], [210, "La"], [211, "tendencia"], [212, "clara"], [213, "es"], [214, "que"], [215, "ella"], [216, "pegue"], [217, "sobre"], [218, "esta"], [219, "línea"], [220, ";"], [221, "no"], [222, "puede"], [223, "pasar"], [224, ","], [225, "hay"], [226, "que"], [227, "defender"], [228, "ahí"], [229, "."], [230, "La"], [231, "salida"], [232, "va"], [233, "a"], [234, "ser"], [235, "vuestra"], [236, ","], [237, "¿"], [238, "entendido"], [239, "?"], [240, "Juliana"], [241, ","], [242, "dale"], [243, "un"], [244, "toque"], [245, "suave"], [246, "al"], [247, "balón"], [248, "ahí"], [249, "y"], [250, "mandas"], [251, "a"], [252, "la"], [253, "chica"], [254, "a"], [255, "atacar"], [256, "desde"], [257, "la"], [258, "línea"], [259, "de"], [260, "fondo"], [261, "."], [262, "No"], [263, "nos"], [264, "va"], [265, "a"], [266, "dar"], [267, "el"], [268, "marcador"], [269, ";"], [270, "de"], [271, "los"], [272, "tres"], [273, "puntos"], [274, "que"], [275, "nos"], [276, "han"], [277, "sacado"], [278, ","], [279, "dos"], [280, "han"], [281, "sido"], [282, "por"], [283, "pura"], [284, "irresponsabilidad"], [285, "nuestra"], [286, "."], [287, "Hacía"], [288, "falta"], [289, "un"], [290, "balón"], [291, "mejor"], [292, "levantado"], [293, "para"], [294, "ella"], [295, ","], [296, "que"], [297, "estaba"], [298, "aquí"], [299, "pegada"], [300, "a"], [301, "la"], [302, "colocadora"], [303, ","], [304, "para"], [305, "haber"], [306, "tenido"], [307, "una"], [308, "oportunidad"], [309, "clara"], [310, "de"], [311, "contraataque"], [312, "."], [313, "HABLANTE"], [314, "1"], [315, "¡"], [316, "Venga"], [317, ","], [318, "equipo"], [319, ","], [320, "vamos"], [321, ","], [322, "vamos"], [323, "!"], [324, "JUGADORA"], [325, "2"], [326, "¡"], [327, "Arriba"], [328, ","], [329, "gente"], [330, ","], [331, "vamos"], [332, "!"], [333, "HABLANTE"], [334, "1"], [335, "Acuérdate"], [336, "de"], [337, "lo"], [338, "que"], [339, "hablamos"], [340, "sobre"], [341, "la"], [342, "situación"], [343, "del"], [344, "medio"], [345, ":"], [346, "nuestra"], [347, "posición"], [348, "seis"], [349, "está"], [350, "rotando"], [351, ","], [352, "ella"], [353, "va"], [354, "a"], [355, "buscar"], [356, "siempre"], [357, "el"], [358, "ataque"], [359, "largo"], [360, "al"], [361, "fondo"], [362, ","], [363, "se"], [364, "va"], [365, "a"], [366, "quedar"], [367, "ahí"], [368, "en"], [369, "la"], [370, "seis"], [371, ","], [372, "no"], [373, "tiene"], [374, "que"], [375, "desplazarse"], [376, "hacia"], [377, "acá"], [378, ","], [379, "¿"], [380, "entendido"], [381, "?"], [382, "JUGADORA"], [383, "3"], [384, "Es"], [385, "que"], [386, "fui"], [387, "a"], [388, "por"], [389, "el"], [390, "balón"], [391, "y"], [392, "nos"], [393, "confundimos"], [394, "a"], [395, "la"], [396, "hora"], [397, "de"], [398, "recuperar"], [399, "la"], [400, "posición"], [401, ","], [402, "¿"], [403, "sabes"], [404, "?"], [405, "Fui"], [406, "a"], [407, "por"], [408, "la"], [409, "bola"], [410, "y"], [411, "luego"], [412, "no"], [413, "me"], [414, "dio"], [415, "tiempo"], [416, "a"], [417, "regresar"], [418, "a"], [419, "mi"], [420, "zona"], [421, "."], [422, "HABLANTE"], [423, "1"], [424, "Ya"], [425, ","], [426, "pero"], [427, "quien"], [428, "quede"], [429, "libre"], [430, "en"], [431, "la"], [432, "seis"], [433, "tiene"], [434, "que"], [435, "cubrir"], [436, "este"], [437, "hueco"], [438, ","], [439, "¿"], [440, "vale"], [441, "?"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

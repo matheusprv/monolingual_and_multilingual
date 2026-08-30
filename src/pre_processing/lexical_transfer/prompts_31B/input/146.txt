@@ -1,0 +1,51 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Expedición Mata Atlántica
+CURSO DE CAMPO: Ecología y Conservación de la Mata Atlántica
+(100 horas de actividades teóricas y prácticas)
+         13.ª edición – Del 21 al 31 de julio de 2011
+         INSCRIPCIONES HASTA EL: 18 de julio de 2011
+
+
+Organización: Grupo Brasil Verde / Fundación Diaulas Abreu – IF Sudeste MG / Grupo de Investigaciones en Planificación y Gestión de Áreas Naturales Protegidas – IF Sudeste MG
+
+El curso "Ecología y Conservación de la Mata Atlántica" es una formación de campo que se ofrece durante la Expedición Mata Atlántica. Son once días de viaje por Unidades de Conservación y otras áreas naturales protegidas privadas, municipales, estatales y federales, además de instituciones de investigación de Paraná.
+Además de las visitas técnicas, se imparten clases y conferencias, complementadas con un intenso intercambio de ideas y debates sobre ecología y conservación.
+Las actividades están coordinadas por el profesor Geraldo Majela Moraes Salvio, docente de Ecología y Biología de la Conservación del Instituto Federal del Sudeste de Minas Gerais – Campus Barbacena, y cuenta con la participación de otros profesores invitados. Está destinado a cualquier persona interesada en el tema, independientemente de su formación académica u origen.
+Se ofrecen 20 plazas para personas interesadas en conocer mejor la Mata Atlántica y las cuestiones relacionadas con su conservación, incluyendo la planificación y la gestión de áreas naturales protegidas.
+También se abordan temas vinculados a la historia, cultura, poblaciones tradicionales, turismo de base comunitaria y sostenibilidad.
+El curso se celebra siempre en los meses de enero y julio, ininterrumpidamente desde 2002, tomando como bases operativas los municipios de Guaraqueçaba y Curitiba.
+En el precio (R$ 1.500,00 al contado o financiado hasta en seis cuotas) se incluye el transporte (desde Juiz de Fora MG o desde cualquier punto que quede de camino), alojamiento en hoteles con desayuno, material didáctico, la entrada a la mayoría de los lugares visitados y el correspondiente certificado de 100 horas de actividades teóricas y prácticas.
+
+Tokens: [[0, "Expedición"], [1, "Mata"], [2, "Atlántica"], [3, "CURSO"], [4, "DE"], [5, "CAMPO"], [6, ":"], [7, "Ecología"], [8, "y"], [9, "Conservación"], [10, "de"], [11, "la"], [12, "Mata"], [13, "Atlántica"], [14, "("], [15, "100"], [16, "horas"], [17, "de"], [18, "actividades"], [19, "teóricas"], [20, "y"], [21, "prácticas"], [22, ")"], [23, "13.ª"], [24, "edición"], [25, "–"], [26, "Del"], [27, "21"], [28, "al"], [29, "31"], [30, "de"], [31, "julio"], [32, "de"], [33, "2011"], [34, "INSCRIPCIONES"], [35, "HASTA"], [36, "EL"], [37, ":"], [38, "18"], [39, "de"], [40, "julio"], [41, "de"], [42, "2011"], [43, "Organización"], [44, ":"], [45, "Grupo"], [46, "Brasil"], [47, "Verde"], [48, "/"], [49, "Fundación"], [50, "Diaulas"], [51, "Abreu"], [52, "–"], [53, "IF"], [54, "Sudeste"], [55, "MG"], [56, "/"], [57, "Grupo"], [58, "de"], [59, "Investigaciones"], [60, "en"], [61, "Planificación"], [62, "y"], [63, "Gestión"], [64, "de"], [65, "Áreas"], [66, "Naturales"], [67, "Protegidas"], [68, "–"], [69, "IF"], [70, "Sudeste"], [71, "MG"], [72, "El"], [73, "curso"], [74, "\""], [75, "Ecología"], [76, "y"], [77, "Conservación"], [78, "de"], [79, "la"], [80, "Mata"], [81, "Atlántica"], [82, "\""], [83, "es"], [84, "una"], [85, "formación"], [86, "de"], [87, "campo"], [88, "que"], [89, "se"], [90, "ofrece"], [91, "durante"], [92, "la"], [93, "Expedición"], [94, "Mata"], [95, "Atlántica"], [96, "."], [97, "Son"], [98, "once"], [99, "días"], [100, "de"], [101, "viaje"], [102, "por"], [103, "Unidades"], [104, "de"], [105, "Conservación"], [106, "y"], [107, "otras"], [108, "áreas"], [109, "naturales"], [110, "protegidas"], [111, "privadas"], [112, ","], [113, "municipales"], [114, ","], [115, "estatales"], [116, "y"], [117, "federales"], [118, ","], [119, "además"], [120, "de"], [121, "instituciones"], [122, "de"], [123, "investigación"], [124, "de"], [125, "Paraná"], [126, "."], [127, "Además"], [128, "de"], [129, "las"], [130, "visitas"], [131, "técnicas"], [132, ","], [133, "se"], [134, "imparten"], [135, "clases"], [136, "y"], [137, "conferencias"], [138, ","], [139, "complementadas"], [140, "con"], [141, "un"], [142, "intenso"], [143, "intercambio"], [144, "de"], [145, "ideas"], [146, "y"], [147, "debates"], [148, "sobre"], [149, "ecología"], [150, "y"], [151, "conservación"], [152, "."], [153, "Las"], [154, "actividades"], [155, "están"], [156, "coordinadas"], [157, "por"], [158, "el"], [159, "profesor"], [160, "Geraldo"], [161, "Majela"], [162, "Moraes"], [163, "Salvio"], [164, ","], [165, "docente"], [166, "de"], [167, "Ecología"], [168, "y"], [169, "Biología"], [170, "de"], [171, "la"], [172, "Conservación"], [173, "del"], [174, "Instituto"], [175, "Federal"], [176, "del"], [177, "Sudeste"], [178, "de"], [179, "Minas"], [180, "Gerais"], [181, "–"], [182, "Campus"], [183, "Barbacena"], [184, ","], [185, "y"], [186, "cuenta"], [187, "con"], [188, "la"], [189, "participación"], [190, "de"], [191, "otros"], [192, "profesores"], [193, "invitados"], [194, "."], [195, "Está"], [196, "destinado"], [197, "a"], [198, "cualquier"], [199, "persona"], [200, "interesada"], [201, "en"], [202, "el"], [203, "tema"], [204, ","], [205, "independientemente"], [206, "de"], [207, "su"], [208, "formación"], [209, "académica"], [210, "u"], [211, "origen"], [212, "."], [213, "Se"], [214, "ofrecen"], [215, "20"], [216, "plazas"], [217, "para"], [218, "personas"], [219, "interesadas"], [220, "en"], [221, "conocer"], [222, "mejor"], [223, "la"], [224, "Mata"], [225, "Atlántica"], [226, "y"], [227, "las"], [228, "cuestiones"], [229, "relacionadas"], [230, "con"], [231, "su"], [232, "conservación"], [233, ","], [234, "incluyendo"], [235, "la"], [236, "planificación"], [237, "y"], [238, "la"], [239, "gestión"], [240, "de"], [241, "áreas"], [242, "naturales"], [243, "protegidas"], [244, "."], [245, "También"], [246, "se"], [247, "abordan"], [248, "temas"], [249, "vinculados"], [250, "a"], [251, "la"], [252, "historia"], [253, ","], [254, "cultura"], [255, ","], [256, "poblaciones"], [257, "tradicionales"], [258, ","], [259, "turismo"], [260, "de"], [261, "base"], [262, "comunitaria"], [263, "y"], [264, "sostenibilidad"], [265, "."], [266, "El"], [267, "curso"], [268, "se"], [269, "celebra"], [270, "siempre"], [271, "en"], [272, "los"], [273, "meses"], [274, "de"], [275, "enero"], [276, "y"], [277, "julio"], [278, ","], [279, "ininterrumpidamente"], [280, "desde"], [281, "2002"], [282, ","], [283, "tomando"], [284, "como"], [285, "bases"], [286, "operativas"], [287, "los"], [288, "municipios"], [289, "de"], [290, "Guaraqueçaba"], [291, "y"], [292, "Curitiba"], [293, "."], [294, "En"], [295, "el"], [296, "precio"], [297, "("], [298, "R$"], [299, "1.500,00"], [300, "al"], [301, "contado"], [302, "o"], [303, "financiado"], [304, "hasta"], [305, "en"], [306, "seis"], [307, "cuotas"], [308, ")"], [309, "se"], [310, "incluye"], [311, "el"], [312, "transporte"], [313, "("], [314, "desde"], [315, "Juiz"], [316, "de"], [317, "Fora"], [318, "MG"], [319, "o"], [320, "desde"], [321, "cualquier"], [322, "punto"], [323, "que"], [324, "quede"], [325, "de"], [326, "camino"], [327, ")"], [328, ","], [329, "alojamiento"], [330, "en"], [331, "hoteles"], [332, "con"], [333, "desayuno"], [334, ","], [335, "material"], [336, "didáctico"], [337, ","], [338, "la"], [339, "entrada"], [340, "a"], [341, "la"], [342, "mayoría"], [343, "de"], [344, "los"], [345, "lugares"], [346, "visitados"], [347, "y"], [348, "el"], [349, "correspondiente"], [350, "certificado"], [351, "de"], [352, "100"], [353, "horas"], [354, "de"], [355, "actividades"], [356, "teóricas"], [357, "y"], [358, "prácticas"], [359, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

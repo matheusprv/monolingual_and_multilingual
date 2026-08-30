@@ -1,0 +1,48 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: LOCUTEUR1 docteur comment dois-je réagir quand j'ai des crampes
+LOCUTEUR2 quand elle a des crampes madame vera veut savoir
+LOCUTEUR3 alors que faire face à une crampe dans ce cas tu vas avoir un spasme musculaire en général les gens le ressentent dans le mollet et la plante du pied
+LOCUTEUR2 mais ça peut aussi toucher la main une crampe ça peut arriver n'importe où
+LOCUTEUR3 oui ça peut arriver partout le plus fréquent c'est dans le mollet et la plante du pied c'est simplement un spasme musculaire prolongé c'est-à-dire que le muscle reste contracté et donne une sensation de nœud ce qu'il faut faire c'est simple masser la zone concernée
+LOCUTEUR2 on dirait un nœud
+LOCUTEUR3 on dirait un nœud alors sur cette zone où tu sens le nœud tu vas masser ce massage va aider à améliorer la circulation sanguine dans la région et ça va se détendre
+LOCUTEUR2 et ce truc qu'on dit d'étirer par exemple si c'est dans le mollet ramener le pied vers soi qu'est-ce que tu es en train de faire là
+LOCUTEUR3 alors tu dois changer la position dans laquelle tu es essaie de changer de position sur le moment parce que tu bouges la fibre musculaire et tu vas ainsi relâcher le spasme dans le cas des crampes tout le monde dit prends une banane et une orange non
+LOCUTEUR2 c'est vrai on dit manger une banane parce que ça contient du potassium c'est bon c'est vrai
+LOCUTEUR3 c'est vrai mais la crampe n'est pas uniquement liée au potassium elle est liée
+LOCUTEUR2 c'est pas un manque de potassium alors
+LOCUTEUR3 ça peut être un manque de potassium mais aussi de sodium de magnésium de calcium c'est très lié à la déshydratation aussi quand tu fais une activité physique très intense tu perds ce qu'on appelle des électrolytes c'est-à-dire le sodium le potassium dont on vient de parler
+
+Tokens: [[0, "LOCUTEUR1"], [1, "docteur"], [2, "comment"], [3, "dois"], [4, "-je"], [5, "réagir"], [6, "quand"], [7, "j'"], [8, "ai"], [9, "des"], [10, "crampes"], [11, "LOCUTEUR2"], [12, "quand"], [13, "elle"], [14, "a"], [15, "des"], [16, "crampes"], [17, "madame"], [18, "vera"], [19, "veut"], [20, "savoir"], [21, "LOCUTEUR3"], [22, "alors"], [23, "que"], [24, "faire"], [25, "face"], [26, "à"], [27, "une"], [28, "crampe"], [29, "dans"], [30, "ce"], [31, "cas"], [32, "tu"], [33, "vas"], [34, "avoir"], [35, "un"], [36, "spasme"], [37, "musculaire"], [38, "en"], [39, "général"], [40, "les"], [41, "gens"], [42, "le"], [43, "ressentent"], [44, "dans"], [45, "le"], [46, "mollet"], [47, "et"], [48, "la"], [49, "plante"], [50, "du"], [51, "pied"], [52, "LOCUTEUR2"], [53, "mais"], [54, "ça"], [55, "peut"], [56, "aussi"], [57, "toucher"], [58, "la"], [59, "main"], [60, "une"], [61, "crampe"], [62, "ça"], [63, "peut"], [64, "arriver"], [65, "n'"], [66, "importe"], [67, "où"], [68, "LOCUTEUR3"], [69, "oui"], [70, "ça"], [71, "peut"], [72, "arriver"], [73, "partout"], [74, "le"], [75, "plus"], [76, "fréquent"], [77, "c'"], [78, "est"], [79, "dans"], [80, "le"], [81, "mollet"], [82, "et"], [83, "la"], [84, "plante"], [85, "du"], [86, "pied"], [87, "c'"], [88, "est"], [89, "simplement"], [90, "un"], [91, "spasme"], [92, "musculaire"], [93, "prolongé"], [94, "c'est-à-dire"], [95, "que"], [96, "le"], [97, "muscle"], [98, "reste"], [99, "contracté"], [100, "et"], [101, "donne"], [102, "une"], [103, "sensation"], [104, "de"], [105, "nœud"], [106, "ce"], [107, "qu'"], [108, "il"], [109, "faut"], [110, "faire"], [111, "c'"], [112, "est"], [113, "simple"], [114, "masser"], [115, "la"], [116, "zone"], [117, "concernée"], [118, "LOCUTEUR2"], [119, "on"], [120, "dirait"], [121, "un"], [122, "nœud"], [123, "LOCUTEUR3"], [124, "on"], [125, "dirait"], [126, "un"], [127, "nœud"], [128, "alors"], [129, "sur"], [130, "cette"], [131, "zone"], [132, "où"], [133, "tu"], [134, "sens"], [135, "le"], [136, "nœud"], [137, "tu"], [138, "vas"], [139, "masser"], [140, "ce"], [141, "massage"], [142, "va"], [143, "aider"], [144, "à"], [145, "améliorer"], [146, "la"], [147, "circulation"], [148, "sanguine"], [149, "dans"], [150, "la"], [151, "région"], [152, "et"], [153, "ça"], [154, "va"], [155, "se"], [156, "détendre"], [157, "LOCUTEUR2"], [158, "et"], [159, "ce"], [160, "truc"], [161, "qu'"], [162, "on"], [163, "dit"], [164, "d'"], [165, "étirer"], [166, "par"], [167, "exemple"], [168, "si"], [169, "c'"], [170, "est"], [171, "dans"], [172, "le"], [173, "mollet"], [174, "ramener"], [175, "le"], [176, "pied"], [177, "vers"], [178, "soi"], [179, "qu'"], [180, "est"], [181, "-ce"], [182, "que"], [183, "tu"], [184, "es"], [185, "en"], [186, "train"], [187, "de"], [188, "faire"], [189, "là"], [190, "LOCUTEUR3"], [191, "alors"], [192, "tu"], [193, "dois"], [194, "changer"], [195, "la"], [196, "position"], [197, "dans"], [198, "laquelle"], [199, "tu"], [200, "es"], [201, "essaie"], [202, "de"], [203, "changer"], [204, "de"], [205, "position"], [206, "sur"], [207, "le"], [208, "moment"], [209, "parce"], [210, "que"], [211, "tu"], [212, "bouges"], [213, "la"], [214, "fibre"], [215, "musculaire"], [216, "et"], [217, "tu"], [218, "vas"], [219, "ainsi"], [220, "relâcher"], [221, "le"], [222, "spasme"], [223, "dans"], [224, "le"], [225, "cas"], [226, "des"], [227, "crampes"], [228, "tout"], [229, "le"], [230, "monde"], [231, "dit"], [232, "prends"], [233, "une"], [234, "banane"], [235, "et"], [236, "une"], [237, "orange"], [238, "non"], [239, "LOCUTEUR2"], [240, "c'"], [241, "est"], [242, "vrai"], [243, "on"], [244, "dit"], [245, "manger"], [246, "une"], [247, "banane"], [248, "parce"], [249, "que"], [250, "ça"], [251, "contient"], [252, "du"], [253, "potassium"], [254, "c'"], [255, "est"], [256, "bon"], [257, "c'"], [258, "est"], [259, "vrai"], [260, "LOCUTEUR3"], [261, "c'"], [262, "est"], [263, "vrai"], [264, "mais"], [265, "la"], [266, "crampe"], [267, "n'"], [268, "est"], [269, "pas"], [270, "uniquement"], [271, "liée"], [272, "au"], [273, "potassium"], [274, "elle"], [275, "est"], [276, "liée"], [277, "LOCUTEUR2"], [278, "c'"], [279, "est"], [280, "pas"], [281, "un"], [282, "manque"], [283, "de"], [284, "potassium"], [285, "alors"], [286, "LOCUTEUR3"], [287, "ça"], [288, "peut"], [289, "être"], [290, "un"], [291, "manque"], [292, "de"], [293, "potassium"], [294, "mais"], [295, "aussi"], [296, "de"], [297, "sodium"], [298, "de"], [299, "magnésium"], [300, "de"], [301, "calcium"], [302, "c'"], [303, "est"], [304, "très"], [305, "lié"], [306, "à"], [307, "la"], [308, "déshydratation"], [309, "aussi"], [310, "quand"], [311, "tu"], [312, "fais"], [313, "une"], [314, "activité"], [315, "physique"], [316, "très"], [317, "intense"], [318, "tu"], [319, "perds"], [320, "ce"], [321, "qu'"], [322, "on"], [323, "appelle"], [324, "des"], [325, "électrolytes"], [326, "c'est-à-dire"], [327, "le"], [328, "sodium"], [329, "le"], [330, "potassium"], [331, "dont"], [332, "on"], [333, "vient"], [334, "de"], [335, "parler"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

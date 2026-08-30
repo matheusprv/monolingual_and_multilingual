@@ -1,0 +1,60 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: ININTELIGIBLE
+
+HABLANTE1 center center adoro el centro comercial cen mamá cada vez que vengo al centro comercial me dan ganas de cantar
+HABLANTE2 loca calma calma que como sigas así te van a volver a ingresar
+HABLANTE1 me van a volver a ingresar
+HABLANTE2 eso fue lo que pasó la última vez que entraste en esta tienda ¿quieres o no quieres probarte el esmalte ese eh?
+HABLANTE1 gorda ballena saco de arena se cayó y se rompió saco de coco
+HABLANTE2 hoy quieres que te dé tu madre eh eh eh
+HABLANTE1 iihh cabrona
+HABLANTE2 burra ya te he dicho que no se hace así una coleta en la cabeza
+HABLANTE1 cállate que yo sé peinarme bien mamá cómprame esa muñeca de allí mamá por favor
+HABLANTE2 loli esa de allí es la loli ¿es esa la que quieres hija?
+HABLANTE1 menstruación quiero la loli menstruación es la muñeca molona que viene con un chisme que hace sangre de mentira
+HABLANTE2 nueve muñequitas de esas por favor
+HABLANTE1 ocho ocho ocho es que mi amiga ya tiene una y yo no no necesito más
+HABLANTE2 listo aquí tienes la muñequita
+HABLANTE1 cualquier día de estos cualquier día de estos mi muñeca va a cobrar vida y voy a hacer cosas con ella que ni puedo decir
+HABLANTE3 tío me has despertado del sueño más profundo
+HABLANTE2 señora muñeca todo bien
+HABLANTE1 tatá es la tatá vuelve a tu sitio que no eres ninguna muñeca joder tatá tatá ella solo ha venido aquí a darnos un poco de marcha
+HABLANTE2 uñas de colores mira allí uñas de colores vamos allí
+HABLANTE1 me vas a regalar uñas de colores
+HABLANTE2 wanderléa claro que te las voy a regalar venga vamos para allá
+HABLANTE1 shhh no le digas a la chica que yo ya me hice estas uñas ¿eh mamá?
+HABLANTE2 yvone ella nunca se ha hecho estas uñas aquí eh yvone
+
+Tokens: [[0, "ININTELIGIBLE"], [1, "HABLANTE1"], [2, "center"], [3, "center"], [4, "adoro"], [5, "el"], [6, "centro"], [7, "comercial"], [8, "cen"], [9, "mamá"], [10, "cada"], [11, "vez"], [12, "que"], [13, "vengo"], [14, "al"], [15, "centro"], [16, "comercial"], [17, "me"], [18, "dan"], [19, "ganas"], [20, "de"], [21, "cantar"], [22, "HABLANTE2"], [23, "loca"], [24, "calma"], [25, "calma"], [26, "que"], [27, "como"], [28, "sigas"], [29, "así"], [30, "te"], [31, "van"], [32, "a"], [33, "volver"], [34, "a"], [35, "ingresar"], [36, "HABLANTE1"], [37, "me"], [38, "van"], [39, "a"], [40, "volver"], [41, "a"], [42, "ingresar"], [43, "HABLANTE2"], [44, "eso"], [45, "fue"], [46, "lo"], [47, "que"], [48, "pasó"], [49, "la"], [50, "última"], [51, "vez"], [52, "que"], [53, "entraste"], [54, "en"], [55, "esta"], [56, "tienda"], [57, "¿"], [58, "quieres"], [59, "o"], [60, "no"], [61, "quieres"], [62, "probarte"], [63, "el"], [64, "esmalte"], [65, "ese"], [66, "eh"], [67, "?"], [68, "HABLANTE1"], [69, "gorda"], [70, "ballena"], [71, "saco"], [72, "de"], [73, "arena"], [74, "se"], [75, "cayó"], [76, "y"], [77, "se"], [78, "rompió"], [79, "saco"], [80, "de"], [81, "coco"], [82, "HABLANTE2"], [83, "hoy"], [84, "quieres"], [85, "que"], [86, "te"], [87, "dé"], [88, "tu"], [89, "madre"], [90, "eh"], [91, "eh"], [92, "eh"], [93, "HABLANTE1"], [94, "iihh"], [95, "cabrona"], [96, "HABLANTE2"], [97, "burra"], [98, "ya"], [99, "te"], [100, "he"], [101, "dicho"], [102, "que"], [103, "no"], [104, "se"], [105, "hace"], [106, "así"], [107, "una"], [108, "coleta"], [109, "en"], [110, "la"], [111, "cabeza"], [112, "HABLANTE1"], [113, "cállate"], [114, "que"], [115, "yo"], [116, "sé"], [117, "peinarme"], [118, "bien"], [119, "mamá"], [120, "cómprame"], [121, "esa"], [122, "muñeca"], [123, "de"], [124, "allí"], [125, "mamá"], [126, "por"], [127, "favor"], [128, "HABLANTE2"], [129, "loli"], [130, "esa"], [131, "de"], [132, "allí"], [133, "es"], [134, "la"], [135, "loli"], [136, "¿"], [137, "es"], [138, "esa"], [139, "la"], [140, "que"], [141, "quieres"], [142, "hija"], [143, "?"], [144, "HABLANTE1"], [145, "menstruación"], [146, "quiero"], [147, "la"], [148, "loli"], [149, "menstruación"], [150, "es"], [151, "la"], [152, "muñeca"], [153, "molona"], [154, "que"], [155, "viene"], [156, "con"], [157, "un"], [158, "chisme"], [159, "que"], [160, "hace"], [161, "sangre"], [162, "de"], [163, "mentira"], [164, "HABLANTE2"], [165, "nueve"], [166, "muñequitas"], [167, "de"], [168, "esas"], [169, "por"], [170, "favor"], [171, "HABLANTE1"], [172, "ocho"], [173, "ocho"], [174, "ocho"], [175, "es"], [176, "que"], [177, "mi"], [178, "amiga"], [179, "ya"], [180, "tiene"], [181, "una"], [182, "y"], [183, "yo"], [184, "no"], [185, "no"], [186, "necesito"], [187, "más"], [188, "HABLANTE2"], [189, "listo"], [190, "aquí"], [191, "tienes"], [192, "la"], [193, "muñequita"], [194, "HABLANTE1"], [195, "cualquier"], [196, "día"], [197, "de"], [198, "estos"], [199, "cualquier"], [200, "día"], [201, "de"], [202, "estos"], [203, "mi"], [204, "muñeca"], [205, "va"], [206, "a"], [207, "cobrar"], [208, "vida"], [209, "y"], [210, "voy"], [211, "a"], [212, "hacer"], [213, "cosas"], [214, "con"], [215, "ella"], [216, "que"], [217, "ni"], [218, "puedo"], [219, "decir"], [220, "HABLANTE3"], [221, "tío"], [222, "me"], [223, "has"], [224, "despertado"], [225, "del"], [226, "sueño"], [227, "más"], [228, "profundo"], [229, "HABLANTE2"], [230, "señora"], [231, "muñeca"], [232, "todo"], [233, "bien"], [234, "HABLANTE1"], [235, "tatá"], [236, "es"], [237, "la"], [238, "tatá"], [239, "vuelve"], [240, "a"], [241, "tu"], [242, "sitio"], [243, "que"], [244, "no"], [245, "eres"], [246, "ninguna"], [247, "muñeca"], [248, "joder"], [249, "tatá"], [250, "tatá"], [251, "ella"], [252, "solo"], [253, "ha"], [254, "venido"], [255, "aquí"], [256, "a"], [257, "darnos"], [258, "un"], [259, "poco"], [260, "de"], [261, "marcha"], [262, "HABLANTE2"], [263, "uñas"], [264, "de"], [265, "colores"], [266, "mira"], [267, "allí"], [268, "uñas"], [269, "de"], [270, "colores"], [271, "vamos"], [272, "allí"], [273, "HABLANTE1"], [274, "me"], [275, "vas"], [276, "a"], [277, "regalar"], [278, "uñas"], [279, "de"], [280, "colores"], [281, "HABLANTE2"], [282, "wanderléa"], [283, "claro"], [284, "que"], [285, "te"], [286, "las"], [287, "voy"], [288, "a"], [289, "regalar"], [290, "venga"], [291, "vamos"], [292, "para"], [293, "allá"], [294, "HABLANTE1"], [295, "shhh"], [296, "no"], [297, "le"], [298, "digas"], [299, "a"], [300, "la"], [301, "chica"], [302, "que"], [303, "yo"], [304, "ya"], [305, "me"], [306, "hice"], [307, "estas"], [308, "uñas"], [309, "¿"], [310, "eh"], [311, "mamá"], [312, "?"], [313, "HABLANTE2"], [314, "yvone"], [315, "ella"], [316, "nunca"], [317, "se"], [318, "ha"], [319, "hecho"], [320, "estas"], [321, "uñas"], [322, "aquí"], [323, "eh"], [324, "yvone"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

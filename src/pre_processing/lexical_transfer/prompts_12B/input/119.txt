@@ -1,0 +1,47 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Bonjour R. et P.,
+
+En analysant les données transmises par R. pour la mise à jour du CADU (visant à traiter la demande d'attribution immédiate), nous avons relevé six dossiers pour lesquels le statut du bénéficiaire requiert impérativement une date de fin, or ce champ est resté vide (vous trouverez le détail dans le document ci-joint).
+Cette règle de gestion est désormais active dans le système du CADU et, afin de garantir la cohérence globale de notre base de données, il est indispensable de renseigner cette information. [cite: 76]
+L'idéal serait de collecter ces dates manquantes et de les enregistrer dans l'environnement de production avant de procéder à l'intégration globale. [cite: 77]
+Le fichier envoyé par R. regroupe l'ensemble des dossiers du SICON, qui peuvent avoir le statut d'actif, suspendu, annulé ou même rejeté. [cite: 78]
+Malgré cette diversité de statuts, il demeure primordial d'indiquer la date de clôture de la situation actuelle. [cite: 79]
+Je vous invite à mener une analyse technique à ce sujet.
+Concernant la question des numéros de protocole, L. nous a signalé qu'un nombre considérable de dossiers présente une valeur à zéro (plus de 6 000 cas). [cite: 80]
+Compte tenu de ce volume, je pense qu'il est totalement illusoire de vouloir récupérer l'intégralité des informations historiques. [cite: 81]
+Je suggère plutôt d'évaluer combien de ces dossiers concernent des bénéficiaires de pensions (qui, à mon avis, sont les seuls susceptibles de poser problème) et de focaliser nos efforts uniquement sur ces cas-là. [cite: 82]
+Le fichier actuel ne permettant pas d'isoler cette donnée, nous allons solliciter l'aide de R. pour effectuer ce ciblage préalable. [cite: 83]
+
+Tokens: [[0, "Bonjour"], [1, "R."], [2, "et"], [3, "P."], [4, ","], [5, "En"], [6, "analysant"], [7, "les"], [8, "données"], [9, "transmises"], [10, "par"], [11, "R."], [12, "pour"], [13, "la"], [14, "mise"], [15, "à"], [16, "jour"], [17, "du"], [18, "CADU"], [19, "("], [20, "visant"], [21, "à"], [22, "traiter"], [23, "la"], [24, "demande"], [25, "d'"], [26, "attribution"], [27, "immédiate"], [28, ")"], [29, ","], [30, "nous"], [31, "avons"], [32, "relevé"], [33, "six"], [34, "dossiers"], [35, "pour"], [36, "lesquels"], [37, "le"], [38, "statut"], [39, "du"], [40, "bénéficiaire"], [41, "requiert"], [42, "impérativement"], [43, "une"], [44, "date"], [45, "de"], [46, "fin"], [47, ","], [48, "or"], [49, "ce"], [50, "champ"], [51, "est"], [52, "resté"], [53, "vide"], [54, "("], [55, "vous"], [56, "trouverez"], [57, "le"], [58, "détail"], [59, "dans"], [60, "le"], [61, "document"], [62, "ci-joint"], [63, ")"], [64, "."], [65, "Cette"], [66, "règle"], [67, "de"], [68, "gestion"], [69, "est"], [70, "désormais"], [71, "active"], [72, "dans"], [73, "le"], [74, "système"], [75, "du"], [76, "CADU"], [77, "et"], [78, ","], [79, "afin"], [80, "de"], [81, "garantir"], [82, "la"], [83, "cohérence"], [84, "globale"], [85, "de"], [86, "notre"], [87, "base"], [88, "de"], [89, "données"], [90, ","], [91, "il"], [92, "est"], [93, "indispensable"], [94, "de"], [95, "renseigner"], [96, "cette"], [97, "information"], [98, "."], [99, "["], [100, "cite"], [101, ":"], [102, "76"], [103, "]"], [104, "L'"], [105, "idéal"], [106, "serait"], [107, "de"], [108, "collecter"], [109, "ces"], [110, "dates"], [111, "manquantes"], [112, "et"], [113, "de"], [114, "les"], [115, "enregistrer"], [116, "dans"], [117, "l'"], [118, "environnement"], [119, "de"], [120, "production"], [121, "avant"], [122, "de"], [123, "procéder"], [124, "à"], [125, "l'"], [126, "intégration"], [127, "globale"], [128, "."], [129, "["], [130, "cite"], [131, ":"], [132, "77"], [133, "]"], [134, "Le"], [135, "fichier"], [136, "envoyé"], [137, "par"], [138, "R."], [139, "regroupe"], [140, "l'"], [141, "ensemble"], [142, "des"], [143, "dossiers"], [144, "du"], [145, "SICON"], [146, ","], [147, "qui"], [148, "peuvent"], [149, "avoir"], [150, "le"], [151, "statut"], [152, "d'"], [153, "actif"], [154, ","], [155, "suspendu"], [156, ","], [157, "annulé"], [158, "ou"], [159, "même"], [160, "rejeté"], [161, "."], [162, "["], [163, "cite"], [164, ":"], [165, "78"], [166, "]"], [167, "Malgré"], [168, "cette"], [169, "diversité"], [170, "de"], [171, "statuts"], [172, ","], [173, "il"], [174, "demeure"], [175, "primordial"], [176, "d'"], [177, "indiquer"], [178, "la"], [179, "date"], [180, "de"], [181, "clôture"], [182, "de"], [183, "la"], [184, "situation"], [185, "actuelle"], [186, "."], [187, "["], [188, "cite"], [189, ":"], [190, "79"], [191, "]"], [192, "Je"], [193, "vous"], [194, "invite"], [195, "à"], [196, "mener"], [197, "une"], [198, "analyse"], [199, "technique"], [200, "à"], [201, "ce"], [202, "sujet"], [203, "."], [204, "Concernant"], [205, "la"], [206, "question"], [207, "des"], [208, "numéros"], [209, "de"], [210, "protocole"], [211, ","], [212, "L."], [213, "nous"], [214, "a"], [215, "signalé"], [216, "qu'"], [217, "un"], [218, "nombre"], [219, "considérable"], [220, "de"], [221, "dossiers"], [222, "présente"], [223, "une"], [224, "valeur"], [225, "à"], [226, "zéro"], [227, "("], [228, "plus"], [229, "de"], [230, "6 000"], [231, "cas"], [232, ")"], [233, "."], [234, "["], [235, "cite"], [236, ":"], [237, "80"], [238, "]"], [239, "Compte"], [240, "tenu"], [241, "de"], [242, "ce"], [243, "volume"], [244, ","], [245, "je"], [246, "pense"], [247, "qu'"], [248, "il"], [249, "est"], [250, "totalement"], [251, "illusoire"], [252, "de"], [253, "vouloir"], [254, "récupérer"], [255, "l'"], [256, "intégralité"], [257, "des"], [258, "informations"], [259, "historiques"], [260, "."], [261, "["], [262, "cite"], [263, ":"], [264, "81"], [265, "]"], [266, "Je"], [267, "suggère"], [268, "plutôt"], [269, "d'"], [270, "évaluer"], [271, "combien"], [272, "de"], [273, "ces"], [274, "dossiers"], [275, "concernent"], [276, "des"], [277, "bénéficiaires"], [278, "de"], [279, "pensions"], [280, "("], [281, "qui"], [282, ","], [283, "à"], [284, "mon"], [285, "avis"], [286, ","], [287, "sont"], [288, "les"], [289, "seuls"], [290, "susceptibles"], [291, "de"], [292, "poser"], [293, "problème"], [294, ")"], [295, "et"], [296, "de"], [297, "focaliser"], [298, "nos"], [299, "efforts"], [300, "uniquement"], [301, "sur"], [302, "ces"], [303, "cas"], [304, "-là"], [305, "."], [306, "["], [307, "cite"], [308, ":"], [309, "82"], [310, "]"], [311, "Le"], [312, "fichier"], [313, "actuel"], [314, "ne"], [315, "permettant"], [316, "pas"], [317, "d'"], [318, "isoler"], [319, "cette"], [320, "donnée"], [321, ","], [322, "nous"], [323, "allons"], [324, "solliciter"], [325, "l'"], [326, "aide"], [327, "de"], [328, "R."], [329, "pour"], [330, "effectuer"], [331, "ce"], [332, "ciblage"], [333, "préalable"], [334, "."], [335, "["], [336, "cite"], [337, ":"], [338, "83"], [339, "]"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

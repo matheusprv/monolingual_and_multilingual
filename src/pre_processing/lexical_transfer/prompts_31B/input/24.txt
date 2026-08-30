@@ -1,0 +1,57 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: HABLANTE1 Vale, al volver a casa, tengo una pregunta que hacer, oh, el baño
+HABLANTE2 VOZ BAJA
+HABLANTE1 En casa
+HABLANTE2 El baño, cuando necesito mirar atrás en la historia
+HABLANTE1 Vivían en un apartamento, se quedaron allí
+HABLANTE2 Vivíamos
+HABLANTE1 En un hotel
+HABLANTE2 No, vivíamos en un apartamento, un barrio muy moderno, encajaría en cualquier buen barrio de Shanghái, nuestro apartamento tenía tres baños. Tras la revolución, hicieron una especie de renovación urbana y tomaron los que eran originalmente manuales
+HABLANTE1 Poco claro, casas de la colonia europea
+HABLANTE2 Lo convirtieron en una especie de patio compartido o algo así
+HABLANTE1 Ahm
+HABLANTE2 No había forma de construir un baño para todo el mundo, así que construyeron baños públicos. Así que cuando llegas al barrio, ves a la gente llevando todavía orinales para vaciarlos en los baños públicos. Hay todo tipo de baños públicos. Por ejemplo, enormes carteles publicitarios, ves esos carteles gigantes en la calle con publicidad de inodoros, una mujer muy elegante sentada en un inodoro
+HABLANTE1 VOZ BAJA
+HABLANTE2 Rodaje de un anuncio
+HABLANTE1 VOZ BAJA Oh, qué maravilloso
+HABLANTE2 Para nosotros, fue un choque ver esto como una cosa natural. Al ir a casa de C, quiere enseñarte su baño, tiene un baño ahora. Así que tú
+HABLANTE1 Se convirtió en un comedor
+HABLANTE2 No, se convirtió en un salón
+HABLANTE2 ¿Voy a comer para este inodoro?
+HABLANTE2 Si tienes que usar un baño público, entonces tienes que
+HABLANTE1 ¿Has usado alguna vez uno?
+HABLANTE2 Muchas veces
+
+Tokens: [[0, "HABLANTE1"], [1, "Vale"], [2, ","], [3, "al"], [4, "volver"], [5, "a"], [6, "casa"], [7, ","], [8, "tengo"], [9, "una"], [10, "pregunta"], [11, "que"], [12, "hacer"], [13, ","], [14, "oh"], [15, ","], [16, "el"], [17, "baño"], [18, "HABLANTE2"], [19, "VOZ"], [20, "BAJA"], [21, "HABLANTE1"], [22, "En"], [23, "casa"], [24, "HABLANTE2"], [25, "El"], [26, "baño"], [27, ","], [28, "cuando"], [29, "necesito"], [30, "mirar"], [31, "atrás"], [32, "en"], [33, "la"], [34, "historia"], [35, "HABLANTE1"], [36, "Vivían"], [37, "en"], [38, "un"], [39, "apartamento"], [40, ","], [41, "se"], [42, "quedaron"], [43, "allí"], [44, "HABLANTE2"], [45, "Vivíamos"], [46, "HABLANTE1"], [47, "En"], [48, "un"], [49, "hotel"], [50, "HABLANTE2"], [51, "No"], [52, ","], [53, "vivíamos"], [54, "en"], [55, "un"], [56, "apartamento"], [57, ","], [58, "un"], [59, "barrio"], [60, "muy"], [61, "moderno"], [62, ","], [63, "encajaría"], [64, "en"], [65, "cualquier"], [66, "buen"], [67, "barrio"], [68, "de"], [69, "Shanghái"], [70, ","], [71, "nuestro"], [72, "apartamento"], [73, "tenía"], [74, "tres"], [75, "baños"], [76, "."], [77, "Tras"], [78, "la"], [79, "revolución"], [80, ","], [81, "hicieron"], [82, "una"], [83, "especie"], [84, "de"], [85, "renovación"], [86, "urbana"], [87, "y"], [88, "tomaron"], [89, "los"], [90, "que"], [91, "eran"], [92, "originalmente"], [93, "manuales"], [94, "HABLANTE1"], [95, "Poco"], [96, "claro"], [97, ","], [98, "casas"], [99, "de"], [100, "la"], [101, "colonia"], [102, "europea"], [103, "HABLANTE2"], [104, "Lo"], [105, "convirtieron"], [106, "en"], [107, "una"], [108, "especie"], [109, "de"], [110, "patio"], [111, "compartido"], [112, "o"], [113, "algo"], [114, "así"], [115, "HABLANTE1"], [116, "Ahm"], [117, "HABLANTE2"], [118, "No"], [119, "había"], [120, "forma"], [121, "de"], [122, "construir"], [123, "un"], [124, "baño"], [125, "para"], [126, "todo"], [127, "el"], [128, "mundo"], [129, ","], [130, "así"], [131, "que"], [132, "construyeron"], [133, "baños"], [134, "públicos"], [135, "."], [136, "Así"], [137, "que"], [138, "cuando"], [139, "llegas"], [140, "al"], [141, "barrio"], [142, ","], [143, "ves"], [144, "a"], [145, "la"], [146, "gente"], [147, "llevando"], [148, "todavía"], [149, "orinales"], [150, "para"], [151, "vaciarlos"], [152, "en"], [153, "los"], [154, "baños"], [155, "públicos"], [156, "."], [157, "Hay"], [158, "todo"], [159, "tipo"], [160, "de"], [161, "baños"], [162, "públicos"], [163, "."], [164, "Por"], [165, "ejemplo"], [166, ","], [167, "enormes"], [168, "carteles"], [169, "publicitarios"], [170, ","], [171, "ves"], [172, "esos"], [173, "carteles"], [174, "gigantes"], [175, "en"], [176, "la"], [177, "calle"], [178, "con"], [179, "publicidad"], [180, "de"], [181, "inodoros"], [182, ","], [183, "una"], [184, "mujer"], [185, "muy"], [186, "elegante"], [187, "sentada"], [188, "en"], [189, "un"], [190, "inodoro"], [191, "HABLANTE1"], [192, "VOZ"], [193, "BAJA"], [194, "HABLANTE2"], [195, "Rodaje"], [196, "de"], [197, "un"], [198, "anuncio"], [199, "HABLANTE1"], [200, "VOZ"], [201, "BAJA"], [202, "Oh"], [203, ","], [204, "qué"], [205, "maravilloso"], [206, "HABLANTE2"], [207, "Para"], [208, "nosotros"], [209, ","], [210, "fue"], [211, "un"], [212, "choque"], [213, "ver"], [214, "esto"], [215, "como"], [216, "una"], [217, "cosa"], [218, "natural"], [219, "."], [220, "Al"], [221, "ir"], [222, "a"], [223, "casa"], [224, "de"], [225, "C"], [226, ","], [227, "quiere"], [228, "enseñarte"], [229, "su"], [230, "baño"], [231, ","], [232, "tiene"], [233, "un"], [234, "baño"], [235, "ahora"], [236, "."], [237, "Así"], [238, "que"], [239, "tú"], [240, "HABLANTE1"], [241, "Se"], [242, "convirtió"], [243, "en"], [244, "un"], [245, "comedor"], [246, "HABLANTE2"], [247, "No"], [248, ","], [249, "se"], [250, "convirtió"], [251, "en"], [252, "un"], [253, "salón"], [254, "HABLANTE2"], [255, "¿"], [256, "Voy"], [257, "a"], [258, "comer"], [259, "para"], [260, "este"], [261, "inodoro"], [262, "?"], [263, "HABLANTE2"], [264, "Si"], [265, "tienes"], [266, "que"], [267, "usar"], [268, "un"], [269, "baño"], [270, "público"], [271, ","], [272, "entonces"], [273, "tienes"], [274, "que"], [275, "HABLANTE1"], [276, "¿"], [277, "Has"], [278, "usado"], [279, "alguna"], [280, "vez"], [281, "uno"], [282, "?"], [283, "HABLANTE2"], [284, "Muchas"], [285, "veces"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

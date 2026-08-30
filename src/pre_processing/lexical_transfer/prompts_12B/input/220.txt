@@ -1,0 +1,54 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: EPISCOPAL PASTORAL COMMISSION FOR THE SERVICE
+OF CHARITY, JUSTICE, AND PEACE
+National Conference of Bishops of Brazil (CNBB)
+
+To our brothers and sisters of the Dioceses, Parishes, and Ecclesial Base Communities of our Catholic Church.
+During this year's Homeland Week, the People's Plebiscite on the privatisation of the Estrada de Ferro Vale do Rio Doce railway company and other issues related to social rights—in whose promotion and defence our Church has always been firmly committed—will take place.
+We, bishops of the Episcopal Commission for the Service of Charity, Justice, and Peace of the CNBB — Bishop Pedro Luiz Stringhini, Bishop José Luís Ferreira Salles, Bishop Guilherme Antônio Werlang, Bishop Ladislau Biernaski, Bishop Demétrio Valentini, and Bishop Maurício Grotto —, invite everyone, on behalf of the Social Pastorals, to participate in this Plebiscite.
+We also encourage communities to open up spaces for this exercise of citizenship, which the Social Pastorals are coordinating alongside civil society movements and organisations.
+The privatisation auction is currently under judicial review, challenged by over 100 lawsuits contesting its legality.
+And as stated by Bishop Luciano Mendes de Almeida, of blessed memory, during a public hearing just before the 1997 auction, that act completely lacked ethics.
+He noted:
+— "No one can sell a company like Vale do Rio Doce without having informed the people of its real value, its historical, cultural, and political significance..."
+— "No one can sell their own country's ground..."
+— "A transaction that touches the heritage of an entire people... cannot be done without informing, educating, and consulting the people themselves."
+Counting on the participation and collaboration of every brother and sister, please receive our warm and fraternal embrace.
+In Christ,
+Signed: Bishop Pedro Luiz Stringhini
+(On behalf of the other bishops of the Commission)
+Brasília, August 18th, 2007
+
+Tokens: [[0, "EPISCOPAL"], [1, "PASTORAL"], [2, "COMMISSION"], [3, "FOR"], [4, "THE"], [5, "SERVICE"], [6, "OF"], [7, "CHARITY"], [8, ","], [9, "JUSTICE"], [10, ","], [11, "AND"], [12, "PEACE"], [13, "National"], [14, "Conference"], [15, "of"], [16, "Bishops"], [17, "of"], [18, "Brazil"], [19, "("], [20, "CNBB"], [21, ")"], [22, "To"], [23, "our"], [24, "brothers"], [25, "and"], [26, "sisters"], [27, "of"], [28, "the"], [29, "Dioceses"], [30, ","], [31, "Parishes"], [32, ","], [33, "and"], [34, "Ecclesial"], [35, "Base"], [36, "Communities"], [37, "of"], [38, "our"], [39, "Catholic"], [40, "Church"], [41, "."], [42, "During"], [43, "this"], [44, "year's"], [45, "Homeland"], [46, "Week"], [47, ","], [48, "the"], [49, "People's"], [50, "Plebiscite"], [51, "on"], [52, "the"], [53, "privatisation"], [54, "of"], [55, "the"], [56, "Estrada"], [57, "de"], [58, "Ferro"], [59, "Vale"], [60, "do"], [61, "Rio"], [62, "Doce"], [63, "railway"], [64, "company"], [65, "and"], [66, "other"], [67, "issues"], [68, "related"], [69, "to"], [70, "social"], [71, "rights"], [72, "—"], [73, "in"], [74, "whose"], [75, "promotion"], [76, "and"], [77, "defence"], [78, "our"], [79, "Church"], [80, "has"], [81, "always"], [82, "been"], [83, "firmly"], [84, "committed"], [85, "—"], [86, "will"], [87, "take"], [88, "place"], [89, "."], [90, "We"], [91, ","], [92, "bishops"], [93, "of"], [94, "the"], [95, "Episcopal"], [96, "Commission"], [97, "for"], [98, "the"], [99, "Service"], [100, "of"], [101, "Charity"], [102, ","], [103, "Justice"], [104, ","], [105, "and"], [106, "Peace"], [107, "of"], [108, "the"], [109, "CNBB"], [110, "—"], [111, "Bishop"], [112, "Pedro"], [113, "Luiz"], [114, "Stringhini"], [115, ","], [116, "Bishop"], [117, "José"], [118, "Luís"], [119, "Ferreira"], [120, "Salles"], [121, ","], [122, "Bishop"], [123, "Guilherme"], [124, "Antônio"], [125, "Werlang"], [126, ","], [127, "Bishop"], [128, "Ladislau"], [129, "Biernaski"], [130, ","], [131, "Bishop"], [132, "Demétrio"], [133, "Valentini"], [134, ","], [135, "and"], [136, "Bishop"], [137, "Maurício"], [138, "Grotto"], [139, "—"], [140, ","], [141, "invite"], [142, "everyone"], [143, ","], [144, "on"], [145, "behalf"], [146, "of"], [147, "the"], [148, "Social"], [149, "Pastorals"], [150, ","], [151, "to"], [152, "participate"], [153, "in"], [154, "this"], [155, "Plebiscite"], [156, "."], [157, "We"], [158, "also"], [159, "encourage"], [160, "communities"], [161, "to"], [162, "open"], [163, "up"], [164, "spaces"], [165, "for"], [166, "this"], [167, "exercise"], [168, "of"], [169, "citizenship"], [170, ","], [171, "which"], [172, "the"], [173, "Social"], [174, "Pastorals"], [175, "are"], [176, "coordinating"], [177, "alongside"], [178, "civil"], [179, "society"], [180, "movements"], [181, "and"], [182, "organisations"], [183, "."], [184, "The"], [185, "privatisation"], [186, "auction"], [187, "is"], [188, "currently"], [189, "under"], [190, "judicial"], [191, "review"], [192, ","], [193, "challenged"], [194, "by"], [195, "over"], [196, "100"], [197, "lawsuits"], [198, "contesting"], [199, "its"], [200, "legality"], [201, "."], [202, "And"], [203, "as"], [204, "stated"], [205, "by"], [206, "Bishop"], [207, "Luciano"], [208, "Mendes"], [209, "de"], [210, "Almeida"], [211, ","], [212, "of"], [213, "blessed"], [214, "memory"], [215, ","], [216, "during"], [217, "a"], [218, "public"], [219, "hearing"], [220, "just"], [221, "before"], [222, "the"], [223, "1997"], [224, "auction"], [225, ","], [226, "that"], [227, "act"], [228, "completely"], [229, "lacked"], [230, "ethics"], [231, "."], [232, "He"], [233, "noted"], [234, ":"], [235, "—"], [236, "\""], [237, "No"], [238, "one"], [239, "can"], [240, "sell"], [241, "a"], [242, "company"], [243, "like"], [244, "Vale"], [245, "do"], [246, "Rio"], [247, "Doce"], [248, "without"], [249, "having"], [250, "informed"], [251, "the"], [252, "people"], [253, "of"], [254, "its"], [255, "real"], [256, "value"], [257, ","], [258, "its"], [259, "historical"], [260, ","], [261, "cultural"], [262, ","], [263, "and"], [264, "political"], [265, "significance"], [266, "..."], [267, "\""], [268, "—"], [269, "\""], [270, "No"], [271, "one"], [272, "can"], [273, "sell"], [274, "their"], [275, "own"], [276, "country's"], [277, "ground"], [278, "..."], [279, "\""], [280, "—"], [281, "\""], [282, "A"], [283, "transaction"], [284, "that"], [285, "touches"], [286, "the"], [287, "heritage"], [288, "of"], [289, "an"], [290, "entire"], [291, "people"], [292, "..."], [293, "cannot"], [294, "be"], [295, "done"], [296, "without"], [297, "informing"], [298, ","], [299, "educating"], [300, ","], [301, "and"], [302, "consulting"], [303, "the"], [304, "people"], [305, "themselves"], [306, "."], [307, "\""], [308, "Counting"], [309, "on"], [310, "the"], [311, "participation"], [312, "and"], [313, "collaboration"], [314, "of"], [315, "every"], [316, "brother"], [317, "and"], [318, "sister"], [319, ","], [320, "please"], [321, "receive"], [322, "our"], [323, "warm"], [324, "and"], [325, "fraternal"], [326, "embrace"], [327, "."], [328, "In"], [329, "Christ"], [330, ","], [331, "Signed"], [332, ":"], [333, "Bishop"], [334, "Pedro"], [335, "Luiz"], [336, "Stringhini"], [337, "("], [338, "On"], [339, "behalf"], [340, "of"], [341, "the"], [342, "other"], [343, "bishops"], [344, "of"], [345, "the"], [346, "Commission"], [347, ")"], [348, "Brasília"], [349, ","], [350, "August"], [351, "18th"], [352, ","], [353, "2007"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

@@ -1,0 +1,40 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: ¡No hagas eso, hija mía! Dale un puñetazo limpio al balón.
+Ese balón que regresó... A ver, el equipo ya sabe de sobra que el juego de ella es romper la bola. ¿Pero qué estás haciendo?
+Te quedaste pegada a la red, no fuiste al bloqueo... Abre el campo para anticipar la dejada, ¡coño! Que vamos a acabar perdiendo el partido por culpa de una tremenda cagada.
+Dale altura para que ella pueda rematar; si le pones un pase rápido no tiene margen para salir. Vale, organízate con ella, con Juliana y con Janaina cubriendo el fondo, sin dejar a nadie libre, igual que estuvimos jugando ayer.
+La recepción tiene que salir limpia y la defensa colocada, ¡a jugar ya!
+
+Tokens: [[0, "¡"], [1, "No"], [2, "hagas"], [3, "eso"], [4, ","], [5, "hija"], [6, "mía"], [7, "!"], [8, "Dale"], [9, "un"], [10, "puñetazo"], [11, "limpio"], [12, "al"], [13, "balón"], [14, "."], [15, "Ese"], [16, "balón"], [17, "que"], [18, "regresó"], [19, "..."], [20, "A"], [21, "ver"], [22, ","], [23, "el"], [24, "equipo"], [25, "ya"], [26, "sabe"], [27, "de"], [28, "sobra"], [29, "que"], [30, "el"], [31, "juego"], [32, "de"], [33, "ella"], [34, "es"], [35, "romper"], [36, "la"], [37, "bola"], [38, "."], [39, "¿"], [40, "Pero"], [41, "qué"], [42, "estás"], [43, "haciendo"], [44, "?"], [45, "Te"], [46, "quedaste"], [47, "pegada"], [48, "a"], [49, "la"], [50, "red"], [51, ","], [52, "no"], [53, "fuiste"], [54, "al"], [55, "bloqueo"], [56, "..."], [57, "Abre"], [58, "el"], [59, "campo"], [60, "para"], [61, "anticipar"], [62, "la"], [63, "dejada"], [64, ","], [65, "¡"], [66, "coño"], [67, "!"], [68, "Que"], [69, "vamos"], [70, "a"], [71, "acabar"], [72, "perdiendo"], [73, "el"], [74, "partido"], [75, "por"], [76, "culpa"], [77, "de"], [78, "una"], [79, "tremenda"], [80, "cagada"], [81, "."], [82, "Dale"], [83, "altura"], [84, "para"], [85, "que"], [86, "ella"], [87, "pueda"], [88, "rematar"], [89, ";"], [90, "si"], [91, "le"], [92, "pones"], [93, "un"], [94, "pase"], [95, "rápido"], [96, "no"], [97, "tiene"], [98, "margen"], [99, "para"], [100, "salir"], [101, "."], [102, "Vale"], [103, ","], [104, "organízate"], [105, "con"], [106, "ella"], [107, ","], [108, "con"], [109, "Juliana"], [110, "y"], [111, "con"], [112, "Janaina"], [113, "cubriendo"], [114, "el"], [115, "fondo"], [116, ","], [117, "sin"], [118, "dejar"], [119, "a"], [120, "nadie"], [121, "libre"], [122, ","], [123, "igual"], [124, "que"], [125, "estuvimos"], [126, "jugando"], [127, "ayer"], [128, "."], [129, "La"], [130, "recepción"], [131, "tiene"], [132, "que"], [133, "salir"], [134, "limpia"], [135, "y"], [136, "la"], [137, "defensa"], [138, "colocada"], [139, ","], [140, "¡"], [141, "a"], [142, "jugar"], [143, "ya"], [144, "!"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

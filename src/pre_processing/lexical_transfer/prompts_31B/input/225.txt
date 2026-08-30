@@ -1,0 +1,47 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Good morning, R. and P.,
+
+While analysing the data sent by R. for updating the CADU system (aimed at handling instant concessions), we identified six cases where the beneficiary's status requires an end date, but this field was left blank (see the attached spreadsheet for details).
+This business rule is now active in the CADU system and, to ensure our database remains consistent, this information must be registered.
+The ideal approach would be to collect these missing dates and register them in the production environment before carrying out the global integration.
+The file sent by R. contains all the processes from SICON, which may have an active, suspended, cancelled, or even rejected status.
+Even so, it remains essential to provide the end date for the current situation.
+Please carry out a technical analysis on this.
+Regarding the issue of protocol numbers, L. pointed out that a significant volume of cases shows a value of zero (over 6,000 instances).
+Given this volume, I think it is completely unrealistic to try to recover all historical data.
+My suggestion is to assess how many of these cases involve potential pensioners (who, in my view, are the only ones likely to cause problems) and focus our efforts solely on those.
+The current file does not allow us to isolate this data, so we will need R.'s assistance for this preliminary assessment.
+
+Tokens: [[0, "Good"], [1, "morning"], [2, ","], [3, "R."], [4, "and"], [5, "P."], [6, ","], [7, "While"], [8, "analysing"], [9, "the"], [10, "data"], [11, "sent"], [12, "by"], [13, "R."], [14, "for"], [15, "updating"], [16, "the"], [17, "CADU"], [18, "system"], [19, "("], [20, "aimed"], [21, "at"], [22, "handling"], [23, "instant"], [24, "concessions"], [25, ")"], [26, ","], [27, "we"], [28, "identified"], [29, "six"], [30, "cases"], [31, "where"], [32, "the"], [33, "beneficiary's"], [34, "status"], [35, "requires"], [36, "an"], [37, "end"], [38, "date"], [39, ","], [40, "but"], [41, "this"], [42, "field"], [43, "was"], [44, "left"], [45, "blank"], [46, "("], [47, "see"], [48, "the"], [49, "attached"], [50, "spreadsheet"], [51, "for"], [52, "details"], [53, ")"], [54, "."], [55, "This"], [56, "business"], [57, "rule"], [58, "is"], [59, "now"], [60, "active"], [61, "in"], [62, "the"], [63, "CADU"], [64, "system"], [65, "and"], [66, ","], [67, "to"], [68, "ensure"], [69, "our"], [70, "database"], [71, "remains"], [72, "consistent"], [73, ","], [74, "this"], [75, "information"], [76, "must"], [77, "be"], [78, "registered"], [79, "."], [80, "The"], [81, "ideal"], [82, "approach"], [83, "would"], [84, "be"], [85, "to"], [86, "collect"], [87, "these"], [88, "missing"], [89, "dates"], [90, "and"], [91, "register"], [92, "them"], [93, "in"], [94, "the"], [95, "production"], [96, "environment"], [97, "before"], [98, "carrying"], [99, "out"], [100, "the"], [101, "global"], [102, "integration"], [103, "."], [104, "The"], [105, "file"], [106, "sent"], [107, "by"], [108, "R."], [109, "contains"], [110, "all"], [111, "the"], [112, "processes"], [113, "from"], [114, "SICON"], [115, ","], [116, "which"], [117, "may"], [118, "have"], [119, "an"], [120, "active"], [121, ","], [122, "suspended"], [123, ","], [124, "cancelled"], [125, ","], [126, "or"], [127, "even"], [128, "rejected"], [129, "status"], [130, "."], [131, "Even"], [132, "so"], [133, ","], [134, "it"], [135, "remains"], [136, "essential"], [137, "to"], [138, "provide"], [139, "the"], [140, "end"], [141, "date"], [142, "for"], [143, "the"], [144, "current"], [145, "situation"], [146, "."], [147, "Please"], [148, "carry"], [149, "out"], [150, "a"], [151, "technical"], [152, "analysis"], [153, "on"], [154, "this"], [155, "."], [156, "Regarding"], [157, "the"], [158, "issue"], [159, "of"], [160, "protocol"], [161, "numbers"], [162, ","], [163, "L."], [164, "pointed"], [165, "out"], [166, "that"], [167, "a"], [168, "significant"], [169, "volume"], [170, "of"], [171, "cases"], [172, "shows"], [173, "a"], [174, "value"], [175, "of"], [176, "zero"], [177, "("], [178, "over"], [179, "6,000"], [180, "instances"], [181, ")"], [182, "."], [183, "Given"], [184, "this"], [185, "volume"], [186, ","], [187, "I"], [188, "think"], [189, "it"], [190, "is"], [191, "completely"], [192, "unrealistic"], [193, "to"], [194, "try"], [195, "to"], [196, "recover"], [197, "all"], [198, "historical"], [199, "data"], [200, "."], [201, "My"], [202, "suggestion"], [203, "is"], [204, "to"], [205, "assess"], [206, "how"], [207, "many"], [208, "of"], [209, "these"], [210, "cases"], [211, "involve"], [212, "potential"], [213, "pensioners"], [214, "("], [215, "who"], [216, ","], [217, "in"], [218, "my"], [219, "view"], [220, ","], [221, "are"], [222, "the"], [223, "only"], [224, "ones"], [225, "likely"], [226, "to"], [227, "cause"], [228, "problems"], [229, ")"], [230, "and"], [231, "focus"], [232, "our"], [233, "efforts"], [234, "solely"], [235, "on"], [236, "those"], [237, "."], [238, "The"], [239, "current"], [240, "file"], [241, "does"], [242, "not"], [243, "allow"], [244, "us"], [245, "to"], [246, "isolate"], [247, "this"], [248, "data"], [249, ","], [250, "so"], [251, "we"], [252, "will"], [253, "need"], [254, "R.'s"], [255, "assistance"], [256, "for"], [257, "this"], [258, "preliminary"], [259, "assessment"], [260, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

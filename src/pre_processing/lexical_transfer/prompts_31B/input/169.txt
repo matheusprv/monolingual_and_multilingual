@@ -1,0 +1,38 @@
+Perform contextual lexical substitution from english to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: PEDRO in the second segment, we heard from Friar Antonio Mozart from the CNBB bioethics commission, who presented the abortion issue from the Catholic Church's perspective. What is your church's position on this, starting with abortion?
+
+JAIR good evening to everyone. First, I want to commend Bandeirantes for having the wisdom to provide a democratic platform for debating a topic like this. Because when a religious person speaks, people immediately label it as "just a religious issue," so what he says doesn't matter — throw it out. Well, we evangelicals — so congratulations, congratulations Kyle, congratulations to the Bandeirantes network for once again being ahead of the curve in journalism by giving those who disagree a chance to speak. And we are against abortion. I want to keep this on scientific and theological grounds, because this isn't some simplistic religious matter. We are against abortion. Full stop. Because God doesn't — doesn't — doesn't... Okay. First: who defines life in science? Biology does. Biology is the discipline that determines where life begins. Life begins at conception — it's continuous, whether intrauterine or extrauterine, all the way to death.
+
+Tokens: [[0, "PEDRO"], [1, "in"], [2, "the"], [3, "second"], [4, "segment"], [5, ","], [6, "we"], [7, "heard"], [8, "from"], [9, "Friar"], [10, "Antonio"], [11, "Mozart"], [12, "from"], [13, "the"], [14, "CNBB"], [15, "bioethics"], [16, "commission"], [17, ","], [18, "who"], [19, "presented"], [20, "the"], [21, "abortion"], [22, "issue"], [23, "from"], [24, "the"], [25, "Catholic"], [26, "Church's"], [27, "perspective"], [28, "."], [29, "What"], [30, "is"], [31, "your"], [32, "church's"], [33, "position"], [34, "on"], [35, "this"], [36, ","], [37, "starting"], [38, "with"], [39, "abortion"], [40, "?"], [41, "JAIR"], [42, "good"], [43, "evening"], [44, "to"], [45, "everyone"], [46, "."], [47, "First"], [48, ","], [49, "I"], [50, "want"], [51, "to"], [52, "commend"], [53, "Bandeirantes"], [54, "for"], [55, "having"], [56, "the"], [57, "wisdom"], [58, "to"], [59, "provide"], [60, "a"], [61, "democratic"], [62, "platform"], [63, "for"], [64, "debating"], [65, "a"], [66, "topic"], [67, "like"], [68, "this"], [69, "."], [70, "Because"], [71, "when"], [72, "a"], [73, "religious"], [74, "person"], [75, "speaks"], [76, ","], [77, "people"], [78, "immediately"], [79, "label"], [80, "it"], [81, "as"], [82, "\""], [83, "just"], [84, "a"], [85, "religious"], [86, "issue"], [87, ","], [88, "\""], [89, "so"], [90, "what"], [91, "he"], [92, "says"], [93, "doesn't"], [94, "matter"], [95, "—"], [96, "throw"], [97, "it"], [98, "out"], [99, "."], [100, "Well"], [101, ","], [102, "we"], [103, "evangelicals"], [104, "—"], [105, "so"], [106, "congratulations"], [107, ","], [108, "congratulations"], [109, "Kyle"], [110, ","], [111, "congratulations"], [112, "to"], [113, "the"], [114, "Bandeirantes"], [115, "network"], [116, "for"], [117, "once"], [118, "again"], [119, "being"], [120, "ahead"], [121, "of"], [122, "the"], [123, "curve"], [124, "in"], [125, "journalism"], [126, "by"], [127, "giving"], [128, "those"], [129, "who"], [130, "disagree"], [131, "a"], [132, "chance"], [133, "to"], [134, "speak"], [135, "."], [136, "And"], [137, "we"], [138, "are"], [139, "against"], [140, "abortion"], [141, "."], [142, "I"], [143, "want"], [144, "to"], [145, "keep"], [146, "this"], [147, "on"], [148, "scientific"], [149, "and"], [150, "theological"], [151, "grounds"], [152, ","], [153, "because"], [154, "this"], [155, "isn't"], [156, "some"], [157, "simplistic"], [158, "religious"], [159, "matter"], [160, "."], [161, "We"], [162, "are"], [163, "against"], [164, "abortion"], [165, "."], [166, "Full"], [167, "stop"], [168, "."], [169, "Because"], [170, "God"], [171, "doesn't"], [172, "—"], [173, "doesn't"], [174, "—"], [175, "doesn't"], [176, "..."], [177, "Okay"], [178, "."], [179, "First"], [180, ":"], [181, "who"], [182, "defines"], [183, "life"], [184, "in"], [185, "science"], [186, "?"], [187, "Biology"], [188, "does"], [189, "."], [190, "Biology"], [191, "is"], [192, "the"], [193, "discipline"], [194, "that"], [195, "determines"], [196, "where"], [197, "life"], [198, "begins"], [199, "."], [200, "Life"], [201, "begins"], [202, "at"], [203, "conception"], [204, "—"], [205, "it's"], [206, "continuous"], [207, ","], [208, "whether"], [209, "intrauterine"], [210, "or"], [211, "extrauterine"], [212, ","], [213, "all"], [214, "the"], [215, "way"], [216, "to"], [217, "death"], [218, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

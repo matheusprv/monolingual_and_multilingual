@@ -1,0 +1,36 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Holaaaaaaaaaa amé los mensajes de cumpleaños... ¡muchísimas gracias! Quisiera agradecer a Nathi y a su familia que me recibieron tan bien con una hermosa fiesta de cumpleaños en su casa en Natal. Quisiera agradecer a Flavia, a Regina y a toda la comunidad de Salgueiro por la fiesta sorpresa que organizaron para mí. Lamentablemente ese día no me sentía bien. Pero amé el cariño de siempre... Y quisiera agradecerles a todos ustedes por los homenajes que me hicieron a través de testimonios, videos, llamadas, cartas, tarjetas... ¡son muy especiales! Este carnaval va a ser una maratón para mí. São Paulo con Gaviões el sábado. Salvador el domingo y Salgueiro en Río el lunes. Me estoy preparando... ¡besooooos! Después vuelvo con calma a contarles sobre mi fin de semana de filmaciones en Punta. Sáaaaaaaa
+
+Tokens: [[0, "Holaaaaaaaaaa"], [1, "amé"], [2, "los"], [3, "mensajes"], [4, "de"], [5, "cumpleaños"], [6, "..."], [7, "¡"], [8, "muchísimas"], [9, "gracias"], [10, "!"], [11, "Quisiera"], [12, "agradecer"], [13, "a"], [14, "Nathi"], [15, "y"], [16, "a"], [17, "su"], [18, "familia"], [19, "que"], [20, "me"], [21, "recibieron"], [22, "tan"], [23, "bien"], [24, "con"], [25, "una"], [26, "hermosa"], [27, "fiesta"], [28, "de"], [29, "cumpleaños"], [30, "en"], [31, "su"], [32, "casa"], [33, "en"], [34, "Natal"], [35, "."], [36, "Quisiera"], [37, "agradecer"], [38, "a"], [39, "Flavia"], [40, ","], [41, "a"], [42, "Regina"], [43, "y"], [44, "a"], [45, "toda"], [46, "la"], [47, "comunidad"], [48, "de"], [49, "Salgueiro"], [50, "por"], [51, "la"], [52, "fiesta"], [53, "sorpresa"], [54, "que"], [55, "organizaron"], [56, "para"], [57, "mí"], [58, "."], [59, "Lamentablemente"], [60, "ese"], [61, "día"], [62, "no"], [63, "me"], [64, "sentía"], [65, "bien"], [66, "."], [67, "Pero"], [68, "amé"], [69, "el"], [70, "cariño"], [71, "de"], [72, "siempre"], [73, "..."], [74, "Y"], [75, "quisiera"], [76, "agradecerles"], [77, "a"], [78, "todos"], [79, "ustedes"], [80, "por"], [81, "los"], [82, "homenajes"], [83, "que"], [84, "me"], [85, "hicieron"], [86, "a"], [87, "través"], [88, "de"], [89, "testimonios"], [90, ","], [91, "videos"], [92, ","], [93, "llamadas"], [94, ","], [95, "cartas"], [96, ","], [97, "tarjetas"], [98, "..."], [99, "¡"], [100, "son"], [101, "muy"], [102, "especiales"], [103, "!"], [104, "Este"], [105, "carnaval"], [106, "va"], [107, "a"], [108, "ser"], [109, "una"], [110, "maratón"], [111, "para"], [112, "mí"], [113, "."], [114, "São"], [115, "Paulo"], [116, "con"], [117, "Gaviões"], [118, "el"], [119, "sábado"], [120, "."], [121, "Salvador"], [122, "el"], [123, "domingo"], [124, "y"], [125, "Salgueiro"], [126, "en"], [127, "Río"], [128, "el"], [129, "lunes"], [130, "."], [131, "Me"], [132, "estoy"], [133, "preparando"], [134, "..."], [135, "¡"], [136, "besooooos"], [137, "!"], [138, "Después"], [139, "vuelvo"], [140, "con"], [141, "calma"], [142, "a"], [143, "contarles"], [144, "sobre"], [145, "mi"], [146, "fin"], [147, "de"], [148, "semana"], [149, "de"], [150, "filmaciones"], [151, "en"], [152, "Punta"], [153, "."], [154, "Sáaaaaaaa"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

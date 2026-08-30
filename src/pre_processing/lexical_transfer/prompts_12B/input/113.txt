@@ -1,0 +1,42 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: ILSA GODOY. Je suis artiste plasticienne et j'invite tout le monde à apprécier et à découvrir mes œuvres à l'adresse www.ilsagodoy.com.br. Je cherche sur cette plateforme un espace pour diffuser mes créations afin de franchir les frontières, en favorisant et en présentant l'échange culturel entre les peuples. [cite: 27]
+Mon travail repose sur la peinture à l'huile sur toile. Autodidacte, je recherche une expression personnelle en apportant à chaque style ma propre sensibilité d'interprétation. [cite: 28]
+Dans l'impressionnisme, je dépeins la richesse de mon pays, tandis que dans le contemporain, je propose une lecture moderne qui invite le spectateur à définir sa propre interprétation et à percevoir l'expression comme un flux d'informations. [cite: 29]
+Concernant mes prestations, je garantis une sécurité totale quant aux conditions d'expédition, aux délais de livraison, aux garanties et au sérieux des démarches, toutes les informations et procédures s'inscrivant rigoureusement dans le cadre légal établi et réglementé. [cite: 30]
+Ma participation à de nombreux salons et expositions m'a valu diverses distinctions, et plusieurs de mes œuvres figurent dans des catalogues d'art. [cite: 31]
+L'une des publications phares reprenant mon travail est l'Annuaire Brésilien des Artistes Plasticiens. [cite: 32]
+Qu'il s'agisse de l'emballage, de l'envoi, des délais ou des garanties, tout est géré de manière responsable et sécurisée par le biais de processus dûment officialisés auprès de l'IPHAN. [cite: 33]
+
+Tokens: [[0, "ILSA"], [1, "GODOY"], [2, "."], [3, "Je"], [4, "suis"], [5, "artiste"], [6, "plasticienne"], [7, "et"], [8, "j'"], [9, "invite"], [10, "tout"], [11, "le"], [12, "monde"], [13, "à"], [14, "apprécier"], [15, "et"], [16, "à"], [17, "découvrir"], [18, "mes"], [19, "œuvres"], [20, "à"], [21, "l'"], [22, "adresse"], [23, "www.ilsagodoy.com.br."], [24, "Je"], [25, "cherche"], [26, "sur"], [27, "cette"], [28, "plateforme"], [29, "un"], [30, "espace"], [31, "pour"], [32, "diffuser"], [33, "mes"], [34, "créations"], [35, "afin"], [36, "de"], [37, "franchir"], [38, "les"], [39, "frontières"], [40, ","], [41, "en"], [42, "favorisant"], [43, "et"], [44, "en"], [45, "présentant"], [46, "l'"], [47, "échange"], [48, "culturel"], [49, "entre"], [50, "les"], [51, "peuples"], [52, "."], [53, "["], [54, "cite"], [55, ":"], [56, "27"], [57, "]"], [58, "Mon"], [59, "travail"], [60, "repose"], [61, "sur"], [62, "la"], [63, "peinture"], [64, "à"], [65, "l'"], [66, "huile"], [67, "sur"], [68, "toile"], [69, "."], [70, "Autodidacte"], [71, ","], [72, "je"], [73, "recherche"], [74, "une"], [75, "expression"], [76, "personnelle"], [77, "en"], [78, "apportant"], [79, "à"], [80, "chaque"], [81, "style"], [82, "ma"], [83, "propre"], [84, "sensibilité"], [85, "d'"], [86, "interprétation"], [87, "."], [88, "["], [89, "cite:"], [90, "28"], [91, "]"], [92, "Dans"], [93, "l'"], [94, "impressionnisme"], [95, ","], [96, "je"], [97, "dépeins"], [98, "la"], [99, "richesse"], [100, "de"], [101, "mon"], [102, "pays"], [103, ","], [104, "tandis"], [105, "que"], [106, "dans"], [107, "le"], [108, "contemporain"], [109, ","], [110, "je"], [111, "propose"], [112, "une"], [113, "lecture"], [114, "moderne"], [115, "qui"], [116, "invite"], [117, "le"], [118, "spectateur"], [119, "à"], [120, "définir"], [121, "sa"], [122, "propre"], [123, "interprétation"], [124, "et"], [125, "à"], [126, "percevoir"], [127, "l'"], [128, "expression"], [129, "comme"], [130, "un"], [131, "flux"], [132, "d'"], [133, "informations"], [134, "."], [135, "["], [136, "cite"], [137, ":"], [138, "29"], [139, "]"], [140, "Concernant"], [141, "mes"], [142, "prestations"], [143, ","], [144, "je"], [145, "garantis"], [146, "une"], [147, "sécurité"], [148, "totale"], [149, "quant"], [150, "aux"], [151, "conditions"], [152, "d'"], [153, "expédition"], [154, ","], [155, "aux"], [156, "délais"], [157, "de"], [158, "livraison"], [159, ","], [160, "aux"], [161, "garanties"], [162, "et"], [163, "au"], [164, "sérieux"], [165, "des"], [166, "démarches"], [167, ","], [168, "toutes"], [169, "les"], [170, "informations"], [171, "et"], [172, "procédures"], [173, "s'"], [174, "inscrivant"], [175, "rigoureusement"], [176, "dans"], [177, "le"], [178, "cadre"], [179, "légal"], [180, "établi"], [181, "et"], [182, "réglementé"], [183, "."], [184, "["], [185, "cite:"], [186, "30"], [187, "]"], [188, "Ma"], [189, "participation"], [190, "à"], [191, "de"], [192, "nombreux"], [193, "salons"], [194, "et"], [195, "expositions"], [196, "m'"], [197, "a"], [198, "valu"], [199, "diverses"], [200, "distinctions"], [201, ","], [202, "et"], [203, "plusieurs"], [204, "de"], [205, "mes"], [206, "œuvres"], [207, "figurent"], [208, "dans"], [209, "des"], [210, "catalogues"], [211, "d'"], [212, "art"], [213, "."], [214, "["], [215, "cite:"], [216, "31"], [217, "]"], [218, "L'"], [219, "une"], [220, "des"], [221, "publications"], [222, "phares"], [223, "reprenant"], [224, "mon"], [225, "travail"], [226, "est"], [227, "l'"], [228, "Annuaire"], [229, "Brésilien"], [230, "des"], [231, "Artistes"], [232, "Plasticiens"], [233, "."], [234, "["], [235, "cite"], [236, ":"], [237, "32"], [238, "]"], [239, "Qu'"], [240, "il"], [241, "s'"], [242, "agisse"], [243, "de"], [244, "l'"], [245, "emballage"], [246, ","], [247, "de"], [248, "l'"], [249, "envoi"], [250, ","], [251, "des"], [252, "délais"], [253, "ou"], [254, "des"], [255, "garanties"], [256, ","], [257, "tout"], [258, "est"], [259, "géré"], [260, "de"], [261, "manière"], [262, "responsable"], [263, "et"], [264, "sécurisée"], [265, "par"], [266, "le"], [267, "biais"], [268, "de"], [269, "processus"], [270, "dûment"], [271, "officialisés"], [272, "auprès"], [273, "de"], [274, "l'"], [275, "IPHAN"], [276, "."], [277, "["], [278, "cite"], [279, ":"], [280, "33"], [281, "]"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

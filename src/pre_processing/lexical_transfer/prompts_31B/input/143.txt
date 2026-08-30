@@ -1,0 +1,53 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: I Simposio de Educación Especial se realizará los días 19 y 20 de agosto.
+Inscripciones abiertas con descuento
+
+El campus Anália Franco será sede, los días 19 y 20 de agosto, del I Simposio de Educación Especial - PROESP, con enfoque en el tema "Discutiendo límites y posibilidades en la acción docente".
+Dirigido a profesionales que trabajan en la inclusión escolar del alumno con algún tipo de discapacidad y en los estudios de educación especial, el evento ofrecerá a los participantes la oportunidad de reflexionar y debatir temas contemporáneos, destacando la competencia de los equipos interdisciplinares, que construyen su conocimiento con base en las acciones de los docentes y de las atenciones educativas y/o de especialistas con vistas a una educación de calidad.
+El Simposio es una iniciativa del Programa de Educación Especial - PROESP, mantenido por la Vicerrectoría de Extensión y Asuntos Comunitarios de la Universidad Cruzeiro do Sul, que tiene como objetivo promover la articulación entre investigación, docencia y extensión en educación inclusiva, ofreciendo atención educativa a jóvenes y adultos con discapacidad (intelectual, auditiva, física y visual) y a sus familias, con el fin de favorecer el acceso de estos individuos al trabajo profesional, a los bienes sociales y culturales, promoviendo el fortalecimiento de su autoestima y autonomía, destacando la importancia de su participación social.
+Sobre el evento:
+
+HAGA CLIC AQUÍ Y REALICE SU INSCRIPCIÓN
+
+HAGA CLIC AQUÍ Y CONSULTE LA PROGRAMACIÓN
+
+Inversión: para inscripciones hasta el 30 de junio - R$ 30,00;
+hasta el 31 de julio - R$ 40,00; y después de esas fechas: R$ 50,00.
+Horario: de 9:00 h a 13:00 h y de 14:30 h a 18:00 h
+Lugar: auditorio Fernando Henrique Cardoso - Universidad Cruzeiro do Sul - campus Anália Franco
+Dirección: Av. Regente Feijó, 1295 - Tatuapé - São Paulo (cerca del centro comercial Anália Franco)
+Información: (11) 2037-5758
+
+Tokens: [[0, "I"], [1, "Simposio"], [2, "de"], [3, "Educación"], [4, "Especial"], [5, "se"], [6, "realizará"], [7, "los"], [8, "días"], [9, "19"], [10, "y"], [11, "20"], [12, "de"], [13, "agosto"], [14, "."], [15, "Inscripciones"], [16, "abiertas"], [17, "con"], [18, "descuento"], [19, "El"], [20, "campus"], [21, "Anália"], [22, "Franco"], [23, "será"], [24, "sede"], [25, ","], [26, "los"], [27, "días"], [28, "19"], [29, "y"], [30, "20"], [31, "de"], [32, "agosto"], [33, ","], [34, "del"], [35, "I"], [36, "Simposio"], [37, "de"], [38, "Educación"], [39, "Especial"], [40, "-"], [41, "PROESP"], [42, ","], [43, "con"], [44, "enfoque"], [45, "en"], [46, "el"], [47, "tema"], [48, "\""], [49, "Discutiendo"], [50, "límites"], [51, "y"], [52, "posibilidades"], [53, "en"], [54, "la"], [55, "acción"], [56, "docente"], [57, "\""], [58, "."], [59, "Dirigido"], [60, "a"], [61, "profesionales"], [62, "que"], [63, "trabajan"], [64, "en"], [65, "la"], [66, "inclusión"], [67, "escolar"], [68, "del"], [69, "alumno"], [70, "con"], [71, "algún"], [72, "tipo"], [73, "de"], [74, "discapacidad"], [75, "y"], [76, "en"], [77, "los"], [78, "estudios"], [79, "de"], [80, "educación"], [81, "especial"], [82, ","], [83, "el"], [84, "evento"], [85, "ofrecerá"], [86, "a"], [87, "los"], [88, "participantes"], [89, "la"], [90, "oportunidad"], [91, "de"], [92, "reflexionar"], [93, "y"], [94, "debatir"], [95, "temas"], [96, "contemporáneos"], [97, ","], [98, "destacando"], [99, "la"], [100, "competencia"], [101, "de"], [102, "los"], [103, "equipos"], [104, "interdisciplinares"], [105, ","], [106, "que"], [107, "construyen"], [108, "su"], [109, "conocimiento"], [110, "con"], [111, "base"], [112, "en"], [113, "las"], [114, "acciones"], [115, "de"], [116, "los"], [117, "docentes"], [118, "y"], [119, "de"], [120, "las"], [121, "atenciones"], [122, "educativas"], [123, "y/o"], [124, "de"], [125, "especialistas"], [126, "con"], [127, "vistas"], [128, "a"], [129, "una"], [130, "educación"], [131, "de"], [132, "calidad"], [133, "."], [134, "El"], [135, "Simposio"], [136, "es"], [137, "una"], [138, "iniciativa"], [139, "del"], [140, "Programa"], [141, "de"], [142, "Educación"], [143, "Especial"], [144, "-"], [145, "PROESP"], [146, ","], [147, "mantenido"], [148, "por"], [149, "la"], [150, "Vicerrectoría"], [151, "de"], [152, "Extensión"], [153, "y"], [154, "Asuntos"], [155, "Comunitarios"], [156, "de"], [157, "la"], [158, "Universidad"], [159, "Cruzeiro"], [160, "do"], [161, "Sul"], [162, ","], [163, "que"], [164, "tiene"], [165, "como"], [166, "objetivo"], [167, "promover"], [168, "la"], [169, "articulación"], [170, "entre"], [171, "investigación"], [172, ","], [173, "docencia"], [174, "y"], [175, "extensión"], [176, "en"], [177, "educación"], [178, "inclusiva"], [179, ","], [180, "ofreciendo"], [181, "atención"], [182, "educativa"], [183, "a"], [184, "jóvenes"], [185, "y"], [186, "adultos"], [187, "con"], [188, "discapacidad"], [189, "("], [190, "intelectual"], [191, ","], [192, "auditiva"], [193, ","], [194, "física"], [195, "y"], [196, "visual"], [197, ")"], [198, "y"], [199, "a"], [200, "sus"], [201, "familias"], [202, ","], [203, "con"], [204, "el"], [205, "fin"], [206, "de"], [207, "favorecer"], [208, "el"], [209, "acceso"], [210, "de"], [211, "estos"], [212, "individuos"], [213, "al"], [214, "trabajo"], [215, "profesional"], [216, ","], [217, "a"], [218, "los"], [219, "bienes"], [220, "sociales"], [221, "y"], [222, "culturales"], [223, ","], [224, "promoviendo"], [225, "el"], [226, "fortalecimiento"], [227, "de"], [228, "su"], [229, "autoestima"], [230, "y"], [231, "autonomía"], [232, ","], [233, "destacando"], [234, "la"], [235, "importancia"], [236, "de"], [237, "su"], [238, "participación"], [239, "social"], [240, "."], [241, "Sobre"], [242, "el"], [243, "evento"], [244, ":"], [245, "HAGA"], [246, "CLIC"], [247, "AQUÍ"], [248, "Y"], [249, "REALICE"], [250, "SU"], [251, "INSCRIPCIÓN"], [252, "HAGA"], [253, "CLIC"], [254, "AQUÍ"], [255, "Y"], [256, "CONSULTE"], [257, "LA"], [258, "PROGRAMACIÓN"], [259, "Inversión"], [260, ":"], [261, "para"], [262, "inscripciones"], [263, "hasta"], [264, "el"], [265, "30"], [266, "de"], [267, "junio"], [268, "-"], [269, "R$"], [270, "30,00"], [271, ";"], [272, "hasta"], [273, "el"], [274, "31"], [275, "de"], [276, "julio"], [277, "-"], [278, "R$"], [279, "40,00"], [280, ";"], [281, "y"], [282, "después"], [283, "de"], [284, "esas"], [285, "fechas"], [286, ":"], [287, "R$"], [288, "50,00"], [289, "."], [290, "Horario"], [291, ":"], [292, "de"], [293, "9:00"], [294, "h"], [295, "a"], [296, "13:00"], [297, "h"], [298, "y"], [299, "de"], [300, "14:30"], [301, "h"], [302, "a"], [303, "18:00"], [304, "h"], [305, "Lugar"], [306, ":"], [307, "auditorio"], [308, "Fernando"], [309, "Henrique"], [310, "Cardoso"], [311, "-"], [312, "Universidad"], [313, "Cruzeiro"], [314, "do"], [315, "Sul"], [316, "-"], [317, "campus"], [318, "Anália"], [319, "Franco"], [320, "Dirección"], [321, ":"], [322, "Av."], [323, "Regente"], [324, "Feijó"], [325, ","], [326, "1295"], [327, "-"], [328, "Tatuapé"], [329, "-"], [330, "São"], [331, "Paulo"], [332, "("], [333, "cerca"], [334, "del"], [335, "centro"], [336, "comercial"], [337, "Anália"], [338, "Franco"], [339, ")"], [340, "Información"], [341, ":"], [342, "("], [343, "11"], [344, ")"], [345, "2037-5758"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

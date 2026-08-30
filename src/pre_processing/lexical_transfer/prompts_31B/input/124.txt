@@ -1,0 +1,40 @@
+Perform contextual lexical substitution from french to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Ne fais pas ça, ma grande ! Donne un coup de poing franc dans le ballon.
+Ce ballon qui est revenu... Bon, l'équipe sait pertinemment que son jeu à elle consiste à smasher fort. Mais qu'est-ce que tu fabriques ? [cite: 114]
+Tu es restée scotchée au filet, tu n'es pas allée au contre... Écarte le jeu pour anticiper l'amortie, merde ! On va finir par perdre le match sur une énorme connerie. [cite: 115]
+Donne-lui de la hauteur pour qu'elle puisse armer son tir ; si tu lui envoies une passe trop rapide, elle n'a aucune marge pour s'en sortir. C'est bon, calfeutre le terrain avec elle, avec Juliana et Janaina en couverture au fond, sans laisser de zone libre, exactement comme on y a joué hier. [cite: 116]
+La réception doit sortir propre et la défense bien en place, jouez maintenant ! [cite: 117]
+
+Tokens: [[0, "Ne"], [1, "fais"], [2, "pas"], [3, "ça"], [4, ","], [5, "ma"], [6, "grande"], [7, "!"], [8, "Donne"], [9, "un"], [10, "coup"], [11, "de"], [12, "poing"], [13, "franc"], [14, "dans"], [15, "le"], [16, "ballon"], [17, "."], [18, "Ce"], [19, "ballon"], [20, "qui"], [21, "est"], [22, "revenu"], [23, "..."], [24, "Bon"], [25, ","], [26, "l'"], [27, "équipe"], [28, "sait"], [29, "pertinemment"], [30, "que"], [31, "son"], [32, "jeu"], [33, "à"], [34, "elle"], [35, "consiste"], [36, "à"], [37, "smasher"], [38, "fort"], [39, "."], [40, "Mais"], [41, "qu'"], [42, "est"], [43, "-ce"], [44, "que"], [45, "tu"], [46, "fabriques"], [47, "?"], [48, "["], [49, "cite"], [50, ":"], [51, "114"], [52, "]"], [53, "Tu"], [54, "es"], [55, "restée"], [56, "scotchée"], [57, "au"], [58, "filet"], [59, ","], [60, "tu"], [61, "n'"], [62, "es"], [63, "pas"], [64, "allée"], [65, "au"], [66, "contre"], [67, "..."], [68, "Écarte"], [69, "le"], [70, "jeu"], [71, "pour"], [72, "anticiper"], [73, "l'"], [74, "amortie"], [75, ","], [76, "merde"], [77, "!"], [78, "On"], [79, "va"], [80, "finir"], [81, "par"], [82, "perdre"], [83, "le"], [84, "match"], [85, "sur"], [86, "une"], [87, "énorme"], [88, "connerie"], [89, "."], [90, "["], [91, "cite"], [92, ":"], [93, "115"], [94, "]"], [95, "Donne-lui"], [96, "de"], [97, "la"], [98, "hauteur"], [99, "pour"], [100, "qu'"], [101, "elle"], [102, "puisse"], [103, "armer"], [104, "son"], [105, "tir"], [106, ";"], [107, "si"], [108, "tu"], [109, "lui"], [110, "envoies"], [111, "une"], [112, "passe"], [113, "trop"], [114, "rapide"], [115, ","], [116, "elle"], [117, "n'"], [118, "a"], [119, "aucune"], [120, "marge"], [121, "pour"], [122, "s'"], [123, "en"], [124, "sortir"], [125, "."], [126, "C'"], [127, "est"], [128, "bon"], [129, ","], [130, "calfeutre"], [131, "le"], [132, "terrain"], [133, "avec"], [134, "elle"], [135, ","], [136, "avec"], [137, "Juliana"], [138, "et"], [139, "Janaina"], [140, "en"], [141, "couverture"], [142, "au"], [143, "fond"], [144, ","], [145, "sans"], [146, "laisser"], [147, "de"], [148, "zone"], [149, "libre"], [150, ","], [151, "exactement"], [152, "comme"], [153, "on"], [154, "y"], [155, "a"], [156, "joué"], [157, "hier"], [158, "."], [159, "["], [160, "cite"], [161, ":"], [162, "116"], [163, "]"], [164, "La"], [165, "réception"], [166, "doit"], [167, "sortir"], [168, "propre"], [169, "et"], [170, "la"], [171, "défense"], [172, "bien"], [173, "en"], [174, "place"], [175, ","], [176, "jouez"], [177, "maintenant"], [178, "!"], [179, "["], [180, "cite"], [181, ":"], [182, "117"], [183, "]"]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV

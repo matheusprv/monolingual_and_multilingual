@@ -1,0 +1,45 @@
+Perform contextual lexical substitution from spanish to Brazilian Portuguese.
+
+This is NOT normal sentence translation.
+
+
+Replace lexical items of the SOURCE sentence with their contextually correct Portuguese equivalents while preserving the SOURCE language's word order and syntactic arrangement as much as possible.
+
+
+Rules:
+- Do not translate into natural Portuguese syntax. Example: "The red car" "The red car" -> "O vermelho carro", not "O carro vermelho"; "The beautfiul girl" -> "A bonita menina", not "A menina bonita"
+- Translation must be contextual.
+- Detect MULTI-WORD EXPRESSIONS, including discontinuous ones. Example: "Turn the TV off" -> 0,3=Desligue|1=a|2=TV
+- The words between these indices must still be processed normally.
+- Every source token index MUST occur exactly once in the analysis. If indices [0, 3] belong to the same lexical unit, neither index 0 nor index 3 may occur in another unit.
+- Preserve punctuation
+- Use contextually correct Portuguese morphology.
+- Do NOT insert or remove Portuguese words simply to make the result grammatically natural.
+- A surce unit may produce: one Portuguese token; multiple Portuguese tokens; zero Portuguese tokens, if the source element is absorbed by a multi-word lexical correspondence.
+- Prefer explicit multi-token groups rather than arbitrary deletion.
+- Every source index must appear exactly once.
+- If multiple source tokens form one lexical unit, join their indices with commas.
+- If one source unit translates to multiple Portuguese words, write them normally separated by spaces.
+- The output must be the indices of the source words and the textual translation.
+
+Sentence: Estimados, buenos días:
+A continuación, les detallo la respuesta a las dudas planteadas en el correo electrónico de abajo:
+
+ La exportación de las partidas a formato CSV falló (en lo referente a los otros poderes del TJ).
+Había indicios de que se iba a procesar, pero la ventana se cerró de forma inesperada de inmediato.
+- Hemos realizado pruebas de rendimiento en varios equipos aquí en las oficinas de Prodemge.
+En nuestras instalaciones, el informe se ejecutó y generó con total normalidad.
+Cabe señalar que trabajamos con la versión 8 de Internet Explorer.
+Por tanto, solicitamos que se verifique qué versión se está utilizando en el IPSEMG y que se revise la configuración de seguridad del navegador, ya que ahí podría radicar el origen del error.
+Por favor, pónganse en contacto con el departamento del DETI (en copia) para solicitar formalmente esta comprobación.
+
+Tokens: [[0, "Estimados"], [1, ","], [2, "buenos"], [3, "días"], [4, ":"], [5, "A"], [6, "continuación"], [7, ","], [8, "les"], [9, "detallo"], [10, "la"], [11, "respuesta"], [12, "a"], [13, "las"], [14, "dudas"], [15, "planteadas"], [16, "en"], [17, "el"], [18, "correo"], [19, "electrónico"], [20, "de"], [21, "abajo"], [22, ":"], [23, "La"], [24, "exportación"], [25, "de"], [26, "las"], [27, "partidas"], [28, "a"], [29, "formato"], [30, "CSV"], [31, "falló"], [32, "("], [33, "en"], [34, "lo"], [35, "referente"], [36, "a"], [37, "los"], [38, "otros"], [39, "poderes"], [40, "del"], [41, "TJ"], [42, ")"], [43, "."], [44, "Había"], [45, "indicios"], [46, "de"], [47, "que"], [48, "se"], [49, "iba"], [50, "a"], [51, "procesar"], [52, ","], [53, "pero"], [54, "la"], [55, "ventana"], [56, "se"], [57, "cerró"], [58, "de"], [59, "forma"], [60, "inesperada"], [61, "de"], [62, "inmediato"], [63, "."], [64, "-"], [65, "Hemos"], [66, "realizado"], [67, "pruebas"], [68, "de"], [69, "rendimiento"], [70, "en"], [71, "varios"], [72, "equipos"], [73, "aquí"], [74, "en"], [75, "las"], [76, "oficinas"], [77, "de"], [78, "Prodemge"], [79, "."], [80, "En"], [81, "nuestras"], [82, "instalaciones"], [83, ","], [84, "el"], [85, "informe"], [86, "se"], [87, "ejecutó"], [88, "y"], [89, "generó"], [90, "con"], [91, "total"], [92, "normalidad"], [93, "."], [94, "Cabe"], [95, "señalar"], [96, "que"], [97, "trabajamos"], [98, "con"], [99, "la"], [100, "versión"], [101, "8"], [102, "de"], [103, "Internet"], [104, "Explorer"], [105, "."], [106, "Por"], [107, "tanto"], [108, ","], [109, "solicitamos"], [110, "que"], [111, "se"], [112, "verifique"], [113, "qué"], [114, "versión"], [115, "se"], [116, "está"], [117, "utilizando"], [118, "en"], [119, "el"], [120, "IPSEMG"], [121, "y"], [122, "que"], [123, "se"], [124, "revise"], [125, "la"], [126, "configuración"], [127, "de"], [128, "seguridad"], [129, "del"], [130, "navegador"], [131, ","], [132, "ya"], [133, "que"], [134, "ahí"], [135, "podría"], [136, "radicar"], [137, "el"], [138, "origen"], [139, "del"], [140, "error"], [141, "."], [142, "Por"], [143, "favor"], [144, ","], [145, "pónganse"], [146, "en"], [147, "contacto"], [148, "con"], [149, "el"], [150, "departamento"], [151, "del"], [152, "DETI"], [153, "("], [154, "en"], [155, "copia"], [156, ")"], [157, "para"], [158, "solicitar"], [159, "formalmente"], [160, "esta"], [161, "comprobación"], [162, "."]]
+
+Return ONLY this format:
+index=translation|index=translation|...
+
+Examples:
+0=O|1=vermelho|2=carro
+
+For a multi-word expression:
+0,3=Desligue|1=a|2=TV
