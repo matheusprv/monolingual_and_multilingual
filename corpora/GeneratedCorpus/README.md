@@ -1,0 +1,5 @@
+- PB NATIVO: Native brazilian portuguese texts
+- PB NATIVO - CORRUPTED: Brazillian portuguese texts with different verbal conjugations
+- TRANSLATION: texts translated from portuguese to target language
+- LEXICAL SWAP: Portuguese structure and target language lexical
+- GRAMMAR SWAP: Target language structure and PB lexical
