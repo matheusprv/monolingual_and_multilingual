@@ -111,6 +111,16 @@ def load_model_and_tokenizer(model_url: str, quantize: bool = False):
     return model, tokenizer
 
 
+import gc
+import math
+
+import pandas as pd
+import torch
+import torch.nn.functional as F
+from tqdm import tqdm
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+
 def eval_causal_sliding(
     model: AutoModelForCausalLM,
     tokenizer: AutoTokenizer,
@@ -128,6 +138,9 @@ def eval_causal_sliding(
         "total_nll": [],
         "ppl": [],
         "bpb": [],
+
+        # Lista com as métricas de cada token da sentença.
+        "token_metrics": [],
     }
 
     if max_len is None:
@@ -145,7 +158,6 @@ def eval_causal_sliding(
     if stride > max_len:
         raise ValueError("stride cannot be greater than max_len")
 
-    # More reliable for models loaded with device_map="auto".
     try:
         input_device = model.get_input_embeddings().weight.device
     except Exception:
@@ -163,15 +175,12 @@ def eval_causal_sliding(
     for text_id, row in progress_bar:
         text = row["text"]
 
-        # Always store the ID, even when the text fails.
         results["text_id"].append(text_id)
 
         try:
             num_bytes = len(text.encode("utf-8"))
             num_words = len(text.split())
 
-            # This may itself raise an OOM if the full encoded text is moved
-            # to the GPU.
             inputs = tokenizer(
                 text,
                 return_tensors="pt",
@@ -185,8 +194,20 @@ def eval_causal_sliding(
                 else float("nan")
             )
 
+            # ---------------------------------------------------------
+            # Armazena a NLL de cada posição global da sequência.
+            #
+            # token_nll[i] =
+            #   -log P(token_i | token_0 ... token_{i-1})
+            #
+            # O primeiro token normalmente não pode ser avaliado,
+            # pois não há contexto anterior.
+            # ---------------------------------------------------------
+            token_nll = [float("nan")] * num_tokens
+
             total_nll = 0.0
             total_loss_tokens = 0
+
             prev_end_window = 0
 
             for begin_window in range(0, num_tokens, stride):
@@ -202,44 +223,104 @@ def eval_causal_sliding(
                 ]
 
                 target_ids = input_ids.clone()
+
+                # Somente os tokens novos são avaliados.
                 target_ids[:, :-target_len] = -100
 
-                num_loss_tokens = (
-                    target_ids[:, 1:] != -100
-                ).sum().item()
+                model_kwargs = {
+                    "input_ids": input_ids,
+                }
 
-                # Avoid calling the model when no next-token loss can
-                # be calculated.
-                if num_loss_tokens > 0:
-                    model_kwargs = {
-                        "input_ids": input_ids,
-                        "labels": target_ids,
-                    }
-
-                    if "attention_mask" in inputs:
-                        model_kwargs["attention_mask"] = (
-                            inputs.attention_mask[
-                                :, begin_window:end_window
-                            ]
-                        )
-
-                    with torch.inference_mode():
-                        outputs = model(**model_kwargs)
-
-                    total_nll += (
-                        outputs.loss.item() * num_loss_tokens
+                if "attention_mask" in inputs:
+                    model_kwargs["attention_mask"] = (
+                        inputs.attention_mask[
+                            :, begin_window:end_window
+                        ]
                     )
-                    total_loss_tokens += num_loss_tokens
 
-                    del outputs
+                with torch.inference_mode():
+                    outputs = model(**model_kwargs)
 
-                del input_ids, target_ids
+                # -----------------------------------------------------
+                # Causal LM:
+                #
+                # logits[:, i] prevê input_ids[:, i + 1].
+                #
+                # Portanto:
+                #
+                # logit posição 0 -> token posição 1
+                # logit posição 1 -> token posição 2
+                # ...
+                # -----------------------------------------------------
+                shift_logits = outputs.logits[:, :-1, :]
+                shift_labels = target_ids[:, 1:]
+
+                # Cross entropy individual para cada token.
+                per_token_loss = F.cross_entropy(
+                    shift_logits.reshape(
+                        -1,
+                        shift_logits.size(-1),
+                    ),
+                    shift_labels.reshape(-1),
+                    reduction="none",
+                    ignore_index=-100,
+                )
+
+                per_token_loss = per_token_loss.view(
+                    shift_labels.shape
+                )
+
+                # -----------------------------------------------------
+                # Descobre quais posições foram realmente avaliadas.
+                #
+                # shift_labels[:, j] corresponde ao token local j + 1.
+                # -----------------------------------------------------
+                valid_mask = shift_labels != -100
+
+                valid_positions = (
+                    valid_mask[0]
+                    .nonzero(as_tuple=False)
+                    .flatten()
+                )
+
+                for shifted_position in valid_positions:
+                    shifted_position = shifted_position.item()
+
+                    # +1 porque houve o shift dos labels.
+                    local_token_position = shifted_position + 1
+
+                    global_token_position = (
+                        begin_window + local_token_position
+                    )
+
+                    nll = per_token_loss[
+                        0, shifted_position
+                    ].item()
+
+                    token_nll[global_token_position] = nll
+
+                    total_nll += nll
+                    total_loss_tokens += 1
+
+                del (
+                    outputs,
+                    input_ids,
+                    target_ids,
+                    shift_logits,
+                    shift_labels,
+                    per_token_loss,
+                    valid_mask,
+                    valid_positions,
+                )
 
                 prev_end_window = end_window
 
                 if end_window == num_tokens:
                     break
 
+            # ---------------------------------------------------------
+            # Métricas gerais da sentença
+            # ---------------------------------------------------------
             if total_loss_tokens > 0:
                 average_nll = total_nll / total_loss_tokens
 
@@ -258,6 +339,80 @@ def eval_causal_sliding(
             else:
                 bpb = float("nan")
 
+            # ---------------------------------------------------------
+            # Métricas por token
+            # ---------------------------------------------------------
+
+            token_ids = inputs.input_ids[0].tolist()
+
+            # Forma "interna" do tokenizer.
+            tokens = tokenizer.convert_ids_to_tokens(token_ids)
+
+            token_metrics = []
+
+            cumulative_nll = 0.0
+            cumulative_count = 0
+
+            for position, (
+                token_id,
+                token,
+                nll,
+            ) in enumerate(
+                zip(
+                    token_ids,
+                    tokens,
+                    token_nll,
+                )
+            ):
+                if math.isnan(nll):
+                    token_ppl = float("nan")
+                    cumulative_ppl = float("nan")
+
+                else:
+                    # Perplexidade SOMENTE desse token.
+                    try:
+                        token_ppl = math.exp(nll)
+                    except OverflowError:
+                        token_ppl = float("inf")
+
+                    cumulative_nll += nll
+                    cumulative_count += 1
+
+                    # Perplexidade de todo o prefixo até aqui.
+                    try:
+                        cumulative_ppl = math.exp(
+                            cumulative_nll
+                            / cumulative_count
+                        )
+                    except OverflowError:
+                        cumulative_ppl = float("inf")
+
+                token_metrics.append(
+                    {
+                        "position": position,
+                        "token_id": token_id,
+                        "token": token,
+
+                        # Texto produzido apenas por esse token.
+                        "decoded_token": tokenizer.decode(
+                            [token_id]
+                        ),
+
+                        "nll": nll,
+
+                        # PPL do token individual.
+                        "token_ppl": token_ppl,
+
+                        # PPL de todos os tokens avaliados
+                        # desde o começo até este token.
+                        "cumulative_ppl": cumulative_ppl,
+                    }
+                )
+
+            # ---------------------------------------------------------
+            # Resultado
+            # ---------------------------------------------------------
+
             results["num_words"].append(num_words)
             results["num_bytes"].append(num_bytes)
             results["num_tokens"].append(num_tokens)
@@ -266,6 +421,7 @@ def eval_causal_sliding(
             results["total_nll"].append(total_nll)
             results["ppl"].append(ppl)
             results["bpb"].append(bpb)
+            results["token_metrics"].append(token_metrics)
 
             del inputs
 
@@ -275,7 +431,6 @@ def eval_causal_sliding(
                 "recording NaN and continuing."
             )
 
-            # Every result list must receive one value to remain aligned.
             results["num_words"].append(float("nan"))
             results["num_bytes"].append(float("nan"))
             results["num_tokens"].append(float("nan"))
@@ -284,19 +439,9 @@ def eval_causal_sliding(
             results["total_nll"].append(float("nan"))
             results["ppl"].append(float("nan"))
             results["bpb"].append(float("nan"))
+            results["token_metrics"].append([])
 
         finally:
-            # Remove any tensors left alive after either success or failure.
-            for variable_name in (
-                "inputs",
-                "input_ids",
-                "target_ids",
-                "outputs",
-                "model_kwargs",
-            ):
-                if variable_name in locals():
-                    del locals()[variable_name]
-
             gc.collect()
 
             if torch.cuda.is_available():
