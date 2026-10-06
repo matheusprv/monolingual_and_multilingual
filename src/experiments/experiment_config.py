@@ -41,6 +41,7 @@ class TrainingConfig:
 @dataclass(frozen=True)
 class CausalConfig:
     parquet_path: Path
+    results_dir: Path
     text_column: str
     scenarios: tuple[str, ...] | None
     max_rows: int
@@ -63,6 +64,7 @@ class ExperimentConfig:
         data = asdict(self)
         data["output_dir"] = str(self.output_dir)
         data["causal"]["parquet_path"] = str(self.causal.parquet_path)
+        data["causal"]["results_dir"] = str(self.causal.results_dir)
         return data
 
 
@@ -125,6 +127,7 @@ def load_experiment_config(path: Path) -> ExperimentConfig:
         ),
         causal=CausalConfig(
             parquet_path=Path(_value(causal, "parquet_path", "causal")),
+            results_dir=Path(_value(causal, "results_dir", "causal")),
             text_column=str(_value(causal, "text_column", "causal")),
             scenarios=None if scenarios == "all" else tuple(scenarios),
             max_rows=int(_value(causal, "max_rows", "causal")),

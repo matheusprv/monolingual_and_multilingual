@@ -20,6 +20,7 @@ import pandas as pd
 from transformers import set_seed
 
 from . import hatebr_lora_causal_multimodel as experiment
+from .causal_sliding import execute_experiment
 from .dataset import load_causal_corpus, load_hatebr, make_stratified_splits, save_splits
 from .experiment_config import ExperimentConfig, load_experiment_config
 from .model import LoRA_Model, Model
@@ -116,14 +117,32 @@ def _run_action(
             del model
             clean_memory()
 
-    if action in {"predict", "causal"}:
+    if action == "causal":
+        file_name = experiment.safe_model_name(model_name)
+        results = execute_experiment(
+            model_name=model_name,
+            model_url=model_name,
+            quantization=config.model.use_4bit,
+            corpus=causal_corpus,
+            output_folder=config.causal.results_dir,
+            stride=config.causal.stride,
+            max_len=config.causal.max_length,
+            output_file_name=file_name,
+        )
+        if results is None:
+            raise RuntimeError("A avaliação causal falhou; consulte o log acima.")
+        return {
+            "model": model_name,
+            "status": "ok",
+            "rows": len(results),
+            "causal_result_file": str(config.causal.results_dir / f"{file_name}.csv"),
+        }
+
+    if action == "predict":
         model = Model(model_name, config.model.use_4bit)
         try:
-            if action == "predict":
-                metrics = experiment.evaluate_classification(model, test_df, result_dir / "hatebr_zero_shot", config)
-                return {"model": model_name, "status": "ok", **metrics}
-            experiment.run_eval_causal_sliding(model, causal_corpus, result_dir, config)
-            return {"model": model_name, "status": "ok"}
+            metrics = experiment.evaluate_classification(model, test_df, result_dir / "hatebr_zero_shot", config)
+            return {"model": model_name, "status": "ok", **metrics}
         finally:
             del model
             clean_memory()

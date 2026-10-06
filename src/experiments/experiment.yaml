@@ -1,0 +1,49 @@
+# python3 -m src.experiments.pipeline experiment.yaml causal
+# python3 -m src.experiments.pipeline experiment.yaml predict
+# python3 -m src.experiments.pipeline experiment.yaml train
+# python3 -m src.experiments.pipeline experiment.yaml evaluate
+# python3 -m src.experiments.pipeline experiment.yaml all
+
+models:
+  - ../models/models/menezesbruno/manaca-1b-base
+  - ../models/models/TucanoBR/Tucano-2b4
+  - ../models/models/maritaca-ai/sabia-7b
+  - ../models/models/google/gemma-4-12B
+  - ../models/models/Qwen/Qwen3.5-9B-Base
+  - ../models/models/meta-llama/Meta-Llama-3.1-8B
+
+
+# Caminho relativo ao diretório em que o comando é executado.
+output_dir: ./outputs_hatebr_lora
+seed: 42
+
+dataset:
+  name: franciellevargas/HateBR
+  test_size: 0.2
+  validation_size: 0.1
+
+model:
+  use_4bit: true
+
+generation:
+  max_length: 512
+  max_new_tokens: 4
+
+training:
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  num_epochs: 10
+  learning_rate: 0.0002
+  batch_size: 4
+  gradient_accumulation_steps: 4
+
+causal:
+  parquet_path: ./corpora/GeneratedCorpus/corpora_v3.parquet
+  results_dir: ./outputs_hatebr_lora/causal_results
+  text_column: text
+  scenarios: all
+  # 0 avalia todo o corpus Parquet.
+  max_rows: 0
+  stride: 512
+  max_length: null

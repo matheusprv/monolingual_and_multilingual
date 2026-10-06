@@ -210,6 +210,9 @@ def execute_experiment(
     corpus: pd.DataFrame,
     output_folder: Path = Path("./results"),
     scenarios: list | str = "all",
+    stride: int = 512,
+    max_len: int | None = None,
+    output_file_name: str | None = None,
 ):
 
     # preparing the selected corpus to evaluate
@@ -223,7 +226,7 @@ def execute_experiment(
         model = Model(model_url, quantization)
 
         print("🖥️ Executing experiment")
-        results = eval_causal_sliding(model, dataset)
+        results = eval_causal_sliding(model, dataset, stride=stride, max_len=max_len)
 
     except Exception:
         logging.exception(
@@ -240,7 +243,8 @@ def execute_experiment(
 
     print("💾 Saving model results")
     results_df = pd.DataFrame(results)
-    results_df.to_csv( output_folder / f"{model_name}.csv", index=False)
-
     results_df["model"] = model_name
+    output_folder.mkdir(parents=True, exist_ok=True)
+    file_name = output_file_name or model_name
+    results_df.to_csv(output_folder / f"{file_name}.csv", index=False)
     return results_df
