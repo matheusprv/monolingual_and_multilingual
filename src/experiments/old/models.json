@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Qwen2.5-1.5B-Instruct",
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "use_4bit": true,
+    "enabled": true
+  },
+  {
+    "name": "Tucano-2b4",
+    "model_id": "TucanoBR/Tucano-2b4",
+    "use_4bit": true,
+    "enabled": false
+  }
+]
