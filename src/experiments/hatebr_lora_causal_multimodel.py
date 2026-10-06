@@ -2,14 +2,15 @@
 Fine-tuning de Causal LM para classificação no HateBR usando LoRA,
 preservando a capacidade generativa por não trocar a cabeça do modelo.
 
-Saídas geradas em OUTPUT_DIR:
+Saídas geradas no diretório de resultados configurado:
 - hatebr_zero_shot_metrics.json
 - hatebr_zero_shot_predictions.csv
-- hatebr_lora_adapter/                  # modelo LoRA salvo
 - hatebr_finetuned_metrics.json
 - hatebr_finetuned_predictions.csv
 - hatebr_eval_causal_sliding.csv
 - hatebr_eval_causal_sliding_summary.json
+
+O adapter LoRA e os checkpoints são salvos no diretório de modelos configurado.
 
 Instalação sugerida:
 pip install -U torch transformers datasets accelerate peft bitsandbytes scikit-learn pandas tqdm
@@ -21,8 +22,6 @@ O carregamento do modelo e a liberação de memória são centralizados em
 from __future__ import annotations
 
 import json
-import math
-import os
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -43,40 +42,8 @@ from transformers import (
 import inspect
 
 from .causal_sliding import eval_causal_sliding
-from .dataset import load_hatebr, make_stratified_splits, save_splits
-from .model import LoRA_Model, Model
-from .utils import clean_memory
-
-
-# =========================
-# Configuração principal
-# =========================
-DEFAULT_MODELS = [
-    "Qwen/Qwen2.5-1.5B-Instruct",
-]
-MODELS = [
-    m.strip()
-    for m in os.getenv("MODELS", ",".join(DEFAULT_MODELS)).split(",")
-    if m.strip()
-]
-DATASET_NAME = os.getenv("DATASET_NAME", "franciellevargas/HateBR")
-OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", "./outputs_hatebr_lora"))
-SEED = int(os.getenv("SEED", "42"))
-
-USE_4BIT = os.getenv("USE_4BIT", "1") == "1"
-MAX_LENGTH = int(os.getenv("MAX_LENGTH", "512"))
-MAX_NEW_TOKENS = int(os.getenv("MAX_NEW_TOKENS", "4"))
-TEST_SIZE = float(os.getenv("TEST_SIZE", "0.2"))
-EVAL_CAUSAL_MAX_ROWS = int(os.getenv("EVAL_CAUSAL_MAX_ROWS", "0"))  # 0 = test inteiro
-
-# Hiperparâmetros LoRA/treino.
-LORA_R = int(os.getenv("LORA_R", "16"))
-LORA_ALPHA = int(os.getenv("LORA_ALPHA", "32"))
-LORA_DROPOUT = float(os.getenv("LORA_DROPOUT", "0.05"))
-NUM_EPOCHS = float(os.getenv("NUM_EPOCHS", "3"))
-LR = float(os.getenv("LR", "2e-4"))
-BATCH_SIZE = int(os.getenv("BATCH_SIZE", "4"))
-GRAD_ACCUM = int(os.getenv("GRAD_ACCUM", "4"))
+from .experiment_config import ExperimentConfig
+from .model import Model
 
 ID2LABEL = {0: "não ofensivo", 1: "ofensivo"}
 def save_json(obj: dict[str, Any], path: Path) -> None:
@@ -110,14 +77,6 @@ def normalize_prediction(generated: str) -> int:
     return 0
 
 
-def dataset_to_df(dataset_name: str) -> pd.DataFrame:
-    """Compatibilidade para usuários que importavam esta função.
-
-    A leitura e a normalização agora pertencem a ``dataset.py``.
-    """
-    return load_hatebr(dataset_name)
-
-
 def infer_lora_targets(model) -> list[str]:
     common = [
         "q_proj", "k_proj", "v_proj", "o_proj",
@@ -135,7 +94,7 @@ def infer_lora_targets(model) -> list[str]:
 # Avaliação de classificação
 # =========================
 @torch.inference_mode()
-def predict_generate(model: Model, texts: list[str]) -> list[int]:
+def predict_generate(model: Model, texts: list[str], config: ExperimentConfig) -> list[int]:
     model.set_evaluation_mode()
     language_model = model.model
     tokenizer = model.tokenizer
@@ -144,10 +103,10 @@ def predict_generate(model: Model, texts: list[str]) -> list[int]:
 
     for text in tqdm(texts, desc="Classificando", unit="ex"):
         prompt = build_prompt(text)
-        inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=MAX_LENGTH).to(device)
+        inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=config.generation.max_length).to(device)
         out = language_model.generate(
             **inputs,
-            max_new_tokens=MAX_NEW_TOKENS,
+            max_new_tokens=config.generation.max_new_tokens,
             do_sample=False,
             pad_token_id=tokenizer.pad_token_id,
             eos_token_id=tokenizer.eos_token_id,
@@ -159,9 +118,9 @@ def predict_generate(model: Model, texts: list[str]) -> list[int]:
     return preds
 
 
-def evaluate_classification(model: Model, df: pd.DataFrame, out_prefix: Path) -> dict[str, Any]:
+def evaluate_classification(model: Model, df: pd.DataFrame, out_prefix: Path, config: ExperimentConfig) -> dict[str, Any]:
     y_true = df["label"].astype(int).tolist()
-    y_pred = predict_generate(model, df["text"].tolist())
+    y_pred = predict_generate(model, df["text"].tolist(), config)
 
     pred_df = df.copy()
     pred_df["prediction"] = y_pred
@@ -193,15 +152,15 @@ def evaluate_classification(model: Model, df: pd.DataFrame, out_prefix: Path) ->
 # =========================
 # Dataset causal para SFT
 # =========================
-def encode_example(example: dict[str, Any], tokenizer) -> dict[str, list[int]]:
+def encode_example(example: dict[str, Any], tokenizer, max_length: int) -> dict[str, list[int]]:
     prompt = build_prompt(example["text"])
     answer = " " + ID2LABEL[int(example["label"])] + tokenizer.eos_token
 
     prompt_ids = tokenizer(prompt, add_special_tokens=False).input_ids
     answer_ids = tokenizer(answer, add_special_tokens=False).input_ids
 
-    input_ids = (prompt_ids + answer_ids)[:MAX_LENGTH]
-    labels = ([-100] * len(prompt_ids) + answer_ids)[:MAX_LENGTH]
+    input_ids = (prompt_ids + answer_ids)[:max_length]
+    labels = ([-100] * len(prompt_ids) + answer_ids)[:max_length]
     attention_mask = [1] * len(input_ids)
 
     return {"input_ids": input_ids, "labels": labels, "attention_mask": attention_mask}
@@ -227,17 +186,18 @@ def train_lora(
     train_df: pd.DataFrame,
     val_df: pd.DataFrame,
     output_dir: Path,
+    config: ExperimentConfig,
 ) -> Path:
     tokenizer = base_model.tokenizer
     language_model = base_model.model
 
-    if USE_4BIT and torch.cuda.is_available():
+    if config.model.use_4bit and torch.cuda.is_available():
         language_model = prepare_model_for_kbit_training(language_model)
 
     lora_config = LoraConfig(
-        r=LORA_R,
-        lora_alpha=LORA_ALPHA,
-        lora_dropout=LORA_DROPOUT,
+        r=config.training.lora_r,
+        lora_alpha=config.training.lora_alpha,
+        lora_dropout=config.training.lora_dropout,
         bias="none",
         task_type="CAUSAL_LM",
         target_modules=infer_lora_targets(language_model),
@@ -247,8 +207,9 @@ def train_lora(
 
     train_ds = Dataset.from_pandas(train_df[["text", "label"]], preserve_index=False)
     val_ds = Dataset.from_pandas(val_df[["text", "label"]], preserve_index=False)
-    train_ds = train_ds.map(lambda x: encode_example(x, tokenizer), remove_columns=train_ds.column_names)
-    val_ds = val_ds.map(lambda x: encode_example(x, tokenizer), remove_columns=val_ds.column_names)
+    encode = lambda example: encode_example(example, tokenizer, config.generation.max_length)
+    train_ds = train_ds.map(encode, remove_columns=train_ds.column_names)
+    val_ds = val_ds.map(encode, remove_columns=val_ds.column_names)
 
     # Compatibilidade entre versões do transformers: algumas usam
     # evaluation_strategy, outras aceitam eval_strategy.
@@ -259,11 +220,11 @@ def train_lora(
     )
     args_kwargs = dict(
         output_dir=str(output_dir / "trainer_checkpoints"),
-        num_train_epochs=NUM_EPOCHS,
-        learning_rate=LR,
-        per_device_train_batch_size=BATCH_SIZE,
-        per_device_eval_batch_size=BATCH_SIZE,
-        gradient_accumulation_steps=GRAD_ACCUM,
+        num_train_epochs=config.training.num_epochs,
+        learning_rate=config.training.learning_rate,
+        per_device_train_batch_size=config.training.batch_size,
+        per_device_eval_batch_size=config.training.batch_size,
+        gradient_accumulation_steps=config.training.gradient_accumulation_steps,
         save_strategy="epoch",
         logging_steps=25,
         fp16=torch.cuda.is_available(),
@@ -298,14 +259,20 @@ def train_lora(
 # =========================
 def run_eval_causal_sliding(
     model: Model,
-    test_df: pd.DataFrame,
+    corpus: pd.DataFrame,
     output_dir: Path,
+    config: ExperimentConfig,
 ) -> pd.DataFrame:
-    corpus = test_df[["text"]].copy().reset_index(drop=True)
-    if EVAL_CAUSAL_MAX_ROWS > 0:
-        corpus = corpus.head(EVAL_CAUSAL_MAX_ROWS)
+    corpus = corpus.copy().reset_index(drop=True)
+    if config.causal.max_rows > 0:
+        corpus = corpus.head(config.causal.max_rows)
 
-    results = eval_causal_sliding(model=model, corpus=corpus)
+    results = eval_causal_sliding(
+        model=model,
+        corpus=corpus,
+        stride=config.causal.stride,
+        max_len=config.causal.max_length,
+    )
     results_df = pd.DataFrame(results)
     results_df.to_csv(output_dir / "hatebr_eval_causal_sliding.csv", index=False)
 
@@ -322,70 +289,3 @@ def run_eval_causal_sliding(
 
 def safe_model_name(model_name: str) -> str:
     return re.sub(r"[^A-Za-z0-9._-]+", "__", model_name).strip("_")
-
-
-def prepare_splits(output_dir: Path):
-    print("1) Carregando HateBR e criando split único para todos os modelos...")
-    df = dataset_to_df(DATASET_NAME)
-    train_df, val_df, test_df = make_stratified_splits(
-        df, test_size=TEST_SIZE, validation_size=0.1, seed=SEED
-    )
-    save_splits((train_df, val_df, test_df), output_dir / "splits")
-    return train_df, val_df, test_df
-
-
-def run_model(
-    model_name: str,
-    train_df: pd.DataFrame,
-    val_df: pd.DataFrame,
-    test_df: pd.DataFrame,
-) -> dict[str, Any]:
-    model_dir = OUTPUT_DIR / safe_model_name(model_name)
-    model_dir.mkdir(parents=True, exist_ok=True)
-    save_json({"model_name": model_name}, model_dir / "config.json")
-
-    print(f"\n{'=' * 80}\nMODELO: {model_name}\n{'=' * 80}")
-    base_model = Model(model_name, USE_4BIT)
-
-    print("2) Avaliação zero-shot...")
-    zero = evaluate_classification(
-        base_model, test_df, model_dir / "hatebr_zero_shot"
-    )
-
-    print("3) Fine-tuning LoRA...")
-    adapter_dir = train_lora(base_model, train_df, val_df, model_dir)
-
-    # O objeto usado no treino não é mantido para a avaliação. O adapter é
-    # recarregado pelo mesmo caminho usado em produção/inferência.
-    del base_model
-    clean_memory()
-
-    lora_model = LoRA_Model(model_name, USE_4BIT, str(adapter_dir))
-
-    print("4) Avaliação pós fine-tuning...")
-    ft = evaluate_classification(
-        lora_model, test_df, model_dir / "hatebr_finetuned"
-    )
-
-    print("5) Perplexidade/BPB pós fine-tuning...")
-    ppl_df = run_eval_causal_sliding(lora_model, test_df, model_dir)
-    ppl = {
-        "mean_ppl": float(ppl_df["ppl"].replace([np.inf, -np.inf], np.nan).mean()),
-        "median_ppl": float(ppl_df["ppl"].replace([np.inf, -np.inf], np.nan).median()),
-        "mean_bpb": float(ppl_df["bpb"].replace([np.inf, -np.inf], np.nan).mean()),
-    }
-
-    result = {
-        "model": model_name,
-        "status": "ok",
-        "adapter_dir": str(adapter_dir),
-        "zero_shot_accuracy": zero["accuracy"],
-        "zero_shot_macro_f1": zero["macro_f1"],
-        "finetuned_accuracy": ft["accuracy"],
-        "finetuned_macro_f1": ft["macro_f1"],
-        **ppl,
-    }
-
-    del lora_model
-    clean_memory()
-    return result

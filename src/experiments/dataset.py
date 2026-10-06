@@ -30,6 +30,30 @@ def load_hatebr(dataset_name: str = "franciellevargas/HateBR") -> pd.DataFrame:
     return load_classification_dataset(dataset_name)
 
 
+def load_causal_corpus(
+    parquet_path: Path,
+    *,
+    text_column: str = "text",
+    scenarios: tuple[str, ...] | None = None,
+) -> pd.DataFrame:
+    """Lê e valida o corpus Parquet usado para perplexidade e BPB."""
+    if not parquet_path.is_file():
+        raise FileNotFoundError(f"Corpus Parquet não encontrado: {parquet_path}")
+    dataframe = pd.read_parquet(parquet_path)
+    if text_column not in dataframe.columns:
+        raise ValueError(f"Coluna de texto {text_column!r} não encontrada em {parquet_path}. Colunas: {list(dataframe.columns)}")
+    if scenarios is not None:
+        if "scenario" not in dataframe.columns:
+            raise ValueError("O filtro de cenários requer uma coluna 'scenario' no corpus.")
+        dataframe = dataframe[dataframe["scenario"].isin(scenarios)]
+    dataframe = dataframe.dropna(subset=[text_column]).copy()
+    dataframe[text_column] = dataframe[text_column].astype(str).str.strip()
+    dataframe = dataframe[dataframe[text_column].ne("")]
+    if text_column != "text":
+        dataframe = dataframe.rename(columns={text_column: "text"})
+    return dataframe.reset_index(drop=True)
+
+
 def make_stratified_splits(dataframe: pd.DataFrame, *, test_size: float, validation_size: float, seed: int) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """Cria splits treino/validação/teste estratificados e com índices limpos."""
     train, test = train_test_split(dataframe, test_size=test_size, random_state=seed, stratify=dataframe["label"])
