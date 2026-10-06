@@ -1,0 +1,16 @@
+{
+  "results": [
+    {
+      "model": "../../../models/models/google/gemma-4-12B",
+      "status": "ok",
+      "adapter_dir": "outputs_hatebr_lora/..__..__..__models__models__google__gemma-4-12B/hatebr_lora_adapter",
+      "zero_shot_accuracy": 0.5014285714285714,
+      "zero_shot_macro_f1": 0.3402361430685636,
+      "finetuned_accuracy": 0.8442857142857143,
+      "finetuned_macro_f1": 0.8442777692739425,
+      "mean_ppl": 4161510348261.1455,
+      "median_ppl": 84773214876.444,
+      "mean_bpb": 9.64908773766762
+    }
+  ]
+}

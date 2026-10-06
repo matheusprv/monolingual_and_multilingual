@@ -15,7 +15,7 @@ Instalação sugerida:
 pip install -U torch transformers datasets accelerate peft bitsandbytes scikit-learn pandas tqdm
 
 O carregamento do modelo e a liberação de memória são centralizados em
-`model.py` e `utils.py`. Este arquivo fica responsável pelo pipeline do HateBR.
+`model.py` e `utils.py`. A orquestração é feita por `pipeline.py`.
 """
 
 from __future__ import annotations
@@ -34,17 +34,16 @@ import torch
 from datasets import Dataset
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from sklearn.metrics import accuracy_score, classification_report, f1_score, precision_recall_fscore_support
-from sklearn.model_selection import train_test_split
 from torch.nn.utils.rnn import pad_sequence
 from tqdm.auto import tqdm
 from transformers import (
     Trainer,
     TrainingArguments,
-    set_seed,
 )
 import inspect
 
 from .causal_sliding import eval_causal_sliding
+from .dataset import load_hatebr, make_stratified_splits, save_splits
 from .model import LoRA_Model, Model
 from .utils import clean_memory
 
@@ -112,20 +111,11 @@ def normalize_prediction(generated: str) -> int:
 
 
 def dataset_to_df(dataset_name: str) -> pd.DataFrame:
-    from datasets import load_dataset
+    """Compatibilidade para usuários que importavam esta função.
 
-    ds = load_dataset(dataset_name, split="train")
-    df = ds.to_pandas()
-
-    if "comentario" not in df.columns or "label_final" not in df.columns:
-        raise ValueError(
-            f"Esperava colunas 'comentario' e 'label_final'. Colunas encontradas: {list(df.columns)}"
-        )
-
-    df = df[["comentario", "label_final"]].rename(columns={"comentario": "text", "label_final": "label"})
-    df["text"] = df["text"].astype(str)
-    df["label"] = df["label"].astype(int)
-    return df.dropna(subset=["text", "label"]).reset_index(drop=True)
+    A leitura e a normalização agora pertencem a ``dataset.py``.
+    """
+    return load_hatebr(dataset_name)
 
 
 def infer_lora_targets(model) -> list[str]:
@@ -337,21 +327,10 @@ def safe_model_name(model_name: str) -> str:
 def prepare_splits(output_dir: Path):
     print("1) Carregando HateBR e criando split único para todos os modelos...")
     df = dataset_to_df(DATASET_NAME)
-    train_df, test_df = train_test_split(
-        df, test_size=TEST_SIZE, random_state=SEED, stratify=df["label"]
+    train_df, val_df, test_df = make_stratified_splits(
+        df, test_size=TEST_SIZE, validation_size=0.1, seed=SEED
     )
-    train_df, val_df = train_test_split(
-        train_df, test_size=0.1, random_state=SEED, stratify=train_df["label"]
-    )
-    train_df = train_df.reset_index(drop=True)
-    val_df = val_df.reset_index(drop=True)
-    test_df = test_df.reset_index(drop=True)
-
-    splits_dir = output_dir / "splits"
-    splits_dir.mkdir(parents=True, exist_ok=True)
-    train_df.to_csv(splits_dir / "hatebr_train.csv", index=False)
-    val_df.to_csv(splits_dir / "hatebr_val.csv", index=False)
-    test_df.to_csv(splits_dir / "hatebr_test.csv", index=False)
+    save_splits((train_df, val_df, test_df), output_dir / "splits")
     return train_df, val_df, test_df
 
 
@@ -410,36 +389,3 @@ def run_model(
     del lora_model
     clean_memory()
     return result
-
-
-def main() -> None:
-    set_seed(SEED)
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    train_df, val_df, test_df = prepare_splits(OUTPUT_DIR)
-
-    results = []
-    for i, model_name in enumerate(MODELS, 1):
-        print(f"\n[{i}/{len(MODELS)}] Iniciando {model_name}")
-        try:
-            results.append(run_model(model_name, train_df, val_df, test_df))
-        except Exception as e:
-            clean_memory()
-            result = {
-                "model": model_name,
-                "status": "error",
-                "error": f"{type(e).__name__}: {e}",
-            }
-            results.append(result)
-            save_json(result, OUTPUT_DIR / safe_model_name(model_name) / "error.json")
-            print(f"ERRO em {model_name}: {result['error']}")
-
-        pd.DataFrame(results).to_csv(OUTPUT_DIR / "models_summary.csv", index=False)
-        save_json({"results": results}, OUTPUT_DIR / "models_summary.json")
-
-    print("\nConcluído.")
-    print(pd.DataFrame(results).to_string(index=False))
-    print("Resultados em:", OUTPUT_DIR.resolve())
-
-
-if __name__ == "__main__":
-    main()
