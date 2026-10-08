@@ -1,2 +1,7 @@
-model,status,adapter_dir,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action,result_file
-../models/models/22h/open-cabrita3b,ok,outputs_hatebr_lora/models/..__models__models__22h__open-cabrita3b/hatebr_lora_adapter,0.5714285714285714,0.5253979876874678,0.9142857142857143,0.9140323729521282,all,outputs_hatebr_lora/results/..__models__models__22h__open-cabrita3b/pipeline_all.csv
+model,status,training_path,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action,result_file
+Manaca,ok,outputs_hatebr_lora/models/Manaca/hatebr_lora_adapter,0.5285714285714286,0.40981696661250266,0.9292857142857143,0.9292853895757685,all,outputs_hatebr_lora/results/Manaca/pipeline_all.csv
+Tucano,ok,outputs_hatebr_lora/models/Tucano/hatebr_lora_adapter,0.5221428571428571,0.4159358589565544,0.9342857142857143,0.9342851778381864,all,outputs_hatebr_lora/results/Tucano/pipeline_all.csv
+Sabia,ok,outputs_hatebr_lora/models/Sabia/hatebr_lora_adapter,0.575,0.5421504637581587,0.9371428571428572,0.9371324647543777,all,outputs_hatebr_lora/results/Sabia/pipeline_all.csv
+Gemma4,ok,outputs_hatebr_lora/models/Gemma4/hatebr_lora_adapter,0.5014285714285714,0.3402361430685636,0.9407142857142857,0.9407118355401423,all,outputs_hatebr_lora/results/Gemma4/pipeline_all.csv
+Qwen3.5,ok,outputs_hatebr_lora/models/Qwen3.5/hatebr_lora_adapter,0.8421428571428572,0.8407485128721423,0.9414285714285714,0.941426658829676,all,outputs_hatebr_lora/results/Qwen3.5/pipeline_all.csv
+Llama3.1,ok,outputs_hatebr_lora/models/Llama3.1/hatebr_lora_adapter,0.7221428571428572,0.708488050739994,0.9242857142857143,0.924284323589617,all,outputs_hatebr_lora/results/Llama3.1/pipeline_all.csv

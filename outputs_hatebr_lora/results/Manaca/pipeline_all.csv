@@ -1,2 +1,2 @@
-model,status,adapter_dir,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
-../models/models/menezesbruno/manaca-1b-base,ok,outputs_hatebr_lora/models/..__models__models__menezesbruno__manaca-1b-base/hatebr_lora_adapter,0.5235714285714286,0.3972057666325182,0.9314285714285714,0.9314235331575381,all
+model,status,training_path,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+Manaca,ok,outputs_hatebr_lora/models/Manaca/hatebr_lora_adapter,0.5285714285714286,0.40981696661250266,0.9292857142857143,0.9292853895757685,all

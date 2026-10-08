@@ -1,6 +1,41 @@
 {
   "models": [
-    "../models/models/22h/open-cabrita3b"
+    {
+      "name": "Manaca",
+      "backend": "hf",
+      "path": "../models/models/menezesbruno/manaca-1b-base",
+      "tokenizer": "../models/models/menezesbruno/manaca-1b-base"
+    },
+    {
+      "name": "Tucano",
+      "backend": "hf",
+      "path": "../models/models/TucanoBR/Tucano-2b4",
+      "tokenizer": "../models/models/TucanoBR/Tucano-2b4"
+    },
+    {
+      "name": "Sabia",
+      "backend": "hf",
+      "path": "../models/models/maritaca-ai/sabia-7b",
+      "tokenizer": "../models/models/maritaca-ai/sabia-7b"
+    },
+    {
+      "name": "Gemma4",
+      "backend": "hf",
+      "path": "../models/models/google/gemma-4-12B",
+      "tokenizer": "../models/models/google/gemma-4-12B"
+    },
+    {
+      "name": "Qwen3.5",
+      "backend": "hf",
+      "path": "../models/models/Qwen/Qwen3.5-9B-Base",
+      "tokenizer": "../models/models/Qwen/Qwen3.5-9B-Base"
+    },
+    {
+      "name": "Llama3.1",
+      "backend": "hf",
+      "path": "../models/models/meta-llama/Meta-Llama-3.1-8B",
+      "tokenizer": "../models/models/meta-llama/Meta-Llama-3.1-8B"
+    }
   ],
   "output_dir": "outputs_hatebr_lora",
   "seed": 42,
@@ -10,7 +45,7 @@
     "validation_size": 0.1
   },
   "model": {
-    "use_4bit": true
+    "use_4bit": false
   },
   "generation": {
     "max_length": 512,

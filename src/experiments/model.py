@@ -7,6 +7,7 @@ diretamente de ``transformers``. Isso permite usar checkpoints Candeia
 
 from __future__ import annotations
 
+from collections.abc import Mapping
 from contextlib import nullcontext
 from pathlib import Path
 from typing import Any
@@ -286,10 +287,7 @@ class Model:
             return float(outputs.loss.item() * num_loss_tokens), num_loss_tokens
 
         with self._native_autocast():
-            outputs = self.model(input_ids)
-            logits = outputs[0] if isinstance(outputs, tuple) else outputs
-            if hasattr(logits, "logits"):
-                logits = logits.logits
+            logits = self._native_forward_logits(input_ids)
             loss = F.cross_entropy(
                 logits[:, :-1, :].float().reshape(-1, logits.shape[-1]),
                 labels[:, 1:].reshape(-1),
@@ -303,16 +301,54 @@ class Model:
         if self.backend == "hf":
             raise ValueError("native_causal_loss é exclusivo dos backends Candeia.")
         with self._native_autocast():
-            outputs = self.model(input_ids)
-            logits = outputs[0] if isinstance(outputs, tuple) else outputs
-            if hasattr(logits, "logits"):
-                logits = logits.logits
+            logits = self._native_forward_logits(input_ids)
             return F.cross_entropy(
                 logits[:, :-1, :].float().reshape(-1, logits.shape[-1]),
                 labels[:, 1:].reshape(-1),
                 ignore_index=-100,
                 reduction="mean",
             )
+
+    def _native_forward_logits(self, input_ids: torch.Tensor) -> torch.Tensor:
+        """Executa o forward nativo e normaliza os formatos de saída Candeia.
+
+        O kernel de treino do xLSTM processa blocos de 16 tokens. Padding é
+        aplicado apenas à direita e os logits correspondentes são descartados;
+        como o modelo é causal, isso não altera as predições dos tokens reais.
+        """
+        original_length = input_ids.size(1)
+        model_input_ids = input_ids
+        if self.backend == "xlstm":
+            extra_tokens = (-original_length) % 16
+            if extra_tokens:
+                padding = torch.full(
+                    (input_ids.size(0), extra_tokens),
+                    self.pad_token_id,
+                    dtype=input_ids.dtype,
+                    device=input_ids.device,
+                )
+                model_input_ids = torch.cat((input_ids, padding), dim=1)
+
+        outputs = self.model(model_input_ids)
+        if hasattr(outputs, "logits"):
+            logits = outputs.logits
+        elif isinstance(outputs, Mapping):
+            if "logits" not in outputs:
+                raise ValueError(
+                    "O forward Candeia retornou um mapa sem a chave 'logits': "
+                    f"{list(outputs.keys())}."
+                )
+            logits = outputs["logits"]
+        elif isinstance(outputs, (tuple, list)):
+            logits = outputs[0]
+        else:
+            logits = outputs
+        if not isinstance(logits, torch.Tensor):
+            raise TypeError(
+                "Não foi possível obter um tensor de logits do forward Candeia; "
+                f"recebi {type(logits).__name__}."
+            )
+        return logits[:, :original_length, :]
 
     def _native_autocast(self):
         if self._native_device is not None and self._native_device.type == "cuda":

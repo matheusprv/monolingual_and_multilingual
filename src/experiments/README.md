@@ -85,9 +85,10 @@ models:
     tokenizer: /media/data/matheusvieira/candeia-transformer-350M/tokenizer.model
 ```
 
-Both native backends support `causal` (PPL/BPB) and `predict` (HateBR
-zero-shot). They require the package that exposes `xlstm_ptbr` to be installed
-in the environment. Their `model.pt` format is not compatible with PEFT, so
-`train`, `evaluate`, and `all` remain exclusive to the `hf` backend. If the
-context size is not exposed by a particular Candeia release, set
-`causal.max_length` explicitly.
+Both native backends support `causal`, `predict`, `train`, `evaluate`, and
+`all`. Native training performs full fine-tuning (not LoRA) and writes the
+best complete state dictionary to
+`output_dir/models/<name>/hatebr_full_finetuned.pt`; `evaluate` reloads that
+file automatically. They require the package that exposes `xlstm_ptbr` to be
+installed in the environment. If the context size is not exposed by a
+particular Candeia release, set `causal.max_length` explicitly.

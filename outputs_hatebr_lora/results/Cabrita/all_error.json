@@ -1,0 +1,6 @@
+{
+  "model": "Cabrita",
+  "action": "all",
+  "status": "error",
+  "error": "OSError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': '../../models/models/22h/open-cabrita3b'. Use `repo_type` argument if needed."
+}

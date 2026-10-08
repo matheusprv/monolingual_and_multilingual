@@ -1,0 +1,2 @@
+model,status,training_path,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+Sabia,ok,outputs_hatebr_lora/models/Sabia/hatebr_lora_adapter,0.575,0.5421504637581587,0.9371428571428572,0.9371324647543777,all

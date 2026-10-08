@@ -1,15 +1,70 @@
 {
   "results": [
     {
-      "model": "../models/models/22h/open-cabrita3b",
+      "model": "Manaca",
       "status": "ok",
-      "adapter_dir": "outputs_hatebr_lora/models/..__models__models__22h__open-cabrita3b/hatebr_lora_adapter",
-      "zero_shot_accuracy": 0.5714285714285714,
-      "zero_shot_macro_f1": 0.5253979876874678,
-      "finetuned_accuracy": 0.9142857142857143,
-      "finetuned_macro_f1": 0.9140323729521282,
+      "training_path": "outputs_hatebr_lora/models/Manaca/hatebr_lora_adapter",
+      "zero_shot_accuracy": 0.5285714285714286,
+      "zero_shot_macro_f1": 0.40981696661250266,
+      "finetuned_accuracy": 0.9292857142857143,
+      "finetuned_macro_f1": 0.9292853895757685,
       "action": "all",
-      "result_file": "outputs_hatebr_lora/results/..__models__models__22h__open-cabrita3b/pipeline_all.csv"
+      "result_file": "outputs_hatebr_lora/results/Manaca/pipeline_all.csv"
+    },
+    {
+      "model": "Tucano",
+      "status": "ok",
+      "training_path": "outputs_hatebr_lora/models/Tucano/hatebr_lora_adapter",
+      "zero_shot_accuracy": 0.5221428571428571,
+      "zero_shot_macro_f1": 0.4159358589565544,
+      "finetuned_accuracy": 0.9342857142857143,
+      "finetuned_macro_f1": 0.9342851778381864,
+      "action": "all",
+      "result_file": "outputs_hatebr_lora/results/Tucano/pipeline_all.csv"
+    },
+    {
+      "model": "Sabia",
+      "status": "ok",
+      "training_path": "outputs_hatebr_lora/models/Sabia/hatebr_lora_adapter",
+      "zero_shot_accuracy": 0.575,
+      "zero_shot_macro_f1": 0.5421504637581587,
+      "finetuned_accuracy": 0.9371428571428572,
+      "finetuned_macro_f1": 0.9371324647543777,
+      "action": "all",
+      "result_file": "outputs_hatebr_lora/results/Sabia/pipeline_all.csv"
+    },
+    {
+      "model": "Gemma4",
+      "status": "ok",
+      "training_path": "outputs_hatebr_lora/models/Gemma4/hatebr_lora_adapter",
+      "zero_shot_accuracy": 0.5014285714285714,
+      "zero_shot_macro_f1": 0.3402361430685636,
+      "finetuned_accuracy": 0.9407142857142857,
+      "finetuned_macro_f1": 0.9407118355401423,
+      "action": "all",
+      "result_file": "outputs_hatebr_lora/results/Gemma4/pipeline_all.csv"
+    },
+    {
+      "model": "Qwen3.5",
+      "status": "ok",
+      "training_path": "outputs_hatebr_lora/models/Qwen3.5/hatebr_lora_adapter",
+      "zero_shot_accuracy": 0.8421428571428572,
+      "zero_shot_macro_f1": 0.8407485128721423,
+      "finetuned_accuracy": 0.9414285714285714,
+      "finetuned_macro_f1": 0.941426658829676,
+      "action": "all",
+      "result_file": "outputs_hatebr_lora/results/Qwen3.5/pipeline_all.csv"
+    },
+    {
+      "model": "Llama3.1",
+      "status": "ok",
+      "training_path": "outputs_hatebr_lora/models/Llama3.1/hatebr_lora_adapter",
+      "zero_shot_accuracy": 0.7221428571428572,
+      "zero_shot_macro_f1": 0.708488050739994,
+      "finetuned_accuracy": 0.9242857142857143,
+      "finetuned_macro_f1": 0.924284323589617,
+      "action": "all",
+      "result_file": "outputs_hatebr_lora/results/Llama3.1/pipeline_all.csv"
     }
   ]
 }

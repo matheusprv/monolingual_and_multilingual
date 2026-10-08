@@ -1,0 +1,2 @@
+model,status,training_path,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+Qwen3.5,ok,outputs_hatebr_lora/models/Qwen3.5/hatebr_lora_adapter,0.8421428571428572,0.8407485128721423,0.9414285714285714,0.941426658829676,all

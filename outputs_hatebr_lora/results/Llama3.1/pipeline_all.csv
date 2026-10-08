@@ -1,0 +1,2 @@
+model,status,training_path,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+Llama3.1,ok,outputs_hatebr_lora/models/Llama3.1/hatebr_lora_adapter,0.7221428571428572,0.708488050739994,0.9242857142857143,0.924284323589617,all

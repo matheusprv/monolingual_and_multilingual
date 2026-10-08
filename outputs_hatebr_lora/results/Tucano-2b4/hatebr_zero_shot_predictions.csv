@@ -1,6 +1,6 @@
 text,label,prediction,label_name,prediction_name
 "Volta meu Presidente Bolsonaro, que saudades 🙏🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷",0,0,não ofensivo,não ofensivo
-"Esse deputado racista é um verme, verme este que, quando amassado com os pés ele fede. Tu, deputado, é tão pequeno, que se alguém cuspir no chão perto de você é bem capaz de mata-lo afogado.",1,0,ofensivo,não ofensivo
+"Esse deputado racista é um verme, verme este que, quando amassado com os pés ele fede. Tu, deputado, é tão pequeno, que se alguém cuspir no chão perto de você é bem capaz de mata-lo afogado.",1,1,ofensivo,ofensivo
 Foi um desrespeito aos policiais. Policiais são heróis. Respeitem quem luta contra o crime. Babdido negro pode? Tenha dor!,0,0,não ofensivo,não ofensivo
 A justiça com Lula vai a jato,0,0,não ofensivo,não ofensivo
 Pegou o virus do molusc a Pepa ta doidaaaaaaa,1,0,ofensivo,não ofensivo
@@ -12,12 +12,12 @@ Luladrão tem que voltar para Prisão em cela.comum NÃO sou obrigada pagar o Li
 @crisflorais orgulho de levar no rabicó ne,1,0,ofensivo,não ofensivo
 Libera o Projeto de Lei do saque aniversário ❗❗❗,0,0,não ofensivo,não ofensivo
 "Enquanto existir essa corja do STF e congresso, Bolsonaro não vonsegue governar.",1,0,ofensivo,não ofensivo
-"Ui, a Micheque-wannabe que defende golpistas chamando democratas de extremistas 😂😂😂😂😂😂😂 não sabe o significado nem de uma coisa nem de outra. Como todo g@d0 do pasto minion 👉🏼🐂🤣🤣🤣",1,0,ofensivo,não ofensivo
+"Ui, a Micheque-wannabe que defende golpistas chamando democratas de extremistas 😂😂😂😂😂😂😂 não sabe o significado nem de uma coisa nem de outra. Como todo g@d0 do pasto minion 👉🏼🐂🤣🤣🤣",1,1,ofensivo,ofensivo
 Ministra do meu coração ❤️🇧🇷,0,0,não ofensivo,não ofensivo
 Absurdo chamar essa Maria Ninguém de “pirralha”. Não se deve elogiar e dar mídia a um papagaio ambulante 🦜,1,0,ofensivo,não ofensivo
 "Que homens lindos 😍😍 maravilhosos, inteligentes, queridos!",0,0,não ofensivo,não ofensivo
 Parabéns e OBRIGADO!,0,0,não ofensivo,não ofensivo
-A pirralha acho que nem parou de mijar na cama ainda kkkkkk,1,0,ofensivo,não ofensivo
+A pirralha acho que nem parou de mijar na cama ainda kkkkkk,1,1,ofensivo,ofensivo
 Vou assistir já. Duas pessoas que gosto muito.,0,0,não ofensivo,não ofensivo
 Eu considero tão desnecessário esse concurso! Mas representatividade foi importante!,0,0,não ofensivo,não ofensivo
 "Que beleza de governo para os trabalhadores!! Era isso o que vocês da imbecil direita, que também são trabalhadores queriam?",1,0,ofensivo,não ofensivo
@@ -26,7 +26,7 @@ Só esse Pernambucano no governo. .....tem igual não.,0,0,não ofensivo,não of
 Emocionante e impactante!!! Não tem o que comentar... Sim refletir cada ação!!!,0,0,não ofensivo,não ofensivo
 Bandidagem pura,1,0,ofensivo,não ofensivo
 Haddad quero vê a faixa presidencial no seu peito,0,0,não ofensivo,não ofensivo
-"""Vcs que fazem parte dessa massa"" 😞",0,0,não ofensivo,não ofensivo
+"""Vcs que fazem parte dessa massa"" 😞",0,1,não ofensivo,ofensivo
 🙌🏻Essas mãos maravilhosa.,0,0,não ofensivo,não ofensivo
 Deus é contigo contra as invejas Deus é maior,0,0,não ofensivo,não ofensivo
 👏👏👏👏👏👏👏👏👏 bravissímo!!!!!,0,0,não ofensivo,não ofensivo
@@ -51,18 +51,18 @@ Esses aí dorme todo dia no colo do capeta! Jesus nao tem nada com essa corja na
 VIVA Á DEMOCRACIA,0,0,não ofensivo,não ofensivo
 Eu acredito na educação❤️❤️,0,0,não ofensivo,não ofensivo
 Bolsolixo ouviu oq esse ser falou? Acho q não ele tá muito ocupado no Twitter postando merda !,1,0,ofensivo,não ofensivo
-A Globo e sua trupe de apresentadores não cansam de passar recibo de idiotas desonestos da desinformação. Aí tomam invertida ao vivo!🤣🤣🤣🤣,1,0,ofensivo,não ofensivo
-"Toma Otarios que votaram nele olha que Elle so fode os pobres os Rico's tem tudo sabe me dizer Qual foi o ato dele contra os Rico's ,?",1,0,ofensivo,não ofensivo
+A Globo e sua trupe de apresentadores não cansam de passar recibo de idiotas desonestos da desinformação. Aí tomam invertida ao vivo!🤣🤣🤣🤣,1,1,ofensivo,ofensivo
+"Toma Otarios que votaram nele olha que Elle so fode os pobres os Rico's tem tudo sabe me dizer Qual foi o ato dele contra os Rico's ,?",1,1,ofensivo,ofensivo
 A natureza dessa camarada é ser preconceituoso impressionante como o faz à todo tempo.,0,0,não ofensivo,não ofensivo
 "Dupla personalidade... ou desequilibrada mesmo... 3, 2, 1... hauahuahaua",1,0,ofensivo,não ofensivo
 "Que isso glr, vcs n sabem conversar sem ofender?",0,0,não ofensivo,não ofensivo
 Que consciência tem essa garota!,0,0,não ofensivo,não ofensivo
-"Esses filhos foram criados dessa maneira, falando o que pensam. Esquecem que estão no comando de uma grande nação. Precisam todos eles pensar melhor antes de falar.",0,0,não ofensivo,não ofensivo
+"Esses filhos foram criados dessa maneira, falando o que pensam. Esquecem que estão no comando de uma grande nação. Precisam todos eles pensar melhor antes de falar.",0,1,não ofensivo,ofensivo
 Professor para presidente 👏👏👏,0,0,não ofensivo,não ofensivo
 Como confiar em uma emissora que de todas as formas quer acabar com o governo e consequentemente com o país. Triste. Eles se perdem na própria mentira.,1,0,ofensivo,não ofensivo
 "O grupo é grande, com certeza tem mais políticos no meio.",1,0,ofensivo,não ofensivo
 Estão querendo prender Lula de novo.,0,0,não ofensivo,não ofensivo
-Mais fake que nota de 3 reais🤦🏻‍♂️,1,0,ofensivo,não ofensivo
+Mais fake que nota de 3 reais🤦🏻‍♂️,1,1,ofensivo,ofensivo
 Denúncia esse sujeito escroto,1,0,ofensivo,não ofensivo
 Que top do lado do Paulo Freire 😍,0,0,não ofensivo,não ofensivo
 Um moleque este filho do Bolsonaro @bolsonarosp sem cárter e moral pra falar do nosso país,1,0,ofensivo,não ofensivo
@@ -82,7 +82,7 @@ Fachin e Barroso ainda se salvam!,0,0,não ofensivo,não ofensivo
 "@manueladavila mas pelo menos a cada ano, pq eu não resisto e assisto sempre, os organizadores vêm aumentando os momentos de fala e expressão de conquistas e personalidade das candidatas além da beleza... Ainda são muitas falas de efeito, c/ conteúdo ""midiático"", mas algumas estão muito sensatas e empoderadoras APESAR do contexto ""concurso de beleza""...",0,0,não ofensivo,não ofensivo
 "Mas o q esperar da Globo lixo, e seus funcionários pagos pra lerem o script ?? Cabecinhas vazias..... 🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷",1,0,ofensivo,não ofensivo
 VÃO TRABALHAR VAGABUNDOS,1,0,ofensivo,não ofensivo
-E graças as lutas de muitas o Miss Universo tá deixando de ser um concurso somente de beleza.,0,0,não ofensivo,não ofensivo
+E graças as lutas de muitas o Miss Universo tá deixando de ser um concurso somente de beleza.,0,1,não ofensivo,ofensivo
 Ate quando SENHOR vamos ter que Suportar noticias sobre (recursos) e mais (recursos) deste Criminoso IMORAL e COVARDE? NÃO SUPORTO MAIS VER OU OUVIR QUALQUER TIPO DE ASSUNTO DESSE TIPO.,1,0,ofensivo,não ofensivo
 Ele rouba tbm? bandidos,1,0,ofensivo,não ofensivo
 "Pois é, nojenta!!",1,0,ofensivo,não ofensivo
@@ -112,12 +112,12 @@ Vamos torcer pra isso,0,0,não ofensivo,não ofensivo
 O grupo pra fazer você ir pra o iferno,1,0,ofensivo,não ofensivo
 Bozo n faz o dele de presidente q se meter no país dos outros.,1,0,ofensivo,não ofensivo
 Quem rouba o pagador de impostos são vocês que desviaram dinheiro pra todo canto esquerda raça maldita,1,0,ofensivo,não ofensivo
-Cabra safado. vai se fuder.,1,0,ofensivo,não ofensivo
+Cabra safado. vai se fuder.,1,1,ofensivo,ofensivo
 Kkkkkkkkkkkkk piada e mais piada pqp,1,0,ofensivo,não ofensivo
 "Cooperação internacional, desenvolvimento, respeito às leis brasileiras, força e paz na luta, Ministro @fernandohaddadoficial",0,0,não ofensivo,não ofensivo
 Mto impactante e emocionante.,0,0,não ofensivo,não ofensivo
 "Sou seu fã mas vamos postar os FEITOS e CONQUISTAS. Os opositores, sem combustível, cansam.",0,0,não ofensivo,não ofensivo
-É vergonha alheia atrás de vergonha alheia! Ainda bem que existem guerreiros com disposição suficiente para assistirem essas aberrações e nos manterem informados!,1,0,ofensivo,não ofensivo
+É vergonha alheia atrás de vergonha alheia! Ainda bem que existem guerreiros com disposição suficiente para assistirem essas aberrações e nos manterem informados!,1,1,ofensivo,ofensivo
 Caramba 😱 quem vai parar esse milionário debochado e tarado .,1,0,ofensivo,não ofensivo
 Que podre!!!!!@joicehasselmannoficial cada dia se afunda mais... sai enquanto é tempo. Para que está horrível.,1,0,ofensivo,não ofensivo
 "Vai se confirmando o que nós já sabíamos, presidente Lula e sua equipe fazendo o melhor governo da história.",0,0,não ofensivo,não ofensivo
@@ -137,11 +137,11 @@ Uma verdadeira absoluta 👏👏👏👏,0,0,não ofensivo,não ofensivo
 "Merecido, linda, linda 👏🏻👏",0,0,não ofensivo,não ofensivo
 "Porque Bachelet faz parte da esquerda Hipócrita da América latina. Pergunte se ela tem pena de Cuba, Nicarágua ou da Venezuela. #MicheleBacheletHipócrita",1,0,ofensivo,não ofensivo
 Dupla imbatível nas argumentações inteligentes contra esse governo desgovernado que estamos pagando....aff,0,0,não ofensivo,não ofensivo
-Quando acaba o dinheiro.. muitas vezes acaba o amor tb.. sobrando apenas a hipocrisia..,1,0,ofensivo,não ofensivo
+Quando acaba o dinheiro.. muitas vezes acaba o amor tb.. sobrando apenas a hipocrisia..,1,1,ofensivo,ofensivo
 Não sofre não ministra! Segue os passos do mestre.,0,0,não ofensivo,não ofensivo
 Esse é fera presidente!,0,0,não ofensivo,não ofensivo
 Cadeia nesse vagabundo verme incitando violência cadê a lei de segurança nacional não funciona???,1,0,ofensivo,não ofensivo
-Kkkkkkk condenado por caixa 2 pqp nao da uma dentro,1,0,ofensivo,não ofensivo
+Kkkkkkk condenado por caixa 2 pqp nao da uma dentro,1,1,ofensivo,ofensivo
 Só picaretas!!,1,0,ofensivo,não ofensivo
 Comemorando a invasão Nazista na Polônia? Hum...,0,0,não ofensivo,não ofensivo
 "Lindos, parabéns👏👏👏👏 amo❤️",0,0,não ofensivo,não ofensivo
@@ -156,7 +156,7 @@ Vixi... ta nisso ainda??? Bora gente... é preciso girar a engrenagem... muita g
 "DEPUTADO NAO E O GABINETE do ÓDIO , MAS SIM DE UMA GRANDE JORNALISTA CANAL da LEDA NAGLE ! ENTREVISTA . PARABÉNS ! 👏👏👏👏👏💛👏👏🇧🇷👮‍♂️🇧🇷💚👮‍♂️💛👍👍👍👍🤝👮‍♂️🇧🇷👏👏VAMOS ASSISTIR ! TODOS ! 😂😂😂😂😂❤️😂😂😂😂😂😂😂👮‍♂️😂😂😂🇧🇷NÃO PERCAM !",0,0,não ofensivo,não ofensivo
 Parabéns mulher do Brasil,0,0,não ofensivo,não ofensivo
 "Noh coisa feia duas deputadas do mesmo partido , com essas brigas sem fundamento.",0,0,não ofensivo,não ofensivo
-"PSL , partido de bandido.",1,0,ofensivo,não ofensivo
+"PSL , partido de bandido.",1,1,ofensivo,ofensivo
 "Agradecer a Deus por colocar esses anjos para defender o povo honesto do Brasil, estamos juntos nessa luta, povo unido.Vomos nos unir em oração para que Deus proteja vocês.",0,0,não ofensivo,não ofensivo
 "se falar A ESQUERDA RECLAMA, se não falar A ESQUERDA INVENTA...bora esquecer essa esquerda DUZINFERNOS e trabalhar meu povo!!!",1,0,ofensivo,não ofensivo
 É uma cara de pau mesmo... 😡,1,0,ofensivo,não ofensivo
@@ -169,7 +169,7 @@ São os canalhas de SEMPRE,1,0,ofensivo,não ofensivo
 👏👏esse é o cara,0,0,não ofensivo,não ofensivo
 "Eu quero mais mulheres na política, mas que não sejam iguais a você.",1,0,ofensivo,não ofensivo
 Já era só falta Deus Apertar Reset novamente por que esse mundo aonde existe políticos não dá certo.,0,0,não ofensivo,não ofensivo
-Vc fez inglês no fisk?,0,0,não ofensivo,não ofensivo
+Vc fez inglês no fisk?,0,1,não ofensivo,ofensivo
 "Se tiver que lutar pelo futuro dos meus filhos e a melhoria do meu país , eu volto para as forças armadas sem salário e ajudo a combater a esquerdalha. #lulaterroristanacadeia",1,0,ofensivo,não ofensivo
 Ser mais escroto.,1,0,ofensivo,não ofensivo
 Até que enfim atitudes sérias sendo tomadas👏👏,0,0,não ofensivo,não ofensivo
@@ -181,15 +181,15 @@ O mineiro fala um dito popular muito bem aplicado aos filhos do Presidente: Quem
 Ministra imagino sua dor . Acredite que sua vitória está cada dia mais perto !,0,0,não ofensivo,não ofensivo
 "O AMAZONAS AGONIZA MAIS UMA VEZ, AGORA É QUALIDADE PÉSSIMA DE AR RELACIONADA A FUMAÇA CONSEQUÊNCIA DAS QUEIMADAS PROMOVIDA PELA AÇÃO HUMANA. Os humanos destruindo nosso meio ambiente, os animais que lá habitam e nos sufocando com essa fumaça insuportável",0,0,não ofensivo,não ofensivo
 Absurdo!!! Nojo desse babão tarado.,1,0,ofensivo,não ofensivo
-"Minha neta de 20 anos leu ano passado e me recomendou, ela contou que se emocionou com esse livro! Vou ler também!",0,0,não ofensivo,não ofensivo
+"Minha neta de 20 anos leu ano passado e me recomendou, ela contou que se emocionou com esse livro! Vou ler também!",0,1,não ofensivo,ofensivo
 Onde estão as mulheres???,0,0,não ofensivo,não ofensivo
 Família. É Projeto de Deus na Terra.!!!!!,0,0,não ofensivo,não ofensivo
 Que cara idiota,1,0,ofensivo,não ofensivo
 Impressionante! Me comovi por demais! Excelente!,0,0,não ofensivo,não ofensivo
-"😂😂😂😂😂 cortaram ele na hora kkkk nem deixaram ele continuar explicando, Globolixo",1,0,ofensivo,não ofensivo
+"😂😂😂😂😂 cortaram ele na hora kkkk nem deixaram ele continuar explicando, Globolixo",1,1,ofensivo,ofensivo
 Kkkkk bem afrontoso👏👏👏👏👏👏🙌,1,0,ofensivo,não ofensivo
 "São as melhores escolas, parabéns meu presidente. O BRASIL está precisando de uma reforma em todos os sentidos. Queremos um novo BRASIL..💪🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🛐🛐🛐",0,0,não ofensivo,não ofensivo
-Filhos de uma amada e bem aventurada; incentivando a desordem e o caos... mandar o Adélio botar chumbinho na cachaça que ele toma!,1,0,ofensivo,não ofensivo
+Filhos de uma amada e bem aventurada; incentivando a desordem e o caos... mandar o Adélio botar chumbinho na cachaça que ele toma!,1,1,ofensivo,ofensivo
 Faz parte do patriarcado brasileiro querem o que?? Homens nojentos que já veem meninas como mulheres.,1,0,ofensivo,não ofensivo
 Que lindeza de foto,0,0,não ofensivo,não ofensivo
 "ELA DIZENDO QUE OS CAPITALISTAS LHES ROUBARAM A INFÂNCIA POR CAUSA DO AQUECIMENTO GLOBAL.. SE ELA SOUBESSE QUE LULA, O PT, O PMDB E CABRAL ROUBARAM ESCOLA, MERENDA, HOSPITAIS, REMÉDIOS DE TODAS AS CRIANÇAS BRASILEIRA.. ACHO QUE ELA NEM BOTAVA A CARA NA ONU....",1,0,ofensivo,não ofensivo
@@ -199,7 +199,7 @@ São uns idiotas bandidos . Deviam ser cassados . Ou estão com o Brasil e entã
 O povo merece!,0,0,não ofensivo,não ofensivo
 Ah tá com pena? Devolve o dinheiro do 🇧🇷,1,0,ofensivo,não ofensivo
 "Estaremos sempre com nossa Carla Zambelli,eu e minha família votamos nela e ela não nos decepcionou e ela sempre vai ter nosso apoio,e que Deus te abençoe 🙌🙌🇧🇷🇧🇷🇧🇷",0,0,não ofensivo,não ofensivo
-"Se caducou, deve ser afastado e tratado. Não sabe o que fala.",1,0,ofensivo,não ofensivo
+"Se caducou, deve ser afastado e tratado. Não sabe o que fala.",1,1,ofensivo,ofensivo
 JESUS CRISTO ESTA VOLTANDO,0,0,não ofensivo,não ofensivo
 Ique importa mais? O lucro das industrias ou a saúde da populaçao?,0,0,não ofensivo,não ofensivo
 Muito inteligente!👏👏,0,0,não ofensivo,não ofensivo
@@ -263,7 +263,7 @@ Melhor coisa do mundo gente imparcial 😍,0,0,não ofensivo,não ofensivo
 Quase não liberaram o meu comentário. Como o pessoal de direita consegue furar a bolha e dizer tanta baixaria?,1,0,ofensivo,não ofensivo
 amo mais que maçã <3,0,0,não ofensivo,não ofensivo
 👏👏👏👏👏👏🇧🇷 o Brasil precisa de NÓS ❤️,0,0,não ofensivo,não ofensivo
-"Essas pestes não valem nada, não são brasileiros 😡",1,0,ofensivo,não ofensivo
+"Essas pestes não valem nada, não são brasileiros 😡",1,1,ofensivo,ofensivo
 Dois mmmm farinhas do mesmo saco,1,0,ofensivo,não ofensivo
 Só não está melhor ainda mais por conta do Congresso do STF.,0,0,não ofensivo,não ofensivo
 Vamos em frente! 👏👏👏👏👏👏🇧🇷🙏,0,0,não ofensivo,não ofensivo
@@ -320,7 +320,7 @@ Velho depravado!,1,0,ofensivo,não ofensivo
 "Patrocínio da esquerda internacional, não tem fim a verba.",0,0,não ofensivo,não ofensivo
 #forabolsonaro corrupto canalha,1,0,ofensivo,não ofensivo
 Muito cuidado com EU !!! 🔥 O diabo vem do norte...,1,0,ofensivo,não ofensivo
-Afinal o sítio não é dele kkkkkkkkkkkkk,0,0,não ofensivo,não ofensivo
+Afinal o sítio não é dele kkkkkkkkkkkkk,0,1,não ofensivo,ofensivo
 "Coitada dessa menina, tem que crescer muito ainda. Foi fabricada e agora a exploram",1,0,ofensivo,não ofensivo
 Devia ter tido pena ANTES... bem ANTES 🤬,0,0,não ofensivo,não ofensivo
 "QUEREMOS A VOLTA DE @jairmessiasbolsonaro VOLTA, O BRASIL TE AMA!",0,0,não ofensivo,não ofensivo
@@ -356,14 +356,14 @@ Deus é contigo ministra🙌🙌🙌,0,0,não ofensivo,não ofensivo
 Boa Fachin,0,0,não ofensivo,não ofensivo
 "PARABÉNS PARA O JORNALISMO SERIO, PARAB3NS AL3XANDRE GARCIA!! !PARABÉNS BRASIL!🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷👏🇧🇷👏👏🇧🇷👏🇧🇷🤲🇧🇷🤲🇧🇷🤲🇧🇷🔰🌻🌷🌻🌷🌻👍👍🇧🇷👏🇧🇷👏🇧🇷👏🇧🇷",0,0,não ofensivo,não ofensivo
 "@guilhermeribeiro7735 Vai se instruir um pouco! Caia fora, aqui ñ é lugar para pessoas como vc",1,0,ofensivo,não ofensivo
-"tem gente que acha normal , este velho virou um pedofilo na tv aberta, e tem gente que acha engraçado",1,0,ofensivo,não ofensivo
+"tem gente que acha normal , este velho virou um pedofilo na tv aberta, e tem gente que acha engraçado",1,1,ofensivo,ofensivo
 Esse homem é o demônio,1,0,ofensivo,não ofensivo
 Já estou levantado capeta,1,0,ofensivo,não ofensivo
 "Eu quero ver se o Tramp perder, vai ser melhor ainda.",0,0,não ofensivo,não ofensivo
 BOLSONARO E UM BANDIDO NÃO SEI QUE ESTA FAZENDO ESSES POLITICO QUE NÃO CAÇA ESSE TORTURADOR E CONDENA ELE POR CRIMINOSO DE GUERRA.,1,0,ofensivo,não ofensivo
 Esse Feliciano é um sujo carniceiro!,1,0,ofensivo,não ofensivo
 "Absurdo o que ele tem feito, alguém tem que fazer parar😮😮😮😮😮",1,0,ofensivo,não ofensivo
-"Esses bostas da Globo, tentam a todo momento responsabilizar o atual governo, sobre tudo de ruim que acontece. Chega ser vergonhoso @jornaloglobo @globo_lixo2019 não percebem que o povo acordou e não dá mais créditos as suas falsas matérias.",1,0,ofensivo,não ofensivo
+"Esses bostas da Globo, tentam a todo momento responsabilizar o atual governo, sobre tudo de ruim que acontece. Chega ser vergonhoso @jornaloglobo @globo_lixo2019 não percebem que o povo acordou e não dá mais créditos as suas falsas matérias.",1,1,ofensivo,ofensivo
 Homenagem bem merecida!,0,0,não ofensivo,não ofensivo
 😡😡😡 Gente o que o povo tá esperando pra tirar esse Satanás do poder meu Deus,1,0,ofensivo,não ofensivo
 SÓ A ESQUERDOPATIA NÃO VÊ ISSO...,1,0,ofensivo,não ofensivo
@@ -376,7 +376,7 @@ Tem que pensar melhor antes de falar!!! Porque a esquerda pode falar o que quer 
 "Cada coisa que aparece!!! Internacionarizaram a propina e a corrupção!!! Agora tem pena do Brasil, tem que ter pena dela mesmo, afinal ficou sem os recursos ilícitos!!!",1,0,ofensivo,não ofensivo
 "@vanfernandez.adv Sendo a senhorita, uma agente do Direito. AONDE exatamente, fica O PRINCÍPIO da IMPESSOALIDADE ou FINALIDADE, referido na constituição de 1988 (art. 37, caput)? Dentro da sua capacidade Intelectual, e saber jurídico.",0,0,não ofensivo,não ofensivo
 Esse carniça 💩👿 podre 💩💩 🐍🐭🦑🚓🚓🚓🚓 essa praga tem fome de poder e dinheiro público roubado.,1,0,ofensivo,não ofensivo
-Esse miseravel nunca trabaalhou o tempo que passou como parlamentar so ia fazer baixaria e dormir sem se preocupar sempre no final do mês estava lá seus vencimentos sem fazer por ondem.,1,0,ofensivo,não ofensivo
+Esse miseravel nunca trabaalhou o tempo que passou como parlamentar so ia fazer baixaria e dormir sem se preocupar sempre no final do mês estava lá seus vencimentos sem fazer por ondem.,1,1,ofensivo,ofensivo
 "ESSE VERME ENGANA OS JUMENTOS,E MENTE QUANDO CITA A BOLIVIA,POIS LA,É O MESMO POVO DE BEM QUE NÃO AGUENTAVA MAIS O AMIGUINHO DELE FERRANDO COM A NAÇÃO. MAIS UM MOTIVO PARA O POVO BRASILEIRO E O EXEECITO CRIAREM VERGONHA NA CARA E TOMAR-MOS UMA ATITUDE CONTRA ESSES LIXOS.",1,0,ofensivo,não ofensivo
 LA GRETA QUE LA PARIU,1,0,ofensivo,não ofensivo
 Quem é que vai julgar as fakes news ? Esse é o problema!,0,0,não ofensivo,não ofensivo
@@ -408,7 +408,7 @@ A pertubada do ano!!!,1,0,ofensivo,não ofensivo
 Nojo 🙈🙉🙊sempre assim,1,0,ofensivo,não ofensivo
 Sempre gostei de Carla,0,0,não ofensivo,não ofensivo
 Se fosse meu pai eu ja tinha interditado! Nojento,1,0,ofensivo,não ofensivo
-Já prestaram atenção que a Sra Joice anda postando bastante coisa da ex-futura amiga Janaína? Perdeu a carona do Presidente e do Doria. Será que a da Janaína será a próxima?,0,0,não ofensivo,não ofensivo
+Já prestaram atenção que a Sra Joice anda postando bastante coisa da ex-futura amiga Janaína? Perdeu a carona do Presidente e do Doria. Será que a da Janaína será a próxima?,0,1,não ofensivo,ofensivo
 Quem vai desistir? POVO BRASILEIRO está com quem tem AMOR À PÁTRIA 😍💪💪💪💪🇧🇷🇧🇷🇧🇷🇧🇷,0,0,não ofensivo,não ofensivo
 Esse presidente e um louko,1,0,ofensivo,não ofensivo
 "Quebraram a Placa de Marielle ao Vivo e a Cores, a Televisão Filmou, TODOS Assistiram, NINGUÉM fez Nada e os caras foram eleitos. Agora Isso !!! Realmente, é um Túnel SEM Luz no final 😭😭😭😭😭",0,0,não ofensivo,não ofensivo
@@ -446,7 +446,7 @@ Parabéns querido! Merecido!👏👏👏👏😍,0,0,não ofensivo,não ofensivo
 Exatamente só fala merda ....,1,0,ofensivo,não ofensivo
 👏👏👏 se candidata a presidente @bolsonarosp,0,0,não ofensivo,não ofensivo
 Greta me lembra muito a Malala. São fios de esperança de que nossos filhos e netos ainda tem alguma chance de sobreviver num planeta que tá sendo destruído por uma geração que já está mais do que obsoleta,0,0,não ofensivo,não ofensivo
-Globo lixo acabou fim..🤣🤣🤣🤣,1,0,ofensivo,não ofensivo
+Globo lixo acabou fim..🤣🤣🤣🤣,1,1,ofensivo,ofensivo
 Verdadeiro homem de bem 👏👏👏❤️❤️❤️ te cuida amigo... deus te abençoe,0,0,não ofensivo,não ofensivo
 Vc é motivo de piada na grande mídia...se não fosse seu pai quem seria vc??? Ainda bem q só votei no seu pai...sou Brasil acima de tudo...sou verde e amarelo com muito orgulho... agora não tem como aceitar calado o q e sua galera quer fazer no Brasil,1,0,ofensivo,não ofensivo
 Os PTistas se fuderao muito,1,0,ofensivo,não ofensivo
@@ -455,13 +455,13 @@ Os PTistas se fuderao muito,1,0,ofensivo,não ofensivo
 "Pode até ser, mas o Brasil precisa disso, o Brasil precisa de uma guerra, pra voltarmos as origens, sentimentos e a nos respeitar como pessoas e naçao",0,0,não ofensivo,não ofensivo
 Esperando para assistir completo.,0,0,não ofensivo,não ofensivo
 Cadê a Damares e a igreja para proteger as crianças ?,0,0,não ofensivo,não ofensivo
-PIRRALHA E FUTURA BABACA FRUSTADA...SERÁ NO MINIMO UMA FEMINASI PELUDA...,1,0,ofensivo,não ofensivo
+PIRRALHA E FUTURA BABACA FRUSTADA...SERÁ NO MINIMO UMA FEMINASI PELUDA...,1,1,ofensivo,ofensivo
 Todos farinha do mesmo saco ...os que pensam q não são logo mais será... infelizmente 😠,1,0,ofensivo,não ofensivo
 "Iai? Lo#ca dos gatos!? Qual o argumento agora? Os presos são da base do Governo Lule todos os âmbitos, de deputado federal a o tribunal de Contas. Piu! Você irá ficar piu-piu. 😂😂😂",1,0,ofensivo,não ofensivo
 "Parabéns Eduardo. O povo precisa muito de vcs deputados do bem, que tem compromisso com o povo brasileiro 👏👏👏",0,0,não ofensivo,não ofensivo
 "Ela é sim, competente, inteligente, mastenho muito estima e respeito muitos outros da direita. Gente maravilhosas! Amo os.",0,0,não ofensivo,não ofensivo
 Ato em defesa da soberania nacional e popular. Em Brasília Lula Marques Lula 👏👏👏👏👏,0,0,não ofensivo,não ofensivo
-Toma globo bosta sua lixo,1,0,ofensivo,não ofensivo
+Toma globo bosta sua lixo,1,1,ofensivo,ofensivo
 É assim que covardes sem argumentos se “defendem”...,1,0,ofensivo,não ofensivo
 "PT nem em cena está, lulaaaa não governa desde 2014, seus bando de idiota",1,0,ofensivo,não ofensivo
 "Lamentável, deste jeito, 2022 não vai dar pra vc",0,0,não ofensivo,não ofensivo
@@ -504,14 +504,14 @@ Mídia pirralha...,1,0,ofensivo,não ofensivo
 "Parabéns pelo teu trabalho e teu engajamento, tão necessário ao contexto caótico em que temos vivido. És uma voz feminina importante no cenário atual. Gostaria apenas de trazer um ponto a respeito do Miss Universo. Hoje ele é bem mais do que um concurso de beleza. Tornou-se também um espaço de pleito, de posicionamento político, afinal como diz Focault, todo ser é político e, política se faz em todo lugar. Um beijo grande do extremo sul do Brasil ❤️",0,0,não ofensivo,não ofensivo
 Nossos melhores Patriotas 🇧🇷💚💛🇧🇷 continuam lutando por todos nós 🙏 obrigado 🫂 por tudo que estão fazendo 👏 Deus abençoe a cada um 🙏💚💛💚💛💚💛💚💛💚💛💚💛💚🙏,0,0,não ofensivo,não ofensivo
 Cada vez você se complica mais ficando contra o Presidente. Sinal que é contra a recuperação do nosso País...Fico triste pois admirava você Joice...Agora vejo que me enganei...Mesmo assim seja feliz...,0,0,não ofensivo,não ofensivo
-Ela ganhou e vai continuar objetificada... Preguiça desses discursos 😔,0,0,não ofensivo,não ofensivo
+Ela ganhou e vai continuar objetificada... Preguiça desses discursos 😔,0,1,não ofensivo,ofensivo
 Ainda aplaudem uma carniça dessas...,1,0,ofensivo,não ofensivo
 Lei da mordaça,0,0,não ofensivo,não ofensivo
 Lula nosso futuro presidente 💜💜,0,0,não ofensivo,não ofensivo
 👏👏👏16 anos o PT roubando o Brasil. Como vocês se atrevem?,1,0,ofensivo,não ofensivo
-A mãe dele não ensinou que não poderia comer as próprias fezes. Deu nisso... Até a boca se moldou no formato de um ânus...,1,0,ofensivo,não ofensivo
+A mãe dele não ensinou que não poderia comer as próprias fezes. Deu nisso... Até a boca se moldou no formato de um ânus...,1,1,ofensivo,ofensivo
 "Sinonimo de pirralha.. criança ,,, faz coisa de criança,,, pensa como criança... É só isso gente.. kkkkk... Nao tem maldade nenhuma",1,0,ofensivo,não ofensivo
-Esse peste do fala merda 😈,1,0,ofensivo,não ofensivo
+Esse peste do fala merda 😈,1,1,ofensivo,ofensivo
 Que maravilha!! Graças a Deus!!,0,0,não ofensivo,não ofensivo
 Homem de reputação ilibada e saber jurídico.👏👏👏👏👏,0,0,não ofensivo,não ofensivo
 "Os números da economia está mostrando o crescimento, aliás surpreendeu até a equipe do ministério da economia, vamos em frente👏🇧🇷",0,0,não ofensivo,não ofensivo
@@ -551,7 +551,7 @@ Que absurdo! Já basta! Esse país tá uma bagunça. Não se respeitam mais a le
 Conversa pra boi 🐄 dormir!,1,0,ofensivo,não ofensivo
 Nele até agora o Brasil pode confiar!! 🇧🇷🇧🇷🇧🇷,0,0,não ofensivo,não ofensivo
 Essa Ministra enfrenta a violência que tb é verbal com mãos de ferro👏👏,0,0,não ofensivo,não ofensivo
-Essa guria e uma babaca 😈😈😈,1,0,ofensivo,não ofensivo
+Essa guria e uma babaca 😈😈😈,1,1,ofensivo,ofensivo
 #LULADAPAZ 💙🇧🇷 #haddad forte e inteligente na pasta!,0,0,não ofensivo,não ofensivo
 Esse criminoso é uma aberração.,1,0,ofensivo,não ofensivo
 Maravilhosa!! Feminista !! Negraaaa!!! 🌹,0,0,não ofensivo,não ofensivo
@@ -568,7 +568,7 @@ Espero muito que o efeito seja o contrário: todo mundo lendo e amando ler Tenó
 Ele está certo. Vai ter um monte de argentino faminto invadindo aqui,1,0,ofensivo,não ofensivo
 Governo de demônios,1,0,ofensivo,não ofensivo
 "Que terror! Meu Deus que desumanidade!!! Como um homem desse ainda é ouvido por alguém!? Como alguem ainda ousa contratar seus ""servicos"" de jornalista ainda!? Só alguém q é igual a ele, alguém asqueroso, desumano e cristofobico! 😡😡",1,1,ofensivo,ofensivo
-E o pior é que ele ganhou no estado e mesmo que tivesse perdido era dever dele respeitar!😒😒,0,0,não ofensivo,não ofensivo
+E o pior é que ele ganhou no estado e mesmo que tivesse perdido era dever dele respeitar!😒😒,0,1,não ofensivo,ofensivo
 "@joicehasselmannoficial TOLA, MESQUINHA E ARRUINADA.",1,0,ofensivo,não ofensivo
 Que vontade de dar um abraço nos dois! ❤️,0,0,não ofensivo,não ofensivo
 "Estou sem palavras... Já acho foda, ver o cabelo afro como moda (a palavra foda saiu para não digitar emocionado) e agora isso.... Lindo lindo",0,0,não ofensivo,não ofensivo
@@ -579,7 +579,7 @@ Isso é pastor do demônio,1,0,ofensivo,não ofensivo
 "Erga sua cabeça, estamos com vossa excelência nesta luta.",0,0,não ofensivo,não ofensivo
 "Olha esse discurso, amor @andreluizm",0,0,não ofensivo,não ofensivo
 "Toda foto sua com freixo aquece meu coração. Quero ver o senhor aqui no Rio, ano que vem!!",0,0,não ofensivo,não ofensivo
-E ainda tem gente que fala que é mimimi,1,0,ofensivo,não ofensivo
+E ainda tem gente que fala que é mimimi,1,1,ofensivo,ofensivo
 Fogo 🔥 nele,1,0,ofensivo,não ofensivo
 "Ai5 é meus ovos , entrevista de qualidade de gente sem cérebro🍊🍊🍊🍊🍊🍊🍊🍊",1,0,ofensivo,não ofensivo
 Só foi eleita porque apoiou o Bolsonaro. Vai caçar o que fazer!!!,1,0,ofensivo,não ofensivo
@@ -588,7 +588,7 @@ Que luxo!!! Dois amores 😍😍,0,0,não ofensivo,não ofensivo
 "E o pior... a mãe da menina ficou sorrindo. Será que achou engraçado, ou sorriu desconcertada?",0,0,não ofensivo,não ofensivo
 "Essa mocinha tem que se preocupar com a fome na África, a mutilação de mulheres na África e com mortes de cristãos na África e Oriente e parar de nos encher o saco, e vc Joice pare de dar ibope pra essa mocinha e de indiretamente atacar a fala do presidente.",1,0,ofensivo,não ofensivo
 🤣🤣🤣🤣🤣🤣 Mais uma com coragem que apenas falou a verdade 🇧🇷🇧🇷🇧🇷🇧🇷,0,0,não ofensivo,não ofensivo
-"Eai ministro? Quase um mês que autorizou o desconto dos carros mas o site não funciona pra faturar os pedidos. 15 dias carro parado na concessionária, a gente precisanfo do carro pra trabalhar",0,0,não ofensivo,não ofensivo
+"Eai ministro? Quase um mês que autorizou o desconto dos carros mas o site não funciona pra faturar os pedidos. 15 dias carro parado na concessionária, a gente precisanfo do carro pra trabalhar",0,1,não ofensivo,ofensivo
 Cachorra safada o Brasil tá sob nova direção,1,0,ofensivo,não ofensivo
 "Que absurdo, não sei como tem gente q assiste esse cara, e ainda acham graça 😔",0,0,não ofensivo,não ofensivo
 Esse miliciano é uma peste!,1,0,ofensivo,não ofensivo
@@ -607,7 +607,7 @@ Que discurso!👏👏 Sorte nossa ter vcs nos representando diante desse caos to
 Desfazem tudo que o presidente Bolsonaro faz !!! Que sentido faz ?,0,0,não ofensivo,não ofensivo
 Parabéns pelo trabalho e por serem voz por nós brasileiros.🇧🇷🇧🇷🇧🇷,0,0,não ofensivo,não ofensivo
 "Meu presidente, é lindão!❤️🔥😍👏",0,0,não ofensivo,não ofensivo
-"E o dinheiro também por debaixo dos panos, esse pastoreco dizendo que financiou esse ato, tem que investigar a máquina de roupa suja que está por trás dessa manifestação.",1,0,ofensivo,não ofensivo
+"E o dinheiro também por debaixo dos panos, esse pastoreco dizendo que financiou esse ato, tem que investigar a máquina de roupa suja que está por trás dessa manifestação.",1,1,ofensivo,ofensivo
 Deus nos livre desse mal!!!,1,0,ofensivo,não ofensivo
 Artigo 142 nestes ratos corruptos STF bandidos safados vagabundos canalhas abutres crápulas do STF derrubar está corte criminosa do Brasil,1,0,ofensivo,não ofensivo
 A caminhada é difícil mas a vitória é certa! Deus no comando ❤️🇧🇷 vc's estão trabalhando certinho! Quanto + eles tentam atrapalhar + o povo está do lado do bem! Deus abençoe grandemente a vida de todos..,0,0,não ofensivo,não ofensivo
@@ -615,12 +615,12 @@ Até que ponto chegaram estes doentes.,1,0,ofensivo,não ofensivo
 Viva Freire!!!!,0,0,não ofensivo,não ofensivo
 Pq é uma PILANTRA do mesmo NÍVEL BAIXO de LULADRÃO E DIMANTA!,1,0,ofensivo,não ofensivo
 Esses gados aqui tudo cego,1,0,ofensivo,não ofensivo
-Manda ela capinar uma roça e vai vc tbm,1,0,ofensivo,não ofensivo
+Manda ela capinar uma roça e vai vc tbm,1,1,ofensivo,ofensivo
 "Nosso Amado Presidente ONTEM HOJE E SEMPRE, BOLSONARO PRESIDENTE",0,0,não ofensivo,não ofensivo
 @alexandrepereira8396 Viu sua foto no meio deles?,0,0,não ofensivo,não ofensivo
 Nojento isso. Da náuseas😍,1,0,ofensivo,não ofensivo
 "Essa entrevista vou assistir por sua causa Deputado, quanto ao Queiróz já tem gente para se preocupar por mim 😂😂. Avisa se vai sair na quinta-feira mesmo. 👉🇧🇷",0,0,não ofensivo,não ofensivo
-"Porque vocês não fazer propostas do tipo reduzir número de partidos. Dois de esquerda um de centro e dois de direita. Outra proposta diminuir números de municípios, e os pequenos colocarem como distrital de outra cidade mais próxima é maior, acabar com cargos de vice-governador e vice-prefeito",0,1,não ofensivo,ofensivo
+"Porque vocês não fazer propostas do tipo reduzir número de partidos. Dois de esquerda um de centro e dois de direita. Outra proposta diminuir números de municípios, e os pequenos colocarem como distrital de outra cidade mais próxima é maior, acabar com cargos de vice-governador e vice-prefeito",0,0,não ofensivo,não ofensivo
 Quem joga óleo e@pt esquerda todo vai pagar por isto não come peixe que pecado cai quem sujou mar de óleo,1,0,ofensivo,não ofensivo
 Essa revista é de quinta categoria. Não serve nem pra fazer fogueira.,1,0,ofensivo,não ofensivo
 Vejo este momento como uma representatividade necessária...viva!!!,0,1,não ofensivo,ofensivo
@@ -630,7 +630,7 @@ Sem nem nos seus comentários essa opinião não é maioria imagina no Brasil kk
 "@sandra.bomfimbarbosa espero que os dentistas, técnicos em saúde bucal, TPDs e suas respectivas famílias respondam nas urnas nessas eleições municipais e nas próximas da mesma forma que obtemos respostas para nossas reivindicações.",0,0,não ofensivo,não ofensivo
 Torcendo por vcs e esperança em um Brasil nos trilhos novamente 🙏🏻,0,0,não ofensivo,não ofensivo
 Ela é santa e perfeita kkkkk,0,0,não ofensivo,não ofensivo
-"Divulguem o nome do jornalista, tem que ser levado a justiça, cadeia nele.",1,0,ofensivo,não ofensivo
+"Divulguem o nome do jornalista, tem que ser levado a justiça, cadeia nele.",1,1,ofensivo,ofensivo
 Lula na cadeia já !!!,1,0,ofensivo,não ofensivo
 @bolsonarosp o câncer do noblat sempre fala no blog dele tic tac sobre a chata da Marielle !envolvendo vocês,1,0,ofensivo,não ofensivo
 Bando de canalhas.,1,0,ofensivo,não ofensivo
@@ -651,7 +651,7 @@ Deveria recolher impostos em quem votou nele !,0,0,não ofensivo,não ofensivo
 Se prender a turma do lula que passa o dia soltando mentiras. Como o caso do @brasil_247 que só mente,1,0,ofensivo,não ofensivo
 Haudad nós estamos esperando🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷,0,0,não ofensivo,não ofensivo
 Legítimo bosta esse loco....,1,0,ofensivo,não ofensivo
-"Moro em Portugal a anossssss, e todo esse MIMIMI brasileiro, pq o Presidente chamou GRETA de pirralha, não afetou a imprensa internacional. Eu acrescentaria: pirralha, chata e manipulada. A Europa vê essa adolescente, que esse ano não frequentou a escola ( para espanto da maioria), com certa desconfiança o que há por trás de tudo isso, quem financia viagens e o próprio sustento de GRETA e pais??? Pois os pais deixaram de trabalhar para acompanhar a ninfeta prodígio!!!!",1,0,ofensivo,não ofensivo
+"Moro em Portugal a anossssss, e todo esse MIMIMI brasileiro, pq o Presidente chamou GRETA de pirralha, não afetou a imprensa internacional. Eu acrescentaria: pirralha, chata e manipulada. A Europa vê essa adolescente, que esse ano não frequentou a escola ( para espanto da maioria), com certa desconfiança o que há por trás de tudo isso, quem financia viagens e o próprio sustento de GRETA e pais??? Pois os pais deixaram de trabalhar para acompanhar a ninfeta prodígio!!!!",1,1,ofensivo,ofensivo
 Parabéns aos envolvidos! Faz arminha e grita mito.,1,0,ofensivo,não ofensivo
 🇧🇷🇧🇷mostra tua força BRASIL 🇧🇷🇧🇷JUNTOS SOMOS INVENCÍVEIS 🇧🇷🇧🇷🇧🇷🇧🇷,0,0,não ofensivo,não ofensivo
 "Meu presidente, parabéns! Deus o abençoe! Minha filha de 6 anos te adora e faz aniversário no mesmo dia que o senhor. 😍 21/03 dia dos arianos de personalidade @bolsonarosp",0,0,não ofensivo,não ofensivo
@@ -659,15 +659,15 @@ O maior homem do país,0,0,não ofensivo,não ofensivo
 Lula é muito inteligente !!! 😍👏🇧🇷🇧🇷🇧🇷,0,0,não ofensivo,não ofensivo
 Que maravilha! Imaginemos os milhões gastos com compra de deputados o que poderia ser feito nos hospitais do país.,0,0,não ofensivo,não ofensivo
 "Esses traíras, só pendurando pelas bolas e deixar lá, até encostar no chão....🤦‍♂️",1,0,ofensivo,não ofensivo
-"MUITO BEM FACCHIN , NAO DA MOLESA PARA ESSE LOUCO , PSICOPATA, BEBADO. CADEIA PARA ELE.",1,0,ofensivo,não ofensivo
+"MUITO BEM FACCHIN , NAO DA MOLESA PARA ESSE LOUCO , PSICOPATA, BEBADO. CADEIA PARA ELE.",1,1,ofensivo,ofensivo
 Podemos ter opiniões diferentes e realizar um debate de país digno e honesto para o futuro. @joicehasselmannoficial sou de Centro-esquerda e concordo contigo!,0,0,não ofensivo,não ofensivo
 Bando de safado e bandido!!,1,0,ofensivo,não ofensivo
 "Vou morrer na prisão, #ptnuncamais",1,0,ofensivo,não ofensivo
 Pelo menos esse cafajestes será julgado e condenado,1,0,ofensivo,não ofensivo
-E eu tenho pena de vc sua ridícula.,1,0,ofensivo,não ofensivo
-Quanta merda. E galera escuta e nem pensa se tá certo.,1,0,ofensivo,não ofensivo
+E eu tenho pena de vc sua ridícula.,1,1,ofensivo,ofensivo
+Quanta merda. E galera escuta e nem pensa se tá certo.,1,1,ofensivo,ofensivo
 Dois grandes ❤️,0,0,não ofensivo,não ofensivo
-Vc é uma merda caroneira,1,0,ofensivo,não ofensivo
+Vc é uma merda caroneira,1,1,ofensivo,ofensivo
 @bolsonarosp não perco por nada! 🔥,0,0,não ofensivo,não ofensivo
 Lula é bandido muie bota isso nessa tua cabeça cheia de merda,1,0,ofensivo,não ofensivo
 "Forte demais, Manu! Sinto muito por mais essa. Hoje dei entrevista pra um tcc, falei de vc e suas contribuições pra proteger as que vieram depois de ti. De verdade, muito obrigada!",0,0,não ofensivo,não ofensivo
@@ -697,12 +697,12 @@ Homens que me representam!,0,0,não ofensivo,não ofensivo
 É uma besta esse cara. 👊,1,0,ofensivo,não ofensivo
 Esse 💩tem que provar é a sua inocência (não tem como provar) e não atacar o Moro.,1,0,ofensivo,não ofensivo
 "Dá desânimo de ler as notícias, lutamos tanto pra mudar as coisas e no fim não vira nada!! 😥",0,0,não ofensivo,não ofensivo
-É um concurso importante sim. Ponto. Olha o alcance que ele tem. Olha o alcance que o discurso dela está tendo. Não desmereça um concurso só por ser de beleza.,0,0,não ofensivo,não ofensivo
-"Haddad sinônimo de competência, inteligência e dinamismo. Melhor Ministro da Economia que o Brasil já teve.",0,0,não ofensivo,não ofensivo
+É um concurso importante sim. Ponto. Olha o alcance que ele tem. Olha o alcance que o discurso dela está tendo. Não desmereça um concurso só por ser de beleza.,0,1,não ofensivo,ofensivo
+"Haddad sinônimo de competência, inteligência e dinamismo. Melhor Ministro da Economia que o Brasil já teve.",0,1,não ofensivo,ofensivo
 Vai ser ótimo!!!!,0,0,não ofensivo,não ofensivo
 "Eu não votei em @lulaoficial para ver ou ouvir MUNICÍPIOS dizerem que os recursos diminuíram, principalmente da SAÚDE. M",0,0,não ofensivo,não ofensivo
 Benedita parabéns ❤️,0,0,não ofensivo,não ofensivo
-"Ele não falou nada que o povo na5o concorde , Idiotas !!",1,0,ofensivo,não ofensivo
+"Ele não falou nada que o povo na5o concorde , Idiotas !!",1,1,ofensivo,ofensivo
 "Precisamos da sua ajuda para acabar com a injustiça no Prouni. Nossa reivindicação é unicamente para reserva de vagas dos bolsistas de escolas particulares. Em nenhum momento queremos prejudicar estudantes de escola pública. Estamos lutando pelos direitos de estudante de baixa renda que foram bolsistas integrais ou parciais em escolas privadas, estudantes com deficiência que estudaram em escola privada e estão sendo excluídos do Prouni. Não queremos competição entre estudantes de escola pública e estudantes oriundos de escolas privadas. Se houve a criação de uma categoria para estudantes de escola particular e nenhum estudante dessa categoria está sendo contemplado, criou-se outra distorção, outra exclusão. Por isso, é justo que haja uma reserva pra alunos bolsistas integrais e parciais, visto que esses alunos também se enquadram nos critérios de baixa renda e cursaram escolas privadas apenas por intermédio de bolsas, não possuindo recursos para pagar integralmente cursos como medicina, por exemplo.",0,0,não ofensivo,não ofensivo
 Lixo de congresso Senado e STF,1,0,ofensivo,não ofensivo
 "Não deveria estar , muito menos carregar tanto ódio . Um discurso forte , obstinado , mas a Greta é uma menina e deveria ser protegida . Os COVARDES, deveriam poupar as crianças.",1,0,ofensivo,não ofensivo
@@ -718,10 +718,10 @@ Parabéns!! Meu melhor voto para governar SP,0,0,não ofensivo,não ofensivo
 PRESIDENTE NÃO TEM AUTORIDADE...QUE RAIO DE PRESIDENTE QUE NÃO MANDA....FECHA LOGO ESTE COVIL DE COBRAS....SENADORES CORRUPTOS...MAFIOSOS....,1,0,ofensivo,não ofensivo
 A ordem é arrecadar o máximo,0,0,não ofensivo,não ofensivo
 "Parabéns Tarcísio, você é o melhor governador de são Paulo até hj, que Deus abençoe sua vida, são Paulo seráo melhor estado do Brasil",0,0,não ofensivo,não ofensivo
-"Bom dia Carla.comentei na sua pagina, sobre está tal de Bachelet, mas escrevi sem apontuação ficou um tanto esquesito, escrevi 👏👏👏 carla musa do psl, ai veio o meu comentario, descupa sou teu fá.",0,0,não ofensivo,não ofensivo
+"Bom dia Carla.comentei na sua pagina, sobre está tal de Bachelet, mas escrevi sem apontuação ficou um tanto esquesito, escrevi 👏👏👏 carla musa do psl, ai veio o meu comentario, descupa sou teu fá.",0,1,não ofensivo,ofensivo
 "@eldereliascustodio Vai bem obrigada, trabalhando como sempre pelo Brasil, o pobre de direita !😂",1,0,ofensivo,não ofensivo
 "Minha filha vai fazer 15 anos e esse ano ela vai fazer a prova p colégio militar... Ela só estuda, o dia inteiro.. Mas para o colégio São 25 vagas para filhos de PM e 3 para ampla concorrência... Poderia ser mais justo para todos ... É o sonho dela estudar no colégio militar aqui no RJ, mas é muito difícil... Espero que ela não fique tão decepcionada caso não consiga!!! Tenho fé🙌",0,0,não ofensivo,não ofensivo
-Sem contar que a Globo Mandou Roubar a TV Cultura🌶🖤🦅,1,0,ofensivo,não ofensivo
+Sem contar que a Globo Mandou Roubar a TV Cultura🌶🖤🦅,1,1,ofensivo,ofensivo
 Essa PIRRALHA É MASSA DE MANOBRA E ponto final,1,0,ofensivo,não ofensivo
 "Certeza q a esquerda eh doente. Apoio a maduro, Cristina. Só pode ser doença",1,0,ofensivo,não ofensivo
 Questão de MKT pessoal. Relaxa esse ombro Haddad. Ele só sobre em posição de defesa. Precisa aprender a baixar essa tensão. Entrevista maravilhosa. #lulalivre,0,0,não ofensivo,não ofensivo
@@ -729,16 +729,16 @@ Questão de MKT pessoal. Relaxa esse ombro Haddad. Ele só sobre em posição de
 "@lukinhadobreakoficial , muito obrigada por seu apoio e carinho. Conte sempre comigo! Abraços 🇧🇷",0,0,não ofensivo,não ofensivo
 Fernando Haddad me representa,0,0,não ofensivo,não ofensivo
 Maravilhoso um lorde👏👏👏,0,0,não ofensivo,não ofensivo
-"Ele não é caduco. Ele é dissimulado, cara de pau, desrespeitoso.",1,0,ofensivo,não ofensivo
+"Ele não é caduco. Ele é dissimulado, cara de pau, desrespeitoso.",1,1,ofensivo,ofensivo
 "Lula so ..vai ganlha, matrícula na cadeia 😂",1,0,ofensivo,não ofensivo
 Ridiculo esse senhor,1,0,ofensivo,não ofensivo
 Dois desqualificado sem qualidade nenhuma,1,0,ofensivo,não ofensivo
 Brasil: Ame-o ou deixe-o!,0,0,não ofensivo,não ofensivo
-"O Ministro do Trabalho, Luiz Marinho, planeja propor ao Conselho Curador do Fundo de Garantia por Tempo de Serviço (FGTS), a suspensão da antecipação do saque-aniversário. Essa medida funciona como um empréstimo bancário, com um limite de juros de 2,05% ao mês, que é significativamente menor do que os juros do cheque especial e do rotativo do cartão de crédito.",0,1,não ofensivo,ofensivo
+"O Ministro do Trabalho, Luiz Marinho, planeja propor ao Conselho Curador do Fundo de Garantia por Tempo de Serviço (FGTS), a suspensão da antecipação do saque-aniversário. Essa medida funciona como um empréstimo bancário, com um limite de juros de 2,05% ao mês, que é significativamente menor do que os juros do cheque especial e do rotativo do cartão de crédito.",0,0,não ofensivo,não ofensivo
 Muito mimimi bla bla bla.. essa PIRRALHA entende o que da vida. Ah.. va... @joicehasselmannoficial e o investidor que der ouvidos a uma pirralha dessas é pior que ela. Precisamos investigadores que se baseiam em discurso de uma birra botas de 16 anos?,1,1,ofensivo,ofensivo
-"A pirralha precisa estudar muito e deixar de reproduzir o que essa esquerdalha fala pra ela, nem nenhum aprofundamento das questoes!",1,0,ofensivo,não ofensivo
-Tamu juntas Damares. Tu é forte 🙌,0,0,não ofensivo,não ofensivo
-"Segue rebanho sim, o que canta hino pra pneu e pisca celular pra ET e acha lindo ser considerada uma fraquejada pelo miNTo 😂😂😂😂😂😂",1,0,ofensivo,não ofensivo
+"A pirralha precisa estudar muito e deixar de reproduzir o que essa esquerdalha fala pra ela, nem nenhum aprofundamento das questoes!",1,1,ofensivo,ofensivo
+Tamu juntas Damares. Tu é forte 🙌,0,1,não ofensivo,ofensivo
+"Segue rebanho sim, o que canta hino pra pneu e pisca celular pra ET e acha lindo ser considerada uma fraquejada pelo miNTo 😂😂😂😂😂😂",1,1,ofensivo,ofensivo
 A máquina de realização Tarcísio… será presidente,0,0,não ofensivo,não ofensivo
 Amei os doguinhos 😍,0,0,não ofensivo,não ofensivo
 "Esse concurso foi digno de ser visto. Os discursos das candidatas, as ações sociais que elas se engajam e tudo o q envolveu a escolha da Miss, demostraram que os velhos concursos de ""beleza"" talvez estejam ficando para trás.",0,0,não ofensivo,não ofensivo
@@ -752,7 +752,7 @@ Não esqueça de hidratar as crianças @antoniocesar_ @soraiabcavalcante @bolgue
 RIDÍCULA e não vai ter. #globolixo 🤮,1,0,ofensivo,não ofensivo
 😡Bandido disfarçado de pastor,1,0,ofensivo,não ofensivo
 coisa mais linda da minha vidaaaa🌷🌷🌷,0,0,não ofensivo,não ofensivo
-"Fica calada pra n falar merda, TRAÍDORA",1,0,ofensivo,não ofensivo
+"Fica calada pra n falar merda, TRAÍDORA",1,1,ofensivo,ofensivo
 "Um abraço, nossa corajosa representante na luta contra as mentiras que assolam o nosso país.",0,0,não ofensivo,não ofensivo
 "Bom dia democracia o Brasil e os apoiadores estadistas democráticos , as escolhas são democracia.",0,0,não ofensivo,não ofensivo
 Esse aí nao vale nada,1,0,ofensivo,não ofensivo
@@ -777,10 +777,10 @@ Vagabundo do PSL partido do Laranjal,1,0,ofensivo,não ofensivo
 O sul ja ta um lixo com o fascista do eduardo leite,1,0,ofensivo,não ofensivo
 Rainha nossa!!! Lute por esse povo tão judiado!!!,0,0,não ofensivo,não ofensivo
 Estamos contigo @damaresalvesoficial1,0,0,não ofensivo,não ofensivo
-"Só atrapalham o pai, até quando isso hein",0,0,não ofensivo,não ofensivo
+"Só atrapalham o pai, até quando isso hein",0,1,não ofensivo,ofensivo
 👎👎👎👎👎👎👎👎👎👎👎👎👎LULU e JOYCI TRAIDORES JUDAS SATANÁS,1,0,ofensivo,não ofensivo
 "Fecha esse STF, só faz merda",1,0,ofensivo,não ofensivo
-Falam mais da conta.. quiz dizer....,0,0,não ofensivo,não ofensivo
+Falam mais da conta.. quiz dizer....,0,1,não ofensivo,ofensivo
 Meu Deus... forte isso. Estamos todos com a senhora ministra .,0,0,não ofensivo,não ofensivo
 eu sinto a indignação,0,0,não ofensivo,não ofensivo
 "Lute por nós, pelo nosso país Haddad ❤️🙌👏",0,0,não ofensivo,não ofensivo
@@ -810,7 +810,7 @@ Claro meu amor até hoje ninguém nunca provou nada,0,0,não ofensivo,não ofens
 E essas mulheres rindo????? Credo,1,0,ofensivo,não ofensivo
 pirralha do ano kkk,1,0,ofensivo,não ofensivo
 "Que absurdo isso, cadeia para esses fdp ninguém coloca limites ne... raça dos infernos, quabdo morrerem vão tudo queimar no inferno essas pragas.",1,0,ofensivo,não ofensivo
-"O que ele quis dizer foi que, se a esquerda vencer na Argentina, os argentinos vão fugir para o RS, assim como os venezuelanos estão imigrando no Brasil por Roraima. Logicamente isso é uma imbecilidade, como tudo que ele diz!",1,0,ofensivo,não ofensivo
+"O que ele quis dizer foi que, se a esquerda vencer na Argentina, os argentinos vão fugir para o RS, assim como os venezuelanos estão imigrando no Brasil por Roraima. Logicamente isso é uma imbecilidade, como tudo que ele diz!",1,1,ofensivo,ofensivo
 Cara horrorosa dessa senhora,1,0,ofensivo,não ofensivo
 Amo ❤️😍,0,0,não ofensivo,não ofensivo
 "Na verdade, a maior mensagem que eu tirei da propaganda foi 'tenha cachorros em casa pra espantar a dengue'",0,0,não ofensivo,não ofensivo
@@ -819,13 +819,13 @@ Isso é a retórica dela. Quanto ao mesmo objetivo vcs tem o mesmo. O duro é co
 Deus está no comando🙌🙌,0,0,não ofensivo,não ofensivo
 Que demais. Do lado de Paulo Freire. Que honra! ❤️,0,0,não ofensivo,não ofensivo
 Parabéns pelo engajamento com país e de pessoas assim que precisamos..😍😍,0,0,não ofensivo,não ofensivo
-Quem Deus tem tudo e quem não tem Deus não tem nada. Que moleque abençoado 🙌,0,0,não ofensivo,não ofensivo
+Quem Deus tem tudo e quem não tem Deus não tem nada. Que moleque abençoado 🙌,0,1,não ofensivo,ofensivo
 "Depois que o PT roubou tudo, foi o que sobrou!!!",1,0,ofensivo,não ofensivo
 Jogue duro com esses racistas do inferno!💪💪,1,0,ofensivo,não ofensivo
 "Lindo de se ver!!! Gente boa, Bolsonaro cuidem das crianças da Ilha do Marajo. Juntos todos podemos. Grata",0,0,não ofensivo,não ofensivo
 Que DEUS capacite todos políticos da direita pra lutarem por nosso país,0,0,não ofensivo,não ofensivo
 A excelente globo mostrou diferente....🙄,0,0,não ofensivo,não ofensivo
-"Hora de prender os jornalistas da Globo, UOL e etc...",1,0,ofensivo,não ofensivo
+"Hora de prender os jornalistas da Globo, UOL e etc...",1,1,ofensivo,ofensivo
 Que Jesus esses demônios seguem! Meu Deus salve nosso país de seres demoníacos como esse Marco Feliciano!😈😈,1,0,ofensivo,não ofensivo
 🇧🇷🇧🇷 bonequinha da mídia..,1,0,ofensivo,não ofensivo
 "Como podem ter feito o maior erro histórico da história do Brasil... é de chorar...Haddad ainda será nosso presidente,tenho esperança!",0,0,não ofensivo,não ofensivo
@@ -839,7 +839,7 @@ Na terra em que essa mulher africana é bonita as trans são mulheres. Surrealis
 VCS É QUE ESTÃO NOS ROUBANDO,1,0,ofensivo,não ofensivo
 Pra quem votou nisso. Tb contribuira para isso.,0,0,não ofensivo,não ofensivo
 Mais uma vez a globolixo distorce a matéria . Impressionante ....,1,0,ofensivo,não ofensivo
-Tem que abrir processo disciplinar por quebra de decoro na forma do regimento. Pelo vandalismo e pelo ato de racismo.,0,0,não ofensivo,não ofensivo
+Tem que abrir processo disciplinar por quebra de decoro na forma do regimento. Pelo vandalismo e pelo ato de racismo.,0,1,não ofensivo,ofensivo
 Quem precisa de um trato é você .,1,0,ofensivo,não ofensivo
 ele poderia arrumar o que fazer esse bosta,1,0,ofensivo,não ofensivo
 A Europa prática o capitalismo. O governo não precisa ser de direita para praticar tal,0,0,não ofensivo,não ofensivo
@@ -872,7 +872,7 @@ Que mulher linda!!! Parabéns ❤️❤️❤️❤️❤️❤️,0,0,não ofen
 ESTE CANALHA NÃO PODE FICAR SOLTO .GRAÇAS A ESTE STF COMPOSTO PORINCOMPETENTES METADE COM RABO PRESO A DEFENDER BANDIDOD Q PODEM AGREDIR DOM FRASES TERRIVEIS NOSSO PRESIDENTE E SEUS MINISTROS INCLUSIVE ESTE BEBADO DECREPTO AGRIDE O MINISTRO MORO COM PALAVROES NÃO ACONTECE NADA MAIS DAÍ A INVESTIGAR MINISTRO DO STF. NAO PODE. Q DEMOCRACIA É ETA?,1,0,ofensivo,não ofensivo
 Ele fez certo...políciais não racistas!comunistas canalhas!,1,0,ofensivo,não ofensivo
 Só os trabalhadores burros e idiotas são a favor dele,1,0,ofensivo,não ofensivo
-"Minha irmã é professora e sempre te elogiou então eu votava em você, mas a partir de agora o meu voto você não tem mais",0,0,não ofensivo,não ofensivo
+"Minha irmã é professora e sempre te elogiou então eu votava em você, mas a partir de agora o meu voto você não tem mais",0,1,não ofensivo,ofensivo
 Carla seja superior não de ibope para essa traíra!,1,0,ofensivo,não ofensivo
 "Esse Lula é um doido, não consigo entender que tem gente que ainda da crédito.",1,0,ofensivo,não ofensivo
 Isso é um absurdo!!! Estes vagabundos tinham que ser EXPULSO S DO PAÍS!!!,1,0,ofensivo,não ofensivo
@@ -889,9 +889,9 @@ Gostoso te amo,0,0,não ofensivo,não ofensivo
 Parabéns a garotinha do George Sorus. Uma laranjinha sendo usada pelas grandes corporações parabéns a menina usada por sua mãe e as gigantes de seu contrato.,1,0,ofensivo,não ofensivo
 Mérito seu!👏👏🙌,0,0,não ofensivo,não ofensivo
 Fale-nos sobre roubar dinheiro de aposentados. Você tem know-how!,1,0,ofensivo,não ofensivo
-"Greta Thumberg é mesmo uma pirralha presunçosa, inconveniente e ignorante. Deveria é ir pra escola em vez de cabular aula pra salvar o mundo.",1,0,ofensivo,não ofensivo
+"Greta Thumberg é mesmo uma pirralha presunçosa, inconveniente e ignorante. Deveria é ir pra escola em vez de cabular aula pra salvar o mundo.",1,1,ofensivo,ofensivo
 Maldito seja para todo o sempre.,1,0,ofensivo,não ofensivo
-alvesdossantos_carla eterno presidente da papuda! Ou tu prefere Bangu???? VOTE IMPRESSO 😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂,1,0,ofensivo,não ofensivo
+alvesdossantos_carla eterno presidente da papuda! Ou tu prefere Bangu???? VOTE IMPRESSO 😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂,1,1,ofensivo,ofensivo
 "Isso caso intervecao militar mesmo, se o bolsonaro nao fechar o congresso e o supremo os militares vao e prender tambem.",1,0,ofensivo,não ofensivo
 Ai meu coração não aguenta!!!! 💖👏👏👏👏👏👏🇧🇷,0,0,não ofensivo,não ofensivo
 "Parabéns presidente, feliz aniversário e muitos anos de vida👏👏👏",0,0,não ofensivo,não ofensivo
@@ -906,7 +906,7 @@ Pra cima deles presidente Bolsonaro!,0,0,não ofensivo,não ofensivo
 Vagabunda! Sem vergonha!,1,0,ofensivo,não ofensivo
 Cadê a tradicional família brasileira?,0,0,não ofensivo,não ofensivo
 Grande deputada👏👏👏,0,0,não ofensivo,não ofensivo
-Cala boca Magda 🤦‍♀️,1,0,ofensivo,não ofensivo
+Cala boca Magda 🤦‍♀️,1,1,ofensivo,ofensivo
 Esta reporter da globo é muito arrogante .,1,0,ofensivo,não ofensivo
 "O contraste de pensamentos é tão grande,que parece que vivemos um pesadêlo!",0,0,não ofensivo,não ofensivo
 Vou adquirir e ler,0,0,não ofensivo,não ofensivo
@@ -936,18 +936,18 @@ Foi tudo em um piscar de olhos.,0,0,não ofensivo,não ofensivo
 "Mais uma terráquea vence o Miss Universo, parabéns!!!",0,0,não ofensivo,não ofensivo
 "Cara brasileiro é fodah mesmo, a família Bolsonaro tem que se blindar ! Em provérbios diz que Deus abomina quem causa dissensão entre irmãos zzzz eu brigo com minha mãe e depois estamos sussa , não é diferente com eles , caraca quanta cobrança !!!!! Bolsonaro sabe como cuidar do próprio filho não acham?? Aff",0,0,não ofensivo,não ofensivo
 "👏🏾👏🏾👏🏾👏🏾parabéns Janaína, Vms pedir ao Presidente para calar os filhos, e deixar ele trabalhar,",0,0,não ofensivo,não ofensivo
-"Para que tanta inveja Muié, o povo tem que manifestar mesmo para provar que Bolsonaro é mais amado que o *L* o persona non grata, aceita que dói menos tá?",1,0,ofensivo,não ofensivo
+"Para que tanta inveja Muié, o povo tem que manifestar mesmo para provar que Bolsonaro é mais amado que o *L* o persona non grata, aceita que dói menos tá?",1,1,ofensivo,ofensivo
 @joaoamgomes Por que os petistas têm tanto medo de investigarem a morte do Celso Daniel?,0,0,não ofensivo,não ofensivo
 Quem escreveu isso contra a ministra é uma verdadeira bicha enrustida um tremendo cortador de madeira pelo furico 💩💩💩,1,0,ofensivo,não ofensivo
 Estão usando a menina e como usam a família da Mariela. Interesses excusos movem a mídia esquerdopa,1,0,ofensivo,não ofensivo
 Globolixo! Globonews lixo!!,1,0,ofensivo,não ofensivo
 "Os filhos atrapalham o pai no trabalho árduo de governar .Ele precisa ter paz ,se desestressar ,tenham pena .Falam muito e inconsequentemente.Já chega .Aí é melhor fazer do que falar ,vocês tem ótimos exs : o próprio pai ,o Moro ,o Mourão ,o Guedes , o do transportes (vide estradas ,muita realização ,pouca conversa ) ,tem tb o da Educação ,enfim os ministros trabalham muito ,está se vendo.",0,0,não ofensivo,não ofensivo
-"Rebentado a gente, foi para isso que colocamos vc aí, vai acaba com nós pobres.",1,0,ofensivo,não ofensivo
+"Rebentado a gente, foi para isso que colocamos vc aí, vai acaba com nós pobres.",1,1,ofensivo,ofensivo
 Meu presidente sempre elegante.,0,0,não ofensivo,não ofensivo
 "“O saque-aniversário, apesar de necessitar de melhorias, como o fim da carência de 25 meses para acessar o FGTS em caso de demissão, é um programa excelente para o cidadão, pois dá a ele acesso imediato a recursos que são seus mas que estão retidos compulsoriamente pelo governo, rendendo menos que a inflação”, opinou.",0,0,não ofensivo,não ofensivo
 Ela que legue a pena dela e faça um travesseiro pra ver se consegue dormir depois de ter aceitado dinheiro sujo.,1,0,ofensivo,não ofensivo
 Facista nojento amigo de BOZO.,1,0,ofensivo,não ofensivo
-"Ao fim dos privilégios tbm e que todos os políticos passem a pagar seus planos de saúde, INSS e impostos de renda... Que peguem seus próprios alugueis e suas próprias roupas. Afinal políticos tem algum gasto? Pra que tem salários?",0,0,não ofensivo,não ofensivo
+"Ao fim dos privilégios tbm e que todos os políticos passem a pagar seus planos de saúde, INSS e impostos de renda... Que peguem seus próprios alugueis e suas próprias roupas. Afinal políticos tem algum gasto? Pra que tem salários?",0,1,não ofensivo,ofensivo
 "A culpa é do Noé ! Colocou casal jumentos arca, ê está porra não para de reproduzir, saudemos a mandioca.🐴😂",1,0,ofensivo,não ofensivo
 Parabéns deputada Benedita por lutar contra o racismo em nosso país 👏👏👏👏👏👏,0,0,não ofensivo,não ofensivo
 E o Lula não tem nem uma ministra mulher,0,0,não ofensivo,não ofensivo
@@ -960,11 +960,11 @@ Garotinha mimada riquinhabque não tem o que fazer da vida sedentária e vazia d
 "Essa bancada evangélica envergonham os verdadeiros cristãos, embora muitos se deixaram enganar. É o tratamento dentário, terminou?",1,0,ofensivo,não ofensivo
 E quando os obstáculos estão dentro de casa? 🤣,0,0,não ofensivo,não ofensivo
 Esse cara é um infeliz ruim,1,0,ofensivo,não ofensivo
-@_rodrigobrazz Então como é curioso veio comentar kkkkkkk ajuda aí Zé 😂😂😂😂😂😂😂,0,0,não ofensivo,não ofensivo
+@_rodrigobrazz Então como é curioso veio comentar kkkkkkk ajuda aí Zé 😂😂😂😂😂😂😂,0,1,não ofensivo,ofensivo
 Dois maravilhosos! 🤩😍🤩,0,0,não ofensivo,não ofensivo
 Parabéns para essas guerreiras corajosas,0,0,não ofensivo,não ofensivo
 "Só os PTRALHAS, lixo do Brasil",1,0,ofensivo,não ofensivo
-"Sem novidades, lixo sendo lixo.",1,0,ofensivo,não ofensivo
+"Sem novidades, lixo sendo lixo.",1,1,ofensivo,ofensivo
 Oh meus amores,0,0,não ofensivo,não ofensivo
 Absolutamente certo É dar fogo para o inimigo,0,0,não ofensivo,não ofensivo
 "O mundo é tudo e não os interesseiros que comentam...essa garota é um grande absurdo e quem a está elevando tem seus próprios interesses e a estão usando pra isso... e quem aqui no Brasil replica e da moral, tá atrapalhando o país...Ah o que já deu! Ninguém tem que se meter aqui, o Brasil e a Amazônia são do povo brasileiro e esse povo de fora não tem que se meter",1,0,ofensivo,não ofensivo
@@ -985,12 +985,12 @@ O Brasil é maior do que os que querem destruir-los. Brasil acima tudo e Deus ac
 "Muito bem eduardo, nao vou perder. obrigado",0,0,não ofensivo,não ofensivo
 "Se arrependimento matasse, eu e todos meus amigos e familiares a quem incentivei que votassem em vc estaríamos mortos!! 🤮",1,0,ofensivo,não ofensivo
 Velho ridículo 🤢🤮,1,0,ofensivo,não ofensivo
-"Pelo amor de Deus, cadê o pai desta criança não vai, fazer nada só porque o veio do sbt é amigo do bozo?",1,0,ofensivo,não ofensivo
+"Pelo amor de Deus, cadê o pai desta criança não vai, fazer nada só porque o veio do sbt é amigo do bozo?",1,1,ofensivo,ofensivo
 E ele quer decidir até as eleições vizinhas.,0,0,não ofensivo,não ofensivo
 Que ela enfie a pena dela no $%$@&^ ... devolva nosso dinheiro isso sim. 🤔🤔,1,0,ofensivo,não ofensivo
 "@ricardo_eleuterio30 desistir nunca. Mais é revigorante ver pessoas com o mesmo sentimento, como vc.",0,0,não ofensivo,não ofensivo
 Eu também espero. Que seu livro venda muito. Amanhã vou comprar o meu.,0,0,não ofensivo,não ofensivo
-"Minha mulher é negra e ela também é muito bonita. Cor é um detalhe do mundo da beleza, seja negra, branca, amarela ou jambo.",0,0,não ofensivo,não ofensivo
+"Minha mulher é negra e ela também é muito bonita. Cor é um detalhe do mundo da beleza, seja negra, branca, amarela ou jambo.",0,1,não ofensivo,ofensivo
 "🇧🇷 Vergonha mundial, não tem moral pra falar nada do Brasil.",1,0,ofensivo,não ofensivo
 "Vc está postando essas coisas dessa pirralhada só pra denegrir a imagem do seu presidente, a maioria dos brasileiros nem sabem do que se trata, mas vc faz questão de causar polêmica, continuo dizendo, a opinião dos outros não faz a menor diferença pra mim e pra mais da metade dos brasileiros",1,0,ofensivo,não ofensivo
 Mais verdadeira que nota de 3 reais 🐷,1,0,ofensivo,não ofensivo
@@ -998,7 +998,7 @@ VAI VOLTAR PRA JAULA,1,0,ofensivo,não ofensivo
 🇧🇷Ordem e Progresso!!!👏👏👏,0,0,não ofensivo,não ofensivo
 E a fala dela sobre representatividade e ocupar lugares na sociedade foi massa demais ...,0,0,não ofensivo,não ofensivo
 "@g.srod Lula e Haddad são a mesma coisa. Acorda, amigo. O Lula está se lixando para os pobres. Acorda!",1,0,ofensivo,não ofensivo
-Nenhuma pessoa deveria dar ouvidos para essa garota. E nosso presidente toda vez que aparece na TV é por causa de falas que não cabem a um líder de um país fazer!,0,0,não ofensivo,não ofensivo
+Nenhuma pessoa deveria dar ouvidos para essa garota. E nosso presidente toda vez que aparece na TV é por causa de falas que não cabem a um líder de um país fazer!,0,1,não ofensivo,ofensivo
 Vem quente Lula. O Brasil está fervendo!!!,0,0,não ofensivo,não ofensivo
 joice nao paga de palhaça,1,0,ofensivo,não ofensivo
 MEU DEUS!!!!! ESSE VERME TEM QUE SER CALAFO.,1,0,ofensivo,não ofensivo
@@ -1019,8 +1019,8 @@ Esse é o verdadeiro futuro!! O melhor caminho para os nossos jovens!!👏👏�
 Essa porra eh o diabo,1,0,ofensivo,não ofensivo
 Precisamos valorizar este senhor Luiz Inácio lula da Silva!! e agradecer a Deus pela vida dele!👏👏,0,0,não ofensivo,não ofensivo
 "Por isso que SSA senhora defende o PT, e ela me dá NOJO.",1,0,ofensivo,não ofensivo
-"Joice está com mania de grandeza, só que dá pior espécie, ela, pra mim foi uma DECEPÇÃO GRANDE! Ela traiu e dividiu !",1,0,ofensivo,não ofensivo
-"Além de que, na minha interpretação, a fala dele não foi nem no sentido pejorativo. O “pirralha” dele foi mais no sentido de “criança” mesmo.",0,0,não ofensivo,não ofensivo
+"Joice está com mania de grandeza, só que dá pior espécie, ela, pra mim foi uma DECEPÇÃO GRANDE! Ela traiu e dividiu !",1,1,ofensivo,ofensivo
+"Além de que, na minha interpretação, a fala dele não foi nem no sentido pejorativo. O “pirralha” dele foi mais no sentido de “criança” mesmo.",0,1,não ofensivo,ofensivo
 Lindaaaaa!! Belíssima!! Maravilhosaaaaaaa!! Premiação bem mais bem merecida mesmo!!,0,0,não ofensivo,não ofensivo
 Vixe PT vai tudo enjaulado Então.... são fábricas de fake News,1,0,ofensivo,não ofensivo
 "Ele sempre foi um monstro. Sempre humilhou pessoas. Sempre foi um péssimo empresário, um empregador desleal e injusto. Já deveria ter sido banido há tempos. Faustão não é muito melhor. Temos a pior televisão de todos os países.",1,0,ofensivo,não ofensivo
@@ -1028,7 +1028,7 @@ Vixe PT vai tudo enjaulado Então.... são fábricas de fake News,1,0,ofensivo,n
 Para que a caminhada continue os filhos do nosso presidente precisam parar de interferir. Os senhores FILHOS DO PRESIDENTE PRECISAM ATUAR NA ESFERA PARA A QUAL FORAM ELEITOS.🙏🙏,0,0,não ofensivo,não ofensivo
 "São as HIENAS carregadas de perversidade e sem nenhum respeito por pela dor dos outros. Não passam de lixos! Não merecem se quer,um segundo de atenção. Tamo com a senhora,ministra! Estamos do teu lado sempre. 🙏",1,0,ofensivo,não ofensivo
 "Muito merecido, ela é linda demais!👏👏👏👏👏",0,0,não ofensivo,não ofensivo
-"Temos que calar a boca deste idiota, sai fora idiota vc tá procurando e vai achar.",1,0,ofensivo,não ofensivo
+"Temos que calar a boca deste idiota, sai fora idiota vc tá procurando e vai achar.",1,1,ofensivo,ofensivo
 "Deplorável, absurdo total. Ele vai ter q ser cassado, eu tô sem direção, perdi meu norte se esse lixo continuar no parlamento 🙏",1,0,ofensivo,não ofensivo
 "@paulopessatto poxa como você é otimista cara, seu otimismo é inspirador",0,0,não ofensivo,não ofensivo
 Significado de tanto faz @giulianaaraujo906 😂,0,1,não ofensivo,ofensivo
@@ -1045,8 +1045,8 @@ Esse é o nosso queridão Thorcisio @tarcisiogdf ❤️❤️❤️ que Deus o a
 EXISTE UMA LINGA TÊNUE ENTRE O ENGRAÇADO E O PATÉTICO.,1,0,ofensivo,não ofensivo
 Sei quê seria um ótimo presidente votei pra você e não me arrependo se entra de novo votarei outra vez 👏👏👏👏,0,0,não ofensivo,não ofensivo
 "Parabéns, mulher de verdade!",0,0,não ofensivo,não ofensivo
-Volta pra escola garota tu é maluca ..,1,0,ofensivo,não ofensivo
-Demorou pra colocar esse ser na cadeia novamente,1,0,ofensivo,não ofensivo
+Volta pra escola garota tu é maluca ..,1,1,ofensivo,ofensivo
+Demorou pra colocar esse ser na cadeia novamente,1,1,ofensivo,ofensivo
 A fonte secou! Não tem mais propininha!😂😂😂😂,1,0,ofensivo,não ofensivo
 O único defeito dessa foto é que eu não posso abraçá-la,0,0,não ofensivo,não ofensivo
 Amei sua fala Benedita💋,0,0,não ofensivo,não ofensivo
@@ -1059,7 +1059,7 @@ Vamos derrotar os demônios malditos 🇧🇷👏🇧🇷👏🇧🇷👏,1,0,of
 "Ela que cuidado quintal da própria casa, já que está sujos com dinheiro de propina!!",1,0,ofensivo,não ofensivo
 "Pra mim conta mais valor ainda, o discurso dela, o seu posicionamento firme e empoderado. Meus parabéns à essa bela (por dentro e por fora) MULHER!!! ❤️",0,0,não ofensivo,não ofensivo
 Qie feio pastor do diabo!,1,0,ofensivo,não ofensivo
-"Fica quieta joice, tá feio ja",1,0,ofensivo,não ofensivo
+"Fica quieta joice, tá feio ja",1,1,ofensivo,ofensivo
 Meu Presidente Favorito!!! 💖💖💖,0,0,não ofensivo,não ofensivo
 Nosso presidente é jair Bolsonaro. Mito.,0,0,não ofensivo,não ofensivo
 Esse meliante só fala bosta.,1,0,ofensivo,não ofensivo
@@ -1070,10 +1070,10 @@ Vagabundos como esse que o Brasil não precisa,1,0,ofensivo,não ofensivo
 A imprensa parece as vezes um judas.,1,0,ofensivo,não ofensivo
 "Meu ídolo, a esperança para nos salvar da insanidade desse presidente idiota. @fernandohaddadoficial",1,0,ofensivo,não ofensivo
 "OUTRO BANDIDO COMUNISTA Q VCS APOIARAM A REELEIÇÃO DO CHILENO CORRUPTO MESMO SABENDO Q ELE NO GOVERNO PASSADO ENGAVETOU AS 10 MEDIDAS DA LAVA JATO, COMO PODEM DEIXAR DE APOIAREM O MARCEL DEPUTADO BRILHANTE,INTELIGENTE P REELEGER ESSE CORRUPTO COM PAI RÉU E ELE COM PROCESSO EM CURSO,VCS FORAM ILUDIDOS PELOS TRAIDORES DO DEM INFILTRADO NO GOVERNO P ATRAPALHAR OS PLANOS DA NAÇÃO BRASILEIRA E DO GOVERNO BOLSONARO, SÓ IDIOTA NÃO VÊ Q ÔNIX LORENZZONI É TRAIDOR, ACORDA BRASIL...",1,0,ofensivo,não ofensivo
-Cala a boca. Deixa eles falarem pois eles estso pegando até palavras no ar até pensamento para ter motivo para falar e criticar. Fica quieto você não é amigo do Predidrnte você é filho pior ainda por isso a cobrança e mais dura e oportunísta. Sossega essa boca. E faz tud parte engole sapo para depois engolir eles ok,1,0,ofensivo,não ofensivo
+Cala a boca. Deixa eles falarem pois eles estso pegando até palavras no ar até pensamento para ter motivo para falar e criticar. Fica quieto você não é amigo do Predidrnte você é filho pior ainda por isso a cobrança e mais dura e oportunísta. Sossega essa boca. E faz tud parte engole sapo para depois engolir eles ok,1,1,ofensivo,ofensivo
 "Eu tenho ranço desse estocador de cocô, mas entendi o que ele quis dizer em relação à Roraima. A população desse estado teve muitos problemas com os imigrantes venezuelanos. Agora ele errou ao dizer, que um governo de esquerda na Argentina faria isso, está mais fácil a gente emigrar para lá se isso acontecer.",1,0,ofensivo,não ofensivo
 "Cadê os responsáveis de preservar os direitos das crianças.... eu respondo indignada, que até mesmo os conselhos tutelares que poderiam fazer alguma coisa, não vão fazer, pois estão nas mãos da universal, igreja de corruptos e safados. É minha gente estamos indo de mal a pior....",1,0,ofensivo,não ofensivo
-Ess joice é traidora mesmo ganhou nas costa do presidente e agora traiu,1,0,ofensivo,não ofensivo
+Ess joice é traidora mesmo ganhou nas costa do presidente e agora traiu,1,1,ofensivo,ofensivo
 Racismo é crime inafiançável. Tem que tirar o mandato desse canalha.,1,0,ofensivo,não ofensivo
 Vai trabalhar sua nojenta,1,0,ofensivo,não ofensivo
 "Não aguento mais . Pelo amor de Deus , nesse País os poros dessas pessoas que respira Lula Credo! Chou coisa ruim . Oremos para vê se pensam em coisa sadia 🙏🙏",1,0,ofensivo,não ofensivo
@@ -1126,7 +1126,7 @@ Correto o silencio 🙏💚💛💙🙏 falta de respeito com ser humamo #inveja
 Faz toda diferença,0,0,não ofensivo,não ofensivo
 Que Deus nunca a abandone ministra!,0,0,não ofensivo,não ofensivo
 Governo de milícia 🍊,1,0,ofensivo,não ofensivo
-"Emprego é bom mas ganhar 1.200,00 por mês pra cuidar de casa e filhos, é outra história. É muito pão e circo.",1,0,ofensivo,não ofensivo
+"Emprego é bom mas ganhar 1.200,00 por mês pra cuidar de casa e filhos, é outra história. É muito pão e circo.",1,1,ofensivo,ofensivo
 PT quadrilha unida,1,0,ofensivo,não ofensivo
 como assim ele fica rindo,0,0,não ofensivo,não ofensivo
 Os filhos do mito atrapalham demais! Batem fora do bumbo!!,1,0,ofensivo,não ofensivo
@@ -1134,7 +1134,7 @@ Eternas SAUDDADS,0,0,não ofensivo,não ofensivo
 Deixando os pobre cada vez mais pobre. É bem como o Lula falou mesmo pobre é só número. TUDO BURRROOOO,1,0,ofensivo,não ofensivo
 Nossa ela é muuuito linda maravilhosa representou muito a raça negra,0,0,não ofensivo,não ofensivo
 Nojo desse demônio,1,0,ofensivo,não ofensivo
-Conheco uma vagabunda de longe!!! 💩💩💩,1,0,ofensivo,não ofensivo
+Conheco uma vagabunda de longe!!! 💩💩💩,1,1,ofensivo,ofensivo
 Esse calhorda nunca mais terá a força que nosso Brasil tem hoje 👏🏻👏🏻👏🏻👏🏻,1,0,ofensivo,não ofensivo
 Se o comandante não respeita o povo. Eu o odeio por isso. Agora passo a odiar esse cara aí protegido pelo dinheiro ódio e nojo.....,1,0,ofensivo,não ofensivo
 "Os velhos coroneis agonizam. O mundo, nunca e jamais te aceitará em paz, Coronelzinho de Merda, Cala-te Tadeu! Seu tipo ja era, você ja deu!...Antes de Levantar teu chicote, pense....Quebraremos seus braços babaca! Toda solidariedade à deputada!",1,0,ofensivo,não ofensivo
@@ -1145,7 +1145,7 @@ Deus abençoe nosso país 🙌🙌🙌🙌🙌,0,0,não ofensivo,não ofensivo
 Lixo esses petzadas mais não adianta o Brasil e nosso,1,0,ofensivo,não ofensivo
 E é em nome de Deus que o diabo fala!!,1,0,ofensivo,não ofensivo
 Vc é a minha deputada.,0,0,não ofensivo,não ofensivo
-Esse sim É excelente p uma entrevista 🙏👏👏👏🇧🇷🇧🇷🇧🇷+,0,0,não ofensivo,não ofensivo
+Esse sim É excelente p uma entrevista 🙏👏👏👏🇧🇷🇧🇷🇧🇷+,0,1,não ofensivo,ofensivo
 Joice é uma VERGONHA.,1,0,ofensivo,não ofensivo
 Nisso vc tem razão . Os filhos do presidente falam muita besteira desnecessária,1,0,ofensivo,não ofensivo
 "Ainda tem “especialista” da @globonews dizendo que @manueladavila pode torcer pela eleição de Cristina kirchner e Alberto Fernández, o Bolsonada pode ameaçar os eleitores livres da Argentina. Vergonha dessa imprensa descarada e burlesca.",1,0,ofensivo,não ofensivo
@@ -1156,7 +1156,7 @@ Não estão vendo isso não...estão vendo que o larápio devia voltar para a ca
 Avante meu Presidente e Capitão #BOLSONARO🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷🇧🇷,0,0,não ofensivo,não ofensivo
 @eldereliascustodio Faz parte da gentalha,1,0,ofensivo,não ofensivo
 Você está contra o governo ? Não to entendendo mais seu posicionamento . Essa menina ridícula acusa sem dar soluções . Está sendo financiada por pessoas com muitos interesses. Fica ligada,1,0,ofensivo,não ofensivo
-"Gente já passou da hora de tirar esse bagageiro do ar! Isso não é velhice, isso chama-se falta de respeito! E isso país acham graça dessas besteiras!",1,0,ofensivo,não ofensivo
+"Gente já passou da hora de tirar esse bagageiro do ar! Isso não é velhice, isso chama-se falta de respeito! E isso país acham graça dessas besteiras!",1,1,ofensivo,ofensivo
 "🤮cambada de canalhas, sempre estiveram contra o Brasil e o povo brasileiro 🤮",1,0,ofensivo,não ofensivo
 "Esses heróis da direitas são uns escrotos, doentes e perversos!",1,0,ofensivo,não ofensivo
 "Quem se importa com isso qdo nosso desemprego ainda está alto? Realmente é uma pirralha metida a certinha. Oq precisamos é foco no desenvolvimento interno, geração de empregos, desburocratização, corte de gastos do governo, mais saude e mais educação!!!",1,0,ofensivo,não ofensivo
@@ -1174,8 +1174,8 @@ Esse vídeo foi animal! Sempre muito bom ver gente inteligente conversando!,0,0,
 O pior é ver o cidadão de bem aplaudindo😕,1,0,ofensivo,não ofensivo
 "@matthews_salles Errar é humano, persistir no êrro, é burrice! Vai se preparando q o seu choro ñ demora",1,0,ofensivo,não ofensivo
 Ok. Esse é um crossover que nunca imaginei.,0,0,não ofensivo,não ofensivo
-💜👏💜 além de ser uma mulher da verdade e muito linda,0,0,não ofensivo,não ofensivo
-"Esses filhos do presidente só atrapalham, cada um tem que seguir a sua própria vida.",0,0,não ofensivo,não ofensivo
+💜👏💜 além de ser uma mulher da verdade e muito linda,0,1,não ofensivo,ofensivo
+"Esses filhos do presidente só atrapalham, cada um tem que seguir a sua própria vida.",0,1,não ofensivo,ofensivo
 Vem pro PT,0,0,não ofensivo,não ofensivo
 "Claro que Justo a liberdade de LULA, que a justiça seja feita para o nosso país voltar a crescer em 2022, não sei se os brasileiros vão aguentar fome, desemprego e etc...mais 3 anos até chegar 2022😔😔😔😔😔😔😔😔😔😔",0,0,não ofensivo,não ofensivo
 A verdade sempre aparece,0,0,não ofensivo,não ofensivo
@@ -1190,12 +1190,12 @@ Xandão já virou persona non grata assim como o chefe,1,0,ofensivo,não ofensiv
 "@marcelosousa1994 chora de que ? Ta todo mundo afundado no mesmo barco ue , em vez de ficar ai mamando ovo de político taxador dos mais pobres va procurar cobra-los.",1,0,ofensivo,não ofensivo
 "PRA TA FALANDO ESSA BESTEIRA AI PRA MEIA DUZIA DOS RETARDADOS QUE TE SEGUEM, TU DEVERIA LER O QUE É DEMOCRACIA, E NAO DEMONIOCRACIA QUE SE VICE HJ AQUI NO PAIS",1,0,ofensivo,não ofensivo
 Será que iram prender todos os militontos de esquerda?!...,1,0,ofensivo,não ofensivo
-"Haddad vc perdeu a eleição, mas eu não perdi meu voto.",0,0,não ofensivo,não ofensivo
+"Haddad vc perdeu a eleição, mas eu não perdi meu voto.",0,1,não ofensivo,ofensivo
 "Deus onrre nosso governo. E parabéns pela perseverança, nunca desista do Brasil estamos com vocês, o Brasil precisa de pessos de coragem para enfrentar o militantes vermelho.",1,0,ofensivo,não ofensivo
-"Esse negócio de mulher NEGRA está por fora. Foi escolhida uma MULHER LINDA do continente africano. Mulher é mulher. Ou ela é diferente das outras por causa da sua cor. É mais sensual, mais carinhosa, mais inteligente...???",0,0,não ofensivo,não ofensivo
+"Esse negócio de mulher NEGRA está por fora. Foi escolhida uma MULHER LINDA do continente africano. Mulher é mulher. Ou ela é diferente das outras por causa da sua cor. É mais sensual, mais carinhosa, mais inteligente...???",0,1,não ofensivo,ofensivo
 Lindao arrebenta,0,0,não ofensivo,não ofensivo
 "@iltonh Acho q vc esta chamando a pessoa errada, ou ñ?",0,0,não ofensivo,não ofensivo
-"Revisão do FGTS, Abono salarial atrasado, Revisão da vida toda, são direitos trabalhistas, Partido dos trabalhadores ainda não devolveu esses diretos.. O que a senhora diz?????",0,0,não ofensivo,não ofensivo
+"Revisão do FGTS, Abono salarial atrasado, Revisão da vida toda, são direitos trabalhistas, Partido dos trabalhadores ainda não devolveu esses diretos.. O que a senhora diz?????",0,1,não ofensivo,ofensivo
 "Que asco. Uma pessoa assim não pode exercer a política, porque não contribui para o debate. É só atraso.",1,0,ofensivo,não ofensivo
 "E o discurso dela sobre a importancia de ocupacoes de espacos por mulheres e por mais liderancas femininas, foi maravilhoso!!! q potencia! q forca! Amei! Assistam! Eu vi foi um discurso de uma futura lider. Encantada. 👏😍",0,0,não ofensivo,não ofensivo
 So negros morrem no Brasil? Bandido nao escolhe cor!,1,0,ofensivo,não ofensivo
@@ -1248,7 +1248,7 @@ Deus prometeu o crescimento do nosso país e está se cumprindo essa promessa �
 😂😂😂😂 A globo passando vergonha 🆘🆘🆘🆘 GLOBOLIXO,1,0,ofensivo,não ofensivo
 Porra o presidente não serve pra porra nenhuma? Pra que presidente então? É o STF que governa o país? Estamos fudidos então... Se for isso mesmo o Brasil precisa de intervenção militar porque a nossa corte está recheada de bandidos!!!,1,0,ofensivo,não ofensivo
 "Dia 8 de Março, dia de luta, dia das lutadoras, dias das revolucionárias! Viva o 8 de Março!",0,0,não ofensivo,não ofensivo
-"👏👏🏼🙌🙌vai ser condenado agora a pena maior e deverá ser preso em sela comum, nada de privilégios...bandido comum e sem D, tanto dinheiro e num comprou um Diploma oh kkk la na ufpa é fácil e baratinho oh...😂😂😂",1,0,ofensivo,não ofensivo
+"👏👏🏼🙌🙌vai ser condenado agora a pena maior e deverá ser preso em sela comum, nada de privilégios...bandido comum e sem D, tanto dinheiro e num comprou um Diploma oh kkk la na ufpa é fácil e baratinho oh...😂😂😂",1,1,ofensivo,ofensivo
 👏👏👏👏 Parabéns Ministro pela decisão sensata!!!,0,0,não ofensivo,não ofensivo
 Meu professor merece muito...,0,0,não ofensivo,não ofensivo
 Sigamos em frente! Jamais desistiremos!,0,0,não ofensivo,não ofensivo
@@ -1263,7 +1263,7 @@ Aaaah nao! A internet nao vai aguentar! 😍👏🏼,0,0,não ofensivo,não ofen
 Vc e a Greta: duas oportunistas,1,0,ofensivo,não ofensivo
 "Sério???? Engraçado que quem invadiu a Polônia foram os Nazistas. Você estava comemorando isso???? A invasão???? Fascista que fala, né!!!",1,0,ofensivo,não ofensivo
 Agora vai deus abençoe sempre 🙌,0,0,não ofensivo,não ofensivo
-"Se ele trata assim um dos estados em que venceu (Roraima), imagina como trata outras localidades, como o Nordeste, por exemplo.",0,0,não ofensivo,não ofensivo
+"Se ele trata assim um dos estados em que venceu (Roraima), imagina como trata outras localidades, como o Nordeste, por exemplo.",0,1,não ofensivo,ofensivo
 "👏👏👏👏👏 Jefferson Tenório, autor de livros obrigatórios. Retrata o Brasil que muitos negam!",0,0,não ofensivo,não ofensivo
 Faço parte dos 50% otimistas,0,0,não ofensivo,não ofensivo
 "Como sempre, onde vai estimula ódio. Os ares estiveram poluídos por aqui com a presença desta criatura maléfica.",1,0,ofensivo,não ofensivo
@@ -1282,22 +1282,22 @@ Mas tu é mto cara de pau né Joice?!!!!tá se queimando sozinha......🤣🤣�
 Aproveite seu primeiro e último mandato 👍👍👍,0,0,não ofensivo,não ofensivo
 Que diferença Deputado Eduardo de vc pra seu irmão Flávio se dependesse de mim vc seria o embaixador do Estados Unidos 👏,0,0,não ofensivo,não ofensivo
 "Os petralhas colocaram sua corja em todos os lugares, não salva ninguém, que tristeza ..",1,0,ofensivo,não ofensivo
-"Faz me rir!!! Pirralha!!!! Hittler, Stalin e Gretta!!! Exemplos de Personalidades do ano dessa revista de bosta!!!! Não serve nem pra por em fundo de gaiola pros pássaros cagarem em cima!!!!",1,0,ofensivo,não ofensivo
-"😂😂😂😂 debochado, foi bem pago..",1,0,ofensivo,não ofensivo
-"Eu votei no Lula, estou começando a me arrepender, pois hoje foi no mercado aqui no Rio, e vi o Kilo do Tomate a 16 REAIS! Entre outras coisas, e ele não tá tomando nenhuma providência!!",0,0,não ofensivo,não ofensivo
+"Faz me rir!!! Pirralha!!!! Hittler, Stalin e Gretta!!! Exemplos de Personalidades do ano dessa revista de bosta!!!! Não serve nem pra por em fundo de gaiola pros pássaros cagarem em cima!!!!",1,1,ofensivo,ofensivo
+"😂😂😂😂 debochado, foi bem pago..",1,1,ofensivo,ofensivo
+"Eu votei no Lula, estou começando a me arrepender, pois hoje foi no mercado aqui no Rio, e vi o Kilo do Tomate a 16 REAIS! Entre outras coisas, e ele não tá tomando nenhuma providência!!",0,1,não ofensivo,ofensivo
 "@realrcoutinho, a PB se orgulha muito. Gratidão por toda luta.",0,0,não ofensivo,não ofensivo
 "Queremos nossos direitos! É tudo muito lindo, mas queremos ter acesso ao básico, as terapias, doutores",0,0,não ofensivo,não ofensivo
 Huhuuuuuu. Viva a beleza dessa mulher! Maravilhosa.... Somos fortes e unidas venceremos.. 🙌👏,0,0,não ofensivo,não ofensivo
 Se não fosse o Tarcísio São Paulo já tinha quebrado,0,0,não ofensivo,não ofensivo
 "Esse filho da puta quer é uma guerra no Brasil,esse cara é um psicopata tem que prender esse crápula,isso é um perigo pra sociedade brasileira",1,0,ofensivo,não ofensivo
 ❤️❤️👏👏 LULA o melhor Presidente do Brasil 👏👏,0,0,não ofensivo,não ofensivo
-"A resposta para um senhora desse , já que o dinheiro não vai ser devolvido. É um grande VA SE LASCAR, esquece o BRASIL e vá cuidar dos seus problemas",1,0,ofensivo,não ofensivo
+"A resposta para um senhora desse , já que o dinheiro não vai ser devolvido. É um grande VA SE LASCAR, esquece o BRASIL e vá cuidar dos seus problemas",1,1,ofensivo,ofensivo
 "Prezados Deputados e Senadores, com todo respeito, exigimos que pressionem o Sr Pacheco para colocar imediatamente o Impeachment do ditador Alexandre de Moraes",1,0,ofensivo,não ofensivo
 "Sou autista. Casada com autista. Mãe de dois filhos autistas. Me filiei ao @plmulherlondrina e sou pre candidata a vereadora na minha cidade. Fui muito bem acolhida pelo partido, que me deu oportunidade de representar os autistas e suas famílias. Confiaram em mim. Na minha capacidade. Estou só gratidão. E a @michellebolsonaro é minha inspiração. Eu vou conseguir! 🔥❤️",0,0,não ofensivo,não ofensivo
 É muita gente que gosta de Bolsonaro,0,0,não ofensivo,não ofensivo
 Q linda!!!! Bela mulher!!!! Parabéns a ela e a África do Sul!!! 👍👏👏😊😍,0,0,não ofensivo,não ofensivo
 Desgoverno dos infernos.,1,0,ofensivo,não ofensivo
-Vc fez por merecer!!!,0,0,não ofensivo,não ofensivo
+Vc fez por merecer!!!,0,1,não ofensivo,ofensivo
 Quer fazer uma foto com as pessoas como vocês! Amam a paz!.,0,0,não ofensivo,não ofensivo
 👏👏👏👏Parabéns Ministra!,0,0,não ofensivo,não ofensivo
 Hitler e Stálin tb já foram capa da Times por serem escolhidos personalidade do ano,0,0,não ofensivo,não ofensivo
@@ -1351,11 +1351,11 @@ A Joice já falou em vídeo sobre intervenção ta falando ok agora.essa .,0,0,n
 Agora estou feliz!,0,0,não ofensivo,não ofensivo
 "Homem doente! Não entendo a mãe levar num programa desse também, triste",1,0,ofensivo,não ofensivo
 "Cadeia nele, será que vão ter punição?",1,0,ofensivo,não ofensivo
-"A esquerda fala um monte de coisas contra o governo, prometem por.fogo no país, uma tal lá do Rio disse que sem derramamento de sangue etc e aí ,fala algo sobre isso",1,0,ofensivo,não ofensivo
+"A esquerda fala um monte de coisas contra o governo, prometem por.fogo no país, uma tal lá do Rio disse que sem derramamento de sangue etc e aí ,fala algo sobre isso",1,1,ofensivo,ofensivo
 "Parabéns, ex presidente inelegível. Quem sabe no seu próximo aniversário vai comemorar na Papuda. 😂😂😂",1,0,ofensivo,não ofensivo
 "A Time devia colocar como personalidade do ano as crianças que são vítima de casamento precoce e morrem na primeira relação sexual por inúmeras perfurações internas mais e mais fácil colocar o que bem lhe convir o presidente está certo e uma pirralha sim e deveria estar aprendendo que o mundo inteiro está sendo destruído principalmente pessoas,,,,deviam observa os peixes grandes.....",1,0,ofensivo,não ofensivo
 Mas ele só disse verdades uma pirralha criança usada pela esquerda.,1,0,ofensivo,não ofensivo
-É só eu que acho que uns 80% é do oitavo?,0,0,não ofensivo,não ofensivo
+É só eu que acho que uns 80% é do oitavo?,0,1,não ofensivo,ofensivo
 Coloca o ministro Tarcísio para falar na televisão todo dia que o pessimismo acaba,0,0,não ofensivo,não ofensivo
 Muito forte ! Mas não tocará os corações dos poderosos 😢😢😢,0,0,não ofensivo,não ofensivo
 Haddad vai pegar prisão perpétua,1,0,ofensivo,não ofensivo
@@ -1384,7 +1384,7 @@ Candidato a embaixador comemorando o massacre que a Alemanha nazista fez quando 
 Numa pesquisa entre lula e moro... o moro dar de lavada ... deixe de ser mentirosa... o povo brasileiro cansou de ser enganado por vcs... aproveita ai deputada.. e fale do 13 do bolsa familia que tá sendo pago... dinheiro esse que ia pra pessoas que nao precisava... mais de 500 mil pessoas recebia sem precisar... nao seja hipoclita... o seu mandato so ta servindo pra atrapalhar o brasil... há... kd como é que ta o seu patrao depois da pena dele ter sido aumentada pra 17 anos?,1,0,ofensivo,não ofensivo
 Muito amor em uma foto,0,0,não ofensivo,não ofensivo
 "Acontece q todos riram, e a pior de todos ai foi a mãe da meninia,hipocrisia queri vê se fosse um anônimo se ela ia ri.",1,0,ofensivo,não ofensivo
-"Ele podia cansar de passar vergonha, está cavando cova pro governo.",1,0,ofensivo,não ofensivo
+"Ele podia cansar de passar vergonha, está cavando cova pro governo.",1,1,ofensivo,ofensivo
 Próximo presidente depois da reeleição do Bolsonaro..👏👏,0,0,não ofensivo,não ofensivo
 Ah mas pode ter certeza que do serão consideradas fake news aquillo q for contra a corrupcao,0,0,não ofensivo,não ofensivo
 Vergonha dessa bandida!!!,1,0,ofensivo,não ofensivo
