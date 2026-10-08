@@ -1,0 +1,2 @@
+model,status,adapter_dir,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+../models/models/Qwen/Qwen3.5-9B-Base,ok,outputs_hatebr_lora/models/..__models__models__Qwen__Qwen3.5-9B-Base/hatebr_lora_adapter,0.86,0.8596881641034871,0.9278571428571428,0.9278509218396892,all

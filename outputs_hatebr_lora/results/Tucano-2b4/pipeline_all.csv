@@ -1,0 +1,2 @@
+model,status,adapter_dir,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+../models/models/TucanoBR/Tucano-2b4,ok,outputs_hatebr_lora/models/..__models__models__TucanoBR__Tucano-2b4/hatebr_lora_adapter,0.4992857142857143,0.33678030966020633,0.9321428571428572,0.9321328502008714,all

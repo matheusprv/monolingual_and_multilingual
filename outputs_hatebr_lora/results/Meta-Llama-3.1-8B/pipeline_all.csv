@@ -1,0 +1,2 @@
+model,status,adapter_dir,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+../models/models/meta-llama/Meta-Llama-3.1-8B,ok,outputs_hatebr_lora/models/..__models__models__meta-llama__Meta-Llama-3.1-8B/hatebr_lora_adapter,0.775,0.7749861088363108,0.9228571428571428,0.922780869266786,all

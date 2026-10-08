@@ -1,0 +1,2 @@
+model,status,adapter_dir,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+../models/models/maritaca-ai/sabia-7b,ok,outputs_hatebr_lora/models/..__models__models__maritaca-ai__sabia-7b/hatebr_lora_adapter,0.5964285714285714,0.5680237057231124,0.9385714285714286,0.9385351768696231,all

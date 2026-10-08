@@ -1,5 +1,0 @@
-{
-  "model": "../../../models/models/google/gemma-4-12B",
-  "status": "error",
-  "error": "AttributeError: 'Gemma4UnifiedConfig' object has no attribute 'eos_token_id'"
-}

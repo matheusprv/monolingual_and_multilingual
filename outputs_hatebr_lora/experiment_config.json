@@ -1,0 +1,37 @@
+{
+  "models": [
+    "../models/models/22h/open-cabrita3b"
+  ],
+  "output_dir": "outputs_hatebr_lora",
+  "seed": 42,
+  "dataset": {
+    "name": "franciellevargas/HateBR",
+    "test_size": 0.2,
+    "validation_size": 0.1
+  },
+  "model": {
+    "use_4bit": true
+  },
+  "generation": {
+    "max_length": 512,
+    "max_new_tokens": 4
+  },
+  "training": {
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "num_epochs": 10.0,
+    "learning_rate": 0.0002,
+    "batch_size": 4,
+    "gradient_accumulation_steps": 4
+  },
+  "causal": {
+    "parquet_path": "corpora/GeneratedCorpus/corpora_v3.parquet",
+    "results_dir": "outputs_hatebr_lora/causal_results",
+    "text_column": "text",
+    "scenarios": null,
+    "max_rows": 0,
+    "stride": 512,
+    "max_length": null
+  }
+}

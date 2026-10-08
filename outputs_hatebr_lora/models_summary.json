@@ -1,16 +1,15 @@
 {
   "results": [
     {
-      "model": "../../../models/models/google/gemma-4-12B",
+      "model": "../models/models/22h/open-cabrita3b",
       "status": "ok",
-      "adapter_dir": "outputs_hatebr_lora/..__..__..__models__models__google__gemma-4-12B/hatebr_lora_adapter",
-      "zero_shot_accuracy": 0.5014285714285714,
-      "zero_shot_macro_f1": 0.3402361430685636,
-      "finetuned_accuracy": 0.8442857142857143,
-      "finetuned_macro_f1": 0.8442777692739425,
-      "mean_ppl": 4161510348261.1455,
-      "median_ppl": 84773214876.444,
-      "mean_bpb": 9.64908773766762
+      "adapter_dir": "outputs_hatebr_lora/models/..__models__models__22h__open-cabrita3b/hatebr_lora_adapter",
+      "zero_shot_accuracy": 0.5714285714285714,
+      "zero_shot_macro_f1": 0.5253979876874678,
+      "finetuned_accuracy": 0.9142857142857143,
+      "finetuned_macro_f1": 0.9140323729521282,
+      "action": "all",
+      "result_file": "outputs_hatebr_lora/results/..__models__models__22h__open-cabrita3b/pipeline_all.csv"
     }
   ]
 }

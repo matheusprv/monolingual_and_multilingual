@@ -1,2 +1,2 @@
-model,status,adapter_dir,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,mean_ppl,median_ppl,mean_bpb
-../../../models/models/google/gemma-4-12B,ok,outputs_hatebr_lora/..__..__..__models__models__google__gemma-4-12B/hatebr_lora_adapter,0.5014285714285714,0.3402361430685636,0.8442857142857143,0.8442777692739425,4161510348261.1455,84773214876.444,9.64908773766762
+model,status,adapter_dir,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action,result_file
+../models/models/22h/open-cabrita3b,ok,outputs_hatebr_lora/models/..__models__models__22h__open-cabrita3b/hatebr_lora_adapter,0.5714285714285714,0.5253979876874678,0.9142857142857143,0.9140323729521282,all,outputs_hatebr_lora/results/..__models__models__22h__open-cabrita3b/pipeline_all.csv

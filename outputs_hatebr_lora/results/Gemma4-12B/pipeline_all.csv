@@ -1,0 +1,2 @@
+model,status,adapter_dir,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+../models/models/google/gemma-4-12B,ok,outputs_hatebr_lora/models/..__models__models__google__gemma-4-12B/hatebr_lora_adapter,0.5,0.3333333333333333,0.845,0.8415356954147065,all
