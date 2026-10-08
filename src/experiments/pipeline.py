@@ -40,9 +40,11 @@ def _save_progress(results: list[dict[str, Any]], config: ExperimentConfig) -> N
     experiment.save_json({"results": results}, config.output_dir / "models_summary.json")
 
 
-def _save_action_result(result: dict[str, Any], config: ExperimentConfig) -> Path:
+def _save_action_result(
+    result: dict[str, Any], config: ExperimentConfig, model_spec: ModelSpec
+) -> Path:
     """Salva uma linha de resultado por modelo e etapa, como no causal sliding."""
-    output_dir = _result_dir(config, result["model"])
+    output_dir = _result_dir(config, model_spec)
     output_dir.mkdir(parents=True, exist_ok=True)
     csv_row = {
         key: json.dumps(value, ensure_ascii=False) if isinstance(value, (dict, list)) else value
@@ -97,15 +99,13 @@ def _run_action(
     )
 
     if action == "all":
-        if model_spec.backend != "hf":
-            raise ValueError("A ação 'all' inclui LoRA e só é suportada para modelos com backend 'hf'. Use 'predict' ou 'causal' para Candeia.")
         zero_shot = _run_action("predict", model_spec, splits, causal_corpus, config)
         training = _run_action("train", model_spec, splits, causal_corpus, config)
         finetuned = _run_action("evaluate", model_spec, splits, causal_corpus, config)
         return {
             "model": model_spec.name,
             "status": "ok",
-            "adapter_dir": training["adapter_dir"],
+            "training_path": training["training_path"],
             "zero_shot_accuracy": zero_shot["accuracy"],
             "zero_shot_macro_f1": zero_shot["macro_f1"],
             "finetuned_accuracy": finetuned["accuracy"],
@@ -116,20 +116,28 @@ def _run_action(
         raise ValueError(f"A ação {action!r} requer os splits do dataset de classificação.")
     if action in {"causal", "evaluate"} and causal_corpus is None:
         raise ValueError(f"A ação {action!r} requer o corpus causal Parquet.")
-    if action in {"train", "evaluate"} and model_spec.backend != "hf":
-        raise ValueError(
-            f"A ação {action!r} usa adapters LoRA/PEFT e só é suportada pelo "
-            "backend 'hf'. Para Candeia, use 'causal' ou 'predict'."
-        )
     train_df, validation_df, test_df = splits if splits is not None else (None, None, None)
 
     if action == "train":
-        model = Model(model_spec, config.model.use_4bit)
+        model = Model(
+            model_spec,
+            config.model.use_4bit,
+            native_training=model_spec.backend != "hf",
+        )
         try:
-            if not model.supports_lora:
-                raise ValueError("A ação 'train' usa LoRA/PEFT e só é suportada para backend 'hf'.")
-            adapter_dir = experiment.train_lora(model, train_df, validation_df, model_dir, config)
-            return {"model": model_spec.name, "status": "ok", "adapter_dir": str(adapter_dir)}
+            if model.supports_lora:
+                training_path = experiment.train_lora(
+                    model, train_df, validation_df, model_dir, config
+                )
+            else:
+                training_path = experiment.train_native(
+                    model, train_df, validation_df, model_dir, config
+                )
+            return {
+                "model": model_spec.name,
+                "status": "ok",
+                "training_path": str(training_path),
+            }
         finally:
             del model
             clean_memory()
@@ -163,14 +171,27 @@ def _run_action(
             del model
             clean_memory()
 
-    adapter_dir = model_dir / "hatebr_lora_adapter"
-    if not adapter_dir.exists():
-        raise FileNotFoundError(f"Adapter não encontrado em {adapter_dir}. Execute 'train' antes de 'evaluate'.")
-    model = LoRA_Model(model_spec, config.model.use_4bit, str(adapter_dir))
+    if model_spec.backend == "hf":
+        training_path = model_dir / "hatebr_lora_adapter"
+        if not training_path.exists():
+            raise FileNotFoundError(f"Adapter não encontrado em {training_path}. Execute 'train' antes de 'evaluate'.")
+        model = LoRA_Model(model_spec, config.model.use_4bit, str(training_path))
+    else:
+        training_path = model_dir / "hatebr_full_finetuned.pt"
+        if not training_path.is_file():
+            raise FileNotFoundError(
+                f"Checkpoint Candeia treinado não encontrado em {training_path}. "
+                "Execute 'train' antes de 'evaluate'."
+            )
+        model = Model(
+            model_spec,
+            config.model.use_4bit,
+            native_weights_path=training_path,
+        )
     try:
         metrics = experiment.evaluate_classification(model, test_df, result_dir / "hatebr_finetuned", config)
         experiment.run_eval_causal_sliding(model, causal_corpus, result_dir, config)
-        return {"model": model_spec.name, "status": "ok", "adapter_dir": str(adapter_dir), **metrics}
+        return {"model": model_spec.name, "status": "ok", "training_path": str(training_path), **metrics}
     finally:
         del model
         clean_memory()
@@ -199,7 +220,7 @@ def main(argv: list[str] | None = None) -> None:
             clean_memory()
             result = {"model": model_spec.name, "action": args.action, "status": "error", "error": f"{type(error).__name__}: {error}"}
             experiment.save_json(result, _result_dir(config, model_spec) / f"{args.action}_error.json")
-        result["result_file"] = str(_save_action_result(result, config))
+        result["result_file"] = str(_save_action_result(result, config, model_spec))
         results.append(result)
         _save_progress(results, config)
     print(pd.DataFrame(results).to_string(index=False))

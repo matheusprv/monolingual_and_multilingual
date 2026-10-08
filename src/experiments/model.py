@@ -8,6 +8,7 @@ diretamente de ``transformers``. Isso permite usar checkpoints Candeia
 from __future__ import annotations
 
 from contextlib import nullcontext
+from pathlib import Path
 from typing import Any
 
 import torch
@@ -19,12 +20,20 @@ from .experiment_config import ModelSpec
 
 
 class Model:
-    def __init__(self, spec: ModelSpec, quantization: bool):
+    def __init__(
+        self,
+        spec: ModelSpec,
+        quantization: bool,
+        *,
+        native_training: bool = False,
+        native_weights_path: Path | None = None,
+    ):
         self.spec = spec
         self.backend = spec.backend
         self._is_model_evaluating = False
         self._native_device: torch.device | None = None
         self._native_max_context_length: int | None = None
+        self._native_training = native_training
 
         if self.backend == "hf":
             self.tokenizer = self.load_hf_tokenizer(spec.path)
@@ -33,6 +42,8 @@ class Model:
             if quantization:
                 print("Aviso: use_4bit é ignorado para checkpoints Candeia nativos.")
             self.tokenizer, self.model = self.load_candeia(spec)
+            if native_weights_path is not None:
+                self.load_native_weights(native_weights_path)
         else:
             raise ValueError(f"Backend não suportado: {self.backend!r}")
         self.set_evaluation_mode()
@@ -94,7 +105,8 @@ class Model:
                     "Não foi possível importar xlstm_ptbr. Instale o repositório que "
                     "fornece as classes do checkpoint Candeia."
                 ) from error
-            config = XlstmLmConfig(**{**model_config, "mode": "inference"})
+            mode = "train" if self._native_training else "inference"
+            config = XlstmLmConfig(**{**model_config, "mode": mode})
             native_model = XlstmLmHeadModel(config)
         else:
             try:
@@ -124,6 +136,26 @@ class Model:
         if self.backend == "candeia_transformer" and self._native_device.type == "cuda":
             native_model.to(dtype=torch.bfloat16)
         return spm.SentencePieceProcessor(model_file=spec.tokenizer), native_model
+
+    def load_native_weights(self, path: Path) -> None:
+        """Restaura pesos completos produzidos pelo ajuste fino nativo."""
+        if self.backend == "hf":
+            raise ValueError("Pesos nativos não podem ser carregados em um backend HF.")
+        if not path.is_file():
+            raise FileNotFoundError(f"Checkpoint treinado não encontrado em {path}.")
+        checkpoint = torch.load(path, map_location="cpu", weights_only=False)
+        state_dict = checkpoint.get("model", checkpoint) if isinstance(checkpoint, dict) else checkpoint
+        self.model.load_state_dict(state_dict)
+
+    def save_native_weights(self, path: Path) -> None:
+        """Salva somente os pesos, mantendo a configuração no checkpoint-base YAML."""
+        if self.backend == "hf":
+            raise ValueError("Use save_pretrained para o backend HF.")
+        path.parent.mkdir(parents=True, exist_ok=True)
+        torch.save(
+            {"model": self.model.state_dict(), "backend": self.backend},
+            path,
+        )
 
     def set_evaluation_mode(self):
         if not self._is_model_evaluating:
@@ -196,6 +228,12 @@ class Model:
         input_ids = torch.tensor([ids], dtype=torch.long, device=self.input_device)
         return {"input_ids": input_ids, "attention_mask": torch.ones_like(input_ids)}
 
+    def encode_ids(self, text: str) -> list[int]:
+        """Tokeniza sem mover tensores à GPU; usado pelo treino nativo."""
+        if self.backend == "hf":
+            return list(self.tokenizer(text, add_special_tokens=False).input_ids)
+        return list(self.tokenizer.encode(text))
+
     def decode(self, token_ids: list[int] | torch.Tensor) -> str:
         if isinstance(token_ids, torch.Tensor):
             token_ids = token_ids.detach().cpu().tolist()
@@ -259,6 +297,22 @@ class Model:
                 reduction="sum",
             )
         return float(loss.item()), num_loss_tokens
+
+    def native_causal_loss(self, input_ids: torch.Tensor, labels: torch.Tensor) -> torch.Tensor:
+        """Loss média diferenciável usada pelo ajuste fino completo Candeia."""
+        if self.backend == "hf":
+            raise ValueError("native_causal_loss é exclusivo dos backends Candeia.")
+        with self._native_autocast():
+            outputs = self.model(input_ids)
+            logits = outputs[0] if isinstance(outputs, tuple) else outputs
+            if hasattr(logits, "logits"):
+                logits = logits.logits
+            return F.cross_entropy(
+                logits[:, :-1, :].float().reshape(-1, logits.shape[-1]),
+                labels[:, 1:].reshape(-1),
+                ignore_index=-100,
+                reduction="mean",
+            )
 
     def _native_autocast(self):
         if self._native_device is not None and self._native_device.type == "cuda":
