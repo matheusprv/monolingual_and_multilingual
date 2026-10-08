@@ -22,17 +22,17 @@ from transformers import set_seed
 from . import hatebr_lora_causal_multimodel as experiment
 from .causal_sliding import execute_experiment
 from .dataset import load_causal_corpus, load_hatebr, make_stratified_splits, save_splits
-from .experiment_config import ExperimentConfig, load_experiment_config
+from .experiment_config import ExperimentConfig, ModelSpec, load_experiment_config
 from .model import LoRA_Model, Model
 from .utils import clean_memory
 
 
-def _model_dir(config: ExperimentConfig, model_name: str) -> Path:
-    return config.output_dir / "models" / experiment.safe_model_name(model_name)
+def _model_dir(config: ExperimentConfig, model_spec: ModelSpec) -> Path:
+    return config.output_dir / "models" / experiment.safe_model_name(model_spec.name)
 
 
-def _result_dir(config: ExperimentConfig, model_name: str) -> Path:
-    return config.output_dir / "results" / experiment.safe_model_name(model_name)
+def _result_dir(config: ExperimentConfig, model_spec: ModelSpec) -> Path:
+    return config.output_dir / "results" / experiment.safe_model_name(model_spec.name)
 
 
 def _save_progress(results: list[dict[str, Any]], config: ExperimentConfig) -> None:
@@ -77,23 +77,33 @@ def _prepare_causal_corpus(config: ExperimentConfig) -> pd.DataFrame:
 
 def _run_action(
     action: str,
-    model_name: str,
+    model_spec: ModelSpec,
     splits: tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame] | None,
     causal_corpus: pd.DataFrame | None,
     config: ExperimentConfig,
 ) -> dict[str, Any]:
-    model_dir = _model_dir(config, model_name)
-    result_dir = _result_dir(config, model_name)
+    model_dir = _model_dir(config, model_spec)
+    result_dir = _result_dir(config, model_spec)
     model_dir.mkdir(parents=True, exist_ok=True)
     result_dir.mkdir(parents=True, exist_ok=True)
-    experiment.save_json({"model_name": model_name}, model_dir / "config.json")
+    experiment.save_json(
+        {
+            "model_name": model_spec.name,
+            "backend": model_spec.backend,
+            "path": model_spec.path,
+            "tokenizer": model_spec.tokenizer,
+        },
+        model_dir / "config.json",
+    )
 
     if action == "all":
-        zero_shot = _run_action("predict", model_name, splits, causal_corpus, config)
-        training = _run_action("train", model_name, splits, causal_corpus, config)
-        finetuned = _run_action("evaluate", model_name, splits, causal_corpus, config)
+        if model_spec.backend != "hf":
+            raise ValueError("A ação 'all' inclui LoRA e só é suportada para modelos com backend 'hf'. Use 'predict' ou 'causal' para Candeia.")
+        zero_shot = _run_action("predict", model_spec, splits, causal_corpus, config)
+        training = _run_action("train", model_spec, splits, causal_corpus, config)
+        finetuned = _run_action("evaluate", model_spec, splits, causal_corpus, config)
         return {
-            "model": model_name,
+            "model": model_spec.name,
             "status": "ok",
             "adapter_dir": training["adapter_dir"],
             "zero_shot_accuracy": zero_shot["accuracy"],
@@ -106,22 +116,28 @@ def _run_action(
         raise ValueError(f"A ação {action!r} requer os splits do dataset de classificação.")
     if action in {"causal", "evaluate"} and causal_corpus is None:
         raise ValueError(f"A ação {action!r} requer o corpus causal Parquet.")
+    if action in {"train", "evaluate"} and model_spec.backend != "hf":
+        raise ValueError(
+            f"A ação {action!r} usa adapters LoRA/PEFT e só é suportada pelo "
+            "backend 'hf'. Para Candeia, use 'causal' ou 'predict'."
+        )
     train_df, validation_df, test_df = splits if splits is not None else (None, None, None)
 
     if action == "train":
-        model = Model(model_name, config.model.use_4bit)
+        model = Model(model_spec, config.model.use_4bit)
         try:
+            if not model.supports_lora:
+                raise ValueError("A ação 'train' usa LoRA/PEFT e só é suportada para backend 'hf'.")
             adapter_dir = experiment.train_lora(model, train_df, validation_df, model_dir, config)
-            return {"model": model_name, "status": "ok", "adapter_dir": str(adapter_dir)}
+            return {"model": model_spec.name, "status": "ok", "adapter_dir": str(adapter_dir)}
         finally:
             del model
             clean_memory()
 
     if action == "causal":
-        file_name = experiment.safe_model_name(model_name)
+        file_name = experiment.safe_model_name(model_spec.name)
         results = execute_experiment(
-            model_name=model_name,
-            model_url=model_name,
+            model_spec=model_spec,
             quantization=config.model.use_4bit,
             corpus=causal_corpus,
             output_folder=config.causal.results_dir,
@@ -132,17 +148,17 @@ def _run_action(
         if results is None:
             raise RuntimeError("A avaliação causal falhou; consulte o log acima.")
         return {
-            "model": model_name,
+            "model": model_spec.name,
             "status": "ok",
             "rows": len(results),
             "causal_result_file": str(config.causal.results_dir / f"{file_name}.csv"),
         }
 
     if action == "predict":
-        model = Model(model_name, config.model.use_4bit)
+        model = Model(model_spec, config.model.use_4bit)
         try:
             metrics = experiment.evaluate_classification(model, test_df, result_dir / "hatebr_zero_shot", config)
-            return {"model": model_name, "status": "ok", **metrics}
+            return {"model": model_spec.name, "status": "ok", **metrics}
         finally:
             del model
             clean_memory()
@@ -150,11 +166,11 @@ def _run_action(
     adapter_dir = model_dir / "hatebr_lora_adapter"
     if not adapter_dir.exists():
         raise FileNotFoundError(f"Adapter não encontrado em {adapter_dir}. Execute 'train' antes de 'evaluate'.")
-    model = LoRA_Model(model_name, config.model.use_4bit, str(adapter_dir))
+    model = LoRA_Model(model_spec, config.model.use_4bit, str(adapter_dir))
     try:
         metrics = experiment.evaluate_classification(model, test_df, result_dir / "hatebr_finetuned", config)
         experiment.run_eval_causal_sliding(model, causal_corpus, result_dir, config)
-        return {"model": model_name, "status": "ok", "adapter_dir": str(adapter_dir), **metrics}
+        return {"model": model_spec.name, "status": "ok", "adapter_dir": str(adapter_dir), **metrics}
     finally:
         del model
         clean_memory()
@@ -175,14 +191,14 @@ def main(argv: list[str] | None = None) -> None:
     splits = _prepare_splits(config) if needs_splits else None
     causal_corpus = _prepare_causal_corpus(config) if needs_causal_corpus else None
     results: list[dict[str, Any]] = []
-    for model_name in config.models:
+    for model_spec in config.models:
         try:
-            result = _run_action(args.action, model_name, splits, causal_corpus, config)
+            result = _run_action(args.action, model_spec, splits, causal_corpus, config)
             result["action"] = args.action
         except Exception as error:
             clean_memory()
-            result = {"model": model_name, "action": args.action, "status": "error", "error": f"{type(error).__name__}: {error}"}
-            experiment.save_json(result, _result_dir(config, model_name) / f"{args.action}_error.json")
+            result = {"model": model_spec.name, "action": args.action, "status": "error", "error": f"{type(error).__name__}: {error}"}
+            experiment.save_json(result, _result_dir(config, model_spec) / f"{args.action}_error.json")
         result["result_file"] = str(_save_action_result(result, config))
         results.append(result)
         _save_progress(results, config)

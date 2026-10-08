@@ -1,67 +1,279 @@
-from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+"""Backends de modelos usados pelos experimentos.
+
+Os experimentos trabalham com uma pequena interface comum, em vez de depender
+diretamente de ``transformers``. Isso permite usar checkpoints Candeia
+(xLSTM e Transformer) distribuídos como ``model.pt``.
+"""
+
+from __future__ import annotations
+
+from contextlib import nullcontext
+from typing import Any
+
 import torch
+import torch.nn.functional as F
 from peft import PeftModel
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+
+from .experiment_config import ModelSpec
+
 
 class Model:
-    def __init__(self, model_url:str, quantization:bool):
-        self.tokenizer = self.load_tokenizer(model_url)
-        self.model = self.load_model(model_url, quantization)
+    def __init__(self, spec: ModelSpec, quantization: bool):
+        self.spec = spec
+        self.backend = spec.backend
         self._is_model_evaluating = False
-        self.set_evaluation_mode()
-    
-    def load_tokenizer(self, model_url):
-        tokenizer = AutoTokenizer.from_pretrained(
-                model_url,
-                use_fast=False, 
-                trust_remote_code=True
-            )
+        self._native_device: torch.device | None = None
+        self._native_max_context_length: int | None = None
 
+        if self.backend == "hf":
+            self.tokenizer = self.load_hf_tokenizer(spec.path)
+            self.model = self.load_hf_model(spec.path, quantization)
+        elif self.backend in {"xlstm", "candeia_transformer"}:
+            if quantization:
+                print("Aviso: use_4bit é ignorado para checkpoints Candeia nativos.")
+            self.tokenizer, self.model = self.load_candeia(spec)
+        else:
+            raise ValueError(f"Backend não suportado: {self.backend!r}")
+        self.set_evaluation_mode()
+
+    @property
+    def supports_lora(self) -> bool:
+        """PEFT/Trainer só é suportado pelo backend Transformers neste projeto."""
+        return self.backend == "hf"
+
+    def load_hf_tokenizer(self, model_path: str):
+        tokenizer = AutoTokenizer.from_pretrained(
+            model_path, use_fast=False, trust_remote_code=True
+        )
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
         tokenizer.padding_side = "left"
-        
         return tokenizer
-    
-    
-    def load_model(self, model_url, quantization):
+
+    def load_hf_model(self, model_path: str, quantization: bool):
         bnb_config = None
         if quantization:
             bnb_config = BitsAndBytesConfig(
                 load_in_4bit=True,
                 bnb_4bit_quant_type="nf4",
-                bnb_4bit_compute_dtype=torch.float16
+                bnb_4bit_compute_dtype=torch.float16,
             )
-    
-        model = AutoModelForCausalLM.from_pretrained(
-            model_url,
+        return AutoModelForCausalLM.from_pretrained(
+            model_path,
             quantization_config=bnb_config,
             trust_remote_code=True,
             device_map="auto",
-            torch_dtype=torch.float16 
+            torch_dtype=torch.float16,
         )
-    
-        return model
-    
-    
+
+    def load_candeia(self, spec: ModelSpec):
+        """Carrega o formato nativo salvo pelos treinamentos Candeia."""
+        if not spec.tokenizer:
+            raise ValueError(f"O modelo Candeia {spec.name!r} requer 'tokenizer' no YAML.")
+        try:
+            import sentencepiece as spm
+        except ImportError as error:
+            raise ImportError("Instale sentencepiece para usar os modelos Candeia.") from error
+
+        checkpoint = torch.load(spec.path, map_location="cpu", weights_only=False)
+        try:
+            model_config = checkpoint["config"]["model"]
+            state_dict = checkpoint["model"]
+        except KeyError as error:
+            raise ValueError(
+                f"Checkpoint Candeia inválido em {spec.path!r}; esperava as chaves "
+                "'config.model' e 'model'."
+            ) from error
+
+        if self.backend == "xlstm":
+            try:
+                from xlstm_ptbr.models.xlstm.lm import XlstmLmConfig, XlstmLmHeadModel
+            except ImportError as error:
+                raise ImportError(
+                    "Não foi possível importar xlstm_ptbr. Instale o repositório que "
+                    "fornece as classes do checkpoint Candeia."
+                ) from error
+            config = XlstmLmConfig(**{**model_config, "mode": "inference"})
+            native_model = XlstmLmHeadModel(config)
+        else:
+            try:
+                from xlstm_ptbr.models.transformer.lm import (
+                    TransformerLmConfig,
+                    TransformerLmHeadModel,
+                )
+            except ImportError as error:
+                raise ImportError(
+                    "Não foi possível importar xlstm_ptbr. Instale o repositório que "
+                    "fornece as classes do checkpoint Candeia."
+                ) from error
+            config = TransformerLmConfig(
+                **{**model_config, "activation_checkpointing": False}
+            )
+            native_model = TransformerLmHeadModel(config)
+
+        native_model.load_state_dict(state_dict)
+        for attribute in ("max_position_embeddings", "context_length", "max_sequence_length", "block_size"):
+            value = getattr(config, attribute, None)
+            if isinstance(value, int) and value > 0:
+                self._native_max_context_length = value
+                break
+        self._native_device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        native_model.to(self._native_device)
+        # O exemplo do Candeia Transformer carrega os pesos já em bf16.
+        if self.backend == "candeia_transformer" and self._native_device.type == "cuda":
+            native_model.to(dtype=torch.bfloat16)
+        return spm.SentencePieceProcessor(model_file=spec.tokenizer), native_model
+
     def set_evaluation_mode(self):
         if not self._is_model_evaluating:
             self.model.eval()
             self._is_model_evaluating = True
-    
+
     def set_train_mode(self):
         if self._is_model_evaluating:
-            self.model.train() 
+            self.model.train()
             self._is_model_evaluating = False
-    
+
+    @property
+    def pad_token_id(self) -> int:
+        if self.backend == "hf":
+            return int(self.tokenizer.pad_token_id)
+        pad_id = self.tokenizer.pad_id()
+        return int(pad_id if pad_id >= 0 else self.eos_token_id)
+
+    @property
+    def eos_token_id(self) -> int:
+        if self.backend == "hf":
+            return int(self.tokenizer.eos_token_id)
+        eos_id = self.tokenizer.eos_id()
+        if eos_id < 0:
+            raise ValueError("O tokenizer SentencePiece não define um token EOS.")
+        return int(eos_id)
+
+    @property
+    def input_device(self) -> torch.device:
+        if self.backend != "hf":
+            assert self._native_device is not None
+            return self._native_device
+        try:
+            return self.model.get_input_embeddings().weight.device
+        except Exception:
+            return next(self.model.parameters()).device
+
+    @property
+    def max_context_length(self) -> int | None:
+        """Devolve o limite conhecido; ``None`` exige causal.max_length no YAML."""
+        if self._native_max_context_length is not None:
+            return self._native_max_context_length
+        config = getattr(self.model, "config", None)
+        for attribute in ("max_position_embeddings", "context_length", "max_sequence_length", "block_size"):
+            value = getattr(config, attribute, None)
+            if isinstance(value, int) and value > 0:
+                return value
+        text_config = getattr(config, "text_config", None)
+        value = getattr(text_config, "max_position_embeddings", None)
+        if isinstance(value, int) and value > 0:
+            return value
+        if self.backend == "hf":
+            value = getattr(self.tokenizer, "model_max_length", None)
+            if isinstance(value, int) and value < 1_000_000:
+                return value
+        return None
+
+    def prepare_inputs(
+        self, text: str, *, truncation: bool = False, max_length: int | None = None
+    ) -> dict[str, torch.Tensor]:
+        if self.backend == "hf":
+            encoded = self.tokenizer(
+                text, return_tensors="pt", truncation=truncation, max_length=max_length
+            ).to(self.input_device)
+            return dict(encoded)
+
+        ids = self.tokenizer.encode(text)
+        if truncation and max_length is not None:
+            ids = ids[:max_length]
+        input_ids = torch.tensor([ids], dtype=torch.long, device=self.input_device)
+        return {"input_ids": input_ids, "attention_mask": torch.ones_like(input_ids)}
+
+    def decode(self, token_ids: list[int] | torch.Tensor) -> str:
+        if isinstance(token_ids, torch.Tensor):
+            token_ids = token_ids.detach().cpu().tolist()
+        if self.backend == "hf":
+            return self.tokenizer.decode(token_ids, skip_special_tokens=True)
+        return self.tokenizer.decode(token_ids)
+
+    def generate(
+        self,
+        input_ids: torch.Tensor,
+        *,
+        attention_mask: torch.Tensor | None,
+        max_new_tokens: int,
+    ) -> torch.Tensor:
+        if self.backend == "hf":
+            kwargs: dict[str, Any] = {
+                "input_ids": input_ids,
+                "max_new_tokens": max_new_tokens,
+                "do_sample": False,
+                "pad_token_id": self.pad_token_id,
+                "eos_token_id": self.eos_token_id,
+            }
+            if attention_mask is not None:
+                kwargs["attention_mask"] = attention_mask
+            return self.model.generate(**kwargs)
+
+        with self._native_autocast():
+            output = self.model.generate(
+                input_ids, max_new_tokens=max_new_tokens, temperature=0.0
+            )
+        sequence = output[0] if isinstance(output, tuple) else output
+        return sequence.unsqueeze(0) if sequence.ndim == 1 else sequence
+
+    def causal_nll(
+        self,
+        input_ids: torch.Tensor,
+        labels: torch.Tensor,
+        attention_mask: torch.Tensor | None = None,
+    ) -> tuple[float, int]:
+        """Retorna NLL total e número de predições válidas para uma janela."""
+        num_loss_tokens = int((labels[:, 1:] != -100).sum().item())
+        if num_loss_tokens == 0:
+            return 0.0, 0
+
+        if self.backend == "hf":
+            kwargs: dict[str, Any] = {"input_ids": input_ids, "labels": labels}
+            if attention_mask is not None:
+                kwargs["attention_mask"] = attention_mask
+            outputs = self.model(**kwargs)
+            return float(outputs.loss.item() * num_loss_tokens), num_loss_tokens
+
+        with self._native_autocast():
+            outputs = self.model(input_ids)
+            logits = outputs[0] if isinstance(outputs, tuple) else outputs
+            if hasattr(logits, "logits"):
+                logits = logits.logits
+            loss = F.cross_entropy(
+                logits[:, :-1, :].float().reshape(-1, logits.shape[-1]),
+                labels[:, 1:].reshape(-1),
+                ignore_index=-100,
+                reduction="sum",
+            )
+        return float(loss.item()), num_loss_tokens
+
+    def _native_autocast(self):
+        if self._native_device is not None and self._native_device.type == "cuda":
+            return torch.autocast("cuda", dtype=torch.bfloat16)
+        return nullcontext()
+
 
 class LoRA_Model(Model):
-    def __init__(self, model_url:str, quantization:bool, adapter_path:str):
-        super().__init__(model_url, quantization)
-
-        self.model = PeftModel.from_pretrained(
-            self.model,
-            adapter_path,
-        )
-
+    def __init__(self, spec: ModelSpec, quantization: bool, adapter_path: str):
+        super().__init__(spec, quantization)
+        if not self.supports_lora:
+            raise ValueError(
+                f"LoRA/PEFT ainda não é suportado para o backend {self.backend!r}. "
+                "Use as ações 'causal' ou 'predict', ou implemente treino nativo."
+            )
+        self.model = PeftModel.from_pretrained(self.model, adapter_path)
         self._is_model_evaluating = False
         self.set_evaluation_mode()

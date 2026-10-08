@@ -7,6 +7,7 @@ import torch
 from tqdm.auto import tqdm
 
 from .model import Model
+from .experiment_config import ModelSpec
 from .utils import clean_memory
 
 
@@ -16,9 +17,6 @@ def eval_causal_sliding(
     stride: int = 512,
     max_len: int | None = None,
 ):
-    language_model = model.model
-    tokenizer = model.tokenizer
-
     results = {
         "text_id": [],
         "num_words": [],
@@ -32,25 +30,18 @@ def eval_causal_sliding(
     }
 
     if max_len is None:
-        try:
-            max_len = language_model.config.max_position_embeddings
-        except AttributeError:
-            try:
-                max_len = language_model.config.text_config.max_position_embeddings
-            except AttributeError:
-                max_len = tokenizer.model_max_length
+        max_len = model.max_context_length
+    if max_len is None:
+        raise ValueError(
+            "Não foi possível inferir o comprimento de contexto deste modelo. "
+            "Defina causal.max_length no YAML."
+        )
 
     if stride <= 0:
         raise ValueError("stride must be positive")
 
     if stride > max_len:
         raise ValueError("stride cannot be greater than max_len")
-
-    # More reliable for models loaded with device_map="auto".
-    try:
-        input_device = language_model.get_input_embeddings().weight.device
-    except Exception:
-        input_device = next(language_model.parameters()).device
 
     model.set_evaluation_mode()
 
@@ -71,14 +62,10 @@ def eval_causal_sliding(
             num_bytes = len(text.encode("utf-8"))
             num_words = len(text.split())
 
-            # This may itself raise an OOM if the full encoded text is moved
-            # to the GPU.
-            inputs = tokenizer(
-                text,
-                return_tensors="pt",
-            ).to(input_device)
+            # Isto pode gerar OOM se todo o texto tokenizado não couber na GPU.
+            inputs = model.prepare_inputs(text)
 
-            num_tokens = inputs.input_ids.size(1)
+            num_tokens = inputs["input_ids"].size(1)
 
             tokens_per_word = (
                 num_tokens / num_words
@@ -98,7 +85,7 @@ def eval_causal_sliding(
 
                 target_len = end_window - prev_end_window
 
-                input_ids = inputs.input_ids[
+                input_ids = inputs["input_ids"][
                     :, begin_window:end_window
                 ]
 
@@ -112,27 +99,20 @@ def eval_causal_sliding(
                 # Avoid calling the model when no next-token loss can
                 # be calculated.
                 if num_loss_tokens > 0:
-                    model_kwargs = {
-                        "input_ids": input_ids,
-                        "labels": target_ids,
-                    }
-
-                    if "attention_mask" in inputs:
-                        model_kwargs["attention_mask"] = (
-                            inputs.attention_mask[
+                    with torch.inference_mode():
+                        window_attention_mask = inputs.get("attention_mask")
+                        if window_attention_mask is not None:
+                            window_attention_mask = window_attention_mask[
                                 :, begin_window:end_window
                             ]
+                        window_nll, window_loss_tokens = model.causal_nll(
+                            input_ids,
+                            target_ids,
+                            attention_mask=window_attention_mask,
                         )
 
-                    with torch.inference_mode():
-                        outputs = language_model(**model_kwargs)
-
-                    total_nll += (
-                        outputs.loss.item() * num_loss_tokens
-                    )
-                    total_loss_tokens += num_loss_tokens
-
-                    del outputs
+                    total_nll += window_nll
+                    total_loss_tokens += window_loss_tokens
 
                 del input_ids, target_ids
 
@@ -192,8 +172,7 @@ def eval_causal_sliding(
                 "inputs",
                 "input_ids",
                 "target_ids",
-                "outputs",
-                "model_kwargs",
+                "window_attention_mask",
             ):
                 if variable_name in locals():
                     del locals()[variable_name]
@@ -204,8 +183,7 @@ def eval_causal_sliding(
 
 
 def execute_experiment(
-    model_name,
-    model_url,
+    model_spec: ModelSpec,
     quantization,
     corpus: pd.DataFrame,
     output_folder: Path = Path("./results"),
@@ -222,8 +200,8 @@ def execute_experiment(
 
     model = None
     try:
-        print(f"⏳ Loading {model_name}")
-        model = Model(model_url, quantization)
+        print(f"⏳ Loading {model_spec.name}")
+        model = Model(model_spec, quantization)
 
         print("🖥️ Executing experiment")
         results = eval_causal_sliding(model, dataset, stride=stride, max_len=max_len)
@@ -231,8 +209,8 @@ def execute_experiment(
     except Exception:
         logging.exception(
             "Error model %s from %s with quantization=%s",
-            model_name,
-            model_url,
+            model_spec.name,
+            model_spec.path,
             quantization,
         )
         return None
@@ -243,8 +221,8 @@ def execute_experiment(
 
     print("💾 Saving model results")
     results_df = pd.DataFrame(results)
-    results_df["model"] = model_name
+    results_df["model"] = model_spec.name
     output_folder.mkdir(parents=True, exist_ok=True)
-    file_name = output_file_name or model_name
+    file_name = output_file_name or model_spec.name
     results_df.to_csv(output_folder / f"{file_name}.csv", index=False)
     return results_df

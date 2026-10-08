@@ -22,6 +22,16 @@ class ModelConfig:
 
 
 @dataclass(frozen=True)
+class ModelSpec:
+    """Identifica um modelo e o backend usado para carregá-lo."""
+
+    name: str
+    backend: str
+    path: str
+    tokenizer: str | None = None
+
+
+@dataclass(frozen=True)
 class GenerationConfig:
     max_length: int
     max_new_tokens: int
@@ -51,7 +61,7 @@ class CausalConfig:
 
 @dataclass(frozen=True)
 class ExperimentConfig:
-    models: tuple[str, ...]
+    models: tuple[ModelSpec, ...]
     output_dir: Path
     seed: int
     dataset: DatasetConfig
@@ -66,6 +76,45 @@ class ExperimentConfig:
         data["causal"]["parquet_path"] = str(self.causal.parquet_path)
         data["causal"]["results_dir"] = str(self.causal.results_dir)
         return data
+
+
+def _parse_models(value: Any) -> tuple[ModelSpec, ...]:
+    """Aceita IDs HF legados e a forma detalhada para checkpoints Candeia."""
+    if not isinstance(value, list) or not value:
+        raise ValueError("A chave obrigatória 'models' deve ser uma lista não vazia.")
+
+    parsed: list[ModelSpec] = []
+    valid_backends = {"hf", "xlstm", "candeia_transformer"}
+    for index, item in enumerate(value):
+        if isinstance(item, str) and item.strip():
+            parsed.append(ModelSpec(name=item, backend="hf", path=item))
+            continue
+        if not isinstance(item, dict):
+            raise ValueError(f"models[{index}] deve ser uma string ou um mapa YAML.")
+        try:
+            name = str(item["name"]).strip()
+            backend = str(item["backend"]).strip()
+            path = str(item["path"]).strip()
+        except KeyError as error:
+            raise ValueError(
+                f"models[{index}] requer as chaves 'name', 'backend' e 'path'."
+            ) from error
+        if not name or not path or backend not in valid_backends:
+            raise ValueError(
+                f"models[{index}] é inválido. backend deve ser um de {sorted(valid_backends)}."
+            )
+        tokenizer = item.get("tokenizer")
+        if backend != "hf" and (not isinstance(tokenizer, str) or not tokenizer.strip()):
+            raise ValueError(f"models[{index}].tokenizer é obrigatório para o backend {backend!r}.")
+        parsed.append(
+            ModelSpec(
+                name=name,
+                backend=backend,
+                path=path,
+                tokenizer=tokenizer.strip() if isinstance(tokenizer, str) else None,
+            )
+        )
+    return tuple(parsed)
 
 
 def _section(data: dict[str, Any], name: str) -> dict[str, Any]:
@@ -93,9 +142,7 @@ def load_experiment_config(path: Path) -> ExperimentConfig:
     generation = _section(data, "generation")
     training = _section(data, "training")
     causal = _section(data, "causal")
-    models = data.get("models")
-    if not isinstance(models, list) or not models or not all(isinstance(item, str) and item.strip() for item in models):
-        raise ValueError("A chave obrigatória 'models' deve ser uma lista não vazia de IDs de modelo.")
+    models = _parse_models(data.get("models"))
 
     output_dir = Path(_value(data, "output_dir", "raiz"))
     scenarios = _value(causal, "scenarios", "causal")
@@ -103,7 +150,7 @@ def load_experiment_config(path: Path) -> ExperimentConfig:
         raise ValueError("causal.scenarios deve ser 'all' ou uma lista de cenários.")
     max_length = _value(causal, "max_length", "causal")
     return ExperimentConfig(
-        models=tuple(models),
+        models=models,
         output_dir=output_dir,
         seed=int(_value(data, "seed", "raiz")),
         dataset=DatasetConfig(

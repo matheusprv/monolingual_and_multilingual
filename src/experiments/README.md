@@ -8,7 +8,7 @@ This directory compares causal models on HateBR for both classification and caus
 - `experiment.yaml`: configuration for models, data, training, generation, and causal evaluation.
 - `experiment_config.py`: validates and converts the YAML into a typed configuration.
 - `dataset.py`: loads, cleans, splits, and saves datasets.
-- `model.py`: loads the tokenizer, base causal model, and LoRA adapters.
+- `model.py`: loads Hugging Face or native Candeia (xLSTM/Transformer) models.
 - `hatebr_lora_causal_multimodel.py`: prompts, classification, LoRA fine-tuning, and metrics.
 - `causal_sliding.py`: perplexity (PPL) and bits-per-byte (BPB) computation with sliding windows.
 - `utils.py`: RAM/VRAM cleanup between runs.
@@ -33,7 +33,7 @@ For each text, *causal sliding* tokenizes it and processes windows of up to `max
 
 `experiment.yaml` contains:
 
-- `models`: model IDs or paths to compare;
+- `models`: model IDs/paths from Hugging Face, or detailed native Candeia entries;
 - `output_dir` and `seed`: output directory and reproducibility;
 - `dataset`: dataset name, test fraction, and validation fraction;
 - `model`: 4-bit quantization setting;
@@ -62,3 +62,32 @@ python3 -m src.experiments.pipeline src/experiments/experiment.yaml all
 ```
 
 `evaluate` requires that `train` has already produced the corresponding adapter. Adjust relative paths in the YAML according to the directory from which the command is run.
+
+### Checkpoints Candeia
+
+Strings in `models` retain the original behavior and are loaded with Hugging Face.
+For a checkpoint produced by Candeia, use a YAML map with its `model.pt` and
+SentencePiece `tokenizer.model`:
+
+```yaml
+models:
+  - name: Manaca
+    backend: hf
+    path: ../models/models/menezesbruno/manaca-1b-base
+    tokenizer: ../models/models/menezesbruno/manaca-1b-base
+  - name: Candeia-xLSTM-350M
+    backend: xlstm
+    path: /media/data/matheusvieira/candeia-xlstm-350M/model.pt
+    tokenizer: /media/data/matheusvieira/candeia-xlstm-350M/tokenizer.model
+  - name: Candeia-Transformer-350M
+    backend: candeia_transformer
+    path: /media/data/matheusvieira/candeia-transformer-350M/model.pt
+    tokenizer: /media/data/matheusvieira/candeia-transformer-350M/tokenizer.model
+```
+
+Both native backends support `causal` (PPL/BPB) and `predict` (HateBR
+zero-shot). They require the package that exposes `xlstm_ptbr` to be installed
+in the environment. Their `model.pt` format is not compatible with PEFT, so
+`train`, `evaluate`, and `all` remain exclusive to the `hf` backend. If the
+context size is not exposed by a particular Candeia release, set
+`causal.max_length` explicitly.

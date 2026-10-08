@@ -96,23 +96,20 @@ def infer_lora_targets(model) -> list[str]:
 @torch.inference_mode()
 def predict_generate(model: Model, texts: list[str], config: ExperimentConfig) -> list[int]:
     model.set_evaluation_mode()
-    language_model = model.model
-    tokenizer = model.tokenizer
     preds = []
-    device = language_model.get_input_embeddings().weight.device
 
     for text in tqdm(texts, desc="Classificando", unit="ex"):
         prompt = build_prompt(text)
-        inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=config.generation.max_length).to(device)
-        out = language_model.generate(
-            **inputs,
+        inputs = model.prepare_inputs(
+            prompt, truncation=True, max_length=config.generation.max_length
+        )
+        out = model.generate(
+            inputs["input_ids"],
+            attention_mask=inputs.get("attention_mask"),
             max_new_tokens=config.generation.max_new_tokens,
-            do_sample=False,
-            pad_token_id=tokenizer.pad_token_id,
-            eos_token_id=tokenizer.eos_token_id,
         )
         gen_ids = out[0, inputs["input_ids"].shape[1]:]
-        generated = tokenizer.decode(gen_ids, skip_special_tokens=True)
+        generated = model.decode(gen_ids)
         preds.append(normalize_prediction(generated))
 
     return preds
@@ -188,6 +185,8 @@ def train_lora(
     output_dir: Path,
     config: ExperimentConfig,
 ) -> Path:
+    if not base_model.supports_lora:
+        raise ValueError("LoRA/PEFT só é suportado pelo backend 'hf'.")
     tokenizer = base_model.tokenizer
     language_model = base_model.model
 
