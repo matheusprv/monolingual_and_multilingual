@@ -1,0 +1,2 @@
+model,status,training_path,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+Gemma4,ok,outputs_ag_news_pt_lora/models/Gemma4/ag_news_pt_lora_adapter,0.2503947368421053,0.10085018626664524,0.8589473684210527,0.8595217607325644,all

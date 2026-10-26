@@ -1,0 +1,2 @@
+model,status,training_path,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+Manaca,ok,outputs_ag_news_pt_lora/models/Manaca/ag_news_pt_lora_adapter,0.39671052631578946,0.3121524315381108,0.9251315789473684,0.9250914934553276,all

@@ -1,14 +1,14 @@
 """
-Fine-tuning de Causal LM para classificação no HateBR usando LoRA,
+Fine-tuning de Causal LM para classificação textual usando LoRA,
 preservando a capacidade generativa por não trocar a cabeça do modelo.
 
 Saídas geradas no diretório de resultados configurado:
-- hatebr_zero_shot_metrics.json
-- hatebr_zero_shot_predictions.csv
-- hatebr_finetuned_metrics.json
-- hatebr_finetuned_predictions.csv
-- hatebr_eval_causal_sliding.csv
-- hatebr_eval_causal_sliding_summary.json
+- <dataset>_zero_shot_metrics.json
+- <dataset>_zero_shot_predictions.csv
+- <dataset>_finetuned_metrics.json
+- <dataset>_finetuned_predictions.csv
+- <dataset>_eval_causal_sliding.csv
+- <dataset>_eval_causal_sliding_summary.json
 
 O adapter LoRA e os checkpoints são salvos no diretório de modelos configurado.
 
@@ -24,6 +24,7 @@ from __future__ import annotations
 import json
 import math
 import re
+import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -44,38 +45,49 @@ from transformers import (
 import inspect
 
 from .causal_sliding import eval_causal_sliding
+from .dataset import ClassificationTask
 from .experiment_config import ExperimentConfig
 from .model import Model
 
-ID2LABEL = {0: "não ofensivo", 1: "ofensivo"}
+
 def save_json(obj: dict[str, Any], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as f:
         json.dump(obj, f, ensure_ascii=False, indent=2)
 
 
-def build_prompt(text: str) -> str:
+def build_prompt(text: str, task: ClassificationTask) -> str:
+    classes = ", ".join(task.labels[:-1]) + f" ou {task.labels[-1]}"
     return (
-        "Classifique o comentário abaixo em exatamente uma das classes: "
-        "ofensivo ou não ofensivo.\n\n"
-        f"Comentário: {text}\n\n"
+        f"Classifique a {task.example_name} abaixo em exatamente uma das classes: "
+        f"{classes}.\n\n"
+        f"{task.example_name.capitalize()}: {text}\n\n"
         "Classe:"
     )
 
 
-def normalize_prediction(generated: str) -> int:
-    s = generated.strip().lower()
-    s = re.sub(r"[^a-záàâãéêíóôõúçãõ\s-]", " ", s)
-    s = re.sub(r"\s+", " ", s).strip()
+def _normalized_text(value: str) -> str:
+    value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode("ascii")
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9]+", " ", value.casefold())).strip()
 
-    # Ordem importa: "não ofensivo" contém "ofensivo".
-    if "não ofensivo" in s or "nao ofensivo" in s or s.startswith("não") or s.startswith("nao"):
-        return 0
-    if "ofensivo" in s:
-        return 1
 
-    # Fallback conservador: se o modelo não seguiu o formato, marca como ofensivo
-    # apenas quando há sinal textual explícito; caso contrário não ofensivo.
+def normalize_prediction(generated: str, task: ClassificationTask) -> int:
+    """Converte uma resposta gerada no índice da classe da tarefa.
+
+    Os nomes mais longos são testados primeiro para evitar que uma classe que
+    contém outra (por exemplo, ``não ofensivo``) seja interpretada incorretamente.
+    """
+    normalized = _normalized_text(generated)
+    labels_by_length = sorted(
+        enumerate(task.labels), key=lambda item: len(_normalized_text(item[1])), reverse=True
+    )
+    for label_id, label in labels_by_length:
+        normalized_label = _normalized_text(label)
+        if re.search(rf"(?:^|\s){re.escape(normalized_label)}(?:$|\s)", normalized):
+            return label_id
+
+    # Quando a geração não contém uma classe válida, a primeira classe mantém o
+    # comportamento determinístico que o experimento já tinha no HateBR.
     return 0
 
 
@@ -96,12 +108,14 @@ def infer_lora_targets(model) -> list[str]:
 # Avaliação de classificação
 # =========================
 @torch.inference_mode()
-def predict_generate(model: Model, texts: list[str], config: ExperimentConfig) -> list[int]:
+def predict_generate(
+    model: Model, texts: list[str], config: ExperimentConfig, task: ClassificationTask
+) -> list[int]:
     model.set_evaluation_mode()
     preds = []
 
     for text in tqdm(texts, desc="Classificando", unit="ex"):
-        prompt = build_prompt(text)
+        prompt = build_prompt(text, task)
         inputs = model.prepare_inputs(
             prompt, truncation=True, max_length=config.generation.max_length
         )
@@ -112,38 +126,52 @@ def predict_generate(model: Model, texts: list[str], config: ExperimentConfig) -
         )
         gen_ids = out[0, inputs["input_ids"].shape[1]:]
         generated = model.decode(gen_ids)
-        preds.append(normalize_prediction(generated))
+        preds.append(normalize_prediction(generated, task))
 
     return preds
 
 
-def evaluate_classification(model: Model, df: pd.DataFrame, out_prefix: Path, config: ExperimentConfig) -> dict[str, Any]:
+def evaluate_classification(
+    model: Model,
+    df: pd.DataFrame,
+    out_prefix: Path,
+    config: ExperimentConfig,
+    task: ClassificationTask,
+) -> dict[str, Any]:
     y_true = df["label"].astype(int).tolist()
-    y_pred = predict_generate(model, df["text"].tolist(), config)
+    y_pred = predict_generate(model, df["text"].tolist(), config, task)
 
     pred_df = df.copy()
     pred_df["prediction"] = y_pred
-    pred_df["label_name"] = pred_df["label"].map(ID2LABEL)
-    pred_df["prediction_name"] = pred_df["prediction"].map(ID2LABEL)
+    id2label = dict(enumerate(task.labels))
+    pred_df["label_name"] = pred_df["label"].map(id2label)
+    pred_df["prediction_name"] = pred_df["prediction"].map(id2label)
     pred_df.to_csv(out_prefix.parent / f"{out_prefix.name}_predictions.csv", index=False)
 
     precision, recall, f1, _ = precision_recall_fscore_support(
         y_true, y_pred, average="macro", zero_division=0
     )
-    metrics = {
+    labels = list(range(len(task.labels)))
+    per_class_f1 = f1_score(y_true, y_pred, labels=labels, average=None, zero_division=0)
+    metrics: dict[str, Any] = {
+        "dataset": task.dataset_name,
+        "labels": list(task.labels),
         "accuracy": float(accuracy_score(y_true, y_pred)),
         "macro_precision": float(precision),
         "macro_recall": float(recall),
         "macro_f1": float(f1),
-        "f1_ofensivo": float(f1_score(y_true, y_pred, pos_label=1, zero_division=0)),
+        "f1_por_classe": {label: float(score) for label, score in zip(task.labels, per_class_f1, strict=True)},
         "classification_report": classification_report(
             y_true,
             y_pred,
-            target_names=[ID2LABEL[0], ID2LABEL[1]],
+            labels=labels,
+            target_names=list(task.labels),
             zero_division=0,
             output_dict=True,
         ),
     }
+    if task.labels == ("não ofensivo", "ofensivo"):
+        metrics["f1_ofensivo"] = float(f1_score(y_true, y_pred, pos_label=1, zero_division=0))
     save_json(metrics, out_prefix.parent / f"{out_prefix.name}_metrics.json")
     return metrics
 
@@ -151,9 +179,11 @@ def evaluate_classification(model: Model, df: pd.DataFrame, out_prefix: Path, co
 # =========================
 # Dataset causal para SFT
 # =========================
-def encode_example(example: dict[str, Any], tokenizer, max_length: int) -> dict[str, list[int]]:
-    prompt = build_prompt(example["text"])
-    answer = " " + ID2LABEL[int(example["label"])] + tokenizer.eos_token
+def encode_example(
+    example: dict[str, Any], tokenizer, max_length: int, task: ClassificationTask
+) -> dict[str, list[int]]:
+    prompt = build_prompt(example["text"], task)
+    answer = " " + task.labels[int(example["label"])] + tokenizer.eos_token
 
     prompt_ids = tokenizer(prompt, add_special_tokens=False).input_ids
     answer_ids = tokenizer(answer, add_special_tokens=False).input_ids
@@ -186,6 +216,7 @@ def train_lora(
     val_df: pd.DataFrame,
     output_dir: Path,
     config: ExperimentConfig,
+    task: ClassificationTask,
 ) -> Path:
     if not base_model.supports_lora:
         raise ValueError("LoRA/PEFT só é suportado pelo backend 'hf'.")
@@ -208,7 +239,7 @@ def train_lora(
 
     train_ds = Dataset.from_pandas(train_df[["text", "label"]], preserve_index=False)
     val_ds = Dataset.from_pandas(val_df[["text", "label"]], preserve_index=False)
-    encode = lambda example: encode_example(example, tokenizer, config.generation.max_length)
+    encode = lambda example: encode_example(example, tokenizer, config.generation.max_length, task)
     train_ds = train_ds.map(encode, remove_columns=train_ds.column_names)
     val_ds = val_ds.map(encode, remove_columns=val_ds.column_names)
 
@@ -249,18 +280,18 @@ def train_lora(
     )
     trainer.train()
 
-    adapter_dir = output_dir / "hatebr_lora_adapter"
+    adapter_dir = output_dir / f"{task.slug}_lora_adapter"
     tuned_model.save_pretrained(adapter_dir)
     tokenizer.save_pretrained(adapter_dir)
     return adapter_dir
 
 
 def encode_native_example(
-    example: dict[str, Any], model: Model, max_length: int
+    example: dict[str, Any], model: Model, max_length: int, task: ClassificationTask
 ) -> dict[str, list[int]] | None:
     """Prepara um exemplo SFT sem depender do tokenizer Transformers."""
-    prompt_ids = model.encode_ids(build_prompt(str(example["text"])))
-    answer_ids = model.encode_ids(" " + ID2LABEL[int(example["label"])])
+    prompt_ids = model.encode_ids(build_prompt(str(example["text"]), task))
+    answer_ids = model.encode_ids(" " + task.labels[int(example["label"])])
     if not answer_ids or answer_ids[-1] != model.eos_token_id:
         answer_ids.append(model.eos_token_id)
     input_ids = (prompt_ids + answer_ids)[:max_length]
@@ -298,12 +329,13 @@ def train_native(
     val_df: pd.DataFrame,
     output_dir: Path,
     config: ExperimentConfig,
+    task: ClassificationTask,
 ) -> Path:
     """Ajuste fino completo para Candeia, sem PEFT/LoRA."""
     if base_model.supports_lora:
         raise ValueError("train_native é exclusivo dos backends Candeia.")
 
-    encode = lambda row: encode_native_example(row, base_model, config.generation.max_length)
+    encode = lambda row: encode_native_example(row, base_model, config.generation.max_length, task)
     train_examples = [encoded for row in train_df.to_dict("records") if (encoded := encode(row))]
     val_examples = [encoded for row in val_df.to_dict("records") if (encoded := encode(row))]
     if not train_examples or not val_examples:
@@ -326,7 +358,7 @@ def train_native(
         base_model.model.parameters(), lr=config.training.learning_rate
     )
     accumulation_steps = max(1, config.training.gradient_accumulation_steps)
-    checkpoint_path = output_dir / "hatebr_full_finetuned.pt"
+    checkpoint_path = output_dir / f"{task.slug}_full_finetuned.pt"
     best_validation_loss = float("inf")
     optimizer.zero_grad(set_to_none=True)
 
@@ -361,7 +393,7 @@ def train_native(
         raise RuntimeError("O treino nativo terminou sem produzir checkpoint.")
     save_json(
         {"best_validation_loss": best_validation_loss, "checkpoint": str(checkpoint_path)},
-        output_dir / "hatebr_full_finetuned_metrics.json",
+        output_dir / f"{task.slug}_full_finetuned_metrics.json",
     )
     return checkpoint_path
 
@@ -374,6 +406,7 @@ def run_eval_causal_sliding(
     corpus: pd.DataFrame,
     output_dir: Path,
     config: ExperimentConfig,
+    task: ClassificationTask,
 ) -> pd.DataFrame:
     corpus = corpus.copy().reset_index(drop=True)
     if config.causal.max_rows > 0:
@@ -386,7 +419,7 @@ def run_eval_causal_sliding(
         max_len=config.causal.max_length,
     )
     results_df = pd.DataFrame(results)
-    results_df.to_csv(output_dir / "hatebr_eval_causal_sliding.csv", index=False)
+    results_df.to_csv(output_dir / f"{task.slug}_eval_causal_sliding.csv", index=False)
 
     summary = {
         "rows": int(len(results_df)),
@@ -395,7 +428,7 @@ def run_eval_causal_sliding(
         "mean_bpb": float(results_df["bpb"].replace([np.inf, -np.inf], np.nan).mean()),
         "mean_average_nll": float(results_df["average_nll"].replace([np.inf, -np.inf], np.nan).mean()),
     }
-    save_json(summary, output_dir / "hatebr_eval_causal_sliding_summary.json")
+    save_json(summary, output_dir / f"{task.slug}_eval_causal_sliding_summary.json")
     return results_df
 
 

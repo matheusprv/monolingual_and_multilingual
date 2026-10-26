@@ -21,7 +21,15 @@ from transformers import set_seed
 
 from . import hatebr_lora_causal_multimodel as experiment
 from .causal_sliding import execute_experiment
-from .dataset import load_causal_corpus, load_hatebr, make_stratified_splits, save_splits
+from .dataset import (
+    ClassificationTask,
+    get_classification_task,
+    load_causal_corpus,
+    load_task_dataset,
+    make_stratified_splits,
+    make_stratified_validation_split,
+    save_splits,
+)
 from .experiment_config import ExperimentConfig, ModelSpec, load_experiment_config
 from .model import LoRA_Model, Model
 from .utils import clean_memory
@@ -55,16 +63,27 @@ def _save_action_result(
     return output_path
 
 
-def _prepare_splits(config: ExperimentConfig) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+def _prepare_splits(
+    config: ExperimentConfig, task: ClassificationTask
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     print("Carregando dataset e criando splits estratificados...")
-    dataframe = load_hatebr(config.dataset.name)
-    splits = make_stratified_splits(
-        dataframe,
-        test_size=config.dataset.test_size,
-        validation_size=config.dataset.validation_size,
-        seed=config.seed,
-    )
-    save_splits(splits, config.output_dir / "splits")
+    dataframe = load_task_dataset(task)
+    if task.test_split is None:
+        splits = make_stratified_splits(
+            dataframe,
+            test_size=config.dataset.test_size,
+            validation_size=config.dataset.validation_size,
+            seed=config.seed,
+        )
+    else:
+        train, validation = make_stratified_validation_split(
+            dataframe,
+            validation_size=config.dataset.validation_size,
+            seed=config.seed,
+        )
+        test = load_task_dataset(task, split=task.test_split)
+        splits = train, validation, test
+    save_splits(splits, config.output_dir / "splits", prefix=task.slug)
     return splits
 
 
@@ -83,6 +102,7 @@ def _run_action(
     splits: tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame] | None,
     causal_corpus: pd.DataFrame | None,
     config: ExperimentConfig,
+    task: ClassificationTask | None,
 ) -> dict[str, Any]:
     model_dir = _model_dir(config, model_spec)
     result_dir = _result_dir(config, model_spec)
@@ -99,9 +119,11 @@ def _run_action(
     )
 
     if action == "all":
-        zero_shot = _run_action("predict", model_spec, splits, causal_corpus, config)
-        training = _run_action("train", model_spec, splits, causal_corpus, config)
-        finetuned = _run_action("evaluate", model_spec, splits, causal_corpus, config)
+        if task is None:
+            raise ValueError("A ação 'all' requer uma tarefa de classificação suportada.")
+        zero_shot = _run_action("predict", model_spec, splits, causal_corpus, config, task)
+        training = _run_action("train", model_spec, splits, causal_corpus, config, task)
+        finetuned = _run_action("evaluate", model_spec, splits, causal_corpus, config, task)
         return {
             "model": model_spec.name,
             "status": "ok",
@@ -114,6 +136,8 @@ def _run_action(
 
     if action in {"predict", "train", "evaluate"} and splits is None:
         raise ValueError(f"A ação {action!r} requer os splits do dataset de classificação.")
+    if action in {"predict", "train", "evaluate"} and task is None:
+        raise ValueError(f"A ação {action!r} requer uma tarefa de classificação suportada.")
     if action in {"causal", "evaluate"} and causal_corpus is None:
         raise ValueError(f"A ação {action!r} requer o corpus causal Parquet.")
     train_df, validation_df, test_df = splits if splits is not None else (None, None, None)
@@ -127,11 +151,11 @@ def _run_action(
         try:
             if model.supports_lora:
                 training_path = experiment.train_lora(
-                    model, train_df, validation_df, model_dir, config
+                    model, train_df, validation_df, model_dir, config, task
                 )
             else:
                 training_path = experiment.train_native(
-                    model, train_df, validation_df, model_dir, config
+                    model, train_df, validation_df, model_dir, config, task
                 )
             return {
                 "model": model_spec.name,
@@ -165,19 +189,21 @@ def _run_action(
     if action == "predict":
         model = Model(model_spec, config.model.use_4bit)
         try:
-            metrics = experiment.evaluate_classification(model, test_df, result_dir / "hatebr_zero_shot", config)
+            metrics = experiment.evaluate_classification(
+                model, test_df, result_dir / f"{task.slug}_zero_shot", config, task
+            )
             return {"model": model_spec.name, "status": "ok", **metrics}
         finally:
             del model
             clean_memory()
 
     if model_spec.backend == "hf":
-        training_path = model_dir / "hatebr_lora_adapter"
+        training_path = model_dir / f"{task.slug}_lora_adapter"
         if not training_path.exists():
             raise FileNotFoundError(f"Adapter não encontrado em {training_path}. Execute 'train' antes de 'evaluate'.")
         model = LoRA_Model(model_spec, config.model.use_4bit, str(training_path))
     else:
-        training_path = model_dir / "hatebr_full_finetuned.pt"
+        training_path = model_dir / f"{task.slug}_full_finetuned.pt"
         if not training_path.is_file():
             raise FileNotFoundError(
                 f"Checkpoint Candeia treinado não encontrado em {training_path}. "
@@ -189,8 +215,10 @@ def _run_action(
             native_weights_path=training_path,
         )
     try:
-        metrics = experiment.evaluate_classification(model, test_df, result_dir / "hatebr_finetuned", config)
-        experiment.run_eval_causal_sliding(model, causal_corpus, result_dir, config)
+        metrics = experiment.evaluate_classification(
+            model, test_df, result_dir / f"{task.slug}_finetuned", config, task
+        )
+        experiment.run_eval_causal_sliding(model, causal_corpus, result_dir, config, task)
         return {"model": model_spec.name, "status": "ok", "training_path": str(training_path), **metrics}
     finally:
         del model
@@ -198,7 +226,7 @@ def _run_action(
 
 
 def main(argv: list[str] | None = None) -> None:
-    parser = argparse.ArgumentParser(description="Pipeline modular dos experimentos HateBR.")
+    parser = argparse.ArgumentParser(description="Pipeline modular dos experimentos de classificação.")
     parser.add_argument("config", type=Path, help="Arquivo YAML com toda a configuração do experimento.")
     parser.add_argument("action", choices=("causal", "predict", "train", "evaluate", "all"))
     args = parser.parse_args(argv)
@@ -208,13 +236,14 @@ def main(argv: list[str] | None = None) -> None:
     experiment.save_json(config.as_dict(), config.output_dir / "experiment_config.json")
     set_seed(config.seed)
     needs_splits = args.action in {"predict", "train", "evaluate", "all"}
+    task = get_classification_task(config.dataset.name) if needs_splits else None
     needs_causal_corpus = args.action in {"causal", "evaluate", "all"}
-    splits = _prepare_splits(config) if needs_splits else None
+    splits = _prepare_splits(config, task) if task is not None else None
     causal_corpus = _prepare_causal_corpus(config) if needs_causal_corpus else None
     results: list[dict[str, Any]] = []
     for model_spec in config.models:
         try:
-            result = _run_action(args.action, model_spec, splits, causal_corpus, config)
+            result = _run_action(args.action, model_spec, splits, causal_corpus, config, task)
             result["action"] = args.action
         except Exception as error:
             clean_memory()

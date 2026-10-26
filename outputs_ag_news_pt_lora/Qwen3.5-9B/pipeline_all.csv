@@ -1,0 +1,2 @@
+model,status,training_path,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+Qwen3.5,ok,outputs_ag_news_pt_lora/models/Qwen3.5/ag_news_pt_lora_adapter,0.8111842105263158,0.8109322302392057,0.9221052631578948,0.9215159199808666,all

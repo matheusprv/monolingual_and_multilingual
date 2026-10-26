@@ -1,0 +1,2 @@
+model,status,training_path,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+Cabrita,ok,outputs_ag_news_pt_lora/models/Cabrita/ag_news_pt_lora_adapter,0.4405263157894737,0.3853547038494538,0.93,0.9299033180382406,all

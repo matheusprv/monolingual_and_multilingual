@@ -1,0 +1,2 @@
+model,status,training_path,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+Tucano,ok,outputs_ag_news_pt_lora/models/Tucano/ag_news_pt_lora_adapter,0.3931578947368421,0.33078679063801564,0.8882894736842105,0.8866669805012408,all

@@ -1,6 +1,8 @@
-# Experiments: HateBR and causal models
+# Experiments: classification and causal models
 
-This directory compares causal models on HateBR for both classification and causal language modeling on the configured corpus.
+This directory compares causal models on the configured classification task and
+on causal language modeling over the configured corpus. The supported
+classification datasets are HateBR and AG NEWS PT.
 
 ## Files
 
@@ -17,13 +19,28 @@ This directory compares causal models on HateBR for both classification and caus
 
 The pipeline sets the seed, prepares the data once, and iterates through `models`. Therefore, within one run, every model uses the same splits. Results, adapters, metrics, and predictions are saved under `output_dir`.
 
-### HateBR dataset
+### Classification datasets
 
-The dataset is downloaded from Hugging Face, retaining `comentario` as `text` and `label_final` as `label`. Rows without text or labels, as well as empty texts, are removed. The data is split with `train_test_split`, stratified by `label`: first into train/test, then train/validation. The CSV files actually used are saved under `output_dir/splits`.
+HateBR (`franciellevargas/HateBR`) retains `comentario` as `text` and
+`label_final` as `label`, with the labels `não ofensivo` and `ofensivo`. It is
+split with `train_test_split`, stratified by `label`: first into train/test,
+then train/validation.
+
+AG NEWS PT (`maritaca-ai/ag_news_pt`) retains `text` and `label`. Its class IDs
+are mapped to `Mundo`, `Esportes`, `Negócios`, and `Tecnologia`. Its published
+`test` split is preserved for final evaluation; only the `train` split is
+stratified into training and validation data. In both cases, rows without text
+or labels, as well as empty texts, are removed, and the CSV files actually used
+are saved under `output_dir/splits`.
 
 ### Classification with a causal model
 
-Each example becomes a prompt requesting either `ofensivo` or `não ofensivo`. During training, loss is masked over the prompt and computed only on answer tokens; LoRA is configured as `CAUSAL_LM`. Thus, no classification head is added: the model still predicts the next token and classifies by generating the textual label.
+Each example becomes a prompt that lists exactly the labels of the selected
+task. For AG NEWS PT, the prompt asks the model to classify a news article as
+`Mundo`, `Esportes`, `Negócios`, or `Tecnologia`. During training, loss is
+masked over the prompt and computed only on answer tokens; LoRA is configured
+as `CAUSAL_LM`. Thus, no classification head is added: the model still predicts
+the next token and classifies by generating the textual label.
 
 ### Causal evaluation: PPL and BPB
 
@@ -35,7 +52,9 @@ For each text, *causal sliding* tokenizes it and processes windows of up to `max
 
 - `models`: model IDs/paths from Hugging Face, or detailed native Candeia entries;
 - `output_dir` and `seed`: output directory and reproducibility;
-- `dataset`: dataset name, test fraction, and validation fraction;
+- `dataset`: dataset name, test fraction, and validation fraction. `test_size`
+  applies to datasets without an official test split; AG NEWS PT uses its
+  official test split instead;
 - `model`: 4-bit quantization setting;
 - `generation`: prompt and generated-response limits;
 - `training`: LoRA and training hyperparameters;
@@ -44,7 +63,7 @@ For each text, *causal sliding* tokenizes it and processes windows of up to `max
 ## Actions
 
 - `causal`: measures PPL/BPB for the base model on the Parquet corpus.
-- `predict`: evaluates zero-shot classification on the HateBR test set.
+- `predict`: evaluates zero-shot classification on the selected task's test set.
 - `train`: trains and saves the LoRA adapter using the training and validation sets.
 - `evaluate`: loads the adapter, evaluates classification on the test set, and measures PPL/BPB for the fine-tuned model.
 - `all`: runs `predict`, `train`, and `evaluate`, in that order, for each model.
@@ -88,7 +107,7 @@ models:
 Both native backends support `causal`, `predict`, `train`, `evaluate`, and
 `all`. Native training performs full fine-tuning (not LoRA) and writes the
 best complete state dictionary to
-`output_dir/models/<name>/hatebr_full_finetuned.pt`; `evaluate` reloads that
+`output_dir/models/<name>/<dataset>_full_finetuned.pt`; `evaluate` reloads that
 file automatically. They require the package that exposes `xlstm_ptbr` to be
 installed in the environment. If the context size is not exposed by a
 particular Candeia release, set `causal.max_length` explicitly.

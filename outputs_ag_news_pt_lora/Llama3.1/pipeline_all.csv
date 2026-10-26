@@ -1,0 +1,2 @@
+model,status,training_path,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+Llama3.1,ok,outputs_ag_news_pt_lora/models/Llama3.1/ag_news_pt_lora_adapter,0.7036842105263158,0.6907482977616677,0.9138157894736842,0.9136009761786024,all

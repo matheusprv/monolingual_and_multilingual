@@ -1,0 +1,58 @@
+{
+  "dataset": "maritaca-ai/ag_news_pt",
+  "labels": [
+    "Mundo",
+    "Esportes",
+    "Negócios",
+    "Tecnologia"
+  ],
+  "accuracy": 0.39671052631578946,
+  "macro_precision": 0.34607771519866204,
+  "macro_recall": 0.39671052631578946,
+  "macro_f1": 0.3121524315381108,
+  "f1_por_classe": {
+    "Mundo": 0.029608404966571154,
+    "Esportes": 0.5393740174360441,
+    "Negócios": 0.1550274223034735,
+    "Tecnologia": 0.5245998814463545
+  },
+  "classification_report": {
+    "Mundo": {
+      "precision": 0.15979381443298968,
+      "recall": 0.01631578947368421,
+      "f1-score": 0.029608404966571154,
+      "support": 1900.0
+    },
+    "Esportes": {
+      "precision": 0.37021777516185994,
+      "recall": 0.9931578947368421,
+      "f1-score": 0.5393740174360441,
+      "support": 1900.0
+    },
+    "Negócios": {
+      "precision": 0.25389221556886227,
+      "recall": 0.11157894736842106,
+      "f1-score": 0.1550274223034735,
+      "support": 1900.0
+    },
+    "Tecnologia": {
+      "precision": 0.6004070556309362,
+      "recall": 0.46578947368421053,
+      "f1-score": 0.5245998814463545,
+      "support": 1900.0
+    },
+    "accuracy": 0.39671052631578946,
+    "macro avg": {
+      "precision": 0.34607771519866204,
+      "recall": 0.39671052631578946,
+      "f1-score": 0.3121524315381108,
+      "support": 7600.0
+    },
+    "weighted avg": {
+      "precision": 0.346077715198662,
+      "recall": 0.39671052631578946,
+      "f1-score": 0.3121524315381108,
+      "support": 7600.0
+    }
+  }
+}

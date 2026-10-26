@@ -1,0 +1,42 @@
+# Exemplo para AG NEWS PT. Execute a partir da raiz do repositório com:
+# python3 -m src.experiments.pipeline src/experiments/experiment_ag_news_pt.yaml all
+
+models:
+  - name: Manaca
+    backend: hf
+    path: ../models/models/menezesbruno/manaca-1b-base
+    tokenizer: ../models/models/menezesbruno/manaca-1b-base
+
+output_dir: ./outputs_ag_news_pt_lora
+seed: 42
+
+dataset:
+  name: maritaca-ai/ag_news_pt
+  # O dataset já fornece o split oficial "test"; este valor não é usado aqui.
+  test_size: 0.2
+  validation_size: 0.1
+
+model:
+  use_4bit: false
+
+generation:
+  max_length: 512
+  max_new_tokens: 4
+
+training:
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  num_epochs: 10
+  learning_rate: 0.0002
+  batch_size: 4
+  gradient_accumulation_steps: 4
+
+causal:
+  parquet_path: ./corpora/GeneratedCorpus/corpora_v3.parquet
+  results_dir: ./outputs_ag_news_pt_lora/causal_results
+  text_column: text
+  scenarios: all
+  max_rows: 0
+  stride: 512
+  max_length: null

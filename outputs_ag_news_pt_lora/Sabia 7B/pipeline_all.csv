@@ -1,0 +1,2 @@
+model,status,training_path,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
+Sabia,ok,outputs_ag_news_pt_lora/models/Sabia/ag_news_pt_lora_adapter,0.3063157894736842,0.21644033393785067,0.9314473684210526,0.9315026094228982,all
