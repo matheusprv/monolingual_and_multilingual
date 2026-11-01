@@ -1,2 +1,0 @@
-model,status,training_path,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
-Tucano,ok,outputs_hatebr_lora/models/Tucano/hatebr_lora_adapter,0.5221428571428571,0.4159358589565544,0.9342857142857143,0.9342851778381864,all

@@ -1,2 +1,0 @@
-model,status,training_path,zero_shot_accuracy,zero_shot_macro_f1,finetuned_accuracy,finetuned_macro_f1,action
-Gemma4,ok,outputs_hatebr_lora/models/Gemma4/hatebr_lora_adapter,0.5014285714285714,0.3402361430685636,0.9407142857142857,0.9407118355401423,all
