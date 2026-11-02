@@ -1,0 +1,18 @@
+models:
+  - name: Manaca
+    backend: hf
+    path: ../models/models/menezesbruno/manaca-1b-base
+    tokenizer: ../models/models/menezesbruno/manaca-1b-base
+    batch_size: 64
+
+  - name: Sabia
+    backend: peft
+    path: ../models/models/maritaca-ai/sabia-7b
+    tokenizer: ../models/models/maritaca-ai/sabia-7b
+    batch_size: 16
+
+experiments: ["causal_sliding"]
+
+output_dir: ["outputs_causal_sliding"]
+
+dataset: ["../data_preparation/text_scenarios.parquet"]

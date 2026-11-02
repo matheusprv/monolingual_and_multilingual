@@ -2,3 +2,8 @@ spacy==3.8.18
 pandas
 fastparquet
 ipython
+PyYAML
+torch
+transformers
+peft
+tqdm
