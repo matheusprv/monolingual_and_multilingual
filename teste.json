@@ -1,0 +1,738 @@
+{
+    "src_to_tgt": {
+        "sentence": "A Registry Regional Internet ( RIR ) is organization that manages the allocation and registration of resources number Internet within region particular of the world .",
+        "word_mapping": [
+            {
+                "tgt_index": 0,
+                "tgt_word": "Um",
+                "src_indices": [
+                    0
+                ],
+                "src_words": [
+                    "A"
+                ],
+                "emitted_src_words": [
+                    "A"
+                ]
+            },
+            {
+                "tgt_index": 1,
+                "tgt_word": "Registo",
+                "src_indices": [
+                    3
+                ],
+                "src_words": [
+                    "Registry"
+                ],
+                "emitted_src_words": [
+                    "Registry"
+                ]
+            },
+            {
+                "tgt_index": 2,
+                "tgt_word": "Regional",
+                "src_indices": [
+                    1
+                ],
+                "src_words": [
+                    "Regional"
+                ],
+                "emitted_src_words": [
+                    "Regional"
+                ]
+            },
+            {
+                "tgt_index": 3,
+                "tgt_word": "da",
+                "src_indices": [],
+                "src_words": [],
+                "emitted_src_words": []
+            },
+            {
+                "tgt_index": 4,
+                "tgt_word": "Internet",
+                "src_indices": [
+                    2
+                ],
+                "src_words": [
+                    "Internet"
+                ],
+                "emitted_src_words": [
+                    "Internet"
+                ]
+            },
+            {
+                "tgt_index": 5,
+                "tgt_word": "(",
+                "src_indices": [
+                    4
+                ],
+                "src_words": [
+                    "("
+                ],
+                "emitted_src_words": [
+                    "("
+                ]
+            },
+            {
+                "tgt_index": 6,
+                "tgt_word": "RIR",
+                "src_indices": [
+                    5
+                ],
+                "src_words": [
+                    "RIR"
+                ],
+                "emitted_src_words": [
+                    "RIR"
+                ]
+            },
+            {
+                "tgt_index": 7,
+                "tgt_word": ")",
+                "src_indices": [
+                    6
+                ],
+                "src_words": [
+                    ")"
+                ],
+                "emitted_src_words": [
+                    ")"
+                ]
+            },
+            {
+                "tgt_index": 8,
+                "tgt_word": "é",
+                "src_indices": [
+                    7
+                ],
+                "src_words": [
+                    "is"
+                ],
+                "emitted_src_words": [
+                    "is"
+                ]
+            },
+            {
+                "tgt_index": 9,
+                "tgt_word": "uma",
+                "src_indices": [],
+                "src_words": [],
+                "emitted_src_words": []
+            },
+            {
+                "tgt_index": 10,
+                "tgt_word": "organização",
+                "src_indices": [
+                    9
+                ],
+                "src_words": [
+                    "organization"
+                ],
+                "emitted_src_words": [
+                    "organization"
+                ]
+            },
+            {
+                "tgt_index": 11,
+                "tgt_word": "que",
+                "src_indices": [
+                    10
+                ],
+                "src_words": [
+                    "that"
+                ],
+                "emitted_src_words": [
+                    "that"
+                ]
+            },
+            {
+                "tgt_index": 12,
+                "tgt_word": "supervisiona",
+                "src_indices": [
+                    11
+                ],
+                "src_words": [
+                    "manages"
+                ],
+                "emitted_src_words": [
+                    "manages"
+                ]
+            },
+            {
+                "tgt_index": 13,
+                "tgt_word": "a",
+                "src_indices": [
+                    12
+                ],
+                "src_words": [
+                    "the"
+                ],
+                "emitted_src_words": [
+                    "the"
+                ]
+            },
+            {
+                "tgt_index": 14,
+                "tgt_word": "atribuição",
+                "src_indices": [
+                    13
+                ],
+                "src_words": [
+                    "allocation"
+                ],
+                "emitted_src_words": [
+                    "allocation"
+                ]
+            },
+            {
+                "tgt_index": 15,
+                "tgt_word": "e",
+                "src_indices": [
+                    14
+                ],
+                "src_words": [
+                    "and"
+                ],
+                "emitted_src_words": [
+                    "and"
+                ]
+            },
+            {
+                "tgt_index": 16,
+                "tgt_word": "o",
+                "src_indices": [
+                    15
+                ],
+                "src_words": [
+                    "registration"
+                ],
+                "emitted_src_words": [
+                    "registration"
+                ]
+            },
+            {
+                "tgt_index": 17,
+                "tgt_word": "registo",
+                "src_indices": [
+                    15
+                ],
+                "src_words": [
+                    "registration"
+                ],
+                "emitted_src_words": []
+            },
+            {
+                "tgt_index": 18,
+                "tgt_word": "de",
+                "src_indices": [
+                    16
+                ],
+                "src_words": [
+                    "of"
+                ],
+                "emitted_src_words": [
+                    "of"
+                ]
+            },
+            {
+                "tgt_index": 19,
+                "tgt_word": "recursos",
+                "src_indices": [
+                    19
+                ],
+                "src_words": [
+                    "resources"
+                ],
+                "emitted_src_words": [
+                    "resources"
+                ]
+            },
+            {
+                "tgt_index": 20,
+                "tgt_word": "de",
+                "src_indices": [
+                    16
+                ],
+                "src_words": [
+                    "of"
+                ],
+                "emitted_src_words": []
+            },
+            {
+                "tgt_index": 21,
+                "tgt_word": "números",
+                "src_indices": [
+                    18
+                ],
+                "src_words": [
+                    "number"
+                ],
+                "emitted_src_words": [
+                    "number"
+                ]
+            },
+            {
+                "tgt_index": 22,
+                "tgt_word": "da",
+                "src_indices": [],
+                "src_words": [],
+                "emitted_src_words": []
+            },
+            {
+                "tgt_index": 23,
+                "tgt_word": "Internet",
+                "src_indices": [
+                    17
+                ],
+                "src_words": [
+                    "Internet"
+                ],
+                "emitted_src_words": [
+                    "Internet"
+                ]
+            },
+            {
+                "tgt_index": 24,
+                "tgt_word": "numa",
+                "src_indices": [
+                    20
+                ],
+                "src_words": [
+                    "within"
+                ],
+                "emitted_src_words": [
+                    "within"
+                ]
+            },
+            {
+                "tgt_index": 25,
+                "tgt_word": "região",
+                "src_indices": [
+                    23
+                ],
+                "src_words": [
+                    "region"
+                ],
+                "emitted_src_words": [
+                    "region"
+                ]
+            },
+            {
+                "tgt_index": 26,
+                "tgt_word": "específica",
+                "src_indices": [
+                    22
+                ],
+                "src_words": [
+                    "particular"
+                ],
+                "emitted_src_words": [
+                    "particular"
+                ]
+            },
+            {
+                "tgt_index": 27,
+                "tgt_word": "do",
+                "src_indices": [
+                    24,
+                    25
+                ],
+                "src_words": [
+                    "of",
+                    "the"
+                ],
+                "emitted_src_words": [
+                    "of",
+                    "the"
+                ]
+            },
+            {
+                "tgt_index": 28,
+                "tgt_word": "mundo",
+                "src_indices": [
+                    26
+                ],
+                "src_words": [
+                    "world"
+                ],
+                "emitted_src_words": [
+                    "world"
+                ]
+            },
+            {
+                "tgt_index": 29,
+                "tgt_word": ".",
+                "src_indices": [
+                    27
+                ],
+                "src_words": [
+                    "."
+                ],
+                "emitted_src_words": [
+                    "."
+                ]
+            }
+        ]
+    },
+    "tgt_to_src": {
+        "sentence": "Um Regional Internet Registo ( RIR ) é organização que supervisiona a atribuição e o registo de Internet números recursos numa específica região do mundo .",
+        "word_mapping": [
+            {
+                "src_index": 0,
+                "src_word": "A",
+                "tgt_indices": [
+                    0
+                ],
+                "tgt_words": [
+                    "Um"
+                ],
+                "emitted_tgt_words": [
+                    "Um"
+                ]
+            },
+            {
+                "src_index": 1,
+                "src_word": "Regional",
+                "tgt_indices": [
+                    2
+                ],
+                "tgt_words": [
+                    "Regional"
+                ],
+                "emitted_tgt_words": [
+                    "Regional"
+                ]
+            },
+            {
+                "src_index": 2,
+                "src_word": "Internet",
+                "tgt_indices": [
+                    4
+                ],
+                "tgt_words": [
+                    "Internet"
+                ],
+                "emitted_tgt_words": [
+                    "Internet"
+                ]
+            },
+            {
+                "src_index": 3,
+                "src_word": "Registry",
+                "tgt_indices": [
+                    1
+                ],
+                "tgt_words": [
+                    "Registo"
+                ],
+                "emitted_tgt_words": [
+                    "Registo"
+                ]
+            },
+            {
+                "src_index": 4,
+                "src_word": "(",
+                "tgt_indices": [
+                    5
+                ],
+                "tgt_words": [
+                    "("
+                ],
+                "emitted_tgt_words": [
+                    "("
+                ]
+            },
+            {
+                "src_index": 5,
+                "src_word": "RIR",
+                "tgt_indices": [
+                    6
+                ],
+                "tgt_words": [
+                    "RIR"
+                ],
+                "emitted_tgt_words": [
+                    "RIR"
+                ]
+            },
+            {
+                "src_index": 6,
+                "src_word": ")",
+                "tgt_indices": [
+                    7
+                ],
+                "tgt_words": [
+                    ")"
+                ],
+                "emitted_tgt_words": [
+                    ")"
+                ]
+            },
+            {
+                "src_index": 7,
+                "src_word": "is",
+                "tgt_indices": [
+                    8
+                ],
+                "tgt_words": [
+                    "é"
+                ],
+                "emitted_tgt_words": [
+                    "é"
+                ]
+            },
+            {
+                "src_index": 8,
+                "src_word": "an",
+                "tgt_indices": [],
+                "tgt_words": [],
+                "emitted_tgt_words": []
+            },
+            {
+                "src_index": 9,
+                "src_word": "organization",
+                "tgt_indices": [
+                    10
+                ],
+                "tgt_words": [
+                    "organização"
+                ],
+                "emitted_tgt_words": [
+                    "organização"
+                ]
+            },
+            {
+                "src_index": 10,
+                "src_word": "that",
+                "tgt_indices": [
+                    11
+                ],
+                "tgt_words": [
+                    "que"
+                ],
+                "emitted_tgt_words": [
+                    "que"
+                ]
+            },
+            {
+                "src_index": 11,
+                "src_word": "manages",
+                "tgt_indices": [
+                    12
+                ],
+                "tgt_words": [
+                    "supervisiona"
+                ],
+                "emitted_tgt_words": [
+                    "supervisiona"
+                ]
+            },
+            {
+                "src_index": 12,
+                "src_word": "the",
+                "tgt_indices": [
+                    13
+                ],
+                "tgt_words": [
+                    "a"
+                ],
+                "emitted_tgt_words": [
+                    "a"
+                ]
+            },
+            {
+                "src_index": 13,
+                "src_word": "allocation",
+                "tgt_indices": [
+                    14
+                ],
+                "tgt_words": [
+                    "atribuição"
+                ],
+                "emitted_tgt_words": [
+                    "atribuição"
+                ]
+            },
+            {
+                "src_index": 14,
+                "src_word": "and",
+                "tgt_indices": [
+                    15
+                ],
+                "tgt_words": [
+                    "e"
+                ],
+                "emitted_tgt_words": [
+                    "e"
+                ]
+            },
+            {
+                "src_index": 15,
+                "src_word": "registration",
+                "tgt_indices": [
+                    16,
+                    17
+                ],
+                "tgt_words": [
+                    "o",
+                    "registo"
+                ],
+                "emitted_tgt_words": [
+                    "o",
+                    "registo"
+                ]
+            },
+            {
+                "src_index": 16,
+                "src_word": "of",
+                "tgt_indices": [
+                    18,
+                    20
+                ],
+                "tgt_words": [
+                    "de",
+                    "de"
+                ],
+                "emitted_tgt_words": [
+                    "de"
+                ]
+            },
+            {
+                "src_index": 17,
+                "src_word": "Internet",
+                "tgt_indices": [
+                    23
+                ],
+                "tgt_words": [
+                    "Internet"
+                ],
+                "emitted_tgt_words": [
+                    "Internet"
+                ]
+            },
+            {
+                "src_index": 18,
+                "src_word": "number",
+                "tgt_indices": [
+                    21
+                ],
+                "tgt_words": [
+                    "números"
+                ],
+                "emitted_tgt_words": [
+                    "números"
+                ]
+            },
+            {
+                "src_index": 19,
+                "src_word": "resources",
+                "tgt_indices": [
+                    19
+                ],
+                "tgt_words": [
+                    "recursos"
+                ],
+                "emitted_tgt_words": [
+                    "recursos"
+                ]
+            },
+            {
+                "src_index": 20,
+                "src_word": "within",
+                "tgt_indices": [
+                    24
+                ],
+                "tgt_words": [
+                    "numa"
+                ],
+                "emitted_tgt_words": [
+                    "numa"
+                ]
+            },
+            {
+                "src_index": 21,
+                "src_word": "a",
+                "tgt_indices": [],
+                "tgt_words": [],
+                "emitted_tgt_words": []
+            },
+            {
+                "src_index": 22,
+                "src_word": "particular",
+                "tgt_indices": [
+                    26
+                ],
+                "tgt_words": [
+                    "específica"
+                ],
+                "emitted_tgt_words": [
+                    "específica"
+                ]
+            },
+            {
+                "src_index": 23,
+                "src_word": "region",
+                "tgt_indices": [
+                    25
+                ],
+                "tgt_words": [
+                    "região"
+                ],
+                "emitted_tgt_words": [
+                    "região"
+                ]
+            },
+            {
+                "src_index": 24,
+                "src_word": "of",
+                "tgt_indices": [
+                    27
+                ],
+                "tgt_words": [
+                    "do"
+                ],
+                "emitted_tgt_words": [
+                    "do"
+                ]
+            },
+            {
+                "src_index": 25,
+                "src_word": "the",
+                "tgt_indices": [
+                    27
+                ],
+                "tgt_words": [
+                    "do"
+                ],
+                "emitted_tgt_words": []
+            },
+            {
+                "src_index": 26,
+                "src_word": "world",
+                "tgt_indices": [
+                    28
+                ],
+                "tgt_words": [
+                    "mundo"
+                ],
+                "emitted_tgt_words": [
+                    "mundo"
+                ]
+            },
+            {
+                "src_index": 27,
+                "src_word": ".",
+                "tgt_indices": [
+                    29
+                ],
+                "tgt_words": [
+                    "."
+                ],
+                "emitted_tgt_words": [
+                    "."
+                ]
+            }
+        ]
+    }
+}
