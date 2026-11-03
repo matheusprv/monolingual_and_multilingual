@@ -7,3 +7,7 @@ torch
 transformers
 peft
 tqdm
+bitsandbytes
+tiktoken
+sentencepiece
+protobuf

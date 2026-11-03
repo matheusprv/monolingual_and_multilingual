@@ -14,7 +14,7 @@ class Model:
     def load_tokenizer(self, tokenizer_path):
         tokenizer = AutoTokenizer.from_pretrained(
             tokenizer_path,
-            use_fast=False,
+            use_fast=True,
             trust_remote_code=True,
         )
 
@@ -37,18 +37,29 @@ class Model:
             quantization_config=quantization_config,
             trust_remote_code=True,
             device_map="auto",
-            torch_dtype=torch.float16,
+            dtype=torch.float16,
         )
 
     def get_max_context_length(self):
-        for attribute in (
-            "max_position_embeddings",
-            "n_positions",
-            "max_sequence_length",
-        ):
-            value = getattr(self.model.config, attribute, None)
-            if isinstance(value, int) and value > 0:
-                return value
+        configs = [self.model.config]
+        text_config = getattr(self.model.config, "text_config", None)
+        if text_config is not None:
+            configs.append(text_config)
+
+        for config in configs:
+            for attribute in (
+                "max_position_embeddings",
+                "n_positions",
+                "max_sequence_length",
+                "seq_length",
+            ):
+                value = getattr(config, attribute, None)
+                if isinstance(value, int) and 0 < value < 1_000_000:
+                    return value
+
+        value = self.tokenizer.model_max_length
+        if isinstance(value, int) and 0 < value < 1_000_000:
+            return value
         return None
 
     def prepare_inputs(self, text):

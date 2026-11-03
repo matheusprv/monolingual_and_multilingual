@@ -1,15 +1,104 @@
 models:
-  - name: Manaca
-    backend: hf
-    path: ../models/models/menezesbruno/manaca-1b-base
-    tokenizer: ../models/models/menezesbruno/manaca-1b-base
-    batch_size: 64
+  # - name: Manaca
+  #   backend: hf
+  #   path: /media/work/matheusvieira/models/models/menezesbruno/manaca-1b-base
+  #   tokenizer: /media/work/matheusvieira/models/models/menezesbruno/manaca-1b-base
+  #   batch_size: 64
 
-  - name: Sabia
-    backend: peft
-    path: ../models/models/maritaca-ai/sabia-7b
-    tokenizer: ../models/models/maritaca-ai/sabia-7b
-    batch_size: 16
+  # - name: Cabrita
+  #   backend: hf
+  #   path: /media/work/matheusvieira/models/models/22h/open-cabrita3b
+  #   tokenizer: /media/work/matheusvieira/models/models/22h/open-cabrita3b
+  #   batch_size: 32
+
+  # - name: Tucano
+  #   backend: hf
+  #   path: /media/work/matheusvieira/models/models/TucanoBR/Tucano-2b4
+  #   tokenizer: /media/work/matheusvieira/models/models/TucanoBR/Tucano-2b4
+  #   batch_size: 32
+
+  # - name: Sabia
+  #   backend: hf
+  #   path: /media/work/matheusvieira/models/models/maritaca-ai/sabia-7b
+  #   tokenizer: /media/work/matheusvieira/models/models/maritaca-ai/sabia-7b
+  #   batch_size: 32
+
+  # - name: Gemma4
+  #   backend: hf
+  #   path: /media/work/matheusvieira/models/models/google/gemma-4-12B
+  #   tokenizer: /media/work/matheusvieira/models/models/google/gemma-4-12B
+  #   batch_size: 2
+
+  # - name: Qwen3.5
+  #   backend: hf
+  #   path: /media/work/matheusvieira/models/models/Qwen/Qwen3.5-9B-Base
+  #   tokenizer: /media/work/matheusvieira/models/models/Qwen/Qwen3.5-9B-Base
+  #   batch_size: 3
+
+  # - name: Llama3.1
+  #   backend: hf
+  #   path: /media/work/matheusvieira/models/models/meta-llama/Meta-Llama-3.1-8B
+  #   tokenizer: /media/work/matheusvieira/models/models/meta-llama/Meta-Llama-3.1-8B
+  #   batch_size: 3
+
+  # - name: Sabia
+  #   backend: peft
+  #   path: ../models/models/maritaca-ai/sabia-7b
+  #   tokenizer: ../models/models/maritaca-ai/sabia-7b
+  #   batch_size: 16
+
+
+  # - name: Manaca-Lora
+  #   backend: peft
+  #   adapter_path: /media/work/matheusvieira/monolingual_and_multilingual/outputs_ag_news_pt_lora/models/Manaca/ag_news_pt_lora_adapter
+  #   path: /media/work/matheusvieira/models/models/menezesbruno/manaca-1b-base
+  #   tokenizer: /media/work/matheusvieira/models/models/menezesbruno/manaca-1b-base
+  #   batch_size: 64
+
+
+  - name: Cabrita-Lora
+    backend: hf
+    path: /media/work/matheusvieira/models/models/22h/open-cabrita3b
+    adapter_path: /media/work/matheusvieira/monolingual_and_multilingual/outputs_ag_news_pt_lora/models/Cabrita/ag_news_pt_lora_adapter
+    tokenizer: /media/work/matheusvieira/models/models/22h/open-cabrita3b
+    batch_size: 32
+
+  - name: Tucano-Lora
+    backend: hf
+    path: /media/work/matheusvieira/models/models/TucanoBR/Tucano-2b4
+    adapter_path: /media/work/matheusvieira/monolingual_and_multilingual/outputs_ag_news_pt_lora/models/Tucano/ag_news_pt_lora_adapter
+    tokenizer: /media/work/matheusvieira/models/models/TucanoBR/Tucano-2b4
+    batch_size: 32
+
+  - name: Sabia-Lora
+    backend: hf
+    path: /media/work/matheusvieira/models/models/maritaca-ai/sabia-7b
+    adapter_path: /media/work/matheusvieira/monolingual_and_multilingual/outputs_ag_news_pt_lora/models/Sabia/ag_news_pt_lora_adapter
+    tokenizer: /media/work/matheusvieira/models/models/maritaca-ai/sabia-7b
+    batch_size: 32
+
+  - name: Gemma4-Lora
+    backend: hf
+    path: /media/work/matheusvieira/models/models/google/gemma-4-12B
+    adapter_path: /media/work/matheusvieira/monolingual_and_multilingual/outputs_ag_news_pt_lora/models/Gemma4/ag_news_pt_lora_adapter
+    tokenizer: /media/work/matheusvieira/models/models/google/gemma-4-12B
+    batch_size: 2
+
+  - name: Qwen3.5-Lora
+    backend: hf
+    path: /media/work/matheusvieira/models/models/Qwen/Qwen3.5-9B-Base
+    adapter_path: /media/work/matheusvieira/monolingual_and_multilingual/outputs_ag_news_pt_lora/models/Qwen3.5/ag_news_pt_lora_adapter
+    tokenizer: /media/work/matheusvieira/models/models/Qwen/Qwen3.5-9B-Base
+    batch_size: 3
+
+  - name: Llama3.1-Lora
+    backend: hf
+    path: /media/work/matheusvieira/models/models/meta-llama/Meta-Llama-3.1-8B
+    adapter_path: /media/work/matheusvieira/monolingual_and_multilingual/outputs_ag_news_pt_lora/models/Llama3.1/ag_news_pt_lora_adapter
+    tokenizer: /media/work/matheusvieira/models/models/meta-llama/Meta-Llama-3.1-8B
+    batch_size: 3
+
+
 
 experiments: ["causal_sliding"]
 

@@ -75,7 +75,7 @@ def output_filename(model_name):
     return f"{safe_name or 'model'}.csv"
 
 
-def run_causal_sliding(model, dataset, model_name, batch_size):
+def run_causal_sliding(model, dataset, model_name, batch_size, max_length=None):
     required_columns = {
         "id",
         "text",
@@ -91,8 +91,11 @@ def run_causal_sliding(model, dataset, model_name, batch_size):
 
     result_frames = []
     for scenario, scenario_data in dataset.groupby("scenario", sort=False):
+        print(f"Scenario: {scenario}")
         texts = scenario_data["text"].fillna("").astype(str).tolist()
-        results = eval_causal_sliding(model, texts, batch_size=batch_size)
+        results = eval_causal_sliding(
+            model, texts, batch_size=batch_size, max_len=max_length,
+        )
         result = pd.DataFrame(results)
         result["text_id"] = scenario_data["id"].tolist()
         result.insert(0, "original_text_id", scenario_data["original_text_id"].tolist())
@@ -118,6 +121,7 @@ def run_experiment(experiment, dataset_path, output_dir, model_configs, config_d
             dataset,
             model_config["name"],
             batch_size=model_config.get("batch_size", 1),
+            max_length=model_config.get("max_length"),
         )
         results.to_csv(
             output_dir / output_filename(model_config["name"]),

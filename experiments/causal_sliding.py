@@ -47,6 +47,8 @@ def eval_causal_sliding(
     if batch_size <= 0:
         raise ValueError("batch_size must be positive")
 
+    print(f"batch_size: {batch_size}")
+
     model.set_evaluation_mode()
 
     progress_bar = tqdm(
