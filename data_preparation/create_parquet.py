@@ -8,6 +8,7 @@ from IPython.display import display
 BASE_DIR = Path(__file__).parent
 PORTUGUESE_FILE = BASE_DIR / "portuguese_texts.txt"
 PERMUTATION_FILE = BASE_DIR / "permutation" / "permuted_portuguese_texts.txt"
+CORRUPTION_FILE = BASE_DIR / "corruption" / "portuguese_corrupted.txt"
 GRAMMAR_SWAP_FILE = BASE_DIR / "word_align" / "grammar_swap.txt"
 LEXICAL_SWAP_FILE = BASE_DIR / "word_align" / "lexical_swap.txt"
 TRANSLATION_FILE = BASE_DIR / "translation" / "translation.json"
@@ -44,6 +45,7 @@ def create_rows(texts_by_scenario):
 
     for scenario, language in (
         ("permutation", "portuguese"),
+        ("corruption", "portuguese"),
         ("grammar_swap", "english"),
         ("lexical_swap", "english"),
         ("translation", "english"),
@@ -67,6 +69,7 @@ def main():
     texts_by_scenario = {
         "original": read_lines(PORTUGUESE_FILE),
         "permutation": read_lines(PERMUTATION_FILE),
+        "corruption": read_lines(CORRUPTION_FILE),
         "grammar_swap": read_lines(GRAMMAR_SWAP_FILE),
         "lexical_swap": read_lines(LEXICAL_SWAP_FILE),
         "translation": [translation["english"] for translation in translations],

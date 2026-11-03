@@ -1,4 +1,5 @@
 import argparse
+import logging
 import re
 from pathlib import Path
 
@@ -75,6 +76,21 @@ def output_filename(model_name):
     return f"{safe_name or 'model'}.csv"
 
 
+def get_error_logger(output_dir):
+    logger = logging.getLogger(f"experiments.{output_dir.resolve()}")
+    logger.setLevel(logging.ERROR)
+    logger.propagate = False
+
+    if not logger.handlers:
+        handler = logging.FileHandler(output_dir / "errors.log", encoding="utf-8")
+        handler.setFormatter(
+            logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+        )
+        logger.addHandler(handler)
+
+    return logger
+
+
 def run_causal_sliding(model, dataset, model_name, batch_size, max_length=None):
     required_columns = {
         "id",
@@ -113,21 +129,30 @@ def run_experiment(experiment, dataset_path, output_dir, model_configs, config_d
 
     dataset = pd.read_parquet(dataset_path, engine="fastparquet")
     output_dir.mkdir(parents=True, exist_ok=True)
+    error_logger = get_error_logger(output_dir)
 
     for model_config in model_configs:
-        model = load_model(model_config, config_dir)
-        results = run_causal_sliding(
-            model,
-            dataset,
-            model_config["name"],
-            batch_size=model_config.get("batch_size", 1),
-            max_length=model_config.get("max_length"),
-        )
-        results.to_csv(
-            output_dir / output_filename(model_config["name"]),
-            index=False,
-        )
-        del model
+        model_name = model_config.get("name", "desconhecido")
+        model = None
+
+        try:
+            model = load_model(model_config, config_dir)
+            results = run_causal_sliding(
+                model,
+                dataset,
+                model_name,
+                batch_size=model_config.get("batch_size", 1),
+                max_length=model_config.get("max_length"),
+            )
+            results.to_csv(
+                output_dir / output_filename(model_name),
+                index=False,
+            )
+        except Exception:
+            print(f"❌ Erro ao processar o modelo {model_name}. Continuando.")
+            error_logger.exception("Erro ao processar o modelo %s", model_name)
+        finally:
+            del model
 
 
 def main():
